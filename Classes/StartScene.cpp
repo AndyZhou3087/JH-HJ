@@ -11,7 +11,7 @@
 #include "HintBox.h"
 #include "NoticeLayer.h"
 #include "Const.h"
-
+ 
 USING_NS_CC;
 
 StartScene::StartScene()
