@@ -53,7 +53,7 @@ bool SettingLayer::init()
 	m_nameTextField->addEventListener(CC_CALLBACK_2(SettingLayer::textFieldEvent, this));
 
 	m_editName = cocos2d::ui::EditBox::create(Size(380, 44), cocos2d::ui::Scale9Sprite::createWithSpriteFrameName("ui/blank.png"));
-	m_editName->setPosition(Point(225, 875));
+	m_editName->setPosition(Point(223, 818));
 	m_editName->setAnchorPoint(Vec2(0, 0.5));
 	m_editName->setFontColor(Color3B::BLACK);
 	m_editName->setPlaceHolder(CommonFuncs::gbk2utf("请输入昵称:").c_str());

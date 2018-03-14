@@ -6,6 +6,8 @@
         <Folder Name="fonts">
           <Fnt Name="coinpoolnum.fnt" />
           <Fnt Name="critnum.fnt" />
+          <TTF Name="FZXKJW_0.TTF" />
+          <TTF Name="SIMHEI.TTF" />
           <TTF Name="STXINGKA.TTF" />
           <Fnt Name="topnum.fnt" />
         </Folder>
@@ -43,6 +45,8 @@
           <Image Name="hsljhero3.png" />
           <Image Name="hsljhero4.png" />
           <Image Name="huafeititle.png" />
+          <Image Name="jddk.png" />
+          <Image Name="jdtk.png" />
           <Image Name="logo.png" />
           <Image Name="lotterycontent2.png" />
           <Image Name="lotterygoldtext.png" />
@@ -68,6 +72,7 @@
           <Image Name="room.jpg" />
           <Image Name="select.png" />
           <Image Name="selectherobg.jpg" />
+          <Image Name="Settingbg.png" />
           <Image Name="shero1.jpg" />
           <Image Name="shero1_s.jpg" />
           <Image Name="shero1name.png" />
@@ -215,6 +220,7 @@
           <Image Name="buildtagbtn1.png" />
           <Image Name="bwine.png" />
           <Image Name="closebtn.png" />
+          <Image Name="common_2.png" />
           <Image Name="cooktable.png" />
           <Image Name="createfactionicon.png" />
           <Image Name="crit.png" />
@@ -250,6 +256,7 @@
           <Image Name="factiontitle.png" />
           <Image Name="factlistitem0.png" />
           <Image Name="factlistitem1.png" />
+          <Image Name="fegure_frame.png" />
           <Image Name="fence.png" />
           <Image Name="fheart0.png" />
           <Image Name="fheart1.png" />
@@ -317,6 +324,8 @@
           <Image Name="hsljrewarddescbtn.png" />
           <Image Name="hsljtitle.png" />
           <Image Name="hurticon.png" />
+          <Image Name="jddkaT.png" />
+          <Image Name="jdjxz.png" />
           <Image Name="loginrbtn.png" />
           <Image Name="loginritem0.png" />
           <Image Name="loginritem1.png" />
@@ -544,6 +553,7 @@
           <Image Name="resselectcountbox.png" />
           <Image Name="ressliderbg.png" />
           <Image Name="ressliderinner.png" />
+          <Image Name="roleprotitle.png" />
           <Image Name="saveitembg.png" />
           <Image Name="sbed.png" />
           <Image Name="sbookshelf.png" />
@@ -553,6 +563,7 @@
           <Image Name="settingselect.png" />
           <Image Name="settingselectbox.png" />
           <Image Name="settingsep.png" />
+          <Image Name="Settingtitlebg.png" />
           <Image Name="sexerciseroom.png" />
           <Image Name="sforgingtable.png" />
           <Image Name="sfurnace.png" />

@@ -28,14 +28,14 @@
             <FileData Type="MarkedSubImage" Path="ui/topbox.png" Plist="uipacker.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title" ActionTag="-1329708902" Tag="106" IconVisible="False" LeftMargin="246.0001" RightMargin="245.9999" TopMargin="51.5000" BottomMargin="1165.5000" FontSize="58" LabelText="角色选择" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="228.0000" Y="63.0000" />
+          <AbstractNodeData Name="title" ActionTag="-1329708902" Tag="106" IconVisible="False" LeftMargin="243.5001" RightMargin="243.4999" TopMargin="53.0000" BottomMargin="1167.0000" FontSize="58" LabelText="角色选择" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="233.0000" Y="60.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="360.0001" Y="1197.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="26" G="26" B="26" />
             <PrePosition X="0.5000" Y="0.9352" />
-            <PreSize X="0.3167" Y="0.0492" />
+            <PreSize X="0.3236" Y="0.0469" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

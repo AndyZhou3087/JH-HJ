@@ -4,8 +4,10 @@
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
+#include "../extensions/cocos-ext.h"
 USING_NS_CC;
-class SelectHeroScene : public cocos2d::Layer
+USING_NS_CC_EXT;
+class SelectHeroScene : public cocos2d::Layer, public ScrollViewDelegate
 {
 public:
 	SelectHeroScene();
@@ -18,6 +20,11 @@ public:
 	CREATE_FUNC(SelectHeroScene);
 	void unlockSucc(int index);
 	void enterNextScene();
+
+	//scroll 委托  
+	void scrollViewDidScroll(ScrollView* view);
+	void scrollViewDidZoom(ScrollView* view);
+	void scrollViewMoveOver(ScrollView* view);
 private:
 	cocos2d::ui::ImageView* heroimg[4];
 	cocos2d::ui::ImageView* selectimg[4];
@@ -25,6 +32,7 @@ private:
 	cocos2d::ui::Widget* lock[4];
 	int _lastSelect;
 	bool isMoving;
+	Vector<Sprite*> sp_vec;//声明一个容器 
 private:
 	void onSelect(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
 	void onStart(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);

@@ -11,14 +11,9 @@
       <Value ctype="TabsInfo">
         <OpenedDocuments>
           <FilePathData Path="uipacker.csi" />
-          <FilePathData Path="rechargeLayer.csd" />
-          <FilePathData Path="vipGoodsNode.csd" />
-          <FilePathData Path="vipShopLayer.csd" />
-          <FilePathData Path="getVipRewardLayer.csd" />
-          <FilePathData Path="hintLayer.csd" />
-          <FilePathData Path="mapLayer.csd" />
+          <FilePathData Path="selectHeroLayer.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="uipacker.csi" />
+        <ActiveDocument Path="selectHeroLayer.csd" />
       </Value>
     </Item>
   </Properties>

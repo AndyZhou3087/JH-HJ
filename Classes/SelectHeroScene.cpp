@@ -48,7 +48,7 @@ bool SelectHeroScene::init()
         return false;
     }
     
-    Size visibleSize = Director::getInstance()->getVisibleSize();
+    /*Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	GlobalData::loadUnlockHeroData();
@@ -88,7 +88,46 @@ bool SelectHeroScene::init()
 	str = StringUtils::format("images/select.png");
 	selectimg[defaultindex]->loadTexture(str, cocos2d::ui::TextureResType::LOCAL);
 	selectimg[defaultindex]->setContentSize(Sprite::create(str)->getContentSize());
-	selectimg[defaultindex]->getChildByName("sheroname")->setPositionX(selectimg[defaultindex]->getContentSize().width / 2);
+	selectimg[defaultindex]->getChildByName("sheroname")->setPositionX(selectimg[defaultindex]->getContentSize().width / 2);*/
+
+
+	//首先创建scrollView  
+	auto scroll_layer = Layer::create();//创建scrollView中的容器层  
+	scroll_layer->setPosition(Point::ZERO);
+	scroll_layer->setAnchorPoint(Point::ZERO);
+	scroll_layer->setContentSize(Size(1750, 1280));//设置容器层大小为（600，300）  
+
+	auto scrollView = ScrollView::create(Size(750, 1280), scroll_layer);//创建scrollView，显示窗口大小为(400,300)  
+	scrollView->setDelegate(this);//设置委托  
+	scrollView->setDirection(ScrollView::Direction::HORIZONTAL);//设置滚动方向为水平  
+	scrollView->setPosition(Point(0, 0));
+	this->addChild(scrollView, 2);
+
+	for (int i = 0; i < 8; i++)
+	{
+		//auto str = StringUtils::format("images/shero%d.jpg", i + 1);
+		auto boy = Sprite::create("images/shero1.jpg");//没错，主角又是我们熟悉的那仨。多么温馨。  
+		boy->setPosition(Point( i*300, 640));
+		scroll_layer->addChild(boy, 2);
+		sp_vec.pushBack(boy);
+	}
+
+	//创建三个对象  
+	//auto boy = Sprite::create("images/shero1.jpg");//没错，主角又是我们熟悉的那仨。多么温馨。  
+	//boy->setPosition(Point(0, 100));
+	//scroll_layer->addChild(boy, 2);
+
+	//auto girl = Sprite::create("images/shero2.jpg");
+	//girl->setPosition(Point(300, 100));
+	//scroll_layer->addChild(girl, 2);
+
+	//auto girl3 = Sprite::create("images/shero3.jpg");
+	//girl3->setPosition(Point(600, 100));
+	//scroll_layer->addChild(girl3, 2);
+
+	//sp_vec.pushBack(boy);//将三个对象放入容器中  
+	//sp_vec.pushBack(girl);
+	//sp_vec.pushBack(girl3);
 
     return true;
 }
@@ -243,3 +282,51 @@ void SelectHeroScene::clickMoveFinish(float dt)
 	isMoving = false;
 }
 
+void SelectHeroScene::scrollViewDidScroll(ScrollView* view)
+{
+	//在scrollView拖动时响应该函数  
+
+	auto offsetPosX = (view->getContentOffset()).x;//获得偏移X坐标(向右移动，偏移量为正数，向左则为负数）  
+	//  CCLOG("offset pos is %f , %f",offsetPos.x,offsetPos.y);  
+
+	//for 循环遍历容器中的每个精灵  
+	for (auto e : sp_vec)
+	{
+		auto pointX = e->getPositionX();//获得当前对象的X坐标（不管怎么滚动，这个坐标都是不变的）  
+		float endPosX = pointX + offsetPosX;//将精灵的 X坐标 + 偏移X坐标  
+
+		//当endPosX在 150~250 范围，则对象的大小从左向右递增  
+		if (endPosX > 150 && endPosX < 250)
+		{
+			float x = endPosX / 150;//放大倍数为 endPosX / 150;  
+			e->setScale(x);
+			CCLOG("x = %f", x);
+		}
+		//当endPosX在 250~350 范围，则对象的大小从左向右递减  
+		else if (endPosX > 250 && endPosX < 350)
+		{
+			//下面这个公式不好解释，我就这么说吧：  
+			//假设 endPosX = 200，那么放大倍数应该是 200 / 150 = 1.33左右，那么当endPosX = 300时，出于对称的原理，我们以250为对称中心，那么  
+			//300 的放大倍数也应该是 1.33。这就是下面的公式由来  
+			float a = endPosX - 250;
+			float b = 250 - a;
+
+			float x = b / 150;
+			e->setScale(x);
+		}
+		else
+		{
+			//不是在上面的范围，则设置为正常大小  
+			e->setScale(1.0f);
+		}
+	}
+}
+
+void SelectHeroScene::scrollViewDidZoom(ScrollView* view)
+{
+	//do something  
+}
+void SelectHeroScene::scrollViewMoveOver(ScrollView* view)
+{
+	//do something  
+}

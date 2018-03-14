@@ -617,6 +617,12 @@
       <FilePathData Path="ui/smallshopbtn.png" />
       <FilePathData Path="ui/gd4.png" />
       <FilePathData Path="ui/12d.png" />
+      <FilePathData Path="ui/Settingtitlebg.png" />
+      <FilePathData Path="ui/common_2.png" />
+      <FilePathData Path="ui/fegure_frame.png" />
+      <FilePathData Path="ui/roleprotitle.png" />
+      <FilePathData Path="ui/jddkaT.png" />
+      <FilePathData Path="ui/jdjxz.png" />
     </ImageFiles>
     <MaxSize Width="4096" Height="4096" />
   </Content>
