@@ -48,7 +48,7 @@ bool SelectHeroScene::init()
         return false;
     }
     
-    /*Size visibleSize = Director::getInstance()->getVisibleSize();
+    Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	GlobalData::loadUnlockHeroData();
@@ -88,46 +88,29 @@ bool SelectHeroScene::init()
 	str = StringUtils::format("images/select.png");
 	selectimg[defaultindex]->loadTexture(str, cocos2d::ui::TextureResType::LOCAL);
 	selectimg[defaultindex]->setContentSize(Sprite::create(str)->getContentSize());
-	selectimg[defaultindex]->getChildByName("sheroname")->setPositionX(selectimg[defaultindex]->getContentSize().width / 2);*/
+	selectimg[defaultindex]->getChildByName("sheroname")->setPositionX(selectimg[defaultindex]->getContentSize().width / 2);
 
 
 	//首先创建scrollView  
-	auto scroll_layer = Layer::create();//创建scrollView中的容器层  
-	scroll_layer->setPosition(Point::ZERO);
-	scroll_layer->setAnchorPoint(Point::ZERO);
-	scroll_layer->setContentSize(Size(1750, 1280));//设置容器层大小为（600，300）  
+	//auto scroll_layer = Layer::create();//创建scrollView中的容器层  
+	//scroll_layer->setPosition(Point::ZERO);
+	//scroll_layer->setAnchorPoint(Point::ZERO);
+	//scroll_layer->setContentSize(Size(1750, 1280));//设置容器层大小为（600，300）  
 
-	auto scrollView = ScrollView::create(Size(750, 1280), scroll_layer);//创建scrollView，显示窗口大小为(400,300)  
-	scrollView->setDelegate(this);//设置委托  
-	scrollView->setDirection(ScrollView::Direction::HORIZONTAL);//设置滚动方向为水平  
-	scrollView->setPosition(Point(0, 0));
-	this->addChild(scrollView, 2);
+	//auto scrollView = ScrollView::create(Size(750, 1280), scroll_layer);//创建scrollView，显示窗口大小为(400,300)  
+	//scrollView->setDelegate(this);//设置委托  
+	//scrollView->setDirection(ScrollView::Direction::HORIZONTAL);//设置滚动方向为水平  
+	//scrollView->setPosition(Point(0, 0));
+	//this->addChild(scrollView, 2);
 
-	for (int i = 0; i < 8; i++)
-	{
-		//auto str = StringUtils::format("images/shero%d.jpg", i + 1);
-		auto boy = Sprite::create("images/shero1.jpg");//没错，主角又是我们熟悉的那仨。多么温馨。  
-		boy->setPosition(Point( i*300, 640));
-		scroll_layer->addChild(boy, 2);
-		sp_vec.pushBack(boy);
-	}
-
-	//创建三个对象  
-	//auto boy = Sprite::create("images/shero1.jpg");//没错，主角又是我们熟悉的那仨。多么温馨。  
-	//boy->setPosition(Point(0, 100));
-	//scroll_layer->addChild(boy, 2);
-
-	//auto girl = Sprite::create("images/shero2.jpg");
-	//girl->setPosition(Point(300, 100));
-	//scroll_layer->addChild(girl, 2);
-
-	//auto girl3 = Sprite::create("images/shero3.jpg");
-	//girl3->setPosition(Point(600, 100));
-	//scroll_layer->addChild(girl3, 2);
-
-	//sp_vec.pushBack(boy);//将三个对象放入容器中  
-	//sp_vec.pushBack(girl);
-	//sp_vec.pushBack(girl3);
+	//for (int i = 0; i < 8; i++)
+	//{
+	//	//auto str = StringUtils::format("images/shero%d.jpg", i + 1);
+	//	auto boy = Sprite::create("images/shero1.jpg");//没错，主角又是我们熟悉的那仨。多么温馨。  
+	//	boy->setPosition(Point( i*350, 640));
+	//	scroll_layer->addChild(boy, 2);
+	//	sp_vec.pushBack(boy);
+	//}
 
     return true;
 }

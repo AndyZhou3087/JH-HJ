@@ -6,7 +6,6 @@
 #include "Hero.h"
 #include "GlobalData.h"
 #include "SoundManager.h"
-#include "PauseLayer.h"
 #include "GameDataSave.h"
 #include "MapLayer.h"
 #include "MixGFNode.h"
@@ -30,30 +29,65 @@ bool HeroStateUILayer::init()
 	m_csbnode = CSLoader::createNode("heroStateLayer.csb");
 	this->addChild(m_csbnode, 0, "csbnode");
 
-	HeroProperNode* heroproper = HeroProperNode::create();
-	heroproper->setPosition(Vec2(360, 770));
-	m_csbnode->addChild(heroproper, 0, "HeroProperNode");
+	heroAttribNode = (cocos2d::ui::Widget*)m_csbnode->getChildByName("heroAttribNode");
+	propertybg = (cocos2d::ui::Widget*)m_csbnode->getChildByName("propertybg");
+	property = (cocos2d::ui::Widget*)m_csbnode->getChildByName("property");
 
 	cocos2d::ui::Button* backbtn = (cocos2d::ui::Button*)m_csbnode->getChildByName("backbtn");
 	backbtn->addTouchEventListener(CC_CALLBACK_2(HeroStateUILayer::onBack, this));
 
-	cocos2d::ui::Button* pausebtn = (cocos2d::ui::Button*)m_csbnode->getChildByName("pausebtn");
-	pausebtn->addTouchEventListener(CC_CALLBACK_2(HeroStateUILayer::onPause, this));
+	cocos2d::ui::ImageView* roleimg = (cocos2d::ui::ImageView*)propertybg->getChildByName("roleimg");
+	std::string str = StringUtils::format("rolestate_%d.png", g_hero->getHeadID());
+	roleimg->loadTexture(str, cocos2d::ui::TextureResType::LOCAL);
+
+	cocos2d::ui::Text* rolename = (cocos2d::ui::Text*)propertybg->getChildByName("rolename");
+	str = heroname[g_hero->getHeadID() - 1];
+	rolename->setString(str);
+
+	btn_1 = (cocos2d::ui::Button*)m_csbnode->getChildByName("btn_1");
+	btn_1->addTouchEventListener(CC_CALLBACK_2(HeroStateUILayer::onbtn1, this));
+	btn_2 = (cocos2d::ui::Button*)m_csbnode->getChildByName("btn_2");
+	btn_2->addTouchEventListener(CC_CALLBACK_2(HeroStateUILayer::onbtn2, this));
+	btn_3 = (cocos2d::ui::Button*)m_csbnode->getChildByName("btn_3");
+	btn_3->addTouchEventListener(CC_CALLBACK_2(HeroStateUILayer::onbtn3, this));
+	btn_1->setEnabled(false);
+	btn_2->setEnabled(true);
+	btn_3->setEnabled(true);
+
+	if (!btn_2->isEnabled())
+	{
+		heroAttribNode->setVisible(true);
+	}
+	else
+	{
+		heroAttribNode->setVisible(false);
+	}
+
+	if (!btn_1->isEnabled())
+	{
+		propertybg->setVisible(true);
+		property->setVisible(true);
+	}
+	else
+	{
+		propertybg->setVisible(false);
+		property->setVisible(false);
+	}
 
 	for (int i = 0; i < sizeof(herostatus) / sizeof(herostatus[0]); i++)
 	{
 		std::string str = StringUtils::format("herostate%d", i + 1);
-		herostatus[i] = (cocos2d::ui::Text*)m_csbnode->getChildByName(str);
+		herostatus[i] = (cocos2d::ui::Text*)m_csbnode->getChildByName("property")->getChildByName(str);
 	}
 
-	m_heroexptimelbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("heroexptime");
-	m_gfexptimelbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("gfexptime");
+	m_heroexptimelbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("property")->getChildByName("heroexptime");
+	m_gfexptimelbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("property")->getChildByName("gfexptime");
 
-	arrow1 = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("arrow1");
-	arrow2 = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("arrow2");
-	arrow3 = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("arrow3");
+	arrow1 = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("property")->getChildByName("arrow1");
+	arrow2 = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("property")->getChildByName("arrow2");
+	arrow3 = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("property")->getChildByName("arrow3");
 
-	sexhintimg = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("sexhintimg");
+	sexhintimg = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("property")->getChildByName("sexhintimg");
 	sexhintimg->addTouchEventListener(CC_CALLBACK_2(HeroStateUILayer::onSexHelpHint, this));
 
 	m_heroexpendtime = GameDataSave::getInstance()->getHeroExpEndTime();
@@ -65,9 +99,9 @@ bool HeroStateUILayer::init()
 
 	updateStatus(0);
 
-	MixGFNode* mixnode = MixGFNode::create();
+	/*MixGFNode* mixnode = MixGFNode::create();
 	mixnode->setPosition(Vec2(360, 215));
-	m_csbnode->addChild(mixnode, 0, "mixnode");
+	m_csbnode->addChild(mixnode, 0, "mixnode");*/
 
 
 
@@ -99,17 +133,44 @@ void HeroStateUILayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 	}
 }
 
-void HeroStateUILayer::onPause(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
+void HeroStateUILayer::onbtn1(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
 	CommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		GlobalData::g_gameStatus = GAMEPAUSE;
-		if (g_hero->getIsOut() && g_maplayer != NULL)
-		{
-			g_maplayer->heroPauseMoving();
-		}
-		this->addChild(PauseLayer::create(), 2);
+		btn_1->setEnabled(false);
+		btn_2->setEnabled(true);
+		btn_3->setEnabled(true);
+		heroAttribNode->setVisible(false);
+		propertybg->setVisible(true);
+		property->setVisible(true);
+	}
+}
+
+void HeroStateUILayer::onbtn2(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
+{
+	CommonFuncs::BtnAction(pSender, type);
+	if (type == ui::Widget::TouchEventType::ENDED)
+	{
+		btn_1->setEnabled(true);
+		btn_2->setEnabled(false);
+		btn_3->setEnabled(true);
+		heroAttribNode->setVisible(true);
+		propertybg->setVisible(false);
+		property->setVisible(false);
+	}
+}
+
+void HeroStateUILayer::onbtn3(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
+{
+	CommonFuncs::BtnAction(pSender, type);
+	if (type == ui::Widget::TouchEventType::ENDED)
+	{
+		this->removeFromParentAndCleanup(true);
+
+		TopBar* topbar = (TopBar*)g_gameLayer->getChildByName("topbar");
+		if (topbar != NULL)
+			topbar->showNewerGuide(13);
 	}
 }
 
@@ -165,7 +226,7 @@ void HeroStateUILayer::updateStatus(float dt)
 	//性别
 	if (g_hero->getSex() == S_NONE)
 	{
-		m_csbnode->getChildByName("herostatetext7")->setVisible(true);
+		m_csbnode->getChildByName("property")->getChildByName("herostatetext7")->setVisible(true);
 		herostatus[6]->setVisible(true);
 		herostatus[6]->setString(CommonFuncs::gbk2utf("不详"));
 		sexhintimg->setVisible(true);

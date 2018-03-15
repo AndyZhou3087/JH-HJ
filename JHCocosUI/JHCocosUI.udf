@@ -11,9 +11,10 @@
       <Value ctype="TabsInfo">
         <OpenedDocuments>
           <FilePathData Path="uipacker.csi" />
-          <FilePathData Path="selectHeroLayer.csd" />
+          <FilePathData Path="heroStateLayer.csd" />
+          <FilePathData Path="heroAttribNode.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="selectHeroLayer.csd" />
+        <ActiveDocument Path="heroStateLayer.csd" />
       </Value>
     </Item>
   </Properties>

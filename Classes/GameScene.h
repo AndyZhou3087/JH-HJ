@@ -133,4 +133,5 @@ extern Nature* g_nature;//天气数据
 extern Hero* g_hero;//角色数据
 extern GameScene* g_gameLayer;//游戏层
 extern UIScroll* g_uiScroll;//topbar文件事件滚动控件
+extern Sprite* scrollbg;//topbar文字滚动背景
 #endif // __GAME_SCENE_H__

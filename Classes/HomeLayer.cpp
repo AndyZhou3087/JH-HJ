@@ -194,6 +194,9 @@ bool HomeLayer::init()
 
 	g_hero->setIsOut(false);
 
+	g_uiScroll->setVisible(false);
+	scrollbg->setVisible(false);
+
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [=](Touch *touch, Event *event)
 	{

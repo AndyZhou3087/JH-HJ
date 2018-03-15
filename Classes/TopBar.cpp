@@ -14,6 +14,7 @@
 #include "FriendNpcScene.h"
 #include "FightLayer.h"
 #include "ApprenticeScene.h"
+#include "PauseLayer.h"
 
 TopBar::TopBar()
 {
@@ -112,6 +113,17 @@ bool TopBar::init()
 	life->setName("life");
 	life->addTouchEventListener(CC_CALLBACK_2(TopBar::onclick, this));
 
+	cocos2d::ui::Text* m_heroname = (cocos2d::ui::Text*)csbnode->getChildByName("heroname");
+	str = heroname[g_hero->getHeadID()-1];
+	m_heroname->setString(str);
+
+	loadFightCount();
+	cocos2d::ui::TextBMFont* bigFightCout = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("BigFightCout");
+	bigFightCout->setString(StringUtils::format("%d",bFightCount));
+	cocos2d::ui::TextBMFont* smFightCout = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("SmFightCout");
+	smFightCout->setString(StringUtils::format("%d", sFightCount));
+
+
 	Sprite* sprite0 = Sprite::createWithSpriteFrameName("ui/topoutinjurybar.png");
 	outinjuryBar = ProgressTimer::create(sprite0);
 	outinjuryBar->setType(ProgressTimer::Type::BAR);
@@ -156,7 +168,7 @@ bool TopBar::init()
 	lifeBar->setPercentage(g_hero->getLifeValue() * 100.0f / g_hero->getMaxLifeValue());
 	lifeBar->setPosition(life->getPosition());
 	csbnode->addChild(lifeBar);
-	outinjuryRed = (cocos2d::ui::Widget*)csbnode->getChildByName("topoutinjuryred");
+	/*outinjuryRed = (cocos2d::ui::Widget*)csbnode->getChildByName("topoutinjuryred");
 	outinjuryRed->setLocalZOrder(1);
 	innerinjuryRed = (cocos2d::ui::Widget*)csbnode->getChildByName("topinnerinjuryred");
 	innerinjuryRed->setLocalZOrder(1);
@@ -165,7 +177,10 @@ bool TopBar::init()
 	spiritRed = (cocos2d::ui::Widget*)csbnode->getChildByName("topspiritred");
 	spiritRed->setLocalZOrder(1);
 	lifeRed = (cocos2d::ui::Widget*)csbnode->getChildByName("toplifered");
-	lifeRed->setLocalZOrder(1);
+	lifeRed->setLocalZOrder(1);*/
+
+	cocos2d::ui::Button* pausebtn = (cocos2d::ui::Button*)csbnode->getChildByName("pausebtn");
+	pausebtn->addTouchEventListener(CC_CALLBACK_2(TopBar::onPause, this));
 
 	
 	int maxlv = GlobalData::map_heroAtr[g_hero->getHeadID()].vec_exp.size();
@@ -197,6 +212,21 @@ bool TopBar::init()
 	schedule(schedule_selector(TopBar::updataUI), NORMAL_TIMEINTERVAL * 1.0f/TIMESCALE);
 
 	return true;
+}
+
+void TopBar::loadFightCount()
+{
+	int curack = g_hero->getTotalAtck();
+	for (int i = 6; i > 0; i--)
+	{
+		int pf = pow(10, i);
+		if (curack / pf > 0)
+		{
+			bFightCount = curack / pf;
+			sFightCount = curack % pf;
+			break;
+		}
+	}
 }
 
 void TopBar::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
@@ -338,17 +368,17 @@ void TopBar::updataUI(float dt)
 
 		if (m_lastinnerinjury != (int)g_hero->getInnerinjuryValue())
 		{
-			innerinjuryRed->runAction(Sequence::create(Show::create(), Blink::create(1.3f, 2), Hide::create(), NULL));
+			//innerinjuryRed->runAction(Sequence::create(Show::create(), Blink::create(1.3f, 2), Hide::create(), NULL));
 			m_lastinnerinjury = (int)g_hero->getInnerinjuryValue();
 		}
 		if (m_lastoutinjury != (int)g_hero->getOutinjuryValue())
 		{
-			outinjuryRed->runAction(Sequence::create(Show::create(), Blink::create(1.3f, 2), Hide::create(), NULL));
+			//outinjuryRed->runAction(Sequence::create(Show::create(), Blink::create(1.3f, 2), Hide::create(), NULL));
 			m_lastoutinjury = (int)g_hero->getOutinjuryValue();
 		}
 		if (m_lastlife != (int)g_hero->getLifeValue())
 		{
-			lifeRed->runAction(Sequence::create(Show::create(), Blink::create(1.3f, 2), Hide::create(), NULL));
+			//lifeRed->runAction(Sequence::create(Show::create(), Blink::create(1.3f, 2), Hide::create(), NULL));
 			m_lastlife = (int)g_hero->getLifeValue();
 		}
 		return;
@@ -581,35 +611,35 @@ void TopBar::updataUI(float dt)
 	bool isnewer = false;
 	if (m_lastinnerinjury != (int)g_hero->getInnerinjuryValue())
 	{
-		innerinjuryRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
+		//innerinjuryRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
 		m_lastinnerinjury = (int)g_hero->getInnerinjuryValue();
 		if (g_hero->getInnerinjuryValue() <= g_hero->getMaxInnerinjuryValue() * 0.5f)
 			isnewer = true;
 	}
 	if (m_lastoutinjury != (int)g_hero->getOutinjuryValue())
 	{
-		outinjuryRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
+		//outinjuryRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
 		m_lastoutinjury = (int)g_hero->getOutinjuryValue();
 		if (g_hero->getOutinjuryValue() <= g_hero->getMaxOutinjuryValue() * 0.5f)
 			isnewer = true;
 	}
 	if (m_lasthunger != (int)g_hero->getHungerValue())
 	{
-		hungerRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
+		//hungerRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
 		m_lasthunger = (int)g_hero->getHungerValue();
 		if (g_hero->getHungerValue() <= g_hero->getMaxHungerValue() * 0.5f)
 			isnewer = true;
 	}
 	if (m_lastspirit != (int)g_hero->getSpiritValue())
 	{
-		spiritRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
+		//spiritRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
 		m_lastspirit = (int)g_hero->getSpiritValue();
 		if (g_hero->getSpiritValue() <= g_hero->getMaxSpiritValue() * 0.5f)
 			isnewer = true;
 	}
 	if (m_lastlife != (int)g_hero->getLifeValue())
 	{
-		lifeRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
+		//lifeRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
 		m_lastlife = (int)g_hero->getLifeValue();
 		if (g_hero->getLifeValue() <= g_hero->getMaxLifeValue() * 0.5f)
 			isnewer = true;
@@ -619,7 +649,7 @@ void TopBar::updataUI(float dt)
 
 void TopBar::stopLoseAnim()
 {
-	innerinjuryRed->stopAllActions();
+	/*innerinjuryRed->stopAllActions();
 	innerinjuryRed->setVisible(false);
 
 	outinjuryRed->stopAllActions();
@@ -632,7 +662,7 @@ void TopBar::stopLoseAnim()
 	spiritRed->setVisible(false);
 
 	lifeRed->stopAllActions();
-	lifeRed->setVisible(false);	
+	lifeRed->setVisible(false);	*/
 }
 void TopBar::showNewerGuide(int step)
 {
@@ -731,5 +761,19 @@ void TopBar::checkNpcRandMap()
 		{
 			g_maplayer->updataPlotMissionIcon(0);
 		}
+	}
+}
+
+void TopBar::onPause(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
+{
+	CommonFuncs::BtnAction(pSender, type);
+	if (type == ui::Widget::TouchEventType::ENDED)
+	{
+		GlobalData::g_gameStatus = GAMEPAUSE;
+		if (g_hero->getIsOut() && g_maplayer != NULL)
+		{
+			g_maplayer->heroPauseMoving();
+		}
+		this->getParent()->addChild(PauseLayer::create(), 10);
 	}
 }

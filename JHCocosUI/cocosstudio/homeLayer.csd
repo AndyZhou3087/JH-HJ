@@ -6,14 +6,14 @@
       <ObjectData Name="Layer" Tag="19" ctype="GameLayerObjectData">
         <Size X="720.0000" Y="1280.0000" />
         <Children>
-          <AbstractNodeData Name="room" ActionTag="-898219645" Tag="39" IconVisible="False" TopMargin="388.0000" ctype="SpriteObjectData">
-            <Size X="720.0000" Y="892.0000" />
+          <AbstractNodeData Name="room" ActionTag="-898219645" Tag="39" IconVisible="False" TopMargin="104.0000" ctype="SpriteObjectData">
+            <Size X="720.0000" Y="1176.0000" />
             <AnchorPoint />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
-            <PreSize X="1.0000" Y="0.6969" />
+            <PreSize X="1.0000" Y="0.9187" />
             <FileData Type="Normal" Path="images/room.jpg" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>

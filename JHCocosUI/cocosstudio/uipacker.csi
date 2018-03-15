@@ -623,6 +623,28 @@
       <FilePathData Path="ui/roleprotitle.png" />
       <FilePathData Path="ui/jddkaT.png" />
       <FilePathData Path="ui/jdjxz.png" />
+      <FilePathData Path="ui/zjdk.png" />
+      <FilePathData Path="ui/zjyy.png" />
+      <FilePathData Path="ui/zjzdl.png" />
+      <FilePathData Path="ui/sxhk.png" />
+      <FilePathData Path="ui/sxst.png" />
+      <FilePathData Path="ui/statelabel1_1.png" />
+      <FilePathData Path="ui/statelabel1_2.png" />
+      <FilePathData Path="ui/statelabel2_1.png" />
+      <FilePathData Path="ui/statelabel2_2.png" />
+      <FilePathData Path="ui/statelabel3_1.png" />
+      <FilePathData Path="ui/statelabel3_2.png" />
+      <FilePathData Path="ui/sxmz.png" />
+      <FilePathData Path="ui/sxkT.png" />
+      <FilePathData Path="ui/sxexp.png" />
+      <FilePathData Path="ui/sxfyl.png" />
+      <FilePathData Path="ui/sxgjl.png" />
+      <FilePathData Path="ui/sxlv.png" />
+      <FilePathData Path="ui/sxsf.png" />
+      <FilePathData Path="ui/sxsmz.png" />
+      <FilePathData Path="ui/sxxb.png" />
+      <FilePathData Path="ui/zst.png" />
+      <FilePathData Path="ui/zbht.png" />
     </ImageFiles>
     <MaxSize Width="4096" Height="4096" />
   </Content>

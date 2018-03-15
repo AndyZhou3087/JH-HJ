@@ -32,11 +32,6 @@ private:
 	*****************************/
 	void onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
 
-	/****************************
-	点击“暂停”按钮回调
-	*****************************/
-	void onPause(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
-
 	Node* m_csbnode;
 	//7个属性值显示控件
 	cocos2d::ui::Text* herostatus[7];
@@ -45,6 +40,10 @@ private:
 	性别提示
 	*****************************/
 	void onSexHelpHint(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
+
+	void onbtn1(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
+	void onbtn2(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
+	void onbtn3(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
 private:
 	/****************************
 	定时更新7个属性值
@@ -64,6 +63,12 @@ private:
 	cocos2d::ui::ImageView* arrow2;
 	cocos2d::ui::ImageView* arrow3;
 	cocos2d::ui::ImageView* sexhintimg;
+	cocos2d::ui::Widget* heroAttribNode;
+	cocos2d::ui::Button* btn_1;
+	cocos2d::ui::Button* btn_2;
+	cocos2d::ui::Button* btn_3;
+	cocos2d::ui::Widget* propertybg;
+	cocos2d::ui::Widget* property;
 };
 #endif
 

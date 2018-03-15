@@ -9,6 +9,9 @@
           <TTF Name="FZXKJW_0.TTF" />
           <TTF Name="SIMHEI.TTF" />
           <TTF Name="STXINGKA.TTF" />
+          <Fnt Name="topfight1.fnt" />
+          <Fnt Name="topfight2.fnt" />
+          <Fnt Name="topfont.fnt" />
           <Fnt Name="topnum.fnt" />
         </Folder>
         <Folder Name="images">
@@ -69,6 +72,10 @@
           <Image Name="rechargeget.png" />
           <Image Name="rechargetitle.png" />
           <Image Name="repairbox.png" />
+          <Image Name="rolestate_1.png" />
+          <Image Name="rolestate_2.png" />
+          <Image Name="rolestate_3.png" />
+          <Image Name="rolestate_4.png" />
           <Image Name="room.jpg" />
           <Image Name="select.png" />
           <Image Name="selectherobg.jpg" />
@@ -89,6 +96,7 @@
           <Image Name="startbg.jpg" />
           <Image Name="strengthfail.png" />
           <Image Name="suggesthero.png" />
+          <Image Name="sxbj.png" />
           <Image Name="syssmallbg.png" />
           <Image Name="t001.jpg" />
           <Image Name="t002.jpg" />
@@ -588,11 +596,28 @@
           <Image Name="sstartbtn.png" />
           <Image Name="startbtn.png" />
           <Image Name="startbtndis.png" />
+          <Image Name="statelabel1_1.png" />
+          <Image Name="statelabel1_2.png" />
+          <Image Name="statelabel2_1.png" />
+          <Image Name="statelabel2_2.png" />
+          <Image Name="statelabel3_1.png" />
+          <Image Name="statelabel3_2.png" />
           <Image Name="storageroom.png" />
           <Image Name="storagesepline.png" />
           <Image Name="strengthoktext.png" />
           <Image Name="swinemake.png" />
           <Image Name="swinetable.png" />
+          <Image Name="sxexp.png" />
+          <Image Name="sxfyl.png" />
+          <Image Name="sxgjl.png" />
+          <Image Name="sxhk.png" />
+          <Image Name="sxkT.png" />
+          <Image Name="sxlv.png" />
+          <Image Name="sxmz.png" />
+          <Image Name="sxsf.png" />
+          <Image Name="sxsmz.png" />
+          <Image Name="sxst.png" />
+          <Image Name="sxxb.png" />
           <Image Name="syssmalltie.png" />
           <Image Name="tgiftlefttimebox.png" />
           <Image Name="timegiftbtn.png" />
@@ -736,6 +761,11 @@
           <Image Name="x029.png" />
           <Image Name="x030.png" />
           <Image Name="xline.png" />
+          <Image Name="zbht.png" />
+          <Image Name="zjdk.png" />
+          <Image Name="zjyy.png" />
+          <Image Name="zjzdl.png" />
+          <Image Name="zst.png" />
         </Folder>
         <Project Name="achiveLayer.csd" Type="Layer" />
         <Project Name="achiveNode.csd" Type="Node" />

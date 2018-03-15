@@ -26,14 +26,14 @@
             <PreSize X="0.5972" Y="0.2734" />
             <FileData Type="MarkedSubImage" Path="ui/fegure_frame.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title" ActionTag="385671525" Tag="461" IconVisible="False" LeftMargin="309.3793" RightMargin="368.6207" TopMargin="572.6265" BottomMargin="666.3735" FontSize="40" LabelText="【" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="42.0000" Y="41.0000" />
+          <AbstractNodeData Name="title" ActionTag="385671525" Tag="461" IconVisible="False" LeftMargin="312.8793" RightMargin="372.1207" TopMargin="570.1265" BottomMargin="663.8735" FontSize="40" LabelText="【" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="35.0000" Y="46.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="330.3793" Y="686.8735" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.4589" Y="0.5366" />
-            <PreSize X="0.0583" Y="0.0320" />
+            <PreSize X="0.0486" Y="0.0359" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
@@ -70,7 +70,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="content" ActionTag="-2086344551" Tag="460" IconVisible="False" LeftMargin="144.5469" RightMargin="143.4531" TopMargin="628.0156" BottomMargin="481.9844" IsCustomSize="True" FontSize="25" LabelText="确认使用该存档开始游戏吗？" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="content" ActionTag="-2086344551" Tag="460" IconVisible="False" LeftMargin="144.5300" RightMargin="143.4700" TopMargin="628.0229" BottomMargin="481.9770" IsCustomSize="True" FontSize="25" LabelText="确认使用该存档开始游戏吗？" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="432.0000" Y="170.0000" />
             <AnchorPoint ScaleX="0.5109" ScaleY="0.4923" />
             <Position X="365.2388" Y="565.6680" />
@@ -82,14 +82,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="headimg" ActionTag="206522120" Tag="480" IconVisible="False" LeftMargin="165.0477" RightMargin="373.9523" TopMargin="421.8411" BottomMargin="620.1589" LeftEage="59" RightEage="59" TopEage="78" BottomEage="78" Scale9OriginX="59" Scale9OriginY="78" Scale9Width="63" Scale9Height="82" ctype="ImageViewObjectData">
-            <Size X="181.0000" Y="238.0000" />
+          <AbstractNodeData Name="headimg" ActionTag="206522120" Tag="480" IconVisible="False" LeftMargin="157.4097" RightMargin="382.5903" TopMargin="443.8414" BottomMargin="642.1586" LeftEage="59" RightEage="59" TopEage="78" BottomEage="78" Scale9OriginX="59" Scale9OriginY="78" Scale9Width="62" Scale9Height="38" ctype="ImageViewObjectData">
+            <Size X="180.0000" Y="194.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="255.5477" Y="739.1589" />
+            <Position X="247.4097" Y="739.1586" />
             <Scale ScaleX="0.7000" ScaleY="0.7000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3549" Y="0.5775" />
-            <PreSize X="0.2514" Y="0.1859" />
+            <PrePosition X="0.3436" Y="0.5775" />
+            <PreSize X="0.2500" Y="0.1516" />
             <FileData Type="MarkedSubImage" Path="ui/tophero1.png" Plist="uipacker.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="name" ActionTag="-101591218" Tag="482" IconVisible="False" LeftMargin="369.1841" RightMargin="231.8159" TopMargin="570.5250" BottomMargin="663.4750" FontSize="40" LabelText="小虾米" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -104,14 +104,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title_0" ActionTag="1146437288" Tag="392" IconVisible="False" LeftMargin="499.6887" RightMargin="199.3113" TopMargin="572.6265" BottomMargin="666.3735" FontSize="40" LabelText="】" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="21.0000" Y="41.0000" />
+          <AbstractNodeData Name="title_0" ActionTag="1146437288" Tag="392" IconVisible="False" LeftMargin="498.1887" RightMargin="197.8113" TopMargin="570.1265" BottomMargin="663.8735" FontSize="40" LabelText="】" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="24.0000" Y="46.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="510.1887" Y="686.8735" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.7086" Y="0.5366" />
-            <PreSize X="0.0292" Y="0.0320" />
+            <PreSize X="0.0333" Y="0.0359" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

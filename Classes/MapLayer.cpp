@@ -182,6 +182,10 @@ bool MapLayer::init()
 	if (GlobalData::isHasVulture())
 		vultureAnim();
 
+
+	g_uiScroll->setVisible(true);
+	scrollbg->setVisible(true);
+
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [=](Touch *touch, Event *event)
 	{

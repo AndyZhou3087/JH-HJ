@@ -29,6 +29,7 @@ Hero* g_hero;
 
 GameScene* g_gameLayer = NULL;
 
+Sprite* scrollbg;
 UIScroll* g_uiScroll;
 GameScene::GameScene()
 {
@@ -131,6 +132,16 @@ bool GameScene::init()
 
 	checkRestBranchMisson();
 
+	//滚动文字的背景
+	scrollbg = Sprite::create("images/topeventwordbox.png");
+	scrollbg->setPosition(Vec2(visibleSize.width / 2, 920));
+	this->addChild(scrollbg, 4);
+
+	//滚动文字
+	g_uiScroll = UIScroll::create(620.0F, 126.0f);
+	g_uiScroll->setPosition(Vec2(visibleSize.width / 2 + 25, 905));
+	addChild(g_uiScroll, 4);
+
 	//角色目前在哪个地点，第一次进入家
 	std::string addrstr = GameDataSave::getInstance()->getHeroAddr();
 	if (addrstr.compare("m1-1") == 0)//家
@@ -144,19 +155,9 @@ bool GameScene::init()
 		addChild(g_maplayer, 1, "maplayer");
 	}
 
-	//滚动文字的背景
-	Sprite* bg = Sprite::create("images/topeventwordbox.png");
-	bg->setPosition(Vec2(visibleSize.width / 2, 960));
-	this->addChild(bg, 4);
-
-	//滚动文字
-	g_uiScroll = UIScroll::create(620.0F, 126.0f);
-	g_uiScroll->setPosition(Vec2(visibleSize.width / 2 + 25, 965));
-	addChild(g_uiScroll, 4);
-
 	//任务属性和天气
 	topBar = TopBar::create();
-	topBar->setPosition(Vec2(visibleSize.width/2, 1063));
+	topBar->setPosition(Vec2(visibleSize.width/2, 1085));
 	addChild(topBar, 3, "topbar");
 	
 	this->schedule(schedule_selector(GameScene::updata), 1.0f);

@@ -58,10 +58,19 @@ private:
 	int m_lastpastLiveDay;
 	bool isHunter;
 
+	int bFightCount;
+	int sFightCount;
+
 private:
 	void onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
 	void updataUI(float dt);
 	void checkNpcRandMap();
+	void loadFightCount();
+
+	/****************************
+	点击“暂停”按钮回调
+	*****************************/
+	void onPause(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
 };
 #endif
 

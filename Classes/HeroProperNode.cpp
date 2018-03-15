@@ -66,14 +66,14 @@ bool HeroProperNode::init()
 	}
 
 	heroselectbg = (cocos2d::ui::Widget*)csbroot->getChildByName("heroselectbg");
-	heroppoint = (cocos2d::ui::Widget*)csbroot->getChildByName("heroppoint");
+	//heroppoint = (cocos2d::ui::Widget*)csbroot->getChildByName("heroppoint");
 
 	m_scrollView = (cocos2d::ui::ScrollView*)heroselectbg->getChildByName("ScrollView");
 	m_scrollView->setScrollBarEnabled(false);
 	m_scrollView->setBounceEnabled(true);
 
-	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)heroselectbg->getChildByName("okbtn");
-	okbtn->addTouchEventListener(CC_CALLBACK_2(HeroProperNode::onOK, this));
+	/*cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)heroselectbg->getChildByName("okbtn");
+	okbtn->addTouchEventListener(CC_CALLBACK_2(HeroProperNode::onOK, this));*/
 
 	title = (cocos2d::ui::Text*)heroselectbg->getChildByName("title");
 
@@ -109,7 +109,7 @@ void HeroProperNode::onOK(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEvent
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		heroselectbg->setVisible(false);
-		heroppoint->setVisible(false);
+		//heroppoint->setVisible(false);
 		m_listener->setSwallowTouches(false);
 		HeroStateUILayer* heroStateUILayer = (HeroStateUILayer*)this->getParent()->getParent();
 		MixGFNode* mixnode = (MixGFNode*)this->getParent()->getChildByName("mixnode");
@@ -150,11 +150,11 @@ void HeroProperNode::onImageClick(cocos2d::Ref *pSender, cocos2d::ui::Widget::To
 
 		lastclickindex = tag;
 		title->setString(CommonFuncs::gbk2utf(name[tag].c_str()));
-		heroppoint->setVisible(true);
+		//heroppoint->setVisible(true);
 		heroselectbg->setVisible(true);
-		heroppoint->setPosition(Vec2(propeImages[tag]->getPositionX(), propeImages[tag]->getPositionY() - propeImages[tag]->getContentSize().height / 2 - 5));
+		//heroppoint->setPosition(Vec2(propeImages[tag]->getPositionX(), propeImages[tag]->getPositionY() - propeImages[tag]->getContentSize().height / 2 - 5));
 
-		heroselectbg->setPositionY(heroppoint->getPositionY() - heroppoint->getContentSize().height + 3);
+		//heroselectbg->setPositionY(heroppoint->getPositionY() - heroppoint->getContentSize().height + 3);
 
 		showNewerGuide(++m_step);
 		this->setLocalZOrder(1);
@@ -891,7 +891,7 @@ void HeroProperNode::showNewerGuide(int step)
 	}
 	else if (step == 11)
 	{
-		nodes.push_back(heroselectbg->getChildByName("okbtn"));
+		//nodes.push_back(heroselectbg->getChildByName("okbtn"));
 	}
 	if (step <= 11 && nodes.size() > 0)
 		g_gameLayer->showNewerGuide(step, nodes);

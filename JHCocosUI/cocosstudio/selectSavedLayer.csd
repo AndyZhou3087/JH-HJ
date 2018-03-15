@@ -27,25 +27,25 @@
             <PreSize X="0.8056" Y="0.5859" />
             <FileData Type="MarkedSubImage" Path="ui/jddkaT.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="roleprotitle" ActionTag="-145668256" Tag="211" IconVisible="False" LeftMargin="15.0313" RightMargin="641.9687" TopMargin="174.1532" BottomMargin="853.8468" ctype="SpriteObjectData">
+          <AbstractNodeData Name="roleprotitle" ActionTag="-145668256" Tag="211" IconVisible="False" LeftMargin="14.0314" RightMargin="642.9686" TopMargin="154.8003" BottomMargin="873.1997" ctype="SpriteObjectData">
             <Size X="63.0000" Y="252.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="46.5313" Y="979.8468" />
+            <Position X="45.5314" Y="999.1997" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0646" Y="0.7655" />
+            <PrePosition X="0.0632" Y="0.7806" />
             <PreSize X="0.0875" Y="0.1969" />
             <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="uipacker.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title" ActionTag="-874927039" Tag="57" IconVisible="False" LeftMargin="32.8348" RightMargin="662.1652" TopMargin="253.7266" BottomMargin="934.2734" FontSize="22" LabelText="角&#xA;色&#xA;进&#xA;度" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="25.0000" Y="92.0000" />
+          <AbstractNodeData Name="title" ActionTag="-874927039" Tag="57" IconVisible="False" LeftMargin="31.8349" RightMargin="663.1651" TopMargin="228.3740" BottomMargin="947.6260" FontSize="22" LabelText="角&#xA;色&#xA;进&#xA;度" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="25.0000" Y="104.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="45.3348" Y="980.2734" />
+            <Position X="44.3349" Y="999.6260" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
-            <PrePosition X="0.0630" Y="0.7658" />
-            <PreSize X="0.0347" Y="0.0719" />
+            <PrePosition X="0.0616" Y="0.7810" />
+            <PreSize X="0.0347" Y="0.0812" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
@@ -59,9 +59,9 @@
             <PrePosition X="0.9329" Y="0.8095" />
             <PreSize X="0.1042" Y="0.1055" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
