@@ -1,14 +1,12 @@
 ﻿#include "HeroStateUILayer.h"
 #include "CommonFuncs.h"
 #include "Const.h"
-#include "HeroProperNode.h"
 #include "GameScene.h"
 #include "Hero.h"
 #include "GlobalData.h"
 #include "SoundManager.h"
 #include "GameDataSave.h"
 #include "MapLayer.h"
-#include "MixGFNode.h"
 #include "HomeLayer.h"
 #include "NewerGuideLayer.h"
 #include "HintBox.h"
@@ -29,7 +27,10 @@ bool HeroStateUILayer::init()
 	m_csbnode = CSLoader::createNode("heroStateLayer.csb");
 	this->addChild(m_csbnode, 0, "csbnode");
 
-	heroAttribNode = (cocos2d::ui::Widget*)m_csbnode->getChildByName("heroAttribNode");
+	heroAttribNode = HeroProperNode::create();
+	heroAttribNode->setPosition(Vec2(360, 707));
+	m_csbnode->addChild(heroAttribNode, 0, "HeroProperNode");
+
 	propertybg = (cocos2d::ui::Widget*)m_csbnode->getChildByName("propertybg");
 	property = (cocos2d::ui::Widget*)m_csbnode->getChildByName("property");
 
@@ -50,29 +51,12 @@ bool HeroStateUILayer::init()
 	btn_2->addTouchEventListener(CC_CALLBACK_2(HeroStateUILayer::onbtn2, this));
 	btn_3 = (cocos2d::ui::Button*)m_csbnode->getChildByName("btn_3");
 	btn_3->addTouchEventListener(CC_CALLBACK_2(HeroStateUILayer::onbtn3, this));
+	btn_1->getChildByName("btnname")->setVisible(true);
+	btn_2->getChildByName("btnname1")->setVisible(false);
+	btn_3->getChildByName("btnname")->setVisible(false);
 	btn_1->setEnabled(false);
 	btn_2->setEnabled(true);
 	btn_3->setEnabled(true);
-
-	if (!btn_2->isEnabled())
-	{
-		heroAttribNode->setVisible(true);
-	}
-	else
-	{
-		heroAttribNode->setVisible(false);
-	}
-
-	if (!btn_1->isEnabled())
-	{
-		propertybg->setVisible(true);
-		property->setVisible(true);
-	}
-	else
-	{
-		propertybg->setVisible(false);
-		property->setVisible(false);
-	}
 
 	for (int i = 0; i < sizeof(herostatus) / sizeof(herostatus[0]); i++)
 	{
@@ -99,10 +83,39 @@ bool HeroStateUILayer::init()
 
 	updateStatus(0);
 
-	/*MixGFNode* mixnode = MixGFNode::create();
-	mixnode->setPosition(Vec2(360, 215));
-	m_csbnode->addChild(mixnode, 0, "mixnode");*/
+	mixnode = MixGFNode::create();
+	mixnode->setPosition(Vec2(366, 664));
+	m_csbnode->addChild(mixnode, 0, "mixnode");
 
+
+	if (!btn_2->isEnabled())
+	{
+		heroAttribNode->setVisible(true);
+	}
+	else
+	{
+		heroAttribNode->setVisible(false);
+	}
+
+	if (!btn_1->isEnabled())
+	{
+		propertybg->setVisible(true);
+		property->setVisible(true);
+	}
+	else
+	{
+		propertybg->setVisible(false);
+		property->setVisible(false);
+	}
+
+	if (!btn_3->isEnabled())
+	{
+		mixnode->setVisible(true);
+	}
+	else
+	{
+		mixnode->setVisible(false);
+	}
 
 
 	//////layer 点击事件，屏蔽下层事件
@@ -138,10 +151,14 @@ void HeroStateUILayer::onbtn1(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 	CommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
+		btn_1->getChildByName("btnname")->setVisible(true);
+		btn_2->getChildByName("btnname1")->setVisible(false);
+		btn_3->getChildByName("btnname")->setVisible(false);
 		btn_1->setEnabled(false);
 		btn_2->setEnabled(true);
 		btn_3->setEnabled(true);
 		heroAttribNode->setVisible(false);
+		mixnode->setVisible(false);
 		propertybg->setVisible(true);
 		property->setVisible(true);
 	}
@@ -152,10 +169,14 @@ void HeroStateUILayer::onbtn2(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 	CommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
+		btn_1->getChildByName("btnname")->setVisible(false);
+		btn_2->getChildByName("btnname1")->setVisible(true);
+		btn_3->getChildByName("btnname")->setVisible(false);
 		btn_1->setEnabled(true);
 		btn_2->setEnabled(false);
 		btn_3->setEnabled(true);
 		heroAttribNode->setVisible(true);
+		mixnode->setVisible(false);
 		propertybg->setVisible(false);
 		property->setVisible(false);
 	}
@@ -166,11 +187,16 @@ void HeroStateUILayer::onbtn3(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 	CommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		this->removeFromParentAndCleanup(true);
-
-		TopBar* topbar = (TopBar*)g_gameLayer->getChildByName("topbar");
-		if (topbar != NULL)
-			topbar->showNewerGuide(13);
+		btn_1->getChildByName("btnname")->setVisible(false);
+		btn_2->getChildByName("btnname1")->setVisible(false);
+		btn_3->getChildByName("btnname")->setVisible(true);
+		btn_1->setEnabled(true);
+		btn_2->setEnabled(true);
+		btn_3->setEnabled(false);
+		heroAttribNode->setVisible(false);
+		mixnode->setVisible(true);
+		propertybg->setVisible(false);
+		property->setVisible(false);
 	}
 }
 

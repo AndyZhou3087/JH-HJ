@@ -6,6 +6,8 @@
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "HeroProperNode.h"
+#include "MixGFNode.h"
 USING_NS_CC;
 
 
@@ -58,12 +60,13 @@ private:
 	int lastatk;//上一次攻击
 	int lastdf;//上一次防御
 	int lastmaxhp;//上一次最大生命值
+	HeroProperNode* heroAttribNode;
+	MixGFNode* mixnode;
 
 	cocos2d::ui::ImageView* arrow1;
 	cocos2d::ui::ImageView* arrow2;
 	cocos2d::ui::ImageView* arrow3;
 	cocos2d::ui::ImageView* sexhintimg;
-	cocos2d::ui::Widget* heroAttribNode;
 	cocos2d::ui::Button* btn_1;
 	cocos2d::ui::Button* btn_2;
 	cocos2d::ui::Button* btn_3;

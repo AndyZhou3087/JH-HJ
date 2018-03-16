@@ -20,23 +20,39 @@ bool SysSmallBox::init(BoxType type, std::string imagepath, std::string title, s
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("sysSmallLayer.csb");
+	Node* csbnode;
+	if (mType>4)
+	{
+		csbnode = CSLoader::createNode("sysSmallLayer.csb");
+	}
+	else{
+		csbnode = CSLoader::createNode("sysSmallLayer2.csb");
+	}
 	this->addChild(csbnode);
-	image = (cocos2d::ui::ImageView*)csbnode->getChildByName("image");
-	titleTxt = (cocos2d::ui::Text*)csbnode->getChildByName("title");
-	title1Txt = (cocos2d::ui::Text*)csbnode->getChildByName("title1");
-	valueTxt = (cocos2d::ui::Text*) csbnode->getChildByName("valuelbl");
+	image = (cocos2d::ui::ImageView*)csbnode->getChildByName("damage")->getChildByName("image");
+	titleTxt = (cocos2d::ui::Text*)csbnode->getChildByName("damage")->getChildByName("title");
+	title1Txt = (cocos2d::ui::Text*)csbnode->getChildByName("damage")->getChildByName("title1");
+	valueTxt = (cocos2d::ui::Text*) csbnode->getChildByName("damage")->getChildByName("valuelbl");
 
 	image->loadTexture(imagepath, cocos2d::ui::TextureResType::PLIST);
 	image->setContentSize(Sprite::createWithSpriteFrameName(imagepath)->getContentSize());
-	image->setScale(1.5f);
+	//image->setScale(1.5f);
 	titleTxt->setString(CommonFuncs::gbk2utf(title.c_str()));
 	title1Txt->setString(CommonFuncs::gbk2utf(title1.c_str()));
 
-	textTxt = Label::createWithTTF(CommonFuncs::gbk2utf(text.c_str()), "fonts/STXINGKA.TTF", 26);
-	textTxt->setMaxLineWidth(400);
+	if (mType>4)
+	{
+		textTxt = Label::createWithTTF(CommonFuncs::gbk2utf(text.c_str()), "fonts/SIMHEI.TTF", 22);
+		textTxt->setPosition(Vec2(170, 680));
+		textTxt->setMaxLineWidth(400);
+	}
+	else
+	{
+		textTxt = Label::createWithTTF(CommonFuncs::gbk2utf(text.c_str()), "fonts/SIMHEI.TTF", 20);
+		textTxt->setPosition(Vec2(250, 630));
+		textTxt->setMaxLineWidth(230);
+	}
 	textTxt->setColor(Color3B(0, 0, 0));
-	textTxt->setPosition(Vec2(150, 580));
 	textTxt->setAnchorPoint(Vec2(0, 1));
 	csbnode->addChild(textTxt);
 
@@ -87,7 +103,7 @@ void SysSmallBox::updataUI(float dt)
 		{
 			lastvalue = g_nature->getReason();
 		}
-		std::string str = StringUtils::format("ui/top_r_season%d.png", v);
+		std::string str = StringUtils::format("ui/top_season%d.png", v);
 
 		image->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
 		image->setContentSize(Sprite::createWithSpriteFrameName(str)->getContentSize());
@@ -104,7 +120,7 @@ void SysSmallBox::updataUI(float dt)
 		if (lastvalue != v)
 		{
 			lastvalue = g_nature->getWeather();
-			std::string str = StringUtils::format("ui/top_weather%d.png", v);
+			std::string str = StringUtils::format("ui/topweather%d.png", v);
 
 			image->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
 			image->setContentSize(Sprite::createWithSpriteFrameName(str)->getContentSize());

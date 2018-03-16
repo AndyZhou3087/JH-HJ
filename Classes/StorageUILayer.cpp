@@ -10,7 +10,7 @@
 #include "NewerGuideLayer.h"
 #include "HelpMainLayer.h"
 
-const std::string name[] = { "食物", "药材", "武器", "防具", "内功", "武功", "资源", "工具", "其他"};
+const std::string name[] = { "【食物】", "【药材】", "【武器】", "【防具】", "【内功】", "【武功】", "【资源】", "【工具】", "【其他】"};
 
 StorageUILayer::StorageUILayer()
 {
@@ -49,7 +49,7 @@ bool StorageUILayer::init()
 	scrollview->setBounceEnabled(true);
 
 	scrollview->setContentSize(Size(650, 750));
-	scrollview->setPositionY(200);
+	scrollview->setPositionY(265);
 	
 	updateResContent();
 
@@ -80,7 +80,7 @@ void StorageUILayer::updateResContent()
 		int count = getCountByType(i);
 		if (count > 0)
 		{
-			int row = count % 5 == 0 ? count / 5 : (count / 5 + 1);
+			int row = count % 4 == 0 ? count / 4 : (count / 4 + 1);
 			typerow[i] = row;
 			textheigth += 45;
 		}
@@ -102,7 +102,7 @@ void StorageUILayer::updateResContent()
 	int contentheight = scrollview->getContentSize().height;
 	if (innerheight < contentheight)
 		innerheight = contentheight;
-	scrollview->setInnerContainerSize(Size(650, innerheight));
+	scrollview->setInnerContainerSize(Size(600, innerheight));
 
 
 	for (int i = 0; i < RES_MAX; i++)
@@ -121,11 +121,11 @@ void StorageUILayer::updateResContent()
 
 			}
 			Sprite * sepline = Sprite::createWithSpriteFrameName("ui/storagesepline.png");
-			sepline->setPosition(Vec2(sepline->getContentSize().width / 2 + 40, innerheight - 35 - preheight));
+			sepline->setPosition(Vec2(sepline->getContentSize().width / 2 + 40, innerheight - 168 - preheight));
 			scrollview->addChild(sepline);
-			Label* namelbl = Label::createWithTTF(CommonFuncs::gbk2utf(name[i].c_str()), "fonts/STXINGKA.TTF", 22);
-			namelbl->setColor(Color3B(0, 0, 0));
-			namelbl->setPosition(Vec2(25, 25));
+			Label* namelbl = Label::createWithTTF(CommonFuncs::gbk2utf( name[i].c_str()), "fonts/STXINGKA.TTF", 25);
+			namelbl->setColor(Color3B(80, 86, 68));
+			namelbl->setPosition(Vec2(34, 155));
 			sepline->addChild(namelbl);
 
 			int countindex = -1;
@@ -171,7 +171,7 @@ void StorageUILayer::updateResContent()
 					CC_CALLBACK_1(StorageUILayer::onclick, this));
 				boxItem->setTag(0);
 				boxItem->setUserData(&StorageRoom::map_storageData[i].at(m));
-				boxItem->setPosition(Vec2(box->getContentSize().width / 2 + 20 + countindex % 5 * 120, sepline->getPositionY() - 5 - 65 - countindex / 5 * 130));
+				boxItem->setPosition(Vec2(box->getContentSize().width / 2 + 20 + countindex % 5 * 120, sepline->getPositionY() + 70 + countindex / 5 * 130));
 				MyMenu* menu = MyMenu::create();
 				menu->addChild(boxItem);
 				menu->setTouchlimit(scrollview);
@@ -185,8 +185,9 @@ void StorageUILayer::updateResContent()
 				box->addChild(res);
 
 
-				Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/STXINGKA.TTF", 18);//Label::createWithSystemFont(str, "", 18);
+				Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/STXINGKA.TTF", 22);//Label::createWithSystemFont(str, "", 18);
 				reslbl->setAnchorPoint(Vec2(1, 0.5));
+				reslbl->enableOutline(Color4B(184, 144, 88, 255), 2);
 				reslbl->setPosition(Vec2(box->getContentSize().width - 10, 20));
 				box->addChild(reslbl);
 

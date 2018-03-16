@@ -96,7 +96,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/hp6.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvtext_0" ActionTag="-1241441050" Tag="53" IconVisible="False" LeftMargin="-207.5369" RightMargin="207.5369" TopMargin="24.3209" BottomMargin="-24.3209" FontSize="28" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="lvtext_0" ActionTag="-1241441050" Tag="53" IconVisible="False" LeftMargin="-207.5369" RightMargin="207.5369" TopMargin="24.3209" BottomMargin="-24.3209" FontSize="22" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-207.5369" Y="-24.3209" />
@@ -118,7 +118,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/hp5.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvtext_1" ActionTag="924542818" Tag="54" IconVisible="False" LeftMargin="-66.8044" RightMargin="66.8044" TopMargin="24.3209" BottomMargin="-24.3209" FontSize="28" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="lvtext_1" ActionTag="924542818" Tag="54" IconVisible="False" LeftMargin="-66.8044" RightMargin="66.8044" TopMargin="24.3209" BottomMargin="-24.3209" FontSize="22" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-66.8044" Y="-24.3209" />
@@ -140,7 +140,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/hp3.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvtext_2" ActionTag="-2103265923" Tag="55" IconVisible="False" LeftMargin="64.9945" RightMargin="-64.9945" TopMargin="24.3209" BottomMargin="-24.3209" FontSize="28" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="lvtext_2" ActionTag="-2103265923" Tag="55" IconVisible="False" LeftMargin="64.9945" RightMargin="-64.9945" TopMargin="24.3209" BottomMargin="-24.3209" FontSize="22" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="64.9945" Y="-24.3209" />
@@ -162,7 +162,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/hp4.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvtext_3" ActionTag="-1152606012" Tag="1608" IconVisible="False" LeftMargin="204.7244" RightMargin="-204.7244" TopMargin="24.3209" BottomMargin="-24.3209" FontSize="28" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="lvtext_3" ActionTag="-1152606012" Tag="1608" IconVisible="False" LeftMargin="204.7244" RightMargin="-204.7244" TopMargin="24.3209" BottomMargin="-24.3209" FontSize="22" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="204.7244" Y="-24.3209" />
@@ -184,7 +184,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/hp8-1.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvtext_4" ActionTag="-1433605578" Tag="1609" IconVisible="False" LeftMargin="-205.6769" RightMargin="205.6769" TopMargin="194.2647" BottomMargin="-194.2647" FontSize="28" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="lvtext_4" ActionTag="-1433605578" Tag="1609" IconVisible="False" LeftMargin="-205.6769" RightMargin="205.6769" TopMargin="194.2647" BottomMargin="-194.2647" FontSize="22" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-205.6769" Y="-194.2647" />
@@ -206,7 +206,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/hp8-2.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvtext_5" ActionTag="-205100185" Tag="1610" IconVisible="False" LeftMargin="-65.9469" RightMargin="65.9469" TopMargin="194.2647" BottomMargin="-194.2647" FontSize="28" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="lvtext_5" ActionTag="-205100185" Tag="1610" IconVisible="False" LeftMargin="-65.9469" RightMargin="65.9469" TopMargin="194.2647" BottomMargin="-194.2647" FontSize="22" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-65.9469" Y="-194.2647" />
@@ -228,7 +228,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/hp8-3.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvtext_6" ActionTag="1068408095" Tag="1611" IconVisible="False" LeftMargin="68.0070" RightMargin="-68.0070" TopMargin="194.2650" BottomMargin="-194.2650" FontSize="28" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="lvtext_6" ActionTag="1068408095" Tag="1611" IconVisible="False" LeftMargin="68.0070" RightMargin="-68.0070" TopMargin="194.2650" BottomMargin="-194.2650" FontSize="22" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="68.0070" Y="-194.2650" />
@@ -250,7 +250,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/hp9-4.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvtext_7" ActionTag="-221453065" Tag="1612" IconVisible="False" LeftMargin="203.4058" RightMargin="-203.4058" TopMargin="194.2652" BottomMargin="-194.2652" FontSize="28" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="lvtext_7" ActionTag="-221453065" Tag="1612" IconVisible="False" LeftMargin="203.4058" RightMargin="-203.4058" TopMargin="194.2652" BottomMargin="-194.2652" FontSize="22" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="203.4058" Y="-194.2652" />
@@ -262,7 +262,7 @@
             <OutlineColor A="255" R="133" G="90" B="39" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="heroselectbg" ActionTag="997868806" VisibleForFrame="False" Tag="69" IconVisible="False" LeftMargin="-279.5123" RightMargin="-277.4877" TopMargin="248.0893" BottomMargin="-620.0894" ctype="SpriteObjectData">
+          <AbstractNodeData Name="heroselectbg" ActionTag="997868806" VisibleForFrame="False" Tag="69" IconVisible="False" LeftMargin="-279.5123" RightMargin="-277.4877" TopMargin="248.0893" BottomMargin="-620.0893" ctype="SpriteObjectData">
             <Size X="557.0000" Y="372.0000" />
             <Children>
               <AbstractNodeData Name="zbht_69" ActionTag="-1918624104" Tag="1832" IconVisible="False" LeftMargin="167.9014" RightMargin="154.0986" TopMargin="-61.7220" BottomMargin="391.7220" ctype="SpriteObjectData">
@@ -288,7 +288,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="ScrollView" ActionTag="-723096159" Tag="74" IconVisible="False" LeftMargin="7.7787" RightMargin="9.2213" TopMargin="9.1339" BottomMargin="12.8662" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+              <AbstractNodeData Name="ScrollView" ActionTag="-723096159" Tag="74" IconVisible="False" LeftMargin="7.7787" RightMargin="9.2213" TopMargin="9.1338" BottomMargin="12.8662" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
                 <Size X="540.0000" Y="350.0000" />
                 <AnchorPoint />
                 <Position X="7.7787" Y="12.8662" />
@@ -333,6 +333,94 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/zst.png" Plist="uipacker.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="zbzbz_0" ActionTag="-1996046178" VisibleForFrame="False" Tag="77" IconVisible="False" LeftMargin="-167.3996" RightMargin="141.3996" TopMargin="-96.0964" BottomMargin="24.0964" ctype="SpriteObjectData">
+            <Size X="26.0000" Y="72.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-154.3996" Y="60.0964" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="zbzbz_1" ActionTag="875018315" VisibleForFrame="False" Tag="78" IconVisible="False" LeftMargin="-32.0897" RightMargin="6.0897" TopMargin="-96.0964" BottomMargin="24.0964" ctype="SpriteObjectData">
+            <Size X="26.0000" Y="72.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-19.0897" Y="60.0964" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="zbzbz_2" ActionTag="-1990086823" VisibleForFrame="False" Tag="79" IconVisible="False" LeftMargin="103.2202" RightMargin="-129.2202" TopMargin="-96.0964" BottomMargin="24.0964" ctype="SpriteObjectData">
+            <Size X="26.0000" Y="72.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="116.2202" Y="60.0964" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="zbzbz_3" ActionTag="-328323756" VisibleForFrame="False" Tag="80" IconVisible="False" LeftMargin="238.5301" RightMargin="-264.5301" TopMargin="-96.0964" BottomMargin="24.0964" ctype="SpriteObjectData">
+            <Size X="26.0000" Y="72.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="251.5301" Y="60.0964" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="zbzbz_4" ActionTag="-1168059021" VisibleForFrame="False" Tag="81" IconVisible="False" LeftMargin="-167.3996" RightMargin="141.3996" TopMargin="74.5649" BottomMargin="-146.5649" ctype="SpriteObjectData">
+            <Size X="26.0000" Y="72.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-154.3996" Y="-110.5649" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="zbzbz_5" ActionTag="1314018572" VisibleForFrame="False" Tag="82" IconVisible="False" LeftMargin="-32.0897" RightMargin="6.0897" TopMargin="74.5650" BottomMargin="-146.5650" ctype="SpriteObjectData">
+            <Size X="26.0000" Y="72.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-19.0897" Y="-110.5650" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="zbzbz_6" ActionTag="-1491165854" VisibleForFrame="False" Tag="83" IconVisible="False" LeftMargin="103.2202" RightMargin="-129.2202" TopMargin="74.5650" BottomMargin="-146.5650" ctype="SpriteObjectData">
+            <Size X="26.0000" Y="72.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="116.2202" Y="-110.5650" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="zbzbz_7" ActionTag="-1205134872" VisibleForFrame="False" Tag="84" IconVisible="False" LeftMargin="238.5300" RightMargin="-264.5300" TopMargin="74.5650" BottomMargin="-146.5650" ctype="SpriteObjectData">
+            <Size X="26.0000" Y="72.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="251.5300" Y="-110.5650" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

@@ -219,6 +219,8 @@
           <Image Name="blank.png" />
           <Image Name="bookshelf.png" />
           <Image Name="branchmissionbox.png" />
+          <Image Name="buildingbanner1.png" />
+          <Image Name="buildingbanner2.png" />
           <Image Name="buildingguide.png" />
           <Image Name="builditem.png" />
           <Image Name="buildprogressbar.png" />
@@ -334,11 +336,13 @@
           <Image Name="hurticon.png" />
           <Image Name="jddkaT.png" />
           <Image Name="jdjxz.png" />
+          <Image Name="jssxtsk.png" />
           <Image Name="loginrbtn.png" />
           <Image Name="loginritem0.png" />
           <Image Name="loginritem1.png" />
           <Image Name="loginritem2.png" />
           <Image Name="loginrtitle.png" />
+          <Image Name="lt.png" />
           <Image Name="m10-1.png" />
           <Image Name="m10-2.png" />
           <Image Name="m10-3.png" />
@@ -619,6 +623,9 @@
           <Image Name="sxst.png" />
           <Image Name="sxxb.png" />
           <Image Name="syssmalltie.png" />
+          <Image Name="t_livedaysicon.png" />
+          <Image Name="t_temperature.png" />
+          <Image Name="t_timeicon.png" />
           <Image Name="tgiftlefttimebox.png" />
           <Image Name="timegiftbtn.png" />
           <Image Name="timegiftpricebox.png" />
@@ -628,6 +635,10 @@
           <Image Name="top_r_season1.png" />
           <Image Name="top_r_season2.png" />
           <Image Name="top_r_season3.png" />
+          <Image Name="top_season0.png" />
+          <Image Name="top_season1.png" />
+          <Image Name="top_season2.png" />
+          <Image Name="top_season3.png" />
           <Image Name="top_weather0.png" />
           <Image Name="top_weather1.png" />
           <Image Name="top_weather2.png" />
@@ -641,25 +652,34 @@
           <Image Name="tophero2.png" />
           <Image Name="tophero3.png" />
           <Image Name="tophero4.png" />
+          <Image Name="tophunger.png" />
           <Image Name="tophungerbar.png" />
           <Image Name="tophungerbg.png" />
           <Image Name="tophungerred.png" />
+          <Image Name="topinnerinjury.png" />
           <Image Name="topinnerinjurybar.png" />
           <Image Name="topinnerinjurybg.png" />
           <Image Name="topinnerinjuryred.png" />
+          <Image Name="toplife.png" />
           <Image Name="toplifebar.png" />
           <Image Name="toplifebg.png" />
           <Image Name="toplifered.png" />
           <Image Name="toplivedaysicon.png" />
           <Image Name="toplvbox.png" />
+          <Image Name="topoutinjury.png" />
           <Image Name="topoutinjurybar.png" />
           <Image Name="topoutinjurybg.png" />
           <Image Name="topoutinjuryred.png" />
+          <Image Name="topspirit.png" />
           <Image Name="topspiritbar.png" />
           <Image Name="topspiritbg.png" />
           <Image Name="topspiritred.png" />
           <Image Name="toptemperature.png" />
           <Image Name="toptimeicon.png" />
+          <Image Name="topweather0.png" />
+          <Image Name="topweather1.png" />
+          <Image Name="topweather2.png" />
+          <Image Name="topweather3.png" />
           <Image Name="vip1.png" />
           <Image Name="vip2.png" />
           <Image Name="vip3.png" />
@@ -762,6 +782,7 @@
           <Image Name="x030.png" />
           <Image Name="xline.png" />
           <Image Name="zbht.png" />
+          <Image Name="zbzbz.png" />
           <Image Name="zjdk.png" />
           <Image Name="zjyy.png" />
           <Image Name="zjzdl.png" />
@@ -855,7 +876,7 @@
         <Project Name="shopLayer.csd" Type="Layer" />
         <Project Name="specialNpcLayer.csd" Type="Layer" />
         <Project Name="startLayer.csd" Type="Layer" />
-        <Project Name="sysSmallLayer.csd" Type="Layer" />
+        <Project Name="sysSmallLayer2.csd" Type="Layer" />
         <Project Name="tempStorageLayer.csd" Type="Scene" />
         <Project Name="timeGfitLayer.csd" Type="Layer" />
         <Project Name="topBarNode.csd" Type="Node" />
@@ -864,6 +885,7 @@
         <Project Name="vipGoodsNode.csd" Type="Node" />
         <Project Name="vipShopLayer.csd" Type="Layer" />
         <Project Name="winLayer.csd" Type="Layer" />
+        <Project Name="sysSmallLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

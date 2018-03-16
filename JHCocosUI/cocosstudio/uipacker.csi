@@ -645,6 +645,27 @@
       <FilePathData Path="ui/sxxb.png" />
       <FilePathData Path="ui/zst.png" />
       <FilePathData Path="ui/zbht.png" />
+      <FilePathData Path="ui/zbzbz.png" />
+      <FilePathData Path="ui/jssxtsk.png" />
+      <FilePathData Path="ui/tophunger.png" />
+      <FilePathData Path="ui/topinnerinjury.png" />
+      <FilePathData Path="ui/toplife.png" />
+      <FilePathData Path="ui/topoutinjury.png" />
+      <FilePathData Path="ui/topspirit.png" />
+      <FilePathData Path="ui/lt.png" />
+      <FilePathData Path="ui/t_livedaysicon.png" />
+      <FilePathData Path="ui/t_temperature.png" />
+      <FilePathData Path="ui/t_timeicon.png" />
+      <FilePathData Path="ui/top_season0.png" />
+      <FilePathData Path="ui/top_season1.png" />
+      <FilePathData Path="ui/top_season2.png" />
+      <FilePathData Path="ui/top_season3.png" />
+      <FilePathData Path="ui/topweather0.png" />
+      <FilePathData Path="ui/topweather1.png" />
+      <FilePathData Path="ui/topweather2.png" />
+      <FilePathData Path="ui/topweather3.png" />
+      <FilePathData Path="ui/buildingbanner1.png" />
+      <FilePathData Path="ui/buildingbanner2.png" />
     </ImageFiles>
     <MaxSize Width="4096" Height="4096" />
   </Content>

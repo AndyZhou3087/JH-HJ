@@ -75,7 +75,7 @@ bool BuildingUILayer::init(Building* build)
 
 	//建筑物每个操作 node
 	buildnode = CSLoader::createNode("actionNode.csb");
-	buildnode->setPosition(Vec2(360, 905));
+	buildnode->setPosition(Vec2(360, 960));
 	m_csbnode->addChild(buildnode);
 
 	//建造按钮
@@ -600,7 +600,7 @@ void BuildingUILayer::updataBuildRes()
 					str = StringUtils::format("ui/%d.png", restypecount / 1000);
 					Sprite* res = Sprite::createWithSpriteFrameName(str);
 					res->setPosition(Vec2(resitem->getContentSize().width / 2, resitem->getContentSize().height / 2));
-					res->setScale(0.38f);
+					//res->setScale(0.38f);
 					resitem->addChild(res);
 					std::string strid = StringUtils::format("%d", restypecount / 1000);
 					int hascount = StorageRoom::getCountById(strid);
@@ -654,7 +654,7 @@ void BuildingUILayer::updataActionRes()
 						str = StringUtils::format("ui/%d.png", restypecount / 1000);//资源图标
 						Sprite* res = Sprite::createWithSpriteFrameName(str);
 						res->setPosition(Vec2(resitem->getContentSize().width / 2, resitem->getContentSize().height / 2));
-						res->setScale(0.38f);
+						//res->setScale(0.38f);
 						resitem->addChild(res);
 
 						str = StringUtils::format("count%d", m);

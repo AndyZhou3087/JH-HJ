@@ -50,6 +50,9 @@ bool HeroProperNode::init()
 		str = StringUtils::format("lvtext_%d", i);
 		lvtext[i] = (cocos2d::ui::Text*)csbroot->getChildByName(str);
 
+		str = StringUtils::format("zbzbz_%d", i);
+		zbzbz[i] = (cocos2d::ui::Widget*)csbroot->getChildByName(str);
+
 		str = StringUtils::format("box_%d", i);
 		imgbtn[i] = (cocos2d::ui::ImageView*)csbroot->getChildByName(str);
 		imgbtn[i]->setTag(i);
@@ -89,7 +92,7 @@ bool HeroProperNode::init()
 	m_listener = EventListenerTouchOneByOne::create();
 	m_listener->onTouchBegan = [=](Touch *touch, Event *event)
 	{
-		return true;
+		return false;
 	};
 	m_listener->setSwallowTouches(false);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(m_listener, this);
@@ -299,17 +302,21 @@ void HeroProperNode::showSelectFrame(HeroAtrType index)
 	else
 		amountdesc->setVisible(false);
 
+	Color4B colorarr[6] = { Color4B(195, 159, 97, 255), Color4B(195, 159, 97, 255), Color4B(90, 180, 135, 255), Color4B(90, 161, 181, 255), Color4B(159, 81, 171, 255), Color4B(193, 128, 71, 255) };
 	for (int i = 0; i < tempsize; i++)
 	{
 		std::string boxstr = "ui/buildsmall.png";
 		PackageData tmpdata = map_carryData[index][i];
+		int colordex = 0;
 		if (tmpdata.type == WEAPON || tmpdata.type == PROTECT_EQU)
 		{
 			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_equips[tmpdata.strid].qu);
+			colordex = GlobalData::map_equips[tmpdata.strid].qu;
 		}
 		else if (tmpdata.type == N_GONG || tmpdata.type == W_GONG)
 		{
 			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_wgngs[tmpdata.strid].qu);
+			colordex = GlobalData::map_wgngs[tmpdata.strid].qu;
 		}
 
 		Sprite * box = Sprite::createWithSpriteFrameName(boxstr);
@@ -341,9 +348,10 @@ void HeroProperNode::showSelectFrame(HeroAtrType index)
 		box->addChild(res);
 
 		str = StringUtils::format("%s", GlobalData::map_allResource[rstrid].cname.c_str());
-		Label * namelbl = Label::createWithTTF(str, "fonts/STXINGKA.TTF", 24);
-		namelbl->setColor(Color3B(0, 0, 0));
-		namelbl->setPosition(Vec2(box->getContentSize().width / 2, - 10));
+		Label * namelbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 22);
+		namelbl->setColor(Color3B(255, 255, 255));
+		namelbl->enableOutline(colorarr[colordex], 3);
+		namelbl->setPosition(Vec2(box->getContentSize().width / 2, - 15));
 		box->addChild(namelbl);
 
 		Label * lvlbl = Label::createWithTTF("", "fonts/STXINGKA.TTF", 15);//Label::createWithSystemFont("", "", 15);
@@ -585,6 +593,7 @@ bool HeroProperNode::takeoff(HeroAtrType atrype)
 
 	g_hero->getAtrByType(atrype)->count = 0;
 	lvtext[lastclickindex]->setString("");
+	zbzbz[lastclickindex]->setVisible(false);
 
 	std::string str = "ui/buildsmall.png";
 
@@ -646,6 +655,7 @@ void HeroProperNode::updataProperpanel(int atrypeindex, PackageData pdata)
 		lvtext[atrypeindex]->setColor(Color3B(255, 255, 255));
 
 	lvtext[atrypeindex]->setString(CommonFuncs::gbk2utf(str.c_str()));
+	zbzbz[atrypeindex]->setVisible(true);
 
 	std::string strid = StringUtils::format("ui/%s.png", pdata.strid.c_str());
 	propeImages[atrypeindex]->loadTexture(strid, cocos2d::ui::TextureResType::PLIST);
@@ -734,6 +744,7 @@ void HeroProperNode::refreshGF(HeroAtrType atrype)
 	else if (atrype == H_NG)
 		index = 1;
 	lvtext[index]->setString("");
+	zbzbz[index]->setVisible(false);
 	std::string str = "ui/buildsmall.png";
 	imgbtn[index]->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
 	imgbtn[index]->setContentSize(Sprite::createWithSpriteFrameName(str)->getContentSize());

@@ -250,19 +250,19 @@ void TopBar::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType 
 		else if (cnode->getName().compare("reason") == 0)
 		{
 			int rv = g_nature->getReason();
-			std::string str = StringUtils::format("ui/top_r_season%d.png", rv);
+			std::string str = StringUtils::format("ui/top_season%d.png", rv);
 			sbox = SysSmallBox::create(BoxType::REASON, str, reasonname[rv], reasondesc1[rv], reasondesc[rv]);
 		}
 		else if (cnode->getName().compare("weather") == 0)
 		{
 			int rw = g_nature->getWeather();
-			std::string str = StringUtils::format("ui/top_weather%d.png", rw);
+			std::string str = StringUtils::format("ui/topweather%d.png", rw);
 			sbox = SysSmallBox::create(BoxType::WEATHER, str, weathername[rw], weatherdesc1[rw], weatherdesc[rw]);
 		}
 		else if (cnode->getName().compare("livedays") == 0)
 		{
 			std::string str = StringUtils::format("%d天", g_nature->getPastDays());
-			sbox = SysSmallBox::create(BoxType::LIVEDAYS, "ui/toplivedaysicon.png", str,"", liveDayDesc);
+			sbox = SysSmallBox::create(BoxType::LIVEDAYS, "ui/t_livedaysicon.png", str,"", liveDayDesc);
 
 		}
 		else if (cnode->getName().compare("time") == 0)
@@ -270,16 +270,16 @@ void TopBar::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType 
 			int hour = g_nature->getTime() / 60;
 			int minute = (int)g_nature->getTime() % 60;
 			std::string str = StringUtils::format("%02d:%02d", hour, minute);
-			sbox = SysSmallBox::create(BoxType::TIME, "ui/toptimeicon.png", str, "", timeDesc);
+			sbox = SysSmallBox::create(BoxType::TIME, "ui/t_timeicon.png", str, "", timeDesc);
 		}
 		else if (cnode->getName().compare("temperature") == 0)
 		{
 			std::string str = StringUtils::format("%d℃", g_nature->getTemperature());
-			sbox = SysSmallBox::create(BoxType::TEMPERATURE, "ui/toptemperature.png", str, "", tempeDesc);
+			sbox = SysSmallBox::create(BoxType::TEMPERATURE, "ui/t_temperature.png", str, "", tempeDesc);
 		}
 		else if (cnode->getName().compare("outinjury") == 0)
 		{
-			std::string str = "外伤";
+			std::string str = "【外伤】";
 			int index = 0;
 			int valuerange[] = { 90, 70, 40, 30, 20, 10, 0 };
 			for (int i = 0; i < 7; i++)
@@ -290,11 +290,11 @@ void TopBar::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType 
 					break;
 				}
 			}
-			sbox = SysSmallBox::create(BoxType::OUTERINJURY, "ui/topoutinjurybg.png", str, outInjurydesc1[index], outInjurydesc);
+			sbox = SysSmallBox::create(BoxType::OUTERINJURY, "ui/topoutinjury.png", str, outInjurydesc1[index], outInjurydesc);
 		}
 		else if (cnode->getName().compare("innerinjury") == 0)
 		{
-			std::string str = "内伤";
+			std::string str = "【内伤】";
 
 			int index = 0;
 			int valuerange[] = { 90, 70, 40, 30, 20, 10, 0 };
@@ -307,11 +307,11 @@ void TopBar::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType 
 				}
 			}
 
-			sbox = SysSmallBox::create(BoxType::INNERINJURY, "ui/topinnerinjurybg.png", str, innerInjurydesc1[index], innerInjurydesc);
+			sbox = SysSmallBox::create(BoxType::INNERINJURY, "ui/topinnerinjury.png", str, innerInjurydesc1[index], innerInjurydesc);
 		}
 		else if (cnode->getName().compare("hunger") == 0)
 		{
-			std::string str = "饱食度";
+			std::string str = "【饱食度】";
 
 			int index = 0;
 			int valuerange[] = { 90, 70, 40, 30, 20, 10, 0 };
@@ -324,11 +324,11 @@ void TopBar::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType 
 				}
 			}
 
-			sbox = SysSmallBox::create(BoxType::HUNGER, "ui/tophungerbg.png", str, hungerdesc1[index], hungerdesc);
+			sbox = SysSmallBox::create(BoxType::HUNGER, "ui/tophunger.png", str, hungerdesc1[index], hungerdesc);
 		}
 		else if (cnode->getName().compare("spirit") == 0)
 		{
-			std::string str = "精神";
+			std::string str = "【精神】";
 
 
 			int index = 0;
@@ -342,13 +342,13 @@ void TopBar::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType 
 				}
 			}
 
-			sbox = SysSmallBox::create(BoxType::SPIRIT, "ui/topspiritbg.png", str, spiritInjurydesc1[index], spiritInjurydesc);
+			sbox = SysSmallBox::create(BoxType::SPIRIT, "ui/topspirit.png", str, spiritInjurydesc1[index], spiritInjurydesc);
 		}
 		else if (cnode->getName().compare("life") == 0)
 		{
-			std::string str = "气血";
+			std::string str = "【气血】";
 			std::string livevaluestr = StringUtils::format("%d/%d", (int)g_hero->getLifeValue(), (int)g_hero->getMaxLifeValue());
-			sbox = SysSmallBox::create(BoxType::LIFE, "ui/toplifebg.png", str, livevaluestr, lifedesc);
+			sbox = SysSmallBox::create(BoxType::LIFE, "ui/toplife.png", str, livevaluestr, lifedesc);
 		}
 		if (sbox != NULL)
 			g_gameLayer->addChild(sbox, 4);

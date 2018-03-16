@@ -57,8 +57,8 @@ bool MixGFNode::init()
 	m_scrollView->setScrollBarEnabled(false);
 	m_scrollView->setBounceEnabled(true);
 
-	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)heroselectbg->getChildByName("okbtn");
-	okbtn->addTouchEventListener(CC_CALLBACK_2(MixGFNode::onOK, this));
+	/*cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)heroselectbg->getChildByName("okbtn");
+	okbtn->addTouchEventListener(CC_CALLBACK_2(MixGFNode::onOK, this));*/
 
 	cocos2d::ui::ImageView* suggestbtn = (cocos2d::ui::ImageView*)csbroot->getChildByName("heroatrmixhint");
 	suggestbtn->addTouchEventListener(CC_CALLBACK_2(MixGFNode::onSuggest, this));
@@ -91,7 +91,7 @@ bool MixGFNode::init()
 	m_listener = EventListenerTouchOneByOne::create();
 	m_listener->onTouchBegan = [=](Touch *touch, Event *event)
 	{
-		return true;
+		return false;
 	};
 	m_listener->setSwallowTouches(false);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(m_listener, this);
