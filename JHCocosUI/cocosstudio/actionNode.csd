@@ -9,27 +9,38 @@
           <AbstractNodeData Name="item" ActionTag="626764404" Tag="658" IconVisible="False" LeftMargin="-290.0000" RightMargin="-290.0000" TopMargin="-73.5000" BottomMargin="-73.5000" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="6" Scale9Height="6" ctype="ImageViewObjectData">
             <Size X="580.0000" Y="147.0000" />
             <Children>
-              <AbstractNodeData Name="box" ActionTag="998287900" Tag="63" IconVisible="False" LeftMargin="8.1944" RightMargin="458.8056" TopMargin="16.2931" BottomMargin="18.7069" ctype="SpriteObjectData">
-                <Size X="113.0000" Y="112.0000" />
+              <AbstractNodeData Name="dzthks_8" ActionTag="-1432232765" Tag="80" IconVisible="False" LeftMargin="414.4949" RightMargin="2.5051" TopMargin="-21.5399" BottomMargin="-0.4601" ctype="SpriteObjectData">
+                <Size X="163.0000" Y="169.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="495.9949" Y="84.0399" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="126" G="124" B="124" />
+                <PrePosition X="0.8552" Y="0.5717" />
+                <PreSize X="0.2810" Y="1.1497" />
+                <FileData Type="MarkedSubImage" Path="ui/dzthks.png" Plist="uipacker.plist" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="box" ActionTag="998287900" Tag="63" IconVisible="False" LeftMargin="2.6299" RightMargin="470.3701" TopMargin="25.7285" BottomMargin="31.2715" ctype="SpriteObjectData">
+                <Size X="107.0000" Y="90.0000" />
                 <Children>
-                  <AbstractNodeData Name="icon" ActionTag="-1569718917" Tag="81" IconVisible="False" LeftMargin="8.0000" RightMargin="-1.0000" TopMargin="-2.0000" BottomMargin="8.0000" TouchEnable="True" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="icon" ActionTag="-1569718917" Tag="81" IconVisible="False" LeftMargin="1.9999" RightMargin="-0.9999" TopMargin="-9.9998" BottomMargin="-6.0002" TouchEnable="True" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="106.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="61.0000" Y="61.0000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <Position X="54.9999" Y="46.9998" />
+                    <Scale ScaleX="0.6000" ScaleY="0.6000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5398" Y="0.5446" />
-                    <PreSize X="0.9381" Y="0.9464" />
+                    <PrePosition X="0.5140" Y="0.5222" />
+                    <PreSize X="0.9907" Y="1.1778" />
                     <FileData Type="MarkedSubImage" Path="ui/sbed.png" Plist="uipacker.plist" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="64.6944" Y="74.7069" />
+                <Position X="56.1299" Y="76.2715" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1115" Y="0.5082" />
-                <PreSize X="0.1948" Y="0.7619" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+                <PrePosition X="0.0968" Y="0.5189" />
+                <PreSize X="0.1845" Y="0.6122" />
+                <FileData Type="MarkedSubImage" Path="ui/dzqk.png" Plist="uipacker.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="res0" ActionTag="-1525791338" VisibleForFrame="False" Tag="65" IconVisible="False" LeftMargin="93.1943" RightMargin="373.8057" TopMargin="-6.5000" BottomMargin="41.5000" TouchEnable="True" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="85" Scale9Height="84" ctype="ImageViewObjectData">
@@ -236,6 +247,17 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/buildingbanner1.png" Plist="uipacker.plist" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="aline_1" ActionTag="-261229391" Tag="47" IconVisible="False" LeftMargin="-178.1491" RightMargin="175.1491" TopMargin="-62.0883" BottomMargin="-57.9117" ctype="SpriteObjectData">
+            <Size X="3.0000" Y="120.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-176.6491" Y="2.0883" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/aline.png" Plist="uipacker.plist" />
+            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

@@ -666,6 +666,14 @@
       <FilePathData Path="ui/topweather3.png" />
       <FilePathData Path="ui/buildingbanner1.png" />
       <FilePathData Path="ui/buildingbanner2.png" />
+      <FilePathData Path="ui/dzqk.png" />
+      <FilePathData Path="ui/dzthks.png" />
+      <FilePathData Path="ui/dztwpk.png" />
+      <FilePathData Path="ui/abg.png" />
+      <FilePathData Path="ui/aline.png" />
+      <FilePathData Path="ui/titlebgg.png" />
+      <FilePathData Path="ui/blbgg.png" />
+      <FilePathData Path="ui/black2.png" />
     </ImageFiles>
     <MaxSize Width="4096" Height="4096" />
   </Content>

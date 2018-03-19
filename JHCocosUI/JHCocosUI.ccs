@@ -200,6 +200,7 @@
           <Image Name="a018.png" />
           <Image Name="a019.png" />
           <Image Name="a020.png" />
+          <Image Name="abg.png" />
           <Image Name="achivebar.png" />
           <Image Name="achivebarbg.png" />
           <Image Name="achivetitle.png" />
@@ -207,6 +208,7 @@
           <Image Name="adddficon.png" />
           <Image Name="addfightcountbtn.png" />
           <Image Name="addlifeicon.png" />
+          <Image Name="aline.png" />
           <Image Name="arrowdown.png" />
           <Image Name="arrowup.png" />
           <Image Name="atrselected.png" />
@@ -216,7 +218,9 @@
           <Image Name="badfurnace.png" />
           <Image Name="bed.png" />
           <Image Name="bigbgclosebtn.png" />
+          <Image Name="black2.png" />
           <Image Name="blank.png" />
+          <Image Name="blbgg.png" />
           <Image Name="bookshelf.png" />
           <Image Name="branchmissionbox.png" />
           <Image Name="buildingbanner1.png" />
@@ -244,6 +248,9 @@
           <Image Name="disbtn.png" />
           <Image Name="disnpcbtn1.png" />
           <Image Name="dodge.png" />
+          <Image Name="dzqk.png" />
+          <Image Name="dzthks.png" />
+          <Image Name="dztwpk.png" />
           <Image Name="e001.png" />
           <Image Name="e002.png" />
           <Image Name="e003.png" />
@@ -631,6 +638,7 @@
           <Image Name="timegiftpricebox.png" />
           <Image Name="timegifttitle.png" />
           <Image Name="timeguide.png" />
+          <Image Name="titlebgg.png" />
           <Image Name="top_r_season0.png" />
           <Image Name="top_r_season1.png" />
           <Image Name="top_r_season2.png" />
@@ -792,6 +800,7 @@
         <Project Name="achiveNode.csd" Type="Node" />
         <Project Name="actionGetLayer.csd" Type="Layer" />
         <Project Name="actionNode.csd" Type="Node" />
+        <Project Name="actionNodeTop.csd" Type="Node" />
         <Project Name="activityLayer.csd" Type="Layer" />
         <Project Name="addChallengeCountLayer.csd" Type="Layer" />
         <Project Name="apprenticeLayer.csd" Type="Layer" />
@@ -876,6 +885,7 @@
         <Project Name="shopLayer.csd" Type="Layer" />
         <Project Name="specialNpcLayer.csd" Type="Layer" />
         <Project Name="startLayer.csd" Type="Layer" />
+        <Project Name="sysSmallLayer.csd" Type="Layer" />
         <Project Name="sysSmallLayer2.csd" Type="Layer" />
         <Project Name="tempStorageLayer.csd" Type="Scene" />
         <Project Name="timeGfitLayer.csd" Type="Layer" />
@@ -885,7 +895,6 @@
         <Project Name="vipGoodsNode.csd" Type="Node" />
         <Project Name="vipShopLayer.csd" Type="Layer" />
         <Project Name="winLayer.csd" Type="Layer" />
-        <Project Name="sysSmallLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -74,8 +74,8 @@ bool BuildingUILayer::init(Building* build)
 		scrollview->setVisible(false);
 
 	//建筑物每个操作 node
-	buildnode = CSLoader::createNode("actionNode.csb");
-	buildnode->setPosition(Vec2(360, 960));
+	buildnode = CSLoader::createNode("actionNodeTop.csb");
+	buildnode->setPosition(Vec2(360, 950));
 	m_csbnode->addChild(buildnode);
 
 	//建造按钮
@@ -107,9 +107,9 @@ bool BuildingUILayer::init(Building* build)
 	if (strcmp(m_build->data.name, "forgingtable") == 0)
 	{
 		Node* categoryBtnNode = m_csbnode->getChildByName("tagnode");
-		for (int i = 0; i < categoryBtnNode->getChildrenCount(); i++)
+		for (int i = 0; i < 4; i++)
 		{
-			std::string btnstr = StringUtils::format("btn%d", i);
+			std::string btnstr = StringUtils::format("btn%d", i + 1);
 			cocos2d::ui::Button* btn = (cocos2d::ui::Button*)categoryBtnNode->getChildByName(btnstr);
 			btn->setTag(i);
 			btn->addTouchEventListener(CC_CALLBACK_2(BuildingUILayer::onCategory, this));
@@ -188,7 +188,7 @@ void BuildingUILayer::setActionScrollViewUI()
 
 void BuildingUILayer::loadActionUi()
 {
-	int itemheight = 120;
+	int itemheight = 160;
 	int acsize = vec_buildAcitonData.size();
 
 	int scrollinnerheight = acsize * itemheight;
@@ -206,7 +206,7 @@ void BuildingUILayer::loadActionUi()
 	for (int i = 0; i < acsize; i++)
 	{
 		Node *acnode = CSLoader::createNode("actionNode.csb");
-		acnode->setPosition(Vec2(scrollview->getContentSize().width / 2 - 13, scrollinnerheight - itemheight / 2 - i * itemheight));
+		acnode->setPosition(Vec2(scrollview->getContentSize().width / 2, scrollinnerheight - itemheight / 2 - i * itemheight));
 
 		scrollview->addChild(acnode);
 		vec_actionItem.push_back(acnode);
@@ -263,12 +263,13 @@ void BuildingUILayer::delayLoadActionUi(float dt)
 
 	int size = GlobalData::map_buidACData[name].size();
 
-	for (int i = 0; i < size; i++)
+	loadActionUIByCategory(1);
+	/*for (int i = 0; i < size; i++)
 		vec_buildAcitonData.push_back(GlobalData::map_buidACData[name][i]);
 
-	loadActionUi();
+	loadActionUi();*/
 
-	m_loadlbl->removeFromParentAndCleanup(true);
+	//m_loadlbl->removeFromParentAndCleanup(true);
 	getServerTime();
 }
 
