@@ -16,10 +16,11 @@ public:
 	HeroProperNode();
 	~HeroProperNode();
 
-	virtual bool init();
+	virtual bool init(int index);
 	virtual void onEnterTransitionDidFinish();
 	virtual void onExit();
-	CREATE_FUNC(HeroProperNode);
+	//CREATE_FUNC(HeroProperNode);
+	static HeroProperNode* create(int content);
 
 	/****************************
 	刷新map_carryData 列表
@@ -53,6 +54,8 @@ private:
 	点击“确定”按钮回调
 	*****************************/
 	void onOK(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
+
+	void onOkClick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type);
 
 	/****************************
 	点击每个物品栏回调
@@ -142,6 +145,7 @@ private:
 	HeroAtrType m_select_atrype;
 	Node* m_select_itemnode;
 	PackageData* m_select_udata;
+	int m_index;
 };
 #endif
 

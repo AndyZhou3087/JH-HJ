@@ -36,6 +36,7 @@
           <Image Name="dicetitlebox.png" />
           <Image Name="dicewordbox.png" />
           <Image Name="dividetext.png" />
+          <Image Name="dmtdk.png" />
           <Image Name="exsercisedone.png" />
           <Image Name="factiondescinputbox.png" />
           <Image Name="friendask.jpg" />
@@ -61,6 +62,10 @@
           <Image Name="normalboxgb.png" />
           <Image Name="noticebg.png" />
           <Image Name="npctalkbg.png" />
+          <Image Name="payback.png" />
+          <Image Name="paybg.jpg" />
+          <Image Name="payqqbtn.png" />
+          <Image Name="paywxbtn.png" />
           <Image Name="prizebtn.png" />
           <Image Name="priztitle.png" />
           <Image Name="rafflerettitle.png" />
@@ -209,6 +214,7 @@
           <Image Name="addfightcountbtn.png" />
           <Image Name="addlifeicon.png" />
           <Image Name="aline.png" />
+          <Image Name="amdk.png" />
           <Image Name="arrowdown.png" />
           <Image Name="arrowup.png" />
           <Image Name="atrselected.png" />
@@ -247,6 +253,7 @@
           <Image Name="dice6.png" />
           <Image Name="disbtn.png" />
           <Image Name="disnpcbtn1.png" />
+          <Image Name="dmtdw.png" />
           <Image Name="dodge.png" />
           <Image Name="dzqk.png" />
           <Image Name="dzthks.png" />
@@ -838,6 +845,7 @@
         <Project Name="helpDescLayer.csd" Type="Layer" />
         <Project Name="helpLayer.csd" Type="Layer" />
         <Project Name="heroAttribNode.csd" Type="Node" />
+        <Project Name="heroAttribNode2.csd" Type="Node" />
         <Project Name="heroStateLayer.csd" Type="Layer" />
         <Project Name="hintLayer.csd" Type="Layer" />
         <Project Name="homeHillLayer.csd" Type="Layer" />
@@ -859,6 +867,7 @@
         <Project Name="npctalkLayer.csd" Type="Layer" />
         <Project Name="outDoorLayer.csd" Type="Layer" />
         <Project Name="pauseLayer.csd" Type="Layer" />
+        <Project Name="paySelectLayer.csd" Type="Layer" />
         <Project Name="playerChallengeResultLayer.csd" Type="Layer" />
         <Project Name="prizeLayer.csd" Type="Layer" />
         <Project Name="promotionLayer.csd" Type="Layer" />

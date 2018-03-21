@@ -30,7 +30,7 @@ bool OutDoor::init()
 	m_csbnode = CSLoader::createNode("outDoorLayer.csb");
 	this->addChild(m_csbnode, 0, "csbnode");
 
-	m_heroproper = HeroProperNode::create();
+	m_heroproper = HeroProperNode::create(2);
 	m_heroproper->setPosition(Vec2(360, 790));
 	m_csbnode->addChild(m_heroproper, 1, "HeroProperNode");
 
@@ -145,7 +145,7 @@ void OutDoor::updataMyPackageUI()
 			box,
 			CC_CALLBACK_1(OutDoor::onPackageItem, this));
 		boxItem->setTag(i);
-		boxItem->setPosition(Vec2(110 + countindex * 125, 530));
+		boxItem->setPosition(Vec2(150 + countindex * 140, 520));
 		Menu* menu = Menu::create();
 		menu->addChild(boxItem);
 		menu->setPosition(Vec2(0, 0));
@@ -157,9 +157,10 @@ void OutDoor::updataMyPackageUI()
 		res->setPosition(Vec2(box->getContentSize().width / 2, box->getContentSize().height / 2));
 		box->addChild(res);
 
-		Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/STXINGKA.TTF", 18);//Label::createWithSystemFont(str, "", 18);
+		Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/SIMHEI.TTF", 18);//Label::createWithSystemFont(str, "", 18);
+		reslbl->enableOutline(Color4B(142, 101, 54, 255), 2);
 		reslbl->setAnchorPoint(Vec2(1, 0.5));
-		reslbl->setPosition(Vec2(box->getContentSize().width - 10, 20));
+		reslbl->setPosition(Vec2(box->getContentSize().width - 20, 5));
 		box->addChild(reslbl);
 
 		std::string mymixgf = GlobalData::getMixGF();
@@ -190,7 +191,7 @@ void OutDoor::updataStorageUI()
 		typecount += StorageRoom::map_storageData[i].size();
 	}
 
-	int row = typecount % 5 == 0 ? typecount / 5 : (typecount / 5 + 1);
+	int row = typecount % 4 == 0 ? typecount / 4 : (typecount / 4 + 1);
 
 	int innerheight = scrollview->getInnerContainerSize().height;
 	if (lastSrollViewHeight < 0 || lastrows < row)
@@ -200,7 +201,7 @@ void OutDoor::updataStorageUI()
 		if (innerheight < contentheight)
 			innerheight = contentheight;
 		lastSrollViewHeight = innerheight;
-		scrollview->setInnerContainerSize(Size(650, innerheight));
+		scrollview->setInnerContainerSize(Size(570, innerheight));
 	}
 	lastrows = row;
 
@@ -251,7 +252,7 @@ void OutDoor::updataStorageUI()
 		boxItem->setTouchEnabled(true);
 		scrollview->addChild(boxItem, 0, name);
 		boxItem->setUserData(allStorageData[i]);
-		boxItem->setPosition(Vec2(boxItem->getContentSize().width / 2 + 10 + countindex % 5 * 125, innerheight - boxItem->getContentSize().height / 2 - countindex / 5 * 130));
+		boxItem->setPosition(Vec2(boxItem->getContentSize().width / 2 + 10 + countindex % 4 * 140, innerheight - boxItem->getContentSize().height / 2 - countindex / 4 * 130));
 
 		std::string str = StringUtils::format("ui/%s.png", allStorageData[i]->strid.c_str());
 
@@ -259,11 +260,12 @@ void OutDoor::updataStorageUI()
 		boxItem->addChild(res, 0, "res");
 		res->setPosition(Vec2(boxItem->getContentSize().width / 2, boxItem->getContentSize().height / 2));
 
-		Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/STXINGKA.TTF", 18);
+		Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/SIMHEI.TTF", 18);
+		reslbl->enableOutline(Color4B(142, 101, 54, 255), 2);
 		boxItem->addChild(reslbl, 0, "lbl");
 		reslbl->setAnchorPoint(Vec2(1, 0.5f));
 
-		reslbl->setPosition(Vec2(boxItem->getContentSize().width - 10, 20));
+		reslbl->setPosition(Vec2(boxItem->getContentSize().width - 20, 5));
 
 		std::string mymixgf = GlobalData::getMixGF();
 		MixGfData mdata = GlobalData::map_MixGfData[mymixgf];

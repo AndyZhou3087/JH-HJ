@@ -142,7 +142,7 @@ void MixSuggestLayer::onSilver(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touch
 			silverbtn->getChildByName("silver")->setVisible(false);
 			silverbtn->getChildByName("silvercount")->setVisible(false);
 			freetimelbl1->setVisible(false);
-			text->setPositionY(45);
+			text->setPositionY(25);
 			text->setFontSize(50);
 			text->setString(CommonFuncs::gbk2utf("免费"));
 			startime1 = severtime;
@@ -155,7 +155,7 @@ void MixSuggestLayer::onSilver(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touch
 			silverbtn->getChildByName("silver")->setVisible(true);
 			silverbtn->getChildByName("silvercount")->setVisible(true);
 			freetimelbl1->setVisible(true);
-			text->setPositionY(50);
+			text->setPositionY(32);
 			text->setFontSize(42);
 			text->setString(CommonFuncs::gbk2utf("刷新"));
 
@@ -184,7 +184,7 @@ void MixSuggestLayer::onGold(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 			goldbtn->getChildByName("gold")->setVisible(false);
 			goldbtn->getChildByName("goldcount")->setVisible(false);
 			freetimelbl2->setVisible(false);
-			text->setPositionY(45);
+			text->setPositionY(25);
 			text->setFontSize(50);
 			text->setString(CommonFuncs::gbk2utf("免费"));
 			startime2 = severtime;
@@ -197,7 +197,7 @@ void MixSuggestLayer::onGold(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 			goldbtn->getChildByName("gold")->setVisible(true);
 			goldbtn->getChildByName("goldcount")->setVisible(true);
 			freetimelbl2->setVisible(true);
-			text->setPositionY(50);
+			text->setPositionY(32);
 			text->setFontSize(42);
 			text->setString(CommonFuncs::gbk2utf("刷新"));
 
@@ -247,7 +247,7 @@ void MixSuggestLayer::onSuccess()
 		silverbtn->getChildByName("silver")->setVisible(false);
 		silverbtn->getChildByName("silvercount")->setVisible(false);
 		freetimelbl1->setVisible(false);
-		text->setPositionY(45);
+		text->setPositionY(25);
 		text->setFontSize(50);
 		text->setString(CommonFuncs::gbk2utf("免费"));
 	}
@@ -257,7 +257,7 @@ void MixSuggestLayer::onSuccess()
 		goldbtn->getChildByName("gold")->setVisible(false);
 		goldbtn->getChildByName("goldcount")->setVisible(false);
 		freetimelbl2->setVisible(false);
-		text->setPositionY(45);
+		text->setPositionY(25);
 		text->setFontSize(50);
 		text->setString(CommonFuncs::gbk2utf("免费"));
 	}
@@ -294,7 +294,7 @@ void MixSuggestLayer::updateServerTime(float dt)
 		silverbtn->getChildByName("silver")->setVisible(false);
 		silverbtn->getChildByName("silvercount")->setVisible(false);
 		freetimelbl1->setVisible(false);
-		text->setPositionY(45);
+		text->setPositionY(25);
 		text->setFontSize(50);
 		text->setString(CommonFuncs::gbk2utf("免费"));
 	}
@@ -304,7 +304,7 @@ void MixSuggestLayer::updateServerTime(float dt)
 		silverbtn->getChildByName("silver")->setVisible(true);
 		silverbtn->getChildByName("silvercount")->setVisible(true);
 		freetimelbl1->setVisible(true);
-		text->setPositionY(50);
+		text->setPositionY(32);
 		text->setFontSize(42);
 		text->setString(CommonFuncs::gbk2utf("刷新"));
 
@@ -319,7 +319,7 @@ void MixSuggestLayer::updateServerTime(float dt)
 		goldbtn->getChildByName("gold")->setVisible(false);
 		goldbtn->getChildByName("goldcount")->setVisible(false);
 		freetimelbl2->setVisible(false);
-		text->setPositionY(45);
+		text->setPositionY(25);
 		text->setFontSize(50);
 		text->setString(CommonFuncs::gbk2utf("免费"));
 	}
@@ -329,7 +329,7 @@ void MixSuggestLayer::updateServerTime(float dt)
 		goldbtn->getChildByName("gold")->setVisible(true);
 		goldbtn->getChildByName("goldcount")->setVisible(true);
 		freetimelbl2->setVisible(true);
-		text->setPositionY(50);
+		text->setPositionY(32);
 		text->setFontSize(42);
 
 		int lefttime = 86400 - (severtime - startime2);

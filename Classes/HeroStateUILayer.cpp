@@ -27,7 +27,7 @@ bool HeroStateUILayer::init()
 	m_csbnode = CSLoader::createNode("heroStateLayer.csb");
 	this->addChild(m_csbnode, 0, "csbnode");
 
-	heroAttribNode = HeroProperNode::create();
+	heroAttribNode = HeroProperNode::create(1);
 	heroAttribNode->setPosition(Vec2(360, 707));
 	m_csbnode->addChild(heroAttribNode, 0, "HeroProperNode");
 

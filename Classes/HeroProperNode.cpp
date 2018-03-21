@@ -38,9 +38,17 @@ HeroProperNode::~HeroProperNode()
 
 }
 
-bool HeroProperNode::init()
+bool HeroProperNode::init(int index)
 {
-	csbroot = CSLoader::createNode("heroAttribNode.csb");
+	m_index = index;
+	if (index == 1)
+	{
+		csbroot = CSLoader::createNode("heroAttribNode.csb");
+	}
+	else
+	{
+		csbroot = CSLoader::createNode("heroAttribNode2.csb");
+	}
 	this->addChild(csbroot);
 	for (int i = 0; i < 8; i++)
 	{
@@ -69,6 +77,11 @@ bool HeroProperNode::init()
 	}
 
 	heroselectbg = (cocos2d::ui::Widget*)csbroot->getChildByName("heroselectbg");
+	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)heroselectbg->getChildByName("okbtn");
+	if (okbtn!=NULL)
+	{
+		okbtn->addTouchEventListener(CC_CALLBACK_2(HeroProperNode::onOkClick, this));
+	}
 	//heroppoint = (cocos2d::ui::Widget*)csbroot->getChildByName("heroppoint");
 
 	m_scrollView = (cocos2d::ui::ScrollView*)heroselectbg->getChildByName("ScrollView");
@@ -104,6 +117,15 @@ void HeroProperNode::onEnterTransitionDidFinish()
 {
 	Node::onEnterTransitionDidFinish();
 	showNewerGuide(m_step);
+}
+
+void HeroProperNode::onOkClick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
+{
+	CommonFuncs::BtnAction(pSender, type);
+	if (type == ui::Widget::TouchEventType::ENDED)
+	{
+		heroselectbg->setVisible(false);
+	}
 }
 
 void HeroProperNode::onOK(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
@@ -289,6 +311,14 @@ void HeroProperNode::showSelectFrame(HeroAtrType index)
 	refreshCarryData();
 	int tempsize = map_carryData[index].size();
 	int itemheight = 165;
+	int stX = 80;
+	int jtX = 145;
+	if (m_index != 1)
+	{
+		stX = 50;
+		jtX = 120;
+		itemheight = 80;
+	}
 	int row = tempsize % 4 == 0 ? tempsize / 4 : (tempsize / 4 + 1);
 	int innerheight = itemheight * row;
 	int contentheight = m_scrollView->getContentSize().height;
@@ -333,7 +363,12 @@ void HeroProperNode::showSelectFrame(HeroAtrType index)
 			m_lastSelectedData = &map_carryData[index][i];
 		}
 
-		boxItem->setPosition(Vec2(80 + i % 4 * 145, innerheight - i / 4 * itemheight - itemheight / 2));
+		if (m_index != 1)
+		{
+			boxItem->setScale(0.7f);
+		}
+
+		boxItem->setPosition(Vec2(stX + i % 4 * jtX, innerheight - i / 4 * itemheight - itemheight / 2));
 		MyMenu* menu = MyMenu::create();
 		menu->setTouchlimit(m_scrollView);
 		menu->addChild(boxItem);
@@ -906,4 +941,19 @@ void HeroProperNode::showNewerGuide(int step)
 	}
 	if (step <= 11 && nodes.size() > 0)
 		g_gameLayer->showNewerGuide(step, nodes);
+}
+
+HeroProperNode* HeroProperNode::create(int content)
+{
+	HeroProperNode *pRet = new HeroProperNode();
+	if (pRet && pRet->init(content))
+	{
+		pRet->autorelease();
+	}
+	else
+	{
+		delete pRet;
+		pRet = NULL;
+	}
+	return pRet;
 }

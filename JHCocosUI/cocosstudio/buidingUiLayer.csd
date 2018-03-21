@@ -55,19 +55,19 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ScrollView" ActionTag="-842860513" Tag="52" IconVisible="False" LeftMargin="59.9996" RightMargin="60.0004" TopMargin="509.0010" BottomMargin="170.9990" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
-            <Size X="600.0000" Y="600.0000" />
+          <AbstractNodeData Name="ScrollView" ActionTag="-842860513" Tag="52" IconVisible="False" LeftMargin="59.9996" RightMargin="60.0004" TopMargin="424.0010" BottomMargin="170.9990" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+            <Size X="600.0000" Y="685.0000" />
             <AnchorPoint />
             <Position X="59.9996" Y="170.9990" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0833" Y="0.1336" />
-            <PreSize X="0.8333" Y="0.4688" />
+            <PreSize X="0.8333" Y="0.5352" />
             <SingleColor A="255" R="255" G="150" B="100" />
             <FirstColor A="255" R="255" G="150" B="100" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
-            <InnerNodeSize Width="680" Height="670" />
+            <InnerNodeSize Width="680" Height="800" />
           </AbstractNodeData>
           <AbstractNodeData Name="shopbtn" ActionTag="-480739763" VisibleForFrame="False" Tag="716" IconVisible="False" LeftMargin="554.2943" RightMargin="72.7057" TopMargin="1014.3675" BottomMargin="174.1325" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="49" Scale9Height="63" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="93.0000" Y="91.5000" />
@@ -191,13 +191,13 @@
               <AbstractNodeData Name="btn4" ActionTag="-1157711557" Tag="78" IconVisible="False" LeftMargin="154.7348" RightMargin="-310.7348" TopMargin="-39.0375" BottomMargin="-35.9625" TouchEnable="True" FontSize="35" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="126" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="156.0000" Y="75.0000" />
                 <Children>
-                  <AbstractNodeData Name="text" ActionTag="125216282" Tag="19" IconVisible="False" LeftMargin="56.7566" RightMargin="46.2434" TopMargin="24.5394" BottomMargin="19.4606" FontSize="25" LabelText="防具" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="text" ActionTag="125216282" Tag="19" IconVisible="False" LeftMargin="56.7566" RightMargin="46.2434" TopMargin="21.7652" BottomMargin="22.2348" FontSize="25" LabelText="防具" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="53.0000" Y="31.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="83.2566" Y="34.9606" />
+                    <Position X="83.2566" Y="37.7348" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="234" G="207" B="163" />
-                    <PrePosition X="0.5337" Y="0.4661" />
+                    <PrePosition X="0.5337" Y="0.5031" />
                     <PreSize X="0.3397" Y="0.4133" />
                     <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
                     <OutlineColor A="255" R="0" G="0" B="0" />
