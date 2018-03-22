@@ -80,42 +80,41 @@ bool ShopLayer::init()
 	}
 
 
-	m_rmbScrollview = (cocos2d::ui::ScrollView*)m_csbnode->getChildByName("rmbgoodsscroll");
+	/*m_rmbScrollview = (cocos2d::ui::ScrollView*)m_csbnode->getChildByName("rmbgoodsscroll");
 	m_rmbScrollview->setScrollBarEnabled(false);
-	m_rmbScrollview->setBounceEnabled(true);
+	m_rmbScrollview->setBounceEnabled(true);*/
 
-	int itemwidth = 130;
+	/*int itemwidth = 130;
 	int innerwidth = itemwidth * vec_rmbGoods.size();
 	int contentwidth = m_rmbScrollview->getContentSize().width;
 	if (innerwidth < contentwidth)
 		innerwidth = contentwidth;
-	m_rmbScrollview->setInnerContainerSize(Size(innerwidth, m_rmbScrollview->getContentSize().height));
-
-	for (unsigned int i = 0; i < vec_rmbGoods.size(); i++)
-	{
-		RmbGoodsItem* node = RmbGoodsItem::create(vec_rmbGoods[i]);
-		node->setScale(0.9f);
-		node->setTag(sizeof(heroprice) / sizeof(heroprice[0]) + i);
-		m_rmbScrollview->addChild(node);
-		node->setPosition(Vec2(itemwidth / 2  + 10 + i * itemwidth, m_rmbScrollview->getContentSize().height/2));
-	}
+	m_rmbScrollview->setInnerContainerSize(Size(innerwidth, m_rmbScrollview->getContentSize().height));*/
 
 	m_goldScrollview = (cocos2d::ui::ScrollView*)m_csbnode->getChildByName("goldgoodsscroll");
 	m_goldScrollview->setScrollBarEnabled(false);
 	m_goldScrollview->setBounceEnabled(true);
 
-	int itemheight = 205;
-	int innerheight = itemheight * vec_goldGoods.size();
+	int itemheight = 165;
+	int innerheight = itemheight * (vec_goldGoods.size() / 2 + vec_goldGoods.size() % 2 + vec_rmbGoods.size() % 2 + vec_rmbGoods.size() / 2);
 	int contentheight = m_goldScrollview->getContentSize().height;
 	if (innerheight < contentheight)
 		innerheight = contentheight;
 	m_goldScrollview->setInnerContainerSize(Size(m_goldScrollview->getContentSize().width, innerheight));
 
+	for (unsigned int i = 0; i < vec_rmbGoods.size(); i++)
+	{
+		RmbGoodsItem* node = RmbGoodsItem::create(vec_rmbGoods[i]);
+		node->setTag(sizeof(heroprice) / sizeof(heroprice[0]) + i);
+		m_goldScrollview->addChild(node);
+		node->setPosition(Vec2(142 + (i % 2) * 280, innerheight - itemheight / 2 - (i / 2) * 165));
+	}
+
 	for (unsigned int i = 0; i < vec_goldGoods.size(); i++)
 	{
 		GoldGoodsItem* node = GoldGoodsItem::create(vec_goldGoods[i]);
 		m_goldScrollview->addChild(node);
-		node->setPosition(Vec2(360, innerheight - itemheight / 2 - i * itemheight));
+		node->setPosition(Vec2(142 + (i % 2) * 280, innerheight - itemheight / 2 - (vec_rmbGoods.size() / 2 + vec_rmbGoods.size() % 2) * itemheight - (i / 2) * 165));
 	}
 
 	cocos2d::ui::Button* backbtn = (cocos2d::ui::Button*)m_csbnode->getChildByName("backbtn");
@@ -149,7 +148,7 @@ bool ShopLayer::init()
 		{
 			qq2->setVisible(false);
 			qq1->setPositionX(qq2->getPositionX());
-			m_csbnode->getChildByName("qqtext")->setPositionX(510);
+			m_csbnode->getChildByName("qqtext")->setPositionX(480);
 		}
 	}
 

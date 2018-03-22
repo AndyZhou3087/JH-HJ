@@ -26,8 +26,11 @@ bool RmbGoodsItem::init(GoodsData* gdata)
 	icon = (cocos2d::ui::ImageView*)bgnode->getChildByName("icon");
 	nameTxt = (cocos2d::ui::Text*)bgnode->getChildByName("name");
 
+	cocos2d::ui::Text* desc = (cocos2d::ui::Text*)bgnode->getChildByName("desc");
+	desc->setString(gdata->desc);
+
 	//图标
-	std::string imagepath = StringUtils::format("ui/%s.png", gdata->icon.c_str());
+	std::string imagepath = StringUtils::format("ui/%s.png", gdata->img.c_str());
 	icon->loadTexture(imagepath, cocos2d::ui::TextureResType::PLIST);
 	icon->setContentSize(Sprite::createWithSpriteFrameName(imagepath)->getContentSize());
 

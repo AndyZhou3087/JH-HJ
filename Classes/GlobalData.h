@@ -252,6 +252,7 @@ typedef struct
 {
 	std::string icon;//显示ICON
 	std::string name;//显示名称
+	std::string img;//商城显示图片名称
 	int price;//价格
 	int type;//类型1-元宝购买，0-人民币购买
 	std::string desc;//描述

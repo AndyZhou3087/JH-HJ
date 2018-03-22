@@ -31,16 +31,34 @@ bool GoldGoodsItem::init(GoodsData* gdata)
 
 	cocos2d::ui::ImageView* bgnode = (cocos2d::ui::ImageView*)csbnode->getChildByName("itembg");
 
-	if (gdata->icon.compare("gp5") == 0 || gdata->icon.compare("gp6") == 0)
-		bgnode->loadTexture("ui/specialshopitem.png", cocos2d::ui::Widget::TextureResType::PLIST);
+	/*if (gdata->icon.compare("gp5") == 0 || gdata->icon.compare("gp6") == 0)
+		bgnode->loadTexture("ui/specialshopitem.png", cocos2d::ui::Widget::TextureResType::PLIST);*/
+
+	cocos2d::ui::Button* buybtn = (cocos2d::ui::Button*)csbnode->getChildByName("buybtn");
+	buybtn->addTouchEventListener(CC_CALLBACK_2(GoldGoodsItem::onBuyBtn, this));
+	buybtn->setSwallowTouches(false);
 
 	icon = (cocos2d::ui::ImageView*)bgnode->getChildByName("icon");
 	nameTxt = (cocos2d::ui::Text*)bgnode->getChildByName("name");
 	descTxt = (cocos2d::ui::Text*)bgnode->getChildByName("desc");
-	priceTxt = (cocos2d::ui::Text*)bgnode->getChildByName("price");
+	priceTxt = (cocos2d::ui::Text*)buybtn->getChildByName("price");
+
+	cocos2d::ui::ImageView* tipimg = (cocos2d::ui::ImageView*)bgnode->getChildByName("tipimg");
+	if (gdata->name.compare(CommonFuncs::gbk2utf("江湖高手礼包")) == 0 || gdata->name.compare(CommonFuncs::gbk2utf("神功获得")) == 0 || gdata->name.compare(CommonFuncs::gbk2utf("华佗之手")) == 0)
+	{
+		tipimg->loadTexture("ui/sdtj.png", cocos2d::ui::TextureResType::PLIST);
+	}
+	else if (gdata->name.compare(CommonFuncs::gbk2utf("祝福宝石5个")) == 0 || gdata->name.compare(CommonFuncs::gbk2utf("混沌石10个")) == 0 || gdata->name.compare(CommonFuncs::gbk2utf("100银两")) == 0)
+	{
+		tipimg->loadTexture("ui/sdrx.png", cocos2d::ui::TextureResType::PLIST);
+	}
+	else
+	{
+		tipimg->setVisible(false);
+	}
 
 	//图标
-	std::string imagepath = StringUtils::format("ui/%s.png", gdata->icon.c_str());
+	std::string imagepath = StringUtils::format("ui/%s.png", gdata->img.c_str());
 	icon->loadTexture(imagepath, cocos2d::ui::TextureResType::PLIST);
 	icon->setContentSize(Sprite::createWithSpriteFrameName(imagepath)->getContentSize());
 
@@ -53,9 +71,6 @@ bool GoldGoodsItem::init(GoodsData* gdata)
 	bgbtn->addTouchEventListener(CC_CALLBACK_2(GoldGoodsItem::onItem, this));
 	bgbtn->setSwallowTouches(false);
 
-	cocos2d::ui::Button* buybtn = (cocos2d::ui::Button*)csbnode->getChildByName("buybtn");
-	buybtn->addTouchEventListener(CC_CALLBACK_2(GoldGoodsItem::onBuyBtn, this));
-	buybtn->setSwallowTouches(false);
 	return true;
 }
 

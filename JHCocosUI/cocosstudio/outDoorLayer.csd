@@ -17,7 +17,7 @@
             <FileData Type="Normal" Path="images/normalboxgb.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="backbtn" ActionTag="1633234440" Tag="78" IconVisible="False" LeftMargin="104.2673" RightMargin="472.7327" TopMargin="1154.1587" BottomMargin="76.8412" TouchEnable="True" FontSize="35" ButtonText="算了" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="backbtn" ActionTag="1633234440" Tag="78" IconVisible="False" LeftMargin="104.2673" RightMargin="472.7327" TopMargin="1154.1588" BottomMargin="76.8412" TouchEnable="True" FontSize="35" ButtonText="算了" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="143.0000" Y="49.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="175.7673" Y="101.3412" />
@@ -56,13 +56,23 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ScrollView" ActionTag="-1879716886" Tag="76" IconVisible="False" LeftMargin="76.9958" RightMargin="73.0042" TopMargin="879.0062" BottomMargin="150.9938" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
-            <Size X="570.0000" Y="250.0000" />
-            <AnchorPoint />
-            <Position X="76.9958" Y="150.9938" />
+          <AbstractNodeData Name="Image_1" ActionTag="1739948692" Tag="49" IconVisible="False" LeftMargin="72.6469" RightMargin="67.3531" TopMargin="876.8300" BottomMargin="143.1700" Scale9Enable="True" LeftEage="19" RightEage="19" TopEage="19" BottomEage="19" Scale9OriginX="19" Scale9OriginY="19" Scale9Width="22" Scale9Height="22" ctype="ImageViewObjectData">
+            <Size X="580.0000" Y="260.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="362.6469" Y="273.1700" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1069" Y="0.1180" />
+            <PrePosition X="0.5037" Y="0.2134" />
+            <PreSize X="0.8056" Y="0.2031" />
+            <FileData Type="MarkedSubImage" Path="ui/fegure_frame.png" Plist="uipacker.plist" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="ScrollView" ActionTag="-1879716886" Tag="76" IconVisible="False" LeftMargin="76.9958" RightMargin="73.0042" TopMargin="881.0062" BottomMargin="148.9938" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+            <Size X="570.0000" Y="250.0000" />
+            <AnchorPoint />
+            <Position X="76.9958" Y="148.9938" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1069" Y="0.1164" />
             <PreSize X="0.7917" Y="0.1953" />
             <SingleColor A="255" R="255" G="150" B="100" />
             <FirstColor A="255" R="255" G="150" B="100" />
@@ -70,7 +80,7 @@
             <ColorVector ScaleY="1.0000" />
             <InnerNodeSize Width="650" Height="280" />
           </AbstractNodeData>
-          <AbstractNodeData Name="outbtn" ActionTag="-1447123503" Tag="82" IconVisible="False" LeftMargin="493.7666" RightMargin="83.2334" TopMargin="1154.1587" BottomMargin="76.8412" TouchEnable="True" FontSize="35" ButtonText="出门" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="outbtn" ActionTag="-1447123503" Tag="82" IconVisible="False" LeftMargin="493.7666" RightMargin="83.2334" TopMargin="1154.1588" BottomMargin="76.8412" TouchEnable="True" FontSize="35" ButtonText="出门" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="143.0000" Y="49.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="565.2666" Y="101.3412" />
@@ -86,7 +96,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="text_1" ActionTag="-1353932288" Tag="178" IconVisible="False" LeftMargin="73.8023" RightMargin="537.1978" TopMargin="657.9395" BottomMargin="587.0605" FontSize="30" LabelText="【背包】" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="text_1" ActionTag="-1353932288" Tag="178" IconVisible="False" LeftMargin="73.8023" RightMargin="537.1977" TopMargin="657.9395" BottomMargin="587.0605" FontSize="30" LabelText="【背包】" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="109.0000" Y="35.0000" />
             <AnchorPoint ScaleX="0.5563" ScaleY="0.6217" />
             <Position X="134.4390" Y="608.8200" />

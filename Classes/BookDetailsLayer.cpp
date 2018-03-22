@@ -7,6 +7,7 @@
 #include "SoundManager.h"
 #include "Const.h"
 
+std::string traitarr[6] = { "", "ui/traitrm.png", "ui/traityl.png", "ui/traitsc.png", "ui/traitcs.png","ui/traitjs.png" };
 BookDetailsLayer::BookDetailsLayer()
 {
 
@@ -36,6 +37,7 @@ bool BookDetailsLayer::init(BookData* bookdata)
 	resname->setString(GlobalData::map_allResource[bookdata->strid].cname);
 
 	cocos2d::ui::Text* qulbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("qulbl");
+	cocos2d::ui::ImageView* traitimg = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("traitimg");
 
 	cocos2d::ui::ImageView* resbox = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("buildsmall");
 	std::string qustr = "ui/buildsmall.png";
@@ -51,13 +53,33 @@ bool BookDetailsLayer::init(BookData* bookdata)
 	if (qu > 0)
 	{
 		qustr = StringUtils::format("ui/qubox%d.png", qu);
-		qulbl->setVisible(true);
+		//qulbl->setVisible(true);
 		qulbl->setString(CommonFuncs::gbk2utf(qudesc[qu - 1].c_str()));
 		qulbl->setTextColor(qucolor[qu - 1]);
+		traitimg->setVisible(true);
+		traitimg->loadTexture(traitarr[qu], cocos2d::ui::TextureResType::PLIST);
 	}
 
 	resbox->loadTexture(qustr, cocos2d::ui::TextureResType::PLIST);
 	resbox->setContentSize(Sprite::createWithSpriteFrameName(qustr)->getContentSize());
+
+	cocos2d::ui::Text* titletext = (cocos2d::ui::Text*)m_csbnode->getChildByName("titletext");
+	if (bookdata->type == WEAPON)
+	{
+		titletext->setString(CommonFuncs::gbk2utf("武器"));
+	}
+	else if (bookdata->type == PROTECT_EQU)
+	{
+		titletext->setString(CommonFuncs::gbk2utf("防具"));
+	}
+	else if (bookdata->type == N_GONG)
+	{
+		titletext->setString(CommonFuncs::gbk2utf("内功"));
+	}
+	else if (bookdata->type == W_GONG)
+	{
+		titletext->setString(CommonFuncs::gbk2utf("武功"));
+	}
 
 	cocos2d::ui::ImageView* resimg = (cocos2d::ui::ImageView*)resbox->getChildByName("Image");
 
@@ -190,7 +212,7 @@ bool BookDetailsLayer::init(BookData* bookdata)
 	{
 		wherestr = wherestr.substr(0, wherestr.length() - 3);
 		wherestr.append(CommonFuncs::gbk2utf("有机会获得"));
-		Label* wherelbl = Label::createWithTTF(wherestr, "fonts/STXINGKA.TTF", 25);
+		Label* wherelbl = Label::createWithTTF(wherestr, "fonts/SIMHEI.TTF", 18);
 		wherelbl->setAnchorPoint(Vec2(0, 1));
 		wherelbl->setLineBreakWithoutSpace(true);
 		wherelbl->setMaxLineWidth(350);

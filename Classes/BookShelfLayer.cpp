@@ -42,16 +42,17 @@ bool BookShelfLayer::init()
 	Node* categoryBtnNode = m_csbnode->getChildByName("tagnode");
 	for (int i = 0; i < categoryBtnNode->getChildrenCount(); i++)
 	{
-		std::string btnstr = StringUtils::format("btn%d", i);
+		std::string btnstr = StringUtils::format("btn%d", i + 1);
 		cocos2d::ui::Button* btn = (cocos2d::ui::Button*)categoryBtnNode->getChildByName(btnstr);
-		btn->setTag(i);
+		btn->setTag(i+1);
 		btn->addTouchEventListener(CC_CALLBACK_2(BookShelfLayer::onCategory, this));
 		vec_categoryBtn.push_back(btn);
 	}
 	vec_categoryBtn[0]->setBright(false);
 
+
 	loadBookData();
-	updateContent(0);
+	updateContent(1);
 
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [=](Touch *touch, Event *event)
@@ -80,7 +81,7 @@ void BookShelfLayer::updateContent(int category)
 	int atype[] = { W_GONG, N_GONG, WEAPON, PROTECT_EQU };
 	int itemheight = 170;
 	std::vector<int> vec_type;
-	if (category == 0)
+	/*if (category == 0)
 	{
 		int size = sizeof(atype) / sizeof(atype[0]);
 		for (int i = 0; i < size; i++)
@@ -96,7 +97,7 @@ void BookShelfLayer::updateContent(int category)
 		}
 	}
 	else
-	{
+	{*/
 		vec_type.push_back(atype[category - 1]);
 		int count = getCountByType(atype[category - 1]);
 		if (count > 0)
@@ -104,7 +105,7 @@ void BookShelfLayer::updateContent(int category)
 			int row = count % 4 == 0 ? count / 4 : (count / 4 + 1);
 			typerow[0] = row;
 		}
-	}
+	//}
 
 	for (unsigned int i = 0; i < vec_type.size(); i++)
 	{
@@ -118,8 +119,18 @@ void BookShelfLayer::updateContent(int category)
 		innerheight = contentheight;
 	scrollview->setInnerContainerSize(Size(scrollview->getContentSize().width, innerheight));
 
-
-	if (category == 0)
+	for (int i = 0; i < 4; i++)
+	{
+		if (i + 1 == category)
+		{
+			vec_categoryBtn[i]->getChildByName("text")->setVisible(true);
+		}
+		else
+		{
+			vec_categoryBtn[i]->getChildByName("text")->setVisible(false);
+		}
+	}
+	/*if (category == 0)
 	{
 		for (unsigned int i = 0; i < vec_type.size(); i++)
 		{
@@ -146,7 +157,7 @@ void BookShelfLayer::updateContent(int category)
 				sepline->addChild(namelbl);
 			}
 		}
-	}
+	}*/
 	for (unsigned int i = 0; i < vec_type.size(); i++)
 	{
 		for (unsigned int m = 0; m < map_bookData[vec_type[i]].size(); m++)
@@ -179,7 +190,7 @@ void BookShelfLayer::updateContent(int category)
 				if (sepline != NULL)
 					boxItem->setPosition(Vec2(box->getContentSize().width / 2 + 50 + m % 4 * 140, sepline->getPositionY() - itemheight/2 - m / 4 * itemheight));
 				else
-					boxItem->setPosition(Vec2(box->getContentSize().width / 2 + 50 + m % 4 * 140, innerheight + 10 - itemheight/2 - m / 4 * itemheight));
+					boxItem->setPosition(Vec2(box->getContentSize().width / 2 + 30 + m % 4 * 140, innerheight + 10 - itemheight/2 - m / 4 * itemheight));
 
 				MyMenu* menu = MyMenu::create();
 				menu->addChild(boxItem);
@@ -193,8 +204,9 @@ void BookShelfLayer::updateContent(int category)
 				res->setPosition(Vec2(box->getContentSize().width / 2, box->getContentSize().height / 2));
 				box->addChild(res);
 
-				Label *namelbl = Label::createWithTTF(GlobalData::map_allResource[datastrid].cname, "fonts/STXINGKA.TTF", 23);
-				namelbl->setColor(Color3B(0, 0, 0));
+				Label *namelbl = Label::createWithTTF(GlobalData::map_allResource[datastrid].cname, "fonts/SIMHEI.TTF", 20);
+				namelbl->enableOutline(Color4B(86, 86, 86, 255), 2);
+				namelbl->setColor(Color3B(255, 255, 255));
 				namelbl->setPosition(Vec2(box->getContentSize().width / 2, -17));
 				box->addChild(namelbl);
 
@@ -309,7 +321,7 @@ void BookShelfLayer::onCategory(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touc
 
 		for (unsigned int i = 0; i < vec_categoryBtn.size(); i++)
 		{
-			if (node->getTag() != i)
+			if (node->getTag() != i + 1)
 			{
 				vec_categoryBtn[i]->setBright(true);
 			}

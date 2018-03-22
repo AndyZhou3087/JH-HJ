@@ -1288,6 +1288,9 @@ void GlobalData::loadShopData()
 
 		v = item["price"];
 		data.price = atoi(v.GetString());
+
+		v = item["img"];
+		data.img = v.GetString();
 		vec_goods.push_back(data);
 	}
 }
