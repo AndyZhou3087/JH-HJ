@@ -24,7 +24,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5089" />
             <PreSize X="0.8361" Y="0.2109" />
-            <FileData Type="Normal" Path="images/t001.jpg" Plist="" />
+            <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="title" ActionTag="1254659606" Tag="158" IconVisible="False" LeftMargin="82.0186" RightMargin="484.9814" TopMargin="437.2279" BottomMargin="787.7721" FontSize="50" LabelText="百花谷" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="153.0000" Y="55.0000" />

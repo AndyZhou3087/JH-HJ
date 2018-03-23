@@ -24,7 +24,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5089" />
             <PreSize X="0.8361" Y="0.2109" />
-            <FileData Type="Normal" Path="images/t001.jpg" Plist="" />
+            <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="title" ActionTag="2053406277" Tag="41" IconVisible="False" LeftMargin="82.0186" RightMargin="433.9814" TopMargin="438.7279" BottomMargin="789.2721" FontSize="50" LabelText="武道大会" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="204.0000" Y="52.0000" />

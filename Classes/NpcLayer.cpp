@@ -64,7 +64,7 @@ bool NpcLayer::init(std::string addrid)
 	title->setString(mdata.cname);
 
 	cocos2d::ui::ImageView* typeimg = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("typepng");
-	std::string str = StringUtils::format("images/%s.jpg", mdata.tpngname);
+	std::string str = StringUtils::format("images/%s.png", mdata.tpngname);
 	typeimg->loadTexture(str, cocos2d::ui::TextureResType::LOCAL);
 	
 	cocos2d::ui::Button* backbtn = (cocos2d::ui::Button*)m_csbnode->getChildByName("backbtn");

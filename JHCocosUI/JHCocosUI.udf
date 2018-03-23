@@ -28,12 +28,11 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="uipacker.csi" />
-          <FilePathData Path="shopLayer.csd" />
-          <FilePathData Path="rmbGoodsNode.csd" />
-          <FilePathData Path="goldGoodsNode.csd" />
+          <FilePathData Path="goWhereLayer.csd" />
+          <FilePathData Path="homeHillLayer.csd" />
+          <FilePathData Path="tempStorageLayer.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="rmbGoodsNode.csd" />
+        <ActiveDocument Path="tempStorageLayer.csd" />
       </Value>
     </Item>
   </Properties>

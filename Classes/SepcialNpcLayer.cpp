@@ -45,7 +45,7 @@ bool SepcialNpcLayer::init(std::string addrid)
 	fightbtn->addTouchEventListener(CC_CALLBACK_2(SepcialNpcLayer::onFight, this));
 
 	cocos2d::ui::ImageView* typeimg = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("typepng");
-	std::string str = StringUtils::format("images/%s.jpg", GlobalData::map_maps[addrid].tpngname);
+	std::string str = StringUtils::format("images/%s.png", GlobalData::map_maps[addrid].tpngname);
 	typeimg->loadTexture(str, cocos2d::ui::TextureResType::LOCAL);
 
 	auto listener = EventListenerTouchOneByOne::create();
