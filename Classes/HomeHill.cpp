@@ -34,7 +34,7 @@ bool HomeHill::init()
 	scrollView->setScrollBarEnabled(false);
 	scrollView->setBounceEnabled(true);
 
-	int itemheight = 140;
+	int itemheight = 160;
 	int innerheight = itemheight * ressize;
 	int contentheight = scrollView->getContentSize().height;
 	if (innerheight < contentheight)

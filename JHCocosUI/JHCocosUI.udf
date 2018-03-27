@@ -28,11 +28,10 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="goWhereLayer.csd" />
-          <FilePathData Path="homeHillLayer.csd" />
-          <FilePathData Path="tempStorageLayer.csd" />
+          <FilePathData Path="uipacker.csi" />
+          <FilePathData Path="mapLayer.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="tempStorageLayer.csd" />
+        <ActiveDocument Path="mapLayer.csd" />
       </Value>
     </Item>
   </Properties>

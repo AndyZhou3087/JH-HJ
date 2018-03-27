@@ -155,7 +155,7 @@ void TempStorageLayer::updataTempUI()
 {
 	int tempsize = tempResData.size();
 	int itemheight = 125;
-	int row = tempsize % 5 == 0 ? tempsize / 5 : (tempsize / 5 + 1);
+	int row = tempsize % 4 == 0 ? tempsize / 4 : (tempsize / 4 + 1);
 	int innerheight = itemheight * row;
 	int contentheight = m_scrollView->getContentSize().height;
 	if (innerheight < contentheight)
@@ -184,7 +184,7 @@ void TempStorageLayer::updataTempUI()
 			CC_CALLBACK_1(TempStorageLayer::onRewardItem, this));
 		boxItem->setTag(i);
 		boxItem->setUserData(&tempResData[i]);
-		boxItem->setPosition(Vec2(70 + i % 5 * 128, innerheight - i / 5 * itemheight - itemheight / 2));
+		boxItem->setPosition(Vec2(70 + i % 4 * 128, innerheight - i / 4 * itemheight - itemheight / 2));
 		MyMenu* menu = MyMenu::create();
 		menu->addChild(boxItem);
 		menu->setTouchlimit(m_scrollView);
@@ -198,8 +198,9 @@ void TempStorageLayer::updataTempUI()
 		box->addChild(res);
 
 		str = StringUtils::format("%d", tempResData[i].count);
-		Label * reslbl = Label::createWithTTF(str, "fonts/STXINGKA.TTF", 18);//Label::createWithSystemFont(str, "", 18);
-		reslbl->setPosition(Vec2(box->getContentSize().width - 25, 25));
+		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 20);//Label::createWithSystemFont(str, "", 18);
+		reslbl->setPosition(Vec2(box->getContentSize().width - 20, 5));
+		reslbl->enableOutline(Color4B(143, 85, 60, 255), 2);
 		box->addChild(reslbl);
 	}
 }
@@ -344,7 +345,7 @@ void TempStorageLayer::updataMyPackageUI()
 			box,
 			CC_CALLBACK_1(TempStorageLayer::onPackageItem, this));
 		boxItem->setTag(i);
-		boxItem->setPosition(Vec2(110 + i * 125, 225));
+		boxItem->setPosition(Vec2(150 + i * 130, 400));
 		Menu* menu = Menu::create();
 		menu->addChild(boxItem);
 		menu->setPosition(Vec2(0, 0));
@@ -356,8 +357,9 @@ void TempStorageLayer::updataMyPackageUI()
 		res->setPosition(Vec2(box->getContentSize().width / 2, box->getContentSize().height / 2));
 		box->addChild(res);
 		str = StringUtils::format("%d", MyPackage::vec_packages[i].count);
-		Label * reslbl = Label::createWithTTF(str, "fonts/STXINGKA.TTF", 18);//Label::createWithSystemFont(str, "", 18);
-		reslbl->setPosition(Vec2(box->getContentSize().width - 25, 25));
+		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 20);//Label::createWithSystemFont(str, "", 18);
+		reslbl->setPosition(Vec2(box->getContentSize().width - 20, 5));
+		reslbl->enableOutline(Color4B(143, 85, 60, 255), 2);
 		box->addChild(reslbl);
 	}
 }

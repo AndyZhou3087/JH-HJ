@@ -355,6 +355,7 @@
           <Image Name="hsljrewarddescbtn.png" />
           <Image Name="hsljtitle.png" />
           <Image Name="hurticon.png" />
+          <Image Name="iconbg.png" />
           <Image Name="jddkaT.png" />
           <Image Name="jdjxz.png" />
           <Image Name="jssxtsk.png" />
@@ -648,7 +649,6 @@
           <Image Name="slock.png" />
           <Image Name="smallshopbtn.png" />
           <Image Name="smedicinekit.png" />
-          <Image Name="specialshopitem.png" />
           <Image Name="ssepline.jpg" />
           <Image Name="sshopbtn.png" />
           <Image Name="sstartbtn.png" />

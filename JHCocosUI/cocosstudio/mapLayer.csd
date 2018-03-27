@@ -31,8 +31,8 @@
       <ObjectData Name="Layer" Tag="68" ctype="GameLayerObjectData">
         <Size X="720.0000" Y="1280.0000" />
         <Children>
-          <AbstractNodeData Name="ScrollView" ActionTag="-2135080053" Tag="69" IconVisible="False" TopMargin="388.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical_Horizontal" ctype="ScrollViewObjectData">
-            <Size X="720.0000" Y="892.0000" />
+          <AbstractNodeData Name="ScrollView" ActionTag="-2135080053" Tag="69" IconVisible="False" TopMargin="280.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical_Horizontal" ctype="ScrollViewObjectData">
+            <Size X="720.0000" Y="1000.0000" />
             <Children>
               <AbstractNodeData Name="mapbg" ActionTag="-1571269876" Tag="70" IconVisible="False" LeftMargin="-1.5475" RightMargin="1.5475" TopMargin="-1.5476" BottomMargin="1.5476" ctype="SpriteObjectData">
                 <Size X="2000.0000" Y="1396.0000" />
@@ -799,7 +799,7 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
-            <PreSize X="1.0000" Y="0.6969" />
+            <PreSize X="1.0000" Y="0.7813" />
             <SingleColor A="255" R="255" G="150" B="100" />
             <FirstColor A="255" R="255" G="150" B="100" />
             <EndColor A="255" R="255" G="255" B="255" />
@@ -924,26 +924,26 @@
                 <FileData Type="MarkedSubImage" Path="ui/mapmission1_0.png" Plist="uipacker.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="text" ActionTag="-178986496" Tag="111" IconVisible="False" LeftMargin="19.5144" RightMargin="19.4856" TopMargin="13.5497" BottomMargin="59.4503" FontSize="28" LabelText="任务倒计时" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="141.0000" Y="29.0000" />
+              <AbstractNodeData Name="text" ActionTag="-178986496" Tag="111" IconVisible="False" LeftMargin="19.5144" RightMargin="19.4856" TopMargin="12.0497" BottomMargin="57.9503" FontSize="28" LabelText="任务倒计时" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="141.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="90.0144" Y="73.9503" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5001" Y="0.7250" />
-                <PreSize X="0.7833" Y="0.2843" />
+                <PreSize X="0.7833" Y="0.3137" />
                 <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="timetext" ActionTag="-1428191315" Tag="124" IconVisible="False" LeftMargin="74.0825" RightMargin="23.9175" TopMargin="56.0643" BottomMargin="14.9357" FontSize="30" LabelText="30:00" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="82.0000" Y="31.0000" />
+              <AbstractNodeData Name="timetext" ActionTag="-1428191315" Tag="124" IconVisible="False" LeftMargin="82.0825" RightMargin="23.9175" TopMargin="54.0643" BottomMargin="12.9357" FontSize="30" LabelText="30:00" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="74.0000" Y="35.0000" />
                 <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
                 <Position X="156.0825" Y="30.4357" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8671" Y="0.2984" />
-                <PreSize X="0.4556" Y="0.3039" />
+                <PreSize X="0.4111" Y="0.3431" />
                 <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

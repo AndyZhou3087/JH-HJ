@@ -135,12 +135,12 @@ bool GameScene::init()
 	//滚动文字的背景
 	scrollbg = Sprite::create("images/topeventwordbox.png");
 	scrollbg->setPosition(Vec2(visibleSize.width / 2, 920));
-	this->addChild(scrollbg, 4);
+	this->addChild(scrollbg, 2);
 
 	//滚动文字
 	g_uiScroll = UIScroll::create(620.0F, 126.0f);
 	g_uiScroll->setPosition(Vec2(visibleSize.width / 2 + 25, 905));
-	addChild(g_uiScroll, 4);
+	addChild(g_uiScroll, 2);
 
 	//角色目前在哪个地点，第一次进入家
 	std::string addrstr = GameDataSave::getInstance()->getHeroAddr();
@@ -158,7 +158,7 @@ bool GameScene::init()
 	//任务属性和天气
 	topBar = TopBar::create();
 	topBar->setPosition(Vec2(visibleSize.width/2, 1085));
-	addChild(topBar, 3, "topbar");
+	addChild(topBar, 1, "topbar");
 	
 	this->schedule(schedule_selector(GameScene::updata), 1.0f);
 	this->schedule(schedule_selector(GameScene::timerSaveData), 5.0f);
