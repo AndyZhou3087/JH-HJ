@@ -7,7 +7,7 @@
         <Size X="720.0000" Y="1280.0000" />
         <Children>
           <AbstractNodeData Name="room" ActionTag="-898219645" Tag="39" IconVisible="False" TopMargin="104.0000" ctype="SpriteObjectData">
-            <Size X="720.0000" Y="1176.0000" />
+            <Size X="720.0000" Y="982.0000" />
             <AnchorPoint />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -28,14 +28,14 @@
             <FileData Type="MarkedSubImage" Path="ui/badfurnace.png" Plist="uipacker.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="badbookshelf" ActionTag="854579907" Tag="71" IconVisible="False" LeftMargin="610.5000" RightMargin="0.5000" TopMargin="388.5000" BottomMargin="610.5000" ctype="SpriteObjectData">
-            <Size X="109.0000" Y="281.0000" />
+          <AbstractNodeData Name="badbookshelf" ActionTag="854579907" Tag="71" IconVisible="False" LeftMargin="610.5000" RightMargin="0.5000" TopMargin="355.5000" BottomMargin="577.5000" ctype="SpriteObjectData">
+            <Size X="109.0000" Y="347.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="665.0000" Y="751.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.9236" Y="0.5867" />
-            <PreSize X="0.1514" Y="0.2195" />
+            <PreSize X="0.1514" Y="0.2711" />
             <FileData Type="MarkedSubImage" Path="ui/badbookshelf.png" Plist="uipacker.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
