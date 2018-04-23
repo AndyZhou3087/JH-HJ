@@ -34,7 +34,7 @@
             <Position X="0.0007" Y="195.0019" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0000" Y="0.1523" />
+            <PrePosition Y="0.1523" />
             <PreSize X="1.0000" Y="0.5352" />
             <SingleColor A="255" R="255" G="150" B="100" />
             <FirstColor A="255" R="255" G="150" B="100" />

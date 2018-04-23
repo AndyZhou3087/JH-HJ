@@ -52,7 +52,7 @@ bool HomeLayer::init()
 		CC_CALLBACK_1(HomeLayer::onclick, this));
 	bedItem->setName("bed");
 	bedItem->setTag(0);
-	bedItem->setPosition(Vec2(160, 700));
+	bedItem->setPosition(Vec2(254, 81));
 	bedItem->setOpacity(0);
 	Menu* menu = Menu::create();
 	menu->addChild(bedItem);
@@ -69,7 +69,7 @@ bool HomeLayer::init()
 	cooktableItem->setName("cooktable");
 	cooktableItem->setTag(1);
 	cooktableItem->setOpacity(0);
-	cooktableItem->setPosition(Vec2(580, 786));
+	cooktableItem->setPosition(Vec2(395, 679));
 	menu->addChild(cooktableItem);
 
 	Building* forgingtable = Forgingtable::create();
@@ -82,7 +82,7 @@ bool HomeLayer::init()
 	forgingtableItem->setName("forgingtable");
 	forgingtableItem->setOpacity(0);
 	forgingtableItem->setTag(2);
-	forgingtableItem->setPosition(Vec2(195, 410));
+	forgingtableItem->setPosition(Vec2(553, 651));
 	menu->addChild(forgingtableItem);
 
 	Building* winemaker = WineMaker::create();
@@ -95,7 +95,7 @@ bool HomeLayer::init()
 	winemakerItem->setName("winemaker");
 	winemakerItem->setOpacity(0);
 	winemakerItem->setTag(3);
-	winemakerItem->setPosition(Vec2(445, 800));
+	winemakerItem->setPosition(Vec2(57, 583));
 	menu->addChild(winemakerItem);
 
 	Building* medicinekit = MedicineKit::create();
@@ -108,7 +108,7 @@ bool HomeLayer::init()
 	medicinekitItem->setName("medicinekit");
 	medicinekitItem->setOpacity(0);
 	medicinekitItem->setTag(4);
-	medicinekitItem->setPosition(Vec2(310, 650));
+	medicinekitItem->setPosition(Vec2(628, 142));
 	menu->addChild(medicinekitItem);
 
 
@@ -122,7 +122,7 @@ bool HomeLayer::init()
 	furnaceItem->setName("furnace");
 	furnaceItem->setTag(5);
 	furnaceItem->setOpacity(0);
-	furnaceItem->setPosition(Vec2(125, 613));
+	furnaceItem->setPosition(Vec2(444, 199));
 	menu->addChild(furnaceItem);
 
 	Building* winetable = WineTable::create();
@@ -135,7 +135,7 @@ bool HomeLayer::init()
 	winetableItem->setName("winetable");
 	winetableItem->setOpacity(0);
 	winetableItem->setTag(6);
-	winetableItem->setPosition(Vec2(540, 470));
+	winetableItem->setPosition(Vec2(276, 417));
 	menu->addChild(winetableItem);
 
 	Building* exersiceroom = ExerciseRoom::create();
@@ -148,7 +148,7 @@ bool HomeLayer::init()
 	exersiceroomItem->setName("exersiceroom");
 	exersiceroomItem->setOpacity(0);
 	exersiceroomItem->setTag(7);
-	exersiceroomItem->setPosition(Vec2(257, 93));
+	exersiceroomItem->setPosition(Vec2(577, 368));
 	menu->addChild(exersiceroomItem);
 
 	Building* bookshelf = BookShelf::create();
@@ -161,7 +161,7 @@ bool HomeLayer::init()
 	bookshelfItem->setName("bookshelf");
 	bookshelfItem->setOpacity(0);
 	bookshelfItem->setTag(8);
-	bookshelfItem->setPosition(Vec2(665, 751));
+	bookshelfItem->setPosition(Vec2(674, 750));
 	menu->addChild(bookshelfItem);
 
 	loadJsonData();
@@ -172,7 +172,7 @@ bool HomeLayer::init()
 		m_storageroom,
 		m_storageroom,
 		CC_CALLBACK_1(HomeLayer::onStorageRoom, this));
-	storageroomItem->setPosition(Vec2(105, 188));
+	storageroomItem->setPosition(Vec2(62, 354));
 	menu->addChild(storageroomItem);
 
 	m_fence = Fence::create();
@@ -181,7 +181,7 @@ bool HomeLayer::init()
 		m_fence,
 		m_fence,
 		CC_CALLBACK_1(HomeLayer::onFence, this));
-	fenceItem->setPosition(Vec2(630, 48));
+	fenceItem->setPosition(Vec2(165, 648));
 	menu->addChild(fenceItem);
 
 	updateBuilding();

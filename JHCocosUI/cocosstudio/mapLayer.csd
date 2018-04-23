@@ -806,13 +806,13 @@
             <ColorVector ScaleY="1.0000" />
             <InnerNodeSize Width="2000" Height="1396" />
           </AbstractNodeData>
-          <AbstractNodeData Name="shopbtn" ActionTag="3558553" Tag="161" IconVisible="False" LeftMargin="-0.0880" RightMargin="602.0880" TopMargin="1154.6934" BottomMargin="-0.6934" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="88" Scale9Height="104" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="shopbtn" ActionTag="3558553" Tag="161" IconVisible="False" LeftMargin="-0.0880" RightMargin="602.0880" TopMargin="1152.6934" BottomMargin="1.3066" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="96" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="118.0000" Y="126.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="58.9120" Y="62.3066" />
+            <Position X="58.9120" Y="64.3066" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0818" Y="0.0487" />
+            <PrePosition X="0.0818" Y="0.0502" />
             <PreSize X="0.1639" Y="0.0984" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
@@ -838,27 +838,27 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="timegiftbtn" ActionTag="-993240752" Tag="78" IconVisible="False" LeftMargin="1.0009" RightMargin="604.9991" TopMargin="557.5891" BottomMargin="608.4109" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="84" Scale9Height="92" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="timegiftbtn" ActionTag="-993240752" Tag="78" IconVisible="False" LeftMargin="1.0009" RightMargin="604.9991" TopMargin="557.5891" BottomMargin="608.4109" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="96" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="114.0000" Y="114.0000" />
             <Children>
-              <AbstractNodeData Name="tgiftlefttimebox" ActionTag="-797934312" Tag="79" IconVisible="False" LeftMargin="2.0003" RightMargin="15.9997" TopMargin="99.7489" BottomMargin="-17.7489" ctype="SpriteObjectData">
+              <AbstractNodeData Name="tgiftlefttimebox" ActionTag="-797934312" Tag="79" IconVisible="False" LeftMargin="2.0003" RightMargin="15.9997" TopMargin="108.7493" BottomMargin="-26.7493" ctype="SpriteObjectData">
                 <Size X="96.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="50.0003" Y="-1.7489" />
+                <Position X="50.0003" Y="-10.7493" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4386" Y="-0.0153" />
+                <PrePosition X="0.4386" Y="-0.0943" />
                 <PreSize X="0.8421" Y="0.2807" />
                 <FileData Type="MarkedSubImage" Path="ui/tgiftlefttimebox.png" Plist="uipacker.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="lefttimelbl" ActionTag="-2053231312" Tag="81" IconVisible="False" LeftMargin="8.5004" RightMargin="24.4996" TopMargin="107.0967" BottomMargin="-10.0967" FontSize="17" LabelText="992:50:60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="lefttimelbl" ActionTag="-2053231312" Tag="81" IconVisible="False" LeftMargin="8.5004" RightMargin="24.4996" TopMargin="116.0972" BottomMargin="-19.0972" FontSize="17" LabelText="992:50:60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="81.0000" Y="17.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="49.0004" Y="-1.5967" />
+                <Position X="49.0004" Y="-10.5972" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4298" Y="-0.0140" />
+                <PrePosition X="0.4298" Y="-0.0930" />
                 <PreSize X="0.7105" Y="0.1491" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

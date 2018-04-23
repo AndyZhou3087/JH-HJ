@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="sysSmallLayer_0" Type="Layer" ID="b21dc9ab-aa1e-4e2f-bbed-a9bc16c673f4" Version="3.10.0.0" />
+  <PropertyGroup Name="sysSmallLayer" Type="Layer" ID="b21dc9ab-aa1e-4e2f-bbed-a9bc16c673f4" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
