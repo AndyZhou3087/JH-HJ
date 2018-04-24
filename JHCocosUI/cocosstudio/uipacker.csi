@@ -720,6 +720,13 @@
       <FilePathData Path="ui/shopbtn1.png" />
       <FilePathData Path="ui/shopbtn2.png" />
       <FilePathData Path="ui/iconbg.png" />
+      <FilePathData Path="ui/npcnodefr.png" />
+      <FilePathData Path="ui/npcbanner.png" />
+      <FilePathData Path="ui/vs2.png" />
+      <FilePathData Path="ui/win.png" />
+      <FilePathData Path="ui/winbox.png" />
+      <FilePathData Path="ui/winbtn.png" />
+      <FilePathData Path="ui/winframe.png" />
     </ImageFiles>
     <MaxSize Width="4096" Height="4096" />
   </Content>

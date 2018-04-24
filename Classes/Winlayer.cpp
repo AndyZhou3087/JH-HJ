@@ -61,6 +61,42 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 	cocos2d::ui::Text* addrname = (cocos2d::ui::Text*)csbnode->getChildByName("title");
 	addrname->setString(GlobalData::map_maps[m_addrid].cname);
 
+	cocos2d::ui::ImageView* heroimg = (cocos2d::ui::ImageView*)csbnode->getChildByName("heroimg");
+	std::string heroidstr = StringUtils::format("ui/tophero%d.png", g_hero->getHeadID());
+	heroimg->loadTexture(heroidstr, cocos2d::ui::TextureResType::PLIST);
+
+	cocos2d::ui::Text* m_heroname = (cocos2d::ui::Text*)csbnode->getChildByName("heroname");
+	std::string str = heroname[g_hero->getHeadID() - 1];
+	m_heroname->setString(str);
+
+	loadFightCount();
+	cocos2d::ui::TextBMFont* herobigatk = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("herobigatk");
+	herobigatk->setString(StringUtils::format("%d", bFightCount));
+	cocos2d::ui::TextBMFont* heroatk = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("heroatk");
+	heroatk->setString(StringUtils::format("%d", sFightCount));
+	if (g_hero->getTotalAtck() < 10)
+	{
+		heroatk->setVisible(false);
+	}
+
+	cocos2d::ui::ImageView* npcimg = (cocos2d::ui::ImageView*)csbnode->getChildByName("npcimg");
+	std::string npcstr = StringUtils::format("ui/%s.png", m_npcid.c_str());
+	npcimg->loadTexture(npcstr, cocos2d::ui::TextureResType::PLIST);
+
+	cocos2d::ui::Text* npcname = (cocos2d::ui::Text*)csbnode->getChildByName("npcname");
+	npcname->setString(GlobalData::map_npcs[m_npcid].name);
+
+	loadNpcFightCount();
+	cocos2d::ui::TextBMFont* npcbigatk = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("npcbigatk");
+	npcbigatk->setString(StringUtils::format("%d", bnpcFightCount));
+	cocos2d::ui::TextBMFont* npcatk = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("npcatk");
+	npcatk->setString(StringUtils::format("%d", snpcFightCount));
+	if (GlobalData::map_npcs[m_npcid].atk < 10)
+	{
+		npcatk->setVisible(false);
+	}
+	
+
 	if (m_npcid.compare("n001") == 0)//在路上碰到山贼
 		addrname->setString(CommonFuncs::gbk2utf("路上"));
 
@@ -471,6 +507,36 @@ void Winlayer::onEnterTransitionDidFinish()
 	Layer::onEnterTransitionDidFinish();
 }
 
+void Winlayer::loadNpcFightCount()
+{
+	int curack = GlobalData::map_npcs[m_npcid].atk;
+	for (int i = 6; i >= 0; i--)
+	{
+		int pf = pow(10, i);
+		if (curack / pf > 0)
+		{
+			bnpcFightCount = curack / pf;
+			snpcFightCount = curack % pf;
+			break;
+		}
+	}
+}
+
+void Winlayer::loadFightCount()
+{
+	int curack = g_hero->getTotalAtck();
+	for (int i = 6; i >= 0; i--)
+	{
+		int pf = pow(10, i);
+		if (curack / pf > 0)
+		{
+			bFightCount = curack / pf;
+			sFightCount = curack % pf;
+			break;
+		}
+	}
+}
+
 void Winlayer::updataLV()
 {
 
@@ -820,8 +886,8 @@ void Winlayer::updataMyPackageUI()
 
 	for (int i = 0; i < MyPackage::getSize(); i++)
 	{
-		std::string boxstr = "ui/buildsmall.png";
-		PackageData tmpdata = MyPackage::vec_packages[i];
+		std::string boxstr = "ui/winbox.png";
+		/*PackageData tmpdata = MyPackage::vec_packages[i];
 		if (tmpdata.type == WEAPON || tmpdata.type == PROTECT_EQU)
 		{
 			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_equips[tmpdata.strid].qu);
@@ -829,7 +895,7 @@ void Winlayer::updataMyPackageUI()
 		else if (tmpdata.type == N_GONG || tmpdata.type == W_GONG)
 		{
 			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_wgngs[tmpdata.strid].qu);
-		}
+		}*/
 
 		Sprite * box = Sprite::createWithSpriteFrameName(boxstr);
 
@@ -839,7 +905,7 @@ void Winlayer::updataMyPackageUI()
 			box,
 			CC_CALLBACK_1(Winlayer::onPackageItem, this));
 		boxItem->setTag(i);
-		boxItem->setPosition(Vec2(110 + i * 125, 220));
+		boxItem->setPosition(Vec2(110 + i * 125, 200));
 		Menu* menu = Menu::create();
 		menu->addChild(boxItem);
 		menu->setPosition(Vec2(0, 0));
@@ -851,8 +917,8 @@ void Winlayer::updataMyPackageUI()
 		res->setPosition(Vec2(box->getContentSize().width / 2, box->getContentSize().height / 2));
 		box->addChild(res);
 		str = StringUtils::format("%d", MyPackage::vec_packages[i].count);
-		Label * reslbl = Label::createWithTTF(str, "fonts/STXINGKA.TTF", 18);//Label::createWithSystemFont(str, "", 18);
-		reslbl->setPosition(Vec2(box->getContentSize().width - 25, 25));
+		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 22);//Label::createWithSystemFont(str, "", 18);
+		reslbl->setPosition(Vec2(box->getContentSize().width - 25, 5));
 		box->addChild(reslbl);
 	}
 }
@@ -861,16 +927,16 @@ void Winlayer::updataRewardUI()
 {
 	for (unsigned int i = 0; i < getRewardData.size(); i++)
 	{
-		std::string boxstr = "ui/buildsmall.png";
+		std::string boxstr = "ui/winbox.png";
 		PackageData tmpdata = getRewardData[i];
-		if (tmpdata.type == WEAPON || tmpdata.type == PROTECT_EQU)
+		/*if (tmpdata.type == WEAPON || tmpdata.type == PROTECT_EQU)
 		{
 			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_equips[tmpdata.strid].qu);
 		}
 		else if (tmpdata.type == N_GONG || tmpdata.type == W_GONG)
 		{
 			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_wgngs[tmpdata.strid].qu);
-		}
+		}*/
 
 		Sprite * box = Sprite::createWithSpriteFrameName(boxstr);
 
@@ -881,7 +947,7 @@ void Winlayer::updataRewardUI()
 			CC_CALLBACK_1(Winlayer::onRewardItem, this));
 		boxItem->setTag(i);
 		boxItem->setUserData(&getRewardData[i]);
-		boxItem->setPosition(Vec2(150 + i * 135, 420));
+		boxItem->setPosition(Vec2(150 + i * 135, 400));
 		Menu* menu = Menu::create();
 		menu->addChild(boxItem);
 		menu->setPosition(Vec2(0, 0));
@@ -894,8 +960,8 @@ void Winlayer::updataRewardUI()
 		box->addChild(res);
 
 		str = StringUtils::format("%d", getRewardData[i].count);
-		Label * reslbl = Label::createWithTTF(str, "fonts/STXINGKA.TTF", 18);//Label::createWithSystemFont(str, "", 18);
-		reslbl->setPosition(Vec2(box->getContentSize().width - 25, 25));
+		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 22);//Label::createWithSystemFont(str, "", 18);
+		reslbl->setPosition(Vec2(box->getContentSize().width - 25, 5));
 		box->addChild(reslbl);
 	}
 }

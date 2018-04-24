@@ -125,6 +125,7 @@
           <Image Name="vipbg.png" />
           <Image Name="vipshoptitle.png" />
           <Image Name="warning.png" />
+          <Image Name="winlayerbg.jpg" />
           <Image Name="wxb0.png" />
           <Image Name="wxb1.png" />
         </Folder>
@@ -544,8 +545,10 @@
           <Image Name="n091.png" />
           <Image Name="n092.png" />
           <Image Name="normalbtn.png" />
+          <Image Name="npcbanner.png" />
           <Image Name="npcbtn1.png" />
           <Image Name="npcheadbox.png" />
+          <Image Name="npcnodefr.png" />
           <Image Name="npcprope0.png" />
           <Image Name="npcprope1.png" />
           <Image Name="npcprope2.png" />
@@ -745,6 +748,7 @@
           <Image Name="vip3.png" />
           <Image Name="vipbtn.png" />
           <Image Name="viptitle.png" />
+          <Image Name="vs2.png" />
           <Image Name="vulture1.png" />
           <Image Name="vulture10.png" />
           <Image Name="vulture2.png" />
@@ -799,10 +803,14 @@
           <Image Name="w042.png" />
           <Image Name="waitingbg.png" />
           <Image Name="waitingprogress.png" />
+          <Image Name="win.png" />
+          <Image Name="winbox.png" />
           <Image Name="winbox0.png" />
           <Image Name="winbox1.png" />
+          <Image Name="winbtn.png" />
           <Image Name="winemaker.png" />
           <Image Name="winetable.png" />
+          <Image Name="winframe.png" />
           <Image Name="winicon0.png" />
           <Image Name="winicon1.png" />
           <Image Name="wintext0.png" />

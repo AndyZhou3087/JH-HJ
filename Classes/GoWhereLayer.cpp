@@ -201,7 +201,7 @@ void GoWhereLayer::onST(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTy
 		TempStorageLayer* layer = TempStorageLayer::create(m_addrstr);
 
 		if (g_gameLayer != NULL)
-			g_gameLayer->addChild(layer, 2, "TempStorageLayer");
+			g_gameLayer->addChild(layer, 3, "TempStorageLayer");
 	}
 }
 
@@ -220,7 +220,7 @@ void GoWhereLayer::onComeIn(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 		else if (m_addrstr.compare("m1-2") == 0)//进入后山
 		{
 			if (g_gameLayer != NULL)
-				g_gameLayer->addChild(HomeHill::create(), 2, "homehill");
+				g_gameLayer->addChild(HomeHill::create(), 3, "homehill");
 		}
 		else if (m_addrstr.compare("m1-9") == 0)
 		{
@@ -244,12 +244,12 @@ void GoWhereLayer::onComeIn(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 				if (m_addrstr.compare("m13-1") == 0)
 				{
 					if (g_gameLayer != NULL)
-						g_gameLayer->addChild(SepcialNpcLayer::create(m_addrstr), 2, "sepcialnpclayer");
+						g_gameLayer->addChild(SepcialNpcLayer::create(m_addrstr), 3, "sepcialnpclayer");
 				}
 				else
 				{
 					if (g_gameLayer != NULL)
-						g_gameLayer->addChild(NpcLayer::create(m_addrstr), 2, "npclayer");
+						g_gameLayer->addChild(NpcLayer::create(m_addrstr), 3, "npclayer");
 					std::string mapname = GlobalData::map_maps[m_addrstr].cname;
 					if (mapname.find(CommonFuncs::gbk2utf("客栈")) != std::string::npos)
 					{

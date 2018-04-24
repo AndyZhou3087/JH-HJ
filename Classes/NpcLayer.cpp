@@ -107,7 +107,7 @@ void NpcLayer::refreshNpcNode()
 		innerheight = contentheight;
 	m_scrollview->setInnerContainerSize(Size(m_scrollview->getContentSize().width, innerheight));
 
-	cocos2d::ui::Widget* hintdown = (cocos2d::ui::Widget*)m_csbnode->getChildByName("hintdown");
+	/*cocos2d::ui::Widget* hintdown = (cocos2d::ui::Widget*)m_csbnode->getChildByName("hintdown");
 	if (ncpsize > 2)
 	{
 		hintdown->runAction(RepeatForever::create(Blink::create(2, 2)));
@@ -116,7 +116,7 @@ void NpcLayer::refreshNpcNode()
 	{
 		hintdown->stopAllActions();
 		hintdown->setVisible(false);
-	}
+	}*/
 
 	int scrollviewChildSize = m_scrollview->getChildrenCount();
 

@@ -47,6 +47,9 @@ private:
 	void onSuccess();
 	void onErr(int errcode);
 
+	void loadFightCount();
+	void loadNpcFightCount();
+
 private:
 	std::string m_npcid;
 	std::string m_addrid;
@@ -57,6 +60,11 @@ private:
 	cocos2d::ui::Button* m_backbtn;
 	cocos2d::ui::Button* m_getallbtn;
 	std::vector<std::string> vec_lvup;
+
+	int bFightCount;
+	int sFightCount;
+	int bnpcFightCount;
+	int snpcFightCount;
 };
 #endif
 

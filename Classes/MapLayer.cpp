@@ -267,7 +267,7 @@ void MapLayer::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTyp
 				type = GOWHERE;
 
 			if (g_gameLayer != NULL)
-				g_gameLayer->addChild(GoWhereLayer::create(m_addrname, type, m_distance), 2, "gowherelayer");
+				g_gameLayer->addChild(GoWhereLayer::create(m_addrname, type, m_distance), 3, "gowherelayer");
 		}
 
 	}
@@ -404,7 +404,7 @@ void MapLayer::Arrive()
 		}
 	}
 	if (g_gameLayer != NULL)
-		g_gameLayer->addChild(GoWhereLayer::create(m_addrname, ARRIVE), 2, "gowherelayer");
+		g_gameLayer->addChild(GoWhereLayer::create(m_addrname, ARRIVE), 3, "gowherelayer");
 
 	this->scheduleOnce(schedule_selector(MapLayer::finishMove), 0.1f);
 }
