@@ -23,14 +23,14 @@
               <AbstractNodeData Name="box" ActionTag="998287900" Tag="63" IconVisible="False" LeftMargin="2.6299" RightMargin="470.3701" TopMargin="25.7285" BottomMargin="31.2715" ctype="SpriteObjectData">
                 <Size X="107.0000" Y="90.0000" />
                 <Children>
-                  <AbstractNodeData Name="icon" ActionTag="-1569718917" Tag="81" IconVisible="False" LeftMargin="1.9999" RightMargin="-0.9999" TopMargin="-9.9998" BottomMargin="-6.0002" TouchEnable="True" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
-                    <Size X="106.0000" Y="106.0000" />
+                  <AbstractNodeData Name="icon" ActionTag="-1569718917" Tag="81" IconVisible="False" LeftMargin="9.4999" RightMargin="8.5001" TopMargin="-1.4998" BottomMargin="2.4998" TouchEnable="True" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="21" Scale9Height="21" ctype="ImageViewObjectData">
+                    <Size X="89.0000" Y="89.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="54.9999" Y="46.9998" />
-                    <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                    <Position X="53.9999" Y="46.9998" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5140" Y="0.5222" />
-                    <PreSize X="0.9907" Y="1.1778" />
+                    <PrePosition X="0.5047" Y="0.5222" />
+                    <PreSize X="0.8318" Y="0.9889" />
                     <FileData Type="MarkedSubImage" Path="ui/sbed.png" Plist="uipacker.plist" />
                   </AbstractNodeData>
                 </Children>

@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="107" ctype="GameLayerObjectData">
         <Size X="720.0000" Y="1280.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="-1855017736" Tag="139" IconVisible="False" LeftEage="237" RightEage="237" TopEage="349" BottomEage="349" Scale9OriginX="237" Scale9OriginY="349" Scale9Width="246" Scale9Height="361" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="bg" ActionTag="-1855017736" Tag="139" IconVisible="False" LeftEage="237" RightEage="237" TopEage="349" BottomEage="349" Scale9OriginX="237" Scale9OriginY="349" Scale9Width="219" Scale9Height="291" ctype="ImageViewObjectData">
             <Size X="720.0000" Y="1280.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="360.0000" Y="640.0000" />
@@ -66,14 +66,14 @@
             <ColorVector ScaleY="1.0000" />
             <InnerNodeSize Width="655" Height="1200" />
           </AbstractNodeData>
-          <AbstractNodeData Name="shopbtn" ActionTag="1365587540" Tag="154" IconVisible="False" LeftMargin="75.6738" RightMargin="520.3262" TopMargin="1096.8405" BottomMargin="61.1595" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="94" Scale9Height="100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="124.0000" Y="122.0000" />
+          <AbstractNodeData Name="shopbtn" ActionTag="1365587540" Tag="154" IconVisible="False" LeftMargin="72.6738" RightMargin="517.3262" TopMargin="1092.8405" BottomMargin="57.1595" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="49" Scale9Height="63" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="130.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="137.6738" Y="122.1595" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1912" Y="0.0954" />
-            <PreSize X="0.1722" Y="0.0953" />
+            <PreSize X="0.1806" Y="0.1016" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="MarkedSubImage" Path="ui/smallshopbtn.png" Plist="uipacker.plist" />
             <PressedFileData Type="MarkedSubImage" Path="ui/smallshopbtn.png" Plist="uipacker.plist" />
