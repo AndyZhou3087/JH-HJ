@@ -10,7 +10,17 @@ bool HintBox::init(std::string text)
 		return false;
     }
 
-	Node* csbnode = CSLoader::createNode("hintLayer.csb");
+	Node* csbnode;
+	if (text == CommonFuncs::gbk2utf("逃跑成功！"))
+	{
+		LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+		this->addChild(color);
+		csbnode = CSLoader::createNode("hintLayer2.csb");
+	}
+	else
+	{
+		csbnode = CSLoader::createNode("hintLayer.csb");
+	}
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)csbnode->getChildByName("okbtn");

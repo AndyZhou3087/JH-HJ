@@ -27,7 +27,11 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <ActiveDocument />
+        <OpenedDocuments>
+          <FilePathData Path="hintLayer.csd" />
+          <FilePathData Path="hintLayer2.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="hintLayer2.csd" />
       </Value>
     </Item>
   </Properties>
