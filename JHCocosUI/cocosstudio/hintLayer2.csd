@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="hintLayer_0" Type="Layer" ID="a13e74a5-55ed-4592-8995-ceca3e7ef33a" Version="3.10.0.0" />
+  <PropertyGroup Name="hintLayer2" Type="Layer" ID="a13e74a5-55ed-4592-8995-ceca3e7ef33a" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -28,7 +28,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="content" ActionTag="-1639534124" Tag="134" IconVisible="False" LeftMargin="231.0000" RightMargin="239.0000" TopMargin="566.0010" BottomMargin="563.9990" IsCustomSize="True" FontSize="28" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="content" ActionTag="-1639534124" Tag="134" IconVisible="False" LeftMargin="231.0000" RightMargin="239.0000" TopMargin="566.0010" BottomMargin="563.9990" IsCustomSize="True" FontSize="22" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="250.0000" Y="150.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="356.0000" Y="638.9990" />
@@ -36,7 +36,7 @@
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.4944" Y="0.4992" />
             <PreSize X="0.3472" Y="0.1172" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

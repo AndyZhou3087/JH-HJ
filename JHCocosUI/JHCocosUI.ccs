@@ -689,6 +689,95 @@
           <Image Name="timegifttitle.png" />
           <Image Name="timeguide.png" />
           <Image Name="titlebgg.png" />
+          <Image Name="tn004.png" />
+          <Image Name="tn005.png" />
+          <Image Name="tn006.png" />
+          <Image Name="tn007.png" />
+          <Image Name="tn008.png" />
+          <Image Name="tn009.png" />
+          <Image Name="tn010.png" />
+          <Image Name="tn011.png" />
+          <Image Name="tn012.png" />
+          <Image Name="tn013.png" />
+          <Image Name="tn014.png" />
+          <Image Name="tn015.png" />
+          <Image Name="tn016.png" />
+          <Image Name="tn017.png" />
+          <Image Name="tn018.png" />
+          <Image Name="tn019.png" />
+          <Image Name="tn020.png" />
+          <Image Name="tn021.png" />
+          <Image Name="tn022.png" />
+          <Image Name="tn023.png" />
+          <Image Name="tn024.png" />
+          <Image Name="tn025.png" />
+          <Image Name="tn026.png" />
+          <Image Name="tn027.png" />
+          <Image Name="tn028.png" />
+          <Image Name="tn029.png" />
+          <Image Name="tn030.png" />
+          <Image Name="tn031.png" />
+          <Image Name="tn032.png" />
+          <Image Name="tn033.png" />
+          <Image Name="tn034.png" />
+          <Image Name="tn035.png" />
+          <Image Name="tn036.png" />
+          <Image Name="tn037.png" />
+          <Image Name="tn038.png" />
+          <Image Name="tn039.png" />
+          <Image Name="tn040.png" />
+          <Image Name="tn041.png" />
+          <Image Name="tn042.png" />
+          <Image Name="tn043.png" />
+          <Image Name="tn044.png" />
+          <Image Name="tn045.png" />
+          <Image Name="tn046.png" />
+          <Image Name="tn047.png" />
+          <Image Name="tn048.png" />
+          <Image Name="tn049.png" />
+          <Image Name="tn050.png" />
+          <Image Name="tn051.png" />
+          <Image Name="tn052.png" />
+          <Image Name="tn053.png" />
+          <Image Name="tn054.png" />
+          <Image Name="tn055.png" />
+          <Image Name="tn056.png" />
+          <Image Name="tn057.png" />
+          <Image Name="tn058.png" />
+          <Image Name="tn059.png" />
+          <Image Name="tn060.png" />
+          <Image Name="tn061.png" />
+          <Image Name="tn062.png" />
+          <Image Name="tn063.png" />
+          <Image Name="tn064.png" />
+          <Image Name="tn065.png" />
+          <Image Name="tn066.png" />
+          <Image Name="tn067.png" />
+          <Image Name="tn068.png" />
+          <Image Name="tn069.png" />
+          <Image Name="tn070.png" />
+          <Image Name="tn071.png" />
+          <Image Name="tn072.png" />
+          <Image Name="tn073.png" />
+          <Image Name="tn074.png" />
+          <Image Name="tn075.png" />
+          <Image Name="tn076.png" />
+          <Image Name="tn077.png" />
+          <Image Name="tn078.png" />
+          <Image Name="tn079.png" />
+          <Image Name="tn080.png" />
+          <Image Name="tn081.png" />
+          <Image Name="tn082.png" />
+          <Image Name="tn083.png" />
+          <Image Name="tn084.png" />
+          <Image Name="tn085.png" />
+          <Image Name="tn086.png" />
+          <Image Name="tn087.png" />
+          <Image Name="tn088.png" />
+          <Image Name="tn089.png" />
+          <Image Name="tn090.png" />
+          <Image Name="tn091.png" />
+          <Image Name="tn092.png" />
           <Image Name="top_r_season0.png" />
           <Image Name="top_r_season1.png" />
           <Image Name="top_r_season2.png" />
@@ -901,6 +990,7 @@
         <Project Name="heroAttribNode2.csd" Type="Node" />
         <Project Name="heroStateLayer.csd" Type="Layer" />
         <Project Name="hintLayer.csd" Type="Layer" />
+        <Project Name="hintLayer2.csd" Type="Layer" />
         <Project Name="homeHillLayer.csd" Type="Layer" />
         <Project Name="homeLayer.csd" Type="Layer" />
         <Project Name="HSLJMainLayer.csd" Type="Layer" />
@@ -957,7 +1047,7 @@
         <Project Name="vipGoodsNode.csd" Type="Node" />
         <Project Name="vipShopLayer.csd" Type="Layer" />
         <Project Name="winLayer.csd" Type="Layer" />
-        <Project Name="hintLayer2.csd" Type="Layer" />
+        <Project Name="npctalkLayer2.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

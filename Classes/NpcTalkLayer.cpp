@@ -41,16 +41,22 @@ bool NpcTalkLayer::init(std::vector<std::string> vec_words, std::string npcid)
 	auto colorlayer = LayerColor::create(Color4B(0, 0, 0, 200));
 	this->addChild(colorlayer);
 
-	Node* csbnode = CSLoader::createNode("npctalkLayer.csb");
+	Node* csbnode = CSLoader::createNode("npctalkLayer2.csb");
 	this->addChild(csbnode, 2);
 
 	m_talknode = (cocos2d::ui::Widget*)csbnode->getChildByName("node");
+
 	npcimg = (cocos2d::ui::ImageView*)m_talknode->getChildByName("npcimg");
-	std::string npcimgstr = StringUtils::format("ui/%s.png", npcid.c_str());
+	std::string npcimgstr = StringUtils::format("ui/t%s.png", npcid.c_str());
 	npcimg->loadTexture(npcimgstr, cocos2d::ui::Widget::TextureResType::PLIST);
-	npcimg->setOpacity(150);
+	npcimg->setOpacity(0);
+
+	cocos2d::ui::Text* npcname = (cocos2d::ui::Text*)npcimg->getChildByName("npcname");
+	npcname->setString(GlobalData::map_npcs[npcid].name);
 
 	heroimg = (cocos2d::ui::ImageView*)m_talknode->getChildByName("heroimg");
+	cocos2d::ui::Text* m_heroname = (cocos2d::ui::Text*)heroimg->getChildByName("heroname");
+	m_heroname->setString(heroname[g_hero->getHeadID() - 1]);
 
 	std::string heroidstr = StringUtils::format("ui/fhero%d.png", g_hero->getHeadID());
 	heroimg->loadTexture(heroidstr, cocos2d::ui::TextureResType::PLIST);
@@ -58,7 +64,7 @@ bool NpcTalkLayer::init(std::vector<std::string> vec_words, std::string npcid)
 	cocos2d::ui::Text* wordlbl = (cocos2d::ui::Text*)m_talknode->getChildByName("text");
 	wordlbl->setVisible(false);
 
-	heroimg->setOpacity(150);
+	heroimg->setOpacity(0);
 	npcimg->setOpacity(255);
 
 	checkWordLblColor(vec_words[0]);
@@ -112,17 +118,17 @@ bool NpcTalkLayer::init(std::vector<std::string> vec_words, std::string npcid)
 
 void NpcTalkLayer::checkWordLblColor(std::string wordstr)
 {
-	m_wordlbl = Label::createWithTTF(wordstr, "fonts/STXINGKA.TTF", 26);
+	m_wordlbl = Label::createWithTTF(wordstr, "fonts/SIMHEI.TTF", 20);
 	m_wordlbl->setLineBreakWithoutSpace(true);
-	m_wordlbl->setMaxLineWidth(610);
-	m_wordlbl->setPosition(Vec2(0,-115));
+	m_wordlbl->setMaxLineWidth(450);
+	m_wordlbl->setPosition(Vec2(-80,-150));
 	m_talknode->addChild(m_wordlbl, 0, "talklbl");
 
 
 	int index = 0;
 	while (m_wordlbl->getLetter(index) != NULL)
 	{
-		m_wordlbl->getLetter(index)->setColor(Color3B::BLACK);
+		m_wordlbl->getLetter(index)->setColor(Color3B::WHITE);
 		m_wordlbl->getLetter(index)->setScale(0);
 		index++;
 	}
@@ -166,13 +172,13 @@ void NpcTalkLayer::showTypeText(float dt)
 	}
 	if (m_wordindex % 2 == 0)
 	{
-		heroimg->setOpacity(150);
+		heroimg->setOpacity(0);
 		npcimg->setOpacity(255);
 	}
 	else
 	{
 		heroimg->setOpacity(255);
-		npcimg->setOpacity(150);
+		npcimg->setOpacity(0);
 	}
 	lasttalklbl = m_wordlbl;
 	m_wordlbl->schedule([&](float dt){

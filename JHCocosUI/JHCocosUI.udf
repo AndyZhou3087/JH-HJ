@@ -28,10 +28,10 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="hintLayer.csd" />
-          <FilePathData Path="hintLayer2.csd" />
+          <FilePathData Path="uipacker.csi" />
+          <FilePathData Path="npctalkLayer2.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="hintLayer2.csd" />
+        <ActiveDocument Path="npctalkLayer2.csd" />
       </Value>
     </Item>
   </Properties>
