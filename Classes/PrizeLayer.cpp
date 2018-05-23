@@ -154,9 +154,9 @@ void PrizeLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType
 
 void PrizeLayer::showRwd()
 {
-	int startx = 180;
-	int spacex = 170;
-	int starty = 580;
+	int startx = 224;
+	int spacex = 136;
+	int starty = 645;
 
 	for (int i = 0; i < 3; i++)
 	{

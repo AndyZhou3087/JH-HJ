@@ -27,11 +27,7 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="uipacker.csi" />
-          <FilePathData Path="npctalkLayer2.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="npctalkLayer2.csd" />
+        <ActiveDocument />
       </Value>
     </Item>
   </Properties>

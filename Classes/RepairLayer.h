@@ -46,6 +46,7 @@ private:
 	int succrnd;
 	int clickindex;
 	std::vector<Node*> vec_repairItem;
+	cocos2d::ui::ScrollView* m_ScrollView;
 };
 #endif
 

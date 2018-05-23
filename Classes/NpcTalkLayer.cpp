@@ -120,8 +120,11 @@ void NpcTalkLayer::checkWordLblColor(std::string wordstr)
 {
 	m_wordlbl = Label::createWithTTF(wordstr, "fonts/SIMHEI.TTF", 20);
 	m_wordlbl->setLineBreakWithoutSpace(true);
+	m_wordlbl->setAnchorPoint(Vec2(0, 1));
+	m_wordlbl->setHorizontalAlignment(CCTextAlignment::LEFT);
+	m_wordlbl->setVerticalAlignment(CCVerticalTextAlignment::TOP);
 	m_wordlbl->setMaxLineWidth(450);
-	m_wordlbl->setPosition(Vec2(-80,-150));
+	m_wordlbl->setPosition(Vec2(-315,-112));
 	m_talknode->addChild(m_wordlbl, 0, "talklbl");
 
 
@@ -151,6 +154,7 @@ void NpcTalkLayer::checkWordLblColor(std::string wordstr)
 	std::size_t findpos = wordstr.find(g_hero->getMyName());
 	if (findpos != std::string::npos)
 	{
+		m_wordlbl->setPosition(Vec2(-145, -112));
 		int sindex = findpos / 3;
 		int len = g_hero->getMyName().size() / 3;
 		for (int i = sindex; i < sindex + len; i++)

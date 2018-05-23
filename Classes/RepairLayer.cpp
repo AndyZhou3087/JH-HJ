@@ -66,6 +66,8 @@ bool RepairLayer::init(int type)
 		desclbl->setVisible(true);
 	}
 
+	m_ScrollView = (cocos2d::ui::ScrollView*)csbnode->getChildByName("ScrollView");
+
 	succrandtext = (cocos2d::ui::Text*)csbnode->getChildByName("succrndtext");
 	succrandtext->setVisible(false);
 
@@ -465,12 +467,12 @@ void RepairLayer::updataUI()
 			CC_CALLBACK_1(RepairLayer::onRepairItem, this));
 		boxItem->setUserData(vec_RepairData[i]);
 		boxItem->setTag(i);
-		boxItem->setPosition(Vec2(130 + i % 4 * 150, 350 + i / 4 * 150));
+		boxItem->setPosition(Vec2(70 + i % 4 * 144, 100 + i / 4 * 150));
 		MyMenu* menu = MyMenu::create();
 		menu->addChild(boxItem);
 		menu->setPosition(Vec2(0, 0));
 		std::string name = StringUtils::format("pitem%d", i);
-		this->addChild(menu, 0, name);
+		m_ScrollView->addChild(menu, 0, name);
 		vec_repairItem.push_back(boxItem);
 
 		std::string str = StringUtils::format("ui/%s.png", tmpdata->strid.c_str());

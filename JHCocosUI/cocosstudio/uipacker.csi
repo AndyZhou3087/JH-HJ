@@ -816,6 +816,7 @@
       <FilePathData Path="ui/tn090.png" />
       <FilePathData Path="ui/tn091.png" />
       <FilePathData Path="ui/tn092.png" />
+      <FilePathData Path="ui/repairnpc.png" />
     </ImageFiles>
     <MaxSize Width="4096" Height="4096" />
   </Content>

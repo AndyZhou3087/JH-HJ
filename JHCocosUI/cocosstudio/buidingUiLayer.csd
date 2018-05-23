@@ -67,7 +67,7 @@
             <FirstColor A="255" R="255" G="150" B="100" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
-            <InnerNodeSize Width="680" Height="800" />
+            <InnerNodeSize Width="600" Height="685" />
           </AbstractNodeData>
           <AbstractNodeData Name="shopbtn" ActionTag="-480739763" VisibleForFrame="False" Tag="716" IconVisible="False" LeftMargin="554.2943" RightMargin="72.7057" TopMargin="1014.3675" BottomMargin="174.1325" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="49" Scale9Height="63" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="93.0000" Y="91.5000" />
