@@ -359,6 +359,7 @@
           <Image Name="iconbg.png" />
           <Image Name="jddkaT.png" />
           <Image Name="jdjxz.png" />
+          <Image Name="jhxkbg.png" />
           <Image Name="jssxtsk.png" />
           <Image Name="loginrbtn.png" />
           <Image Name="loginritem0.png" />
@@ -576,6 +577,7 @@
           <Image Name="ranktag0.png" />
           <Image Name="ranktag1.png" />
           <Image Name="ranktitle.png" />
+          <Image Name="ranktitlebg.png" />
           <Image Name="redpoint.png" />
           <Image Name="relationheadbox.png" />
           <Image Name="relationtextbox.png" />
