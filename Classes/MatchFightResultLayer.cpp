@@ -59,8 +59,8 @@ bool MatchFightResultLayer::init(int myfinalhero, int win)
 	cocos2d::ui::ImageView* wintitle = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("wintitle");
 	wintitle->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
 
-	winicon = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("winicon");
-	winicon->setVisible(false);
+	/*winicon = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("winicon");
+	winicon->setVisible(false);*/
 
 	str = StringUtils::format("ui/winbox%d.png", win);
 	cocos2d::ui::ImageView* winbox = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("winbox");
@@ -68,10 +68,18 @@ bool MatchFightResultLayer::init(int myfinalhero, int win)
 
 	wintext = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("wintext");
 	wintext->setVisible(false);
+	if (win == 1)
+	{
+		winbox->setPosition(Vec2(359, 382));
+	}
+	else{
+		winbox->setPosition(Vec2(359, 307));
+		wintext->setContentSize(Size(228, 56));
+	}
 
 	cocos2d::ui::Text* explbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("explbl");
 
-	ranknum = (cocos2d::ui::TextBMFont*)m_csbnode->getChildByName("ranknum");
+	ranknum = (cocos2d::ui::Text*)m_csbnode->getChildByName("ranknum");
 	ranknum->setVisible(false);
 
 	int myherocount = 0;
@@ -87,8 +95,8 @@ bool MatchFightResultLayer::init(int myfinalhero, int win)
 
 	int curexp = 0;
 
-	rankup = (cocos2d::ui::Text*)m_csbnode->getChildByName("rankup");
-	rankup->setVisible(false);
+	/*rankup = (cocos2d::ui::Text*)m_csbnode->getChildByName("rankup");
+	rankup->setVisible(false);*/
 	if (win == 1)
 	{
 		curexp = 10 + GlobalData::vec_matchPlayerData.size();
@@ -165,10 +173,10 @@ void MatchFightResultLayer::showResult()
 	}
 	wintext->setVisible(true);
 	wintext->loadTexture(str1, cocos2d::ui::TextureResType::PLIST);
-	winicon->setVisible(true);
-	winicon->loadTexture(str2, cocos2d::ui::TextureResType::PLIST);
-	rankup->setVisible(true);
-	rankup->setString(str3);
+	/*winicon->setVisible(true);
+	winicon->loadTexture(str2, cocos2d::ui::TextureResType::PLIST);*/
+	/*rankup->setVisible(true);
+	rankup->setString(str3);*/
 
 	ranknum->setVisible(true);
 	_myrank = GlobalData::myMatchInfo.afterrank;

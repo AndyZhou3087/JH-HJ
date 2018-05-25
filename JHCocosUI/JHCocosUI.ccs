@@ -7,6 +7,7 @@
           <Fnt Name="coinpoolnum.fnt" />
           <Fnt Name="critnum.fnt" />
           <TTF Name="FZXKJW_0.TTF" />
+          <Fnt Name="rankfnt.fnt" />
           <TTF Name="SIMHEI.TTF" />
           <TTF Name="STXINGKA.TTF" />
           <Fnt Name="topfight1.fnt" />
@@ -125,6 +126,7 @@
           <Image Name="vipbg.png" />
           <Image Name="vipshoptitle.png" />
           <Image Name="warning.png" />
+          <Image Name="win.png" />
           <Image Name="winlayerbg.jpg" />
           <Image Name="wxb0.png" />
           <Image Name="wxb1.png" />
@@ -309,6 +311,8 @@
           <Image Name="fightitem1.png" />
           <Image Name="fightnodebtn.png" />
           <Image Name="forgingtable.png" />
+          <Image Name="framekong.png" />
+          <Image Name="frameline.png" />
           <Image Name="furnace.png" />
           <Image Name="gd0.png" />
           <Image Name="gd1.png" />
@@ -565,6 +569,7 @@
           <Image Name="qubox4.png" />
           <Image Name="qubox5.png" />
           <Image Name="rafflebtn.png" />
+          <Image Name="rankadd.png" />
           <Image Name="rankatktitle.png" />
           <Image Name="rankcatatitlebox.png" />
           <Image Name="rankcatatitlebox1.png" />
@@ -895,7 +900,6 @@
           <Image Name="w042.png" />
           <Image Name="waitingbg.png" />
           <Image Name="waitingprogress.png" />
-          <Image Name="win.png" />
           <Image Name="winbox.png" />
           <Image Name="winbox0.png" />
           <Image Name="winbox1.png" />

@@ -63,14 +63,16 @@ bool RankLayer::init()
 	srollView->setScrollBarEnabled(false);
 	srollView->setBounceEnabled(true);
 
-	rankcatabox0 = (cocos2d::ui::Widget*)m_csbnode->getChildByName("rankcatabox0");
+	//rankcatabox0 = (cocos2d::ui::Widget*)m_csbnode->getChildByName("rankcatabox0");
 
-	rankcatabox1 = (cocos2d::ui::Widget*)m_csbnode->getChildByName("rankcatabox1");
+	//rankcatabox1 = (cocos2d::ui::Widget*)m_csbnode->getChildByName("rankcatabox1");
 
-	rankcatabox0->setVisible(true);
-	rankcatabox1->setVisible(false);
+	//rankcatabox0->setVisible(true);
+	//rankcatabox1->setVisible(false);
 
-	text6 = (cocos2d::ui::Text*) rankcatabox0->getChildByName("text6");
+	//text6 = (cocos2d::ui::Text*) rankcatabox0->getChildByName("text6");
+	text3 = (cocos2d::ui::Text*) m_csbnode->getChildByName("text3");
+	text4 = (cocos2d::ui::Text*) m_csbnode->getChildByName("text4");
 
 	myFihgtNode = (cocos2d::ui::Widget*)m_csbnode->getChildByName("mynode");
 	myFihgtNode->setVisible(false);
@@ -123,26 +125,30 @@ void RankLayer::onRank(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTyp
 
 		if (tag == 0)
 		{
-			rankcatabox0->setVisible(true);
-			rankcatabox1->setVisible(false);
+			//rankcatabox0->setVisible(true);
+			//rankcatabox1->setVisible(false);
 			tag1btn->setBright(true);
 			tag2btn->setBright(true);
-			text6->setString(CommonFuncs::gbk2utf("天数"));
+			text4->setString(CommonFuncs::gbk2utf("天数"));
+			text3->setString(CommonFuncs::gbk2utf("性别"));
 		}
 		else if (tag == 1)
 		{
-			rankcatabox0->setVisible(true);
-			rankcatabox1->setVisible(false);
+			//rankcatabox0->setVisible(true);
+			//rankcatabox1->setVisible(false);
 			tag0btn->setBright(true);
 			tag2btn->setBright(true);
-			text6->setString(CommonFuncs::gbk2utf("战斗力"));
+			text4->setString(CommonFuncs::gbk2utf("战斗力"));
+			text3->setString(CommonFuncs::gbk2utf("性别"));
 		}
 		else if (tag == 2)
 		{
-			rankcatabox0->setVisible(false);
-			rankcatabox1->setVisible(true);
+			//rankcatabox0->setVisible(false);
+			//rankcatabox1->setVisible(true);
 			tag0btn->setBright(true);
 			tag1btn->setBright(true);
+			text3->setString(CommonFuncs::gbk2utf("战斗力"));
+			text4->setString(CommonFuncs::gbk2utf("挑战"));
 		}
 
 		selectrank = btnnode->getTag();
@@ -186,14 +192,14 @@ void RankLayer::delayShowData(float dt)
 {
 	int rankitemtype = 0;
 
-	int contentheight = 850;
-	int scrolly = 170;
+	int contentheight = 700;
+	int scrolly = 182;
 
 	if (selectrank == 2)
 	{
 		rankitemtype = 1;
-		contentheight = 800;
-		scrolly = 220;
+		contentheight = 650;
+		scrolly = 238;
 	}
 
 	this->unschedule(schedule_selector(RankLayer::updateFightCount));
@@ -201,7 +207,7 @@ void RankLayer::delayShowData(float dt)
 	srollView->removeAllChildrenWithCleanup(true);
 	int size = GlobalData::vec_rankData.size();
 
-	int itemheight = 78;
+	int itemheight = 90;
 	int innerheight = itemheight * size;
 
 	srollView->setContentSize(Size(srollView->getContentSize().width, contentheight));
@@ -380,9 +386,13 @@ bool RankItem::init(RankData *data, int type)
 		item->loadTexture(itemstr, cocos2d::ui::TextureResType::PLIST);
 	}
 
-	cocos2d::ui::Text* ranknumlbl = (cocos2d::ui::Text*)csbnode->getChildByName("ranknum");
+	cocos2d::ui::TextBMFont* ranknumlbl = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("ranknum");
 	std::string str = StringUtils::format("%d", rank);
 	ranknumlbl->setString(str);
+
+	cocos2d::ui::ImageView* tophero = (cocos2d::ui::ImageView*)csbnode->getChildByName("tophero");
+	str = StringUtils::format("ui/tophero%d.png", g_hero->getHeadID());
+	tophero->loadTexture(str, cocos2d::ui::Widget::TextureResType::PLIST);
 
 	if (rank >= 1000)
 		ranknumlbl->setScale(0.7f);
@@ -417,7 +427,7 @@ bool RankItem::init(RankData *data, int type)
 	}
 
 	cocos2d::ui::Text* herolvlbl = (cocos2d::ui::Text*)csbnode->getChildByName("herolv");
-	str = StringUtils::format("%d", data->herolv + 1);
+	str = StringUtils::format("LV:%d", data->herolv + 1);
 	herolvlbl->setString(str);
 
 	const std::string sexstr[] = { "不详", "男", "女" };

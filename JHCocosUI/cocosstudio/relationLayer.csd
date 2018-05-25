@@ -16,7 +16,7 @@
             <PreSize X="0.9625" Y="0.7727" />
             <FileData Type="Normal" Path="images/jddk.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="relationtitlebox" ActionTag="-932195093" Tag="104" IconVisible="False" LeftMargin="11.9287" RightMargin="645.0713" TopMargin="247.3252" BottomMargin="780.6747" ctype="SpriteObjectData">
+          <AbstractNodeData Name="relationtitlebox" ActionTag="-932195093" Tag="104" IconVisible="False" LeftMargin="11.9287" RightMargin="645.0713" TopMargin="247.3253" BottomMargin="780.6747" ctype="SpriteObjectData">
             <Size X="63.0000" Y="252.0000" />
             <Children>
               <AbstractNodeData Name="Text_3" ActionTag="1528539535" Tag="30" IconVisible="False" LeftMargin="19.0000" RightMargin="24.0000" TopMargin="73.0000" BottomMargin="79.0000" IsCustomSize="True" FontSize="20" LabelText="江湖侠客" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -104,13 +104,23 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="scrollview" ActionTag="668167304" Tag="400" IconVisible="False" LeftMargin="70.8787" RightMargin="69.1213" TopMargin="392.8840" BottomMargin="137.1160" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
-            <Size X="580.0000" Y="750.0000" />
-            <AnchorPoint />
-            <Position X="70.8787" Y="137.1160" />
+          <AbstractNodeData Name="Image_1" ActionTag="191179751" Tag="95" IconVisible="False" LeftMargin="59.1234" RightMargin="60.8766" TopMargin="387.6149" BottomMargin="122.3851" Scale9Enable="True" LeftEage="6" RightEage="6" TopEage="6" BottomEage="6" Scale9OriginX="6" Scale9OriginY="6" Scale9Width="8" Scale9Height="8" ctype="ImageViewObjectData">
+            <Size X="600.0000" Y="770.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="359.1234" Y="507.3851" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0984" Y="0.1071" />
+            <PrePosition X="0.4988" Y="0.3964" />
+            <PreSize X="0.8333" Y="0.6016" />
+            <FileData Type="MarkedSubImage" Path="ui/framekong.png" Plist="uipacker.plist" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="scrollview" ActionTag="668167304" Tag="400" IconVisible="False" LeftMargin="69.8784" RightMargin="70.1216" TopMargin="394.8840" BottomMargin="135.1160" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+            <Size X="580.0000" Y="750.0000" />
+            <AnchorPoint />
+            <Position X="69.8784" Y="135.1160" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0971" Y="0.1056" />
             <PreSize X="0.8056" Y="0.5859" />
             <SingleColor A="255" R="255" G="150" B="100" />
             <FirstColor A="255" R="255" G="150" B="100" />

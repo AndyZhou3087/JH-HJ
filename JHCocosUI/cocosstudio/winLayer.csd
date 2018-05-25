@@ -28,7 +28,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="actiontext_0" ActionTag="1439088720" Tag="213" IconVisible="False" LeftMargin="95.4008" RightMargin="498.5992" TopMargin="763.3873" BottomMargin="475.6126" FontSize="35" LabelText="【奖励】" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="actiontext_0" ActionTag="1439088720" Tag="213" IconVisible="False" LeftMargin="95.4008" RightMargin="498.5992" TopMargin="763.3874" BottomMargin="475.6126" FontSize="35" LabelText="【奖励】" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="126.0000" Y="41.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="158.4008" Y="496.1126" />
@@ -40,7 +40,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="storagesepline_1" ActionTag="201231656" Tag="212" IconVisible="False" LeftMargin="103.2502" RightMargin="91.7499" TopMargin="952.2632" BottomMargin="322.7368" ctype="SpriteObjectData">
+          <AbstractNodeData Name="storagesepline_1" ActionTag="201231656" Tag="212" IconVisible="False" LeftMargin="103.2502" RightMargin="91.7498" TopMargin="952.2632" BottomMargin="322.7368" ctype="SpriteObjectData">
             <Size X="525.0000" Y="5.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="365.7502" Y="325.2368" />
@@ -63,7 +63,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="storagesepline_2" ActionTag="-2141349184" Tag="210" IconVisible="False" LeftMargin="103.2502" RightMargin="91.7499" TopMargin="1154.4352" BottomMargin="120.5648" ctype="SpriteObjectData">
+          <AbstractNodeData Name="storagesepline_2" ActionTag="-2141349184" Tag="210" IconVisible="False" LeftMargin="103.2502" RightMargin="91.7498" TopMargin="1154.4352" BottomMargin="120.5648" ctype="SpriteObjectData">
             <Size X="525.0000" Y="5.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="365.7502" Y="123.0648" />
@@ -106,15 +106,15 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="wintitle" ActionTag="-900036646" Tag="222" IconVisible="False" LeftMargin="-0.4717" RightMargin="181.4717" TopMargin="23.5657" BottomMargin="845.4343" LeftEage="140" RightEage="140" TopEage="60" BottomEage="60" Scale9OriginX="140" Scale9OriginY="60" Scale9Width="271" Scale9Height="291" ctype="ImageViewObjectData">
-            <Size X="539.0000" Y="411.0000" />
+          <AbstractNodeData Name="wintitle" ActionTag="-900036646" Tag="222" IconVisible="False" LeftMargin="-6.4717" RightMargin="175.4717" TopMargin="23.5657" BottomMargin="845.4343" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="521" Scale9Height="381" ctype="ImageViewObjectData">
+            <Size X="551.0000" Y="411.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="269.0283" Y="1050.9343" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.3737" Y="0.8210" />
-            <PreSize X="0.7486" Y="0.3211" />
-            <FileData Type="MarkedSubImage" Path="ui/win.png" Plist="uipacker.plist" />
+            <PreSize X="0.7653" Y="0.3211" />
+            <FileData Type="Normal" Path="images/win.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="exptext" ActionTag="-320672389" Tag="31" IconVisible="False" LeftMargin="115.3301" RightMargin="492.6699" TopMargin="710.2408" BottomMargin="538.7592" FontSize="25" LabelText="我的经验：" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="112.0000" Y="31.0000" />
@@ -128,7 +128,7 @@
             <OutlineColor A="255" R="0" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="gftext" ActionTag="608480606" Tag="32" IconVisible="False" LeftMargin="428.0335" RightMargin="179.9664" TopMargin="710.2408" BottomMargin="538.7592" FontSize="25" LabelText="武学经验：" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="gftext" ActionTag="608480606" Tag="32" IconVisible="False" LeftMargin="428.0335" RightMargin="179.9665" TopMargin="710.2408" BottomMargin="538.7592" FontSize="25" LabelText="武学经验：" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="112.0000" Y="31.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="484.0335" Y="554.2592" />

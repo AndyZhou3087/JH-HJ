@@ -26,6 +26,6 @@ private:
 	Node* m_csbnode;
 	float _myrank;
 	float _visualmyrank;
-	cocos2d::ui::TextBMFont* ranknum;
+	cocos2d::ui::Text* ranknum;
 };
 #endif

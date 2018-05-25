@@ -36,6 +36,9 @@ private:
 	cocos2d::ui::Text* text6;
 	cocos2d::ui::Widget* rankcatabox0;
 	cocos2d::ui::Widget* rankcatabox1;
+
+	cocos2d::ui::Text* text3;
+	cocos2d::ui::Text* text4;
 	int selectrank;
 	int myfightingpower;
 	Node* m_csbnode;

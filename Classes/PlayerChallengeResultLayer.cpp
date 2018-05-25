@@ -56,9 +56,9 @@ bool PlayerChallengeResultLayer::init(RankData* fightPlayerData, int win)
 	cocos2d::ui::ImageView* wintitle = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("wintitle");
 	wintitle->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
 
-	str = StringUtils::format("ui/winicon%d.png", win);
+	/*str = StringUtils::format("ui/winicon%d.png", win);
 	cocos2d::ui::ImageView* winicon = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("winicon");
-	winicon->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
+	winicon->loadTexture(str, cocos2d::ui::TextureResType::PLIST);*/
 
 	str = StringUtils::format("ui/winbox%d.png", win);
 	cocos2d::ui::ImageView* winbox = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("winbox");
@@ -68,16 +68,25 @@ bool PlayerChallengeResultLayer::init(RankData* fightPlayerData, int win)
 	cocos2d::ui::ImageView* wintext = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("wintext");
 	wintext->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
 
+	if (win == 1)
+	{
+		winbox->setPosition(Vec2(359, 382));
+	}
+	else{
+		winbox->setPosition(Vec2(359, 307));
+		wintext->setContentSize(Size(228, 56));
+	}
+
 	cocos2d::ui::Text* explbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("explbl");
 
-	ranknum = (cocos2d::ui::TextBMFont*)m_csbnode->getChildByName("ranknum");
+	ranknum = (cocos2d::ui::Text*)m_csbnode->getChildByName("ranknum");
 	str = StringUtils::format("%d", GlobalData::myrank);
 
 	ranknum->setString(str);
 
 	int lastrank = GlobalData::myrank;
-	cocos2d::ui::Text* rankup = (cocos2d::ui::Text*)m_csbnode->getChildByName("rankup");
-	rankup->setVisible(false);
+	/*cocos2d::ui::Text* rankup = (cocos2d::ui::Text*)m_csbnode->getChildByName("rankup");
+	rankup->setVisible(false);*/
 	if (win == 1)
 	{
 		explbl->setString("+3");
@@ -88,8 +97,8 @@ bool PlayerChallengeResultLayer::init(RankData* fightPlayerData, int win)
 			_myrank = fightPlayerData->rank;
 			_visualmyrank = GlobalData::myrank;
 			std::string upstr = StringUtils::format("%d", GlobalData::myrank - fightPlayerData->rank);
-			rankup->setString(upstr);
-			rankup->setVisible(true);
+			/*rankup->setString(upstr);
+			rankup->setVisible(true);*/
 			GlobalData::myrank = fightPlayerData->rank;
 			this->scheduleOnce(schedule_selector(PlayerChallengeResultLayer::delayShowRank), 1.0f);
 		}
@@ -99,8 +108,8 @@ bool PlayerChallengeResultLayer::init(RankData* fightPlayerData, int win)
 	{
 		explbl->setString("-1");
 		GlobalData::myFihgtexp -= 1;
-		rankup->setVisible(false);
-		winicon->setVisible(false);
+		//rankup->setVisible(false);
+		//winicon->setVisible(false);
 	}
 
 	GlobalData::myFihgtCount--;
