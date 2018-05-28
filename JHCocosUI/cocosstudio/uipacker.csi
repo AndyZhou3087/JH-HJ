@@ -821,6 +821,8 @@
       <FilePathData Path="ui/rankadd.png" />
       <FilePathData Path="ui/framekong.png" />
       <FilePathData Path="ui/frameline.png" />
+      <FilePathData Path="ui/achieve_line.png" />
+      <FilePathData Path="ui/achgeted.png" />
     </ImageFiles>
     <MaxSize Width="4096" Height="4096" />
   </Content>

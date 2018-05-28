@@ -6,61 +6,62 @@
       <ObjectData Name="Layer" Tag="132" ctype="GameLayerObjectData">
         <Size X="720.0000" Y="1280.0000" />
         <Children>
-          <AbstractNodeData Name="bg" ActionTag="-1819832377" Tag="136" IconVisible="False" TopMargin="21.0000" BottomMargin="21.0000" LeftEage="237" RightEage="237" TopEage="349" BottomEage="349" Scale9OriginX="237" Scale9OriginY="349" Scale9Width="246" Scale9Height="361" ctype="ImageViewObjectData">
-            <Size X="720.0000" Y="1238.0000" />
+          <AbstractNodeData Name="bg" ActionTag="-1819832377" Tag="136" IconVisible="False" LeftMargin="13.5004" RightMargin="13.4996" TopMargin="237.4968" BottomMargin="53.5032" LeftEage="237" RightEage="237" TopEage="349" BottomEage="349" Scale9OriginX="237" Scale9OriginY="349" Scale9Width="219" Scale9Height="291" ctype="ImageViewObjectData">
+            <Size X="693.0000" Y="989.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="360.0000" Y="640.0000" />
+            <Position X="360.0004" Y="548.0032" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.0000" Y="0.9672" />
+            <PrePosition X="0.5000" Y="0.4281" />
+            <PreSize X="0.9625" Y="0.7727" />
             <FileData Type="Normal" Path="images/normalboxgb.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="backbtn" ActionTag="1267473787" Tag="133" IconVisible="False" LeftMargin="635.8517" RightMargin="18.1483" TopMargin="15.3209" BottomMargin="1198.6791" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="36" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="66.0000" Y="66.0000" />
+          <AbstractNodeData Name="backbtn" ActionTag="1267473787" Tag="133" IconVisible="False" LeftMargin="639.7612" RightMargin="5.2388" TopMargin="249.5436" BottomMargin="895.4564" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="45" Scale9Height="113" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="75.0000" Y="135.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="668.8517" Y="1231.6791" />
+            <Position X="677.2612" Y="962.9564" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9290" Y="0.9622" />
-            <PreSize X="0.0917" Y="0.0516" />
+            <PrePosition X="0.9406" Y="0.7523" />
+            <PreSize X="0.1042" Y="0.1055" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/bigbgclosebtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/bigbgclosebtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/bigbgclosebtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="relationtitlebox" ActionTag="-292799894" Tag="135" IconVisible="False" LeftMargin="72.0000" RightMargin="72.0000" TopMargin="4.8009" BottomMargin="1161.1991" ctype="SpriteObjectData">
-            <Size X="576.0000" Y="114.0000" />
+          <AbstractNodeData Name="relationtitlebox" ActionTag="-292799894" Tag="135" IconVisible="False" LeftMargin="10.2974" RightMargin="646.7026" TopMargin="248.8115" BottomMargin="779.1885" ctype="SpriteObjectData">
+            <Size X="63.0000" Y="252.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="360.0000" Y="1218.1991" />
+            <Position X="41.7974" Y="905.1885" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.9517" />
-            <PreSize X="0.8000" Y="0.0891" />
-            <FileData Type="MarkedSubImage" Path="ui/relationtitlebox.png" Plist="uipacker.plist" />
+            <PrePosition X="0.0581" Y="0.7072" />
+            <PreSize X="0.0875" Y="0.1969" />
+            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="uipacker.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title" ActionTag="922079041" Tag="134" IconVisible="False" LeftMargin="276.0000" RightMargin="276.0000" TopMargin="28.0000" BottomMargin="1208.0000" ctype="SpriteObjectData">
-            <Size X="168.0000" Y="44.0000" />
+          <AbstractNodeData Name="text" ActionTag="-2009200312" Tag="27" IconVisible="False" LeftMargin="29.7161" RightMargin="670.2839" TopMargin="322.3926" BottomMargin="857.6074" IsCustomSize="True" FontSize="20" LabelText="江湖成就" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="20.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="360.0000" Y="1230.0000" />
+            <Position X="39.7161" Y="907.6074" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.9609" />
-            <PreSize X="0.2333" Y="0.0344" />
-            <FileData Type="MarkedSubImage" Path="ui/achivetitle.png" Plist="uipacker.plist" />
-            <BlendFunc Src="1" Dst="771" />
+            <CColor A="255" R="0" G="0" B="0" />
+            <PrePosition X="0.0552" Y="0.7091" />
+            <PreSize X="0.0278" Y="0.0781" />
+            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="scrollview" ActionTag="-1715199465" Tag="137" IconVisible="False" LeftMargin="35.0000" RightMargin="30.0000" TopMargin="130.0000" BottomMargin="100.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
-            <Size X="655.0000" Y="1050.0000" />
+          <AbstractNodeData Name="scrollview" ActionTag="-1715199465" Tag="137" IconVisible="False" LeftMargin="72.0010" RightMargin="67.9990" TopMargin="342.9979" BottomMargin="137.0020" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+            <Size X="580.0000" Y="800.0000" />
             <AnchorPoint />
-            <Position X="35.0000" Y="100.0000" />
+            <Position X="72.0010" Y="137.0020" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0486" Y="0.0781" />
-            <PreSize X="0.9097" Y="0.8203" />
+            <PrePosition X="0.1000" Y="0.1070" />
+            <PreSize X="0.8056" Y="0.6250" />
             <SingleColor A="255" R="255" G="150" B="100" />
             <FirstColor A="255" R="255" G="150" B="100" />
             <EndColor A="255" R="255" G="255" B="255" />

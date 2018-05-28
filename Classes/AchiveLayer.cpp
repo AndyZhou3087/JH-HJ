@@ -146,6 +146,8 @@ bool AchiveItem::init(AchiveData *data)
 
 	m_gettext = (cocos2d::ui::Text*)m_getimg->getChildByName("statutext");
 
+	cocos2d::ui::ImageView* rewimg = (cocos2d::ui::ImageView*)csbnode->getChildByName("rewimg");
+
 	for (unsigned int i = 0; i < data->vec_rwd.size(); i++)
 	{
 		std::string resid = data->vec_rwd[i];
@@ -167,6 +169,10 @@ bool AchiveItem::init(AchiveData *data)
 		std::string respath = StringUtils::format("ui/%s.png", resid.c_str());
 
 		std::string str = StringUtils::format("rwd_%d", i + 1);
+		if (i == 0)
+		{
+			rewimg->loadTexture(respath, cocos2d::ui::Widget::TextureResType::PLIST);
+		}
 		cocos2d::ui::ImageView* rwd = (cocos2d::ui::ImageView*)csbnode->getChildByName(str);
 		rwd->loadTexture(respath, cocos2d::ui::Widget::TextureResType::PLIST);
 		rwd->setVisible(true);
@@ -231,7 +237,7 @@ bool AchiveItem::init(AchiveData *data)
 	}
 	else if (data->finish >= needcount)
 	{
-		m_getimg->loadTexture("ui/loginrbtn.png", cocos2d::ui::Widget::TextureResType::PLIST);
+		m_getimg->loadTexture("ui/shopbtn1.png", cocos2d::ui::Widget::TextureResType::PLIST);
 		m_gettext->setString(CommonFuncs::gbk2utf("领取"));
 	}
 	else
@@ -309,7 +315,8 @@ void AchiveItem::finish()
 	m_barbg->setVisible(false);
 	m_bar->setVisible(false);
 	m_finishtext->setVisible(false);
-	m_gettext->setString(CommonFuncs::gbk2utf("已领取"));
-	m_getimg->loadTexture("ui/disnpcbtn1.png", cocos2d::ui::Widget::TextureResType::PLIST);
+	m_gettext->setString("");
+	m_getimg->loadTexture("ui/achgeted.png", cocos2d::ui::Widget::TextureResType::PLIST);
+	m_getimg->setContentSize(Size(94, 96));
 	m_getimg->setEnabled(false);
 }

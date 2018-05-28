@@ -27,7 +27,12 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <ActiveDocument />
+        <OpenedDocuments>
+          <FilePathData Path="uipacker.csi" />
+          <FilePathData Path="factionMainLayer.csd" />
+          <FilePathData Path="factionlistNode.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="factionlistNode.csd" />
       </Value>
     </Item>
   </Properties>
