@@ -177,7 +177,7 @@ void HomeHill::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTyp
 			{
 				ActionGetLayer* layer = ActionGetLayer::create(i, data->res, data->type, data->actype);
 				if (g_gameLayer != NULL)
-					g_gameLayer->addChild(layer, 2, "ActionGetLayer");
+					g_gameLayer->addChild(layer, 3, "ActionGetLayer");
 			}
 
 

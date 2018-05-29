@@ -90,7 +90,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="allgetbtn" ActionTag="1008343823" Tag="215" IconVisible="False" LeftMargin="444.0717" RightMargin="134.9283" TopMargin="1196.9629" BottomMargin="42.0371" TouchEnable="True" FontSize="30" ButtonText="全部拾取" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="111" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="allgetbtn" ActionTag="1008343823" Tag="215" IconVisible="False" LeftMargin="444.0717" RightMargin="134.9283" TopMargin="1196.9629" BottomMargin="42.0371" TouchEnable="True" FontSize="26" ButtonText="全部拾取" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="111" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="141.0000" Y="41.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="514.5717" Y="62.5371" />
@@ -164,7 +164,7 @@
             <OutlineColor A="255" R="0" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="continuebtn" ActionTag="-801450230" Tag="44" IconVisible="False" LeftMargin="130.4120" RightMargin="448.5880" TopMargin="1196.4055" BottomMargin="42.5945" TouchEnable="True" FontSize="30" ButtonText="继续挑战" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="111" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="continuebtn" ActionTag="-801450230" Tag="44" IconVisible="False" LeftMargin="130.4120" RightMargin="448.5880" TopMargin="1196.4055" BottomMargin="42.5945" TouchEnable="True" FontSize="26" ButtonText="继续挑战" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="111" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="141.0000" Y="41.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="200.9120" Y="63.0945" />

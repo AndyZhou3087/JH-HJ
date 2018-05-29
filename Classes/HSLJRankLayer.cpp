@@ -86,7 +86,7 @@ void HSLJRankLayer::delayShowData(float dt)
 	srollView->removeAllChildrenWithCleanup(true);
 	int size = GlobalData::vec_hsljRankData.size();
 
-	int itemheight = 78;
+	int itemheight = 95;
 	int innerheight = itemheight * size;
 
 	int contentheight = srollView->getContentSize().height;
@@ -175,7 +175,7 @@ bool HSLJRankItem::init(HSLJRankData *data)
 		item->loadTexture(itemstr, cocos2d::ui::TextureResType::PLIST);
 	}
 
-	cocos2d::ui::Text* ranknumlbl = (cocos2d::ui::Text*)csbnode->getChildByName("ranknum");
+	cocos2d::ui::TextBMFont* ranknumlbl = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("ranknum");
 	std::string str = StringUtils::format("%d", rank);
 	ranknumlbl->setString(str);
 

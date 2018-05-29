@@ -11,7 +11,7 @@ bool HintBox::init(std::string text)
     }
 
 	Node* csbnode;
-	if (text == CommonFuncs::gbk2utf("逃跑成功！"))
+	if (text == CommonFuncs::gbk2utf("逃跑成功！") || text.find(CommonFuncs::gbk2utf("已满员")) != std::string::npos || text.find(CommonFuncs::gbk2utf("需要申请者达到")) != std::string::npos || text.find(CommonFuncs::gbk2utf("匹配失败")) != std::string::npos)
 	{
 		LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
 		this->addChild(color);

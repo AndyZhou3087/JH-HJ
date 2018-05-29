@@ -118,6 +118,20 @@ bool HeroStateUILayer::init()
 	}
 
 
+	if (NewerGuideLayer::checkifNewerGuide(3))
+	{
+		btn_1->getChildByName("btnname")->setVisible(false);
+		btn_2->getChildByName("btnname1")->setVisible(true);
+		btn_3->getChildByName("btnname")->setVisible(false);
+		btn_1->setEnabled(true);
+		btn_2->setEnabled(false);
+		btn_3->setEnabled(true);
+		heroAttribNode->setVisible(true);
+		mixnode->setVisible(false);
+		propertybg->setVisible(false);
+		property->setVisible(false);
+	}
+
 	//////layer 点击事件，屏蔽下层事件
 	this->schedule(schedule_selector(HeroStateUILayer::updateStatus), 1.0f);
 	auto listener = EventListenerTouchOneByOne::create();

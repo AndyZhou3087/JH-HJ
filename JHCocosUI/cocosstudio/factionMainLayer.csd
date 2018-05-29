@@ -16,7 +16,7 @@
             <PreSize X="0.9625" Y="0.7727" />
             <FileData Type="Normal" Path="images/jddk.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="titlebox" ActionTag="-117185771" Tag="120" IconVisible="False" LeftMargin="11.5411" RightMargin="645.4589" TopMargin="249.0935" BottomMargin="778.9066" ctype="SpriteObjectData">
+          <AbstractNodeData Name="titlebox" ActionTag="-117185771" Tag="120" IconVisible="False" LeftMargin="11.5411" RightMargin="645.4589" TopMargin="249.0934" BottomMargin="778.9066" ctype="SpriteObjectData">
             <Size X="63.0000" Y="252.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="43.0411" Y="904.9066" />
@@ -27,7 +27,7 @@
             <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="uipacker.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_5" ActionTag="-47522931" Tag="100" IconVisible="False" LeftMargin="68.0938" RightMargin="61.9061" TopMargin="391.2506" BottomMargin="88.7494" Scale9Enable="True" LeftEage="6" RightEage="6" TopEage="6" BottomEage="6" Scale9OriginX="6" Scale9OriginY="6" Scale9Width="8" Scale9Height="8" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_5" ActionTag="-47522931" Tag="100" IconVisible="False" LeftMargin="68.0938" RightMargin="61.9062" TopMargin="391.2506" BottomMargin="88.7494" Scale9Enable="True" LeftEage="6" RightEage="6" TopEage="6" BottomEage="6" Scale9OriginX="6" Scale9OriginY="6" Scale9Width="8" Scale9Height="8" ctype="ImageViewObjectData">
             <Size X="590.0000" Y="800.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="363.0938" Y="488.7494" />
@@ -37,7 +37,7 @@
             <PreSize X="0.8194" Y="0.6250" />
             <FileData Type="MarkedSubImage" Path="ui/framekong.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="scrollview" ActionTag="-644685346" Tag="112" IconVisible="False" LeftMargin="70.7087" RightMargin="69.2913" TopMargin="397.9911" BottomMargin="232.0088" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+          <AbstractNodeData Name="scrollview" ActionTag="-644685346" Tag="112" IconVisible="False" LeftMargin="70.7087" RightMargin="69.2913" TopMargin="397.9912" BottomMargin="232.0088" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
             <Size X="580.0000" Y="650.0000" />
             <AnchorPoint />
             <Position X="70.7087" Y="232.0088" />
@@ -63,14 +63,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="text1" ActionTag="-1622357558" Tag="114" IconVisible="False" LeftMargin="252.8840" RightMargin="414.1160" TopMargin="340.1215" BottomMargin="909.8785" FontSize="26" LabelText="名称" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="53.0000" Y="30.0000" />
+          <AbstractNodeData Name="text1" ActionTag="-1622357558" Tag="114" IconVisible="False" LeftMargin="252.8840" RightMargin="413.1160" TopMargin="340.1215" BottomMargin="909.8785" FontSize="26" LabelText="帮派" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="54.0000" Y="30.0000" />
             <AnchorPoint ScaleY="0.5000" />
             <Position X="252.8840" Y="924.8785" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.3512" Y="0.7226" />
-            <PreSize X="0.0736" Y="0.0234" />
+            <PreSize X="0.0750" Y="0.0234" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
@@ -162,7 +162,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvdesc" ActionTag="1323974288" Tag="104" IconVisible="False" LeftMargin="79.0003" RightMargin="60.9998" TopMargin="1059.4570" BottomMargin="140.5429" IsCustomSize="True" FontSize="20" LabelText="等级介绍：1级增加闪避率、2级增加暴击率、3级增加生命值、4级增加防御力、5级增加攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="lvdesc" ActionTag="1323974288" Tag="104" IconVisible="False" LeftMargin="79.0003" RightMargin="60.9997" TopMargin="1059.4572" BottomMargin="140.5429" IsCustomSize="True" FontSize="20" LabelText="等级介绍：1级增加闪避率、2级增加暴击率、3级增加生命值、4级增加防御力、5级增加攻击力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="580.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="369.0003" Y="180.5429" />

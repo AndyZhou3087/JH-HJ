@@ -144,16 +144,16 @@ void FactionMainLayer::getFactionListData()
 void FactionMainLayer::delayShowData(float dt)
 {
 	srollView->removeAllChildrenWithCleanup(true);
-	int size = GlobalData::vec_factionListData.size();
+	int size = 100;// GlobalData::vec_factionListData.size();
 
-	int itemheight = 78;
+	int itemheight = 95;
 	int innerheight = itemheight * size;
 	int contentheight = srollView->getContentSize().height;
 	if (innerheight < contentheight)
 		innerheight = contentheight;
 	srollView->setInnerContainerSize(Size(srollView->getContentSize().width, innerheight));
 
-	for (unsigned int i = 0; i < GlobalData::vec_factionListData.size(); i++)
+	for (unsigned int i = 0; i < size; i++)
 	{
 		FactionListItem* node = FactionListItem::create(&GlobalData::vec_factionListData[i]);
 		node->setPosition(Vec2(srollView->getContentSize().width/2, innerheight - itemheight / 2 - i * itemheight));
@@ -251,7 +251,7 @@ bool FactionListItem::init(FactionListData *data)
 		item->loadTexture(itemstr, cocos2d::ui::TextureResType::PLIST);
 	}
 
-	cocos2d::ui::Text* ranknumlbl = (cocos2d::ui::Text*)csbnode->getChildByName("num");
+	cocos2d::ui::TextBMFont* ranknumlbl = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("num");
 	std::string str = StringUtils::format("%d", rank);
 	ranknumlbl->setString(str);
 
@@ -318,7 +318,7 @@ void FactionListItem::updateLvAndPeopleCount()
 	{
 		m_data->lv = 4;
 	}
-	str = StringUtils::format("%d", m_data->lv + 1);
+	str = StringUtils::format("LV:%d", m_data->lv + 1);
 	lvlbl->setString(str);
 }
 

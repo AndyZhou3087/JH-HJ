@@ -36,6 +36,9 @@ bool ResDetailsLayer::init(PackageData* pdata)
 		return false;
     }
 
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, 150));
+	this->addChild(color);
+
 	m_packageData = pdata;
 	m_csbnode = CSLoader::createNode("resDetailsLayer.csb");
 	this->addChild(m_csbnode);

@@ -69,7 +69,7 @@ bool FactionDetailsLayer::init()
 	scrollview->setScrollBarEnabled(false);
 	scrollview->setBounceEnabled(true);
 
-	Label* contentlbl = Label::createWithTTF(CommonFuncs::gbk2utf(desc.c_str()), "fonts/STXINGKA.TTF", 30);
+	Label* contentlbl = Label::createWithTTF(CommonFuncs::gbk2utf(desc.c_str()), "fonts/SIMHEI.TTF", 20);
 	contentlbl->setAnchorPoint(Vec2(0, 1));
 	contentlbl->setColor(Color3B(0, 0, 0));
 	contentlbl->setHorizontalAlignment(TextHAlignment::LEFT);

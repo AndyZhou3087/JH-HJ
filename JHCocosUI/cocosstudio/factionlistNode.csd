@@ -16,19 +16,17 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/fightitem0.png" Plist="uipacker.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="num" ActionTag="1115503696" Tag="136" IconVisible="False" LeftMargin="-244.4324" RightMargin="227.4324" TopMargin="-16.5000" BottomMargin="-20.5000" FontSize="32" LabelText="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="17.0000" Y="37.0000" />
+          <AbstractNodeData Name="num" ActionTag="1731730782" Tag="10" IconVisible="False" LeftMargin="-248.0000" RightMargin="210.0000" TopMargin="-21.0000" BottomMargin="-15.0000" LabelText="1" ctype="TextBMFontObjectData">
+            <Size X="38.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-235.9324" Y="-2.0000" />
+            <Position X="-229.0000" Y="3.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <LabelBMFontFile_CNB Type="Normal" Path="fonts/rankfnt.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="name" ActionTag="961971783" Tag="135" IconVisible="False" LeftMargin="-124.2522" RightMargin="85.2522" TopMargin="-31.3264" BottomMargin="10.3264" IsCustomSize="True" FontSize="18" LabelText="帮派" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="name" ActionTag="961971783" Tag="135" IconVisible="False" LeftMargin="-124.2522" RightMargin="85.2522" TopMargin="-31.3264" BottomMargin="10.3264" FontSize="18" LabelText="帮派" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="39.0000" Y="21.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-104.7522" Y="20.8264" />
@@ -64,7 +62,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="owner" ActionTag="1483712866" Tag="132" IconVisible="False" LeftMargin="41.2626" RightMargin="-109.2626" TopMargin="-13.4999" BottomMargin="-11.5001" IsCustomSize="True" FontSize="22" LabelText="份额刻" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="owner" ActionTag="1483712866" Tag="132" IconVisible="False" LeftMargin="41.2626" RightMargin="-109.2626" TopMargin="-13.4999" BottomMargin="-11.5001" FontSize="22" LabelText="份额刻" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="68.0000" Y="25.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="75.2626" Y="0.9999" />

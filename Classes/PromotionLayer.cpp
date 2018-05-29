@@ -44,8 +44,8 @@ bool PromotionLayer::init(FactionMemberData *data, Node* target)
 	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)csbnode->getChildByName("actionbtn");
 	okbtn->addTouchEventListener(CC_CALLBACK_2(PromotionLayer::onOk, this));
 
-	cocos2d::ui::Button* backbtn = (cocos2d::ui::Button*)csbnode->getChildByName("backbtn");
-	backbtn->addTouchEventListener(CC_CALLBACK_2(PromotionLayer::onBack, this));
+	/*cocos2d::ui::Button* backbtn = (cocos2d::ui::Button*)csbnode->getChildByName("backbtn");
+	backbtn->addTouchEventListener(CC_CALLBACK_2(PromotionLayer::onBack, this));*/
 
 	//checkbox
 

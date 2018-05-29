@@ -85,7 +85,7 @@ bool FactionMemberLayer::init(FactionListData *fldata)
 	str = StringUtils::format("%d/%d", fldata->exp, lv*lv*fldata->maxcount*100);
 	explbl->setString(str);
 
-	std::string descstr = StringUtils::format("                  %s", fldata->desc.c_str());
+	std::string descstr = StringUtils::format("帮派介绍：%s", fldata->desc.c_str());
 	cocos2d::ui::Text* desclbl = (cocos2d::ui::Text*)csbnode->getChildByName("desc");
 	desclbl->setString(descstr);
 

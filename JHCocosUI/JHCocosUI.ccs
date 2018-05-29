@@ -45,11 +45,13 @@
           <Image Name="gameovertext.png" />
           <Image Name="heroselectbg.png" />
           <Image Name="homehill.png" />
+          <Image Name="hsljframe.png" />
           <Image Name="hsljhero0.png" />
           <Image Name="hsljhero1.png" />
           <Image Name="hsljhero2.png" />
           <Image Name="hsljhero3.png" />
           <Image Name="hsljhero4.png" />
+          <Image Name="hsljvsbg.png" />
           <Image Name="huafeititle.png" />
           <Image Name="jddk.png" />
           <Image Name="jdtk.png" />
@@ -351,6 +353,7 @@
           <Image Name="hp8-2.png" />
           <Image Name="hp8-3.png" />
           <Image Name="hp9-4.png" />
+          <Image Name="hsljbanner.png" />
           <Image Name="hsljcate.png" />
           <Image Name="hsljexpbar.png" />
           <Image Name="hsljexpbarbg.png" />
@@ -360,6 +363,7 @@
           <Image Name="hsljmyitem.png" />
           <Image Name="hsljrankbtn.png" />
           <Image Name="hsljrewarddescbtn.png" />
+          <Image Name="hsljserch.png" />
           <Image Name="hsljtitle.png" />
           <Image Name="hurticon.png" />
           <Image Name="iconbg.png" />

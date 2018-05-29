@@ -91,10 +91,10 @@ bool NewerGuideLayer::init(int step, std::vector<Node*> stencilNodes)
 	{
 		Sprite* textbox = Sprite::create("images/newerguide/newertextbox.png");
 
-		if (step == 2 || step == 13 || step == 18 || step == 21 || step == 25 || step == 26 || step == 28 || step == 30 || step == 31 || step == 34 || step == 35 || step == 37 || step == 38 || step == 45 || step == 51)
+		if (step == 2 || step == 13 || step == 20 || step == 21 || step == 25 || step == 26 || step == 28 || step == 30 || step == 31 || step == 34 || step == 35 || step == 37 || step == 38 || step == 40 || step == 45 || step == 51)
 			textbox->setPosition(Vec2(360, 650));
 		else
-			textbox->setPosition(Vec2(360, 170));
+			textbox->setPosition(Vec2(360, 350));
 		this->addChild(textbox, 2);
 
 		Label *wordlbl = Label::createWithTTF(CommonFuncs::gbk2utf(descText[step].c_str()), "fonts/STXINGKA.TTF", 30);
