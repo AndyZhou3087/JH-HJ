@@ -120,11 +120,16 @@
           <Image Name="t011.png" />
           <Image Name="t012.png" />
           <Image Name="t013.png" />
+          <Image Name="timegiftbanner.png" />
+          <Image Name="timegiftbg.jpg" />
+          <Image Name="timegiftlabel.png" />
           <Image Name="topbg.png" />
           <Image Name="topeventwordbox.png" />
           <Image Name="unlockbg.png" />
           <Image Name="unlocktitle.png" />
           <Image Name="unselect.png" />
+          <Image Name="vip_1.png" />
+          <Image Name="vip_2.png" />
           <Image Name="vipbg.png" />
           <Image Name="vipshoptitle.png" />
           <Image Name="warning.png" />
@@ -344,6 +349,10 @@
           <Image Name="herohead4.png" />
           <Image Name="herolvuptext.png" />
           <Image Name="heroppoint.png" />
+          <Image Name="herosign1.png" />
+          <Image Name="herosign2.png" />
+          <Image Name="herosign3.png" />
+          <Image Name="herosign4.png" />
           <Image Name="hintdown.png" />
           <Image Name="hp3.png" />
           <Image Name="hp4.png" />
@@ -613,6 +622,9 @@
           <Image Name="sdsc.png" />
           <Image Name="sdtj.png" />
           <Image Name="sdyh.png" />
+          <Image Name="selecthero_1.png" />
+          <Image Name="selecthero_2.png" />
+          <Image Name="selecthero_3.png" />
           <Image Name="setmodifybtn.png" />
           <Image Name="setnicknamebox.png" />
           <Image Name="settingselect.png" />
@@ -702,6 +714,7 @@
           <Image Name="timegiftpricebox.png" />
           <Image Name="timegifttitle.png" />
           <Image Name="timeguide.png" />
+          <Image Name="timesmall.png" />
           <Image Name="titlebgg.png" />
           <Image Name="tn004.png" />
           <Image Name="tn005.png" />
@@ -846,6 +859,7 @@
           <Image Name="traitrm.png" />
           <Image Name="traitsc.png" />
           <Image Name="traityl.png" />
+          <Image Name="vip_day.png" />
           <Image Name="vip1.png" />
           <Image Name="vip2.png" />
           <Image Name="vip3.png" />
@@ -920,6 +934,7 @@
           <Image Name="wintext-1.png" />
           <Image Name="wintitle0.png" />
           <Image Name="wintitle1.png" />
+          <Image Name="wood.png" />
           <Image Name="x001.png" />
           <Image Name="x002.png" />
           <Image Name="x003.png" />

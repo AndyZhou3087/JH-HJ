@@ -28,12 +28,12 @@ bool VipGoodsItem::init(GoodsData* gdata)
 	csbnode->setPosition(Vec2(this->getContentSize().width / 2, this->getContentSize().height / 2));
 	this->addChild(csbnode);
 
-	Node* bgnode = csbnode->getChildByName("itembg");
+	cocos2d::ui::ImageView* bgnode = (cocos2d::ui::ImageView*)csbnode->getChildByName("itembg");
 
 	icon = (cocos2d::ui::ImageView*)bgnode->getChildByName("icon");
 	nameTxt = (cocos2d::ui::Text*)bgnode->getChildByName("name");
 	descTxt = (cocos2d::ui::Text*)bgnode->getChildByName("desc");
-	priceTxt = (cocos2d::ui::Text*)bgnode->getChildByName("price");
+	priceTxt = (cocos2d::ui::Text*)csbnode->getChildByName("price");
 
 	leftday = (cocos2d::ui::Text*)bgnode->getChildByName("leftday");
 	leftday_0 = (cocos2d::ui::Text*)bgnode->getChildByName("leftday_0");
@@ -53,6 +53,11 @@ bool VipGoodsItem::init(GoodsData* gdata)
 	bgbtn->addTouchEventListener(CC_CALLBACK_2(VipGoodsItem::onItem, this));
 	bgbtn->setSwallowTouches(false);
 
+	if (m_goodData->icon == "vip3")
+	{
+		bgnode->loadTexture("images/vip_1.png", cocos2d::ui::TextureResType::LOCAL);
+	}
+
 	int golditemcount = sizeof(goldcount) / sizeof(goldcount[0]);
 	int index = 0;
 	for (unsigned int i = 0; i < GlobalData::vec_goods.size(); i++)
@@ -68,9 +73,9 @@ bool VipGoodsItem::init(GoodsData* gdata)
 
 	std::vector<std::string> vec_rewardres = m_goodData->vec_res;
 
-	int startx = -100;
-	int spacex = 68;
-	int starty = 58;
+	int startx = -25;
+	int spacex = 75;
+	int starty = -15;
 
 	int ressize = vec_rewardres.size() + 1;
 	for (int i = 0; i < ressize; i++)
@@ -89,14 +94,18 @@ bool VipGoodsItem::init(GoodsData* gdata)
 			resstr = StringUtils::format("ui/%d.png", intresid / 1000);
 			strcount = StringUtils::format("x%d", intresid % 1000);
 		}
+		Sprite* box = Sprite::createWithSpriteFrameName("ui/timesmall.png");
+		box->setPosition(Vec2(startx + (i % 3)*spacex, starty - i / 3 * 74));
+		this->addChild(box);
+
 		Sprite* res = Sprite::createWithSpriteFrameName(resstr);
-		res->setScale(0.6f);
-		res->setPosition(Vec2(startx + i*spacex, starty));
+		res->setPosition(box->getPosition());
+		res->setScale(0.5f);
 		this->addChild(res);
 
-		Label * coutlbl = Label::createWithTTF(strcount, "fonts/STXINGKA.TTF", 21);//Label::createWithSystemFont(strcount, "", 21);
-		coutlbl->setColor(Color3B(0, 0, 0));
-		coutlbl->setPosition(Vec2(res->getPositionX(), 20));
+		Label * coutlbl = Label::createWithTTF(strcount, "fonts/SIMHEI.TTF", 18);//Label::createWithSystemFont(strcount, "", 21);
+		coutlbl->setColor(Color3B(255, 255, 255));
+		coutlbl->setPosition(Vec2(box->getPositionX() + 30, box->getPositionY() - box->getContentSize().height / 2 + 10));
 		this->addChild(coutlbl);
 	}
 

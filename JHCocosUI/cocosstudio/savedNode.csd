@@ -12,14 +12,14 @@
               <AbstractNodeData Name="saveitembg" ActionTag="1822945114" Tag="34" IconVisible="False" LeftMargin="45.0000" RightMargin="45.0000" TopMargin="22.0000" BottomMargin="22.0000" ctype="SpriteObjectData">
                 <Size X="550.0000" Y="156.0000" />
                 <Children>
-                  <AbstractNodeData Name="head" ActionTag="106005854" Tag="35" IconVisible="False" LeftMargin="-8.2944" RightMargin="377.2944" TopMargin="-53.9523" BottomMargin="-28.0477" LeftEage="59" RightEage="59" TopEage="78" BottomEage="78" Scale9OriginX="59" Scale9OriginY="78" Scale9Width="63" Scale9Height="82" ctype="ImageViewObjectData">
-                    <Size X="181.0000" Y="238.0000" />
+                  <AbstractNodeData Name="head" ActionTag="106005854" Tag="35" IconVisible="False" LeftMargin="-7.7944" RightMargin="377.7944" TopMargin="-31.9523" BottomMargin="-6.0477" LeftEage="59" RightEage="59" TopEage="78" BottomEage="78" Scale9OriginX="59" Scale9OriginY="78" Scale9Width="62" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="180.0000" Y="194.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="82.2056" Y="90.9523" />
                     <Scale ScaleX="0.7000" ScaleY="0.7000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.1495" Y="0.5830" />
-                    <PreSize X="0.3291" Y="1.5256" />
+                    <PreSize X="0.3273" Y="1.2436" />
                     <FileData Type="MarkedSubImage" Path="ui/tophero1.png" Plist="uipacker.plist" />
                   </AbstractNodeData>
                 </Children>
@@ -152,8 +152,8 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="nodatatext" ActionTag="317591312" VisibleForFrame="False" Tag="48" IconVisible="False" LeftMargin="108.0000" RightMargin="-270.0000" TopMargin="-26.5000" BottomMargin="-14.5000" FontSize="40" LabelText="暂无进度" HorizontalAlignmentType="HT_Right" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="162.0000" Y="41.0000" />
+          <AbstractNodeData Name="nodatatext" ActionTag="317591312" VisibleForFrame="False" Tag="48" IconVisible="False" LeftMargin="108.0000" RightMargin="-270.0000" TopMargin="-29.0000" BottomMargin="-17.0000" FontSize="40" LabelText="暂无进度" HorizontalAlignmentType="HT_Right" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="162.0000" Y="46.0000" />
             <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
             <Position X="270.0000" Y="6.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

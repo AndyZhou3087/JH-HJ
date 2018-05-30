@@ -87,7 +87,7 @@ bool VipShopLayer::init()
 		VipGoodsItem* node = VipGoodsItem::create(vec_vipGoods[i]);
 		node->setTag(sizeof(heroprice) / sizeof(heroprice[0]) + sizeof(goldcount) / sizeof(goldcount[0]) + i);
 		m_vipScrollview->addChild(node);
-		node->setPosition(Vec2(360, innerheight - itemheight / 2 - (i - starti) * itemheight));
+		node->setPosition(Vec2(148+(i-1)*293, 416));
 	}
 
 	cocos2d::ui::Button* backbtn = (cocos2d::ui::Button*)m_csbnode->getChildByName("backbtn");

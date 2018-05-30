@@ -825,6 +825,16 @@
       <FilePathData Path="ui/achgeted.png" />
       <FilePathData Path="ui/hsljbanner.png" />
       <FilePathData Path="ui/hsljserch.png" />
+      <FilePathData Path="ui/wood.png" />
+      <FilePathData Path="ui/timesmall.png" />
+      <FilePathData Path="ui/vip_day.png" />
+      <FilePathData Path="ui/herosign1.png" />
+      <FilePathData Path="ui/herosign2.png" />
+      <FilePathData Path="ui/herosign3.png" />
+      <FilePathData Path="ui/herosign4.png" />
+      <FilePathData Path="ui/selecthero_1.png" />
+      <FilePathData Path="ui/selecthero_2.png" />
+      <FilePathData Path="ui/selecthero_3.png" />
     </ImageFiles>
     <MaxSize Width="4096" Height="4096" />
   </Content>

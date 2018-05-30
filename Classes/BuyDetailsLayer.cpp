@@ -28,6 +28,8 @@ bool BuyDetailsLayer::init(int heroid)
 
 	goodstext = (cocos2d::ui::Text*) csbnode->getChildByName("goodsdesc");
 
+	cocos2d::ui::ScrollView* m_scrollview = (cocos2d::ui::ScrollView*)csbnode->getChildByName("ScrollView");
+
 	std::string goodsstr;
 	goodsstr.append(CommonFuncs::gbk2utf("初始物品："));
 	std::string strval = GlobalData::getOriginLocalStorage(heroid);
@@ -38,21 +40,38 @@ bool BuyDetailsLayer::init(int heroid)
 	{
 		std::vector<std::string> tmp2;
 		CommonFuncs::split(tmp[i], tmp2, "-");
-		std::string countstr = StringUtils::format("*%s", tmp2[2].c_str());
+		std::string countstr = StringUtils::format("x%s", tmp2[2].c_str());
 		std::string idstr = tmp2[0];
-		goodsstr.append(GlobalData::map_allResource[idstr].cname.c_str());
+		std::string strr = StringUtils::format("ui/%s.png", tmp2[0].c_str());
+		/*goodsstr.append(GlobalData::map_allResource[idstr].cname.c_str());
 		goodsstr.append(countstr);
-		if (i < tmp.size()-1)
-			goodsstr.append(CommonFuncs::gbk2utf("，"));
+		if (i < tmp.size() - 1)
+			goodsstr.append(CommonFuncs::gbk2utf("，"));*/
+
+		Sprite* buildsmall = Sprite::createWithSpriteFrameName("ui/buildsmall.png");
+		buildsmall->setScale(0.6f);
+		buildsmall->setPosition(Vec2(43 + i % 5 * 83, 128 - i / 5 * 80));
+		m_scrollview->addChild(buildsmall);
+
+		Sprite* res = Sprite::createWithSpriteFrameName(strr);
+		res->setScale(0.6f);
+		res->setPosition(buildsmall->getPosition());
+		m_scrollview->addChild(res);
+
+		Label * reslbl = Label::createWithTTF(countstr, "fonts/SIMHEI.TTF", 20);
+		reslbl->setPosition(Vec2(buildsmall->getPositionX() + 20, buildsmall->getPositionY() - buildsmall->getContentSize().height / 2 + 20));
+		reslbl->setColor(Color3B(255, 255, 255));
+		m_scrollview->addChild(reslbl);
+
 	}
-	goodstext->setString(goodsstr);
+	//goodstext->setString(goodsstr);
 	std::string imagepath = StringUtils::format("ui/tophero%d.png", heroid);
 	image->loadTexture(imagepath, cocos2d::ui::TextureResType::PLIST);
 	image->setContentSize(Sprite::createWithSpriteFrameName(imagepath)->getContentSize());
 
 	nameTxt->setString(CommonFuncs::gbk2utf(heroname[heroid - 1].c_str()));
 	descTxt->setString(CommonFuncs::gbk2utf(herodesc[heroid - 1].c_str()));
-	std::string pricestr = StringUtils::format("￥%d.00", heroprice[heroid - 1]);
+	std::string pricestr = StringUtils::format("%d元", heroprice[heroid - 1]);
 	priceTxt->setString(CommonFuncs::gbk2utf(pricestr.c_str()));
 
 	cocos2d::ui::Button* backbtn = (cocos2d::ui::Button*)csbnode->getChildByName("backbtn");

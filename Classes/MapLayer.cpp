@@ -825,15 +825,15 @@ void MapLayer::checkTimeGift(float dt)
 		m_rechargebtn->setVisible(true);
 		if (m_timegiftbtn->isVisible() && GlobalData::myRaffleData.isshow)
 		{
-			m_rechargebtn->setPositionY(350);
+			m_rechargebtn->setPositionY(305);
 		}
 		else if ((m_timegiftbtn->isVisible() && !GlobalData::myRaffleData.isshow) || (!m_timegiftbtn->isVisible() && GlobalData::myRaffleData.isshow))
 		{
-			m_rechargebtn->setPositionY(500);
+			m_rechargebtn->setPositionY(455);
 		}
 		else if (!m_timegiftbtn->isVisible() && !GlobalData::myRaffleData.isshow)
 		{
-			m_rechargebtn->setPositionY(665);
+			m_rechargebtn->setPositionY(620);
 		}
 	}
 	if (GlobalData::myLotteryData.isshow && m_lotteryimg != NULL)

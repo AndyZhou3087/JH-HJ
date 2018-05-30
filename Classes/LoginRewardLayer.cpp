@@ -67,7 +67,7 @@ bool LoginRewardLayer::init()
 			namsstr = StringUtils::format("%sx%d", GlobalData::map_allResource[resid].cname.c_str(), count);
 		name->setString(namsstr.c_str());
 
-		str = "ui/buildsmall.png";
+		/*str = "ui/buildsmall.png";
 		int type = GlobalData::getResType(resid);
 		if (type == WEAPON || type == PROTECT_EQU)
 		{
@@ -80,11 +80,11 @@ bool LoginRewardLayer::init()
 
 		Sprite * rwdboximg = Sprite::createWithSpriteFrameName(str);
 		rwdboximg->setPosition(Vec2(72, 130));
-		item->addChild(rwdboximg, 0, "rwdboximg");
+		item->addChild(rwdboximg, 0, "rwdboximg");*/
 
 		str = StringUtils::format("ui/%s.png", resid.c_str());
 		Sprite * rwdimg = Sprite::createWithSpriteFrameName(str);
-		rwdimg->setPosition(Vec2(72, 130));
+		rwdimg->setPosition(Vec2(60, 96));
 		item->addChild(rwdimg, 0, "rwdimg");
 
 		if (i < logindays)
@@ -93,7 +93,7 @@ bool LoginRewardLayer::init()
 			getimg->loadTexture("ui/disnpcbtn1.png", cocos2d::ui::Widget::TextureResType::PLIST);
 			getimg->setEnabled(false);
 			statutext->setString(CommonFuncs::gbk2utf("已领取"));
-			CommonFuncs::changeGray(rwdboximg);
+			//CommonFuncs::changeGray(rwdboximg);
 			CommonFuncs::changeGray(rwdimg);
 		}
 		else if (i == logindays)
@@ -152,7 +152,7 @@ void LoginRewardLayer::onGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 		getimg->setEnabled(false);
 		cocos2d::ui::Text* statutext = (cocos2d::ui::Text*)getimg->getChildByName("statutext");
 		statutext->setString(CommonFuncs::gbk2utf("已领取"));
-		CommonFuncs::changeGray(item->getChildByName("rwdboximg"));
+		//CommonFuncs::changeGray(item->getChildByName("rwdboximg"));
 		CommonFuncs::changeGray(item->getChildByName("rwdimg"));
 
 		std::string resid = LOGINREWARDS[GlobalData::continueLoginDays - 1];
