@@ -40,7 +40,7 @@ bool BuyDetailsLayer::init(int heroid)
 	{
 		std::vector<std::string> tmp2;
 		CommonFuncs::split(tmp[i], tmp2, "-");
-		std::string countstr = StringUtils::format("x%s", tmp2[2].c_str());
+		std::string countstr = StringUtils::format("*%s", tmp2[2].c_str());
 		std::string idstr = tmp2[0];
 		std::string strr = StringUtils::format("ui/%s.png", tmp2[0].c_str());
 		/*goodsstr.append(GlobalData::map_allResource[idstr].cname.c_str());
@@ -58,8 +58,8 @@ bool BuyDetailsLayer::init(int heroid)
 		res->setPosition(buildsmall->getPosition());
 		m_scrollview->addChild(res);
 
-		Label * reslbl = Label::createWithTTF(countstr, "fonts/SIMHEI.TTF", 20);
-		reslbl->setPosition(Vec2(buildsmall->getPositionX() + 20, buildsmall->getPositionY() - buildsmall->getContentSize().height / 2 + 20));
+		Label * reslbl = Label::createWithBMFont("fonts/herofont.fnt", countstr); //Label::createWithTTF(countstr, "fonts/SIMHEI.TTF", 20);
+		reslbl->setPosition(Vec2(buildsmall->getPositionX() + 25, buildsmall->getPositionY() - buildsmall->getContentSize().height / 2 + 20));
 		reslbl->setColor(Color3B(255, 255, 255));
 		m_scrollview->addChild(reslbl);
 

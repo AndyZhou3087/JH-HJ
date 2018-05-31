@@ -27,11 +27,7 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="uipacker.csi" />
-          <FilePathData Path="selectHeroLayer.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="selectHeroLayer.csd" />
+        <ActiveDocument />
       </Value>
     </Item>
   </Properties>
