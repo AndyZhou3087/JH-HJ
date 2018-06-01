@@ -72,7 +72,7 @@ bool FriendExgScene::init(int type)
 	if (vec_friends.size() <= 0)
 		return false;
 
-	Node* csbnode = CSLoader::createNode("friendExgLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfriendExgLayer.csb");
 	this->addChild(csbnode);
 
 	m_type = type;

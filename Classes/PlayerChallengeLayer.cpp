@@ -47,7 +47,7 @@ bool PlayerChallengeLayer::init(std::string addrid, RankData* rankData)
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("fightLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfightLayer.csb");
 	csbnode->setPositionY(100);
 	this->addChild(csbnode);
 

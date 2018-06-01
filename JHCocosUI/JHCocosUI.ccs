@@ -987,14 +987,13 @@
           <Image Name="zjzdl.png" />
           <Image Name="zst.png" />
         </Folder>
-        <Project Name="jhfactionlistNode.csd" Type="Node" />
-        <Project Name="factionMainLayer.csd" Type="Layer" />
-        <Project Name="factionMemberLayer.csd" Type="Layer" />
-        <Project Name="factionmemberNode.csd" Type="Node" />
-        <Project Name="fightLayer.csd" Type="Layer" />
-        <Project Name="fightlistNode.csd" Type="Node" />
-        <Project Name="friendExgLayer.csd" Type="Layer" />
-        <Project Name="friendNpcChallengeLayer.csd" Type="Layer" />
+        <Project Name="jhfactionMainLayer.csd" Type="Layer" />
+        <Project Name="jhfactionMemberLayer.csd" Type="Layer" />
+        <Project Name="jhfactionmemberNode.csd" Type="Node" />
+        <Project Name="jhfightLayer.csd" Type="Layer" />
+        <Project Name="jhfightlistNode.csd" Type="Node" />
+        <Project Name="jhfriendExgLayer.csd" Type="Layer" />
+        <Project Name="jhfriendNpcChallengeLayer.csd" Type="Layer" />
         <Project Name="frozenLayer.csd" Type="Layer" />
         <Project Name="getVipRewardLayer.csd" Type="Layer" />
         <Project Name="giveLayer.csd" Type="Layer" />
@@ -1041,6 +1040,7 @@
         <Project Name="jhfactionComfirmLayer.csd" Type="Layer" />
         <Project Name="jhfactionCreateLayer.csd" Type="Layer" />
         <Project Name="jhfactionDetailsLayer.csd" Type="Layer" />
+        <Project Name="jhfactionlistNode.csd" Type="Node" />
         <Project Name="loginRewardLayer.csd" Type="Layer" />
         <Project Name="mapLayer.csd" Type="Layer" />
         <Project Name="mixDoneLayer.csd" Type="Layer" />

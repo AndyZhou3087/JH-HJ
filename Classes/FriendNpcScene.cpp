@@ -67,7 +67,7 @@ bool FriendNpcScene::init()
 	if (vec_friends.size() <= 0)
 		return false;
 
-	Node* csbnode = CSLoader::createNode("friendNpcChallengeLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfriendNpcChallengeLayer.csb");
 	this->addChild(csbnode);
 
 	int rnd = GlobalData::createRandomNum(vec_friends.size());

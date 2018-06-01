@@ -52,7 +52,7 @@ FightLayer* FightLayer::create(std::string addrid, std::string npcid)
 
 bool FightLayer::init(std::string addrid, std::string npcid)
 {
-	Node* csbnode = CSLoader::createNode("fightLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfightLayer.csb");
 	this->addChild(csbnode);
 
 	m_addrid = addrid;

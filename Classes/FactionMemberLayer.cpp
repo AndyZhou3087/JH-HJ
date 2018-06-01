@@ -42,7 +42,7 @@ FactionMemberLayer* FactionMemberLayer::create(FactionListData *fldata)
 
 bool FactionMemberLayer::init(FactionListData *fldata)
 {
-	Node* csbnode = CSLoader::createNode("factionMemberLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfactionMemberLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Widget *backbtn = (cocos2d::ui::Widget*)csbnode->getChildByName("backbtn");
@@ -358,7 +358,7 @@ bool FactionMemberItem::init(FactionMemberData *data)
 		return false;
 
 	m_data = data;
-	Node* csbnode = CSLoader::createNode("factionmemberNode.csb");
+	Node* csbnode = CSLoader::createNode("jhfactionmemberNode.csb");
 	csbnode->setPosition(Vec2(this->getContentSize().width / 2, this->getContentSize().height / 2));
 	this->addChild(csbnode);
 

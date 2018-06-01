@@ -36,7 +36,7 @@ FactionMainLayer* FactionMainLayer::create()
 
 bool FactionMainLayer::init()
 {
-	Node* csbnode = CSLoader::createNode("factionMainLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfactionMainLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Widget *backbtn = (cocos2d::ui::Widget*)csbnode->getChildByName("backbtn");

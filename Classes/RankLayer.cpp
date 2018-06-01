@@ -353,7 +353,7 @@ bool RankItem::init(RankData *data, int type)
 	Node* csbnode = CSLoader::createNode("rankNode.csb");//物品节点
 	if (type == 1)
 	{
-		csbnode = CSLoader::createNode("fightlistNode.csb");
+		csbnode = CSLoader::createNode("jhfightlistNode.csb");
 	}
 	csbnode->setPosition(Vec2(this->getContentSize().width / 2, this->getContentSize().height / 2));
 	this->addChild(csbnode);
