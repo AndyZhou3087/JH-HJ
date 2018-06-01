@@ -58,7 +58,7 @@ bool FactionDetailsLayer::init()
 	this->addChild(color);
 
 	//加载csb文件
-	Node* csbnode = CSLoader::createNode("factionDetailsLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfactionDetailsLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* closebtn = (cocos2d::ui::Button*)csbnode->getChildByName("backbtn");

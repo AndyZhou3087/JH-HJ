@@ -17,7 +17,7 @@ bool FactionComfirmLayer::init(FactionListData *fldata)
     }
 	f_action = F_NONE;
 	m_fldata = fldata;
-	Node* csbnode = CSLoader::createNode("factionComfirmLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfactionComfirmLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)csbnode->getChildByName("okbtn");

@@ -26,7 +26,7 @@ bool BookDetailsLayer::init(BookData* bookdata)
 		return false;
     }
 
-	m_csbnode = CSLoader::createNode("bookDetailsLayer.csb");
+	m_csbnode = CSLoader::createNode("jhbookDetailsLayer.csb");
 	this->addChild(m_csbnode);
 
 	m_okbtn = (cocos2d::ui::Button*)m_csbnode->getChildByName("okbtn");

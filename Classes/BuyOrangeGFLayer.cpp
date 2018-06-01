@@ -36,7 +36,7 @@ bool BuyOrangeGFLayer::init()
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("buyOrangeGFLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhbuyOrangeGFLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Widget *backbtn = (cocos2d::ui::Widget*)csbnode->getChildByName("backbtn");

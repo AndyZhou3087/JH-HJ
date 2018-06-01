@@ -26,7 +26,7 @@ StorageUILayer::~StorageUILayer()
 bool StorageUILayer::init()
 {
 
-	m_csbnode = CSLoader::createNode("buidingUiLayer.csb");
+	m_csbnode = CSLoader::createNode("jhbuidingUiLayer.csb");
 	m_csbnode->setPosition(Vec2(0, -90));
 	this->addChild(m_csbnode);
 

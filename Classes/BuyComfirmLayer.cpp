@@ -28,7 +28,7 @@ bool BuyComfirmLayer::init(GoodsData* gdata)
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("buyComfirmLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhbuyComfirmLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* cancelbtn = (cocos2d::ui::Button*)csbnode->getChildByName("cacelbtn");

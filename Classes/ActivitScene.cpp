@@ -43,7 +43,7 @@ bool ActivitScene::init(std::string imagepath, std::string content)
 	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, 255));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("activityLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhactivityLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::ImageView* image = (cocos2d::ui::ImageView*)csbnode->getChildByName("image");

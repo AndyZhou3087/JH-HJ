@@ -25,7 +25,7 @@ bool ChallengeCountLayer::init(int* wincount, int winnpccount, bool isRevive)
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("challengeCountLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhchallengeCountLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::ImageView* heroimg = (cocos2d::ui::ImageView*)csbnode->getChildByName("heroimg");

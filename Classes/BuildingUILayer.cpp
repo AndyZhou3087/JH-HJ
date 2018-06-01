@@ -55,7 +55,7 @@ bool BuildingUILayer::init(Building* build)
 	m_build = build;
 
 	// ui
-	m_csbnode = CSLoader::createNode("buidingUiLayer.csb");
+	m_csbnode = CSLoader::createNode("jhbuidingUiLayer.csb");
 	m_csbnode->setPosition(Vec2(0, -90));
 	this->addChild(m_csbnode);
 
@@ -74,7 +74,7 @@ bool BuildingUILayer::init(Building* build)
 		scrollview->setVisible(false);
 
 	//建筑物每个操作 node
-	buildnode = CSLoader::createNode("actionNodeTop.csb");
+	buildnode = CSLoader::createNode("jhactionNodeTop.csb");
 	buildnode->setPosition(Vec2(360, 950));
 	m_csbnode->addChild(buildnode);
 
@@ -205,7 +205,7 @@ void BuildingUILayer::loadActionUi()
 
 	for (int i = 0; i < acsize; i++)
 	{
-		Node *acnode = CSLoader::createNode("actionNode.csb");
+		Node *acnode = CSLoader::createNode("jhactionNode.csb");
 		acnode->setPosition(Vec2(scrollview->getContentSize().width / 2, scrollinnerheight - itemheight / 2 - i * itemheight));
 
 		scrollview->addChild(acnode);

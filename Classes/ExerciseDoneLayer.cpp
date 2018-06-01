@@ -20,7 +20,7 @@ bool ExerciseDoneLayer::init(std::string wgidstr, std::string ngidstr, int hour)
 	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, 150));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("exerciseDoneLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhexerciseDoneLayer.csb");
 	this->addChild(csbnode);
 
 	m_unlockbg = (cocos2d::ui::Widget*)csbnode->getChildByName("unlockbg");

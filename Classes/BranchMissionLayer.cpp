@@ -18,7 +18,7 @@ bool BranchMissionLayer::init()
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("branchMissionLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhbranchMissionLayer.csb");
 	this->addChild(csbnode);
 	
 	cocos2d::ui::Text* mapTxt = (cocos2d::ui::Text*)csbnode->getChildByName("maptxt");

@@ -47,7 +47,7 @@ ExchangeLayer* ExchangeLayer::create(std::string npcid)
 
 bool ExchangeLayer::init(std::string npcid)
 {
-	Node* csbnode = CSLoader::createNode("exgLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhexgLayer.csb");
 	this->addChild(csbnode);
 
 	m_npcid = npcid;

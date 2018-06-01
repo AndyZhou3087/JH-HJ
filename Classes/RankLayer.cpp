@@ -205,7 +205,7 @@ void RankLayer::delayShowData(float dt)
 	this->unschedule(schedule_selector(RankLayer::updateFightCount));
 
 	srollView->removeAllChildrenWithCleanup(true);
-	int size = GlobalData::vec_rankData.size();
+	int size = 100;// GlobalData::vec_rankData.size();
 
 	int itemheight = 90;
 	int innerheight = itemheight * size;
@@ -216,7 +216,7 @@ void RankLayer::delayShowData(float dt)
 	srollView->setInnerContainerSize(Size(srollView->getContentSize().width, innerheight));
 	srollView->setPositionY(scrolly);
 
-	for (unsigned int i = 0; i < GlobalData::vec_rankData.size(); i++)
+	for (unsigned int i = 0; i < size; i++)
 	{
 		RankItem* node = RankItem::create(&GlobalData::vec_rankData[i], rankitemtype);
 		node->setPosition(Vec2(srollView->getContentSize().width/2, innerheight - itemheight / 2 - i * itemheight));

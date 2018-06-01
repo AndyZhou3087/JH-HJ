@@ -17,7 +17,7 @@ bool FactionKickComfirmLayer::init(Node* target, FactionMemberData *fmdata)
 
 	m_data = fmdata;
 	m_target = target;
-	Node* csbnode = CSLoader::createNode("factionComfirmLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfactionComfirmLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)csbnode->getChildByName("okbtn");

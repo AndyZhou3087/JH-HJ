@@ -57,7 +57,7 @@ ApprenticeScene* ApprenticeScene::create(int type)
 
 bool ApprenticeScene::init(int type)
 {
-	Node* csbnode = CSLoader::createNode("apprenticeLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhapprenticeLayer.csb.csb");
 	this->addChild(csbnode);
 
 	m_type = type;

@@ -41,7 +41,7 @@ bool FactionCreateLayer::init(int action, FactionListData* modifyfdata)
 {
 	m_action = action;
 	m_modifyfdata = modifyfdata;
-	Node* csbnode = CSLoader::createNode("factionCreateLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfactionCreateLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::ImageView *title = (cocos2d::ui::ImageView*)csbnode->getChildByName("title");

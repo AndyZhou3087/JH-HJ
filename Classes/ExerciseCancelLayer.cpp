@@ -10,7 +10,7 @@ bool ExerciseCancelLayer::init()
 		return false;
     }
 
-	Node* csbnode = CSLoader::createNode("exerciseCancelLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhexerciseCancelLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)csbnode->getChildByName("okbtn");

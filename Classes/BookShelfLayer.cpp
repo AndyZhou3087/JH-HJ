@@ -26,7 +26,7 @@ BookShelfLayer::~BookShelfLayer()
 bool BookShelfLayer::init()
 {
 
-	m_csbnode = CSLoader::createNode("bookshelfLayer.csb");
+	m_csbnode = CSLoader::createNode("jhbookshelfLayer.csb");
 	m_csbnode->setPosition(Vec2(0, -90));
 	this->addChild(m_csbnode);
 

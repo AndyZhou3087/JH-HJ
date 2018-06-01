@@ -13,7 +13,7 @@ bool ComfirmSaveLayer::init()
 		return false;
     }
 
-	Node* csbnode = CSLoader::createNode("comfirmSaveLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhcomfirmSaveLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)csbnode->getChildByName("okbtn");

@@ -20,7 +20,7 @@ bool BuildingDetailsLayer::init(Building* pdata)
 		return false;
     }
 
-	Node* csbnode = CSLoader::createNode("buildingDetailsLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhbuildingDetailsLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)csbnode->getChildByName("okbtn");

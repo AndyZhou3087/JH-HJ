@@ -22,7 +22,7 @@ ActionGetLayer::~ActionGetLayer()
 
 bool ActionGetLayer::init(int rid, std::vector<int> res_ids, int type, int actype)
 {
-	Node* csbnode = CSLoader::createNode("actionGetLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhactionGetLayer.csb");
 	this->addChild(csbnode);
 
 	mtype = type;

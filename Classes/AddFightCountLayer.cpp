@@ -41,7 +41,7 @@ bool AddFightCountLayer::init(int matchtype)
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
 	this->addChild(color);
 
-	m_csbnode = CSLoader::createNode("addChallengeCountLayer.csb");
+	m_csbnode = CSLoader::createNode("jhaddChallengeCountLayer.csb");
 	this->addChild(m_csbnode);
 
 	cocos2d::ui::Widget *closebtn = (cocos2d::ui::Widget*)m_csbnode->getChildByName("closebtn");

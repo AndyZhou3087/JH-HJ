@@ -21,7 +21,7 @@ bool DeathLayer::init()
 	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, 255));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("deathLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhdeathLayer.csb");
 	this->addChild(csbnode);
 
 	csbnode->runAction(FadeIn::create(3.0f));

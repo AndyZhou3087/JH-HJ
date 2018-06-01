@@ -22,7 +22,7 @@ bool DivideLayer::init(BuildActionData* bdata)
 	m_colorlayer->setVisible(false);
 	this->addChild(m_colorlayer);
 
-	m_csbnode = CSLoader::createNode("divedeLayer.csb");
+	m_csbnode = CSLoader::createNode("jhdivedeLayer.csb");
 	this->addChild(m_csbnode);
 
 

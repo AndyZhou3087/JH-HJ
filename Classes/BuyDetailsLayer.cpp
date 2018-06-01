@@ -19,7 +19,7 @@ bool BuyDetailsLayer::init(int heroid)
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("buyDetailsLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhbuyDetailsLayer.csb");
 	this->addChild(csbnode);
 	image = (cocos2d::ui::ImageView*)csbnode->getChildByName("icon");
 	nameTxt = (cocos2d::ui::Text*)csbnode->getChildByName("name");

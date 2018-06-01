@@ -33,7 +33,7 @@ AchiveLayer* AchiveLayer::create()
 
 bool AchiveLayer::init()
 {
-	Node* csbnode = CSLoader::createNode("achiveLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhachiveLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Widget *backbtn = (cocos2d::ui::Widget*)csbnode->getChildByName("backbtn");
@@ -125,7 +125,7 @@ bool AchiveItem::init(AchiveData *data)
 		return false;
 
 	m_data = data;
-	Node* csbnode = CSLoader::createNode("achiveNode.csb");
+	Node* csbnode = CSLoader::createNode("jhachiveNode.csb");
 	csbnode->setPosition(Vec2(this->getContentSize().width / 2, this->getContentSize().height / 2));
 	this->addChild(csbnode);
 
