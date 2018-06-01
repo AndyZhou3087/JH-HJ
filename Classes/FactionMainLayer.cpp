@@ -234,7 +234,7 @@ bool FactionListItem::init(FactionListData *data)
 		return false;
 
 	m_data = data;
-	Node* csbnode = CSLoader::createNode("factionlistNode.csb");
+	Node* csbnode = CSLoader::createNode("jhfactionlistNode.csb");
 	csbnode->setPosition(Vec2(this->getContentSize().width / 2, this->getContentSize().height / 2));
 	this->addChild(csbnode);
 
