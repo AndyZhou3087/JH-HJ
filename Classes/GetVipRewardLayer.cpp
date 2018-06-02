@@ -24,7 +24,7 @@ bool GetVipRewardLayer::init()
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("getVipRewardLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhgetVipRewardLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* closebtn = (cocos2d::ui::Button*)csbnode->getChildByName("closebtn");

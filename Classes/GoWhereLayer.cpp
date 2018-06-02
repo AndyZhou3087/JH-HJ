@@ -43,7 +43,7 @@ GoWhereLayer* GoWhereLayer::create(std::string addrname, WHERELAYER_TYPE type, f
 
 bool GoWhereLayer::init(std::string addrid, WHERELAYER_TYPE type, float distance)
 {
-	Node* csbnode = CSLoader::createNode("goWhereLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhgoWhereLayer.csb");
 	this->addChild(csbnode);
 
 	m_addrstr = addrid;

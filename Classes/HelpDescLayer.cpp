@@ -17,7 +17,7 @@ bool HelpDescLayer::init( std::string title, std::string text)
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("helpDescLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhhelpDescLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Text* titleTxt = (cocos2d::ui::Text*)csbnode->getChildByName("title");

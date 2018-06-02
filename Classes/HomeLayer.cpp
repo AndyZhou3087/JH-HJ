@@ -33,7 +33,7 @@ HomeLayer::~HomeLayer()
 
 bool HomeLayer::init()
 {
-	Node* csbnode = CSLoader::createNode("homeLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhhomeLayer.csb");
 	this->addChild(csbnode);
 
 	Building* bed = Bed::create();

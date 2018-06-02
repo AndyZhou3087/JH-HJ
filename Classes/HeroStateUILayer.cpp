@@ -24,7 +24,7 @@ HeroStateUILayer::~HeroStateUILayer()
 bool HeroStateUILayer::init()
 {
 
-	m_csbnode = CSLoader::createNode("heroStateLayer.csb");
+	m_csbnode = CSLoader::createNode("jhheroStateLayer.csb");
 	this->addChild(m_csbnode, 0, "csbnode");
 
 	heroAttribNode = HeroProperNode::create(1);

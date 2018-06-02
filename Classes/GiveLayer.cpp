@@ -41,7 +41,7 @@ GiveLayer* GiveLayer::create(std::string npcid, std::string addrid)
 
 bool GiveLayer::init(std::string npcid, std::string addrid)
 {
-	Node* csbnode = CSLoader::createNode("giveLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhgiveLayer.csb");
 	this->addChild(csbnode);
 
 	m_npcid = npcid;

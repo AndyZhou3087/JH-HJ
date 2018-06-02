@@ -43,11 +43,11 @@ bool HeroProperNode::init(int index)
 	m_index = index;
 	if (index == 1)
 	{
-		csbroot = CSLoader::createNode("heroAttribNode.csb");
+		csbroot = CSLoader::createNode("jhheroAttribNode.csb");
 	}
 	else
 	{
-		csbroot = CSLoader::createNode("heroAttribNode2.csb");
+		csbroot = CSLoader::createNode("jhheroAttribNode2.csb");
 	}
 	this->addChild(csbroot);
 	for (int i = 0; i < 8; i++)

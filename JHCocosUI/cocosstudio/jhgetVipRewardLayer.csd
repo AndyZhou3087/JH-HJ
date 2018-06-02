@@ -28,14 +28,14 @@
             <FileData Type="MarkedSubImage" Path="ui/viptitle.png" Plist="uipacker.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="desc" ActionTag="608829751" Tag="105" IconVisible="False" LeftMargin="69.0002" RightMargin="50.9998" TopMargin="446.9989" BottomMargin="743.0011" IsCustomSize="True" FontSize="45" LabelText="获取新手月卡高手月卡至尊月卡福利：" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="600.0000" Y="90.0000" />
+          <AbstractNodeData Name="desc" ActionTag="608829751" Tag="105" IconVisible="False" LeftMargin="69.0002" RightMargin="50.9998" TopMargin="436.9989" BottomMargin="733.0011" IsCustomSize="True" FontSize="45" LabelText="获取新手月卡高手月卡至尊月卡福利：" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="600.0000" Y="110.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="369.0002" Y="788.0011" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.5125" Y="0.6156" />
-            <PreSize X="0.8333" Y="0.0703" />
+            <PreSize X="0.8333" Y="0.0859" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

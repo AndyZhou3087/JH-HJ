@@ -22,7 +22,7 @@ HomeHill::~HomeHill()
 
 bool HomeHill::init()
 {
-	Node* csbnode = CSLoader::createNode("homeHillLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhhomeHillLayer.csb");
 	this->addChild(csbnode);
 
 	//返回按钮

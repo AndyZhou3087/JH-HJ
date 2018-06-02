@@ -25,7 +25,7 @@ bool GoldGoodsItem::init(GoodsData* gdata)
 
 	m_goodData = gdata;
 
-	Node* csbnode = CSLoader::createNode("goldGoodsNode.csb");//物品节点
+	Node* csbnode = CSLoader::createNode("jhgoldGoodsNode.csb");//物品节点
 	csbnode->setPosition(Vec2(this->getContentSize().width / 2, this->getContentSize().height / 2));
 	this->addChild(csbnode);
 

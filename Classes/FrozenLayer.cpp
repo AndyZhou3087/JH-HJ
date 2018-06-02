@@ -14,7 +14,7 @@ bool FrozenLayer::init()
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("frozenLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhfrozenLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Text* content_0 = (cocos2d::ui::Text*)csbnode->getChildByName("content_0");

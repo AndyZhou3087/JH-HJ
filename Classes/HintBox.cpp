@@ -15,11 +15,11 @@ bool HintBox::init(std::string text)
 	{
 		LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
 		this->addChild(color);
-		csbnode = CSLoader::createNode("hintLayer2.csb");
+		csbnode = CSLoader::createNode("jhhintLayer2.csb");
 	}
 	else
 	{
-		csbnode = CSLoader::createNode("hintLayer.csb");
+		csbnode = CSLoader::createNode("jhhintLayer.csb");
 	}
 	this->addChild(csbnode);
 
