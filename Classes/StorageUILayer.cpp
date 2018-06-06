@@ -1,14 +1,14 @@
 ﻿#include "StorageUILayer.h"
 #include "json.h"
-#include "CommonFuncs.h"
-#include "GameScene.h"
-#include "Const.h"
-#include "ResDetailsLayer.h"
+#include "JhCommonFuncs.h"
+#include "JhGameScene.h"
+#include "JhConst.h"
+#include "JhResDetailsLayer.h"
 #include "SoundManager.h"
 #include "ShopLayer.h"
-#include "MyMenu.h"
-#include "NewerGuideLayer.h"
-#include "HelpMainLayer.h"
+#include "JhMyMenu.h"
+#include "JhNewerGuideLayer.h"
+#include "JhHelpMainLayer.h"
 
 const std::string name[] = { "【食物】", "【药材】", "【武器】", "【防具】", "【内功】", "【武功】", "【资源】", "【工具】", "【其他】"};
 
@@ -31,7 +31,7 @@ bool StorageUILayer::init()
 	this->addChild(m_csbnode);
 
 	cocos2d::ui::Text* title = (cocos2d::ui::Text*)m_csbnode->getChildByName("title");
-	title->setString(CommonFuncs::gbk2utf("仓库"));
+	title->setString(JhCommonFuncs::gbk2utf("仓库"));
 
 	cocos2d::ui::Widget* backbtn = (cocos2d::ui::Widget*)m_csbnode->getChildByName("backbtn");
 	backbtn->addTouchEventListener(CC_CALLBACK_2(StorageUILayer::onBack, this));
@@ -123,7 +123,7 @@ void StorageUILayer::updateResContent()
 			Sprite * sepline = Sprite::createWithSpriteFrameName("ui/storagesepline.png");
 			sepline->setPosition(Vec2(sepline->getContentSize().width / 2 + 40, innerheight - 168 - preheight));
 			scrollview->addChild(sepline);
-			Label* namelbl = Label::createWithTTF(CommonFuncs::gbk2utf( name[i].c_str()), "fonts/STXINGKA.TTF", 25);
+			Label* namelbl = Label::createWithTTF(JhCommonFuncs::gbk2utf( name[i].c_str()), "fonts/STXINGKA.TTF", 25);
 			namelbl->setColor(Color3B(80, 86, 68));
 			namelbl->setPosition(Vec2(34, 155));
 			sepline->addChild(namelbl);
@@ -136,9 +136,9 @@ void StorageUILayer::updateResContent()
 
 				bool isin = false;
 				std::map<std::string, AllResource>::iterator resit;
-				for (resit = GlobalData::map_allResource.begin(); resit != GlobalData::map_allResource.end(); resit++)
+				for (resit = JhGlobalData::map_allResource.begin(); resit != JhGlobalData::map_allResource.end(); resit++)
 				{
-					if (tmpdata.strid.compare(GlobalData::map_allResource[resit->first].strid) == 0)
+					if (tmpdata.strid.compare(JhGlobalData::map_allResource[resit->first].strid) == 0)
 					{
 						isin = true;
 						countindex++;
@@ -151,12 +151,12 @@ void StorageUILayer::updateResContent()
 				std::string countorlvstr = StringUtils::format("%d", tmpdata.count);
 				if (tmpdata.type == WEAPON || tmpdata.type == PROTECT_EQU)
 				{
-					boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_equips[tmpdata.strid].qu);
+					boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_equips[tmpdata.strid].qu);
 					countorlvstr = StringUtils::format("Lv%d", tmpdata.slv);
 				}
 				else if (tmpdata.type == N_GONG || tmpdata.type == W_GONG)
 				{
-					boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_wgngs[tmpdata.strid].qu);
+					boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_wgngs[tmpdata.strid].qu);
 					countorlvstr = StringUtils::format("Lv%d", tmpdata.lv + 1);
 				}
 				
@@ -172,7 +172,7 @@ void StorageUILayer::updateResContent()
 				boxItem->setTag(0);
 				boxItem->setUserData(&StorageRoom::map_storageData[i].at(m));
 				boxItem->setPosition(Vec2(box->getContentSize().width / 2 + 20 + countindex % 5 * 120, sepline->getPositionY() + 70 + countindex / 5 * 130));
-				MyMenu* menu = MyMenu::create();
+				JhMyMenu* menu = JhMyMenu::create();
 				menu->addChild(boxItem);
 				menu->setTouchlimit(scrollview);
 				menu->setPosition(Vec2(0, 0));
@@ -191,8 +191,8 @@ void StorageUILayer::updateResContent()
 				reslbl->setPosition(Vec2(box->getContentSize().width - 10, 20));
 				box->addChild(reslbl);
 
-				std::string mymixgf = GlobalData::getMixGF();
-				MixGfData mdata = GlobalData::map_MixGfData[mymixgf];
+				std::string mymixgf = JhGlobalData::getMixGF();
+				MixGfData mdata = JhGlobalData::map_MixGfData[mymixgf];
 				if (mymixgf.length() > 0)
 				{
 					if (StorageRoom::map_storageData[i].at(m).strid.compare(mdata.mastergf) == 0)
@@ -209,7 +209,7 @@ void StorageUILayer::updateResContent()
 
 void StorageUILayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		this->removeFromParentAndCleanup(true);
@@ -221,7 +221,7 @@ void StorageUILayer::onclick(Ref* pSender)
 	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
 	Node* node = (Node*)pSender;
 	PackageData* data = (PackageData*)node->getUserData();
-	ResDetailsLayer* layer = ResDetailsLayer::create(data);
+	JhResDetailsLayer* layer = JhResDetailsLayer::create(data);
 	this->addChild(layer);
 
 }
@@ -235,7 +235,7 @@ int StorageUILayer::getCountByType(int type)
 
 void StorageUILayer::onShop(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		this->addChild(ShopLayer::create());
@@ -244,10 +244,10 @@ void StorageUILayer::onShop(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 
 void StorageUILayer::onHelp(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		this->addChild(HelpMainLayer::create());
+		this->addChild(JhHelpMainLayer::create());
 	}
 }
 

@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="exerciseCancelLayer" Type="Layer" ID="767d876a-628b-4515-bd5e-e827324522ea" Version="3.10.0.0" />
+  <PropertyGroup Name="jhexerciseCancelLayer" Type="Layer" ID="767d876a-628b-4515-bd5e-e827324522ea" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -24,7 +24,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.6871" Y="0.5995" />
             <PreSize X="0.2500" Y="0.0297" />
-            <FileData Type="MarkedSubImage" Path="ui/syssmalltie.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/syssmalltie.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="syssmalltie_left" ActionTag="2113380777" Tag="21" IconVisible="False" LeftMargin="131.4487" RightMargin="408.5513" TopMargin="493.7005" BottomMargin="748.2995" ctype="SpriteObjectData">
@@ -35,7 +35,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.3076" Y="0.5995" />
             <PreSize X="0.2500" Y="0.0297" />
-            <FileData Type="MarkedSubImage" Path="ui/syssmalltie.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/syssmalltie.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="content" ActionTag="-288579004" Tag="19" IconVisible="False" LeftMargin="134.9991" RightMargin="135.0009" TopMargin="558.5233" BottomMargin="551.4767" IsCustomSize="True" FontSize="30" LabelText="是否确认取消此次闭关？强制取消闭关后不会产生任何的经验加成！" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -72,9 +72,9 @@
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -88,9 +88,9 @@
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

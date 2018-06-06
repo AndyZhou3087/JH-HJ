@@ -1,6 +1,6 @@
 ﻿#include "WaitingProgress.h"
 
-#include "CommonFuncs.h"
+#include "JhCommonFuncs.h"
 bool WaitingProgress::init(std::string text)
 {
     if (Layer::init()) 
@@ -34,7 +34,7 @@ bool WaitingProgress::init(std::string text)
 
 void WaitingProgress::delayShowText(float dt)
 {
-	Label* textlbl = Label::createWithTTF(CommonFuncs::gbk2utf(textstr.c_str()), "fonts/STXINGKA.TTF", 25);
+	Label* textlbl = Label::createWithTTF(JhCommonFuncs::gbk2utf(textstr.c_str()), "fonts/STXINGKA.TTF", 25);
 	textlbl->setPosition(Vec2(boxbg->getContentSize().width / 2, boxbg->getContentSize().height / 2));
 	textlbl->setColor(Color3B(255, 255, 255));
 	boxbg->addChild(textlbl);

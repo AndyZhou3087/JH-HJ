@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="bookDetailsLayer" Type="Layer" ID="5254218e-8bb3-4e62-8a32-656697143175" Version="3.10.0.0" />
+  <PropertyGroup Name="jhbookDetailsLayer" Type="Layer" ID="5254218e-8bb3-4e62-8a32-656697143175" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -26,9 +26,9 @@
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -52,7 +52,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2754" Y="0.6176" />
             <PreSize X="0.1694" Y="0.0953" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="namelbl" ActionTag="-1339201810" Tag="74" IconVisible="False" LeftMargin="284.2711" RightMargin="260.7289" TopMargin="465.7187" BottomMargin="773.2813" FontSize="35" LabelText="降龙十八掌" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="175.0000" Y="41.0000" />
@@ -268,7 +268,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1167" Y="0.6150" />
             <PreSize X="0.0875" Y="0.1969" />
-            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="titletext" ActionTag="1727388669" Tag="114" IconVisible="False" LeftMargin="67.2906" RightMargin="622.7094" TopMargin="440.2496" BottomMargin="739.7504" IsCustomSize="True" FontSize="30" LabelText="武功" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -291,7 +291,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.3318" Y="0.6188" />
             <PreSize X="0.0278" Y="0.0453" />
-            <FileData Type="MarkedSubImage" Path="ui/traitcs.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/traitcs.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

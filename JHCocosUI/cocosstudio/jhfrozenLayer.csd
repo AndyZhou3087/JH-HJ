@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="frozenLayer" Type="Layer" ID="c1a80619-48fa-4c51-b39e-20edf06d246d" Version="3.10.0.0" />
+  <PropertyGroup Name="jhfrozenLayer" Type="Layer" ID="c1a80619-48fa-4c51-b39e-20edf06d246d" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -63,7 +63,7 @@
                 <CColor A="255" R="63" G="56" B="56" />
                 <PrePosition X="0.5462" Y="0.1034" />
                 <PreSize X="1.0672" Y="0.0690" />
-                <FileData Type="MarkedSubImage" Path="ui/qqline0.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/qqline0.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>
@@ -88,7 +88,7 @@
                 <CColor A="255" R="63" G="56" B="56" />
                 <PrePosition X="0.5462" Y="0.1034" />
                 <PreSize X="1.0672" Y="0.0690" />
-                <FileData Type="MarkedSubImage" Path="ui/qqline0.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/qqline0.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="770" Dst="771" />
               </AbstractNodeData>
             </Children>

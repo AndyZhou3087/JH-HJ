@@ -1,7 +1,7 @@
 ﻿#include "StoryScene.h"
-#include "CommonFuncs.h"
-#include "GameScene.h"
-#include "GameDataSave.h"
+#include "JhCommonFuncs.h"
+#include "JhGameScene.h"
+#include "JhGameDataSave.h"
 
 std::string storytype[] = { "story", "end" };
 StoryScene::StoryScene()
@@ -34,7 +34,7 @@ bool StoryScene::init(int type)
 {
 	clickcount = 0;
 	m_type = type;
-	m_heroindex = GameDataSave::getInstance()->getHeroId();
+	m_heroindex = JhGameDataSave::getInstance()->getHeroId();
 	std::string storystr = StringUtils::format("%s%d_1.csb", storytype[type].c_str(), m_heroindex);
 	m_csbnode = CSLoader::createNode(storystr);
 	if (m_heroindex == 1 && type == 0)
@@ -116,7 +116,7 @@ void StoryScene::delayShowNextStory(float dt)
 
 void StoryScene::showClickText(float dt)
 {
-	m_wordlbl = Label::createWithTTF(CommonFuncs::gbk2utf("点击屏幕继续"), "fonts/STXINGKA.TTF", 30);
+	m_wordlbl = Label::createWithTTF(JhCommonFuncs::gbk2utf("点击屏幕继续"), "fonts/STXINGKA.TTF", 30);
 	m_wordlbl->setPosition(Vec2(360, 20));
 	m_wordlbl->runAction(RepeatForever::create(Blink::create(2, 2)));
 	this->addChild(m_wordlbl);
@@ -127,7 +127,7 @@ void StoryScene::showNextScene(float dt)
 {
 	if (m_type == 0)
 	{
-		auto transition = TransitionCrossFade::create(0.5f, GameScene::createScene());
+		auto transition = TransitionCrossFade::create(0.5f, JhGameScene::createScene());
 		Director::getInstance()->replaceScene(transition);
 	}
 	else

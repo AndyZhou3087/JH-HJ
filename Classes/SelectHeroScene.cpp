@@ -1,16 +1,16 @@
 ﻿#include "SelectHeroScene.h"
-#include "GlobalData.h"
-#include "Const.h"
-#include "HintBox.h"
-#include "CommonFuncs.h"
-#include "GameDataSave.h"
-#include "BuyDetailsLayer.h"
+#include "JhGlobalData.h"
+#include "JhConst.h"
+#include "JhHintBox.h"
+#include "JhCommonFuncs.h"
+#include "JhGameDataSave.h"
+#include "JhBuyDetailsLayer.h"
 #include "SoundManager.h"
 #include "StoryScene.h"
-#include "GameScene.h"
+#include "JhGameScene.h"
 #include "StartScene.h"
-#include "ComfirmSaveLayer.h"
-#include "GameDataSave.h"
+#include "JhComfirmSaveLayer.h"
+#include "JhGameDataSave.h"
 
 USING_NS_CC;
 using namespace ui;
@@ -52,9 +52,9 @@ bool SelectHeroScene::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	GlobalData::loadUnlockHeroData();
+	JhGlobalData::loadUnlockHeroData();
 
-	Node* csbnode = CSLoader::createNode("selectHeroLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhselectHeroLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Widget* startbtn = (cocos2d::ui::Widget*)csbnode->getChildByName("startbtn");
@@ -74,7 +74,7 @@ bool SelectHeroScene::init()
 	sheros_0->loadTexture("images/shero2_s.png", cocos2d::ui::TextureResType::LOCAL);
 
 	m_heroname = (cocos2d::ui::Text*)csbnode->getChildByName("heroname");
-	m_heroname->setString(CommonFuncs::gbk2utf(heroname[defaultindex].c_str()));
+	m_heroname->setString(JhCommonFuncs::gbk2utf(heroname[defaultindex].c_str()));
 
 	herosign = (cocos2d::ui::ImageView*)csbnode->getChildByName("herosign");
 	std::string str = StringUtils::format("ui/herosign%d.png", defaultindex + 1);
@@ -92,7 +92,7 @@ bool SelectHeroScene::init()
 
 		str = StringUtils::format("lock_%d", i + 1);
 		lock[i] = (cocos2d::ui::ImageView*)panel->getChildByName(str);
-		lock[i]->setVisible(!GlobalData::getUnlocHero(i));
+		lock[i]->setVisible(!JhGlobalData::getUnlocHero(i));
 	}
 
 
@@ -115,7 +115,7 @@ void SelectHeroScene::JumpSceneCallback(cocos2d::Ref* pScene, cocos2d::ui::PageV
 		herodesc->loadTexture(str, cocos2d::ui::TextureResType::LOCAL);
 		str = StringUtils::format("ui/herosign%d.png", defaultindex + 1);
 		herosign->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
-		m_heroname->setString(CommonFuncs::gbk2utf(heroname[defaultindex].c_str()));
+		m_heroname->setString(JhCommonFuncs::gbk2utf(heroname[defaultindex].c_str()));
 
 		str = StringUtils::format("images/shero%d_s.png", defaultindex);
 		if (defaultindex == 0)
@@ -140,9 +140,9 @@ void SelectHeroScene::onSelect(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touch
 		Node* btnnode = (Node*)pSender;
 		int tag = btnnode->getTag();
 
-		if (!GlobalData::getUnlocHero(tag - 1))
+		if (!JhGlobalData::getUnlocHero(tag - 1))
 		{
-			Layer* layer = BuyDetailsLayer::create(tag);
+			Layer* layer = JhBuyDetailsLayer::create(tag);
 			layer->setTag(tag - 1);
 			this->addChild(layer, 0, "buyherolayer");
 			return;
@@ -157,7 +157,7 @@ void SelectHeroScene::onSelect(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touch
 
 void SelectHeroScene::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		Director::getInstance()->replaceScene(StartScene::createScene());
@@ -166,10 +166,10 @@ void SelectHeroScene::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 
 void SelectHeroScene::onStart(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		std::string uid = GlobalData::getUId();
+		std::string uid = JhGlobalData::getUId();
 		if (uid.size() <= 0)
 		{
 			enterNextScene();
@@ -177,14 +177,14 @@ void SelectHeroScene::onStart(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 		}
 
 		bool isExit = false;
-		std::vector<std::string> vec_ids = GlobalData::getSaveListId();
+		std::vector<std::string> vec_ids = JhGlobalData::getSaveListId();
 		
 		for (unsigned int i = 0; i < vec_ids.size(); i++)
 		{
 			std::string saveuid = vec_ids[i];
 			if (saveuid.length() > 0)
 			{
-				int heroid = GameDataSave::getInstance()->getHeroIdByUid(saveuid);
+				int heroid = JhGameDataSave::getInstance()->getHeroIdByUid(saveuid);
 				if (heroid == _lastSelect)
 				{
 					isExit = true;
@@ -194,7 +194,7 @@ void SelectHeroScene::onStart(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 		}
 		if (isExit)
 		{
-			this->addChild(ComfirmSaveLayer::create());
+			this->addChild(JhComfirmSaveLayer::create());
 		}
 		else
 		{
@@ -205,15 +205,15 @@ void SelectHeroScene::onStart(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 
 void SelectHeroScene::enterNextScene()
 {
-	int systime = GlobalData::getSysSecTime();
+	int systime = JhGlobalData::getSysSecTime();
 	std::string uidstr = StringUtils::format("%d", systime);
-	GlobalData::setUId(uidstr);
-	GameDataSave::getInstance()->setHeroId(_lastSelect);
+	JhGlobalData::setUId(uidstr);
+	JhGameDataSave::getInstance()->setHeroId(_lastSelect);
 
-	GlobalData::setCurHeroIdToSaveList();
+	JhGlobalData::setCurHeroIdToSaveList();
 
-	std::string defaultStorageStr = GlobalData::getDefaultStorage(_lastSelect);
-	GameDataSave::getInstance()->setStorageData(defaultStorageStr);
+	std::string defaultStorageStr = JhGlobalData::getDefaultStorage(_lastSelect);
+	JhGameDataSave::getInstance()->setStorageData(defaultStorageStr);
 
 	Scene* scene = StoryScene::createScene(0);
 
@@ -224,7 +224,7 @@ void SelectHeroScene::unlockSucc(int index)
 {
 	this->removeChildByName("buyherolayer");
 	lock[index]->setVisible(false);
-	GlobalData::setUnlockHero(index, true);
+	JhGlobalData::setUnlockHero(index, true);
 }
 
 void SelectHeroScene::clickMoveFinish(float dt)

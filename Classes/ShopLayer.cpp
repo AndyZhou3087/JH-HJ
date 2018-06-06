@@ -1,22 +1,22 @@
 ﻿#include "ShopLayer.h"
-#include "Const.h"
-#include "BuildingUILayer.h"
+#include "JhConst.h"
+#include "JhBuildingUILayer.h"
 #include "StorageRoom.h"
-#include "GameScene.h"
+#include "JhGameScene.h"
 #include "SelectHeroScene.h"
 #include "SoundManager.h"
-#include "ReviveLayer.h"
+#include "JhReviveLayer.h"
 #include "json.h"
-#include "AnalyticUtil.h"
-#include "GameDataSave.h"
-#include "CommonFuncs.h"
-#include "RmbGoodsItem.h"
-#include "GoldGoodsItem.h"
-#include "GetVipRewardLayer.h"
-#include "MapLayer.h"
+#include "JhAnalyticUtil.h"
+#include "JhGameDataSave.h"
+#include "JhCommonFuncs.h"
+#include "JhRmbGoodsItem.h"
+#include "JhGoldGoodItem.h"
+#include "JhGetVipRewardLayer.h"
+#include "JhMapLayer.h"
 #include "ServerDataSwap.h"
 #include "VipShopLayer.h"
-#include "RechargeLayer.h"
+#include "JhRechargeLayer.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "IOSPurchaseWrap.h"
 #include "iosfunc.h"
@@ -32,8 +32,8 @@ ShopLayer::ShopLayer()
 
 ShopLayer::~ShopLayer()
 {
-	if (GlobalData::g_gameStatus == GAMEPAUSE && ischangePause)
-		GlobalData::g_gameStatus = GAMESTART;
+	if (JhGlobalData::g_gameStatus == GAMEPAUSE && ischangePause)
+		JhGlobalData::g_gameStatus = GAMESTART;
 	if (g_hero != NULL && g_hero->getIsMoving())
 	{
 		g_maplayer->heroResumeMoving();
@@ -60,7 +60,7 @@ bool ShopLayer::init()
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
 	this->addChild(color);
 
-	m_csbnode = CSLoader::createNode("shopLayer.csb");
+	m_csbnode = CSLoader::createNode("jhshopLayer.csb");
 	this->addChild(m_csbnode);
 
 	refreshGoldCount(0);
@@ -68,11 +68,11 @@ bool ShopLayer::init()
 	std::vector<GoodsData*> vec_rmbGoods;
 	std::vector<GoodsData*> vec_goldGoods;
 
-	int goodsize = GlobalData::vec_goods.size();
+	int goodsize = JhGlobalData::vec_goods.size();
 
 	for (int i = 0; i < goodsize; i++)
 	{
-		GoodsData* gdata = &GlobalData::vec_goods[i];
+		GoodsData* gdata = &JhGlobalData::vec_goods[i];
 		if (gdata->type == 0)
 			vec_rmbGoods.push_back(gdata);
 		else if (gdata->type == 1)
@@ -104,7 +104,7 @@ bool ShopLayer::init()
 
 	for (unsigned int i = 0; i < vec_rmbGoods.size(); i++)
 	{
-		RmbGoodsItem* node = RmbGoodsItem::create(vec_rmbGoods[i]);
+		JhRmbGoodsItem* node = JhRmbGoodsItem::create(vec_rmbGoods[i]);
 		node->setTag(sizeof(heroprice) / sizeof(heroprice[0]) + i);
 		m_goldScrollview->addChild(node);
 		node->setPosition(Vec2(142 + (i % 2) * 280, innerheight - itemheight / 2 - (i / 2) * 165));
@@ -112,7 +112,7 @@ bool ShopLayer::init()
 
 	for (unsigned int i = 0; i < vec_goldGoods.size(); i++)
 	{
-		GoldGoodsItem* node = GoldGoodsItem::create(vec_goldGoods[i]);
+		JhGoldGoodItem* node = JhGoldGoodItem::create(vec_goldGoods[i]);
 		m_goldScrollview->addChild(node);
 		node->setPosition(Vec2(142 + (i % 2) * 280, innerheight - itemheight / 2 - (vec_rmbGoods.size() / 2 + vec_rmbGoods.size() % 2) * itemheight - (i / 2) * 165));
 	}
@@ -132,17 +132,17 @@ bool ShopLayer::init()
 	qq2->addTouchEventListener(CC_CALLBACK_2(ShopLayer::onQQ, this));
 	qq2->setVisible(false);
 
-	int qqsize = GlobalData::vec_qq.size();
+	int qqsize = JhGlobalData::vec_qq.size();
 	if (qqsize > 0)
 	{
 		qqtitle->setVisible(true);
-		int rqq = GlobalData::createRandomNum(qqsize);
-		qq1->setString(GlobalData::vec_qq[rqq]);
+		int rqq = JhGlobalData::createRandomNum(qqsize);
+		qq1->setString(JhGlobalData::vec_qq[rqq]);
 		qq1->setVisible(true);
 		if (qqsize > 1)
 		{
 			qq2->setVisible(true);
-			qq2->setString(GlobalData::vec_qq[1 - rqq]);
+			qq2->setString(JhGlobalData::vec_qq[1 - rqq]);
 		}
 		else
 		{
@@ -161,9 +161,9 @@ bool ShopLayer::init()
 	listener->setSwallowTouches(true);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
-	if (GlobalData::g_gameStatus == GAMESTART)
+	if (JhGlobalData::g_gameStatus == GAMESTART)
 	{
-		GlobalData::g_gameStatus = GAMEPAUSE;
+		JhGlobalData::g_gameStatus = GAMEPAUSE;
 		ischangePause = true;
 	}
 
@@ -178,7 +178,7 @@ bool ShopLayer::init()
 
 void ShopLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		this->removeFromParentAndCleanup(true);
@@ -198,7 +198,7 @@ void ShopLayer::beginPay(int index)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 	setMessage(PAY_SUCC);
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-	//PaySelectLayer* layer = PaySelectLayer::create(payindex);
+	//JhPaySelectLayer* layer = JhPaySelectLayer::create(payindex);
 	//Director::getInstance()->getRunningScene()->addChild(layer, 1);
 	JniMethodInfo methodInfo;
 	char p_str[32] = { 0 };
@@ -226,28 +226,28 @@ void ShopLayer::setMessage(PYARET ret)
 				g_SelectHeroScene->unlockSucc(payindex);
 #ifdef ANALYTICS
 			std::string heroname[] = { "bxym", "bssy", "bjxb", "baq" };
-			AnalyticUtil::onEvent(heroname[payindex].c_str());
+			JhAnalyticUtil::onEvent(heroname[payindex].c_str());
 #endif
 		}
 		else if (payindex < herocount + golditemcount)//买元宝
 		{
 			//addBuyGoods();
-			GlobalData::setMyGoldCount(GlobalData::getMyGoldCount() + goldcount[payindex - herocount]);
+			JhGlobalData::setMyGoldCount(JhGlobalData::getMyGoldCount() + goldcount[payindex - herocount]);
 			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUYOK);
 #ifdef ANALYTICS
 			std::string name[] = { "b6", "b12", "b30", "b68", "b128"};
-			AnalyticUtil::onEvent(name[payindex - herocount].c_str());
+			JhAnalyticUtil::onEvent(name[payindex - herocount].c_str());
 #endif
 		}
 		else if (payindex < herocount + golditemcount + vipcount)//买VIP
 		{
-			std::string vipid = GlobalData::vec_goods[payindex - herocount].icon;
-			GlobalData::vec_buyVipIds.push_back(vipid);
-			//int monthdays = GlobalData::getMonth_Days();
-			//if (GlobalData::map_buyVipDays.find(vipid) != GlobalData::map_buyVipDays.end())
-			//	GlobalData::map_buyVipDays[vipid] += monthdays;
+			std::string vipid = JhGlobalData::vec_goods[payindex - herocount].icon;
+			JhGlobalData::vec_buyVipIds.push_back(vipid);
+			//int monthdays = JhGlobalData::getMonth_Days();
+			//if (JhGlobalData::map_buyVipDays.find(vipid) != JhGlobalData::map_buyVipDays.end())
+			//	JhGlobalData::map_buyVipDays[vipid] += monthdays;
 			//else
-			//	GlobalData::map_buyVipDays[vipid] = monthdays;
+			//	JhGlobalData::map_buyVipDays[vipid] = monthdays;
 
 			ServerDataSwap::init()->vipSuccNotice(vipid);
 			if (g_gameLayer != NULL)
@@ -256,7 +256,7 @@ void ShopLayer::setMessage(PYARET ret)
 			}
 #ifdef ANALYTICS
 			std::string name[] = { "byk6", "byk30", "byk68"};
-			AnalyticUtil::onEvent(name[payindex - herocount - golditemcount].c_str());
+			JhAnalyticUtil::onEvent(name[payindex - herocount - golditemcount].c_str());
 #endif
 		}
 		else if (payindex == TIMEGIFT)
@@ -265,19 +265,19 @@ void ShopLayer::setMessage(PYARET ret)
 			{
 				g_gameLayer->removeChildByName("gift");
 			}
-			GlobalData::setIsBuyTimeGift(true);
-			GlobalData::setMyGoldCount(GlobalData::getMyGoldCount() + 100);
-			GoldGoodsItem::addBuyGoods(&GlobalData::vec_goods[payindex - herocount]);
+			JhGlobalData::setIsBuyTimeGift(true);
+			JhGlobalData::setMyGoldCount(JhGlobalData::getMyGoldCount() + 100);
+			JhGoldGoodItem::addBuyGoods(&JhGlobalData::vec_goods[payindex - herocount]);
 
 #ifdef ANALYTICS
-			AnalyticUtil::onEvent("timegift");
+			JhAnalyticUtil::onEvent("timegift");
 #endif
 		}
 #ifdef ANALYTICS
-		AnalyticUtil::pay("pay", buyprice[payindex], 1);
+		JhAnalyticUtil::pay("pay", buyprice[payindex], 1);
 #endif
 		ServerDataSwap::init(NULL)->postMyRecharge(buyprice[payindex], 0);
-		if (GlobalData::isRecharge && g_gameLayer != NULL)
+		if (JhGlobalData::isRecharge && g_gameLayer != NULL)
 		{
 			g_gameLayer->scheduleOnce(schedule_selector(ShopLayer::delayShowRecharge), 1.0f);
 		}
@@ -288,7 +288,7 @@ void ShopLayer::setMessage(PYARET ret)
 
 void ShopLayer::showVipReward(float dt)
 {
-	GetVipRewardLayer* layer = GetVipRewardLayer::create();
+	JhGetVipRewardLayer* layer = JhGetVipRewardLayer::create();
 	if (g_gameLayer != NULL)
 	{
 		g_gameLayer->addChild(layer, 10, "viprewardlayer");
@@ -301,7 +301,7 @@ void ShopLayer::showVipReward(float dt)
 void ShopLayer::refreshGoldCount(float dt)
 {
 	mygoldlbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("mygoldlbl");
-	std::string countstr = StringUtils::format("%d", GlobalData::getMyGoldCount());
+	std::string countstr = StringUtils::format("%d", JhGlobalData::getMyGoldCount());
 	mygoldlbl->setString(countstr);
 }
 
@@ -311,15 +311,15 @@ void ShopLayer::onQQ(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType 
 	{
 		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
 		cocos2d::ui::Text* qq = (cocos2d::ui::Text*)pSender;
-		GlobalData::copyToClipBoard(qq->getString());
+		JhGlobalData::copyToClipBoard(qq->getString());
 	}
 
 }
 
 void ShopLayer::delayShowRecharge(float dt)
 {
-	int maxamount = RechargeLayer::getRechargeMaxAmount();
-	if ((maxamount == 0 || GlobalData::recharageData.mygotton < maxamount) && g_gameLayer != NULL)
-		g_gameLayer->addChild(RechargeLayer::create(), 5);
+	int maxamount = JhRechargeLayer::getRechargeMaxAmount();
+	if ((maxamount == 0 || JhGlobalData::recharageData.mygotton < maxamount) && g_gameLayer != NULL)
+		g_gameLayer->addChild(JhRechargeLayer::create(), 5);
 
 }

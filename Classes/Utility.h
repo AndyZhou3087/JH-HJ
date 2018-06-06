@@ -3,7 +3,7 @@
 #define _H_UTILITY_H_
 
 #include "cocos2d.h"
-#include "DataBase64.h"
+#include "JhDataBase64.h"
 #include <string>
 
 using namespace std;

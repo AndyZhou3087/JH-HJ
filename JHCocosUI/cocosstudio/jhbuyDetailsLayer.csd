@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="buyDetailsLayer" Type="Layer" ID="1fa00137-6d52-4fb6-a11e-f1dc664b872b" Version="3.10.0.0" />
+  <PropertyGroup Name="jhbuyDetailsLayer" Type="Layer" ID="1fa00137-6d52-4fb6-a11e-f1dc664b872b" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -25,7 +25,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1162" Y="0.6167" />
             <PreSize X="0.0875" Y="0.1969" />
-            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="desc_0" ActionTag="-1014919641" Tag="357" IconVisible="False" LeftMargin="68.4200" RightMargin="625.5800" TopMargin="438.4679" BottomMargin="741.5321" IsCustomSize="True" FontSize="22" LabelText="角色介绍" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -48,7 +48,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2988" Y="0.5839" />
             <PreSize X="0.0042" Y="0.0938" />
-            <FileData Type="MarkedSubImage" Path="ui/aline.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/aline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="selecthero_1" ActionTag="176826717" Tag="360" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="481.1986" RightMargin="203.8014" TopMargin="547.6622" BottomMargin="660.3378" ctype="SpriteObjectData">
@@ -59,7 +59,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.6926" Y="0.5440" />
             <PreSize X="0.0486" Y="0.0562" />
-            <FileData Type="MarkedSubImage" Path="ui/selecthero_1.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/selecthero_1.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="selecthero_3" ActionTag="-1110651842" Tag="358" IconVisible="False" LeftMargin="241.0229" RightMargin="434.9771" TopMargin="448.3599" BottomMargin="667.6401" ctype="SpriteObjectData">
@@ -70,7 +70,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.3653" Y="0.5857" />
             <PreSize X="0.0611" Y="0.1281" />
-            <FileData Type="MarkedSubImage" Path="ui/selecthero_3.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/selecthero_3.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="desc_1" ActionTag="1213491604" Tag="359" IconVisible="False" LeftMargin="253.4474" RightMargin="446.5526" TopMargin="477.5912" BottomMargin="702.4088" IsCustomSize="True" FontSize="20" LabelText="职业背景" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -93,7 +93,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4947" Y="0.4196" />
             <PreSize X="0.6111" Y="0.1563" />
-            <FileData Type="MarkedSubImage" Path="ui/fegure_frame.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/fegure_frame.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="selecthero_2" ActionTag="1385720940" Tag="362" IconVisible="False" LeftMargin="132.8137" RightMargin="465.1863" TopMargin="628.4814" BottomMargin="616.5186" ctype="SpriteObjectData">
             <Size X="122.0000" Y="35.0000" />
@@ -103,7 +103,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2692" Y="0.4953" />
             <PreSize X="0.1694" Y="0.0273" />
-            <FileData Type="MarkedSubImage" Path="ui/selecthero_2.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/selecthero_2.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="icon" ActionTag="1791366199" VisibleForFrame="False" Tag="313" IconVisible="False" LeftMargin="132.4489" RightMargin="407.5511" TopMargin="322.8405" BottomMargin="763.1595" LeftEage="59" RightEage="59" TopEage="78" BottomEage="78" Scale9OriginX="59" Scale9OriginY="78" Scale9Width="62" Scale9Height="38" ctype="ImageViewObjectData">
@@ -114,7 +114,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.3090" Y="0.6720" />
             <PreSize X="0.2500" Y="0.1516" />
-            <FileData Type="MarkedSubImage" Path="ui/tophero3.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/tophero3.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="name" ActionTag="1658045766" Tag="314" IconVisible="False" LeftMargin="157.7411" RightMargin="532.2589" TopMargin="450.0727" BottomMargin="679.9273" IsCustomSize="True" FontSize="35" LabelText="小鱼儿" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="30.0000" Y="150.0000" />
@@ -162,9 +162,9 @@
             <PreSize X="0.1042" Y="0.1055" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -178,9 +178,9 @@
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

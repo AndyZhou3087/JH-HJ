@@ -5,11 +5,11 @@
 
 #ifndef _WineMaker_H_
 #define _WineMaker_H_
-#include "Building.h"
+#include "JhBuilding.h"
 #include "cocos2d.h"
 USING_NS_CC;
 
-class WineMaker :public Building
+class WineMaker :public JhBuilding
 {
 public:
 	WineMaker();

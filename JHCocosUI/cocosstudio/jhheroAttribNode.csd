@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="heroAttribNode" Type="Node" ID="99eae6f5-80c3-4a30-bdbf-4f37141effe0" Version="3.10.0.0" />
+  <PropertyGroup Name="jhheroAttribNode" Type="Node" ID="99eae6f5-80c3-4a30-bdbf-4f37141effe0" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/zst.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/zst.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="box_0" ActionTag="-865417193" Tag="51" IconVisible="False" LeftMargin="-263.5475" RightMargin="150.5475" TopMargin="-121.0858" BottomMargin="9.0858" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
@@ -25,7 +25,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="box_1" ActionTag="1912001695" Tag="52" IconVisible="False" LeftMargin="-125.3333" RightMargin="12.3333" TopMargin="-121.0858" BottomMargin="9.0858" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
@@ -35,7 +35,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="box_2" ActionTag="-452129726" Tag="53" IconVisible="False" LeftMargin="8.8812" RightMargin="-121.8812" TopMargin="-121.0858" BottomMargin="9.0858" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
@@ -45,7 +45,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="box_3" ActionTag="-1285813035" Tag="54" IconVisible="False" LeftMargin="147.0950" RightMargin="-260.0950" TopMargin="-121.0858" BottomMargin="9.0858" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
@@ -55,7 +55,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="box_4" ActionTag="-1408082254" Tag="55" IconVisible="False" LeftMargin="-263.5475" RightMargin="150.5475" TopMargin="22.4918" BottomMargin="-134.4918" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
@@ -65,7 +65,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="box_5" ActionTag="862517748" Tag="56" IconVisible="False" LeftMargin="-125.3339" RightMargin="12.3339" TopMargin="22.4918" BottomMargin="-134.4918" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
@@ -75,7 +75,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="box_6" ActionTag="-926149318" Tag="57" IconVisible="False" LeftMargin="8.8814" RightMargin="-121.8814" TopMargin="22.4918" BottomMargin="-134.4918" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
@@ -85,7 +85,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="box_7" ActionTag="1684508354" Tag="58" IconVisible="False" LeftMargin="147.0952" RightMargin="-260.0952" TopMargin="22.4912" BottomMargin="-134.4912" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
@@ -95,7 +95,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="Image_0" ActionTag="386479909" Tag="94" IconVisible="False" LeftMargin="-235.6538" RightMargin="180.6538" TopMargin="-93.3741" BottomMargin="37.3741" LeftEage="18" RightEage="18" TopEage="18" BottomEage="18" Scale9OriginX="18" Scale9OriginY="18" Scale9Width="19" Scale9Height="20" ctype="ImageViewObjectData">
             <Size X="55.0000" Y="56.0000" />
@@ -105,7 +105,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/hp6.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/hp6.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="lvtext_0" ActionTag="-1241441050" Tag="53" IconVisible="False" LeftMargin="-207.5369" RightMargin="207.5369" TopMargin="10.3200" BottomMargin="-10.3200" FontSize="18" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -127,7 +127,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/hp5.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/hp5.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="lvtext_1" ActionTag="924542818" Tag="54" IconVisible="False" LeftMargin="-66.8044" RightMargin="66.8044" TopMargin="10.3200" BottomMargin="-10.3200" FontSize="18" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -149,7 +149,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/hp3.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/hp3.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="lvtext_2" ActionTag="-2103265923" Tag="55" IconVisible="False" LeftMargin="64.9945" RightMargin="-64.9945" TopMargin="10.3200" BottomMargin="-10.3200" FontSize="18" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -171,7 +171,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/hp4.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/hp4.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="lvtext_3" ActionTag="-1152606012" Tag="1608" IconVisible="False" LeftMargin="204.7244" RightMargin="-204.7244" TopMargin="10.3200" BottomMargin="-10.3200" FontSize="18" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -193,7 +193,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/hp8-1.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/hp8-1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="lvtext_4" ActionTag="-1433605578" Tag="1609" IconVisible="False" LeftMargin="-205.6767" RightMargin="205.6767" TopMargin="155.2600" BottomMargin="-155.2600" FontSize="18" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -215,7 +215,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/hp8-2.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/hp8-2.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="lvtext_5" ActionTag="-205100185" Tag="1610" IconVisible="False" LeftMargin="-65.9470" RightMargin="65.9470" TopMargin="155.2600" BottomMargin="-155.2600" FontSize="18" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -237,7 +237,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/hp8-3.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/hp8-3.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="lvtext_6" ActionTag="1068408095" Tag="1611" IconVisible="False" LeftMargin="68.0070" RightMargin="-68.0070" TopMargin="155.2600" BottomMargin="-155.2600" FontSize="18" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -259,7 +259,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/hp9-4.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/hp9-4.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="lvtext_7" ActionTag="-221453065" Tag="1612" IconVisible="False" LeftMargin="203.4058" RightMargin="-203.4058" TopMargin="155.2600" BottomMargin="-155.2600" FontSize="18" LabelText="" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -284,7 +284,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5124" Y="1.1095" />
                 <PreSize X="0.4219" Y="0.1129" />
-                <FileData Type="MarkedSubImage" Path="ui/zbht.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/zbht.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="title" ActionTag="-2042744108" Tag="72" IconVisible="False" LeftMargin="235.0443" RightMargin="242.9557" TopMargin="-67.4148" BottomMargin="393.4148" FontSize="40" LabelText="外功" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -343,7 +343,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="zbzbz_1" ActionTag="875018315" VisibleForFrame="False" Tag="78" IconVisible="False" LeftMargin="-32.0897" RightMargin="6.0897" TopMargin="-96.0964" BottomMargin="24.0964" ctype="SpriteObjectData">
@@ -354,7 +354,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="zbzbz_2" ActionTag="-1990086823" VisibleForFrame="False" Tag="79" IconVisible="False" LeftMargin="103.2202" RightMargin="-129.2202" TopMargin="-96.0964" BottomMargin="24.0964" ctype="SpriteObjectData">
@@ -365,7 +365,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="zbzbz_3" ActionTag="-328323756" VisibleForFrame="False" Tag="80" IconVisible="False" LeftMargin="238.5301" RightMargin="-264.5301" TopMargin="-96.0964" BottomMargin="24.0964" ctype="SpriteObjectData">
@@ -376,7 +376,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="zbzbz_4" ActionTag="-1168059021" VisibleForFrame="False" Tag="81" IconVisible="False" LeftMargin="-167.3996" RightMargin="141.3996" TopMargin="74.5649" BottomMargin="-146.5649" ctype="SpriteObjectData">
@@ -387,7 +387,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="zbzbz_5" ActionTag="1314018572" VisibleForFrame="False" Tag="82" IconVisible="False" LeftMargin="-32.0897" RightMargin="6.0897" TopMargin="74.5650" BottomMargin="-146.5650" ctype="SpriteObjectData">
@@ -398,7 +398,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="zbzbz_6" ActionTag="-1491165854" VisibleForFrame="False" Tag="83" IconVisible="False" LeftMargin="103.2202" RightMargin="-129.2202" TopMargin="74.5650" BottomMargin="-146.5650" ctype="SpriteObjectData">
@@ -409,7 +409,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="zbzbz_7" ActionTag="-1205134872" VisibleForFrame="False" Tag="84" IconVisible="False" LeftMargin="238.5300" RightMargin="-264.5300" TopMargin="74.5650" BottomMargin="-146.5650" ctype="SpriteObjectData">
@@ -420,7 +420,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="fightLayer" Type="Layer" ID="48703127-d879-40a6-93f1-86910f566999" Version="3.10.0.0" />
+  <PropertyGroup Name="jhfightLayer" Type="Layer" ID="48703127-d879-40a6-93f1-86910f566999" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -24,7 +24,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0438" Y="0.6091" />
             <PreSize X="0.0875" Y="0.1969" />
-            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="title" ActionTag="510476990" Tag="122" IconVisible="False" LeftMargin="9.1705" RightMargin="670.8295" TopMargin="451.2979" BottomMargin="728.7021" IsCustomSize="True" FontSize="30" LabelText="后山" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -49,9 +49,9 @@
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -63,7 +63,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1782" Y="0.5553" />
             <PreSize X="0.2778" Y="0.1563" />
-            <FileData Type="MarkedSubImage" Path="ui/fhero1.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/fhero1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="npcicon" ActionTag="900521098" Tag="243" IconVisible="False" LeftMargin="513.3660" RightMargin="6.6340" TopMargin="470.3232" BottomMargin="609.6768" LeftEage="34" RightEage="34" TopEage="29" BottomEage="29" Scale9OriginX="34" Scale9OriginY="29" Scale9Width="97" Scale9Height="120" ctype="ImageViewObjectData">
             <Size X="200.0000" Y="200.0000" />
@@ -73,7 +73,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.8519" Y="0.5544" />
             <PreSize X="0.2778" Y="0.1563" />
-            <FileData Type="MarkedSubImage" Path="ui/n004.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/n004.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="heroname" ActionTag="-899043201" Tag="128" IconVisible="False" LeftMargin="163.4039" RightMargin="416.5961" TopMargin="561.6630" BottomMargin="653.3370" IsCustomSize="True" FontSize="30" LabelText="小虾米" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Bottom" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="140.0000" Y="65.0000" />
@@ -95,7 +95,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5528" />
             <PreSize X="0.1236" Y="0.0758" />
-            <FileData Type="MarkedSubImage" Path="ui/fighticon.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/fighticon.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="npcname" ActionTag="-1423917536" Tag="130" IconVisible="False" LeftMargin="418.3267" RightMargin="161.6733" TopMargin="560.5816" BottomMargin="654.4184" IsCustomSize="True" FontSize="30" LabelText="少侠" VerticalAlignmentType="VT_Bottom" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -118,7 +118,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2569" Y="0.5047" />
             <PreSize X="0.3472" Y="0.0109" />
-            <FileData Type="MarkedSubImage" Path="ui/fighthpbg.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/fighthpbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="npchpbg" ActionTag="1313246263" Tag="132" IconVisible="False" LeftMargin="412.9996" RightMargin="57.0004" TopMargin="626.9997" BottomMargin="639.0003" ctype="SpriteObjectData">
@@ -129,7 +129,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.7472" Y="0.5047" />
             <PreSize X="0.3472" Y="0.0109" />
-            <FileData Type="MarkedSubImage" Path="ui/fighthpbg.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/fighthpbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="herohpbar2" ActionTag="911209076" Tag="44" IconVisible="False" LeftMargin="60.0001" RightMargin="409.9999" TopMargin="627.0005" BottomMargin="638.9995" ProgressInfo="100" ctype="LoadingBarObjectData">
@@ -140,7 +140,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2569" Y="0.5047" />
             <PreSize X="0.3472" Y="0.0109" />
-            <ImageFileData Type="MarkedSubImage" Path="ui/fighthpbar2.png" Plist="uipacker.plist" />
+            <ImageFileData Type="MarkedSubImage" Path="ui/fighthpbar2.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="herohpbar" ActionTag="-919271343" Tag="133" IconVisible="False" LeftMargin="59.9970" RightMargin="410.0030" TopMargin="626.9997" BottomMargin="639.0003" ProgressInfo="100" ctype="LoadingBarObjectData">
             <Size X="250.0000" Y="14.0000" />
@@ -150,7 +150,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2569" Y="0.5047" />
             <PreSize X="0.3472" Y="0.0109" />
-            <ImageFileData Type="MarkedSubImage" Path="ui/fighthpbar.png" Plist="uipacker.plist" />
+            <ImageFileData Type="MarkedSubImage" Path="ui/fighthpbar.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="npchpbar2" ActionTag="1626967728" Tag="45" IconVisible="False" LeftMargin="412.9996" RightMargin="57.0004" TopMargin="627.0005" BottomMargin="638.9995" ProgressInfo="100" ctype="LoadingBarObjectData">
             <Size X="250.0000" Y="14.0000" />
@@ -160,7 +160,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.7472" Y="0.5047" />
             <PreSize X="0.3472" Y="0.0109" />
-            <ImageFileData Type="MarkedSubImage" Path="ui/fighthpbar2.png" Plist="uipacker.plist" />
+            <ImageFileData Type="MarkedSubImage" Path="ui/fighthpbar2.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="npchpbar" ActionTag="679541159" Tag="134" IconVisible="False" LeftMargin="412.9996" RightMargin="57.0004" TopMargin="626.9997" BottomMargin="639.0003" ProgressInfo="73" ctype="LoadingBarObjectData">
             <Size X="250.0000" Y="14.0000" />
@@ -170,7 +170,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.7472" Y="0.5047" />
             <PreSize X="0.3472" Y="0.0109" />
-            <ImageFileData Type="MarkedSubImage" Path="ui/fighthpbar.png" Plist="uipacker.plist" />
+            <ImageFileData Type="MarkedSubImage" Path="ui/fighthpbar.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="herohpvaluetext" ActionTag="613342465" Tag="135" IconVisible="False" LeftMargin="161.9970" RightMargin="512.0030" TopMargin="624.5012" BottomMargin="638.4988" FontSize="15" LabelText="95/100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="46.0000" Y="17.0000" />
@@ -206,9 +206,9 @@
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -232,7 +232,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2074" Y="0.5343" />
             <PreSize X="0.1819" Y="0.0523" />
-            <FileData Type="MarkedSubImage" Path="ui/crit.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/crit.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="npcactimg" ActionTag="306773715" VisibleForFrame="False" Tag="136" IconVisible="False" LeftMargin="462.0967" RightMargin="126.9033" TopMargin="562.5905" BottomMargin="650.4095" LeftEage="43" RightEage="43" TopEage="22" BottomEage="22" Scale9OriginX="43" Scale9OriginY="22" Scale9Width="45" Scale9Height="23" ctype="ImageViewObjectData">
             <Size X="131.0000" Y="67.0000" />
@@ -254,7 +254,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.7328" Y="0.5343" />
             <PreSize X="0.1819" Y="0.0523" />
-            <FileData Type="MarkedSubImage" Path="ui/crit.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/crit.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="herohurt" ActionTag="1261037440" VisibleForFrame="False" Tag="25" IconVisible="False" LeftMargin="70.3414" RightMargin="527.6586" TopMargin="578.0246" BottomMargin="653.9754" FlipY="True" ctype="SpriteObjectData">
             <Size X="122.0000" Y="48.0000" />
@@ -264,7 +264,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1824" Y="0.5297" />
             <PreSize X="0.1694" Y="0.0375" />
-            <FileData Type="MarkedSubImage" Path="ui/hurticon.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/hurticon.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="npchurt" ActionTag="623103489" VisibleForFrame="False" Tag="26" IconVisible="False" LeftMargin="547.7547" RightMargin="50.2453" TopMargin="579.1869" BottomMargin="652.8131" FlipX="True" FlipY="True" ctype="SpriteObjectData">
@@ -275,7 +275,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.8455" Y="0.5288" />
             <PreSize X="0.1694" Y="0.0375" />
-            <FileData Type="MarkedSubImage" Path="ui/hurticon.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/hurticon.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

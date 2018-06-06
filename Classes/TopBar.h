@@ -4,7 +4,7 @@
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
 #include "UIScroll.h"
-#include "Nature.h"
+#include "JhNature.h"
 USING_NS_CC;
 
 class TopBar:public Node

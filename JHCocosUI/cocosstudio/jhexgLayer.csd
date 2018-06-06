@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="exgLayer" Type="Layer" ID="06bfc2e1-f7d4-4421-89dc-cd9e74a306be" Version="3.10.0.0" />
+  <PropertyGroup Name="jhexgLayer" Type="Layer" ID="06bfc2e1-f7d4-4421-89dc-cd9e74a306be" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -25,9 +25,9 @@
             <PrePosition X="0.9399" Y="0.6307" />
             <PreSize X="0.1042" Y="0.1055" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -39,7 +39,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1736" Y="0.5805" />
             <PreSize X="0.2778" Y="0.1563" />
-            <FileData Type="MarkedSubImage" Path="ui/n004.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/n004.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="npcbanner_1" ActionTag="-525389751" Tag="281" IconVisible="False" LeftMargin="182.9138" RightMargin="508.0862" TopMargin="484.9338" BottomMargin="694.0662" ctype="SpriteObjectData">
             <Size X="29.0000" Y="101.0000" />
@@ -49,7 +49,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2742" Y="0.5817" />
             <PreSize X="0.0403" Y="0.0789" />
-            <FileData Type="MarkedSubImage" Path="ui/npcbanner.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/npcbanner.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="npcname" ActionTag="366009900" Tag="73" IconVisible="False" LeftMargin="186.2532" RightMargin="511.7468" TopMargin="482.0811" BottomMargin="697.9189" IsCustomSize="True" FontSize="22" LabelText="小虾米" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -72,7 +72,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4920" Y="0.4992" />
             <PreSize X="0.7292" Y="0.0039" />
-            <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="npcgoodstext" ActionTag="2094610985" Tag="42" IconVisible="False" LeftMargin="82.4025" RightMargin="371.5975" TopMargin="598.3893" BottomMargin="640.6107" FontSize="35" LabelText="【林平之的物品】" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -121,7 +121,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4934" Y="0.2365" />
             <PreSize X="0.7292" Y="0.0039" />
-            <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="exgbtn" ActionTag="-105728470" Tag="37" IconVisible="False" LeftMargin="288.5001" RightMargin="288.4999" TopMargin="1148.6670" BottomMargin="82.3330" TouchEnable="True" FontSize="35" ButtonText="交易" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -134,9 +134,9 @@
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

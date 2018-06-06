@@ -1,16 +1,16 @@
 ﻿#include "StartScene.h"
 #include "SelectHeroScene.h"
-#include "GameScene.h"
-#include "GlobalData.h"
-#include "CommonFuncs.h"
+#include "JhGameScene.h"
+#include "JhGlobalData.h"
+#include "JhCommonFuncs.h"
 #include "SettingLayer.h"
 #include "SoundManager.h"
 #include "SelectSaveLayer.h"
 #include "WaitingProgress.h"
-#include "GameDataSave.h"
-#include "HintBox.h"
-#include "NoticeLayer.h"
-#include "Const.h"
+#include "JhGameDataSave.h"
+#include "JhHintBox.h"
+#include "JhNoticeLayer.h"
+#include "JhConst.h"
  
 USING_NS_CC;
 
@@ -49,7 +49,7 @@ bool StartScene::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	Node* csbnode = CSLoader::createNode("startLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhstartLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Widget* newstartbtn = (cocos2d::ui::Widget*)csbnode->getChildByName("newstartbtn");
@@ -61,7 +61,7 @@ bool StartScene::init()
 
 	m_continuebtn = (cocos2d::ui::Widget*)csbnode->getChildByName("continuebtn");
 	m_continuebtn->addTouchEventListener(CC_CALLBACK_2(StartScene::onContinue, this));
-	std::string uid = GlobalData::getUId();
+	std::string uid = JhGlobalData::getUId();
 
 	m_continuebtn->setEnabled(uid.length() <= 0 ? false : true);
 
@@ -72,10 +72,10 @@ bool StartScene::init()
 	logo->addTouchEventListener(CC_CALLBACK_2(StartScene::onLogo, this));
 
 	cocos2d::ui::Text* vesiontxt = (cocos2d::ui::Text*)csbnode->getChildByName("version");
-	vesiontxt->setString(GlobalData::getVersion());
+	vesiontxt->setString(JhGlobalData::getVersion());
 
-	GlobalData::noticecontent = "";
-	GlobalData::vec_qq.clear();
+	JhGlobalData::noticecontent = "";
+	JhGlobalData::vec_qq.clear();
 
 	qq1 = (cocos2d::ui::Text*)csbnode->getChildByName("qq");
 	qq1->addTouchEventListener(CC_CALLBACK_2(StartScene::onQQ, this));
@@ -90,7 +90,7 @@ bool StartScene::init()
 
 	clicklogocount = 0;
 	isdouserdata = false;
-	GlobalData::isPopUpdate = false;
+	JhGlobalData::isPopUpdate = false;
 	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_START);
 
 	this->scheduleOnce(schedule_selector(StartScene::getCommonCfgData), 0.05f);
@@ -105,7 +105,7 @@ void StartScene::onExit()
 
 void StartScene::onNewStart(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{	
 		Scene* scene = SelectHeroScene::createScene();
@@ -115,15 +115,15 @@ void StartScene::onNewStart(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 
 void StartScene::onContinue(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		WaitingProgress* waitbox = WaitingProgress::create("进入游戏...");
 		this->addChild(waitbox, 1, "waitbox");
-		std::string uid = GlobalData::getUId();
-		GlobalData::setUId(uid);
+		std::string uid = JhGlobalData::getUId();
+		JhGlobalData::setUId(uid);
 
-		Scene* scene = GameScene::createScene();
+		Scene* scene = JhGameScene::createScene();
 
 		Director::getInstance()->replaceScene(scene);
 	}
@@ -131,7 +131,7 @@ void StartScene::onContinue(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 
 void StartScene::onLoadSaved(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		this->addChild(SelectSaveLayer::create());
@@ -140,7 +140,7 @@ void StartScene::onLoadSaved(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 
 void StartScene::onSet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		SettingLayer* layer = SettingLayer::create();
@@ -154,21 +154,21 @@ void StartScene::onQQ(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType
 	{
 		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
 		cocos2d::ui::Text* qq = (cocos2d::ui::Text*)pSender; 
-		GlobalData::copyToClipBoard(qq->getString());
+		JhGlobalData::copyToClipBoard(qq->getString());
 	}
 
 }
 
 void StartScene::checkServerData(float dt)
 {
-	if (GlobalData::getUId().length() > 0)
+	if (JhGlobalData::getUId().length() > 0)
 	{
-		if (!GameDataSave::getInstance()->getIsPostAllData())
+		if (!JhGameDataSave::getInstance()->getIsPostAllData())
 		{
 			WaitingProgress* waitbox = WaitingProgress::create("数据加载中...");
 			Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
 
-			std::vector<std::string> vec_ids = GlobalData::getSaveListId();
+			std::vector<std::string> vec_ids = JhGlobalData::getSaveListId();
 
 			std::vector<std::string> vec_userid;
 			for (unsigned int i = 0; i < vec_ids.size(); i++)
@@ -202,7 +202,7 @@ void StartScene::checkServerData(float dt)
 
 	if (!isdouserdata)
 	{
-		if (GlobalData::getNoPopNoticeDay() != GlobalData::getDayOfYear())
+		if (JhGlobalData::getNoPopNoticeDay() != JhGlobalData::getDayOfYear())
 		{
 			WaitingProgress* waitbox = WaitingProgress::create("数据加载中...");
 			Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
@@ -229,7 +229,7 @@ void StartScene::onLogo(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTy
 		{
 			WaitingProgress* waitbox = WaitingProgress::create("数据处理中...");
 			Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-			if (GlobalData::isOnline)
+			if (JhGlobalData::isOnline)
 				ServerDataSwap::init(this)->propadjust();
 		}
 	}
@@ -242,18 +242,18 @@ void StartScene::onSuccess()
 	if (isgetCommonData)
 	{
 		isgetCommonData = false;
-		if (GlobalData::vec_qq.size() > 0)
+		if (JhGlobalData::vec_qq.size() > 0)
 		{
 			showQQ();
 		}
-		if (GlobalData::isOnline)
+		if (JhGlobalData::isOnline)
 			checkServerData(0);
 	}
 	else
 	{
 		if (clicklogocount >= 5)
 		{
-			HintBox* hbox = HintBox::create(CommonFuncs::gbk2utf("数据处理完毕，请确认。感谢您的支持！"));
+			JhHintBox* hbox = JhHintBox::create(JhCommonFuncs::gbk2utf("数据处理完毕，请确认。感谢您的支持！"));
 			this->addChild(hbox);
 		}
 		else
@@ -261,19 +261,19 @@ void StartScene::onSuccess()
 			if (isdouserdata)
 			{
 				isdouserdata = false;
-				GameDataSave::getInstance()->setIsPostAllData(true);
+				JhGameDataSave::getInstance()->setIsPostAllData(true);
 
-				m_continuebtn->setEnabled(GlobalData::getUId().length() <= 0 ? false : true);
+				m_continuebtn->setEnabled(JhGlobalData::getUId().length() <= 0 ? false : true);
 
-			if (GameDataSave::getInstance()->getHeroLV() >= 1)
+			if (JhGameDataSave::getInstance()->getHeroLV() >= 1)
 			{
 				for (int i = 0; i < 50; i++)
 				{
-					GameDataSave::getInstance()->setIsNewerGuide(i, 0);
+					JhGameDataSave::getInstance()->setIsNewerGuide(i, 0);
 				}
 			}
-				GlobalData::init();
-				if (GlobalData::getNoPopNoticeDay() != GlobalData::getDayOfYear())
+				JhGlobalData::init();
+				if (JhGlobalData::getNoPopNoticeDay() != JhGlobalData::getDayOfYear())
 				{
 					WaitingProgress* waitbox = WaitingProgress::create("数据加载中...");
 					Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
@@ -282,8 +282,8 @@ void StartScene::onSuccess()
 			}
 			else
 			{
-				if (GlobalData::noticecontent.length() > 0)
-					Director::getInstance()->getRunningScene()->addChild(NoticeLayer::create(GlobalData::noticecontent), 1);
+				if (JhGlobalData::noticecontent.length() > 0)
+					Director::getInstance()->getRunningScene()->addChild(JhNoticeLayer::create(JhGlobalData::noticecontent), 1);
 			}
 		}
 	}
@@ -295,7 +295,7 @@ void StartScene::onErr(int errcode)
 	if (isgetCommonData)
 	{
 		isgetCommonData = false;
-		if (GlobalData::isOnline)
+		if (JhGlobalData::isOnline)
 			checkServerData(0);
 	}
 	else
@@ -305,7 +305,7 @@ void StartScene::onErr(int errcode)
 			std::string descstr = "请与客服联系，稍后重试！";
 			if (errcode == -2)
 				descstr = "没有数据，请与客服确认！";
-			HintBox* hbox = HintBox::create(CommonFuncs::gbk2utf(descstr.c_str()));
+			JhHintBox* hbox = JhHintBox::create(JhCommonFuncs::gbk2utf(descstr.c_str()));
 			this->addChild(hbox);
 		}
 	}
@@ -313,15 +313,15 @@ void StartScene::onErr(int errcode)
 
 void StartScene::showQQ()
 {
-	int qqsize = GlobalData::vec_qq.size();
-	int rqq = GlobalData::createRandomNum(qqsize);
+	int qqsize = JhGlobalData::vec_qq.size();
+	int rqq = JhGlobalData::createRandomNum(qqsize);
 	qqtitle->setVisible(true);
-	qq1->setString(GlobalData::vec_qq[rqq]);
+	qq1->setString(JhGlobalData::vec_qq[rqq]);
 	qq1->setVisible(true);
 
 	if (qqsize > 1)
 	{
-		qq2->setString(GlobalData::vec_qq[1 - rqq]);
+		qq2->setString(JhGlobalData::vec_qq[1 - rqq]);
 		qq2->setVisible(true);
 	}
 	else

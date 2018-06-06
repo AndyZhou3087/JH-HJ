@@ -1,11 +1,11 @@
 ﻿#include "VipGoodsItem.h"
-#include "CommonFuncs.h"
+#include "JhCommonFuncs.h"
 #include "ShopLayer.h"
 #include "SoundManager.h"
 #include "StorageRoom.h"
-#include "GameScene.h"
-#include "Const.h"
-#include "AnalyticUtil.h"
+#include "JhGameScene.h"
+#include "JhConst.h"
+#include "JhAnalyticUtil.h"
 
 VipGoodsItem::VipGoodsItem()
 {
@@ -24,7 +24,7 @@ bool VipGoodsItem::init(GoodsData* gdata)
 
 	m_goodData = gdata;
 
-	Node* csbnode = CSLoader::createNode("vipGoodsNode.csb");//物品节点
+	Node* csbnode = CSLoader::createNode("jhvipGoodsNode.csb");//物品节点
 	csbnode->setPosition(Vec2(this->getContentSize().width / 2, this->getContentSize().height / 2));
 	this->addChild(csbnode);
 
@@ -47,7 +47,7 @@ bool VipGoodsItem::init(GoodsData* gdata)
 	nameTxt->setString(gdata->name);
 	//descTxt->setString(gdata->desc);
 	std::string pricestr = StringUtils::format("%d元", gdata->price);
-	priceTxt->setString(CommonFuncs::gbk2utf(pricestr.c_str()));
+	priceTxt->setString(JhCommonFuncs::gbk2utf(pricestr.c_str()));
 
 	cocos2d::ui::Button* bgbtn = (cocos2d::ui::Button*)csbnode->getChildByName("itembg");//整块节点击
 	bgbtn->addTouchEventListener(CC_CALLBACK_2(VipGoodsItem::onItem, this));
@@ -60,9 +60,9 @@ bool VipGoodsItem::init(GoodsData* gdata)
 
 	int golditemcount = sizeof(goldcount) / sizeof(goldcount[0]);
 	int index = 0;
-	for (unsigned int i = 0; i < GlobalData::vec_goods.size(); i++)
+	for (unsigned int i = 0; i < JhGlobalData::vec_goods.size(); i++)
 	{
-		if (GlobalData::vec_goods[i].icon.compare(m_goodData->icon) == 0)
+		if (JhGlobalData::vec_goods[i].icon.compare(m_goodData->icon) == 0)
 		{
 			index = i;
 			break;
@@ -135,7 +135,7 @@ VipGoodsItem* VipGoodsItem::create(GoodsData* gdata)
 }
 void VipGoodsItem::onBuyBtn(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 }
 
 void VipGoodsItem::onItem(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
@@ -166,14 +166,14 @@ void VipGoodsItem::updateLeftDays(float dt)
 {
 	std::map<std::string, int>::iterator it;
 
-	for (it = GlobalData::map_buyVipDays.begin(); it != GlobalData::map_buyVipDays.end(); ++it)
+	for (it = JhGlobalData::map_buyVipDays.begin(); it != JhGlobalData::map_buyVipDays.end(); ++it)
 	{
 		if (it->first.find(m_goodData->icon) != std::string::npos)
 		{
 			leftday_0->setVisible(true);
 			leftday_1->setVisible(true);
 			leftday->setVisible(true);
-			std::string leftdaystr = StringUtils::format("%d", GlobalData::map_buyVipDays[it->first]);
+			std::string leftdaystr = StringUtils::format("%d", JhGlobalData::map_buyVipDays[it->first]);
 			leftday->setString(leftdaystr);
 
 			if (it->first.find("vip1") != std::string::npos)

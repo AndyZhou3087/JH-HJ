@@ -1,18 +1,18 @@
 ﻿#include "Winlayer.h"
-#include "GlobalData.h"
-#include "CommonFuncs.h"
-#include "MyPackage.h"
-#include "Const.h"
-#include "GameDataSave.h"
-#include "GameScene.h"
+#include "JhGlobalData.h"
+#include "JhCommonFuncs.h"
+#include "JhMyPackage.h"
+#include "JhConst.h"
+#include "JhGameDataSave.h"
+#include "JhGameScene.h"
 #include "StorageRoom.h"
-#include "MapLayer.h"
+#include "JhMapLayer.h"
 #include "SoundManager.h"
-#include "NpcLayer.h"
-#include "HomeHill.h"
-#include "NewerGuideLayer.h"
-#include "AnalyticUtil.h"
-#include "FightLayer.h"
+#include "JhNpcLayer.h"
+#include "JhHomeHill.h"
+#include "JhNewerGuideLayer.h"
+#include "JhAnalyticUtil.h"
+#include "JhFightLayer.h"
 
 Winlayer::Winlayer()
 {
@@ -43,7 +43,7 @@ Winlayer* Winlayer::create(std::string addrid, std::string npcid)
 
 bool Winlayer::init(std::string addrid, std::string npcid)
 {
-	Node* csbnode = CSLoader::createNode("winLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhwinLayer.csb");
 	this->addChild(csbnode);
 
 	m_addrid = addrid;
@@ -59,7 +59,7 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 	continuebtn->addTouchEventListener(CC_CALLBACK_2(Winlayer::onContinue, this));
 
 	cocos2d::ui::Text* addrname = (cocos2d::ui::Text*)csbnode->getChildByName("title");
-	addrname->setString(GlobalData::map_maps[m_addrid].cname);
+	addrname->setString(JhGlobalData::map_maps[m_addrid].cname);
 
 	cocos2d::ui::ImageView* heroimg = (cocos2d::ui::ImageView*)csbnode->getChildByName("heroimg");
 	std::string heroidstr = StringUtils::format("ui/tophero%d.png", g_hero->getHeadID());
@@ -84,21 +84,21 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 	npcimg->loadTexture(npcstr, cocos2d::ui::TextureResType::PLIST);
 
 	cocos2d::ui::Text* npcname = (cocos2d::ui::Text*)csbnode->getChildByName("npcname");
-	npcname->setString(GlobalData::map_npcs[m_npcid].name);
+	npcname->setString(JhGlobalData::map_npcs[m_npcid].name);
 
 	loadNpcFightCount();
 	cocos2d::ui::TextBMFont* npcbigatk = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("npcbigatk");
 	npcbigatk->setString(StringUtils::format("%d", bnpcFightCount));
 	cocos2d::ui::TextBMFont* npcatk = (cocos2d::ui::TextBMFont*)csbnode->getChildByName("npcatk");
 	npcatk->setString(StringUtils::format("%d", snpcFightCount));
-	if (GlobalData::map_npcs[m_npcid].atk < 10)
+	if (JhGlobalData::map_npcs[m_npcid].atk < 10)
 	{
 		npcatk->setVisible(false);
 	}
 	
 
 	if (m_npcid.compare("n001") == 0)//在路上碰到山贼
-		addrname->setString(CommonFuncs::gbk2utf("路上"));
+		addrname->setString(JhCommonFuncs::gbk2utf("路上"));
 
 	explbl = (cocos2d::ui::Text*)csbnode->getChildByName("explbl");
 	std::string lblstr = StringUtils::format("+%d", addHeroExp());
@@ -119,45 +119,45 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 	loadTempData();
 
 	if (m_addrid.compare("m1-6") == 0)
-		GlobalData::map_maps["m1-6"].npcs.clear();
+		JhGlobalData::map_maps["m1-6"].npcs.clear();
 
-	std::vector<std::string> winres = GlobalData::map_npcs[npcid].winres;
-	std::vector<int> winresrnd = GlobalData::map_npcs[npcid].winresrnd;
+	std::vector<std::string> winres = JhGlobalData::map_npcs[npcid].winres;
+	std::vector<int> winresrnd = JhGlobalData::map_npcs[npcid].winresrnd;
 
-	int curplot = GlobalData::getPlotMissionIndex();
+	int curplot = JhGlobalData::getPlotMissionIndex();
 	PlotMissionData * plotdata = NULL;
 	int plottype = 0;
 
 	std::string fnpc = m_npcid;
-	if (GlobalData::map_maps[m_addrid].npcs.size() >= 10)
-		fnpc = GlobalData::map_maps[m_addrid].npcs[0];
+	if (JhGlobalData::map_maps[m_addrid].npcs.size() >= 10)
+		fnpc = JhGlobalData::map_maps[m_addrid].npcs[0];
 
 	if (m_addrid.compare("m13-1") != 0)
 	{
-		if (GlobalData::vec_PlotMissionData[curplot].dnpc.compare(fnpc) == 0 && GlobalData::vec_PlotMissionData[curplot].type == 1 && GlobalData::vec_PlotMissionData[curplot].status == M_DOING)
+		if (JhGlobalData::vec_PlotMissionData[curplot].dnpc.compare(fnpc) == 0 && JhGlobalData::vec_PlotMissionData[curplot].type == 1 && JhGlobalData::vec_PlotMissionData[curplot].status == M_DOING)
 		{
-			plotdata = &GlobalData::vec_PlotMissionData[curplot];
+			plotdata = &JhGlobalData::vec_PlotMissionData[curplot];
 			plottype = 0;
 		}
 		else
 		{
-			std::string mid = GlobalData::getCurBranchPlotMissison();
+			std::string mid = JhGlobalData::getCurBranchPlotMissison();
 			if (mid.length() > 0)
 			{
-				int subindex = GlobalData::map_BranchPlotMissionItem[mid].subindex;
-				if (GlobalData::map_BranchPlotMissionData[mid][subindex].dnpc.compare(m_npcid) == 0 && GlobalData::map_BranchPlotMissionData[mid][subindex].type == 1 && GlobalData::map_BranchPlotMissionItem[mid].count > 0)
-					plotdata = &GlobalData::map_BranchPlotMissionData[mid][subindex];
+				int subindex = JhGlobalData::map_BranchPlotMissionItem[mid].subindex;
+				if (JhGlobalData::map_BranchPlotMissionData[mid][subindex].dnpc.compare(m_npcid) == 0 && JhGlobalData::map_BranchPlotMissionData[mid][subindex].type == 1 && JhGlobalData::map_BranchPlotMissionItem[mid].count > 0)
+					plotdata = &JhGlobalData::map_BranchPlotMissionData[mid][subindex];
 				plottype = 1;
 			}
 			//else
 			//{
 			//	std::map<std::string, std::vector<PlotMissionData>>::iterator it;
-			//	for (it = GlobalData::map_BranchPlotMissionData.begin(); it != GlobalData::map_BranchPlotMissionData.end(); it++)
+			//	for (it = JhGlobalData::map_BranchPlotMissionData.begin(); it != JhGlobalData::map_BranchPlotMissionData.end(); it++)
 			//	{
-			//		if (GlobalData::map_BranchPlotMissionData[it->first].size() > 0)
+			//		if (JhGlobalData::map_BranchPlotMissionData[it->first].size() > 0)
 			//		{
-			//			PlotMissionData* pmdata = &GlobalData::map_BranchPlotMissionData[it->first][0];
-			//			if (pmdata->snpc.compare(npcid) == 0 && pmdata->unlockchapter <= GlobalData::getUnlockChapter() && GlobalData::map_BranchPlotMissionItem[pmdata->id].count > 0)
+			//			PlotMissionData* pmdata = &JhGlobalData::map_BranchPlotMissionData[it->first][0];
+			//			if (pmdata->snpc.compare(npcid) == 0 && pmdata->unlockchapter <= JhGlobalData::getUnlockChapter() && JhGlobalData::map_BranchPlotMissionItem[pmdata->id].count > 0)
 			//			{
 			//				plotdata = pmdata;
 			//				plottype = 1;
@@ -183,37 +183,37 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 		if (plottype == 0)
 		{
 			unlockchapter = plotdata->unlockchapter;
-			GlobalData::setUnlockChapter(unlockchapter);
-			GlobalData::setPlotMissionIndex(curplot + 1);
-			GlobalData::savePlotMissionStatus();
+			JhGlobalData::setUnlockChapter(unlockchapter);
+			JhGlobalData::setPlotMissionIndex(curplot + 1);
+			JhGlobalData::savePlotMissionStatus();
 
-			for (unsigned int i = 0; i < GlobalData::vec_achiveData.size(); i++)
+			for (unsigned int i = 0; i < JhGlobalData::vec_achiveData.size(); i++)
 			{
-				if (GlobalData::vec_achiveData[i].type == A_6)
+				if (JhGlobalData::vec_achiveData[i].type == A_6)
 				{
-					if (plotdata->id.compare(GlobalData::vec_achiveData[i].vec_para[0]) == 0 && GlobalData::vec_achiveData[i].finish != -1)
+					if (plotdata->id.compare(JhGlobalData::vec_achiveData[i].vec_para[0]) == 0 && JhGlobalData::vec_achiveData[i].finish != -1)
 					{
-						GlobalData::vec_achiveData[i].finish = 1;
-						GlobalData::saveAchiveData();
+						JhGlobalData::vec_achiveData[i].finish = 1;
+						JhGlobalData::saveAchiveData();
 					}
 				}
 			}
 		}
 		else
 		{
-			int subindex = GlobalData::map_BranchPlotMissionItem[plotdata->id].subindex;
-			GlobalData::map_BranchPlotMissionData[plotdata->id][subindex].status = M_NONE;
-			if (subindex + 1 >= GlobalData::map_BranchPlotMissionData[plotdata->id].size())
+			int subindex = JhGlobalData::map_BranchPlotMissionItem[plotdata->id].subindex;
+			JhGlobalData::map_BranchPlotMissionData[plotdata->id][subindex].status = M_NONE;
+			if (subindex + 1 >= JhGlobalData::map_BranchPlotMissionData[plotdata->id].size())
 			{
-				GlobalData::map_BranchPlotMissionItem[plotdata->id].subindex = 0;
-				GlobalData::map_BranchPlotMissionItem[plotdata->id].count--;
-				GlobalData::map_BranchPlotMissionItem[plotdata->id].time = GlobalData::map_BranchPlotMissionItem[plotdata->id].maxtime;
-				GlobalData::saveBranchPlotMissionStatus("", 0);
+				JhGlobalData::map_BranchPlotMissionItem[plotdata->id].subindex = 0;
+				JhGlobalData::map_BranchPlotMissionItem[plotdata->id].count--;
+				JhGlobalData::map_BranchPlotMissionItem[plotdata->id].time = JhGlobalData::map_BranchPlotMissionItem[plotdata->id].maxtime;
+				JhGlobalData::saveBranchPlotMissionStatus("", 0);
 			}
 			else
 			{
-				GlobalData::map_BranchPlotMissionItem[plotdata->id].subindex++;
-				GlobalData::saveBranchPlotMissionStatus(plotdata->id, M_NONE);
+				JhGlobalData::map_BranchPlotMissionItem[plotdata->id].subindex++;
+				JhGlobalData::saveBranchPlotMissionStatus(plotdata->id, M_NONE);
 			}
 
 			showMissionAnim(this, "任务完成", winres);
@@ -221,7 +221,7 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 
 		if (g_gameLayer != NULL)
 		{
-			NpcLayer * npclayer = (NpcLayer*)g_gameLayer->getChildByName("npclayer");
+			JhNpcLayer * npclayer = (JhNpcLayer*)g_gameLayer->getChildByName("npclayer");
 			if (npclayer != NULL && plottype == 0)
 			{
 				npclayer->updatePlotUI(plottype);
@@ -232,11 +232,11 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 		{
 			g_maplayer->updataPlotMissionIcon(plottype);
 			if (unlockchapter > 0  && unlockchapter <= MAXCHAPTER)
-				g_maplayer->scheduleOnce(schedule_selector(MapLayer::showUnlockLayer), 1.0f);
+				g_maplayer->scheduleOnce(schedule_selector(JhMapLayer::showUnlockLayer), 1.0f);
 
 			if (plotdata->dnpc.compare("n089") == 0)
 			{
-				g_maplayer->scheduleOnce(schedule_selector(MapLayer::showEndAnim), 1.5f);
+				g_maplayer->scheduleOnce(schedule_selector(JhMapLayer::showEndAnim), 1.5f);
 			}
 		}
 	}
@@ -244,20 +244,20 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 	bool iswd = false;
 	if (m_addrid.compare("m13-1") == 0)
 	{
-		m_backbtn->setTitleText(CommonFuncs::gbk2utf("退出挑战"));
+		m_backbtn->setTitleText(JhCommonFuncs::gbk2utf("退出挑战"));
 		m_backbtn->setTitleFontSize(30);
-		int npcsize = GlobalData::map_maps[m_addrid].npcs.size();
-		if (npcid.compare(GlobalData::map_maps[m_addrid].npcs[npcsize - 1]) == 0)
+		int npcsize = JhGlobalData::map_maps[m_addrid].npcs.size();
+		if (npcid.compare(JhGlobalData::map_maps[m_addrid].npcs[npcsize - 1]) == 0)
 		{
 			continuebtn->setVisible(false);
-			m_backbtn->setTitleText(CommonFuncs::gbk2utf("完成"));
+			m_backbtn->setTitleText(JhCommonFuncs::gbk2utf("完成"));
 		}
 
-		winres = GlobalData::map_challengeReward[npcid].vec_winres;
+		winres = JhGlobalData::map_challengeReward[npcid].vec_winres;
 		winresrnd.clear();
 		for (unsigned int i = 0; i < winres.size(); i++)
 		{
-			int intrnd = GlobalData::map_challengeReward[npcid].vec_winrnd[i] * 10;
+			int intrnd = JhGlobalData::map_challengeReward[npcid].vec_winrnd[i] * 10;
 			winresrnd.push_back(intrnd);
 		}
 		iswd = true;
@@ -268,9 +268,9 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 			continuebtn->setVisible(false);
 		else if (m_addrid.compare("m1-2") == 0)
 		{
-			for (unsigned int i = 0; i < GlobalData::vec_resData.size(); i++)
+			for (unsigned int i = 0; i < JhGlobalData::vec_resData.size(); i++)
 			{
-				ResData *data = &GlobalData::vec_resData[i];
+				ResData *data = &JhGlobalData::vec_resData[i];
 				if ((m_npcid.compare("n002") == 0 && data->strid.compare("67") == 0 && data->count <= 0) || (m_npcid.compare("n003") == 0 && data->strid.compare("68") == 0 && data->count <= 0))
 				{
 					continuebtn->setEnabled(false);
@@ -280,16 +280,16 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 		}
 		else
 		{
-			for (unsigned int i = 0; i < GlobalData::vec_achiveData.size(); i++)
+			for (unsigned int i = 0; i < JhGlobalData::vec_achiveData.size(); i++)
 			{
-				if (GlobalData::vec_achiveData[i].type == A_4)
+				if (JhGlobalData::vec_achiveData[i].type == A_4)
 				{
-					if (GlobalData::vec_achiveData[i].vec_para[0].compare(m_npcid) == 0)
+					if (JhGlobalData::vec_achiveData[i].vec_para[0].compare(m_npcid) == 0)
 					{
-						if (GlobalData::vec_achiveData[i].finish != -1)
+						if (JhGlobalData::vec_achiveData[i].finish != -1)
 						{
-							GlobalData::vec_achiveData[i].finish = 1;
-							GlobalData::saveAchiveData();
+							JhGlobalData::vec_achiveData[i].finish = 1;
+							JhGlobalData::saveAchiveData();
 						}
 					}
 				}
@@ -313,31 +313,31 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 		{
 			if (winrnd < 10)
 			{
-				if (GlobalData::map_npcs[npcid].winrescount[i] < 0)
+				if (JhGlobalData::map_npcs[npcid].winrescount[i] < 0)
 				{
-					r = GlobalData::createRandomNum(100) + 1;
-					GlobalData::map_npcs[npcid].winrescount[i] = 1;
+					r = JhGlobalData::createRandomNum(100) + 1;
+					JhGlobalData::map_npcs[npcid].winrescount[i] = 1;
 				}
 				else
 				{
-					GlobalData::map_npcs[npcid].winrescount[i]++;
-					if (GlobalData::map_npcs[npcid].winrescount[i] < 3)
+					JhGlobalData::map_npcs[npcid].winrescount[i]++;
+					if (JhGlobalData::map_npcs[npcid].winrescount[i] < 3)
 						r = 200;
 					else
 					{
-						r = GlobalData::createRandomNum(100) + 1;
-						GlobalData::map_npcs[npcid].winrescount[i] = 1;
+						r = JhGlobalData::createRandomNum(100) + 1;
+						JhGlobalData::map_npcs[npcid].winrescount[i] = 1;
 					}
 				}
 			}
 			else
 			{
-				r = GlobalData::createRandomNum(100) + 1;
+				r = JhGlobalData::createRandomNum(100) + 1;
 			}
 		}
 		else
 		{
-			r = GlobalData::createRandomNum(1000) + 1;
+			r = JhGlobalData::createRandomNum(1000) + 1;
 		}
 
 		if (r <= winrnd)
@@ -350,9 +350,9 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 				data.strid = strid;
 				data.count = res % 1000;
 
-				for (unsigned int i = 0; i < GlobalData::vec_resData.size(); i++)
+				for (unsigned int i = 0; i < JhGlobalData::vec_resData.size(); i++)
 				{
-					ResData rdata = GlobalData::vec_resData[i];
+					ResData rdata = JhGlobalData::vec_resData[i];
 					if (atoi(rdata.strid.c_str()) == res / 1000)
 					{
 						isfind = true;
@@ -364,9 +364,9 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 				if (!isfind)
 				{
 					std::map<std::string, std::vector<BuildActionData>>::iterator it;
-					for (it = GlobalData::map_buidACData.begin(); it != GlobalData::map_buidACData.end(); ++it)
+					for (it = JhGlobalData::map_buidACData.begin(); it != JhGlobalData::map_buidACData.end(); ++it)
 					{
-						std::vector<BuildActionData> vec_bactData = GlobalData::map_buidACData[it->first];
+						std::vector<BuildActionData> vec_bactData = JhGlobalData::map_buidACData[it->first];
 
 						for (unsigned int m = 0; m < vec_bactData.size(); m++)
 						{
@@ -396,10 +396,10 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 
 				bool isfind = false;
 				std::map<std::string, WG_NGData>::iterator it;
-				for (it = GlobalData::map_wgngs.begin(); it != GlobalData::map_wgngs.end(); ++it)
+				for (it = JhGlobalData::map_wgngs.begin(); it != JhGlobalData::map_wgngs.end(); ++it)
 				{
-					WG_NGData gfdata = GlobalData::map_wgngs[it->first];
-					if (winres[i].compare(gfdata.id) == 0 && !g_hero->checkifHasGF_Equip(winres[i]) && GlobalData::tempHasGf_Equip(winres[i]).length() <= 0)
+					WG_NGData gfdata = JhGlobalData::map_wgngs[it->first];
+					if (winres[i].compare(gfdata.id) == 0 && !g_hero->checkifHasGF_Equip(winres[i]) && JhGlobalData::tempHasGf_Equip(winres[i]).length() <= 0)
 					{
 						isfind = true;
 						data.strid = gfdata.id;
@@ -415,10 +415,10 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 				if (!isfind)
 				{
 					std::map<std::string, EquipData>::iterator ite;
-					for (ite = GlobalData::map_equips.begin(); ite != GlobalData::map_equips.end(); ++ite)
+					for (ite = JhGlobalData::map_equips.begin(); ite != JhGlobalData::map_equips.end(); ++ite)
 					{
-						EquipData edata = GlobalData::map_equips[ite->first];
-						if (winres[i].compare(edata.id) == 0 && !g_hero->checkifHasGF_Equip(winres[i]) && GlobalData::tempHasGf_Equip(winres[i]).length() <= 0)
+						EquipData edata = JhGlobalData::map_equips[ite->first];
+						if (winres[i].compare(edata.id) == 0 && !g_hero->checkifHasGF_Equip(winres[i]) && JhGlobalData::tempHasGf_Equip(winres[i]).length() <= 0)
 						{
 							data.strid = edata.id;
 							data.count = 1;
@@ -437,15 +437,15 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 	updata();
 	updataLV();
 
-	if (GlobalData::isFightMaster)
+	if (JhGlobalData::isFightMaster)
 	{
-		GlobalData::map_myfriendly[m_npcid].relation = F_MASTEROUT;
-		GlobalData::saveFriendly();
-		GlobalData::isFightMaster = false;
-		NpcLayer* npclayer = (NpcLayer*)g_gameLayer->getChildByName("npclayer");
+		JhGlobalData::map_myfriendly[m_npcid].relation = F_MASTEROUT;
+		JhGlobalData::saveFriendly();
+		JhGlobalData::isFightMaster = false;
+		JhNpcLayer* npclayer = (JhNpcLayer*)g_gameLayer->getChildByName("npclayer");
 		if (npclayer != NULL)
 			npclayer->reFreshRelationUI();
-		std::string desc = StringUtils::format("%s%s%s", GlobalData::map_npcs[m_npcid].name, CommonFuncs::gbk2utf("：青出于蓝而胜于蓝。").c_str(), CommonFuncs::gbk2utf("为师没什么能教你了！").c_str());
+		std::string desc = StringUtils::format("%s%s%s", JhGlobalData::map_npcs[m_npcid].name, JhCommonFuncs::gbk2utf("：青出于蓝而胜于蓝。").c_str(), JhCommonFuncs::gbk2utf("为师没什么能教你了！").c_str());
 		g_uiScroll->addEventText(desc, 25, Color3B(204, 4, 4));
 	}
 	auto listener = EventListenerTouchOneByOne::create();
@@ -458,45 +458,45 @@ bool Winlayer::init(std::string addrid, std::string npcid)
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 	this->scheduleOnce(schedule_selector(Winlayer::delayShowNewerGuide), 0.2f);
 
-	if (GlobalData::getUnlockChapter() >= MAXCHAPTER)
+	if (JhGlobalData::getUnlockChapter() >= MAXCHAPTER)
 	{
-		GlobalData::doAchive(A_5, GlobalData::getUnlockChapter());
+		JhGlobalData::doAchive(A_5, JhGlobalData::getUnlockChapter());
 	}
 
-	for (unsigned int i = 0; i < GlobalData::vec_achiveData.size(); i++)
+	for (unsigned int i = 0; i < JhGlobalData::vec_achiveData.size(); i++)
 	{
-		if (GlobalData::vec_achiveData[i].type == A_7)
+		if (JhGlobalData::vec_achiveData[i].type == A_7)
 		{
-			std::string astr = GlobalData::vec_achiveData[i].vec_para[0];
+			std::string astr = JhGlobalData::vec_achiveData[i].vec_para[0];
 			PackageData* mePackageData = g_hero->getMeHas(astr);
-			if (mePackageData != NULL && GlobalData::vec_achiveData[i].finish != -1)
+			if (mePackageData != NULL && JhGlobalData::vec_achiveData[i].finish != -1)
 			{
-				GlobalData::vec_achiveData[i].finish = mePackageData->lv + 1;
-				GlobalData::saveAchiveData();
+				JhGlobalData::vec_achiveData[i].finish = mePackageData->lv + 1;
+				JhGlobalData::saveAchiveData();
 			}
 		}
 
-		if (GlobalData::vec_achiveData[i].type == A_10)
+		if (JhGlobalData::vec_achiveData[i].type == A_10)
 		{
-			if (GlobalData::vec_achiveData[i].finish != -1)
+			if (JhGlobalData::vec_achiveData[i].finish != -1)
 			{
-				int nlv = atoi(GlobalData::vec_achiveData[i].vec_para[0].c_str());
-				GlobalData::vec_achiveData[i].finish = g_hero->getGfCountByLv(nlv);
-				GlobalData::saveAchiveData();
+				int nlv = atoi(JhGlobalData::vec_achiveData[i].vec_para[0].c_str());
+				JhGlobalData::vec_achiveData[i].finish = g_hero->getGfCountByLv(nlv);
+				JhGlobalData::saveAchiveData();
 			}
 		}
 	}
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-	if (GlobalData::isOnline)
-		ServerDataSwap::init(NULL)->postOneData(GlobalData::getUId());
+	if (JhGlobalData::isOnline)
+		ServerDataSwap::init(NULL)->postOneData(JhGlobalData::getUId());
 #endif
 #ifdef ANALYTICS
 	if (m_npcid.compare("n089") == 0)
-		AnalyticUtil::onEvent("allpass");
+		JhAnalyticUtil::onEvent("allpass");
 #endif
 	//n044
 
-	if (npcid.compare("n044") == 0 && GlobalData::isExchangeGift && m_addrid.compare("m13-1") != 0 && GlobalData::isOnline)
+	if (npcid.compare("n044") == 0 && JhGlobalData::isExchangeGift && m_addrid.compare("m13-1") != 0 && JhGlobalData::isOnline)
 		ServerDataSwap::init(this)->getKajuanAction();
 
 	return true;
@@ -509,7 +509,7 @@ void Winlayer::onEnterTransitionDidFinish()
 
 void Winlayer::loadNpcFightCount()
 {
-	int curack = GlobalData::map_npcs[m_npcid].atk;
+	int curack = JhGlobalData::map_npcs[m_npcid].atk;
 	for (int i = 6; i >= 0; i--)
 	{
 		int pf = pow(10, i);
@@ -544,7 +544,7 @@ void Winlayer::updataLV()
 	int curlv = g_hero->getLVValue();
 	unsigned int i = 0;
 	int lv = 0;
-	std::vector<int> vec_heroExp = GlobalData::map_heroAtr[g_hero->getHeadID()].vec_exp;
+	std::vector<int> vec_heroExp = JhGlobalData::map_heroAtr[g_hero->getHeadID()].vec_exp;
 	for (i = curlv; i < vec_heroExp.size(); i++)
 	{
 		if (g_hero->getExpValue() >= vec_heroExp[i])
@@ -568,13 +568,13 @@ void Winlayer::updataLV()
 			g_hero->setLifeValue(g_hero->getMaxLifeValue());
 			vec_lvup.push_back("herolvup");
 		}
-		GlobalData::doAchive(A_2, lv + 1);
+		JhGlobalData::doAchive(A_2, lv + 1);
 	}
 	else
 	{
 		if (g_hero->getLVValue() == vec_heroExp.size() - 1)
 		{
-			GlobalData::doAchive(A_2, g_hero->getLVValue() + 1);
+			JhGlobalData::doAchive(A_2, g_hero->getLVValue() + 1);
 		}
 	}
 	for (int m = H_WG; m <= H_NG; m++)
@@ -584,7 +584,7 @@ void Winlayer::updataLV()
 		if (gfData->count > 0)
 		{
 			std::string gfname = gfData->strid;
-			std::vector<int> vec_gfExp = GlobalData::map_wgngs[gfname].vec_exp;
+			std::vector<int> vec_gfExp = JhGlobalData::map_wgngs[gfname].vec_exp;
 			curlv = gfData->lv;
 
 			gfData->exp += addGfExp();
@@ -596,7 +596,7 @@ void Winlayer::updataLV()
 					gfData->exp = gfData->exp - vec_gfExp[i];
 				}
 			}
-			int gfmaxlv = GlobalData::map_wgngs[gfname].maxlv;
+			int gfmaxlv = JhGlobalData::map_wgngs[gfname].maxlv;
 			if (lv > curlv)
 			{
 				if (lv >= gfmaxlv)
@@ -635,7 +635,7 @@ void Winlayer::onRewardItem(cocos2d::Ref* pSender)
 			{
 				PackageData pdata = *data;
 				pdata.count = 1;
-				if (MyPackage::add(pdata) == 0)
+				if (JhMyPackage::add(pdata) == 0)
 				{
 					data->count--;
 					getRewardData.erase(it);
@@ -648,7 +648,7 @@ void Winlayer::onRewardItem(cocos2d::Ref* pSender)
 	{
 		PackageData pdata = *data;
 		pdata.count = 1;
-		if (MyPackage::add(pdata) == 0)
+		if (JhMyPackage::add(pdata) == 0)
 		{
 			data->count--;
 		}
@@ -668,7 +668,7 @@ void Winlayer::onPackageItem(cocos2d::Ref* pSender)
 	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
 	Node* node = (Node*)pSender;
 	int index = node->getTag();
-	PackageData data = MyPackage::vec_packages[index];
+	PackageData data = JhMyPackage::vec_packages[index];
 	data.count = 1;
 	unsigned int i = 0;
 	for (i = 0; i < getRewardData.size(); i++)
@@ -686,7 +686,7 @@ void Winlayer::onPackageItem(cocos2d::Ref* pSender)
 	}
 	saveTempData();
 
-	MyPackage::cutone(data);
+	JhMyPackage::cutone(data);
 
 	for (unsigned int i = 0; i < getRewardData.size(); i++)
 	{
@@ -699,22 +699,22 @@ void Winlayer::onPackageItem(cocos2d::Ref* pSender)
 
 void Winlayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		HomeHill* homehill = (HomeHill*)g_gameLayer->getChildByName("homehill");
+		JhHomeHill* homehill = (JhHomeHill*)g_gameLayer->getChildByName("homehill");
 		if (homehill != NULL)
 		{
-			if (NewerGuideLayer::checkifNewerGuide(36))
+			if (JhNewerGuideLayer::checkifNewerGuide(36))
 				homehill->showNewerGuide(36);
-			else if (NewerGuideLayer::checkifNewerGuide(39))
+			else if (JhNewerGuideLayer::checkifNewerGuide(39))
 				homehill->showNewerGuide(39);
 		}
-		FightLayer* fightlayer = (FightLayer*)g_gameLayer->getChildByName("fightlayer");
+		JhFightLayer* fightlayer = (JhFightLayer*)g_gameLayer->getChildByName("fightlayer");
 		if (fightlayer != NULL)
 			fightlayer->removeFromParentAndCleanup(true);
 
-		NpcLayer * npclayer = (NpcLayer*)g_gameLayer->getChildByName("npclayer");
+		JhNpcLayer * npclayer = (JhNpcLayer*)g_gameLayer->getChildByName("npclayer");
 		if (npclayer != NULL)
 		{
 			npclayer->showTalkGuider();
@@ -726,19 +726,19 @@ void Winlayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType
 
 void Winlayer::onContinue(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		FightLayer* fightlayer = (FightLayer*)g_gameLayer->getChildByName("fightlayer");
+		JhFightLayer* fightlayer = (JhFightLayer*)g_gameLayer->getChildByName("fightlayer");
 		if (fightlayer != NULL)
 		{
 			if (m_addrid.compare("m13-1") == 0)
 				fightlayer->continueChallenge();
 			else
 			{
-				for (unsigned int i = 0; i < GlobalData::vec_resData.size(); i++)
+				for (unsigned int i = 0; i < JhGlobalData::vec_resData.size(); i++)
 				{
-					ResData *data = &GlobalData::vec_resData[i];
+					ResData *data = &JhGlobalData::vec_resData[i];
 					if ((m_npcid.compare("n002") == 0 && data->strid.compare("67") == 0 && data->count > 0) || (m_npcid.compare("n003") == 0 && data->strid.compare("68") == 0 && data->count > 0))
 					{
 						data->count--;
@@ -755,7 +755,7 @@ void Winlayer::onContinue(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEvent
 
 void Winlayer::onAllGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		for (unsigned int i = 0; i < getRewardData.size(); i++)
@@ -773,7 +773,7 @@ void Winlayer::onAllGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTy
 			{
 				PackageData data = *it;
 				data.count = 1;
-				if (MyPackage::add(data) == 0)
+				if (JhMyPackage::add(data) == 0)
 				{
 					if (--it->count <= 0)
 					{
@@ -803,13 +803,13 @@ void Winlayer::onAllGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTy
 void Winlayer::loadTempData()
 {
 	tempResData.clear();
-	std::string datastr = GameDataSave::getInstance()->getTempStorage(m_addrid);
+	std::string datastr = JhGameDataSave::getInstance()->getTempStorage(m_addrid);
 	std::vector<std::string> vec_retstr;
-	CommonFuncs::split(datastr, vec_retstr, ";");
+	JhCommonFuncs::split(datastr, vec_retstr, ";");
 	for (unsigned int i = 0; i < vec_retstr.size(); i++)
 	{
 		std::vector<std::string> tmp;
-		CommonFuncs::split(vec_retstr[i], tmp, "-");
+		JhCommonFuncs::split(vec_retstr[i], tmp, "-");
 		PackageData data;
 		data.strid = tmp[0];
 		data.type = atoi(tmp[1].c_str());
@@ -850,7 +850,7 @@ void Winlayer::saveTempData()
 			allResData.push_back(getRewardData[i]);
 		}
 	}
-	GlobalData::map_tempGf_Equip[m_addrid].clear();
+	JhGlobalData::map_tempGf_Equip[m_addrid].clear();
 
 	std::string str;
 	for (unsigned int i = 0; i < allResData.size(); i++)
@@ -862,10 +862,10 @@ void Winlayer::saveTempData()
 		std::string tmpstrid = allResData[i].strid;
 		if (tmptype == W_GONG || tmptype == N_GONG || tmptype == WEAPON || tmptype == PROTECT_EQU)
 		{
-			GlobalData::map_tempGf_Equip[m_addrid].push_back(tmpstrid);
+			JhGlobalData::map_tempGf_Equip[m_addrid].push_back(tmpstrid);
 		}
 	}
-	GameDataSave::getInstance()->setTempStorage(m_addrid, str.substr(0, str.length() - 1));
+	JhGameDataSave::getInstance()->setTempStorage(m_addrid, str.substr(0, str.length() - 1));
 }
 
 void Winlayer::updata()
@@ -878,23 +878,23 @@ void Winlayer::updata()
 
 void Winlayer::updataMyPackageUI()
 {
-	for (int i = 0; i < MyPackage::getMax(); i++)
+	for (int i = 0; i < JhMyPackage::getMax(); i++)
 	{
 		std::string name = StringUtils::format("pitem%d", i);
 		this->removeChildByName(name);
 	}
 
-	for (int i = 0; i < MyPackage::getSize(); i++)
+	for (int i = 0; i < JhMyPackage::getSize(); i++)
 	{
 		std::string boxstr = "ui/winbox.png";
-		/*PackageData tmpdata = MyPackage::vec_packages[i];
+		/*PackageData tmpdata = JhMyPackage::vec_packages[i];
 		if (tmpdata.type == WEAPON || tmpdata.type == PROTECT_EQU)
 		{
-			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_equips[tmpdata.strid].qu);
+			boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_equips[tmpdata.strid].qu);
 		}
 		else if (tmpdata.type == N_GONG || tmpdata.type == W_GONG)
 		{
-			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_wgngs[tmpdata.strid].qu);
+			boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_wgngs[tmpdata.strid].qu);
 		}*/
 
 		Sprite * box = Sprite::createWithSpriteFrameName(boxstr);
@@ -912,11 +912,11 @@ void Winlayer::updataMyPackageUI()
 		std::string name = StringUtils::format("pitem%d", i);
 		this->addChild(menu, 0, name);
 
-		std::string str = StringUtils::format("ui/%s.png", MyPackage::vec_packages[i].strid.c_str());
+		std::string str = StringUtils::format("ui/%s.png", JhMyPackage::vec_packages[i].strid.c_str());
 		Sprite * res = Sprite::createWithSpriteFrameName(str);
 		res->setPosition(Vec2(box->getContentSize().width / 2, box->getContentSize().height / 2));
 		box->addChild(res);
-		str = StringUtils::format("%d", MyPackage::vec_packages[i].count);
+		str = StringUtils::format("%d", JhMyPackage::vec_packages[i].count);
 		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 22);//Label::createWithSystemFont(str, "", 18);
 		reslbl->setPosition(Vec2(box->getContentSize().width - 25, 5));
 		box->addChild(reslbl);
@@ -931,11 +931,11 @@ void Winlayer::updataRewardUI()
 		PackageData tmpdata = getRewardData[i];
 		/*if (tmpdata.type == WEAPON || tmpdata.type == PROTECT_EQU)
 		{
-			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_equips[tmpdata.strid].qu);
+			boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_equips[tmpdata.strid].qu);
 		}
 		else if (tmpdata.type == N_GONG || tmpdata.type == W_GONG)
 		{
-			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_wgngs[tmpdata.strid].qu);
+			boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_wgngs[tmpdata.strid].qu);
 		}*/
 
 		Sprite * box = Sprite::createWithSpriteFrameName(boxstr);
@@ -1023,17 +1023,17 @@ void Winlayer::showNewerGuide(int step)
 
 void Winlayer::delayShowNewerGuide(float dt)
 {
-	if (NewerGuideLayer::checkifNewerGuide(34))
+	if (JhNewerGuideLayer::checkifNewerGuide(34))
 		showNewerGuide(34);
-	else if (NewerGuideLayer::checkifNewerGuide(37))
+	else if (JhNewerGuideLayer::checkifNewerGuide(37))
 		showNewerGuide(37);
 }
 
 int Winlayer::addHeroExp()
 {
-	int winexp = GlobalData::map_npcs[m_npcid].exp;
+	int winexp = JhGlobalData::map_npcs[m_npcid].exp;
 	int herolv = g_hero->getLVValue() + 1;
-	int bosslv = GlobalData::map_npcs[m_npcid].lv;
+	int bosslv = JhGlobalData::map_npcs[m_npcid].lv;
 	int lvless = herolv - bosslv;
 	if (lvless > 30)
 		winexp = winexp * 0.1f;
@@ -1042,8 +1042,8 @@ int Winlayer::addHeroExp()
 	else if (lvless > 10)
 		winexp = winexp * 0.5f;
 
-	int heorexpetime = GameDataSave::getInstance()->getHeroExpEndTime();
-	if (GlobalData::getSysSecTime() <= heorexpetime)
+	int heorexpetime = JhGameDataSave::getInstance()->getHeroExpEndTime();
+	if (JhGlobalData::getSysSecTime() <= heorexpetime)
 	{
 		winexp *= 2;
 	}
@@ -1052,17 +1052,17 @@ int Winlayer::addHeroExp()
 }
 int Winlayer::addGfExp()
 {
-	int winexp = GlobalData::map_npcs[m_npcid].exp;
+	int winexp = JhGlobalData::map_npcs[m_npcid].exp;
 	int herolv = g_hero->getLVValue() + 1;
-	int bosslv = GlobalData::map_npcs[m_npcid].lv;
+	int bosslv = JhGlobalData::map_npcs[m_npcid].lv;
 	int lvless = herolv - bosslv;
 
-	float gfwinexp = GlobalData::map_npcs[m_npcid].exp * 3.0f / 2.0f;
+	float gfwinexp = JhGlobalData::map_npcs[m_npcid].exp * 3.0f / 2.0f;
 	if (lvless > 10)
 		gfwinexp = gfwinexp * 0.5f;
 
-	int gfetime = GameDataSave::getInstance()->getGfEndTime();
-	if (GlobalData::getSysSecTime() <= gfetime)
+	int gfetime = JhGameDataSave::getInstance()->getGfEndTime();
+	if (JhGlobalData::getSysSecTime() <= gfetime)
 	{
 		gfwinexp *= 2;
 	}
@@ -1096,20 +1096,20 @@ void Winlayer::showMissionAnim(Node* _target, std::string text, std::vector<std:
 		listener->setSwallowTouches(true);
 		color->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, color);
 
-		Node* csbnode = CSLoader::createNode("achiveNodeAnim.csb");
+		Node* csbnode = CSLoader::createNode("jhachiveNodeAnim.csb");
 		csbnode->setPosition(Vec2(360, 800));
 		csbnode->getChildByName("cjz_1")->setVisible(false);
 		color->addChild(csbnode);
 		cocos2d::ui::Text* textname = (cocos2d::ui::Text*)csbnode->getChildByName("name");
-		textname->setString(CommonFuncs::gbk2utf(text.c_str()));
-		auto action = CSLoader::createTimeline("achiveNodeAnim.csb");
+		textname->setString(JhCommonFuncs::gbk2utf(text.c_str()));
+		auto action = CSLoader::createTimeline("jhachiveNodeAnim.csb");
 		csbnode->runAction(action);
 		action->gotoFrameAndPlay(0, false);
 		csbnode->getChildByName("light")->runAction(RepeatForever::create(RotateTo::create(8, 720)));
 
 		if (vec_res.size() > 0)
 		{
-			std::string resstr = CommonFuncs::gbk2utf("获得任务奖励：");
+			std::string resstr = JhCommonFuncs::gbk2utf("获得任务奖励：");
 			for (unsigned int i = 0; i < vec_res.size(); i++)
 			{
 				std::string resid = vec_res[i];
@@ -1121,8 +1121,8 @@ void Winlayer::showMissionAnim(Node* _target, std::string text, std::vector<std:
 					count = intres % 1000;
 				}
 
-				resstr.append(StringUtils::format("%sx%d", GlobalData::map_allResource[resid].cname.c_str(), count));
-				resstr.append(CommonFuncs::gbk2utf("，"));
+				resstr.append(StringUtils::format("%sx%d", JhGlobalData::map_allResource[resid].cname.c_str(), count));
+				resstr.append(JhCommonFuncs::gbk2utf("，"));
 			}
 			Label * reslbl = Label::createWithTTF(resstr.substr(0, resstr.length()-3), "fonts/STXINGKA.TTF", 32);
 			reslbl->setMaxLineWidth(650);

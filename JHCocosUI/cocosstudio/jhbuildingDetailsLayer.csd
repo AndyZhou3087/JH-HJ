@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="buildingDetailsLayer" Type="Layer" ID="0784db52-18ff-4f2b-b258-0bbba82325ab" Version="3.10.0.0" />
+  <PropertyGroup Name="jhbuildingDetailsLayer" Type="Layer" ID="0784db52-18ff-4f2b-b258-0bbba82325ab" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -60,7 +60,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5935" />
             <PreSize X="0.1569" Y="0.0875" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="okbtn" ActionTag="796276417" Tag="144" IconVisible="False" LeftMargin="288.5002" RightMargin="288.4998" TopMargin="833.6456" BottomMargin="397.3544" TouchEnable="True" FontSize="35" ButtonText="确定" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -73,9 +73,9 @@
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

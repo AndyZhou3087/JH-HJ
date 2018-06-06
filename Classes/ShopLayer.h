@@ -3,8 +3,8 @@
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-#include "GlobalData.h"
-#include "MyPackage.h"
+#include "JhGlobalData.h"
+#include "JhMyPackage.h"
 USING_NS_CC;
 
 typedef enum

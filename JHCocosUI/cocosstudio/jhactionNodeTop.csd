@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="actionNodeTop" Type="Node" ID="8b2beec1-e9ca-444e-a348-e0ff3f6dcd34" Version="3.10.0.0" />
+  <PropertyGroup Name="jhactionNodeTop" Type="Node" ID="8b2beec1-e9ca-444e-a348-e0ff3f6dcd34" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -17,7 +17,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5465" Y="0.7306" />
                 <PreSize X="0.5893" Y="0.4696" />
-                <FileData Type="MarkedSubImage" Path="ui/buildingbanner2.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/buildingbanner2.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="box" ActionTag="998287900" Tag="63" IconVisible="False" LeftMargin="2.6474" RightMargin="450.3526" TopMargin="40.1935" BottomMargin="50.8065" ctype="SpriteObjectData">
                 <Size X="107.0000" Y="90.0000" />
@@ -30,7 +30,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5140" Y="0.5222" />
                     <PreSize X="0.6355" Y="0.7556" />
-                    <FileData Type="MarkedSubImage" Path="ui/14.png" Plist="uipacker.plist" />
+                    <FileData Type="MarkedSubImage" Path="ui/14.png" Plist="jhuiplist.plist" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -39,7 +39,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1003" Y="0.5293" />
                 <PreSize X="0.1911" Y="0.4972" />
-                <FileData Type="MarkedSubImage" Path="ui/dzqk.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/dzqk.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="res0" ActionTag="-1525791338" VisibleForFrame="False" Tag="65" IconVisible="False" LeftMargin="123.8608" RightMargin="323.1392" TopMargin="-16.6447" BottomMargin="85.6447" TouchEnable="True" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="85" Scale9Height="84" ctype="ImageViewObjectData">
@@ -50,7 +50,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3221" Y="0.7826" />
                 <PreSize X="0.2018" Y="0.6188" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="res1" ActionTag="1276739139" VisibleForFrame="False" Tag="69" IconVisible="False" LeftMargin="186.1121" RightMargin="260.8879" TopMargin="-16.6447" BottomMargin="85.6447" TouchEnable="True" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="85" Scale9Height="84" ctype="ImageViewObjectData">
                 <Size X="113.0000" Y="112.0000" />
@@ -60,7 +60,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4332" Y="0.7826" />
                 <PreSize X="0.2018" Y="0.6188" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="res2" ActionTag="1421407716" VisibleForFrame="False" Tag="70" IconVisible="False" LeftMargin="248.3635" RightMargin="198.6365" TopMargin="-16.6447" BottomMargin="85.6447" TouchEnable="True" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="85" Scale9Height="84" ctype="ImageViewObjectData">
                 <Size X="113.0000" Y="112.0000" />
@@ -70,7 +70,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5444" Y="0.7826" />
                 <PreSize X="0.2018" Y="0.6188" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="res3" ActionTag="1346561269" VisibleForFrame="False" Tag="74" IconVisible="False" LeftMargin="310.6134" RightMargin="136.3866" TopMargin="-16.6447" BottomMargin="85.6447" TouchEnable="True" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="85" Scale9Height="84" ctype="ImageViewObjectData">
                 <Size X="113.0000" Y="112.0000" />
@@ -80,7 +80,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.6556" Y="0.7826" />
                 <PreSize X="0.2018" Y="0.6188" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="res4" ActionTag="854660445" VisibleForFrame="False" Tag="75" IconVisible="False" LeftMargin="372.8651" RightMargin="74.1349" TopMargin="-16.6447" BottomMargin="85.6447" TouchEnable="True" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="85" Scale9Height="84" ctype="ImageViewObjectData">
                 <Size X="113.0000" Y="112.0000" />
@@ -90,7 +90,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7667" Y="0.7826" />
                 <PreSize X="0.2018" Y="0.6188" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="count0" ActionTag="864830858" VisibleForFrame="False" Tag="66" IconVisible="False" LeftMargin="157.9487" RightMargin="357.0513" TopMargin="69.5468" BottomMargin="94.4532" FontSize="13" LabelText="1000/3" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="45.0000" Y="17.0000" />
@@ -174,7 +174,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5216" Y="0.2823" />
                 <PreSize X="0.3786" Y="0.0829" />
-                <FileData Type="MarkedSubImage" Path="ui/buildprogressbg.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/buildprogressbg.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="loadingbar" ActionTag="-1930167608" Tag="72" IconVisible="False" LeftMargin="185.1057" RightMargin="162.8943" TopMargin="122.3949" BottomMargin="43.6051" ProgressInfo="0" ctype="LoadingBarObjectData">
@@ -185,7 +185,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5198" Y="0.2823" />
                 <PreSize X="0.3786" Y="0.0829" />
-                <ImageFileData Type="MarkedSubImage" Path="ui/buildprogressbar.png" Plist="uipacker.plist" />
+                <ImageFileData Type="MarkedSubImage" Path="ui/buildprogressbar.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="progresstext" ActionTag="151482905" VisibleForFrame="False" Tag="64" IconVisible="False" LeftMargin="292.5043" RightMargin="267.4957" TopMargin="129.5592" BottomMargin="51.4408" FontSize="20" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="0.0000" Y="0.0000" />
@@ -208,9 +208,9 @@
                 <PreSize X="0.2554" Y="0.2707" />
                 <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
                 <TextColor A="255" R="255" G="255" B="255" />
-                <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="uipacker.plist" />
-                <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-                <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+                <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
+                <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -245,7 +245,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/abg.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/abg.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="Image_1" ActionTag="-1331954345" Tag="23" IconVisible="False" LeftMargin="-173.5000" RightMargin="170.5000" TopMargin="-62.0000" BottomMargin="-58.0000" TopEage="39" BottomEage="39" Scale9OriginY="39" Scale9Width="3" Scale9Height="42" ctype="ImageViewObjectData">
             <Size X="3.0000" Y="120.0000" />
@@ -255,7 +255,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/aline.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/aline.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

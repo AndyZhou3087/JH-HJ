@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="factionDetailsLayer" Type="Layer" ID="5ecb27de-8a26-4458-9d19-01b3e912bde5" Version="3.10.0.0" />
+  <PropertyGroup Name="jhfactionDetailsLayer" Type="Layer" ID="5ecb27de-8a26-4458-9d19-01b3e912bde5" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -25,9 +25,9 @@
             <PrePosition X="0.9411" Y="0.7595" />
             <PreSize X="0.1042" Y="0.1055" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

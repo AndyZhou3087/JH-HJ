@@ -1,8 +1,8 @@
 ﻿#include "StorageRoom.h"
-#include "Const.h"
-#include "GameDataSave.h"
-#include "CommonFuncs.h"
-#include "GlobalData.h"
+#include "JhConst.h"
+#include "JhGameDataSave.h"
+#include "JhCommonFuncs.h"
+#include "JhGlobalData.h"
 
 std::map<int, std::vector<PackageData>> StorageRoom::map_storageData;
 StorageRoom::StorageRoom()
@@ -40,7 +40,7 @@ void StorageRoom::save()
 			str.append(idstr);
 		}
 	}
-	GameDataSave::getInstance()->setStorageData(str.substr(0, str.length() - 1));
+	JhGameDataSave::getInstance()->setStorageData(str.substr(0, str.length() - 1));
 }
 
 void StorageRoom::loadStorageData()
@@ -52,14 +52,14 @@ void StorageRoom::loadStorageData()
 	}
 	map_storageData.clear();
 
-	std::string strval = GameDataSave::getInstance()->getStorageData();
+	std::string strval = JhGameDataSave::getInstance()->getStorageData();
 	std::vector<std::string> tmp;
-	CommonFuncs::split(strval, tmp, ";");
+	JhCommonFuncs::split(strval, tmp, ";");
 
 	for (unsigned int i = 0; i < tmp.size(); i++)
 	{
 		std::vector<std::string> tmp2;
-		CommonFuncs::split(tmp[i], tmp2, "-");
+		JhCommonFuncs::split(tmp[i], tmp2, "-");
 
 		PackageData sdata;
 		sdata.strid = tmp2[0];
@@ -74,7 +74,7 @@ void StorageRoom::loadStorageData()
 			sdata.type = N_GONG;
 
 		sdata.count = atoi(tmp2[2].c_str());
-		sdata.extype = GlobalData::getResExType(sdata.strid);//atoi(tmp2[3].c_str());
+		sdata.extype = JhGlobalData::getResExType(sdata.strid);//atoi(tmp2[3].c_str());
 		sdata.lv = atoi(tmp2[4].c_str());
 
 		sdata.exp = atoi(tmp2[5].c_str());
@@ -134,7 +134,7 @@ void StorageRoom::add(PackageData data)
 	
 	if (data.strid.compare("80") == 0)
 	{
-		GlobalData::doAchive(A_3, StorageRoom::getCountById("80"));
+		JhGlobalData::doAchive(A_3, StorageRoom::getCountById("80"));
 	}
 }
 
@@ -166,10 +166,10 @@ void StorageRoom::use(std::string strid, int count)
 	}
 	StorageRoom::save();
 
-	std::string mixid = GlobalData::getMixGF();
+	std::string mixid = JhGlobalData::getMixGF();
 	if (mixid.length() > 0)
 	{
-		MixGfData mdata = GlobalData::map_MixGfData[mixid];
+		MixGfData mdata = JhGlobalData::map_MixGfData[mixid];
 
 		if (mdata.mastergf.compare(strid) == 0)
 		{
@@ -178,7 +178,7 @@ void StorageRoom::use(std::string strid, int count)
 				if (StorageRoom::getCountById(mdata.vec_secgf[n]) <= 0)
 				{
 					PackageData data;
-					WG_NGData gfdata = GlobalData::map_wgngs[mdata.vec_secgf[n]];
+					WG_NGData gfdata = JhGlobalData::map_wgngs[mdata.vec_secgf[n]];
 					data.strid = gfdata.id;
 					data.count = 1;
 					data.lv = gfdata.maxlv - 1;
@@ -187,7 +187,7 @@ void StorageRoom::use(std::string strid, int count)
 					StorageRoom::add(data);
 				}
 			}
-			GlobalData::setMixGF("");
+			JhGlobalData::setMixGF("");
 		}
 	}
 }

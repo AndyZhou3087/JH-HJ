@@ -1,10 +1,10 @@
 ﻿#include "SelectSaveComfirmLayer.h"
-#include "GlobalData.h"
+#include "JhGlobalData.h"
 #include "SoundManager.h"
-#include "GameDataSave.h"
-#include "GameScene.h"
-#include "CommonFuncs.h"
-#include "Const.h"
+#include "JhGameDataSave.h"
+#include "JhGameScene.h"
+#include "JhCommonFuncs.h"
+#include "JhConst.h"
 bool SelectSaveComfirmLayer::init(int index)
 {
 	
@@ -13,7 +13,7 @@ bool SelectSaveComfirmLayer::init(int index)
 		return false;
     }
 
-	Node* csbnode = CSLoader::createNode("selectSaveComfirmLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhselectSaveComfirmLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)csbnode->getChildByName("okbtn");
@@ -23,7 +23,7 @@ bool SelectSaveComfirmLayer::init(int index)
 	cancelbtn->addTouchEventListener(CC_CALLBACK_2(SelectSaveComfirmLayer::onCancel, this));
 
 	cocos2d::ui::Text* nametxt = (cocos2d::ui::Text*)csbnode->getChildByName("name");
-	nametxt->setString(CommonFuncs::gbk2utf(heroname[index].c_str()));
+	nametxt->setString(JhCommonFuncs::gbk2utf(heroname[index].c_str()));
 
 	cocos2d::ui::ImageView* headimg = (cocos2d::ui::ImageView*)csbnode->getChildByName("headimg");
 	std::string headstr = StringUtils::format("ui/tophero%d.png", index + 1);
@@ -63,15 +63,15 @@ SelectSaveComfirmLayer* SelectSaveComfirmLayer::create(int index)
 
 void SelectSaveComfirmLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		Node* node = (Node*)pSender;
 		int tag = node->getTag();
-		std::string suid = GlobalData::getSaveListId().at(tag);
-		GlobalData::setUId(suid);
+		std::string suid = JhGlobalData::getSaveListId().at(tag);
+		JhGlobalData::setUId(suid);
 
-		Scene* scene = GameScene::createScene();
+		Scene* scene = JhGameScene::createScene();
 
 		Director::getInstance()->replaceScene(scene);
 	}
@@ -79,7 +79,7 @@ void SelectSaveComfirmLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::To
 
 void SelectSaveComfirmLayer::onCancel(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{	
 		removSelf();

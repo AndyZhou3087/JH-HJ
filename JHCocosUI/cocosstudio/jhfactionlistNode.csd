@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="factionlistNode" Type="Node" ID="286c1ea3-3bd6-4812-968c-c4408cabaa30" Version="3.10.0.0" />
+  <PropertyGroup Name="jhfactionlistNode" Type="Node" ID="286c1ea3-3bd6-4812-968c-c4408cabaa30" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/fightitem0.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/fightitem0.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="num" ActionTag="1731730782" Tag="10" IconVisible="False" LeftMargin="-248.0000" RightMargin="210.0000" TopMargin="-21.0000" BottomMargin="-15.0000" LabelText="1" ctype="TextBMFontObjectData">
             <Size X="38.0000" Y="36.0000" />
@@ -84,9 +84,9 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

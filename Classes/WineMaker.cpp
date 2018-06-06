@@ -1,7 +1,7 @@
 ﻿#include "WineMaker.h"
-#include "Nature.h"
-#include "Const.h"
-extern Nature* g_nature;
+#include "JhNature.h"
+#include "JhConst.h"
+extern JhNature* g_nature;
 
 WineMaker::WineMaker()
 {

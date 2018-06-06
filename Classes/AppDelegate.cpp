@@ -1,11 +1,11 @@
 ﻿#include "AppDelegate.h"
 #include "StartScene.h"
 #include "SoundManager.h"
-#include "Const.h"
-#include "GameScene.h"
+#include "JhConst.h"
+#include "JhGameScene.h"
 #include "ServerDataSwap.h"
-#include "BuildingUILayer.h"
-#include "MixSuggestLayer.h"
+#include "JhBuildingUILayer.h"
+#include "JhMixSuggestLayer.h"
 #ifdef ANALYTICS
 #include "MobClickCpp.h"
 #endif
@@ -88,26 +88,30 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
 
-	GlobalData::init();
+
+	SpriteFrameCache *frameCache = SpriteFrameCache::sharedSpriteFrameCache();
+	frameCache->addSpriteFramesWithFile("jhuiplist.plist", "jhuiplist.png");
+
+	JhGlobalData::init();
 	//
-	GlobalData::loadAllResourceJsonData();
+	JhGlobalData::loadAllResourceJsonData();
 	//读取角色配置文件
-	GlobalData::loadHeroAtrJsonData();
+	JhGlobalData::loadHeroAtrJsonData();
 
 	//读取每个建筑配置文件
-	GlobalData::loadBuildActionJSon();
+	JhGlobalData::loadBuildActionJSon();
 
 	//读取资源配置文件
-	GlobalData::loadResJsonData();
+	JhGlobalData::loadResJsonData();
 
 	//读取内功，外功配置文件
-	GlobalData::loadWG_NGJsonData();
+	JhGlobalData::loadWG_NGJsonData();
 
 	//读取武器防具配置文件
-	GlobalData::loadEquipJsonData();
+	JhGlobalData::loadEquipJsonData();
 
 	//读取组合功法配置文件
-	GlobalData::loadMixGfJsonData();
+	JhGlobalData::loadMixGfJsonData();
 
 #if defined(CC_PLATFORM_IOS) && defined(ANALYTICS)
     MOBCLICKCPP_START_WITH_APPKEY_AND_CHANNEL("59264ff476661347e2000897", "jh1");
@@ -141,8 +145,8 @@ void AppDelegate::applicationDidEnterBackground() {
 		g_gameLayer->saveAllData();
 	}
 
-	if (GlobalData::isOnline)
-		ServerDataSwap::init(NULL)->postOneData(GlobalData::getUId());
+	if (JhGlobalData::isOnline)
+		ServerDataSwap::init(NULL)->postOneData(JhGlobalData::getUId());
     // if you use SimpleAudioEngine, it must be pause
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
@@ -157,20 +161,20 @@ void AppDelegate::applicationWillEnterForeground() {
 #endif
 	if (g_gameLayer != NULL)
 	{
-		BuildingUILayer* blayer = (BuildingUILayer*)g_gameLayer->getChildByName("builduilayer");
-		MixSuggestLayer* mlayer = (MixSuggestLayer*)g_gameLayer->getChildByName("mixsuggestlayer");
+		JhBuildingUILayer* blayer = (JhBuildingUILayer*)g_gameLayer->getChildByName("builduilayer");
+		JhMixSuggestLayer* mlayer = (JhMixSuggestLayer*)g_gameLayer->getChildByName("mixsuggestlayer");
 		if (blayer == NULL)
 		{
 			if (mlayer != NULL)
 			{
-				if (GlobalData::isOnline)
+				if (JhGlobalData::isOnline)
 					mlayer->getServerTime();
 			}
 			else
 			{
 				if (g_hero != NULL && !ServerDataSwap::isGetingData())
 				{
-					if (GlobalData::isOnline)
+					if (JhGlobalData::isOnline)
 					{
 						ServerDataSwap::init(g_gameLayer)->vipIsOn(g_hero->getHeadID());
 						ServerDataSwap::init(NULL)->getFactionList();
@@ -180,7 +184,7 @@ void AppDelegate::applicationWillEnterForeground() {
 		}
 		else
 		{
-			if (GlobalData::isOnline)
+			if (JhGlobalData::isOnline)
 				blayer->getServerTime();
 		}
 	}

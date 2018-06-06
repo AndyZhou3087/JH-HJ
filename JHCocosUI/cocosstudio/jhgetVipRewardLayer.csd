@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="getVipRewardLayer" Type="Layer" ID="1b0eaef1-1eb3-47ee-afc3-dc21c30e97c5" Version="3.10.0.0" />
+  <PropertyGroup Name="jhgetVipRewardLayer" Type="Layer" ID="1b0eaef1-1eb3-47ee-afc3-dc21c30e97c5" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -25,7 +25,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.7858" />
             <PreSize X="0.3083" Y="0.0477" />
-            <FileData Type="MarkedSubImage" Path="ui/viptitle.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/viptitle.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="desc" ActionTag="608829751" Tag="105" IconVisible="False" LeftMargin="69.0002" RightMargin="50.9998" TopMargin="436.9989" BottomMargin="733.0011" IsCustomSize="True" FontSize="45" LabelText="获取新手月卡高手月卡至尊月卡福利：" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -50,9 +50,9 @@
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

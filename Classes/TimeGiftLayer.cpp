@@ -1,8 +1,8 @@
 ﻿#include "TimeGiftLayer.h"
-#include "CommonFuncs.h"
+#include "JhCommonFuncs.h"
 #include "SoundManager.h"
-#include "GlobalData.h"
-#include "Const.h"
+#include "JhGlobalData.h"
+#include "JhConst.h"
 #include "ShopLayer.h"
 
 TimeGiftLayer::TimeGiftLayer()
@@ -21,7 +21,7 @@ bool TimeGiftLayer::init(int goodsId)
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("timeGfitLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhtimeGfitLayer.csb");
 	this->addChild(csbnode);
 
 	int herocount = sizeof(heroprice) / sizeof(heroprice[0]);
@@ -34,12 +34,12 @@ bool TimeGiftLayer::init(int goodsId)
 
 	cocos2d::ui::Text* price = (cocos2d::ui::Text*)csbnode->getChildByName("price");
 
-	std::string str = StringUtils::format("%d元", GlobalData::vec_goods[goodsId - herocount].price);
-	price->setString(CommonFuncs::gbk2utf(str.c_str()));
+	std::string str = StringUtils::format("%d元", JhGlobalData::vec_goods[goodsId - herocount].price);
+	price->setString(JhCommonFuncs::gbk2utf(str.c_str()));
 
 	m_timelbl = (cocos2d::ui::Text*)csbnode->getChildByName("time");
 
-	if (GlobalData::isOnline)
+	if (JhGlobalData::isOnline)
 	{
 		checkTimeGift(0);
 		this->schedule(schedule_selector(TimeGiftLayer::checkTimeGift), 1.0f);
@@ -51,7 +51,7 @@ bool TimeGiftLayer::init(int goodsId)
 	}
 
 	int rgoldcount = 100;
-	std::vector<std::string> vec_rewardres = GlobalData::vec_goods[goodsId - herocount].vec_res;
+	std::vector<std::string> vec_rewardres = JhGlobalData::vec_goods[goodsId - herocount].vec_res;
 
 	int startx = 374;
 	int spacex = 106;
@@ -77,7 +77,7 @@ bool TimeGiftLayer::init(int goodsId)
 		{
 			resstr = "ui/gd0.png";
 			strcount = StringUtils::format("x%d", rgoldcount);
-			namstr = CommonFuncs::gbk2utf("金元宝");
+			namstr = JhCommonFuncs::gbk2utf("金元宝");
 		}
 		else
 		{
@@ -86,7 +86,7 @@ bool TimeGiftLayer::init(int goodsId)
 			resstr = StringUtils::format("ui/%d.png", intresid / 1000);
 			strcount = StringUtils::format("x%d", intresid % 1000);
 			std::string ridstr = StringUtils::format("%d", intresid / 1000);
-			namstr = GlobalData::map_allResource[ridstr].cname;
+			namstr = JhGlobalData::map_allResource[ridstr].cname;
 		}
 		Sprite* res = Sprite::createWithSpriteFrameName(resstr);
 		res->setScale(0.5);
@@ -134,7 +134,7 @@ TimeGiftLayer* TimeGiftLayer::create(int goodsId)
 
 void TimeGiftLayer::onbuy(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		ShopLayer::beginPay(this->getTag());
@@ -143,7 +143,7 @@ void TimeGiftLayer::onbuy(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEvent
 
 void TimeGiftLayer::onClose(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		this->removeFromParentAndCleanup(true);
@@ -152,7 +152,7 @@ void TimeGiftLayer::onClose(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 
 void TimeGiftLayer::checkTimeGift(float dt)
 {
-	int lefttime = GlobalData::getTimeGiftLeftTime();
+	int lefttime = JhGlobalData::getTimeGiftLeftTime();
 
 	int hour = lefttime / 3600;
 	int min = lefttime % 3600 / 60;

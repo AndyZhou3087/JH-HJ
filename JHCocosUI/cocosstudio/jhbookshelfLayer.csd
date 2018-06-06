@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="bookshelfLayer" Type="Layer" ID="59d8a090-f4a2-4162-8fd0-60fc88ed8b3c" Version="3.10.0.0" />
+  <PropertyGroup Name="jhbookshelfLayer" Type="Layer" ID="59d8a090-f4a2-4162-8fd0-60fc88ed8b3c" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -25,7 +25,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5001" Y="0.4695" />
             <PreSize X="0.3764" Y="0.5063" />
-            <FileData Type="MarkedSubImage" Path="ui/bsline.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/bsline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="ScrollView" ActionTag="1723726614" Tag="37" IconVisible="False" LeftMargin="60.9998" RightMargin="59.0002" TopMargin="313.9991" BottomMargin="216.0009" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
@@ -50,7 +50,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5008" Y="0.7866" />
             <PreSize X="0.8736" Y="0.0453" />
-            <FileData Type="MarkedSubImage" Path="ui/titlebgg.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/titlebgg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="tagnode" ActionTag="-328641456" Tag="30" IconVisible="True" LeftMargin="362.1623" RightMargin="357.8377" TopMargin="278.3644" BottomMargin="1001.6356" ctype="SingleNodeObjectData">
@@ -67,7 +67,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5465" Y="0.6101" />
                     <PreSize X="0.4076" Y="0.4800" />
-                    <FileData Type="MarkedSubImage" Path="ui/bswg2.png" Plist="uipacker.plist" />
+                    <FileData Type="MarkedSubImage" Path="ui/bswg2.png" Plist="jhuiplist.plist" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -79,9 +79,9 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
                 <TextColor A="255" R="255" G="255" B="255" />
-                <DisabledFileData Type="MarkedSubImage" Path="ui/blbgg.png" Plist="uipacker.plist" />
-                <PressedFileData Type="MarkedSubImage" Path="ui/bswg1.png" Plist="uipacker.plist" />
-                <NormalFileData Type="MarkedSubImage" Path="ui/bswg1.png" Plist="uipacker.plist" />
+                <DisabledFileData Type="MarkedSubImage" Path="ui/blbgg.png" Plist="jhuiplist.plist" />
+                <PressedFileData Type="MarkedSubImage" Path="ui/bswg1.png" Plist="jhuiplist.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="ui/bswg1.png" Plist="jhuiplist.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -96,7 +96,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5163" Y="0.6045" />
                     <PreSize X="0.4268" Y="0.5067" />
-                    <FileData Type="MarkedSubImage" Path="ui/bsng2.png" Plist="uipacker.plist" />
+                    <FileData Type="MarkedSubImage" Path="ui/bsng2.png" Plist="jhuiplist.plist" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -108,9 +108,9 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
                 <TextColor A="255" R="255" G="255" B="255" />
-                <DisabledFileData Type="MarkedSubImage" Path="ui/blbgg.png" Plist="uipacker.plist" />
-                <PressedFileData Type="MarkedSubImage" Path="ui/bsng1.png" Plist="uipacker.plist" />
-                <NormalFileData Type="MarkedSubImage" Path="ui/bsng1.png" Plist="uipacker.plist" />
+                <DisabledFileData Type="MarkedSubImage" Path="ui/blbgg.png" Plist="jhuiplist.plist" />
+                <PressedFileData Type="MarkedSubImage" Path="ui/bsng1.png" Plist="jhuiplist.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="ui/bsng1.png" Plist="jhuiplist.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -125,7 +125,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4944" Y="0.6103" />
                     <PreSize X="0.4076" Y="0.5067" />
-                    <FileData Type="MarkedSubImage" Path="ui/bswq2.png" Plist="uipacker.plist" />
+                    <FileData Type="MarkedSubImage" Path="ui/bswq2.png" Plist="jhuiplist.plist" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -137,9 +137,9 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
                 <TextColor A="255" R="255" G="255" B="255" />
-                <DisabledFileData Type="MarkedSubImage" Path="ui/blbgg.png" Plist="uipacker.plist" />
-                <PressedFileData Type="MarkedSubImage" Path="ui/bswq1.png" Plist="uipacker.plist" />
-                <NormalFileData Type="MarkedSubImage" Path="ui/bswq1.png" Plist="uipacker.plist" />
+                <DisabledFileData Type="MarkedSubImage" Path="ui/blbgg.png" Plist="jhuiplist.plist" />
+                <PressedFileData Type="MarkedSubImage" Path="ui/bswq1.png" Plist="jhuiplist.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="ui/bswq1.png" Plist="jhuiplist.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -154,7 +154,7 @@
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.4944" Y="0.6144" />
                     <PreSize X="0.4076" Y="0.4800" />
-                    <FileData Type="MarkedSubImage" Path="ui/bsfj2.png" Plist="uipacker.plist" />
+                    <FileData Type="MarkedSubImage" Path="ui/bsfj2.png" Plist="jhuiplist.plist" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
                 </Children>
@@ -166,9 +166,9 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
                 <TextColor A="255" R="255" G="255" B="255" />
-                <DisabledFileData Type="MarkedSubImage" Path="ui/blbgg.png" Plist="uipacker.plist" />
-                <PressedFileData Type="MarkedSubImage" Path="ui/bsfj1.png" Plist="uipacker.plist" />
-                <NormalFileData Type="MarkedSubImage" Path="ui/bsfj1.png" Plist="uipacker.plist" />
+                <DisabledFileData Type="MarkedSubImage" Path="ui/blbgg.png" Plist="jhuiplist.plist" />
+                <PressedFileData Type="MarkedSubImage" Path="ui/bsfj1.png" Plist="jhuiplist.plist" />
+                <NormalFileData Type="MarkedSubImage" Path="ui/bsfj1.png" Plist="jhuiplist.plist" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -189,9 +189,9 @@
             <PrePosition X="0.9443" Y="0.8240" />
             <PreSize X="0.1042" Y="0.1055" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -203,7 +203,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0467" Y="0.7792" />
             <PreSize X="0.0875" Y="0.1969" />
-            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="title" ActionTag="-362399671" Tag="38" IconVisible="False" LeftMargin="13.9530" RightMargin="671.0470" TopMargin="231.2318" BottomMargin="948.7682" IsCustomSize="True" FontSize="35" LabelText="图鉴" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -226,7 +226,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2750" Y="0.7898" />
             <PreSize X="0.0069" Y="0.0328" />
-            <FileData Type="MarkedSubImage" Path="ui/sxst.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/sxst.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="sxst_11_0" ActionTag="1685278943" Tag="111" IconVisible="False" LeftMargin="354.6235" RightMargin="360.3765" TopMargin="248.0565" BottomMargin="989.9435" ctype="SpriteObjectData">
@@ -237,7 +237,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4960" Y="0.7898" />
             <PreSize X="0.0069" Y="0.0328" />
-            <FileData Type="MarkedSubImage" Path="ui/sxst.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/sxst.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="sxst_11_0_0" ActionTag="1639955532" Tag="112" IconVisible="False" LeftMargin="512.1910" RightMargin="202.8090" TopMargin="249.2927" BottomMargin="988.7072" ctype="SpriteObjectData">
@@ -248,7 +248,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.7148" Y="0.7888" />
             <PreSize X="0.0069" Y="0.0328" />
-            <FileData Type="MarkedSubImage" Path="ui/sxst.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/sxst.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

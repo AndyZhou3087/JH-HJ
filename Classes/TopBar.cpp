@@ -1,20 +1,20 @@
 ﻿#include "TopBar.h"
-#include "CommonFuncs.h"
-#include "GameDataSave.h"
-#include "GameScene.h"
+#include "JhCommonFuncs.h"
+#include "JhGameDataSave.h"
+#include "JhGameScene.h"
 #include "SysSmallBox.h"
-#include "HeroStateUILayer.h"
+#include "JhHeroStateUILayer.h"
 #include "SoundManager.h"
-#include "Const.h"
-#include "ActivitScene.h"
-#include "HomeLayer.h"
-#include "MapLayer.h"
-#include "NewerGuideLayer.h"
-#include "FriendExgScene.h"
-#include "FriendNpcScene.h"
-#include "FightLayer.h"
-#include "ApprenticeScene.h"
-#include "PauseLayer.h"
+#include "JhConst.h"
+#include "JhActivitScene.h"
+#include "JhHomeLayer.h"
+#include "JhMapLayer.h"
+#include "JhNewerGuideLayer.h"
+#include "JhFriendExgScene.h"
+#include "JhFriendNpcScene.h"
+#include "JhFightLayer.h"
+#include "JhApprenticeScene.h"
+#include "JhPauseLayer.h"
 
 TopBar::TopBar()
 {
@@ -31,7 +31,7 @@ TopBar::~TopBar()
 
 bool TopBar::init()
 {
-	Node* csbnode = CSLoader::createNode("topBarNode.csb");
+	Node* csbnode = CSLoader::createNode("jhtopBarNode.csb");
 	this->addChild(csbnode);
 
 	heroimg = (cocos2d::ui::ImageView*)csbnode->getChildByName("heroimg");
@@ -183,12 +183,12 @@ bool TopBar::init()
 	pausebtn->addTouchEventListener(CC_CALLBACK_2(TopBar::onPause, this));
 
 	
-	int maxlv = GlobalData::map_heroAtr[g_hero->getHeadID()].vec_exp.size();
+	int maxlv = JhGlobalData::map_heroAtr[g_hero->getHeadID()].vec_exp.size();
 	int lv = g_hero->getLVValue();
 	if (lv >= maxlv)
 		lv = maxlv - 1;
 		
-	int percent = g_hero->getExpValue() * 100 / GlobalData::map_heroAtr[g_hero->getHeadID()].vec_exp[lv];
+	int percent = g_hero->getExpValue() * 100 / JhGlobalData::map_heroAtr[g_hero->getHeadID()].vec_exp[lv];
 	
 	toplvexpbar = (cocos2d::ui::LoadingBar*)csbnode->getChildByName("toplvexpbar");
 	toplvexpbar->setPercent(percent);
@@ -245,7 +245,7 @@ void TopBar::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType 
 
 		if (cnode->getName().compare("hero") == 0)
 		{
-			g_gameLayer->addChild(HeroStateUILayer::create(), 4, "HeroStateUILayer");
+			g_gameLayer->addChild(JhHeroStateUILayer::create(), 4, "JhHeroStateUILayer");
 		}
 		else if (cnode->getName().compare("reason") == 0)
 		{
@@ -357,7 +357,7 @@ void TopBar::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType 
 
 void TopBar::updataUI(float dt)
 {
-	if (GlobalData::g_gameStatus != GAMESTART || GlobalData::isPlayerChallenging)
+	if (JhGlobalData::g_gameStatus != GAMESTART || JhGlobalData::isPlayerChallenging)
 		return;
 
 	if (g_hero != NULL && g_hero->getIsWDChallenge())
@@ -397,8 +397,8 @@ void TopBar::updataUI(float dt)
 		reason->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
 		reason->setContentSize(Sprite::createWithSpriteFrameName(str)->getContentSize());
 
-		GameDataSave::getInstance()->setLiveDays(livedays);
-		GameDataSave::getInstance()->setNatureReason(g_nature->getReason());
+		JhGameDataSave::getInstance()->setLiveDays(livedays);
+		JhGameDataSave::getInstance()->setNatureReason(g_nature->getReason());
 	}
 	Scene* activityScene = NULL;
 	bool isthieves = false;
@@ -409,18 +409,18 @@ void TopBar::updataUI(float dt)
 		checkNpcRandMap();
 		if (g_nature->getReason() == Autumn && !g_nature->getIsShowInsect())
 		{
-			int r = GlobalData::createRandomNum(100);
+			int r = JhGlobalData::createRandomNum(100);
 			if (r < 10)
 			{
 				g_nature->setIsShowInsect(true);
-				activityScene = ActivitScene::createScene("images/insect.jpg", CommonFuncs::gbk2utf("蝗虫泛滥"));
-				for (unsigned int i = 0; i < GlobalData::vec_hillResid.size(); i++)
+				activityScene = JhActivitScene::createScene("images/insect.jpg", JhCommonFuncs::gbk2utf("蝗虫泛滥"));
+				for (unsigned int i = 0; i < JhGlobalData::vec_hillResid.size(); i++)
 				{
-					for (unsigned int m = 0; m < GlobalData::vec_resData.size(); m++)
+					for (unsigned int m = 0; m < JhGlobalData::vec_resData.size(); m++)
 					{
-						ResData* data = &GlobalData::vec_resData[m];
+						ResData* data = &JhGlobalData::vec_resData[m];
 						int type = data->type - 1;
-						if (data->strid.compare(GlobalData::vec_hillResid[i]) == 0 && (type == FOOD || type == MEDICINAL))
+						if (data->strid.compare(JhGlobalData::vec_hillResid[i]) == 0 && (type == FOOD || type == MEDICINAL))
 						{
 							int count = data->count % 2 == 0 ? data->count / 2 : (data->count / 2 + 1);
 							data->count = count;
@@ -432,18 +432,18 @@ void TopBar::updataUI(float dt)
 
 		if (!g_nature->getIsShowInsect() && !isHunter && g_hero->getLVValue() >= 10)
 		{
-			int r = GlobalData::createRandomNum(100);
+			int r = JhGlobalData::createRandomNum(100);
 			if (r < 10)
 			{
 				isHunter = true;
-				activityScene = ActivitScene::createScene("images/hunter.jpg", CommonFuncs::gbk2utf("猎人来啦"));
-				for (unsigned int i = 0; i < GlobalData::vec_hillResid.size(); i++)
+				activityScene = JhActivitScene::createScene("images/hunter.jpg", JhCommonFuncs::gbk2utf("猎人来啦"));
+				for (unsigned int i = 0; i < JhGlobalData::vec_hillResid.size(); i++)
 				{
-					for (unsigned int m = 0; m < GlobalData::vec_resData.size(); m++)
+					for (unsigned int m = 0; m < JhGlobalData::vec_resData.size(); m++)
 					{
-						ResData* data = &GlobalData::vec_resData[m];
+						ResData* data = &JhGlobalData::vec_resData[m];
 						int type = data->type - 1;
-						if (data->strid.compare(GlobalData::vec_hillResid[i]) == 0 && (data->strid.compare("67") == 0 || data->strid.compare("68") == 0))
+						if (data->strid.compare(JhGlobalData::vec_hillResid[i]) == 0 && (data->strid.compare("67") == 0 || data->strid.compare("68") == 0))
 						{
 							int count = data->count % 2 == 0 ? data->count / 2 : (data->count / 2 + 1);
 							data->count = count;
@@ -457,17 +457,17 @@ void TopBar::updataUI(float dt)
 		{
 			if (g_hero->getIsOut())
 			{
-				int r = GlobalData::createRandomNum(100);
+				int r = JhGlobalData::createRandomNum(100);
 				if (r < 15)
 					isthieves = true;
 			}
 			if (isthieves)
 			{
-				activityScene = ActivitScene::createScene("images/thieves.jpg", CommonFuncs::gbk2utf("盗贼到来，丢失以下物品..."));
+				activityScene = JhActivitScene::createScene("images/thieves.jpg", JhCommonFuncs::gbk2utf("盗贼到来，丢失以下物品..."));
 			}
 			else
 			{
-				activityScene = ActivitScene::createScene("images/cday.jpg", CommonFuncs::gbk2utf("今夜很平静，新的一天开始..."));
+				activityScene = JhActivitScene::createScene("images/cday.jpg", JhCommonFuncs::gbk2utf("今夜很平静，新的一天开始..."));
 			}
 		}
 
@@ -483,13 +483,13 @@ void TopBar::updataUI(float dt)
 
 		if (g_nature->getWeather() == Rainy)
 		{
-			activityScene = ActivitScene::createScene("images/cweatherrain.jpg", CommonFuncs::gbk2utf("下雨了..."));
+			activityScene = JhActivitScene::createScene("images/cweatherrain.jpg", JhCommonFuncs::gbk2utf("下雨了..."));
 			if (g_maplayer != NULL)
 				g_maplayer->rain();
 		}
 		else if (g_nature->getWeather() == Snowy)
 		{
-			activityScene = ActivitScene::createScene("images/cweathersnow.jpg", CommonFuncs::gbk2utf("下雪了..."));
+			activityScene = JhActivitScene::createScene("images/cweathersnow.jpg", JhCommonFuncs::gbk2utf("下雪了..."));
 			if (g_maplayer != NULL)
 				g_maplayer->snow();
 		}
@@ -506,33 +506,33 @@ void TopBar::updataUI(float dt)
 	{
 		if (g_nature->getDayOrNight() == Day)
 		{
-			int aday = GameDataSave::getInstance()->getApprenticeDay();
+			int aday = JhGameDataSave::getInstance()->getApprenticeDay();
 
-			int r = GlobalData::createRandomNum(100);
+			int r = JhGlobalData::createRandomNum(100);
 			if (r < 10)
 			{
-				int r1 = GlobalData::createRandomNum(100);
+				int r1 = JhGlobalData::createRandomNum(100);
 				int type = r1 < 50 ? 0 : 1;
-				activityScene = FriendExgScene::createScene(type);
+				activityScene = JhFriendExgScene::createScene(type);
 			}
 			else if (r < 20)
 			{
-				FightLayer* fightlayer = (FightLayer*)g_gameLayer->getChildByName("fightlayer");
+				JhFightLayer* fightlayer = (JhFightLayer*)g_gameLayer->getChildByName("fightlayer");
 				if (fightlayer == NULL)
-					activityScene = FriendNpcScene::createScene();
+					activityScene = JhFriendNpcScene::createScene();
 			}
 			else
 			{
 				if (g_hero->getLVValue() >= 29)
 				{
 					if (aday == 0 || (aday < 0 && r < 30))
-						activityScene = ApprenticeScene::createScene(0);
+						activityScene = JhApprenticeScene::createScene(0);
 				}
 			}
 			if (activityScene == NULL)
 			{
 				if (aday > 0 && g_nature->getPastDays() - aday >= 30)
-					activityScene = ApprenticeScene::createScene(1);
+					activityScene = JhApprenticeScene::createScene(1);
 			}
 		}
 		if (g_nature->getDayOrNight() == Day)
@@ -568,13 +568,13 @@ void TopBar::updataUI(float dt)
 				}
 			}
 			int tsize = tips.size();
-			int r = GlobalData::createRandomNum(tsize);
-			g_uiScroll->addEventText(CommonFuncs::gbk2utf(tips[r].c_str()), 26, Color3B(27, 141, 0));
-			//activityScene = ActivitScene::createScene("images/cday.jpg", CommonFuncs::gbk2utf("天亮了..."));
+			int r = JhGlobalData::createRandomNum(tsize);
+			g_uiScroll->addEventText(JhCommonFuncs::gbk2utf(tips[r].c_str()), 26, Color3B(27, 141, 0));
+			//activityScene = JhActivitScene::createScene("images/cday.jpg", JhCommonFuncs::gbk2utf("天亮了..."));
 		}
 		else
 		{
-			//activityScene = ActivitScene::createScene("images/cday.jpg", CommonFuncs::gbk2utf("黑夜降临..."));
+			//activityScene = JhActivitScene::createScene("images/cday.jpg", JhCommonFuncs::gbk2utf("黑夜降临..."));
 		}
 		m_lastDayOrNigth = g_nature->getDayOrNight();
 	}
@@ -585,7 +585,7 @@ void TopBar::updataUI(float dt)
 		Director::getInstance()->pushScene(transition);
 	}
 
-	GameDataSave::getInstance()->setNatureTemperature(g_nature->getTemperature());
+	JhGameDataSave::getInstance()->setNatureTemperature(g_nature->getTemperature());
 	int showtime = g_nature->getTime();
 	int hour = showtime / 60;
 	int minute = (int)showtime % 60;
@@ -602,7 +602,7 @@ void TopBar::updataUI(float dt)
 	lifeBar->setPercentage(g_hero->getLifeValue() * 100.0f / g_hero->getMaxLifeValue());
 
 	int lv = g_hero->getLVValue();
-	int percent = g_hero->getExpValue() * 100 / GlobalData::map_heroAtr[g_hero->getHeadID()].vec_exp[lv];
+	int percent = g_hero->getExpValue() * 100 / JhGlobalData::map_heroAtr[g_hero->getHeadID()].vec_exp[lv];
 	toplvexpbar->setPercent(percent);
 	//等级属性
 	str = StringUtils::format("%d", lv + 1);
@@ -611,35 +611,35 @@ void TopBar::updataUI(float dt)
 	bool isnewer = false;
 	if (m_lastinnerinjury != (int)g_hero->getInnerinjuryValue())
 	{
-		//innerinjuryRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
+		//innerinjuryRed->runAction(Sequence::create(DelayTime::create(JhGlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
 		m_lastinnerinjury = (int)g_hero->getInnerinjuryValue();
 		if (g_hero->getInnerinjuryValue() <= g_hero->getMaxInnerinjuryValue() * 0.5f)
 			isnewer = true;
 	}
 	if (m_lastoutinjury != (int)g_hero->getOutinjuryValue())
 	{
-		//outinjuryRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
+		//outinjuryRed->runAction(Sequence::create(DelayTime::create(JhGlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
 		m_lastoutinjury = (int)g_hero->getOutinjuryValue();
 		if (g_hero->getOutinjuryValue() <= g_hero->getMaxOutinjuryValue() * 0.5f)
 			isnewer = true;
 	}
 	if (m_lasthunger != (int)g_hero->getHungerValue())
 	{
-		//hungerRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
+		//hungerRed->runAction(Sequence::create(DelayTime::create(JhGlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
 		m_lasthunger = (int)g_hero->getHungerValue();
 		if (g_hero->getHungerValue() <= g_hero->getMaxHungerValue() * 0.5f)
 			isnewer = true;
 	}
 	if (m_lastspirit != (int)g_hero->getSpiritValue())
 	{
-		//spiritRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
+		//spiritRed->runAction(Sequence::create(DelayTime::create(JhGlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
 		m_lastspirit = (int)g_hero->getSpiritValue();
 		if (g_hero->getSpiritValue() <= g_hero->getMaxSpiritValue() * 0.5f)
 			isnewer = true;
 	}
 	if (m_lastlife != (int)g_hero->getLifeValue())
 	{
-		//lifeRed->runAction(Sequence::create(DelayTime::create(GlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
+		//lifeRed->runAction(Sequence::create(DelayTime::create(JhGlobalData::createRandomNum(1)), Show::create(), Blink::create(2.0f, 3), Hide::create(), NULL));
 		m_lastlife = (int)g_hero->getLifeValue();
 		if (g_hero->getLifeValue() <= g_hero->getMaxLifeValue() * 0.5f)
 			isnewer = true;
@@ -697,7 +697,7 @@ void TopBar::showNewerGuide(int step)
 
 	if (step == 18)
 	{
-		HomeLayer* homelayer = (HomeLayer*)g_gameLayer->getChildByName("homelayer");
+		JhHomeLayer* homelayer = (JhHomeLayer*)g_gameLayer->getChildByName("homelayer");
 		if (homelayer != NULL)
 			homelayer->showNewerGuide(step);
 	}
@@ -710,9 +710,9 @@ void TopBar::checkNpcRandMap()
 	for (int i = 0; i < wxbmapsize;i++)
 	{
 		std::vector<std::string> tmp;
-		CommonFuncs::split(wxbinmap[i], tmp, "-");
+		JhCommonFuncs::split(wxbinmap[i], tmp, "-");
 		int mapchapter = atoi(tmp[0].substr(1, tmp[0].size() - 1).c_str());
-		if (mapchapter <= GlobalData::getUnlockChapter())
+		if (mapchapter <= JhGlobalData::getUnlockChapter())
 		{
 			vec_map.push_back(wxbinmap[i]);
 		}
@@ -720,21 +720,21 @@ void TopBar::checkNpcRandMap()
 	int siez = vec_map.size();
 	if (vec_map.size() > 0)
 	{
-		int rpos = GlobalData::createRandomNum(siez);
-		int lastpos = GlobalData::getWxbMapPos();
+		int rpos = JhGlobalData::createRandomNum(siez);
+		int lastpos = JhGlobalData::getWxbMapPos();
 
 		if (lastpos != rpos)
 		{
 			std::vector<std::string>::iterator it;
-			for (it = GlobalData::map_maps[wxbinmap[GlobalData::getWxbMapPos()]].npcs.begin(); it != GlobalData::map_maps[wxbinmap[GlobalData::getWxbMapPos()]].npcs.end();)
+			for (it = JhGlobalData::map_maps[wxbinmap[JhGlobalData::getWxbMapPos()]].npcs.begin(); it != JhGlobalData::map_maps[wxbinmap[JhGlobalData::getWxbMapPos()]].npcs.end();)
 			{
 				if (it->compare("n012") == 0)
-					it = GlobalData::map_maps[wxbinmap[GlobalData::getWxbMapPos()]].npcs.erase(it);
+					it = JhGlobalData::map_maps[wxbinmap[JhGlobalData::getWxbMapPos()]].npcs.erase(it);
 				else
 					++it;
 			}
-			GlobalData::setWxbMapPos(rpos);
-			GlobalData::map_maps[wxbinmap[rpos]].npcs.push_back("n012");
+			JhGlobalData::setWxbMapPos(rpos);
+			JhGlobalData::map_maps[wxbinmap[rpos]].npcs.push_back("n012");
 			if (g_maplayer != NULL)
 			{
 				g_maplayer->updataPlotMissionIcon(0);
@@ -743,20 +743,20 @@ void TopBar::checkNpcRandMap()
 	}
 
 	int dgqbmapsize = sizeof(dgqbinmap) / sizeof(dgqbinmap[0]);
-	int r1 = GlobalData::createRandomNum(dgqbmapsize);
-	if (GlobalData::getDgqbMapPos() != r1)
+	int r1 = JhGlobalData::createRandomNum(dgqbmapsize);
+	if (JhGlobalData::getDgqbMapPos() != r1)
 	{
 		std::vector<std::string>::iterator it;
-		for (it = GlobalData::map_maps[dgqbinmap[GlobalData::getDgqbMapPos()]].npcs.begin(); it != GlobalData::map_maps[dgqbinmap[GlobalData::getDgqbMapPos()]].npcs.end();)
+		for (it = JhGlobalData::map_maps[dgqbinmap[JhGlobalData::getDgqbMapPos()]].npcs.begin(); it != JhGlobalData::map_maps[dgqbinmap[JhGlobalData::getDgqbMapPos()]].npcs.end();)
 		{
 			if (it->compare("n091") == 0)
-				it = GlobalData::map_maps[dgqbinmap[GlobalData::getDgqbMapPos()]].npcs.erase(it);
+				it = JhGlobalData::map_maps[dgqbinmap[JhGlobalData::getDgqbMapPos()]].npcs.erase(it);
 			else
 				++it;
 		}
 
-		GlobalData::setDgqbMapPos(r1);
-		GlobalData::map_maps[dgqbinmap[r1]].npcs.push_back("n091");
+		JhGlobalData::setDgqbMapPos(r1);
+		JhGlobalData::map_maps[dgqbinmap[r1]].npcs.push_back("n091");
 		if (g_maplayer != NULL)
 		{
 			g_maplayer->updataPlotMissionIcon(0);
@@ -766,14 +766,14 @@ void TopBar::checkNpcRandMap()
 
 void TopBar::onPause(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		GlobalData::g_gameStatus = GAMEPAUSE;
+		JhGlobalData::g_gameStatus = GAMEPAUSE;
 		if (g_hero->getIsOut() && g_maplayer != NULL)
 		{
 			g_maplayer->heroPauseMoving();
 		}
-		this->getParent()->addChild(PauseLayer::create(), 10);
+		this->getParent()->addChild(JhPauseLayer::create(), 10);
 	}
 }

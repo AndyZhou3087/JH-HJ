@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="homeHillLayer" Type="Layer" ID="472b36b0-1ff9-4359-8198-8260005235fd" Version="3.10.0.0" />
+  <PropertyGroup Name="jhhomeHillLayer" Type="Layer" ID="472b36b0-1ff9-4359-8198-8260005235fd" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -38,7 +38,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0581" Y="0.6231" />
             <PreSize X="0.0875" Y="0.1969" />
-            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="title" ActionTag="516666370" Tag="73" IconVisible="False" LeftMargin="25.0210" RightMargin="664.9790" TopMargin="429.7341" BottomMargin="750.2659" IsCustomSize="True" FontSize="30" LabelText="后山" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -62,9 +62,9 @@
             <PrePosition X="0.9363" Y="0.6533" />
             <PreSize X="0.1042" Y="0.0594" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

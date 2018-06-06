@@ -1,7 +1,7 @@
 ﻿#include "SysSmallBox.h"
-#include "CommonFuncs.h"
-#include "GameScene.h"
-#include "Hero.h"
+#include "JhCommonFuncs.h"
+#include "JhGameScene.h"
+#include "JhHero.h"
 
 SysSmallBox::SysSmallBox()
 {
@@ -23,10 +23,10 @@ bool SysSmallBox::init(BoxType type, std::string imagepath, std::string title, s
 	Node* csbnode;
 	if (mType>4)
 	{
-		csbnode = CSLoader::createNode("sysSmallLayer.csb");
+		csbnode = CSLoader::createNode("jhsysSmallLayer.csb");
 	}
 	else{
-		csbnode = CSLoader::createNode("sysSmallLayer2.csb");
+		csbnode = CSLoader::createNode("jhsysSmallLayer2.csb");
 	}
 	this->addChild(csbnode);
 	image = (cocos2d::ui::ImageView*)csbnode->getChildByName("damage")->getChildByName("image");
@@ -37,18 +37,18 @@ bool SysSmallBox::init(BoxType type, std::string imagepath, std::string title, s
 	image->loadTexture(imagepath, cocos2d::ui::TextureResType::PLIST);
 	image->setContentSize(Sprite::createWithSpriteFrameName(imagepath)->getContentSize());
 	//image->setScale(1.5f);
-	titleTxt->setString(CommonFuncs::gbk2utf(title.c_str()));
-	title1Txt->setString(CommonFuncs::gbk2utf(title1.c_str()));
+	titleTxt->setString(JhCommonFuncs::gbk2utf(title.c_str()));
+	title1Txt->setString(JhCommonFuncs::gbk2utf(title1.c_str()));
 
 	if (mType>4)
 	{
-		textTxt = Label::createWithTTF(CommonFuncs::gbk2utf(text.c_str()), "fonts/SIMHEI.TTF", 22);
+		textTxt = Label::createWithTTF(JhCommonFuncs::gbk2utf(text.c_str()), "fonts/SIMHEI.TTF", 22);
 		textTxt->setPosition(Vec2(170, 680));
 		textTxt->setMaxLineWidth(400);
 	}
 	else
 	{
-		textTxt = Label::createWithTTF(CommonFuncs::gbk2utf(text.c_str()), "fonts/SIMHEI.TTF", 20);
+		textTxt = Label::createWithTTF(JhCommonFuncs::gbk2utf(text.c_str()), "fonts/SIMHEI.TTF", 20);
 		textTxt->setPosition(Vec2(250, 630));
 		textTxt->setMaxLineWidth(230);
 	}
@@ -109,9 +109,9 @@ void SysSmallBox::updataUI(float dt)
 		image->setContentSize(Sprite::createWithSpriteFrameName(str)->getContentSize());
 		image->setScale(1.5f);
 
-		titleTxt->setString(CommonFuncs::gbk2utf(reasonname[v].c_str()));
-		title1Txt->setString(CommonFuncs::gbk2utf(reasondesc1[v].c_str()));
-		textTxt->setString(CommonFuncs::gbk2utf(reasondesc[v].c_str()));
+		titleTxt->setString(JhCommonFuncs::gbk2utf(reasonname[v].c_str()));
+		title1Txt->setString(JhCommonFuncs::gbk2utf(reasondesc1[v].c_str()));
+		textTxt->setString(JhCommonFuncs::gbk2utf(reasondesc[v].c_str()));
 	}
 	if (mType == WEATHER)
 	{
@@ -126,9 +126,9 @@ void SysSmallBox::updataUI(float dt)
 			image->setContentSize(Sprite::createWithSpriteFrameName(str)->getContentSize());
 			image->setScale(1.5f);
 
-			titleTxt->setString(CommonFuncs::gbk2utf(weathername[v].c_str()));
-			title1Txt->setString(CommonFuncs::gbk2utf(weatherdesc1[v].c_str()));
-			textTxt->setString(CommonFuncs::gbk2utf(weatherdesc[v].c_str()));
+			titleTxt->setString(JhCommonFuncs::gbk2utf(weathername[v].c_str()));
+			title1Txt->setString(JhCommonFuncs::gbk2utf(weatherdesc1[v].c_str()));
+			textTxt->setString(JhCommonFuncs::gbk2utf(weatherdesc[v].c_str()));
 		}
 	}
 
@@ -140,7 +140,7 @@ void SysSmallBox::updataUI(float dt)
 		{
 			lastvalue = g_nature->getPastDays();
 			std::string str = StringUtils::format("%d天", g_nature->getPastDays());
-			titleTxt->setString(CommonFuncs::gbk2utf(str.c_str()));
+			titleTxt->setString(JhCommonFuncs::gbk2utf(str.c_str()));
 		}
 
 	}
@@ -155,7 +155,7 @@ void SysSmallBox::updataUI(float dt)
 			int hour = lastvalue / 60;
 			int minute = (int)lastvalue % 60;
 			std::string str = StringUtils::format("%02d:%02d", hour, minute);
-			titleTxt->setString(CommonFuncs::gbk2utf(str.c_str()));
+			titleTxt->setString(JhCommonFuncs::gbk2utf(str.c_str()));
 		}
 
 	}
@@ -168,7 +168,7 @@ void SysSmallBox::updataUI(float dt)
 		{
 			lastvalue = g_nature->getTemperature();
 			std::string str = StringUtils::format("%d℃", g_nature->getTemperature());
-			titleTxt->setString(CommonFuncs::gbk2utf(str.c_str()));
+			titleTxt->setString(JhCommonFuncs::gbk2utf(str.c_str()));
 		}
 
 	}
@@ -191,7 +191,7 @@ void SysSmallBox::updataUI(float dt)
 				}
 			}
 
-			title1Txt->setString(CommonFuncs::gbk2utf(outInjurydesc1[index].c_str()));
+			title1Txt->setString(JhCommonFuncs::gbk2utf(outInjurydesc1[index].c_str()));
 			std::string vstr = StringUtils::format("(%d/%d)", v, (int)g_hero->getMaxOutinjuryValue());
 			valueTxt->setString(vstr);
 		}
@@ -213,7 +213,7 @@ void SysSmallBox::updataUI(float dt)
 					break;
 				}
 			}
-			title1Txt->setString(CommonFuncs::gbk2utf(innerInjurydesc1[index].c_str()));
+			title1Txt->setString(JhCommonFuncs::gbk2utf(innerInjurydesc1[index].c_str()));
 			std::string vstr = StringUtils::format("(%d/%d)", v, (int)g_hero->getMaxInnerinjuryValue());
 			valueTxt->setString(vstr);
 		}
@@ -236,7 +236,7 @@ void SysSmallBox::updataUI(float dt)
 					break;
 				}
 			}
-			title1Txt->setString(CommonFuncs::gbk2utf(hungerdesc1[index].c_str()));
+			title1Txt->setString(JhCommonFuncs::gbk2utf(hungerdesc1[index].c_str()));
 			std::string vstr = StringUtils::format("(%d/%d)", v, (int)g_hero->getMaxHungerValue());
 			valueTxt->setString(vstr);
 		}
@@ -258,7 +258,7 @@ void SysSmallBox::updataUI(float dt)
 					break;
 				}
 			}
-			title1Txt->setString(CommonFuncs::gbk2utf(spiritInjurydesc1[index].c_str()));
+			title1Txt->setString(JhCommonFuncs::gbk2utf(spiritInjurydesc1[index].c_str()));
 			std::string vstr = StringUtils::format("(%d/%d)", v, (int)g_hero->getMaxSpiritValue());
 			valueTxt->setString(vstr);
 		}
@@ -266,6 +266,6 @@ void SysSmallBox::updataUI(float dt)
 	if (mType == LIFE)
 	{
 		std::string livevaluestr = StringUtils::format("%d/%d", (int)g_hero->getLifeValue(), (int)g_hero->getMaxLifeValue());
-		title1Txt->setString(CommonFuncs::gbk2utf(livevaluestr.c_str()));
+		title1Txt->setString(JhCommonFuncs::gbk2utf(livevaluestr.c_str()));
 	}
 }

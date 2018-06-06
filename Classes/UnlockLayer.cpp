@@ -1,7 +1,7 @@
 ﻿#include "UnlockLayer.h"
-#include "CommonFuncs.h"
+#include "JhCommonFuncs.h"
 #include "SoundManager.h"
-#include "GlobalData.h"
+#include "JhGlobalData.h"
 UnlockLayer::UnlockLayer()
 {
 
@@ -17,7 +17,7 @@ bool UnlockLayer::init()
 	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, 150));
 	this->addChild(color);
 
-	Node* csbnode = CSLoader::createNode("unlockLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhunlockLayer.csb");
 	this->addChild(csbnode);
 
 	m_unlockbg = (cocos2d::ui::Widget*)csbnode->getChildByName("unlockbg");
@@ -36,18 +36,18 @@ bool UnlockLayer::init()
 	std::map<std::string, MapData>::iterator it;
 
 	std::string addrnamestr;
-	for (it = GlobalData::map_maps.begin(); it != GlobalData::map_maps.end(); ++it)
+	for (it = JhGlobalData::map_maps.begin(); it != JhGlobalData::map_maps.end(); ++it)
 	{
-		std::string mapid = GlobalData::map_maps[it->first].strid;
+		std::string mapid = JhGlobalData::map_maps[it->first].strid;
 
 		std::vector<std::string> tmp;
 
-		CommonFuncs::split(mapid, tmp, "-");
+		JhCommonFuncs::split(mapid, tmp, "-");
 		int mapchapter = atoi(tmp[0].substr(1, tmp[0].size() - 1).c_str());
-		if (mapchapter == GlobalData::getUnlockChapter())
+		if (mapchapter == JhGlobalData::getUnlockChapter())
 		{
-			addrnamestr.append(GlobalData::map_maps[mapid].cname);
-			addrnamestr.append(CommonFuncs::gbk2utf("，"));
+			addrnamestr.append(JhGlobalData::map_maps[mapid].cname);
+			addrnamestr.append(JhCommonFuncs::gbk2utf("，"));
 		}
 	}
 	m_addrname->setString(addrnamestr.substr(0, addrnamestr.length() - 3));

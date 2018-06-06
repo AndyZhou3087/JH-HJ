@@ -1,13 +1,13 @@
 ﻿#include "VipShopLayer.h"
-#include "Const.h"
+#include "JhConst.h"
 #include "SoundManager.h"
 #include "json.h"
-#include "AnalyticUtil.h"
-#include "GameDataSave.h"
-#include "CommonFuncs.h"
+#include "JhAnalyticUtil.h"
+#include "JhGameDataSave.h"
+#include "JhCommonFuncs.h"
 #include "VipGoodsItem.h"
-#include "GameScene.h"
-#include "MapLayer.h"
+#include "JhGameScene.h"
+#include "JhMapLayer.h"
 #include "WaitingProgress.h"
 
 VipShopLayer::VipShopLayer()
@@ -18,7 +18,7 @@ VipShopLayer::VipShopLayer()
 VipShopLayer::~VipShopLayer()
 {
 
-	GlobalData::g_gameStatus = GAMESTART;
+	JhGlobalData::g_gameStatus = GAMESTART;
 	if (g_hero != NULL && g_hero->getIsMoving())
 	{
 		g_maplayer->heroResumeMoving();
@@ -45,16 +45,16 @@ bool VipShopLayer::init()
 	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
 	this->addChild(color);
 
-	m_csbnode = CSLoader::createNode("vipShopLayer.csb");
+	m_csbnode = CSLoader::createNode("jhvipShopLayer.csb");
 	this->addChild(m_csbnode);
 
 	std::vector<GoodsData*> vec_vipGoods;
 
-	int goodsize = GlobalData::vec_goods.size();
+	int goodsize = JhGlobalData::vec_goods.size();
 
 	for (int i = 0; i < goodsize; i++)
 	{
-		GoodsData* vipgdata = &GlobalData::vec_goods[i];
+		GoodsData* vipgdata = &JhGlobalData::vec_goods[i];
 		if (vipgdata->type == 2)
 			vec_vipGoods.push_back(vipgdata);
 	}
@@ -74,7 +74,7 @@ bool VipShopLayer::init()
 	int starti = 1;
 	std::map<std::string, int>::iterator it;
 
-	for (it = GlobalData::map_buyVipDays.begin(); it != GlobalData::map_buyVipDays.end(); ++it)
+	for (it = JhGlobalData::map_buyVipDays.begin(); it != JhGlobalData::map_buyVipDays.end(); ++it)
 	{
 		if (it->first.find("vip1") != std::string::npos)
 		{
@@ -93,8 +93,8 @@ bool VipShopLayer::init()
 	cocos2d::ui::Button* backbtn = (cocos2d::ui::Button*)m_csbnode->getChildByName("backbtn");
 	backbtn->addTouchEventListener(CC_CALLBACK_2(VipShopLayer::onBack, this));
 
-	if (GlobalData::g_gameStatus == GAMESTART)
-		GlobalData::g_gameStatus = GAMEPAUSE;
+	if (JhGlobalData::g_gameStatus == GAMESTART)
+		JhGlobalData::g_gameStatus = GAMEPAUSE;
 
 	if (g_hero != NULL && g_hero->getIsMoving())
 	{
@@ -115,7 +115,7 @@ bool VipShopLayer::init()
 
 void VipShopLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		this->removeFromParentAndCleanup(true);

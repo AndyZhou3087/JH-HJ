@@ -1,11 +1,11 @@
 ﻿#include "ServerDataSwap.h"
-#include "GlobalData.h"
-#include "HttpUtil.h"
+#include "JhGlobalData.h"
+#include "JhHttpUtil.h"
 #include "json.h"
-#include "GameDataSave.h"
-#include "CommonFuncs.h"
-#include "Hero.h"
-#include "GameScene.h"
+#include "JhGameDataSave.h"
+#include "JhCommonFuncs.h"
+#include "JhHero.h"
+#include "JhGameScene.h"
 
 #define HTTPURL "https://www.stormnet.cn/api/"
 
@@ -50,7 +50,7 @@ void ServerDataSwap::release()
 
 void ServerDataSwap::postAllData()
 {
-	std::vector<std::string> vec_ids = GlobalData::getSaveListId();
+	std::vector<std::string> vec_ids = JhGlobalData::getSaveListId();
 
 	std::vector<std::string> vec_userid;
 	for (unsigned int i = 0; i < vec_ids.size(); i++)
@@ -80,14 +80,14 @@ void ServerDataSwap::postOneData(std::string userid, int tag)
 	writedoc.SetObject();
 	rapidjson::Document::AllocatorType& allocator = writedoc.GetAllocator();
 
-	writedoc.AddMember("playerid", rapidjson::Value(GlobalData::UUID().c_str(), allocator), allocator);
+	writedoc.AddMember("playerid", rapidjson::Value(JhGlobalData::UUID().c_str(), allocator), allocator);
 	writedoc.AddMember("localid", rapidjson::Value(userid.c_str(), allocator), allocator);
-	writedoc.AddMember("nickname", rapidjson::Value(GlobalData::getMyNickName().c_str(), allocator), allocator);
+	writedoc.AddMember("nickname", rapidjson::Value(JhGlobalData::getMyNickName().c_str(), allocator), allocator);
 
 	int herounlock = 1;
-	std::string str = GameDataSave::getInstance()->getHeroUnlockData();
+	std::string str = JhGameDataSave::getInstance()->getHeroUnlockData();
 	std::vector<std::string> tmp;
-	CommonFuncs::split(str, tmp, "-");
+	JhCommonFuncs::split(str, tmp, "-");
 
 	for (unsigned int i = 1; i < tmp.size(); i++)
 	{
@@ -96,31 +96,31 @@ void ServerDataSwap::postOneData(std::string userid, int tag)
 	}
 
 	writedoc.AddMember("hunlock", herounlock, allocator);
-	int coin = GameDataSave::getInstance()->getGoldCount();
-	int usecoin = GameDataSave::getInstance()->getUseGold();
+	int coin = JhGameDataSave::getInstance()->getGoldCount();
+	int usecoin = JhGameDataSave::getInstance()->getUseGold();
 	writedoc.AddMember("coin", coin, allocator);
 	writedoc.AddMember("costcoin", usecoin, allocator);
-	GameDataSave::getInstance()->setUserId(userid);
+	JhGameDataSave::getInstance()->setUserId(userid);
 
-	int type = GameDataSave::getInstance()->getHeroId();
-	int lv = GameDataSave::getInstance()->getHeroLV();
-	int exp = GameDataSave::getInstance()->getHeroExp();
+	int type = JhGameDataSave::getInstance()->getHeroId();
+	int lv = JhGameDataSave::getInstance()->getHeroLV();
+	int exp = JhGameDataSave::getInstance()->getHeroExp();
 	for (int i = 0; i <= lv; i++)
 	{
-		exp += GlobalData::map_heroAtr[type].vec_exp[i];
+		exp += JhGlobalData::map_heroAtr[type].vec_exp[i];
 	}
 	writedoc.AddMember("type", type, allocator);
 	writedoc.AddMember("exp", exp, allocator);
-	int hungry = GameDataSave::getInstance()->getHeroHunger();
-	int innerhurt = GameDataSave::getInstance()->getHeroInnerinjury();
-	int outerhurt = GameDataSave::getInstance()->getHeroOutinjury();
-	int life = GameDataSave::getInstance()->getHeroLife();
-	int days = GameDataSave::getInstance()->getLiveDays();
-	int sprite = GameDataSave::getInstance()->getHeroSpirit();
-	int plotindex = GameDataSave::getInstance()->getPlotMissionIndex();
-	std::string bpotstr = GameDataSave::getInstance()->getBranchPlotMissionStatus();
-	int unlock = GameDataSave::getInstance()->getPlotUnlockChapter();
-	int sex = GameDataSave::getInstance()->getHeroSex();
+	int hungry = JhGameDataSave::getInstance()->getHeroHunger();
+	int innerhurt = JhGameDataSave::getInstance()->getHeroInnerinjury();
+	int outerhurt = JhGameDataSave::getInstance()->getHeroOutinjury();
+	int life = JhGameDataSave::getInstance()->getHeroLife();
+	int days = JhGameDataSave::getInstance()->getLiveDays();
+	int sprite = JhGameDataSave::getInstance()->getHeroSpirit();
+	int plotindex = JhGameDataSave::getInstance()->getPlotMissionIndex();
+	std::string bpotstr = JhGameDataSave::getInstance()->getBranchPlotMissionStatus();
+	int unlock = JhGameDataSave::getInstance()->getPlotUnlockChapter();
+	int sex = JhGameDataSave::getInstance()->getHeroSex();
 
 	if (sex < 0)
 	{
@@ -141,17 +141,17 @@ void ServerDataSwap::postOneData(std::string userid, int tag)
 	writedoc.AddMember("unlock", unlock, allocator);
 	writedoc.AddMember("sex", sex, allocator);
 
-	std::string friendshipstr = GameDataSave::getInstance()->getFriendly();
+	std::string friendshipstr = JhGameDataSave::getInstance()->getFriendly();
 	writedoc.AddMember("friendship", rapidjson::Value(friendshipstr.c_str(), allocator), allocator);
 
-	std::string mixgfstr = GameDataSave::getInstance()->getMixGF();
+	std::string mixgfstr = JhGameDataSave::getInstance()->getMixGF();
 	writedoc.AddMember("mixgf", rapidjson::Value(mixgfstr.c_str(), allocator), allocator);
 
-	int cheat = GlobalData::dataIsModified?1:0;
+	int cheat = JhGlobalData::dataIsModified?1:0;
 	writedoc.AddMember("cheat", cheat, allocator);
-	std::string achivestr = GameDataSave::getInstance()->getAchiveData();
+	std::string achivestr = JhGameDataSave::getInstance()->getAchiveData();
 	writedoc.AddMember("achievement", rapidjson::Value(achivestr.c_str(), allocator), allocator);
-	GlobalData::dataIsModified = false;
+	JhGlobalData::dataIsModified = false;
 
 	int fightingpower = 0;
 
@@ -173,14 +173,14 @@ void ServerDataSwap::postOneData(std::string userid, int tag)
 		rapidjson::Value& oneBuild = allBuilds[i];
 		rapidjson::Value& oneitem = oneBuild["name"];
 		std::string buildname = oneitem.GetString();
-		int blv = GameDataSave::getInstance()->getBuildLV(buildname);
+		int blv = JhGameDataSave::getInstance()->getBuildLV(buildname);
         std::string blvstr = StringUtils::format("%d", blv);
 		writedoc.AddMember(rapidjson::Value(buildname.c_str(), allocator), rapidjson::Value(blvstr.c_str(), allocator), allocator);
 	}
 	
 	rapidjson::Value dataArray(rapidjson::kArrayType);
 
-	std::string strval[] = { GameDataSave::getInstance()->getStorageData(), GameDataSave::getInstance()->getPackage(), GameDataSave::getInstance()->getHeroProperData() };
+	std::string strval[] = { JhGameDataSave::getInstance()->getStorageData(), JhGameDataSave::getInstance()->getPackage(), JhGameDataSave::getInstance()->getHeroProperData() };
 
 	for (int m = 0; m < sizeof(strval) / sizeof(strval[0]); m++)
 	{
@@ -188,12 +188,12 @@ void ServerDataSwap::postOneData(std::string userid, int tag)
 		object.AddMember("flag", m + 1, allocator);
 
 		std::vector<std::string> tmp;
-		CommonFuncs::split(strval[m], tmp, ";");
+		JhCommonFuncs::split(strval[m], tmp, ";");
 
 		for (unsigned int i = 0; i < tmp.size(); i++)
 		{
 			std::vector<std::string> tmp2;
-			CommonFuncs::split(tmp[i], tmp2, "-");
+			JhCommonFuncs::split(tmp[i], tmp2, "-");
 
 			std::string strid = tmp2[0];
 			if (strid.length() <= 0)
@@ -246,7 +246,7 @@ void ServerDataSwap::postOneData(std::string userid, int tag)
 	url.append(HTTPURL);
 	url.append("wx_savealldata");
 	std::string tagstr = StringUtils::format("%d", tag);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpPostOneDataCB, this), "", POST, postdata, tagstr);
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpPostOneDataCB, this), "", POST, postdata, tagstr);
 }
 
 void ServerDataSwap::getAllData()
@@ -255,8 +255,8 @@ void ServerDataSwap::getAllData()
 	url.append(HTTPURL);
 	url.append("wx_getalldata?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetAllDataCB, this));
+	url.append(JhGlobalData::UUID());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetAllDataCB, this));
 }
 
 void ServerDataSwap::propadjust()
@@ -265,8 +265,8 @@ void ServerDataSwap::propadjust()
 	url.append(HTTPURL);
 	url.append("wx_propadjust?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpPropadJustDataCB, this));
+	url.append(JhGlobalData::UUID());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpPropadJustDataCB, this));
 	
 }
 
@@ -276,10 +276,10 @@ void ServerDataSwap::modifyNickName(std::string nickname)
 	url.append(HTTPURL);
 	url.append("wx_updateusername?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&name=");
 	url.append(nickname);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpModifyNickNameCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpModifyNickNameCB, this));
 }
 
 void ServerDataSwap::vipSuccNotice(std::string gid)
@@ -288,10 +288,10 @@ void ServerDataSwap::vipSuccNotice(std::string gid)
 	url.append(HTTPURL);
 	url.append("wx_buynotify?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&goodsid=");
 	url.append(gid);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpBlankCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpBlankCB, this));
 }
 
 void ServerDataSwap::vipIsOn(int heroid)
@@ -300,13 +300,13 @@ void ServerDataSwap::vipIsOn(int heroid)
 	url.append(HTTPURL);
 	url.append("wx_takemonthlycard?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&type=");
 	std::string herostr = StringUtils::format("%d", heroid);
 	url.append(herostr);
 	url.append("&vercode=");
-	url.append(GlobalData::getVersion());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpVipIsOnCB, this));
+	url.append(JhGlobalData::getVersion());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpVipIsOnCB, this));
 }
 
 void ServerDataSwap::isGetVip(std::vector<std::string> vipids)
@@ -315,7 +315,7 @@ void ServerDataSwap::isGetVip(std::vector<std::string> vipids)
 	url.append(HTTPURL);
 	url.append("wx_donemonthlycard?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	std::string strvip;
 	for (unsigned int i = 0; i < vipids.size(); i++)
 	{
@@ -323,7 +323,7 @@ void ServerDataSwap::isGetVip(std::vector<std::string> vipids)
 		strvip.append(str);
 	}
 	url.append(strvip);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpIsGetVipCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpIsGetVipCB, this));
 }
 
 void ServerDataSwap::updateFreeReviveCount()
@@ -332,8 +332,8 @@ void ServerDataSwap::updateFreeReviveCount()
 	url.append(HTTPURL);
 	url.append("wx_usefreelife?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpBlankCB, this));
+	url.append(JhGlobalData::UUID());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpBlankCB, this));
 }
 
 void ServerDataSwap::getServerTime()
@@ -341,7 +341,7 @@ void ServerDataSwap::getServerTime()
 	std::string url;
 	url.append(HTTPURL);
 	url.append("wx_getservertime");
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetServerTimeCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetServerTimeCB, this));
 }
 
 void ServerDataSwap::getRankData(std::string orderby)
@@ -350,7 +350,7 @@ void ServerDataSwap::getRankData(std::string orderby)
 	url.append(HTTPURL);
 	url.append("wx_ranklist?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 
 	url.append("&type=");
 	std::string typestr = StringUtils::format("%d", g_hero->getHeadID());
@@ -358,7 +358,7 @@ void ServerDataSwap::getRankData(std::string orderby)
 
 	url.append("&");
 	url.append(orderby);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetRankDataCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetRankDataCB, this));
 }
 
 void ServerDataSwap::getannouncement()
@@ -367,10 +367,10 @@ void ServerDataSwap::getannouncement()
 	url.append(HTTPURL);
 	url.append("wx_getannouncement?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&vercode=");
-	url.append(GlobalData::getVersion());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetAnnouncementCB, this));
+	url.append(JhGlobalData::getVersion());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetAnnouncementCB, this));
 }
 
 void ServerDataSwap::createFaciton(std::string name, int lvlimit, int sexlimit, std::string desc)
@@ -379,7 +379,7 @@ void ServerDataSwap::createFaciton(std::string name, int lvlimit, int sexlimit, 
 	url.append(HTTPURL);
 	url.append("wx_buildfaction?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&nickname=");
 	url.append(name);
 
@@ -396,7 +396,7 @@ void ServerDataSwap::createFaciton(std::string name, int lvlimit, int sexlimit, 
 	url.append("&remark=");
 	url.append(desc);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpCreateFactionCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpCreateFactionCB, this));
 }
 
 void ServerDataSwap::modifyFaciton(int factionid, std::string name, int lvlimit, int sexlimit, std::string desc)
@@ -405,7 +405,7 @@ void ServerDataSwap::modifyFaciton(int factionid, std::string name, int lvlimit,
 	url.append(HTTPURL);
 	url.append("wx_updatefaction?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&nickname=");
 	url.append(name);
 
@@ -422,7 +422,7 @@ void ServerDataSwap::modifyFaciton(int factionid, std::string name, int lvlimit,
 	url.append("&remark=");
 	url.append(desc);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpModifyFactionCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpModifyFactionCB, this));
 }
 
 void ServerDataSwap::getFactionList()
@@ -431,12 +431,12 @@ void ServerDataSwap::getFactionList()
 	url.append(HTTPURL);
 	url.append("wx_factionlist?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&type=");
 	std::string typestr = StringUtils::format("%d", g_hero->getHeadID());
 	url.append(typestr);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetFactionListCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetFactionListCB, this));
 }
 
 void ServerDataSwap::requestFaction(int factionid)
@@ -445,7 +445,7 @@ void ServerDataSwap::requestFaction(int factionid)
 	url.append(HTTPURL);
 	url.append("wx_requestfaction?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&factionid=");
 	std::string factionidstr = StringUtils::format("%d", factionid);
 	url.append(factionidstr);
@@ -454,7 +454,7 @@ void ServerDataSwap::requestFaction(int factionid)
 	std::string typestr = StringUtils::format("%d", g_hero->getHeadID());
 	url.append(typestr);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpRequestFactionListCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpRequestFactionListCB, this));
 }
 
 void ServerDataSwap::cancelFaction(int factionid)
@@ -463,7 +463,7 @@ void ServerDataSwap::cancelFaction(int factionid)
 	url.append(HTTPURL);
 	url.append("wx_cancelfaction?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&factionid=");
 	std::string factionidstr = StringUtils::format("%d", factionid);
 	url.append(factionidstr);
@@ -472,7 +472,7 @@ void ServerDataSwap::cancelFaction(int factionid)
 	std::string typestr = StringUtils::format("%d", g_hero->getHeadID());
 	url.append(typestr);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpCancelFactionCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpCancelFactionCB, this));
 }
 
 void ServerDataSwap::getFactionMembers(int factionid)
@@ -481,7 +481,7 @@ void ServerDataSwap::getFactionMembers(int factionid)
 	url.append(HTTPURL);
 	url.append("wx_factionmemberlist?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&factionid=");
 	std::string factionidstr = StringUtils::format("%d", factionid);
 	url.append(factionidstr);
@@ -490,7 +490,7 @@ void ServerDataSwap::getFactionMembers(int factionid)
 	std::string herotypestr = StringUtils::format("%d", g_hero->getHeadID());
 	url.append(herotypestr);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetFactionMemberCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetFactionMemberCB, this));
 }
 
 void ServerDataSwap::joinFaction(int factionid, int requesterId, int requestertype)
@@ -499,7 +499,7 @@ void ServerDataSwap::joinFaction(int factionid, int requesterId, int requesterty
 	url.append(HTTPURL);
 	url.append("wx_joinfaction?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&factionid=");
 	std::string factionidstr = StringUtils::format("%d", factionid);
 	url.append(factionidstr);
@@ -512,7 +512,7 @@ void ServerDataSwap::joinFaction(int factionid, int requesterId, int requesterty
 	requesterstr = StringUtils::format("%d", requestertype);
 	url.append(requesterstr);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpJionFactionCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpJionFactionCB, this));
 }
 
 void ServerDataSwap::kickFaction(int factionid, int requesterId, int requestertype)
@@ -521,7 +521,7 @@ void ServerDataSwap::kickFaction(int factionid, int requesterId, int requesterty
 	url.append(HTTPURL);
 	url.append("wx_kickfaction?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&factionid=");
 	std::string factionidstr = StringUtils::format("%d", factionid);
 	url.append(factionidstr);
@@ -534,7 +534,7 @@ void ServerDataSwap::kickFaction(int factionid, int requesterId, int requesterty
 	requesterstr = StringUtils::format("%d", requestertype);
 	url.append(requesterstr);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpKickFactionCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpKickFactionCB, this));
 }
 
 void ServerDataSwap::promotionFaction(int factionid, int requesterId, int requestertype, int position)
@@ -543,7 +543,7 @@ void ServerDataSwap::promotionFaction(int factionid, int requesterId, int reques
 	url.append(HTTPURL);
 	url.append("wx_promotionfaction?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&factionid=");
 	std::string factionidstr = StringUtils::format("%d", factionid);
 	url.append(factionidstr);
@@ -560,7 +560,7 @@ void ServerDataSwap::promotionFaction(int factionid, int requesterId, int reques
 	requesterstr = StringUtils::format("%d", position);
 	url.append(requesterstr);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpPromotionFactionCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpPromotionFactionCB, this));
 }
 
 void ServerDataSwap::leaveFaction(int actiontype, int factionid, int herotype)
@@ -572,7 +572,7 @@ void ServerDataSwap::leaveFaction(int actiontype, int factionid, int herotype)
 	else
 		url.append("wx_releasefaction?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 
 	url.append("&factionid=");
 	std::string factionidstr = StringUtils::format("%d", factionid);
@@ -582,7 +582,7 @@ void ServerDataSwap::leaveFaction(int actiontype, int factionid, int herotype)
 	std::string requesterstr = StringUtils::format("%d", herotype);
 	url.append(requesterstr);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpLeaveFactionCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpLeaveFactionCB, this));
 }
 
 void ServerDataSwap::contributionFaction(int factionid, int contribution, int herotype)
@@ -592,7 +592,7 @@ void ServerDataSwap::contributionFaction(int factionid, int contribution, int he
 
 	url.append("wx_contributionfaction?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 
 	url.append("&factionid=");
 	std::string factionidstr = StringUtils::format("%d", factionid);
@@ -606,7 +606,7 @@ void ServerDataSwap::contributionFaction(int factionid, int contribution, int he
 	std::string requesterstr = StringUtils::format("%d", herotype);
 	url.append(requesterstr);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpContributionFactionCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpContributionFactionCB, this));
 }
 
 void ServerDataSwap::refuseFaction(int factionid, int requesterId, int requestertype)
@@ -615,7 +615,7 @@ void ServerDataSwap::refuseFaction(int factionid, int requesterId, int requester
 	url.append(HTTPURL);
 	url.append("wx_refusefaction?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&factionid=");
 	std::string factionidstr = StringUtils::format("%d", factionid);
 	url.append(factionidstr);
@@ -628,7 +628,7 @@ void ServerDataSwap::refuseFaction(int factionid, int requesterId, int requester
 	requesterstr = StringUtils::format("%d", requestertype);
 	url.append(requesterstr);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpRefuseFactionCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpRefuseFactionCB, this));
 }
 
 void ServerDataSwap::getlotteryData(int actiontype)
@@ -637,13 +637,13 @@ void ServerDataSwap::getlotteryData(int actiontype)
 	url.append(HTTPURL);
 	url.append("wx_lottery?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 
 	url.append("&type=");
 	std::string str = StringUtils::format("%d", actiontype);
 	url.append(str);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpLotteryCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpLotteryCB, this));
 }
 
 void ServerDataSwap::getCoinpoolData()
@@ -652,8 +652,8 @@ void ServerDataSwap::getCoinpoolData()
 	url.append(HTTPURL);
 	url.append("wx_getcoinpool?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetCoinpoolCB, this));
+	url.append(JhGlobalData::UUID());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetCoinpoolCB, this));
 }
 
 void ServerDataSwap::playCoinpoolData()
@@ -662,8 +662,8 @@ void ServerDataSwap::playCoinpoolData()
 	url.append(HTTPURL);
 	url.append("wx_playcoinpool?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpPlayCoinpoolCB, this));
+	url.append(JhGlobalData::UUID());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpPlayCoinpoolCB, this));
 }
 
 void ServerDataSwap::getCoupons(std::string codestr)
@@ -672,10 +672,10 @@ void ServerDataSwap::getCoupons(std::string codestr)
 	url.append(HTTPURL);
 	url.append("wx_coupons?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&code=");
 	url.append(codestr);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetCouponsCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetCouponsCB, this));
 }
 
 void ServerDataSwap::getChallengeranklist()
@@ -684,11 +684,11 @@ void ServerDataSwap::getChallengeranklist()
 	url.append(HTTPURL);
 	url.append("wx_challengeranklist?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&type=");
 	std::string str = StringUtils::format("%d", g_hero->getHeadID());
 	url.append(str);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetChallengeranklistCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetChallengeranklistCB, this));
 }
 
 void ServerDataSwap::getMyFihgterData(std::string fightplayerid, int fightplayertype)
@@ -701,7 +701,7 @@ void ServerDataSwap::getMyFihgterData(std::string fightplayerid, int fightplayer
 	url.append("&type=");
 	std::string str = StringUtils::format("%d", fightplayertype);
 	url.append(str);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetMyFihgterDataCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetMyFihgterDataCB, this));
 }
 
 void ServerDataSwap::getFightCount(int matchtype, int count)
@@ -710,7 +710,7 @@ void ServerDataSwap::getFightCount(int matchtype, int count)
 	url.append(HTTPURL);
 	url.append("wx_addchallengecount?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&type=");
 	std::string str = StringUtils::format("%d", g_hero->getHeadID());
 	url.append(str);
@@ -720,7 +720,7 @@ void ServerDataSwap::getFightCount(int matchtype, int count)
 	url.append("&matchtype=");
 	str = StringUtils::format("%d", matchtype);
 	url.append(str);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetFightCountCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetFightCountCB, this));
 }
 
 void ServerDataSwap::getChallengeResult(int myrank, std::string fightplayerid, int fightplayertype, int fightrank, int win)
@@ -729,7 +729,7 @@ void ServerDataSwap::getChallengeResult(int myrank, std::string fightplayerid, i
 	url.append(HTTPURL);
 	url.append("wx_challengeresult?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&type=");
 	std::string str = StringUtils::format("%d", g_hero->getHeadID());
 	url.append(str);
@@ -752,7 +752,7 @@ void ServerDataSwap::getChallengeResult(int myrank, std::string fightplayerid, i
 	str = StringUtils::format("%d", win);
 	url.append(str);
 
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetChallengeResultCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetChallengeResultCB, this));
 }
 
 void ServerDataSwap::getKajuanAction()
@@ -761,11 +761,11 @@ void ServerDataSwap::getKajuanAction()
 	url.append(HTTPURL);
 	url.append("wx_kajuanevent?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&type=");
 	std::string str = StringUtils::format("%d", g_hero->getHeadID());
 	url.append(str);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetKajuanActionCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetKajuanActionCB, this));
 }
 
 void ServerDataSwap::getKajuanAwardList()
@@ -774,11 +774,11 @@ void ServerDataSwap::getKajuanAwardList()
 	url.append(HTTPURL);
 	url.append("wx_kajuaneventawardlist?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&type=");
 	std::string str = StringUtils::format("%d", g_hero->getHeadID());
 	url.append(str);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetKajuanAwardListCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetKajuanAwardListCB, this));
 }
 
 void ServerDataSwap::getMyMatchInfo()
@@ -787,8 +787,8 @@ void ServerDataSwap::getMyMatchInfo()
 	url.append(HTTPURL);
 	url.append("wx_matchmatchselfinfo?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetMyMatchInfoCB, this));
+	url.append(JhGlobalData::UUID());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetMyMatchInfoCB, this));
 }
 
 void ServerDataSwap::getMatchFight()
@@ -797,8 +797,8 @@ void ServerDataSwap::getMatchFight()
 	url.append(HTTPURL);
 	url.append("wx_matchmatchinfo?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetMatchFightCB, this));
+	url.append(JhGlobalData::UUID());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetMatchFightCB, this));
 }
 
 void ServerDataSwap::getMatchFightResult(std::string fightplayerid, int score)
@@ -807,7 +807,7 @@ void ServerDataSwap::getMatchFightResult(std::string fightplayerid, int score)
 	url.append(HTTPURL);
 	url.append("wx_matchmatchresult?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 
 	url.append("&matchplayerid=");
 	url.append(fightplayerid);
@@ -815,7 +815,7 @@ void ServerDataSwap::getMatchFightResult(std::string fightplayerid, int score)
 	url.append("&score=");
 	std::string str = StringUtils::format("%d", score);
 	url.append(str);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetMatchFightResultCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetMatchFightResultCB, this));
 }
 
 void ServerDataSwap::getHSLJRankData()
@@ -824,8 +824,8 @@ void ServerDataSwap::getHSLJRankData()
 	url.append(HTTPURL);
 	url.append("wx_matchmatchranklist?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetHSLJRankDataCB, this));
+	url.append(JhGlobalData::UUID());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetHSLJRankDataCB, this));
 }
 
 void ServerDataSwap::getHSLJRewardData()
@@ -834,8 +834,8 @@ void ServerDataSwap::getHSLJRewardData()
 	url.append(HTTPURL);
 	url.append("wx_matchmatchgetaward?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetHSLJRewardDataCB, this));
+	url.append(JhGlobalData::UUID());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetHSLJRewardDataCB, this));
 	
 }
 
@@ -845,14 +845,14 @@ void ServerDataSwap::getCommonData()
 	url.append(HTTPURL);
 	url.append("wx_qq?");
 	url.append("pkg=");
-	url.append(GlobalData::getPackageName());
+	url.append(JhGlobalData::getPackageName());
 	url.append("&vercode=");
-	url.append(GlobalData::getVersion());
+	url.append(JhGlobalData::getVersion());
 	url.append("&playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&cid=");
-	url.append(GlobalData::getChannelId());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetCommonDataCB, this));
+	url.append(JhGlobalData::getChannelId());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetCommonDataCB, this));
 }
 
 void ServerDataSwap::getRechargeData()
@@ -861,8 +861,8 @@ void ServerDataSwap::getRechargeData()
 	url.append(HTTPURL);
 	url.append("wx_topupevent?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetRechargeDataCB, this));
+	url.append(JhGlobalData::UUID());
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpGetRechargeDataCB, this));
 }
 
 void ServerDataSwap::postMyRecharge(int amount, int type)
@@ -871,14 +871,14 @@ void ServerDataSwap::postMyRecharge(int amount, int type)
 	url.append(HTTPURL);
 	url.append("wx_topup?");
 	url.append("playerid=");
-	url.append(GlobalData::UUID());
+	url.append(JhGlobalData::UUID());
 	url.append("&amount=");
 	std::string str = StringUtils::format("%d", amount);
 	url.append(str);
 	url.append("&type=");
 	str = StringUtils::format("%d", type);
 	url.append(str);
-	HttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpPostMyRechargeCB, this));
+	JhHttpUtil::getInstance()->doData(url, httputil_calback(ServerDataSwap::httpPostMyRechargeCB, this));
 }
 
 void ServerDataSwap::httpBlankCB(std::string retdata, int code, std::string tag)
@@ -907,11 +907,11 @@ void ServerDataSwap::httpPostOneDataCB(std::string retdata, int code, std::strin
 				{
 					rapidjson::Value& myidv = doc["id"];
 					std::string myidstr = myidv.GetString();
-					GameDataSave::getInstance()->setMyID(myidstr);
+					JhGameDataSave::getInstance()->setMyID(myidstr);
 
 					rapidjson::Value& mynamev = doc["nickname"];
 					std::string mynamestr = mynamev.GetString();
-					GameDataSave::getInstance()->setMyNickName(mynamestr);
+					JhGameDataSave::getInstance()->setMyNickName(mynamestr);
 				}
 			}
 
@@ -952,21 +952,21 @@ void ServerDataSwap::httpGetAllDataCB(std::string retdata, int code, std::string
 				}
 				rapidjson::Value& myidv = doc["id"];
 				std::string myidstr = myidv.GetString();
-				GameDataSave::getInstance()->setMyID(myidstr);
+				JhGameDataSave::getInstance()->setMyID(myidstr);
 
 				rapidjson::Value& mynamev = doc["nickname"];
 				std::string mynamestr = mynamev.GetString();
-				GameDataSave::getInstance()->setMyNickName(mynamestr);
+				JhGameDataSave::getInstance()->setMyNickName(mynamestr);
 
 				if (doc.HasMember("coin"))
 				{
 					rapidjson::Value& coindata = doc["coin"];
-					GameDataSave::getInstance()->setGoldCount(atoi(coindata.GetString()));
+					JhGameDataSave::getInstance()->setGoldCount(atoi(coindata.GetString()));
 				}
 				if (doc.HasMember("costcoin"))
 				{
 					rapidjson::Value& coindata = doc["costcoin"];
-					GameDataSave::getInstance()->setUseGold(atoi(coindata.GetString()));
+					JhGameDataSave::getInstance()->setUseGold(atoi(coindata.GetString()));
 				}
 				int hunlock = 1;
 				if (doc.HasMember("hunlock"))
@@ -978,7 +978,7 @@ void ServerDataSwap::httpGetAllDataCB(std::string retdata, int code, std::string
 					{
 						int val = hunlock & (1 << k);
 						val = val >> k;
-						GlobalData::setUnlockHero(k, val == 1 ? true : false);
+						JhGlobalData::setUnlockHero(k, val == 1 ? true : false);
 					}
 				}
 
@@ -992,24 +992,24 @@ void ServerDataSwap::httpGetAllDataCB(std::string retdata, int code, std::string
 						rapidjson::Value& v = item["localid"];
 						std::string localuid = v.GetString();
 
-						GameDataSave::getInstance()->setUserId(localuid);
+						JhGameDataSave::getInstance()->setUserId(localuid);
 
 						v = item["type"];
 						int type = atoi(v.GetString());
-						GameDataSave::getInstance()->setHeroId(type);
+						JhGameDataSave::getInstance()->setHeroId(type);
 
 						vec_saveid[type - 1] = localuid;
 
 						v = item["exp"];
 						int exp = atoi(v.GetString());
 						int lv = 0;
-						int size = GlobalData::map_heroAtr[type].vec_exp.size();
+						int size = JhGlobalData::map_heroAtr[type].vec_exp.size();
 						for (int i = 0; i < size; i++)
 						{
-							if (exp > GlobalData::map_heroAtr[type].vec_exp[i])
+							if (exp > JhGlobalData::map_heroAtr[type].vec_exp[i])
 							{
 								lv = i;
-								exp = exp - GlobalData::map_heroAtr[type].vec_exp[i];
+								exp = exp - JhGlobalData::map_heroAtr[type].vec_exp[i];
 							}
 							else
 							{
@@ -1019,50 +1019,50 @@ void ServerDataSwap::httpGetAllDataCB(std::string retdata, int code, std::string
 						if (lv >= size)
 						{
 							lv = size - 1;
-							exp = GlobalData::map_heroAtr[type].vec_exp[lv];
+							exp = JhGlobalData::map_heroAtr[type].vec_exp[lv];
 						}
 
-						GameDataSave::getInstance()->setHeroLV(lv);
-						GameDataSave::getInstance()->setHeroExp(exp);
+						JhGameDataSave::getInstance()->setHeroLV(lv);
+						JhGameDataSave::getInstance()->setHeroExp(exp);
 
 						v = item["sex"];
 						int sex = atoi(v.GetString());
 						if (type == 4)
 							sex = S_WOMEN;
-						GameDataSave::getInstance()->setHeroSex(sex);
+						JhGameDataSave::getInstance()->setHeroSex(sex);
 
 						v = item["hungry"];
 						int hungry = atoi(v.GetString());
-						GameDataSave::getInstance()->setHeroHunger(hungry);
+						JhGameDataSave::getInstance()->setHeroHunger(hungry);
 
 						v = item["innerhurt"];
 						int innerhurt = atoi(v.GetString());
-						GameDataSave::getInstance()->setHeroInnerinjury(innerhurt);
+						JhGameDataSave::getInstance()->setHeroInnerinjury(innerhurt);
 
 						v = item["outerhurt"];
 						int outerhurt = atoi(v.GetString());
-						GameDataSave::getInstance()->setHeroOutinjury(outerhurt);
+						JhGameDataSave::getInstance()->setHeroOutinjury(outerhurt);
 
 						v = item["life"];
 						int life = atoi(v.GetString());
-						GameDataSave::getInstance()->setHeroLife(life);
+						JhGameDataSave::getInstance()->setHeroLife(life);
 
 						v = item["days"];
 						int days = atoi(v.GetString());
-						GameDataSave::getInstance()->setLiveDays(days);
+						JhGameDataSave::getInstance()->setLiveDays(days);
 
 						v = item["mood"];
 						int spirit = atoi(v.GetString());
-						GameDataSave::getInstance()->setHeroSpirit(spirit);
+						JhGameDataSave::getInstance()->setHeroSpirit(spirit);
 
 						v = item["task"];
 						int task = atoi(v.GetString());
-						GameDataSave::getInstance()->setPlotMissionIndex(task);
+						JhGameDataSave::getInstance()->setPlotMissionIndex(task);
 
-						GlobalData::loadPlotMissionJsonData(type);
+						JhGlobalData::loadPlotMissionJsonData(type);
 
 						std::string str;
-						int pdatasize = GlobalData::vec_PlotMissionData.size();
+						int pdatasize = JhGlobalData::vec_PlotMissionData.size();
 						for (int i = 0; i < pdatasize; i++)
 						{
 							std::string tmpstr;
@@ -1072,16 +1072,16 @@ void ServerDataSwap::httpGetAllDataCB(std::string retdata, int code, std::string
 								tmpstr = "0-";
 							str.append(tmpstr);
 						}
-						GameDataSave::getInstance()->setPlotMissionStatus(str.substr(0, str.length() - 1));
+						JhGameDataSave::getInstance()->setPlotMissionStatus(str.substr(0, str.length() - 1));
 
 						v = item["newbtask"];
 						std::string btask = v.GetString();
 
-						GameDataSave::getInstance()->setBranchPlotMissionStatus(btask);
+						JhGameDataSave::getInstance()->setBranchPlotMissionStatus(btask);
 
 						v = item["unlock"];
 						int unlock = atoi(v.GetString());
-						GameDataSave::getInstance()->setPlotUnlockChapter(unlock);
+						JhGameDataSave::getInstance()->setPlotUnlockChapter(unlock);
 
 						rapidjson::Document doc = ReadJsonFile("data/buildings.json");
 						rapidjson::Value& allBuilds = doc["b"];
@@ -1092,27 +1092,27 @@ void ServerDataSwap::httpGetAllDataCB(std::string retdata, int code, std::string
 							std::string buildname = oneitem.GetString();
 							v = item[buildname.c_str()];
 							int blv = atoi(v.GetString());
-							GameDataSave::getInstance()->setBuildLV(buildname, blv);
+							JhGameDataSave::getInstance()->setBuildLV(buildname, blv);
 						}
 
 						if (item.HasMember("friendship"))
 						{
 							v = item["friendship"];
 							std::string friendshipstr = v.GetString();
-							GameDataSave::getInstance()->setFriendly(friendshipstr);
+							JhGameDataSave::getInstance()->setFriendly(friendshipstr);
 						}
 						if (item.HasMember("achievement"))
 						{
 							v = item["achievement"];
 							std::string achivestr = v.GetString();
-							GameDataSave::getInstance()->setAchiveData(achivestr);
+							JhGameDataSave::getInstance()->setAchiveData(achivestr);
 						}
 
 
 						if (item.HasMember("mixgf"))
 						{
 							v = item["mixgf"];
-							GameDataSave::getInstance()->setMixGF(v.GetString());
+							JhGameDataSave::getInstance()->setMixGF(v.GetString());
 						}
 
 						v = item["holding"];
@@ -1155,7 +1155,7 @@ void ServerDataSwap::httpGetAllDataCB(std::string retdata, int code, std::string
 										}
 										count = 1;
 									}
-									std::string tempstr = StringUtils::format("%s-%d-%d-%d-%d-%d-%d-%d-%d;", strid.c_str(), GlobalData::getResType(strid), count, GlobalData::getResExType(strid), lv, 0, goodvalue, slv, tqu);
+									std::string tempstr = StringUtils::format("%s-%d-%d-%d-%d-%d-%d-%d-%d;", strid.c_str(), JhGlobalData::getResType(strid), count, JhGlobalData::getResExType(strid), lv, 0, goodvalue, slv, tqu);
 									str.append(tempstr);
 								}
 							}
@@ -1163,16 +1163,16 @@ void ServerDataSwap::httpGetAllDataCB(std::string retdata, int code, std::string
 							{
 								str = str.substr(0, str.length() - 1);
 								if (flag == 1)
-									GameDataSave::getInstance()->setStorageData(str);
+									JhGameDataSave::getInstance()->setStorageData(str);
 								else if (flag == 2)
 								{
-									GameDataSave::getInstance()->setPackage(str);
+									JhGameDataSave::getInstance()->setPackage(str);
 								}
 								else if (flag == 3)
 								{
 									const std::string prestr[] = { "a", "24", "25", "26", "w", "x", "e", "7" };
 									std::vector<std::string> tmp;
-									CommonFuncs::split(str, tmp, ";");
+									JhCommonFuncs::split(str, tmp, ";");
 									str.clear();
 									for (int c = 0; c < 8; c++)
 									{
@@ -1193,7 +1193,7 @@ void ServerDataSwap::httpGetAllDataCB(std::string retdata, int code, std::string
 											str.append("-0-0-0-0-0-100-0-1;");
 										}
 									}
-									GameDataSave::getInstance()->setHeroProperData(str.substr(0, str.length() - 1));
+									JhGameDataSave::getInstance()->setHeroProperData(str.substr(0, str.length() - 1));
 								}
 							}
 						}
@@ -1201,14 +1201,14 @@ void ServerDataSwap::httpGetAllDataCB(std::string retdata, int code, std::string
 					}
 				}
 
-				GlobalData::setSaveListId(vec_saveid);
+				JhGlobalData::setSaveListId(vec_saveid);
 				if (vec_saveid.size() > 0)
-					GlobalData::setUId(vec_saveid[0]);
+					JhGlobalData::setUId(vec_saveid[0]);
 
 				if (m_pDelegateProtocol != NULL)
 				{
 					m_pDelegateProtocol->onSuccess();
-					GlobalData::init();
+					JhGlobalData::init();
 				}
 			}
 		}
@@ -1245,9 +1245,9 @@ void ServerDataSwap::httpPropadJustDataCB(std::string retdata, int code, std::st
 
 					if (strid.compare("coin") == 0)
 					{
-						int curcount = GameDataSave::getInstance()->getGoldCount();
-						GameDataSave::getInstance()->setGoldCount(curcount + val);
-						GlobalData::init();
+						int curcount = JhGameDataSave::getInstance()->getGoldCount();
+						JhGameDataSave::getInstance()->setGoldCount(curcount + val);
+						JhGlobalData::init();
 						continue;
 					}
 
@@ -1259,7 +1259,7 @@ void ServerDataSwap::httpPropadJustDataCB(std::string retdata, int code, std::st
 						{
 							int val = hunlock & (1 << k);
 							val = val >> k;
-							GlobalData::setUnlockHero(k, val == 1 ? true : false);
+							JhGlobalData::setUnlockHero(k, val == 1 ? true : false);
 						}
 						continue;
 					}
@@ -1268,27 +1268,27 @@ void ServerDataSwap::httpPropadJustDataCB(std::string retdata, int code, std::st
 					int heroid = atoi(v.GetString());
 					if (heroid > 0)
 					{
-						std::vector<std::string> vec_ids = GlobalData::getSaveListId();
+						std::vector<std::string> vec_ids = JhGlobalData::getSaveListId();
 						std::string uid = vec_ids[heroid - 1];
 						if (uid.length() > 0)
 						{
-							GameDataSave::getInstance()->setUserId(uid);
+							JhGameDataSave::getInstance()->setUserId(uid);
 
-							std::string strval = GameDataSave::getInstance()->getStorageData();
+							std::string strval = JhGameDataSave::getInstance()->getStorageData();
 							std::vector<std::string> tmp;
-							CommonFuncs::split(strval, tmp, ";");
+							JhCommonFuncs::split(strval, tmp, ";");
 							std::string retstr;
 							bool isfind = false;
 							for (unsigned int i = 0; i < tmp.size(); i++)
 							{
 								std::vector<std::string> tmp2;
-								CommonFuncs::split(tmp[i], tmp2, "-");
+								JhCommonFuncs::split(tmp[i], tmp2, "-");
 
 								std::string id = tmp2[0];
 								int type = atoi(tmp2[1].c_str());
 
 								int count = atoi(tmp2[2].c_str());
-								int extype = GlobalData::getResExType(id);
+								int extype = JhGlobalData::getResExType(id);
 								int lv = atoi(tmp2[4].c_str());
 
 								int exp = atoi(tmp2[5].c_str());
@@ -1344,12 +1344,12 @@ void ServerDataSwap::httpPropadJustDataCB(std::string retdata, int code, std::st
 									}
 									count = 1;
 								}
-								std::string idstr = StringUtils::format("%s-%d-%d-%d-%d-%d-%d-%d-%d;", strid.c_str(), GlobalData::getResType(strid), count, GlobalData::getResExType(strid), lv, 0, goodvalue, slv, 1);
+								std::string idstr = StringUtils::format("%s-%d-%d-%d-%d-%d-%d-%d-%d;", strid.c_str(), JhGlobalData::getResType(strid), count, JhGlobalData::getResExType(strid), lv, 0, goodvalue, slv, 1);
 								retstr.append(idstr);
 							}
 
 							if (retstr.length() > 0)
-								GameDataSave::getInstance()->setStorageData(retstr.substr(0, retstr.length() - 1));
+								JhGameDataSave::getInstance()->setStorageData(retstr.substr(0, retstr.length() - 1));
 						}
 					}
 				}
@@ -1417,16 +1417,16 @@ void ServerDataSwap::httpModifyNickNameCB(std::string retdata, int code, std::st
 
 void ServerDataSwap::httpVipIsOnCB(std::string retdata, int code, std::string tag)
 {
-	GlobalData::isExchangeGift = false;
-	GlobalData::isRecharge = false;
-	GlobalData::couponinfo = "";
+	JhGlobalData::isExchangeGift = false;
+	JhGlobalData::isRecharge = false;
+	JhGlobalData::couponinfo = "";
 	if (code == 0)
 	{
 		rapidjson::Document doc;
 		if (JsonReader(retdata, doc))
 		{
-			GlobalData::vec_buyVipIds.clear();
-			GlobalData::map_buyVipDays.clear();
+			JhGlobalData::vec_buyVipIds.clear();
+			JhGlobalData::map_buyVipDays.clear();
 			for (rapidjson::Value::ConstMemberIterator iter = doc.MemberBegin(); iter != doc.MemberEnd(); ++iter)
 			{
 				std::string strid = iter->name.GetString();
@@ -1436,7 +1436,7 @@ void ServerDataSwap::httpVipIsOnCB(std::string retdata, int code, std::string ta
 					int val = iter->value.GetInt();
 					if (val > 0)
 					{
-						GlobalData::vec_buyVipIds.push_back(strid);
+						JhGlobalData::vec_buyVipIds.push_back(strid);
 						
 					}
 				}
@@ -1446,7 +1446,7 @@ void ServerDataSwap::httpVipIsOnCB(std::string retdata, int code, std::string ta
 					if (pos != std::string::npos && pos > 0)
 					{
 						int val = iter->value.GetInt();
-						GlobalData::map_buyVipDays[strid.substr(pos)] = val;
+						JhGlobalData::map_buyVipDays[strid.substr(pos)] = val;
 					}
 				}
 			}
@@ -1454,32 +1454,32 @@ void ServerDataSwap::httpVipIsOnCB(std::string retdata, int code, std::string ta
 			if (doc.HasMember("timegift"))
 			{
 				rapidjson::Value& retval = doc["timegift"];
-				GlobalData::setTimeGiftLeftTime(retval.GetInt());
+				JhGlobalData::setTimeGiftLeftTime(retval.GetInt());
 			}
 
 			if (doc.HasMember("freelife"))
 			{
 				rapidjson::Value& retval = doc["freelife"];
-				GlobalData::setFreeReviveCount(retval.GetInt());
+				JhGlobalData::setFreeReviveCount(retval.GetInt());
 			}
 
 			if (doc.HasMember("punishment"))
 			{
 				rapidjson::Value& retval = doc["punishment"];
-				GlobalData::ispunishment = retval.GetInt() ==0?false:true;
+				JhGlobalData::ispunishment = retval.GetInt() ==0?false:true;
 			}
 
 
 			if (doc.HasMember("coinpool"))
 			{
 				rapidjson::Value& retval = doc["coinpool"];
-				GlobalData::myRaffleData.isshow = retval.GetInt() == 0 ? false : true;
+				JhGlobalData::myRaffleData.isshow = retval.GetInt() == 0 ? false : true;
 			}
 
 			if (doc.HasMember("lottery"))
 			{
 				rapidjson::Value& retval = doc["lottery"];
-				GlobalData::myLotteryData.isshow = retval.GetInt() == 0 ? false : true;
+				JhGlobalData::myLotteryData.isshow = retval.GetInt() == 0 ? false : true;
 			}
 
 			if (doc.HasMember("login_days"))
@@ -1487,40 +1487,40 @@ void ServerDataSwap::httpVipIsOnCB(std::string retdata, int code, std::string ta
 				rapidjson::Value& retval = doc["login_days"];
 				int days = retval.GetInt();
 				if (days > 0)
-					GlobalData::continueLoginDays = retval.GetInt();
+					JhGlobalData::continueLoginDays = retval.GetInt();
 			}
 
 			if (doc.HasMember("hei"))
 			{
 				rapidjson::Value& retval = doc["hei"];
 				int vhei = retval.GetInt();
-				GlobalData::isFrozen = vhei == 1 ? true : false;
+				JhGlobalData::isFrozen = vhei == 1 ? true : false;
 			}
 
 			if (doc.HasMember("opencoupon"))
 			{
 				rapidjson::Value& retval = doc["opencoupon"];
 				int v = retval.GetInt();
-				GlobalData::isExchangeGift = true; // = v == 1 ? true : false;
+				JhGlobalData::isExchangeGift = true; // = v == 1 ? true : false;
 			}
 
 			if (doc.HasMember("couponinfo"))
 			{
 				rapidjson::Value& retval = doc["couponinfo"];
-				GlobalData::couponinfo = retval.GetString();
+				JhGlobalData::couponinfo = retval.GetString();
 			}
 
 			if (doc.HasMember("durl"))
 			{
 				rapidjson::Value& retval = doc["durl"];
-				GlobalData::updateDownLoadURL = retval.GetString();
+				JhGlobalData::updateDownLoadURL = retval.GetString();
 			}
 
 			if (doc.HasMember("opentopup"))
 			{
 				rapidjson::Value& retval = doc["opentopup"];
 				int v = retval.GetInt();
-				GlobalData::isRecharge = v == 1 ? true : false;
+				JhGlobalData::isRecharge = v == 1 ? true : false;
 			}
 		
 			if (m_pDelegateProtocol != NULL)
@@ -1547,7 +1547,7 @@ void ServerDataSwap::httpGetServerTimeCB(std::string retdata, int code, std::str
 		{
 			rapidjson::Value& timev = doc["time"];
 
-			GlobalData::servertime = timev.GetInt();
+			JhGlobalData::servertime = timev.GetInt();
 			isok = true;
 		}
 	}
@@ -1576,12 +1576,12 @@ void ServerDataSwap::httpGetRankDataCB(std::string retdata, int code, std::strin
 		rapidjson::Document doc;
 		if (JsonReader(retdata, doc))
 		{
-			GlobalData::vec_rankData.clear();
-			GlobalData::myrank = 0;
+			JhGlobalData::vec_rankData.clear();
+			JhGlobalData::myrank = 0;
 			if (doc.HasMember("rank"))
 			{
 				rapidjson::Value& v = doc["rank"];
-				GlobalData::myrank = atoi(v.GetString());
+				JhGlobalData::myrank = atoi(v.GetString());
 			}
 			if (doc.HasMember("data"))
 			{
@@ -1603,13 +1603,13 @@ void ServerDataSwap::httpGetRankDataCB(std::string retdata, int code, std::strin
 					v = item["exp"];
 					int exp = atoi(v.GetString());
 					int lv = 0;
-					int size = GlobalData::map_heroAtr[rdata.herotype].vec_exp.size();
+					int size = JhGlobalData::map_heroAtr[rdata.herotype].vec_exp.size();
 					for (int i = 0; i < size; i++)
 					{
-						if (exp > GlobalData::map_heroAtr[rdata.herotype].vec_exp[i])
+						if (exp > JhGlobalData::map_heroAtr[rdata.herotype].vec_exp[i])
 						{
 							lv = i;
-							exp = exp - GlobalData::map_heroAtr[rdata.herotype].vec_exp[i];
+							exp = exp - JhGlobalData::map_heroAtr[rdata.herotype].vec_exp[i];
 						}
 						else
 						{
@@ -1633,7 +1633,7 @@ void ServerDataSwap::httpGetRankDataCB(std::string retdata, int code, std::strin
 						heroval = 0;
 
 					rdata.heroval = heroval;
-					GlobalData::vec_rankData.push_back(rdata);
+					JhGlobalData::vec_rankData.push_back(rdata);
 				}
 				isok = true;
 			}
@@ -1668,14 +1668,14 @@ void ServerDataSwap::httpGetAnnouncementCB(std::string retdata, int code, std::s
 		{
 			if (doc.HasMember("data"))
 			{
-				GlobalData::noticecontent.clear();
+				JhGlobalData::noticecontent.clear();
 				rapidjson::Value& dataArray = doc["data"];
 
 				for (unsigned int m = 0; m < dataArray.Size(); m++)
 				{
 					rapidjson::Value& v = dataArray[m]["content"];
-					GlobalData::noticecontent.append(v.GetString());
-					GlobalData::noticecontent.append("\r\n");
+					JhGlobalData::noticecontent.append(v.GetString());
+					JhGlobalData::noticecontent.append("\r\n");
 				}
 				
 				isok = true;
@@ -1685,7 +1685,7 @@ void ServerDataSwap::httpGetAnnouncementCB(std::string retdata, int code, std::s
 				isok = false;
 			}
 		}
-		if (GlobalData::noticecontent.length() <= 0)
+		if (JhGlobalData::noticecontent.length() <= 0)
 		{
 			isok = false;
 		}
@@ -1782,24 +1782,24 @@ void ServerDataSwap::httpGetFactionListCB(std::string retdata, int code, std::st
 		rapidjson::Document doc;
 		if (JsonReader(retdata, doc))
 		{
-			GlobalData::vec_factionListData.clear();
+			JhGlobalData::vec_factionListData.clear();
 			if (doc.HasMember("belongto"))
 			{
 				rapidjson::Value& v = doc["belongto"];
-				GlobalData::myFaction = v.GetInt();
+				JhGlobalData::myFaction = v.GetInt();
 			}
 			if (doc.HasMember("title"))
 			{
 				rapidjson::Value& v = doc["title"];
-				GlobalData::mytitle = v.GetInt();
+				JhGlobalData::mytitle = v.GetInt();
 			}
 
-			if (GlobalData::myFaction > 0 && GlobalData::mytitle > 0)
+			if (JhGlobalData::myFaction > 0 && JhGlobalData::mytitle > 0)
 			{
 				if (doc.HasMember("level"))
 				{
 					rapidjson::Value& v = doc["level"];
-					GlobalData::myFactionlv = v.GetInt();
+					JhGlobalData::myFactionlv = v.GetInt();
 				}
 			}
 
@@ -1840,7 +1840,7 @@ void ServerDataSwap::httpGetFactionListCB(std::string retdata, int code, std::st
 
 					v = dataArray[m]["remark"];
 					fdata.desc = v.GetString();
-					GlobalData::vec_factionListData.push_back(fdata);
+					JhGlobalData::vec_factionListData.push_back(fdata);
 				}
 			}
 			isok = true;
@@ -1901,7 +1901,7 @@ void ServerDataSwap::httpGetFactionMemberCB(std::string retdata, int code, std::
 		{
 			if (doc.HasMember("data"))
 			{
-				GlobalData::vec_factionMemberData.clear();
+				JhGlobalData::vec_factionMemberData.clear();
 				rapidjson::Value& dataArray = doc["data"];
 
 				for (unsigned int m = 0; m < dataArray.Size(); m++)
@@ -1917,13 +1917,13 @@ void ServerDataSwap::httpGetFactionMemberCB(std::string retdata, int code, std::
 					v = dataArray[m]["exp"];
 					int exp = atoi(v.GetString());
 					int lv = 0;
-					int size = GlobalData::map_heroAtr[fdata.herotype].vec_exp.size();
+					int size = JhGlobalData::map_heroAtr[fdata.herotype].vec_exp.size();
 					for (int i = 0; i < size; i++)
 					{
-						if (exp > GlobalData::map_heroAtr[fdata.herotype].vec_exp[i])
+						if (exp > JhGlobalData::map_heroAtr[fdata.herotype].vec_exp[i])
 						{
 							lv = i;
-							exp = exp - GlobalData::map_heroAtr[fdata.herotype].vec_exp[i];
+							exp = exp - JhGlobalData::map_heroAtr[fdata.herotype].vec_exp[i];
 						}
 						else
 						{
@@ -1944,7 +1944,7 @@ void ServerDataSwap::httpGetFactionMemberCB(std::string retdata, int code, std::
 					v = dataArray[m]["title"];
 					fdata.position = atoi(v.GetString());
 					if (fdata.position >= 0)
-						GlobalData::vec_factionMemberData.push_back(fdata);
+						JhGlobalData::vec_factionMemberData.push_back(fdata);
 				}
 			}
 			isok = true;
@@ -2078,7 +2078,7 @@ void ServerDataSwap::httpLeaveFactionCB(std::string retdata, int code, std::stri
 
 void ServerDataSwap::httpContributionFactionCB(std::string retdata, int code, std::string tag)
 {
-	GlobalData::factionExp = 0;
+	JhGlobalData::factionExp = 0;
 	int ret = code;
 	if (m_pDelegateProtocol != NULL)
 	{
@@ -2098,7 +2098,7 @@ void ServerDataSwap::httpContributionFactionCB(std::string retdata, int code, st
 				if (doc.HasMember("exp"))
 				{
 					rapidjson::Value& v = doc["exp"];
-					GlobalData::factionExp = v.GetInt();
+					JhGlobalData::factionExp = v.GetInt();
 				}
 				m_pDelegateProtocol->onSuccess();
 			}
@@ -2193,17 +2193,17 @@ void ServerDataSwap::httpLotteryCB(std::string retdata, int code, std::string ta
 				if (doc.HasMember("count"))
 				{
 					rapidjson::Value& v = doc["count"];
-					GlobalData::myLotteryData.leftcount = v.GetInt();
+					JhGlobalData::myLotteryData.leftcount = v.GetInt();
 				}
 				if (doc.HasMember("cost"))
 				{
 					rapidjson::Value& v = doc["cost"];
-					GlobalData::myLotteryData.nextcostgold = v.GetInt();
+					JhGlobalData::myLotteryData.nextcostgold = v.GetInt();
 				}
 				if (doc.HasMember("gain"))
 				{
 					rapidjson::Value& v = doc["gain"];
-					GlobalData::myLotteryData.wingold = v.GetInt();
+					JhGlobalData::myLotteryData.wingold = v.GetInt();
 				}
 			}
 			if (ret == 0)
@@ -2234,45 +2234,45 @@ void ServerDataSwap::httpGetCoinpoolCB(std::string retdata, int code, std::strin
 
 					if (ret == 2)
 					{
-						GlobalData::myRaffleData.iscanplay = false;
+						JhGlobalData::myRaffleData.iscanplay = false;
 					}
 					else if (ret == 0)
-						GlobalData::myRaffleData.iscanplay = true;
+						JhGlobalData::myRaffleData.iscanplay = true;
 				}
 				if (doc.HasMember("remain"))
 				{
 					rapidjson::Value& v = doc["remain"];
-					GlobalData::myRaffleData.leftime = v.GetInt();
+					JhGlobalData::myRaffleData.leftime = v.GetInt();
 				}
 
 				if (doc.HasMember("stage"))
 				{
 					rapidjson::Value& v = doc["stage"];
-					GlobalData::myRaffleData.curstage = v.GetString();
+					JhGlobalData::myRaffleData.curstage = v.GetString();
 				}
 
 				if (doc.HasMember("pool"))
 				{
 					rapidjson::Value& v = doc["pool"];
-					GlobalData::myRaffleData.poolgold = v.GetInt();
+					JhGlobalData::myRaffleData.poolgold = v.GetInt();
 				}
 
 				if (doc.HasMember("data"))
 				{
-					GlobalData::myRaffleData.vec_nicknames.clear();
-					GlobalData::myRaffleData.vec_wingold.clear();
+					JhGlobalData::myRaffleData.vec_nicknames.clear();
+					JhGlobalData::myRaffleData.vec_wingold.clear();
 					rapidjson::Value& dataArray = doc["data"];
 
 					for (unsigned int m = 0; m < dataArray.Size(); m++)
 					{
 						rapidjson::Value& v = dataArray[m]["nickname"];
-						GlobalData::myRaffleData.vec_nicknames.push_back(v.GetString());
+						JhGlobalData::myRaffleData.vec_nicknames.push_back(v.GetString());
 					}
 
 					for (unsigned int m = 0; m < dataArray.Size(); m++)
 					{
 						rapidjson::Value& v = dataArray[m]["gain"];
-						GlobalData::myRaffleData.vec_wingold.push_back(atoi(v.GetString()));
+						JhGlobalData::myRaffleData.vec_wingold.push_back(atoi(v.GetString()));
 					}
 				}
 
@@ -2283,11 +2283,11 @@ void ServerDataSwap::httpGetCoinpoolCB(std::string retdata, int code, std::strin
 					if (dataArray.Size() >= 1)
 					{
 						rapidjson::Value& v = dataArray[0]["gain"];
-						GlobalData::myRaffleData.mywingold = atoi(v.GetString());
+						JhGlobalData::myRaffleData.mywingold = atoi(v.GetString());
 						v = dataArray[0]["stage"];
-						GlobalData::myRaffleData.mywinstage = v.GetString();
+						JhGlobalData::myRaffleData.mywinstage = v.GetString();
 						v = dataArray[0]["rank"];
-						GlobalData::myRaffleData.mywinrank = atoi(v.GetString());
+						JhGlobalData::myRaffleData.mywinrank = atoi(v.GetString());
 					}
 				}
 			}
@@ -2321,7 +2321,7 @@ void ServerDataSwap::httpPlayCoinpoolCB(std::string retdata, int code, std::stri
 				if (doc.HasMember("pool"))
 				{
 					rapidjson::Value& v = doc["pool"];
-					GlobalData::myRaffleData.poolgold = v.GetInt();
+					JhGlobalData::myRaffleData.poolgold = v.GetInt();
 				}
 			}
 			if (ret == 0)
@@ -2370,11 +2370,11 @@ void ServerDataSwap::httpGetChallengeranklistCB(std::string retdata, int code, s
 		rapidjson::Document doc;
 		if (JsonReader(retdata, doc))
 		{
-			GlobalData::vec_rankData.clear();
-			GlobalData::myrank = 0;
-			GlobalData::myFihgtCount = 0;
+			JhGlobalData::vec_rankData.clear();
+			JhGlobalData::myrank = 0;
+			JhGlobalData::myFihgtCount = 0;
 
-			GlobalData::myTotalFihgtCount = 0;
+			JhGlobalData::myTotalFihgtCount = 0;
 
 			if (doc.HasMember("ret"))
 			{
@@ -2390,23 +2390,23 @@ void ServerDataSwap::httpGetChallengeranklistCB(std::string retdata, int code, s
 					if (dataobject.HasMember("fightrank"))
 					{
 						rapidjson::Value& v = dataobject["fightrank"];
-						GlobalData::myrank = v.GetInt();
+						JhGlobalData::myrank = v.GetInt();
 					}
 					if (dataobject.HasMember("challengecount"))
 					{
 						rapidjson::Value& v = dataobject["challengecount"];
-						GlobalData::myFihgtCount = atoi(v.GetString());
+						JhGlobalData::myFihgtCount = atoi(v.GetString());
 					}
 					if (dataobject.HasMember("finishedcount"))
 					{
 						rapidjson::Value& v = dataobject["finishedcount"];
-						GlobalData::myTotalFihgtCount = GlobalData::myFihgtCount + atoi(v.GetString());
+						JhGlobalData::myTotalFihgtCount = JhGlobalData::myFihgtCount + atoi(v.GetString());
 					}
 
 					if (dataobject.HasMember("challengescore"))
 					{
 						rapidjson::Value& v = dataobject["challengescore"];
-						GlobalData::myFihgtexp = atoi(v.GetString());
+						JhGlobalData::myFihgtexp = atoi(v.GetString());
 					}
 
 				}
@@ -2443,13 +2443,13 @@ void ServerDataSwap::httpGetChallengeranklistCB(std::string retdata, int code, s
 							v = item["exp"];
 							int exp = atoi(v.GetString());
 							int lv = 0;
-							int size = GlobalData::map_heroAtr[rdata.herotype].vec_exp.size();
+							int size = JhGlobalData::map_heroAtr[rdata.herotype].vec_exp.size();
 							for (int i = 0; i < size; i++)
 							{
-								if (exp > GlobalData::map_heroAtr[rdata.herotype].vec_exp[i])
+								if (exp > JhGlobalData::map_heroAtr[rdata.herotype].vec_exp[i])
 								{
 									lv = i;
-									exp = exp - GlobalData::map_heroAtr[rdata.herotype].vec_exp[i];
+									exp = exp - JhGlobalData::map_heroAtr[rdata.herotype].vec_exp[i];
 								}
 								else
 								{
@@ -2469,7 +2469,7 @@ void ServerDataSwap::httpGetChallengeranklistCB(std::string retdata, int code, s
 								heroval = 0;
 
 							rdata.heroval = heroval;
-							GlobalData::vec_rankData.push_back(rdata);
+							JhGlobalData::vec_rankData.push_back(rdata);
 						}
 					}
 				}
@@ -2497,12 +2497,12 @@ void ServerDataSwap::httpGetChallengeranklistCB(std::string retdata, int code, s
 
 void ServerDataSwap::httpGetMyFihgterDataCB(std::string retdata, int code, std::string tag)
 {
-	GlobalData::map_fighterPlayerData.clear();
+	JhGlobalData::map_fighterPlayerData.clear();
 
-	GlobalData::map_fightPlayerfriendly.clear();
+	JhGlobalData::map_fightPlayerfriendly.clear();
 
-	GlobalData::fightPlayerMixgf = "";
-	GlobalData::fightPlayerFactionLv = 0;
+	JhGlobalData::fightPlayerMixgf = "";
+	JhGlobalData::fightPlayerFactionLv = 0;
 	int ret = code;
 	if (m_pDelegateProtocol != NULL)
 	{
@@ -2526,7 +2526,7 @@ void ServerDataSwap::httpGetMyFihgterDataCB(std::string retdata, int code, std::
 							{
 								std::string keyname = iter->name.GetString();
 								int keyval = atoi(iter->value.GetString());
-								GlobalData::map_fighterPlayerData[keyname] = keyval;
+								JhGlobalData::map_fighterPlayerData[keyname] = keyval;
 							}
 						}
 					}
@@ -2541,18 +2541,18 @@ void ServerDataSwap::httpGetMyFihgterDataCB(std::string retdata, int code, std::
 					if (datastr.length() > 0)
 					{
 						std::vector<std::string> vec_retstr;
-						CommonFuncs::split(datastr, vec_retstr, ";");
+						JhCommonFuncs::split(datastr, vec_retstr, ";");
 						for (unsigned int i = 0; i < vec_retstr.size(); i++)
 						{
 							std::vector<std::string> tmp;
-							CommonFuncs::split(vec_retstr[i], tmp, ",");
+							JhCommonFuncs::split(vec_retstr[i], tmp, ",");
 							if (tmp.size() >= 3)
 							{
 								int friendly = atoi(tmp[1].c_str());
 								if (friendly < -100000 || friendly > 100000)
 									friendly = 0;
-								GlobalData::map_fightPlayerfriendly[tmp[0]].friendly = friendly;
-								GlobalData::map_fightPlayerfriendly[tmp[0]].relation = atoi(tmp[2].c_str());
+								JhGlobalData::map_fightPlayerfriendly[tmp[0]].friendly = friendly;
+								JhGlobalData::map_fightPlayerfriendly[tmp[0]].relation = atoi(tmp[2].c_str());
 							}
 						}
 					}
@@ -2560,13 +2560,13 @@ void ServerDataSwap::httpGetMyFihgterDataCB(std::string retdata, int code, std::
 					if (doc.HasMember("mixgf"))
 					{
 						rapidjson::Value& item = doc["mixgf"];
-						GlobalData::fightPlayerMixgf = item.GetString();
+						JhGlobalData::fightPlayerMixgf = item.GetString();
 					}
 
 					if (doc.HasMember("level"))
 					{
 						rapidjson::Value& v = doc["level"];
-						GlobalData::fightPlayerFactionLv = v.GetInt();
+						JhGlobalData::fightPlayerFactionLv = v.GetInt();
 					}
 				}
 			}
@@ -2664,7 +2664,7 @@ void ServerDataSwap::httpGetKajuanActionCB(std::string retdata, int code, std::s
 void ServerDataSwap::httpGetKajuanAwardListCB(std::string retdata, int code, std::string tag)
 {
 	bool isok = false;
-	GlobalData::myLastHuafeiRank = 0;
+	JhGlobalData::myLastHuafeiRank = 0;
 	if (code == 0)
 	{
 		rapidjson::Document doc;
@@ -2675,7 +2675,7 @@ void ServerDataSwap::httpGetKajuanAwardListCB(std::string retdata, int code, std
 			if (doc.HasMember("lastrank"))
 			{
 				rapidjson::Value& v = doc["lastrank"];
-				GlobalData::myLastHuafeiRank = v.GetInt();
+				JhGlobalData::myLastHuafeiRank = v.GetInt();
 			}
 		}
 	}
@@ -2700,11 +2700,11 @@ void ServerDataSwap::httpGetKajuanAwardListCB(std::string retdata, int code, std
 void ServerDataSwap::httpGetMyMatchInfoCB(std::string retdata, int code, std::string tag)
 {
 	bool isok = false;
-	GlobalData::myMatchInfo.vec_factionlv.clear();
-	GlobalData::myMatchInfo.matchaward = 0;
+	JhGlobalData::myMatchInfo.vec_factionlv.clear();
+	JhGlobalData::myMatchInfo.matchaward = 0;
 	for (int i = 0; i < 4; i++)
 	{
-		GlobalData::myMatchInfo.vec_factionlv.push_back(0);
+		JhGlobalData::myMatchInfo.vec_factionlv.push_back(0);
 	}
 	if (code == 0)
 	{
@@ -2724,68 +2724,68 @@ void ServerDataSwap::httpGetMyMatchInfoCB(std::string retdata, int code, std::st
 				if (doc.HasMember("startday"))
 				{
 					rapidjson::Value& v = doc["startday"];
-					GlobalData::myMatchInfo.starttime = v.GetString();
+					JhGlobalData::myMatchInfo.starttime = v.GetString();
 				}
 				if (doc.HasMember("endday"))
 				{
 					rapidjson::Value& v = doc["endday"];
-					GlobalData::myMatchInfo.endtime = v.GetString();
+					JhGlobalData::myMatchInfo.endtime = v.GetString();
 				}
 				if (doc.HasMember("matchno"))
 				{
 					rapidjson::Value& v = doc["matchno"];
-					GlobalData::myMatchInfo.matchno = atoi(v.GetString());
+					JhGlobalData::myMatchInfo.matchno = atoi(v.GetString());
 				}
 				if (doc.HasMember("score"))
 				{
 					rapidjson::Value& v = doc["score"];
-					GlobalData::myMatchInfo.myexp = atoi(v.GetString());
+					JhGlobalData::myMatchInfo.myexp = atoi(v.GetString());
 				}
 				if (doc.HasMember("wincount"))
 				{
 					rapidjson::Value& v = doc["wincount"];
-					GlobalData::myMatchInfo.mywincount = atoi(v.GetString());
+					JhGlobalData::myMatchInfo.mywincount = atoi(v.GetString());
 				}
 				if (doc.HasMember("lostcount"))
 				{
 					rapidjson::Value& v = doc["lostcount"];
-					GlobalData::myMatchInfo.myfailcount = atoi(v.GetString());
+					JhGlobalData::myMatchInfo.myfailcount = atoi(v.GetString());
 				}
 				if (doc.HasMember("matchfinishedcount"))
 				{
 					rapidjson::Value& v = doc["matchfinishedcount"];
-					GlobalData::myMatchInfo.finishedcount = atoi(v.GetString());
+					JhGlobalData::myMatchInfo.finishedcount = atoi(v.GetString());
 				}
 				if (doc.HasMember("matchcount"))
 				{
 					rapidjson::Value& v = doc["matchcount"];
-					GlobalData::myMatchInfo.leftcount = atoi(v.GetString());
+					JhGlobalData::myMatchInfo.leftcount = atoi(v.GetString());
 				}
 				if (doc.HasMember("matchaward"))
 				{
 					rapidjson::Value& v = doc["matchaward"];
-					GlobalData::myMatchInfo.matchaward = atoi(v.GetString());
+					JhGlobalData::myMatchInfo.matchaward = atoi(v.GetString());
 				}
 
 				if (doc.HasMember("level1"))
 				{
 					rapidjson::Value& v = doc["level1"];
-					GlobalData::myMatchInfo.vec_factionlv[0] = v.GetInt();
+					JhGlobalData::myMatchInfo.vec_factionlv[0] = v.GetInt();
 				}
 				if (doc.HasMember("level2"))
 				{
 					rapidjson::Value& v = doc["level2"];
-					GlobalData::myMatchInfo.vec_factionlv[1] = v.GetInt();
+					JhGlobalData::myMatchInfo.vec_factionlv[1] = v.GetInt();
 				}
 				if (doc.HasMember("level3"))
 				{
 					rapidjson::Value& v = doc["level3"];
-					GlobalData::myMatchInfo.vec_factionlv[2] = v.GetInt();
+					JhGlobalData::myMatchInfo.vec_factionlv[2] = v.GetInt();
 				}
 				if (doc.HasMember("level4"))
 				{
 					rapidjson::Value& v = doc["level4"];
-					GlobalData::myMatchInfo.vec_factionlv[3] = v.GetInt();
+					JhGlobalData::myMatchInfo.vec_factionlv[3] = v.GetInt();
 				}
 			}
 		}
@@ -2811,7 +2811,7 @@ void ServerDataSwap::httpGetMyMatchInfoCB(std::string retdata, int code, std::st
 void ServerDataSwap::httpGetMatchFightCB(std::string retdata, int code, std::string tag)
 {
 	int ret = code;
-	GlobalData::vec_matchPlayerData.clear();
+	JhGlobalData::vec_matchPlayerData.clear();
 	if (m_pDelegateProtocol != NULL)
 	{
 		if (code == 0)
@@ -2827,19 +2827,19 @@ void ServerDataSwap::httpGetMatchFightCB(std::string retdata, int code, std::str
 					if (ret == 0)
 					{
 						v = doc["matchscore"];
-						GlobalData::matchPlayerInfo.exp = atoi(v.GetString());
+						JhGlobalData::matchPlayerInfo.exp = atoi(v.GetString());
 
 						v = doc["matchwincount"];
-						GlobalData::matchPlayerInfo.wincount = atoi(v.GetString());
+						JhGlobalData::matchPlayerInfo.wincount = atoi(v.GetString());
 
 						v = doc["matchlostcount"];
-						GlobalData::matchPlayerInfo.failcount = atoi(v.GetString());
+						JhGlobalData::matchPlayerInfo.failcount = atoi(v.GetString());
 
 						v = doc["nickname"];
-						GlobalData::matchPlayerInfo.nickname = v.GetString();
+						JhGlobalData::matchPlayerInfo.nickname = v.GetString();
 
 						v = doc["matchplayerid"];
-						GlobalData::matchPlayerInfo.playerid = v.GetString();
+						JhGlobalData::matchPlayerInfo.playerid = v.GetString();
 
 						if (doc.HasMember("data"))
 						{
@@ -2873,11 +2873,11 @@ void ServerDataSwap::httpGetMatchFightCB(std::string retdata, int code, std::str
 								if (datastr.length() > 0)
 								{
 									std::vector<std::string> vec_retstr;
-									CommonFuncs::split(datastr, vec_retstr, ";");
+									JhCommonFuncs::split(datastr, vec_retstr, ";");
 									for (unsigned int i = 0; i < vec_retstr.size(); i++)
 									{
 										std::vector<std::string> tmp;
-										CommonFuncs::split(vec_retstr[i], tmp, ",");
+										JhCommonFuncs::split(vec_retstr[i], tmp, ",");
 										if (tmp.size() >= 3)
 										{
 											int friendly = atoi(tmp[1].c_str());
@@ -2916,13 +2916,13 @@ void ServerDataSwap::httpGetMatchFightCB(std::string retdata, int code, std::str
 									rapidjson::Value& v = item["exp"];
 									int exp = atoi(v.GetString());
 									int lv = 0;
-									int size = GlobalData::map_heroAtr[herotype].vec_exp.size();
+									int size = JhGlobalData::map_heroAtr[herotype].vec_exp.size();
 									for (int i = 0; i < size; i++)
 									{
-										if (exp > GlobalData::map_heroAtr[herotype].vec_exp[i])
+										if (exp > JhGlobalData::map_heroAtr[herotype].vec_exp[i])
 										{
 											lv = i;
-											exp = exp - GlobalData::map_heroAtr[herotype].vec_exp[i];
+											exp = exp - JhGlobalData::map_heroAtr[herotype].vec_exp[i];
 										}
 										else
 										{
@@ -2936,7 +2936,7 @@ void ServerDataSwap::httpGetMatchFightCB(std::string retdata, int code, std::str
 									mpdata.herolv = lv;
 								}
 
-								GlobalData::vec_matchPlayerData.push_back(mpdata);
+								JhGlobalData::vec_matchPlayerData.push_back(mpdata);
 							}
 						}
 					}
@@ -2969,10 +2969,10 @@ void ServerDataSwap::httpGetMatchFightResultCB(std::string retdata, int code, st
 				isok = true;
 
 				rapidjson::Value& v = doc["before"];
-				GlobalData::myMatchInfo.beforerank = v.GetInt();
+				JhGlobalData::myMatchInfo.beforerank = v.GetInt();
 
 				v = doc["after"];
-				GlobalData::myMatchInfo.afterrank = v.GetInt();
+				JhGlobalData::myMatchInfo.afterrank = v.GetInt();
 			}
 		}
 	}
@@ -2997,7 +2997,7 @@ void ServerDataSwap::httpGetMatchFightResultCB(std::string retdata, int code, st
 void ServerDataSwap::httpGetHSLJRankDataCB(std::string retdata, int code, std::string tag)
 {
 	bool isok = false;
-	GlobalData::vec_hsljRankData.clear();
+	JhGlobalData::vec_hsljRankData.clear();
 	if (code == 0)
 	{
 		rapidjson::Document doc;
@@ -3026,7 +3026,7 @@ void ServerDataSwap::httpGetHSLJRankDataCB(std::string retdata, int code, std::s
 					if (totalcount > 0)
 					{
 						data.totalcount = totalcount;
-						GlobalData::vec_hsljRankData.push_back(data);
+						JhGlobalData::vec_hsljRankData.push_back(data);
 					}
 				}
 			}
@@ -3087,7 +3087,7 @@ void ServerDataSwap::httpGetHSLJRewardDataCB(std::string retdata, int code, std:
 
 void ServerDataSwap::httpGetCommonDataCB(std::string retdata, int code, std::string tag)
 {
-	GlobalData::vec_qq.clear();
+	JhGlobalData::vec_qq.clear();
 	bool isok = false;
 	if (code == 0)
 	{
@@ -3107,14 +3107,14 @@ void ServerDataSwap::httpGetCommonDataCB(std::string retdata, int code, std::str
 				rapidjson::Value& v = doc["qq"];
 				std::string qqstr = v.GetString();
 				if (qqstr.length() > 0)
-					CommonFuncs::split(v.GetString(), GlobalData::vec_qq);
+					JhCommonFuncs::split(v.GetString(), JhGlobalData::vec_qq);
 			}
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #else
 			if (doc.HasMember("online"))
 			{
 				rapidjson::Value& v = doc["online"];
-				GlobalData::isOnline = v.GetInt() == 1?true : false;
+				JhGlobalData::isOnline = v.GetInt() == 1?true : false;
 			}
 #endif
 		}
@@ -3140,9 +3140,9 @@ void ServerDataSwap::httpGetCommonDataCB(std::string retdata, int code, std::str
 void ServerDataSwap::httpGetRechargeDataCB(std::string retdata, int code, std::string tag)
 {
 	bool isok = false;
-	GlobalData::recharageData.rtime = "";
-	GlobalData::recharageData.myrechage = 0;
-	GlobalData::recharageData.rewardstr = "";
+	JhGlobalData::recharageData.rtime = "";
+	JhGlobalData::recharageData.myrechage = 0;
+	JhGlobalData::recharageData.rewardstr = "";
 	if (code == 0)
 	{
 		rapidjson::Document doc;
@@ -3159,24 +3159,24 @@ void ServerDataSwap::httpGetRechargeDataCB(std::string retdata, int code, std::s
 			if (doc.HasMember("date"))
 			{
 				rapidjson::Value& v = doc["date"];
-				GlobalData::recharageData.rtime = v.GetString();
+				JhGlobalData::recharageData.rtime = v.GetString();
 
 			}
 
 			if (doc.HasMember("award"))
 			{
 				rapidjson::Value& v = doc["award"];
-				GlobalData::recharageData.rewardstr = v.GetString();
+				JhGlobalData::recharageData.rewardstr = v.GetString();
 			}
 			if (doc.HasMember("topup"))
 			{
 				rapidjson::Value& v = doc["topup"];
-				GlobalData::recharageData.myrechage = atoi(v.GetString());
+				JhGlobalData::recharageData.myrechage = atoi(v.GetString());
 			}
 			if (doc.HasMember("gotten"))
 			{
 				rapidjson::Value& v = doc["gotten"];
-				GlobalData::recharageData.mygotton = atoi(v.GetString());
+				JhGlobalData::recharageData.mygotton = atoi(v.GetString());
 			}
 
 			

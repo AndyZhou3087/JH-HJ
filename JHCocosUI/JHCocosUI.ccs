@@ -987,12 +987,6 @@
           <Image Name="zjzdl.png" />
           <Image Name="zst.png" />
         </Folder>
-        <Project Name="HSLJMainLayer.csd" Type="Layer" />
-        <Project Name="HSLJRankLayer.csd" Type="Layer" />
-        <Project Name="hsljRankNode.csd" Type="Node" />
-        <Project Name="HSLJRewardDescLayer.csd" Type="Layer" />
-        <Project Name="hsljRewardLayer.csd" Type="Layer" />
-        <Project Name="huafeiAwardListLayer.csd" Type="Layer" />
         <Project Name="jhachiveLayer.csd" Type="Layer" />
         <Project Name="jhachiveNode.csd" Type="Node" />
         <Project Name="jhactionGetLayer.csd" Type="Layer" />
@@ -1041,55 +1035,61 @@
         <Project Name="jhhintLayer2.csd" Type="Layer" />
         <Project Name="jhhomeHillLayer.csd" Type="Layer" />
         <Project Name="jhhomeLayer.csd" Type="Layer" />
-        <Project Name="loginRewardLayer.csd" Type="Layer" />
-        <Project Name="mapLayer.csd" Type="Layer" />
-        <Project Name="mixDoneLayer.csd" Type="Layer" />
-        <Project Name="mixGFNode.csd" Type="Node" />
-        <Project Name="mixSuggestLayer.csd" Type="Layer" />
-        <Project Name="noticeLayer.csd" Type="Layer" />
-        <Project Name="npcLayer.csd" Type="Layer" />
-        <Project Name="npcNode.csd" Type="Node" />
-        <Project Name="npctalkLayer.csd" Type="Layer" />
-        <Project Name="npctalkLayer2.csd" Type="Layer" />
-        <Project Name="outDoorLayer.csd" Type="Layer" />
-        <Project Name="pauseLayer.csd" Type="Layer" />
-        <Project Name="paySelectLayer.csd" Type="Layer" />
-        <Project Name="playerChallengeResultLayer.csd" Type="Layer" />
-        <Project Name="prizeLayer.csd" Type="Layer" />
-        <Project Name="promotionLayer.csd" Type="Layer" />
-        <Project Name="raffleLayer.csd" Type="Layer" />
-        <Project Name="raffleResultLayer.csd" Type="Scene" />
-        <Project Name="rankLayer.csd" Type="Layer" />
-        <Project Name="rankNode.csd" Type="Node" />
-        <Project Name="rechargeLayer.csd" Type="Scene" />
-        <Project Name="relationLayer.csd" Type="Layer" />
-        <Project Name="relationNode.csd" Type="Node" />
-        <Project Name="repairLayer.csd" Type="Layer" />
-        <Project Name="repairOKLayer.csd" Type="Layer" />
-        <Project Name="resDetailsLayer.csd" Type="Layer" />
-        <Project Name="resNode.csd" Type="Node" />
-        <Project Name="reviveLayer.csd" Type="Layer" />
-        <Project Name="rmbGoodsNode.csd" Type="Node" />
-        <Project Name="rollDiceLayer.csd" Type="Layer" />
-        <Project Name="savedNode.csd" Type="Node" />
-        <Project Name="selectHeroLayer.csd" Type="Layer" />
-        <Project Name="selectSaveComfirmLayer.csd" Type="Layer" />
-        <Project Name="selectSavedLayer.csd" Type="Layer" />
-        <Project Name="sepcialLayer.csd" Type="Layer" />
-        <Project Name="settingLayer.csd" Type="Layer" />
-        <Project Name="shopLayer.csd" Type="Layer" />
-        <Project Name="specialNpcLayer.csd" Type="Layer" />
-        <Project Name="startLayer.csd" Type="Layer" />
-        <Project Name="sysSmallLayer.csd" Type="Layer" />
-        <Project Name="sysSmallLayer2.csd" Type="Layer" />
-        <Project Name="tempStorageLayer.csd" Type="Scene" />
-        <Project Name="timeGfitLayer.csd" Type="Layer" />
-        <Project Name="topBarNode.csd" Type="Node" />
-        <PlistInfo Name="uipacker.csi" Type="Plist" />
-        <Project Name="unlockLayer.csd" Type="Layer" />
-        <Project Name="vipGoodsNode.csd" Type="Node" />
-        <Project Name="vipShopLayer.csd" Type="Layer" />
-        <Project Name="winLayer.csd" Type="Layer" />
+        <Project Name="jhHSLJMainLayer.csd" Type="Layer" />
+        <Project Name="jhHSLJRankLayer.csd" Type="Layer" />
+        <Project Name="jhhsljRankNode.csd" Type="Node" />
+        <Project Name="jhHSLJRewardDescLayer.csd" Type="Layer" />
+        <Project Name="jhhsljRewardLayer.csd" Type="Layer" />
+        <Project Name="jhhuafeiAwardListLayer.csd" Type="Layer" />
+        <Project Name="jhloginRewardLayer.csd" Type="Layer" />
+        <Project Name="jhmapLayer.csd" Type="Layer" />
+        <Project Name="jhmixDoneLayer.csd" Type="Layer" />
+        <Project Name="jhmixGFNode.csd" Type="Node" />
+        <Project Name="jhmixSuggestLayer.csd" Type="Layer" />
+        <Project Name="jhnoticeLayer.csd" Type="Layer" />
+        <Project Name="jhnpcLayer.csd" Type="Layer" />
+        <Project Name="jhnpcNode.csd" Type="Node" />
+        <Project Name="jhnpctalkLayer.csd" Type="Layer" />
+        <Project Name="jhnpctalkLayer2.csd" Type="Layer" />
+        <Project Name="jhoutDoorLayer.csd" Type="Layer" />
+        <Project Name="jhpauseLayer.csd" Type="Layer" />
+        <Project Name="jhpaySelectLayer.csd" Type="Layer" />
+        <Project Name="jhplayerChallengeResultLayer.csd" Type="Layer" />
+        <Project Name="jhprizeLayer.csd" Type="Layer" />
+        <Project Name="jhpromotionLayer.csd" Type="Layer" />
+        <Project Name="jhraffleLayer.csd" Type="Layer" />
+        <Project Name="jhraffleResultLayer.csd" Type="Scene" />
+        <Project Name="jhrankLayer.csd" Type="Layer" />
+        <Project Name="jhrankNode.csd" Type="Node" />
+        <Project Name="jhrechargeLayer.csd" Type="Scene" />
+        <Project Name="jhrelationLayer.csd" Type="Layer" />
+        <Project Name="jhrelationNode.csd" Type="Node" />
+        <Project Name="jhrepairLayer.csd" Type="Layer" />
+        <Project Name="jhrepairOKLayer.csd" Type="Layer" />
+        <Project Name="jhresDetailsLayer.csd" Type="Layer" />
+        <Project Name="jhresNode.csd" Type="Node" />
+        <Project Name="jhreviveLayer.csd" Type="Layer" />
+        <Project Name="jhrmbGoodsNode.csd" Type="Node" />
+        <Project Name="jhrollDiceLayer.csd" Type="Layer" />
+        <Project Name="jhsavedNode.csd" Type="Node" />
+        <Project Name="jhselectHeroLayer.csd" Type="Layer" />
+        <Project Name="jhselectSaveComfirmLayer.csd" Type="Layer" />
+        <Project Name="jhselectSavedLayer.csd" Type="Layer" />
+        <Project Name="jhsepcialLayer.csd" Type="Layer" />
+        <Project Name="jhsettingLayer.csd" Type="Layer" />
+        <Project Name="jhshopLayer.csd" Type="Layer" />
+        <Project Name="jhspecialNpcLayer.csd" Type="Layer" />
+        <Project Name="jhstartLayer.csd" Type="Layer" />
+        <Project Name="jhsysSmallLayer.csd" Type="Layer" />
+        <Project Name="jhsysSmallLayer2.csd" Type="Layer" />
+        <Project Name="jhtempStorageLayer.csd" Type="Scene" />
+        <Project Name="jhtimeGfitLayer.csd" Type="Layer" />
+        <Project Name="jhtopBarNode.csd" Type="Node" />
+        <PlistInfo Name="jhuiplist.csi" Type="Plist" />
+        <Project Name="jhunlockLayer.csd" Type="Layer" />
+        <Project Name="jhvipGoodsNode.csd" Type="Node" />
+        <Project Name="jhvipShopLayer.csd" Type="Layer" />
+        <Project Name="jhwinLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

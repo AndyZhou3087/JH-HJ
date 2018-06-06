@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="homeLayer" Type="Layer" ID="f2f099d9-e252-460c-8664-872ccad238ea" Version="3.10.0.0" />
+  <PropertyGroup Name="jhhomeLayer" Type="Layer" ID="f2f099d9-e252-460c-8664-872ccad238ea" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -25,7 +25,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.6173" Y="0.1560" />
             <PreSize X="0.1167" Y="0.0867" />
-            <FileData Type="MarkedSubImage" Path="ui/badfurnace.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/badfurnace.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="badbookshelf" ActionTag="854579907" Tag="71" IconVisible="False" LeftMargin="628.4997" RightMargin="0.5003" TopMargin="263.0000" BottomMargin="483.0000" ctype="SpriteObjectData">
@@ -36,7 +36,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.9361" Y="0.5859" />
             <PreSize X="0.1264" Y="0.4172" />
-            <FileData Type="MarkedSubImage" Path="ui/badbookshelf.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/badbookshelf.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="wood_1" ActionTag="787346419" Tag="237" IconVisible="False" LeftMargin="229.1745" RightMargin="390.8255" TopMargin="808.3354" BottomMargin="401.6645" ctype="SpriteObjectData">
@@ -47,7 +47,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.3877" Y="0.3411" />
             <PreSize X="0.1389" Y="0.0547" />
-            <FileData Type="MarkedSubImage" Path="ui/wood.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/wood.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

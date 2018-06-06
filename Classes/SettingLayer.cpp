@@ -1,13 +1,13 @@
 ﻿#include "SettingLayer.h"
-#include "CommonFuncs.h"
+#include "JhCommonFuncs.h"
 #include "SoundManager.h"
-#include "GlobalData.h"
-#include "GameDataSave.h"
+#include "JhGlobalData.h"
+#include "JhGameDataSave.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 #include "IOSPurchaseWrap.h"
 #include "iosfunc.h"
 #endif
-#include "HintBox.h"
+#include "JhHintBox.h"
 #include "WaitingProgress.h"
 
 SettingLayer::SettingLayer()
@@ -27,7 +27,7 @@ bool SettingLayer::init()
 	this->addChild(color);
 
 	//加载csb文件
-	Node* csbnode = CSLoader::createNode("settingLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhsettingLayer.csb");
 	this->addChild(csbnode);
 
 	//关闭按钮
@@ -44,9 +44,9 @@ bool SettingLayer::init()
 	updateSoundStatus();
 
 	cocos2d::ui::Text* idlbl = (cocos2d::ui::Text*)csbnode->getChildByName("id");
-	idlbl->setString(GlobalData::getMyID());
+	idlbl->setString(JhGlobalData::getMyID());
 
-    mynamestr = GlobalData::getMyNickName();
+    mynamestr = JhGlobalData::getMyNickName();
     
 	m_nameTextField = (cocos2d::ui::TextField*)csbnode->getChildByName("name");
 	m_nameTextField->setString(mynamestr);
@@ -56,7 +56,7 @@ bool SettingLayer::init()
 	m_editName->setPosition(Point(223, 818));
 	m_editName->setAnchorPoint(Vec2(0, 0.5));
 	m_editName->setFontColor(Color3B::BLACK);
-	m_editName->setPlaceHolder(CommonFuncs::gbk2utf("请输入昵称:").c_str());
+	m_editName->setPlaceHolder(JhCommonFuncs::gbk2utf("请输入昵称:").c_str());
 	m_editName->setPlaceholderFontSize(30);
 	m_editName->setInputMode(cocos2d::ui::EditBox::InputMode::SINGLE_LINE);
 	m_editName->setPlaceholderFontColor(Color3B(112, 116, 109));
@@ -76,7 +76,7 @@ bool SettingLayer::init()
 	m_editName->setVisible(true);
 #endif
 
-	if (!GlobalData::isOnline)
+	if (!JhGlobalData::isOnline)
 	{
 		m_nameTextField->setVisible(false);
 		m_editName->setVisible(false);
@@ -100,12 +100,12 @@ void SettingLayer::updateSoundStatus()
 	if (SoundManager::getInstance()->getSoundIsOn())
 	{
 		m_soundCheckBox->setSelected(true);
-		m_soundOnOffText->setString(CommonFuncs::gbk2utf("开"));
+		m_soundOnOffText->setString(JhCommonFuncs::gbk2utf("开"));
 	}
 	else
 	{
 		m_soundCheckBox->setSelected(false);
-		m_soundOnOffText->setString(CommonFuncs::gbk2utf("关"));
+		m_soundOnOffText->setString(JhCommonFuncs::gbk2utf("关"));
 	}
 }
 
@@ -134,7 +134,7 @@ void SettingLayer::soundCheckBoxCallback(cocos2d::Ref* pSender, cocos2d::ui::Che
 
 void SettingLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		this->removeFromParentAndCleanup(true);
@@ -143,7 +143,7 @@ void SettingLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEvent
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 void SettingLayer::onResumeBuy(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		restoreBuy();
@@ -228,25 +228,25 @@ void SettingLayer::modifyName(std::string utf8name)
 void SettingLayer::onSuccess()
 {
 
-	GlobalData::setMyNickName(editstr);
+	JhGlobalData::setMyNickName(editstr);
     Director::getInstance()->getRunningScene()->removeChildByName("waitbox");
 }
 
 void SettingLayer::onErr(int errcode)
 {
     Director::getInstance()->getRunningScene()->removeChildByName("waitbox");
-	HintBox* hintbox;
+	JhHintBox* hintbox;
 	if (errcode == 2)
 	{
-		hintbox = HintBox::create(CommonFuncs::gbk2utf("抱歉！输入中包含敏感关键字，修改失败！"));
+		hintbox = JhHintBox::create(JhCommonFuncs::gbk2utf("抱歉！输入中包含敏感关键字，修改失败！"));
 	}
 	else if (errcode == 3)
 	{
-		hintbox = HintBox::create(CommonFuncs::gbk2utf("抱歉！该昵称已存在，大侠换一个吧！"));
+		hintbox = JhHintBox::create(JhCommonFuncs::gbk2utf("抱歉！该昵称已存在，大侠换一个吧！"));
 	}
 	else
 	{
-		hintbox = HintBox::create(CommonFuncs::gbk2utf("网络异常，修改失败！"));
+		hintbox = JhHintBox::create(JhCommonFuncs::gbk2utf("网络异常，修改失败！"));
 	}
 	this->addChild(hintbox);
 

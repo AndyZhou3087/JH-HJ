@@ -1,11 +1,11 @@
 ﻿#include "SelectSaveLayer.h"
-#include "GlobalData.h"
+#include "JhGlobalData.h"
 #include "SoundManager.h"
-#include "GameDataSave.h"
+#include "JhGameDataSave.h"
 #include "Utility.h"
-#include "Const.h"
+#include "JhConst.h"
 #include "SelectSaveComfirmLayer.h"
-#include "CommonFuncs.h"
+#include "JhCommonFuncs.h"
 bool SelectSaveLayer::init()
 {
 	
@@ -14,13 +14,13 @@ bool SelectSaveLayer::init()
 		return false;
     }
 
-	Node* csbnode = CSLoader::createNode("selectSavedLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhselectSavedLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* backbtn = (cocos2d::ui::Button*)csbnode->getChildByName("backbtn");
 	backbtn->addTouchEventListener(CC_CALLBACK_2(SelectSaveLayer::onBack, this));
 
-	std::vector<std::string> saveids = GlobalData::getSaveListId();
+	std::vector<std::string> saveids = JhGlobalData::getSaveListId();
 	for (int i = 0; i < 4; i++)
 	{
 		std::string nodestr = StringUtils::format("save%d", i);
@@ -49,7 +49,7 @@ bool SelectSaveLayer::init()
 			selectbtn->setTag(i);
 			textnode->setVisible(true);
 			cocos2d::ui::Text* nametxt = (cocos2d::ui::Text*)textnode->getChildByName("name");
-			nametxt->setString(CommonFuncs::gbk2utf(heroname[i].c_str()));
+			nametxt->setString(JhCommonFuncs::gbk2utf(heroname[i].c_str()));
 
 			std::string str = StringUtils::format("%sherolv", saveids[i].c_str());
 			int lv = loadIntDataByKey(str, 0);
@@ -83,7 +83,7 @@ bool SelectSaveLayer::init()
 
 void SelectSaveLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		removSelf();
@@ -92,7 +92,7 @@ void SelectSaveLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 
 void SelectSaveLayer::onSelect(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		Node* node = (Node*)pSender;

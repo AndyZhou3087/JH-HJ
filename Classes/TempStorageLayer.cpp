@@ -1,13 +1,13 @@
 ﻿#include "TempStorageLayer.h"
 #include "json.h"
-#include "GlobalData.h"
-#include "CommonFuncs.h"
-#include "MyPackage.h"
-#include "Const.h"
-#include "GameDataSave.h"
-#include "CommonFuncs.h"
+#include "JhGlobalData.h"
+#include "JhCommonFuncs.h"
+#include "JhMyPackage.h"
+#include "JhConst.h"
+#include "JhGameDataSave.h"
+#include "JhCommonFuncs.h"
 #include "SoundManager.h"
-#include "MyMenu.h"
+#include "JhMyMenu.h"
 
 TempStorageLayer::TempStorageLayer()
 {
@@ -35,11 +35,11 @@ TempStorageLayer* TempStorageLayer::create(std::string addrname)
 
 bool TempStorageLayer::init(std::string addrname)
 {
-	Node* csbnode = CSLoader::createNode("tempStorageLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhtempStorageLayer.csb");
 	this->addChild(csbnode);
 	m_addrname = addrname;
 
-	MapData mdata = GlobalData::map_maps[addrname];
+	MapData mdata = JhGlobalData::map_maps[addrname];
 
 	cocos2d::ui::Text* title = (cocos2d::ui::Text*)csbnode->getChildByName("title");
 	title->setString(mdata.cname);
@@ -88,7 +88,7 @@ void TempStorageLayer::onRewardItem(cocos2d::Ref* pSender)
 			{
 				PackageData pdata = *data;
 				pdata.count = 1;
-				if (MyPackage::add(pdata) == 0)
+				if (JhMyPackage::add(pdata) == 0)
 				{
 					data->count--;
 					tempResData.erase(it);
@@ -101,7 +101,7 @@ void TempStorageLayer::onRewardItem(cocos2d::Ref* pSender)
 	{
 		PackageData pdata = *data;
 		pdata.count = 1;
-		if (MyPackage::add(pdata) == 0)
+		if (JhMyPackage::add(pdata) == 0)
 		{
 			data->count--;
 		}
@@ -122,7 +122,7 @@ void TempStorageLayer::onPackageItem(cocos2d::Ref* pSender)
 	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
 	Node* node = (Node*)pSender;
 	int index = node->getTag();
-	PackageData data = MyPackage::vec_packages[index];
+	PackageData data = JhMyPackage::vec_packages[index];
 	unsigned int i = 0;
 	for (i = 0; i < tempResData.size(); i++)
 	{
@@ -139,7 +139,7 @@ void TempStorageLayer::onPackageItem(cocos2d::Ref* pSender)
 		tempResData.push_back(data);
 	}
 	saveTempData();
-	MyPackage::cutone(data.strid);
+	JhMyPackage::cutone(data.strid);
 
 	for (unsigned int i = 0; i < tempResData.size(); i++)
 	{
@@ -168,11 +168,11 @@ void TempStorageLayer::updataTempUI()
 		PackageData tmpdata = tempResData[i];
 		if (tmpdata.type == WEAPON || tmpdata.type == PROTECT_EQU)
 		{
-			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_equips[tmpdata.strid].qu);
+			boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_equips[tmpdata.strid].qu);
 		}
 		else if (tmpdata.type == N_GONG || tmpdata.type == W_GONG)
 		{
-			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_wgngs[tmpdata.strid].qu);
+			boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_wgngs[tmpdata.strid].qu);
 		}
 
 		Sprite * box = Sprite::createWithSpriteFrameName(boxstr);
@@ -185,7 +185,7 @@ void TempStorageLayer::updataTempUI()
 		boxItem->setTag(i);
 		boxItem->setUserData(&tempResData[i]);
 		boxItem->setPosition(Vec2(70 + i % 4 * 128, innerheight - i / 4 * itemheight - itemheight / 2));
-		MyMenu* menu = MyMenu::create();
+		JhMyMenu* menu = JhMyMenu::create();
 		menu->addChild(boxItem);
 		menu->setTouchlimit(m_scrollView);
 		menu->setPosition(Vec2(0, 0));
@@ -207,7 +207,7 @@ void TempStorageLayer::updataTempUI()
 
 void TempStorageLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		this->removeFromParentAndCleanup(true);
@@ -218,18 +218,18 @@ void TempStorageLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 void TempStorageLayer::loadTempData()
 {
 	tempResData.clear();
-	std::string datastr = GameDataSave::getInstance()->getTempStorage(m_addrname);
+	std::string datastr = JhGameDataSave::getInstance()->getTempStorage(m_addrname);
 	std::vector<std::string> vec_retstr;
-	CommonFuncs::split(datastr, vec_retstr, ";");
+	JhCommonFuncs::split(datastr, vec_retstr, ";");
 	for (unsigned int i = 0; i < vec_retstr.size(); i++)
 	{
 		std::vector<std::string> tmp;
-		CommonFuncs::split(vec_retstr[i], tmp, "-");
+		JhCommonFuncs::split(vec_retstr[i], tmp, "-");
 		PackageData data;
 		data.strid = tmp[0];
 		data.type = atoi(tmp[1].c_str());
 		data.count = atoi(tmp[2].c_str());
-		data.extype = GlobalData::getResExType(data.strid);//atoi(tmp[3].c_str());
+		data.extype = JhGlobalData::getResExType(data.strid);//atoi(tmp[3].c_str());
 		data.lv = atoi(tmp[4].c_str());
 		data.exp = atoi(tmp[5].c_str());
 		data.goodvalue = atoi(tmp[6].c_str());
@@ -244,7 +244,7 @@ void TempStorageLayer::loadTempData()
 
 void TempStorageLayer::saveTempData()
 {
-	GlobalData::map_tempGf_Equip[m_addrname].clear();
+	JhGlobalData::map_tempGf_Equip[m_addrname].clear();
 	std::string str;
 	for (unsigned int i = 0; i < tempResData.size(); i++)
 	{
@@ -255,15 +255,15 @@ void TempStorageLayer::saveTempData()
 		std::string tmpstrid = tempResData[i].strid;
 		if (tmptype == W_GONG || tmptype == N_GONG || tmptype == WEAPON || tmptype == PROTECT_EQU)
 		{
-			GlobalData::map_tempGf_Equip[m_addrname].push_back(tmpstrid);
+			JhGlobalData::map_tempGf_Equip[m_addrname].push_back(tmpstrid);
 		}
 	}
-	GameDataSave::getInstance()->setTempStorage(m_addrname, str.substr(0, str.length() - 1));
+	JhGameDataSave::getInstance()->setTempStorage(m_addrname, str.substr(0, str.length() - 1));
 }
 
 void TempStorageLayer::onAllGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		for (unsigned int i = 0; i < tempResData.size(); i++)
@@ -282,7 +282,7 @@ void TempStorageLayer::onAllGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touc
 			{
 				PackageData data = *it;
 				data.count = 1;
-				if (MyPackage::add(data) == 0)
+				if (JhMyPackage::add(data) == 0)
 				{
 					if (--it->count <= 0)
 					{
@@ -318,23 +318,23 @@ void TempStorageLayer::updata()
 
 void TempStorageLayer::updataMyPackageUI()
 {
-	for (int i = 0; i < MyPackage::getMax(); i++)
+	for (int i = 0; i < JhMyPackage::getMax(); i++)
 	{
 		std::string name = StringUtils::format("pitem%d", i);
 		this->removeChildByName(name);
 	}
 
-	for (int i = 0; i < MyPackage::getSize(); i++)
+	for (int i = 0; i < JhMyPackage::getSize(); i++)
 	{
 		std::string boxstr = "ui/buildsmall.png";
-		PackageData tmpdata = MyPackage::vec_packages[i];
+		PackageData tmpdata = JhMyPackage::vec_packages[i];
 		if (tmpdata.type == WEAPON || tmpdata.type == PROTECT_EQU)
 		{
-			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_equips[tmpdata.strid].qu);
+			boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_equips[tmpdata.strid].qu);
 		}
 		else if (tmpdata.type == N_GONG || tmpdata.type == W_GONG)
 		{
-			boxstr = StringUtils::format("ui/qubox%d.png", GlobalData::map_wgngs[tmpdata.strid].qu);
+			boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_wgngs[tmpdata.strid].qu);
 		}
 
 		Sprite * box = Sprite::createWithSpriteFrameName(boxstr);
@@ -352,11 +352,11 @@ void TempStorageLayer::updataMyPackageUI()
 		std::string name = StringUtils::format("pitem%d", i);
 		this->addChild(menu, 0, name);
 
-		std::string str = StringUtils::format("ui/%s.png", MyPackage::vec_packages[i].strid.c_str());
+		std::string str = StringUtils::format("ui/%s.png", JhMyPackage::vec_packages[i].strid.c_str());
 		Sprite * res = Sprite::createWithSpriteFrameName(str);
 		res->setPosition(Vec2(box->getContentSize().width / 2, box->getContentSize().height / 2));
 		box->addChild(res);
-		str = StringUtils::format("%d", MyPackage::vec_packages[i].count);
+		str = StringUtils::format("%d", JhMyPackage::vec_packages[i].count);
 		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 20);//Label::createWithSystemFont(str, "", 18);
 		reslbl->setPosition(Vec2(box->getContentSize().width - 20, 5));
 		reslbl->enableOutline(Color4B(143, 85, 60, 255), 2);

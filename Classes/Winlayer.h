@@ -3,7 +3,7 @@
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-#include "MyPackage.h"
+#include "JhMyPackage.h"
 #include "ServerDataSwap.h"
 
 USING_NS_CC;

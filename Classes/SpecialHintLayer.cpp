@@ -1,10 +1,10 @@
 ﻿#include "SpecialHintLayer.h"
-#include "GlobalData.h"
+#include "JhGlobalData.h"
 #include "SoundManager.h"
-#include "CommonFuncs.h"
-#include "GameScene.h"
-#include "HeroProperNode.h"
-#include "GameDataSave.h"
+#include "JhCommonFuncs.h"
+#include "JhGameScene.h"
+#include "JhHeroProperNode.h"
+#include "JhGameDataSave.h"
 
 bool SpecialHintLayer::init()
 {
@@ -14,7 +14,7 @@ bool SpecialHintLayer::init()
 		return false;
     }
 
-	Node* csbnode = CSLoader::createNode("sepcialLayer.csb");
+	Node* csbnode = CSLoader::createNode("jhsepcialLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Button* okbtn = (cocos2d::ui::Button*)csbnode->getChildByName("okbtn");
@@ -56,16 +56,16 @@ SpecialHintLayer* SpecialHintLayer::create()
 
 void SpecialHintLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		if (g_hero->getHeadID() != 4)
 		{
 			g_hero->setSex(S_NONE);
-			GameDataSave::getInstance()->setHeroSex(S_NONE);
+			JhGameDataSave::getInstance()->setHeroSex(S_NONE);
 		}
 
-		HeroProperNode* heroProperNode = (HeroProperNode*)g_gameLayer->getChildByName("HeroStateUILayer")->getChildByName("csbnode")->getChildByName("HeroProperNode");
+		JhHeroProperNode* heroProperNode = (JhHeroProperNode*)g_gameLayer->getChildByName("JhHeroStateUILayer")->getChildByName("csbnode")->getChildByName("JhHeroProperNode");
 		heroProperNode->selectCarryData();
 		removSelf();
 	}
@@ -78,7 +78,7 @@ void SpecialHintLayer::removSelf()
 
 void SpecialHintLayer::onCancel(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
 {
-	CommonFuncs::BtnAction(pSender, type);
+	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		removSelf();

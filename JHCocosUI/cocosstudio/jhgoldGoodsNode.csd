@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="goldGoodsNode" Type="Node" ID="92328a92-ba6c-49a1-ba10-2ad4ae2e3aff" Version="3.10.0.0" />
+  <PropertyGroup Name="jhgoldGoodsNode" Type="Node" ID="92328a92-ba6c-49a1-ba10-2ad4ae2e3aff" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -29,7 +29,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1754" Y="0.4414" />
                 <PreSize X="0.2537" Y="0.6923" />
-                <FileData Type="MarkedSubImage" Path="ui/shop14.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/shop14.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="desc" ActionTag="394713484" Tag="100" IconVisible="False" LeftMargin="88.4703" RightMargin="19.5297" TopMargin="49.6396" BottomMargin="56.3604" IsCustomSize="True" FontSize="15" LabelText="获得降龙十八掌、白首太玄经、倚天剑、乌蝉衣" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="160.0000" Y="50.0000" />
@@ -51,7 +51,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.8829" Y="0.8527" />
                 <PreSize X="0.2463" Y="0.3205" />
-                <FileData Type="MarkedSubImage" Path="ui/sdrx.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/sdrx.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -60,7 +60,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/shopitembg.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/shopitembg.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="buybtn" ActionTag="362216330" Tag="173" IconVisible="False" LeftMargin="-4.2220" RightMargin="-112.7780" TopMargin="24.6447" BottomMargin="-65.6447" TouchEnable="True" FontSize="40" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="87" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="117.0000" Y="41.0000" />
@@ -73,7 +73,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.6405" Y="0.5073" />
                 <PreSize X="0.5641" Y="0.8780" />
-                <FileData Type="MarkedSubImage" Path="ui/gold.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/gold.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="price" ActionTag="1730715278" Tag="97" IconVisible="False" LeftMargin="25.6014" RightMargin="65.3986" TopMargin="7.2957" BottomMargin="6.7043" FontSize="24" LabelText="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -97,9 +97,9 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

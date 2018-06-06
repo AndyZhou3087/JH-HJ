@@ -3,7 +3,7 @@
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-#include "MyPackage.h"
+#include "JhMyPackage.h"
 USING_NS_CC;
 class TempStorageLayer :public Layer
 {

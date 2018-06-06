@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="fightlistNode" Type="Node" ID="fac0cfbf-21f6-4f7e-93f6-8ab313e69bb7" Version="3.10.0.0" />
+  <PropertyGroup Name="jhfightlistNode" Type="Node" ID="fac0cfbf-21f6-4f7e-93f6-8ab313e69bb7" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/rankitem0.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/rankitem0.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="ranknum" ActionTag="946993076" Tag="60" IconVisible="False" LeftMargin="-228.7414" RightMargin="190.7414" TopMargin="-19.6324" BottomMargin="-16.3676" LabelText="1" ctype="TextBMFontObjectData">
             <Size X="38.0000" Y="36.0000" />
@@ -34,7 +34,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/fhero1.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/fhero1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="nickname" ActionTag="-596261801" Tag="40" IconVisible="False" LeftMargin="-73.5998" RightMargin="-55.4002" TopMargin="-27.6354" BottomMargin="6.6354" FontSize="18" LabelText="少侠0011223344" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="129.0000" Y="21.0000" />
@@ -75,7 +75,7 @@
           <AbstractNodeData Name="heroval" ActionTag="-2103753841" Tag="36" IconVisible="False" LeftMargin="60.0482" RightMargin="-140.0482" TopMargin="-14.5000" BottomMargin="-14.5000" FontSize="25" LabelText="999999" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="80.0000" Y="29.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="100.0482" Y="0.0000" />
+            <Position X="100.0482" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />
@@ -94,9 +94,9 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -108,7 +108,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="MarkedSubImage" Path="ui/tophero1.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/tophero1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="buyOrangeGFLayer" Type="Layer" ID="f18456f2-0042-4034-bd04-30bab7f926bd" Version="3.10.0.0" />
+  <PropertyGroup Name="jhbuyOrangeGFLayer" Type="Layer" ID="f18456f2-0042-4034-bd04-30bab7f926bd" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -26,9 +26,9 @@
             <PrePosition X="0.8653" Y="0.7941" />
             <PreSize X="0.0917" Y="0.0516" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/bigbgclosebtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/bigbgclosebtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/bigbgclosebtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/bigbgclosebtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/bigbgclosebtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/bigbgclosebtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -40,7 +40,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4899" Y="0.7859" />
             <PreSize X="0.3306" Y="0.0516" />
-            <FileData Type="MarkedSubImage" Path="ui/gettext.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/gettext.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="buildsmall" ActionTag="-1094556289" Tag="51" IconVisible="False" LeftMargin="154.0000" RightMargin="444.0000" TopMargin="503.6400" BottomMargin="654.3600" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="42" Scale9Height="42" ctype="ImageViewObjectData">
@@ -63,7 +63,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2986" Y="0.5589" />
             <PreSize X="0.1694" Y="0.0953" />
-            <FileData Type="MarkedSubImage" Path="ui/qubox5.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/qubox5.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="namelbl" ActionTag="-1842722369" Tag="39" IconVisible="False" LeftMargin="144.4992" RightMargin="434.5008" TopMargin="641.0022" BottomMargin="602.9978" FontSize="35" LabelText="葵花宝典" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="141.0000" Y="36.0000" />
@@ -85,7 +85,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5560" />
             <PreSize X="0.1000" Y="0.0406" />
-            <FileData Type="MarkedSubImage" Path="ui/shopexgicon.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/shopexgicon.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="buildsmall_0" ActionTag="-764532072" Tag="41" IconVisible="False" LeftMargin="436.4058" RightMargin="161.5942" TopMargin="503.6424" BottomMargin="654.3576" ctype="SpriteObjectData">
@@ -99,7 +99,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="0.8689" Y="0.8689" />
-                <FileData Type="MarkedSubImage" Path="ui/80.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/80.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -108,7 +108,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.6908" Y="0.5589" />
             <PreSize X="0.1694" Y="0.0953" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="namelbl_0" ActionTag="1690464897" Tag="43" IconVisible="False" LeftMargin="419.5507" RightMargin="151.4493" TopMargin="636.0007" BottomMargin="602.9993" FontSize="40" LabelText="银两x30" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

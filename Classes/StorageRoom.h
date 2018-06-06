@@ -4,12 +4,12 @@
 
 #ifndef _STORAGE_H_
 #define _STORAGE_H_
-#include "Building.h"
+#include "JhBuilding.h"
 #include "cocos2d.h"
-#include "MyPackage.h"
+#include "JhMyPackage.h"
 USING_NS_CC;
 
-class StorageRoom :public Building
+class StorageRoom :public JhBuilding
 {
 public:
 	StorageRoom();

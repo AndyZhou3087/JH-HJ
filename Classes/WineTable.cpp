@@ -1,10 +1,10 @@
 ﻿#include "WineTable.h"
-#include "Hero.h"
+#include "JhHero.h"
 
-#include "Nature.h"
-#include "Const.h"
-extern Nature* g_nature;
-extern Hero* g_hero;
+#include "JhNature.h"
+#include "JhConst.h"
+extern JhNature* g_nature;
+extern JhHero* g_hero;
 WineTable::WineTable()
 {
 

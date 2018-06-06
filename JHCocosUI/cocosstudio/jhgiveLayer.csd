@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="giveLayer" Type="Layer" ID="847c99a2-07a7-4cde-9c10-619fae080f08" Version="3.10.0.0" />
+  <PropertyGroup Name="jhgiveLayer" Type="Layer" ID="847c99a2-07a7-4cde-9c10-619fae080f08" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -25,9 +25,9 @@
             <PrePosition X="0.9374" Y="0.6281" />
             <PreSize X="0.1042" Y="0.1055" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -39,7 +39,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2098" Y="0.5749" />
             <PreSize X="0.2778" Y="0.1563" />
-            <FileData Type="MarkedSubImage" Path="ui/n004.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/n004.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="npcbanner_2" ActionTag="-788490377" Tag="249" IconVisible="False" LeftMargin="211.0169" RightMargin="479.9831" TopMargin="498.7817" BottomMargin="680.2183" ctype="SpriteObjectData">
             <Size X="29.0000" Y="101.0000" />
@@ -49,7 +49,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.3132" Y="0.5709" />
             <PreSize X="0.0403" Y="0.0789" />
-            <FileData Type="MarkedSubImage" Path="ui/npcbanner.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/npcbanner.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="npcname" ActionTag="625943095" Tag="71" IconVisible="False" LeftMargin="211.1179" RightMargin="478.8821" TopMargin="492.4661" BottomMargin="687.5339" IsCustomSize="True" FontSize="20" LabelText="小虾米" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -126,9 +126,9 @@
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/normalbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -164,7 +164,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4952" Y="0.4878" />
             <PreSize X="0.7292" Y="0.0039" />
-            <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="storagesepline_3_0" ActionTag="1734880597" Tag="251" IconVisible="False" LeftMargin="96.2448" RightMargin="98.7552" TopMargin="985.2371" BottomMargin="289.7629" ctype="SpriteObjectData">
@@ -175,7 +175,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4983" Y="0.2283" />
             <PreSize X="0.7292" Y="0.0039" />
-            <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

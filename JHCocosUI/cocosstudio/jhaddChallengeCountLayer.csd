@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="addChallengeCountLayer" Type="Layer" ID="0c7d511c-e863-457c-b99e-0553db5ae549" Version="3.10.0.0" />
+  <PropertyGroup Name="jhaddChallengeCountLayer" Type="Layer" ID="0c7d511c-e863-457c-b99e-0553db5ae549" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -25,7 +25,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.4942" Y="0.5093" />
             <PreSize X="0.5972" Y="0.2734" />
-            <FileData Type="MarkedSubImage" Path="ui/fegure_frame.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/fegure_frame.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="closebtn" ActionTag="-438112626" Tag="337" IconVisible="False" LeftMargin="598.1999" RightMargin="46.8001" TopMargin="367.6118" BottomMargin="777.3882" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="45" Scale9Height="113" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="75.0000" Y="135.0000" />
@@ -36,9 +36,9 @@
             <PrePosition X="0.8829" Y="0.6601" />
             <PreSize X="0.1042" Y="0.1055" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/backstartbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -53,7 +53,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4651" Y="0.5470" />
                 <PreSize X="0.6549" Y="0.5804" />
-                <FileData Type="MarkedSubImage" Path="ui/fightaddicon0.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/fightaddicon0.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
@@ -63,7 +63,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.3850" Y="0.4931" />
             <PreSize X="0.1569" Y="0.0875" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="Image_1" ActionTag="4498172" Tag="344" IconVisible="False" LeftMargin="384.1454" RightMargin="222.8546" TopMargin="592.7853" BottomMargin="575.2147" Scale9Enable="True" LeftEage="40" RightEage="40" TopEage="52" BottomEage="52" Scale9OriginX="40" Scale9OriginY="52" Scale9Width="33" Scale9Height="8" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
@@ -76,7 +76,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4765" Y="0.5470" />
                 <PreSize X="0.6549" Y="0.5804" />
-                <FileData Type="MarkedSubImage" Path="ui/fightaddicon1.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/fightaddicon1.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
@@ -86,7 +86,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.6120" Y="0.4931" />
             <PreSize X="0.1569" Y="0.0875" />
-            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="uipacker.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="timedesc" ActionTag="1694288001" Tag="347" IconVisible="False" LeftMargin="221.4998" RightMargin="221.5002" TopMargin="538.6049" BottomMargin="712.3951" FontSize="25" LabelText="请选择要购买的挑战次数" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="277.0000" Y="29.0000" />
@@ -111,7 +111,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3080" Y="0.5198" />
                 <PreSize X="0.5641" Y="0.8780" />
-                <FileData Type="MarkedSubImage" Path="ui/gold.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/gold.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="constgoldlbl" ActionTag="1896041586" Tag="503" IconVisible="False" LeftMargin="62.3907" RightMargin="26.6093" TopMargin="7.9869" BottomMargin="3.0131" FontSize="26" LabelText="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -135,9 +135,9 @@
             <PreSize X="0.1625" Y="0.0320" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -152,7 +152,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3080" Y="0.5198" />
                 <PreSize X="0.5641" Y="0.8780" />
-                <FileData Type="MarkedSubImage" Path="ui/gold.png" Plist="uipacker.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/gold.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="constgoldlbl" ActionTag="1725220037" Tag="505" IconVisible="False" LeftMargin="63.3900" RightMargin="25.6100" TopMargin="8.9868" BottomMargin="2.0132" FontSize="26" LabelText="80" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -176,9 +176,9 @@
             <PreSize X="0.1625" Y="0.0320" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="uipacker.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn1.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
