@@ -987,20 +987,6 @@
           <Image Name="zjzdl.png" />
           <Image Name="zst.png" />
         </Folder>
-        <Project Name="jhfrozenLayer.csd" Type="Layer" />
-        <Project Name="jhgetVipRewardLayer.csd" Type="Layer" />
-        <Project Name="jhgiveLayer.csd" Type="Layer" />
-        <Project Name="jhgoldGoodsNode.csd" Type="Node" />
-        <Project Name="jhgoWhereLayer.csd" Type="Layer" />
-        <Project Name="jhhelpDescLayer.csd" Type="Layer" />
-        <Project Name="jhhelpLayer.csd" Type="Layer" />
-        <Project Name="jhheroAttribNode.csd" Type="Node" />
-        <Project Name="jhheroAttribNode2.csd" Type="Node" />
-        <Project Name="jhheroStateLayer.csd" Type="Layer" />
-        <Project Name="jhhintLayer.csd" Type="Layer" />
-        <Project Name="jhhintLayer2.csd" Type="Layer" />
-        <Project Name="jhhomeHillLayer.csd" Type="Layer" />
-        <Project Name="jhhomeLayer.csd" Type="Layer" />
         <Project Name="HSLJMainLayer.csd" Type="Layer" />
         <Project Name="HSLJRankLayer.csd" Type="Layer" />
         <Project Name="hsljRankNode.csd" Type="Node" />
@@ -1041,6 +1027,20 @@
         <Project Name="jhfightlistNode.csd" Type="Node" />
         <Project Name="jhfriendExgLayer.csd" Type="Layer" />
         <Project Name="jhfriendNpcChallengeLayer.csd" Type="Layer" />
+        <Project Name="jhfrozenLayer.csd" Type="Layer" />
+        <Project Name="jhgetVipRewardLayer.csd" Type="Layer" />
+        <Project Name="jhgiveLayer.csd" Type="Layer" />
+        <Project Name="jhgoldGoodsNode.csd" Type="Node" />
+        <Project Name="jhgoWhereLayer.csd" Type="Layer" />
+        <Project Name="jhhelpDescLayer.csd" Type="Layer" />
+        <Project Name="jhhelpLayer.csd" Type="Layer" />
+        <Project Name="jhheroAttribNode.csd" Type="Node" />
+        <Project Name="jhheroAttribNode2.csd" Type="Node" />
+        <Project Name="jhheroStateLayer.csd" Type="Layer" />
+        <Project Name="jhhintLayer.csd" Type="Layer" />
+        <Project Name="jhhintLayer2.csd" Type="Layer" />
+        <Project Name="jhhomeHillLayer.csd" Type="Layer" />
+        <Project Name="jhhomeLayer.csd" Type="Layer" />
         <Project Name="loginRewardLayer.csd" Type="Layer" />
         <Project Name="mapLayer.csd" Type="Layer" />
         <Project Name="mixDoneLayer.csd" Type="Layer" />
