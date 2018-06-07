@@ -3,7 +3,7 @@
 #include "JhGlobalData.h"
 #include "JhConst.h"
 #include "JhMyPackage.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhGameScene.h"
 JhExerciseDoneLayer::JhExerciseDoneLayer()
 {
@@ -112,9 +112,9 @@ void JhExerciseDoneLayer::exerciseDone(std::string wgidstr, std::string ngidstr,
 			}
 			else
 			{
-				for (unsigned int m = 0; m < StorageRoom::map_storageData[gfSType[i]].size(); m++)
+				for (unsigned int m = 0; m < JhStorageRoom::map_storageData[gfSType[i]].size(); m++)
 				{
-					gfdata = &StorageRoom::map_storageData[gfSType[i]][m];
+					gfdata = &JhStorageRoom::map_storageData[gfSType[i]][m];
 					if (gfdata->strid.compare(gfstrid[i]) == 0)
 					{
 						isfind = true;

@@ -1,5 +1,5 @@
 ﻿#include "JhNoticeLayer.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGlobalData.h"
 #include "JhCommonFuncs.h"
 
@@ -82,7 +82,7 @@ void JhNoticeLayer::checkBoxCallback(cocos2d::Ref* pSender, cocos2d::ui::CheckBo
 {
 	switch(type)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		case cocos2d::ui::CheckBox::EventType::SELECTED://选中
 			JhGlobalData::setNoPopNoticeDay(JhGlobalData::getDayOfYear());
 			break;

@@ -6,7 +6,7 @@
 #include "JhConst.h"
 #include "JhGameDataSave.h"
 #include "JhGameScene.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhNewerGuideLayer.h"
 #include "JhHomeHill.h"
 
@@ -150,7 +150,7 @@ void JhActionGetLayer::doAction(float dt)
 
 void JhActionGetLayer::onRewardItem(cocos2d::Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 	//点击奖励栏的资源
 	Node* node = (Node*)pSender;
 	PackageData* data = (PackageData*)node->getUserData();
@@ -205,7 +205,7 @@ void JhActionGetLayer::onRewardItem(cocos2d::Ref* pSender)
 
 void JhActionGetLayer::onPackageItem(cocos2d::Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 	//点击背包栏
 	Node* node = (Node*)pSender;
 	int index = node->getTag();
@@ -304,14 +304,14 @@ void JhActionGetLayer::onGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 void JhActionGetLayer::delayDoAction(float dt)
 {
 	if (m_actype == 1)
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_CAIJI);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_CAIJI);
 	else if (m_actype == 2)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_KANSHU);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_KANSHU);
 	}
 	else if (m_actype == 3)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_WAJUE);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_WAJUE);
 	}
 
 	int resrid = atoi(JhGlobalData::vec_resData[mrid].strid.c_str());

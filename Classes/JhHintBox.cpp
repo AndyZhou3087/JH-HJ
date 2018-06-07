@@ -1,7 +1,7 @@
 ﻿#include "JhHintBox.h"
 #include "JhGlobalData.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 bool JhHintBox::init(std::string text)
 {
 	

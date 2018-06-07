@@ -1,8 +1,8 @@
 ﻿#include "JhMixSuggestLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
-#include "SoundManager.h"
-#include "WaitingProgress.h"
+#include "JhSoundManager.h"
+#include "JhWaitingProgress.h"
 #include "JhGameDataSave.h"
 #include "JhHintBox.h"
 #include "MD5.h"
@@ -94,9 +94,9 @@ bool JhMixSuggestLayer::init()
 
 void JhMixSuggestLayer::getServerTime()
 {
-	WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-	ServerDataSwap::init(this)->getServerTime();
+	JhServerDataSwap::init(this)->getServerTime();
 }
 
 void JhMixSuggestLayer::onEnterTransitionDidFinish()
@@ -159,14 +159,14 @@ void JhMixSuggestLayer::onSilver(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 			text->setFontSize(42);
 			text->setString(JhCommonFuncs::gbk2utf("刷新"));
 
-			if (StorageRoom::getCountById("80") < 50)
+			if (JhStorageRoom::getCountById("80") < 50)
 			{
 				JhHintBox* hbox = JhHintBox::create(JhCommonFuncs::gbk2utf("银两不足！"));
 				this->addChild(hbox);
 			}
 			else
 			{
-				StorageRoom::use("80", 50);
+				JhStorageRoom::use("80", 50);
 				randMixGf(1);
 			}
 		}

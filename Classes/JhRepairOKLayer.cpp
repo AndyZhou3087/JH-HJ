@@ -1,6 +1,6 @@
 ﻿#include "JhRepairOKLayer.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGlobalData.h"
 JhRepairOKLayer::JhRepairOKLayer()
 {

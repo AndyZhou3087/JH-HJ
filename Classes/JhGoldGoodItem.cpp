@@ -1,8 +1,8 @@
 ﻿#include "JhGoldGoodItem.h"
 #include "JhCommonFuncs.h"
-#include "ShopLayer.h"
-#include "SoundManager.h"
-#include "StorageRoom.h"
+#include "JhShopLayer.h"
+#include "JhSoundManager.h"
+#include "JhStorageRoom.h"
 #include "JhGameScene.h"
 #include "JhGameDataSave.h"
 #include "JhBuyComfirmLayer.h"
@@ -112,7 +112,7 @@ void JhGoldGoodItem::onItem(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 		{
 			//购买
 			//addBuyGoods(m_goodData);
-			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+			JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 			JhBuyComfirmLayer* layer = JhBuyComfirmLayer::create(m_goodData);
 			Director::getInstance()->getRunningScene()->addChild(layer, 1000, "buycomfirmlayer");
 
@@ -146,7 +146,7 @@ void JhGoldGoodItem::addBuyGoods(GoodsData* gdata)
 						pdata.count = intRes % 1000;
 						pdata.type = bdata.type - 1;
 						pdata.extype = bdata.extype;
-						StorageRoom::add(pdata);
+						JhStorageRoom::add(pdata);
 						break;
 					}
 				}
@@ -176,7 +176,7 @@ void JhGoldGoodItem::addBuyGoods(GoodsData* gdata)
                                 g_maplayer->vultureAnim();
                         }
 
-						StorageRoom::add(pdata);
+						JhStorageRoom::add(pdata);
 						break;
 					}
 				}
@@ -201,7 +201,7 @@ void JhGoldGoodItem::addBuyGoods(GoodsData* gdata)
 					updateDefaultStorage(pdata,g_hero->getHeadID());
 					if (!g_hero->checkifHasGF_Equip(payRes[i]) && JhGlobalData::tempHasGf_Equip(payRes[i]).length() <= 0)
 					{
-						StorageRoom::add(pdata);
+						JhStorageRoom::add(pdata);
 						break;
 					}
 				}
@@ -224,7 +224,7 @@ void JhGoldGoodItem::addBuyGoods(GoodsData* gdata)
 						updateDefaultStorage(pdata, g_hero->getHeadID());
 						if (!g_hero->checkifHasGF_Equip(payRes[i]) && JhGlobalData::tempHasGf_Equip(payRes[i]).length() <= 0)
 						{
-							StorageRoom::add(pdata);
+							JhStorageRoom::add(pdata);
 							break;
 						}
 					}

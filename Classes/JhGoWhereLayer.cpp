@@ -6,16 +6,16 @@
 #include "JhHomeLayer.h"
 #include "JhMapLayer.h"
 #include "JhGameScene.h"
-#include "TempStorageLayer.h"
+#include "JhTempStorageLayer.h"
 #include "JhNpcLayer.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGameDataSave.h"
 #include "JhNewerGuideLayer.h"
 #include "JhActivitScene.h"
-#include "SepcialNpcLayer.h"
+#include "JhSepcialNpcLayer.h"
 #include "JhAnalyticUtil.h"
 #include "JhRollDiceLayer.h"
-#include "TopBar.h"
+#include "JhTopBar.h"
 JhGoWhereLayer::JhGoWhereLayer()
 {
 
@@ -198,10 +198,10 @@ void JhGoWhereLayer::onST(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEvent
 	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		TempStorageLayer* layer = TempStorageLayer::create(m_addrstr);
+		JhTempStorageLayer* layer = JhTempStorageLayer::create(m_addrstr);
 
 		if (g_gameLayer != NULL)
-			g_gameLayer->addChild(layer, 3, "TempStorageLayer");
+			g_gameLayer->addChild(layer, 3, "JhTempStorageLayer");
 	}
 }
 
@@ -244,7 +244,7 @@ void JhGoWhereLayer::onComeIn(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 				if (m_addrstr.compare("m13-1") == 0)
 				{
 					if (g_gameLayer != NULL)
-						g_gameLayer->addChild(SepcialNpcLayer::create(m_addrstr), 3, "sepcialnpclayer");
+						g_gameLayer->addChild(JhSepcialNpcLayer::create(m_addrstr), 3, "sepcialnpclayer");
 				}
 				else
 				{

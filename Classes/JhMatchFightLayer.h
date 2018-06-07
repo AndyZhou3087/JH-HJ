@@ -6,7 +6,7 @@
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-#include "UIScroll.h"
+#include "JhUIScroll.h"
 #include "JhHero.h"
 USING_NS_CC;
 class JhMatchFightLayer :public Layer
@@ -155,7 +155,7 @@ private:
 	void updatePlayerInfo();
 
 private:
-	UIScroll* m_fihgtScorll;//文字滚动控件
+	JhUIScroll* m_fihgtScorll;//文字滚动控件
 	cocos2d::ui::Text* myhpvaluetext;//角色血量控件
 	cocos2d::ui::Text* playerhpvaluetext;//player血量控件
 	cocos2d::ui::LoadingBar* myhpbar;//角色血量进度条控件

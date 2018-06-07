@@ -1,5 +1,5 @@
 ﻿#include "JhHSLJRewardDescLayer.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhCommonFuncs.h"
 JhHSLJRewardDescLayer::JhHSLJRewardDescLayer()
 {

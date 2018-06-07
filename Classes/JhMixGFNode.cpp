@@ -4,9 +4,9 @@
 #include "JhConst.h"
 #include "JhGameScene.h"
 #include "JhGlobalData.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhGameDataSave.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhMyMenu.h"
 #include "JhHintBox.h"
 #include "JhHero.h"
@@ -119,7 +119,7 @@ void JhMixGFNode::onImageClick(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touch
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 
 		if (g_hero->getIsOut())
 		{
@@ -206,7 +206,7 @@ void JhMixGFNode::onMix(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTy
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 
 		int selectsecsize = map_secgfdata.size();
 		if (masterGFData != NULL && selectsecsize > 0)
@@ -258,11 +258,11 @@ void JhMixGFNode::onMix(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTy
 
 							}
 						}
-						//StorageRoom::use(JhGlobalData::map_MixGfData[it->first].mastergf);
+						//JhStorageRoom::use(JhGlobalData::map_MixGfData[it->first].mastergf);
 
 						for (int n = 0; n < secgfsize; n++)
 						{
-							StorageRoom::use(JhGlobalData::map_MixGfData[it->first].vec_secgf[n]);
+							JhStorageRoom::use(JhGlobalData::map_MixGfData[it->first].vec_secgf[n]);
 						}
 						JhGlobalData::setMixGF(it->first);
 						mixtitle->setString(JhGlobalData::map_MixGfData[it->first].name);
@@ -308,16 +308,16 @@ void JhMixGFNode::addGFData()
 {
 	//
 	vec_myhasgf.clear();
-	for (unsigned int m = 0; m < StorageRoom::map_storageData[W_GONG].size(); m++)
+	for (unsigned int m = 0; m < JhStorageRoom::map_storageData[W_GONG].size(); m++)
 	{
-		PackageData data = StorageRoom::map_storageData[W_GONG][m];
+		PackageData data = JhStorageRoom::map_storageData[W_GONG][m];
 		if (data.lv >= JhGlobalData::map_wgngs[data.strid].maxlv - 1)
 			vec_myhasgf.push_back(data);
 	}
 
-	for (unsigned int m = 0; m < StorageRoom::map_storageData[N_GONG].size(); m++)
+	for (unsigned int m = 0; m < JhStorageRoom::map_storageData[N_GONG].size(); m++)
 	{
-		PackageData data = StorageRoom::map_storageData[N_GONG][m];
+		PackageData data = JhStorageRoom::map_storageData[N_GONG][m];
 		if (data.lv >= JhGlobalData::map_wgngs[data.strid].maxlv - 1)
 			vec_myhasgf.push_back(data);
 	}
@@ -341,7 +341,7 @@ void JhMixGFNode::addGFData()
 	if (mymixgf.length() > 0)
 	{
 		MixGfData mdata = JhGlobalData::map_MixGfData[mymixgf];
-		if (herocarrywg.compare(mdata.mastergf) != 0 && herocarryng.compare(mdata.mastergf) != 0 && StorageRoom::getCountById(mdata.mastergf) <= 0)
+		if (herocarrywg.compare(mdata.mastergf) != 0 && herocarryng.compare(mdata.mastergf) != 0 && JhStorageRoom::getCountById(mdata.mastergf) <= 0)
 		{
 			PackageData data;
 			WG_NGData gfdata = JhGlobalData::map_wgngs[mdata.mastergf];
@@ -483,7 +483,7 @@ void JhMixGFNode::loadMixSuccGF()
 
 void JhMixGFNode::onItem(Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 	if (JhGlobalData::isExercising() && !JhGlobalData::isHasFSF())
 	{
 		int index = -1;
@@ -610,7 +610,7 @@ void JhMixGFNode::onItem(Ref* pSender)
 		MixGfData mdata = JhGlobalData::map_MixGfData[mixid];
 		for (unsigned int n = 0; n < mdata.vec_secgf.size(); n++)
 		{
-			if (StorageRoom::getCountById(mdata.vec_secgf[n]) <= 0)
+			if (JhStorageRoom::getCountById(mdata.vec_secgf[n]) <= 0)
 			{
 				PackageData data;
 				WG_NGData gfdata = JhGlobalData::map_wgngs[mdata.vec_secgf[n]];
@@ -619,7 +619,7 @@ void JhMixGFNode::onItem(Ref* pSender)
 				data.lv = gfdata.maxlv - 1;
 				data.type = gfdata.type - 1;
 				data.extype = gfdata.extype;
-				StorageRoom::add(data);
+				JhStorageRoom::add(data);
 			}
 		}
 	}
@@ -654,7 +654,7 @@ void JhMixGFNode::onSuggest(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		if (g_hero->getIsOut())
 		{
 			JhHintBox* layer = JhHintBox::create(JhCommonFuncs::gbk2utf("请回所宅查看！！"));

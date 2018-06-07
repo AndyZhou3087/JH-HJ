@@ -5,12 +5,12 @@
 #include "JhCommonFuncs.h"
 #include "JhHintBox.h"
 #include "JhGameScene.h"
-#include "Winlayer.h"
-#include "SoundManager.h"
+#include "JhWinlayer.h"
+#include "JhSoundManager.h"
 #include "JhNewerGuideLayer.h"
 #include "JhAnalyticUtil.h"
 #include "JhMapLayer.h"
-#include "Shake.h"
+#include "JhShake.h"
 #include "JhChallengeCountLayer.h"
 #include "JhMyActionProgressTimer.h"
 
@@ -32,7 +32,7 @@ JhFightLayer::~JhFightLayer()
 		g_hero->setTotalDfBonusPercent(0.0f);
 		g_hero->setIsWDChallenge(false);
 	}
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_ENTER_MAPADDR);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_ENTER_MAPADDR);
 }
 
 JhFightLayer* JhFightLayer::create(std::string addrid, std::string npcid)
@@ -137,7 +137,7 @@ bool JhFightLayer::init(std::string addrid, std::string npcid)
 	if (JhNewerGuideLayer::checkifNewerGuide(39))
 		m_escapebtn->setVisible(false);
 	// 滚动文字
-	m_fihgtScorll = UIScroll::create(610.0f, 435.0f);
+	m_fihgtScorll = JhUIScroll::create(610.0f, 435.0f);
 	m_fihgtScorll->setPosition(Vec2(360, 350));
 	csbnode->addChild(m_fihgtScorll);
 
@@ -173,7 +173,7 @@ bool JhFightLayer::init(std::string addrid, std::string npcid)
 	listener->setSwallowTouches(true);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 	int r = JhGlobalData::createRandomNum(4);
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_FIGHT_0 + r);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_FIGHT_0 + r);
 	return true;
 }
 
@@ -479,7 +479,7 @@ void JhFightLayer::delayHeroFight(float dt)
 		npcactimg->setOpacity(200);
 		npcactimg->setScale(3);
 		ActionInterval* ac1 = Spawn::create(FadeIn::create(0.1f), EaseSineIn::create(ScaleTo::create(0.1f, 1)), NULL);
-		npcactimg->runAction(Sequence::create(ac1, Shake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
+		npcactimg->runAction(Sequence::create(ac1, JhShake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
 		isnormalAct = false;
 
 	}
@@ -659,7 +659,7 @@ void JhFightLayer::delayBossFight(float dt)
 		heroactimg->setOpacity(200);
 		heroactimg->setScale(3);
 		ActionInterval* ac1 = Spawn::create(FadeIn::create(0.1f), EaseSineIn::create(ScaleTo::create(0.1f, 1)), NULL);
-		heroactimg->runAction(Sequence::create(ac1, Shake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
+		heroactimg->runAction(Sequence::create(ac1, JhShake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
 		isnormalAct = false;
 	}
 
@@ -738,9 +738,9 @@ void JhFightLayer::delayShowWinLayer(float dt)
 	m_escapebtn->setEnabled(true);
 	m_escapebtn->setTag(1);
 
-	Winlayer* layer = Winlayer::create(m_addrid, m_npcid);
+	JhWinlayer* layer = JhWinlayer::create(m_addrid, m_npcid);
 	if (g_gameLayer != NULL)
-		g_gameLayer->addChild(layer, 10, "Winlayer");
+		g_gameLayer->addChild(layer, 10, "JhWinlayer");
 
 	if (continuefight > 0)
 	{
@@ -872,7 +872,7 @@ void JhFightLayer::showFightWord(int type, int value)
 
 		checkWordLblColor(herowordstr);
 
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_ATTACK);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_ATTACK);
 	}
 	else//
 	{
@@ -927,9 +927,9 @@ void JhFightLayer::showFightWord(int type, int value)
 
 		isUseWg = false;
 		if (g_hero->getHeadID() == 4)
-			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_HURT1);
+			JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_HURT1);
 		else
-			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_HURT0);
+			JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_HURT0);
 	}
 }
 
@@ -1299,7 +1299,7 @@ void JhFightLayer::showHeroTextAmin(std::string filename)
 	heroactimg->setOpacity(200);
 	heroactimg->setScale(3);
 	ActionInterval* ac1 = Spawn::create(FadeIn::create(0.1f), EaseSineIn::create(ScaleTo::create(0.1f, 1)), NULL);
-	heroactimg->runAction(Sequence::create(ac1, Shake::create(0.2f, 20, 1), DelayTime::create(0.6f), Hide::create(), NULL));
+	heroactimg->runAction(Sequence::create(ac1, JhShake::create(0.2f, 20, 1), DelayTime::create(0.6f), Hide::create(), NULL));
 	herocritfnt->setVisible(false);
 }
 

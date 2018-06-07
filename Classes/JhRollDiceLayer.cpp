@@ -1,13 +1,13 @@
 ﻿#include "JhRollDiceLayer.h"
 #include "JhConst.h"
 
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhAnalyticUtil.h"
 #include "JhCommonFuncs.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhHintBox.h"
 #include "MD5.h"
-#include "ShopLayer.h"
+#include "JhShopLayer.h"
 
 JhRollDiceLayer::JhRollDiceLayer()
 {
@@ -59,7 +59,7 @@ bool JhRollDiceLayer::init()
 
 	word = (cocos2d::ui::Text*)csbnode->getChildByName("word");
 
-	animnode = CSLoader::createNode("rollDiceAnim.csb");
+	animnode = CSLoader::createNode("jhrollDiceAnim.csb");
 	animnode->setPosition(Vec2(360, 800));
 	csbnode->addChild(animnode);
 	if (JhGlobalData::g_gameStatus == GAMESTART)
@@ -69,9 +69,9 @@ bool JhRollDiceLayer::init()
 	this->schedule(schedule_selector(JhRollDiceLayer::refreshGoldCount), 1);
 	actiontype = 0;
 
-	WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-	ServerDataSwap::init(this)->getlotteryData(actiontype);
+	JhServerDataSwap::init(this)->getlotteryData(actiontype);
 
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [=](Touch *touch, Event *event)
@@ -134,13 +134,13 @@ void JhRollDiceLayer::onRoll(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 		}
 		this->removeChildByName("dice");
 		animnode->getChildByName("node")->getChildByName("cover")->setVisible(true);
-		anim_action = CSLoader::createTimeline("rollDiceAnim.csb");
+		anim_action = CSLoader::createTimeline("jhrollDiceAnim.csb");
 		animnode->runAction(anim_action);
 		anim_action->gotoFrameAndPlay(0, true);
 		actiontype = 1;
 		backbtn->setEnabled(false);
 		rollbtn->setEnabled(false);
-		ServerDataSwap::init(this)->getlotteryData(actiontype);
+		JhServerDataSwap::init(this)->getlotteryData(actiontype);
 	}
 }
 
@@ -207,7 +207,7 @@ void JhRollDiceLayer::showResult(float dt)
 	backbtn->setEnabled(true);
 	rollbtn->setEnabled(true);
 
-	anim_action = CSLoader::createTimeline("rollDiceAnim.csb");
+	anim_action = CSLoader::createTimeline("jhrollDiceAnim.csb");
 	animnode->runAction(anim_action);
 	anim_action->gotoFrameAndPlay(0, 0, false);
 	animnode->stopAllActions();

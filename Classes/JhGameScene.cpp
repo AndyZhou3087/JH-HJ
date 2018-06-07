@@ -1,8 +1,8 @@
 ﻿#include "JhGameScene.h"
-#include "TopBar.h"
-#include "UIScroll.h"
+#include "JhTopBar.h"
+#include "JhUIScroll.h"
 #include "JhGameDataSave.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhGlobalData.h"
 #include "JhMapLayer.h"
 #include "JhCommonFuncs.h"
@@ -14,9 +14,9 @@
 #include "JhMyParticle.h"
 #include "JhGetVipRewardLayer.h"
 #include "MD5.h"
-#include "StartScene.h"
+#include "JhStartScene.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhLoginRewardLayer.h"
 #include "JhAchiveDoneAnimLayer.h"
 #include "JhFrozenLayer.h"
@@ -30,7 +30,7 @@ JhHero* g_hero;
 JhGameScene* g_gameLayer = NULL;
 
 Sprite* scrollbg;
-UIScroll* g_uiScroll;
+JhUIScroll* g_uiScroll;
 JhGameScene::JhGameScene()
 {
 	issavedata = true;
@@ -138,7 +138,7 @@ bool JhGameScene::init()
 	this->addChild(scrollbg, 3);
 
 	//滚动文字
-	g_uiScroll = UIScroll::create(580.0F, 100.0f);
+	g_uiScroll = JhUIScroll::create(580.0F, 100.0f);
 	g_uiScroll->setPosition(Vec2(visibleSize.width / 2 + 5, 910));
 	addChild(g_uiScroll, 3);
 
@@ -156,7 +156,7 @@ bool JhGameScene::init()
 	}
 
 	//任务属性和天气
-	topBar = TopBar::create();
+	topBar = JhTopBar::create();
 	topBar->setPosition(Vec2(visibleSize.width/2, 1085));
 	addChild(topBar, 2, "topbar");
 	
@@ -188,14 +188,14 @@ bool JhGameScene::init()
 		}
 	}
 
-	JhGlobalData::doAchive(A_3, StorageRoom::getCountById("80"));
+	JhGlobalData::doAchive(A_3, JhStorageRoom::getCountById("80"));
 	int goldcount = JhGlobalData::getMyGoldCount();
 	JhGlobalData::doAchive(A_1, goldcount);
 
 	if (JhGlobalData::isOnline)
 	{
-		ServerDataSwap::init(this)->vipIsOn(g_hero->getHeadID());
-		ServerDataSwap::init(NULL)->getFactionList();
+		JhServerDataSwap::init(this)->vipIsOn(g_hero->getHeadID());
+		JhServerDataSwap::init(NULL)->getFactionList();
 	}
     return true;
 }
@@ -280,7 +280,7 @@ void JhGameScene::loadSaveHeroData()
 		g_hero->setSex((H_SEX)sex);
 
 	//读取保存的仓库数据
-	StorageRoom::loadStorageData();
+	JhStorageRoom::loadStorageData();
 	//读取保存的背包数据
 	JhMyPackage::load();
 	//读取保存的资源数据
@@ -320,7 +320,7 @@ void JhGameScene::loadSavedHeroPropData()
 		if (sdata.type == WEAPON || sdata.type == PROTECT_EQU)
 		{
 			std::vector<PackageData>::iterator it;
-			for (it = StorageRoom::map_storageData[sdata.type].begin(); it != StorageRoom::map_storageData[sdata.type].end();)
+			for (it = JhStorageRoom::map_storageData[sdata.type].begin(); it != JhStorageRoom::map_storageData[sdata.type].end();)
 			{
 				if (it->strid.compare(sdata.strid) == 0 && sdata.count > 0)
 				{
@@ -329,7 +329,7 @@ void JhGameScene::loadSavedHeroPropData()
 						it->slv = sdata.slv;
 					if (it->lv < sdata.lv)
 						it->lv = sdata.lv;
-					it = StorageRoom::map_storageData[sdata.type].erase(it);
+					it = JhStorageRoom::map_storageData[sdata.type].erase(it);
 				}
 				else
 					++it;
@@ -467,7 +467,7 @@ void JhGameScene::updata(float dt)
 									pdata.strid = strid;
 									pdata.type = data->type - 1;
 									pdata.count = data->max;
-									StorageRoom::add(pdata);
+									JhStorageRoom::add(pdata);
 									data->count = 0;
 									data->waittime = 0.0f;
 									std::string str = StringUtils::format("%s%s x%d", JhCommonFuncs::gbk2utf("你的弟子刚刚帮你收集了").c_str(), JhGlobalData::map_allResource[strid].cname.c_str(), data->max);
@@ -612,9 +612,9 @@ void JhGameScene::onSuccess()
 		issavedata = false;
 		JhGlobalData::ispunishment = false;
 		isAnewGetData = true;
-		WaitingProgress* waitbox = WaitingProgress::create("数据异常...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("数据异常...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-		ServerDataSwap::init(this)->getAllData();
+		JhServerDataSwap::init(this)->getAllData();
 	}
 	else
 	{
@@ -664,7 +664,7 @@ void JhGameScene::onErr(int errcode)
 void JhGameScene::delayChangeStartScene(float dt)
 {
 
-	Scene* scene = StartScene::createScene();
+	Scene* scene = JhStartScene::createScene();
 
 	Director::getInstance()->replaceScene(scene);
 }

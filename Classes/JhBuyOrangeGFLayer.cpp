@@ -1,7 +1,7 @@
 ﻿#include "JhBuyOrangeGFLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGameScene.h"
 
 #define SILVERCOUNT 30

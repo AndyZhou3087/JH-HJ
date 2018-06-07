@@ -1,11 +1,11 @@
 ﻿#include "JhRechargeLayer.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGlobalData.h"
 #include "JhConst.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhGameScene.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 
 JhRechargeLayer::JhRechargeLayer()
 {
@@ -47,10 +47,10 @@ bool JhRechargeLayer::init()
 	descbg = (cocos2d::ui::Widget*)m_csbnode->getChildByName("descbg");
 	descbg->setVisible(false);
 
-	WaitingProgress* waitbox = WaitingProgress::create("获取数据中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("获取数据中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
 
-	ServerDataSwap::init(this)->getRechargeData();
+	JhServerDataSwap::init(this)->getRechargeData();
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [=](Touch *touch, Event *event)
 	{
@@ -370,11 +370,11 @@ void JhRechargeLayer::onGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 				pdata.count = count;
 				pdata.extype = JhGlobalData::getResExType(resid);
 				pdata.type = JhGlobalData::getResType(resid);
-				StorageRoom::add(pdata);
+				JhStorageRoom::add(pdata);
 			}
 
 		}
-		ServerDataSwap::init(NULL)->postMyRecharge(canGetHightAmount, 1);
+		JhServerDataSwap::init(NULL)->postMyRecharge(canGetHightAmount, 1);
 		this->removeFromParentAndCleanup(true);
 	}
 }

@@ -1,9 +1,9 @@
 ﻿#include "JhComfirmSaveLayer.h"
 #include "JhGlobalData.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGameDataSave.h"
 #include "Utility.h"
-#include "SelectHeroScene.h"
+#include "JhSelectHeroScene.h"
 #include "JhCommonFuncs.h"
 bool JhComfirmSaveLayer::init()
 {
@@ -44,7 +44,7 @@ void JhComfirmSaveLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SelectHeroScene* parant = (SelectHeroScene*)this->getParent();
+		JhSelectHeroScene* parant = (JhSelectHeroScene*)this->getParent();
 		parant->enterNextScene();
 	}
 }

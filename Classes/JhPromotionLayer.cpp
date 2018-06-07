@@ -1,7 +1,7 @@
 ﻿#include "JhPromotionLayer.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
-#include "WaitingProgress.h"
+#include "JhSoundManager.h"
+#include "JhWaitingProgress.h"
 #include "JhHintBox.h"
 #include "JhFactionMemberLayer.h"
 
@@ -78,7 +78,7 @@ void JhPromotionLayer::checkBoxCallback(cocos2d::Ref* pSender, cocos2d::ui::Chec
 	int tag = checkbtn->getTag();
 	switch(type)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		case cocos2d::ui::CheckBox::EventType::SELECTED://选中
 			for (int i = 0; i < 3; i++)
 			{
@@ -111,9 +111,9 @@ void JhPromotionLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 			this->removeFromParentAndCleanup(true);
 			return;
 		}
-		WaitingProgress* waitbox = WaitingProgress::create("处理中...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("处理中...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-		ServerDataSwap::init(this)->promotionFaction(m_memberdata->factionid, m_memberdata->userid, m_memberdata->herotype, m_select);
+		JhServerDataSwap::init(this)->promotionFaction(m_memberdata->factionid, m_memberdata->userid, m_memberdata->herotype, m_select);
 	}
 }
 

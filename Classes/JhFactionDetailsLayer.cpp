@@ -1,5 +1,5 @@
 ﻿#include "JhFactionDetailsLayer.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGlobalData.h"
 #include "JhCommonFuncs.h"
 

@@ -1,6 +1,6 @@
 ﻿#include "JhGlobalData.h"
 #include "JhBuilding.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhMyPackage.h"
 #include "JhGameDataSave.h"
 #include "JhCommonFuncs.h"
@@ -1396,9 +1396,9 @@ bool JhGlobalData::isExercising()
 
 bool JhGlobalData::isHasFSF()
 {
-	for (unsigned int m = 0; m < StorageRoom::map_storageData[RES_2].size(); m++)
+	for (unsigned int m = 0; m < JhStorageRoom::map_storageData[RES_2].size(); m++)
 	{
-		PackageData* pData = &StorageRoom::map_storageData[RES_2][m];
+		PackageData* pData = &JhStorageRoom::map_storageData[RES_2][m];
 		if (pData->strid.compare("72") == 0 && pData->count > 0)
 		{
 			return true;
@@ -1418,9 +1418,9 @@ bool JhGlobalData::isHasFSF()
 
 bool JhGlobalData::isHasVulture()
 {
-	for (unsigned int m = 0; m < StorageRoom::map_storageData[RES_2].size(); m++)
+	for (unsigned int m = 0; m < JhStorageRoom::map_storageData[RES_2].size(); m++)
 	{
-		PackageData* pData = &StorageRoom::map_storageData[RES_2][m];
+		PackageData* pData = &JhStorageRoom::map_storageData[RES_2][m];
 		if (pData->strid.compare("83") == 0 && pData->count > 0)
 		{
 			return true;

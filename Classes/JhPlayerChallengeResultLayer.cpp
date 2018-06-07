@@ -2,9 +2,9 @@
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGameDataSave.h"
 #include "JhRankLayer.h"
 
@@ -115,7 +115,7 @@ bool JhPlayerChallengeResultLayer::init(RankData* fightPlayerData, int win)
 	JhGlobalData::myFihgtCount--;
 	
 	
-	ServerDataSwap::init(NULL)->getChallengeResult(lastrank, fightPlayerData->playerid, fightPlayerData->herotype, fightPlayerData->rank, win);
+	JhServerDataSwap::init(NULL)->getChallengeResult(lastrank, fightPlayerData->playerid, fightPlayerData->herotype, fightPlayerData->rank, win);
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [=](Touch *touch, Event *event)
 	{

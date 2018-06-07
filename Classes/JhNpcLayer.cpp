@@ -4,7 +4,7 @@
 #include "JhFightLayer.h"
 #include "JhGameScene.h"
 #include "JhMapLayer.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhNewerGuideLayer.h"
 #include "JhGameDataSave.h"
 #include "JhExchangeLayer.h"
@@ -15,7 +15,7 @@
 #include "JhGiveLayer.h"
 #include "JhNewerGuide2Layer.h"
 #include "JhNpcTalkLayer.h"
-#include "Winlayer.h"
+#include "JhWinlayer.h"
 
 std::string replacestr[] = {"少侠","小子","小兄弟","小伙子", "兄台"};
 std::string areplacestr[] = {"女侠","小娘子","小姑娘","小姑娘","姑娘"};
@@ -29,7 +29,7 @@ JhNpcLayer::JhNpcLayer()
 
 JhNpcLayer::~JhNpcLayer()
 {
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_MAP);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_MAP);
 
 }
 
@@ -89,7 +89,7 @@ bool JhNpcLayer::init(std::string addrid)
 	listener->setSwallowTouches(true);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_ENTER_MAPADDR);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_ENTER_MAPADDR);
 	this->scheduleOnce(schedule_selector(JhNpcLayer::delayShowNewerGuide), 0.2f);
 	this->schedule(schedule_selector(JhNpcLayer::checkUpateNpc), 1.0f);
 	return true;
@@ -873,7 +873,7 @@ bool JhNpcLayer::doCheckPlotMisson(int type, NpcData npcdata)
 							JhGlobalData::saveBranchPlotMissionStatus(plotData->id, M_NONE);
 						}
 						
-						Winlayer::showMissionAnim(g_gameLayer, "任务完成", vec_rwdres);
+						JhWinlayer::showMissionAnim(g_gameLayer, "任务完成", vec_rwdres);
 					}
 
 					updatePlotUI(type);

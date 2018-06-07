@@ -1,7 +1,7 @@
 ﻿#include "JhFactionMainLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhFactionCreateLayer.h"
 #include "JhConst.h"
 #include "JhGameScene.h"
@@ -136,9 +136,9 @@ void JhFactionMainLayer::onMore(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touc
 
 void JhFactionMainLayer::getFactionListData()
 {
-	WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-	ServerDataSwap::init(this)->getFactionList();
+	JhServerDataSwap::init(this)->getFactionList();
 }
 
 void JhFactionMainLayer::delayShowData(float dt)
@@ -348,9 +348,9 @@ void FactionListItem::onAction(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touch
 			{ 
 				if (actionbtn->getTitleText().compare(JhCommonFuncs::gbk2utf("取消申请")) == 0)
 				{
-					WaitingProgress* waitbox = WaitingProgress::create("处理中...");
+					JhWaitingProgress* waitbox = JhWaitingProgress::create("处理中...");
 					Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-					ServerDataSwap::init(this)->cancelFaction(m_data->id);
+					JhServerDataSwap::init(this)->cancelFaction(m_data->id);
 					return;
 				}
 				else
@@ -421,9 +421,9 @@ void FactionListItem::checkRequset()
 			return;
 		}
 	}
-	WaitingProgress* waitbox = WaitingProgress::create("处理中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("处理中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-	ServerDataSwap::init(this)->requestFaction(m_data->id);
+	JhServerDataSwap::init(this)->requestFaction(m_data->id);
 }
 
 void FactionListItem::onSuccess()

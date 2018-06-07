@@ -8,15 +8,15 @@
 #include "JhGameScene.h"
 #include "JhCommonFuncs.h"
 #include "JhGlobalData.h"
-#include "ShopLayer.h"
-#include "SoundManager.h"
-#include "UnlockLayer.h"
+#include "JhShopLayer.h"
+#include "JhSoundManager.h"
+#include "JhUnlockLayer.h"
 #include "JhNewerGuideLayer.h"
 #include "JhAnalyticUtil.h"
 #include "JhFightLayer.h"
-#include "StoryScene.h"
-#include "VipShopLayer.h"
-#include "TimeGiftLayer.h"
+#include "JhStoryScene.h"
+#include "JhVipShopLayer.h"
+#include "JhTimeGiftLayer.h"
 #include "JhRelationLayer.h"
 #include "JhRankLayer.h"
 #include "JhFactionMainLayer.h"
@@ -213,7 +213,7 @@ bool JhMapLayer::init()
 		else
 			removeWeatherPaticle();
 	}
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_MAP);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_MAP);
 
 	return true;
 }
@@ -226,7 +226,7 @@ void JhMapLayer::onclick(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventT
 		{
 			return;
 		}
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 
 		Node* node = (Node*)pSender;
 		m_addrname = node->getName();
@@ -419,8 +419,8 @@ void JhMapLayer::onShop(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTy
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
-		ShopLayer* shopLayer = ShopLayer::create();
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
+		JhShopLayer* shopLayer = JhShopLayer::create();
 		g_gameLayer->addChild(shopLayer, 5);
 	}
 }
@@ -429,8 +429,8 @@ void JhMapLayer::onVipShop(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEven
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
-		VipShopLayer* shopLayer = VipShopLayer::create();
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
+		JhVipShopLayer* shopLayer = JhVipShopLayer::create();
 		g_gameLayer->addChild(shopLayer, 5, "vipshoplayer");
 	}
 }
@@ -439,8 +439,8 @@ void JhMapLayer::onTimeGift(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
-		TimeGiftLayer* giftLayer = TimeGiftLayer::create(TIMEGIFT);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
+		JhTimeGiftLayer* giftLayer = JhTimeGiftLayer::create(TIMEGIFT);
 		g_gameLayer->addChild(giftLayer, 5, "gift");
 
 	}
@@ -450,7 +450,7 @@ void JhMapLayer::onRaffle(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEvent
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		JhRaffleLayer* rlayer = JhRaffleLayer::create();
 		g_gameLayer->addChild(rlayer, 5);
 	}
@@ -460,7 +460,7 @@ void JhMapLayer::onPrize(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventT
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		JhPrizeLayer* pzlayer = JhPrizeLayer::create();
 		g_gameLayer->addChild(pzlayer, 5);
 	}
@@ -507,7 +507,7 @@ void JhMapLayer::updateUnlockChapter()
 void JhMapLayer::showUnlockLayer(float dt)
 {
 
-	Director::getInstance()->getRunningScene()->addChild(UnlockLayer::create(), 10);
+	Director::getInstance()->getRunningScene()->addChild(JhUnlockLayer::create(), 10);
 	updateUnlockChapter();
 #ifdef ANALYTICS
 	std::string unlockstr = StringUtils::format("u%d", JhGlobalData::getUnlockChapter());
@@ -708,7 +708,7 @@ float JhMapLayer::moveToDestTime(float distance)
 
 void JhMapLayer::showEndAnim(float dt)
 {
-	Director::getInstance()->pushScene(StoryScene::createScene(1));
+	Director::getInstance()->pushScene(JhStoryScene::createScene(1));
 }
 
 void JhMapLayer::showNewerGuide(int step)
@@ -916,7 +916,7 @@ void JhMapLayer::onBranchMisson(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touc
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		if (JhGlobalData::getCurBranchPlotMissison().length() > 0)
 		{
 			JhBranchMissionLayer* layer = JhBranchMissionLayer::create();
@@ -930,7 +930,7 @@ void JhMapLayer::onHelp(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTy
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		JhHelpMainLayer* layer = JhHelpMainLayer::create();
 		g_gameLayer->addChild(layer, 5);
 	}
@@ -940,7 +940,7 @@ void JhMapLayer::onRecharge(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		JhRechargeLayer* layer = JhRechargeLayer::create();
 		g_gameLayer->addChild(layer, 5);
 	}

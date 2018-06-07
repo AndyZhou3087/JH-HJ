@@ -4,11 +4,11 @@
 #include "JhConst.h"
 #include "JhCommonFuncs.h"
 #include "JhHintBox.h"
-#include "Winlayer.h"
-#include "SoundManager.h"
+#include "JhWinlayer.h"
+#include "JhSoundManager.h"
 #include "JhAnalyticUtil.h"
 #include "JhMapLayer.h"
-#include "Shake.h"
+#include "JhShake.h"
 #include "JhMyActionProgressTimer.h"
 #include "JhMatchFightResultLayer.h"
 #include "JhGameDataSave.h"
@@ -26,7 +26,7 @@ JhMatchFightLayer::JhMatchFightLayer()
 
 JhMatchFightLayer::~JhMatchFightLayer()
 {
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_ENTER_MAPADDR);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_ENTER_MAPADDR);
 }
 
 JhMatchFightLayer* JhMatchFightLayer::create(std::string addrid)
@@ -97,7 +97,7 @@ bool JhMatchFightLayer::init(std::string addrid)
 
 	updatePlayerInfo();
 	// 滚动文字
-	m_fihgtScorll = UIScroll::create(610.0f, 435.0f);
+	m_fihgtScorll = JhUIScroll::create(610.0f, 435.0f);
 	m_fihgtScorll->setPosition(Vec2(360, 350));
 	csbnode->addChild(m_fihgtScorll);
 
@@ -120,7 +120,7 @@ bool JhMatchFightLayer::init(std::string addrid)
 	listener->setSwallowTouches(true);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 	int r = JhGlobalData::createRandomNum(4);
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_FIGHT_0 + r);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_FIGHT_0 + r);
 	return true;
 }
 
@@ -837,7 +837,7 @@ void JhMatchFightLayer::delayMyFight(float dt)
 		playeractimg->setOpacity(200);
 		playeractimg->setScale(3);
 		ActionInterval* ac1 = Spawn::create(FadeIn::create(0.1f), EaseSineIn::create(ScaleTo::create(0.1f, 1)), NULL);
-		playeractimg->runAction(Sequence::create(ac1, Shake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
+		playeractimg->runAction(Sequence::create(ac1, JhShake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
 
 	}
 
@@ -1017,7 +1017,7 @@ void JhMatchFightLayer::delayPlayerFight(float dt)
 		myactimg->setOpacity(200);
 		myactimg->setScale(3);
 		ActionInterval* ac1 = Spawn::create(FadeIn::create(0.1f), EaseSineIn::create(ScaleTo::create(0.1f, 1)), NULL);
-		myactimg->runAction(Sequence::create(ac1, Shake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
+		myactimg->runAction(Sequence::create(ac1, JhShake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
 
 	}
 
@@ -1246,7 +1246,7 @@ void JhMatchFightLayer::showFightWord(int type, int value)
 		}
 		checkWordLblColor(herowordstr);
 
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_ATTACK);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_ATTACK);
 	}
 	else//
 	{
@@ -1391,9 +1391,9 @@ void JhMatchFightLayer::showFightWord(int type, int value)
 		checkWordLblColor(bosswordstr);
 
 		if (g_hero->getHeadID() == 4)
-			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_HURT1);
+			JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_HURT1);
 		else
-			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_HURT0);
+			JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_HURT0);
 	}
 }
 
@@ -1734,7 +1734,7 @@ void JhMatchFightLayer::showMyTextAmin(std::string filename)
 	myactimg->setOpacity(200);
 	myactimg->setScale(3);
 	ActionInterval* ac1 = Spawn::create(FadeIn::create(0.1f), EaseSineIn::create(ScaleTo::create(0.1f, 1)), NULL);
-	myactimg->runAction(Sequence::create(ac1, Shake::create(0.2f, 20, 1), DelayTime::create(0.6f), Hide::create(), NULL));
+	myactimg->runAction(Sequence::create(ac1, JhShake::create(0.2f, 20, 1), DelayTime::create(0.6f), Hide::create(), NULL));
 	mycritfnt->setVisible(false);
 }
 

@@ -1,10 +1,10 @@
 ﻿#include "JhActivitScene.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhConst.h"
 #include "JhGlobalData.h"
 #include "JhMyPackage.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhGameScene.h"
 #include "JhGameDataSave.h"
 #include "JhAnalyticUtil.h"
@@ -241,12 +241,12 @@ void JhActivitScene::checkstoleData(float dt)
 	{
 
 		std::map<int, std::vector<PackageData>>::iterator it;
-		for (it = StorageRoom::map_storageData.begin(); it != StorageRoom::map_storageData.end(); ++it)
+		for (it = JhStorageRoom::map_storageData.begin(); it != JhStorageRoom::map_storageData.end(); ++it)
 		{
-			int size = StorageRoom::map_storageData[it->first].size();
+			int size = JhStorageRoom::map_storageData[it->first].size();
 			for (int j = 0; j < size; j++)
 			{
-				PackageData sdata = StorageRoom::map_storageData[it->first][j];
+				PackageData sdata = JhStorageRoom::map_storageData[it->first][j];
 
 				if (sdata.strid.compare("x001") != 0 && sdata.strid.compare("w001") != 0 && sdata.count > 0)
 				{
@@ -353,7 +353,7 @@ void JhActivitScene::checkstoleData(float dt)
 			}
 			else
 			{
-				StorageRoom::use(tmpdata.strid, r1);
+				JhStorageRoom::use(tmpdata.strid, r1);
 			}
 		}
 		if (istemphas)
@@ -496,7 +496,7 @@ void JhActivitScene::getRndRes(float dt)
 		coutlbl->setPosition(Vec2(box->getPositionX() + 40, 100));
 		this->addChild(coutlbl);
 
-		StorageRoom::add(tmpdata);
+		JhStorageRoom::add(tmpdata);
 	}
 
 	this->scheduleOnce(schedule_selector(JhActivitScene::popself), 4.0f);

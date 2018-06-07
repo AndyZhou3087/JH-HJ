@@ -7,12 +7,12 @@
 
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
-#include "UIScroll.h"
-#include "TopBar.h"
+#include "JhUIScroll.h"
+#include "JhTopBar.h"
 #include "JhNature.h"
 #include "JhHero.h"
 #include "JhHomeLayer.h"
-#include "ServerDataSwap.h"
+#include "JhServerDataSwap.h"
 
 class JhGameScene : public cocos2d::Layer, public ServerDataDelegateProtocol
 {
@@ -77,7 +77,7 @@ public:
 	void checkRestBranchMisson();
 
 private:
-	TopBar* topBar;//角色属性和天气NODE
+	JhTopBar* topBar;//角色属性和天气NODE
 	JhHomeLayer *homeLayer;//角色家
 	std::vector<Node*> m_newerNode;
 	int m_newerStep;
@@ -132,6 +132,6 @@ private:
 extern JhNature* g_nature;//天气数据
 extern JhHero* g_hero;//角色数据
 extern JhGameScene* g_gameLayer;//游戏层
-extern UIScroll* g_uiScroll;//topbar文件事件滚动控件
+extern JhUIScroll* g_uiScroll;//topbar文件事件滚动控件
 extern Sprite* scrollbg;//topbar文字滚动背景
 #endif // __GAME_SCENE_H__

@@ -2,9 +2,9 @@
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 
 JhHuafeiAwardListLayer::JhHuafeiAwardListLayer()
 {
@@ -68,10 +68,10 @@ void JhHuafeiAwardListLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::
 }
 void JhHuafeiAwardListLayer::getData()
 {
-	WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
 
-	ServerDataSwap::init(this)->getKajuanAwardList();
+	JhServerDataSwap::init(this)->getKajuanAwardList();
 
 }
 

@@ -1,10 +1,10 @@
 ﻿#include "JhGetVipRewardLayer.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGlobalData.h"
 #include "JhConst.h"
 #include "JhGoldGoodItem.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhLoginRewardLayer.h"
 #include "JhGameScene.h"
 
@@ -121,7 +121,7 @@ bool JhGetVipRewardLayer::init()
 
 		Label * coutlbl = Label::createWithTTF(strcount, "fonts/STXINGKA.TTF", 25);//Label::createWithSystemFont(strcount, "", 25);
 		coutlbl->setAnchorPoint(Vec2(1, 0.5));
-		coutlbl->setColor(Color3B(255, 255, 255));
+		coutlbl->setColor(Color3B(0, 0, 0));
 		coutlbl->setPosition(Vec2(box->getPositionX() + box->getContentSize().width / 2 - 10, 580));
 		this->addChild(coutlbl);
 
@@ -130,9 +130,9 @@ bool JhGetVipRewardLayer::init()
 		namelbl->setPosition(Vec2(box->getPositionX(), 530));
 		this->addChild(namelbl);
 	}
-	WaitingProgress* waitbox = WaitingProgress::create("获取月卡中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("获取月卡中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-	ServerDataSwap::init(this)->isGetVip(JhGlobalData::vec_buyVipIds);
+	JhServerDataSwap::init(this)->isGetVip(JhGlobalData::vec_buyVipIds);
 	JhGlobalData::vec_buyVipIds.clear();
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [=](Touch *touch, Event *event)

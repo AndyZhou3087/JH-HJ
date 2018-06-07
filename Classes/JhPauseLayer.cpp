@@ -1,7 +1,7 @@
 ﻿#include "JhPauseLayer.h"
 #include "JhGlobalData.h"
-#include "SoundManager.h"
-#include "StartScene.h"
+#include "JhSoundManager.h"
+#include "JhStartScene.h"
 #include "JhCommonFuncs.h"
 #include "JhMapLayer.h"
 #include "JhGameScene.h"
@@ -72,9 +72,9 @@ void JhPauseLayer::onGoHome(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		if (JhGlobalData::isOnline)
-			ServerDataSwap::init()->postOneData(JhGlobalData::getUId());
+			JhServerDataSwap::init()->postOneData(JhGlobalData::getUId());
 		removSelf();
-		Director::getInstance()->replaceScene(StartScene::createScene());
+		Director::getInstance()->replaceScene(JhStartScene::createScene());
 	}
 }
 

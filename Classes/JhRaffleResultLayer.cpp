@@ -1,6 +1,6 @@
 ﻿#include "JhRaffleResultLayer.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhAnalyticUtil.h"
 #include "JhCommonFuncs.h"
 

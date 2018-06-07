@@ -1,7 +1,7 @@
 ﻿#include "JhFactionMemberLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhConst.h"
 #include "JhGameScene.h"
 #include "JhPromotionLayer.h"
@@ -172,7 +172,7 @@ void JhFactionMemberLayer::onContribution(cocos2d::Ref *pSender, cocos2d::ui::Wi
                 this->addChild(hbox);
                 return;
             }
-			if (StorageRoom::getCountById("80") < 10)
+			if (JhStorageRoom::getCountById("80") < 10)
 			{
 				JhHintBox* hbox = JhHintBox::create(JhCommonFuncs::gbk2utf("银两不足！"));
 				this->addChild(hbox);
@@ -219,10 +219,10 @@ void JhFactionMemberLayer::onContribution(cocos2d::Ref *pSender, cocos2d::ui::Wi
 		if (isok)
 		{
 			f_action = F_CONTRIB;
-			WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+			JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 			Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
 
-			ServerDataSwap::init(this)->contributionFaction(m_fldata->id, contribution, g_hero->getHeadID());
+			JhServerDataSwap::init(this)->contributionFaction(m_fldata->id, contribution, g_hero->getHeadID());
 
 		}
 	}
@@ -230,9 +230,9 @@ void JhFactionMemberLayer::onContribution(cocos2d::Ref *pSender, cocos2d::ui::Wi
 
 void JhFactionMemberLayer::getFactionMemberData()
 {
-	WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-	ServerDataSwap::init(this)->getFactionMembers(m_fldata->id);
+	JhServerDataSwap::init(this)->getFactionMembers(m_fldata->id);
 }
 
 void JhFactionMemberLayer::delayShowData(float dt)
@@ -318,7 +318,7 @@ void JhFactionMemberLayer::onSuccess()
 		{
 			int c = JhGameDataSave::getInstance()->getSliverContribution();
 			JhGameDataSave::getInstance()->setSliverContribution(c+10);
-			StorageRoom::use("80", 10);
+			JhStorageRoom::use("80", 10);
 		}
 		else if (usetypecontribution == 1)
 		{
@@ -461,9 +461,9 @@ void FactionMemberItem::onAction(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 		cocos2d::ui::Button* actionbtn = (cocos2d::ui::Button*)pSender;
 		if (actionbtn->getTitleText().compare(JhCommonFuncs::gbk2utf("同意加入")) == 0)
 		{
-			WaitingProgress* waitbox = WaitingProgress::create("处理中...");
+			JhWaitingProgress* waitbox = JhWaitingProgress::create("处理中...");
 			Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-			ServerDataSwap::init(this)->joinFaction(m_data->factionid, m_data->userid, m_data->herotype);
+			JhServerDataSwap::init(this)->joinFaction(m_data->factionid, m_data->userid, m_data->herotype);
 		}
 		else if (actionbtn->getTitleText().compare(JhCommonFuncs::gbk2utf("逐出")) == 0)
 		{
@@ -488,9 +488,9 @@ void FactionMemberItem::onRefuse(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		f_action = F_REFUSE;
-		WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-		ServerDataSwap::init(this)->refuseFaction(m_data->factionid, m_data->userid, m_data->herotype);
+		JhServerDataSwap::init(this)->refuseFaction(m_data->factionid, m_data->userid, m_data->herotype);
 	}
 }
 

@@ -1,11 +1,11 @@
 ﻿#include "JhBuyComfirmLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGoldGoodItem.h"
-#include "ShopLayer.h"
+#include "JhShopLayer.h"
 #include "JhHintBox.h"
-#include "StorageUILayer.h"
+#include "JhStorageUILayer.h"
 #include "JhConst.h"
 #include "JhAnalyticUtil.h"
 #include "MD5.h"
@@ -98,7 +98,7 @@ void JhBuyComfirmLayer::onBuy(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 				return;
 			}
 
-			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUYOK);
+			JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUYOK);
 			JhGlobalData::setMyGoldCount(JhGlobalData::getMyGoldCount() - m_gdata->price);
 
 			int usegold = JhGlobalData::getUseGold() + m_gdata->price;
@@ -118,7 +118,7 @@ void JhBuyComfirmLayer::onBuy(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 			else
 				JhGoldGoodItem::addBuyGoods(m_gdata);
 
-			StorageUILayer* storageUI = (StorageUILayer*)g_gameLayer->getChildByName("storageuilayer");
+			JhStorageUILayer* storageUI = (JhStorageUILayer*)g_gameLayer->getChildByName("storageuilayer");
 			if (storageUI != NULL)
 				storageUI->updateResContent();
 #ifdef ANALYTICS
@@ -130,7 +130,7 @@ void JhBuyComfirmLayer::onBuy(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 		{
 			if (JhGlobalData::g_gameStatus == GAMESTART)
 			{
-				Director::getInstance()->getRunningScene()->addChild(ShopLayer::create(), 1000);
+				Director::getInstance()->getRunningScene()->addChild(JhShopLayer::create(), 1000);
 			}
 			else
 			{
@@ -173,9 +173,9 @@ void JhBuyComfirmLayer::changeSex()
 		std::string str = JhCommonFuncs::gbk2utf("已恢复男儿身！！");
 		if (carryData != NULL)
 		{
-			if (StorageRoom::getCountById(carryData->strid) <= 0)
+			if (JhStorageRoom::getCountById(carryData->strid) <= 0)
 			{
-				StorageRoom::add(*carryData);
+				JhStorageRoom::add(*carryData);
 				carryData->count = 0;
 				str = JhCommonFuncs::gbk2utf("恢复男儿身！！【%s】无法使用，已放置到仓库中。");
 				str = StringUtils::format(str.c_str(), JhGlobalData::map_allResource[carryData->strid].cname.c_str());

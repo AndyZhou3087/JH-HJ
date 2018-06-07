@@ -2,10 +2,10 @@
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
 #include "JhGlobalData.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGameScene.h"
 #include "JhNpcLayer.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhMapLayer.h"
 #include "JhHintBox.h"
 
@@ -219,7 +219,7 @@ void JhFriendExgScene::onGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 				data.strid = strid;
 				data.count = count;
 				data.extype = JhGlobalData::getResType(strid);
-				StorageRoom::add(data);
+				JhStorageRoom::add(data);
 			}
 			Director::getInstance()->popScene();
 		}
@@ -230,7 +230,7 @@ void JhFriendExgScene::onGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 			{
 				std::string strid = StringUtils::format("%d", vec_res[i] / 1000);
 				int count = vec_res[i] % 1000;
-				if (StorageRoom::getCountById(strid) < count)
+				if (JhStorageRoom::getCountById(strid) < count)
 				{
 					ishas = false;
 					break;
@@ -242,7 +242,7 @@ void JhFriendExgScene::onGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 				{
 					std::string strid = StringUtils::format("%d", vec_res[i] / 1000);
 					int count = vec_res[i] % 1000;
-					StorageRoom::use(strid, count);
+					JhStorageRoom::use(strid, count);
 				}
 				Director::getInstance()->popScene();
 			}

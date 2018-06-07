@@ -1,7 +1,7 @@
 ﻿#include "JhChallengeCountLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhHintBox.h"
 #include "JhFightLayer.h"
 #include "JhHeroStateUILayer.h"

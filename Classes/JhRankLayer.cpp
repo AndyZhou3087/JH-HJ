@@ -2,9 +2,9 @@
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhPlayerChallengeLayer.h"
 #include "JhAddFightCountLayer.h"
 #include "JhGameDataSave.h"
@@ -113,7 +113,7 @@ void JhRankLayer::onRank(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventT
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		cocos2d::ui::Button* btnnode = (cocos2d::ui::Button*)pSender;
 		isLastFight = false;
 
@@ -158,7 +158,7 @@ void JhRankLayer::onRank(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventT
 
 void JhRankLayer::getRankData(int type)
 {
-	WaitingProgress* waitbox = WaitingProgress::create("排名中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("排名中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
 
 	myfightingpower = 0;
@@ -180,11 +180,11 @@ void JhRankLayer::getRankData(int type)
 
 	if (type == 2)
 	{
-		ServerDataSwap::init(this)->getChallengeranklist();
+		JhServerDataSwap::init(this)->getChallengeranklist();
 	}
 	else
 	{
-		ServerDataSwap::init(this)->getRankData(orderstr);
+		JhServerDataSwap::init(this)->getRankData(orderstr);
 	}
 }
 
@@ -297,7 +297,7 @@ void JhRankLayer::onSuccess()
 				isLastFight = true;
 				JhGameDataSave::getInstance()->setPlayerChallengeData("");
 
-				ServerDataSwap::init(this)->getChallengeResult(10000, tmp[0], atoi(tmp[1].c_str()), 1, 0);
+				JhServerDataSwap::init(this)->getChallengeResult(10000, tmp[0], atoi(tmp[1].c_str()), 1, 0);
 			}
 		}
 		else
@@ -471,9 +471,9 @@ void RankItem::onFight(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTyp
 			Director::getInstance()->getRunningScene()->addChild(alayer, 1);
 			return;
 		}
-		WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-		ServerDataSwap::init(this)->getMyFihgterData(m_data->playerid, m_data->herotype);
+		JhServerDataSwap::init(this)->getMyFihgterData(m_data->playerid, m_data->herotype);
 	}
 }
 

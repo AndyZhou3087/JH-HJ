@@ -2,13 +2,13 @@
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
 #include "JhGlobalData.h"
-#include "SoundManager.h"
-#include "StorageRoom.h"
+#include "JhSoundManager.h"
+#include "JhStorageRoom.h"
 #include "JhHintBox.h"
 #include "JhGameDataSave.h"
 #include "MD5.h"
 #include "JhGameScene.h"
-#include "ShopLayer.h"
+#include "JhShopLayer.h"
 
 JhApprenticeScene::JhApprenticeScene()
 {
@@ -227,5 +227,5 @@ void JhApprenticeScene::showHint(int type)
 void JhApprenticeScene::delayShowShop(float dt)
 {
 	this->removeChildByName("hintbox");
-	this->addChild(ShopLayer::create(), 1);
+	this->addChild(JhShopLayer::create(), 1);
 }

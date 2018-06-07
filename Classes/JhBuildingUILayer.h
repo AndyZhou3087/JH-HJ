@@ -8,7 +8,7 @@
 #include "ui/CocosGUI.h"
 #include "JhBuilding.h"
 #include "JhGlobalData.h"
-#include "ServerDataSwap.h"
+#include "JhServerDataSwap.h"
 USING_NS_CC;
 
 typedef enum

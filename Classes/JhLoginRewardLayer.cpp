@@ -1,9 +1,9 @@
 ﻿#include "JhLoginRewardLayer.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGlobalData.h"
 #include "JhConst.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 
 JhLoginRewardLayer::JhLoginRewardLayer()
 {
@@ -176,7 +176,7 @@ void JhLoginRewardLayer::onGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touch
 			pdata.count = count;
 			pdata.type = JhGlobalData::getResType(resid);
 			pdata.extype = JhGlobalData::getResExType(resid);
-			StorageRoom::add(pdata);
+			JhStorageRoom::add(pdata);
 		}
 
 		JhGlobalData::continueLoginDays = 0;

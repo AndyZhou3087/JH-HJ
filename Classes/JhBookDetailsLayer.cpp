@@ -1,10 +1,10 @@
 ﻿#include "JhBookDetailsLayer.h"
 #include "JhGlobalData.h"
 #include "JhCommonFuncs.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhGameScene.h"
 #include "JhHero.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhConst.h"
 
 std::string traitarr[6] = { "", "ui/traitrm.png", "ui/traityl.png", "ui/traitsc.png", "ui/traitcs.png","ui/traitjs.png" };

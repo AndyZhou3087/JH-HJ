@@ -3,8 +3,8 @@
 #include "json.h"
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
-#include "SoundManager.h"
-#include "StorageRoom.h"
+#include "JhSoundManager.h"
+#include "JhStorageRoom.h"
 #include "JhMyMenu.h"
 #include "JhGlobalData.h"
 #include "JhGameScene.h"
@@ -250,7 +250,7 @@ void JhBookShelfLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 
 void JhBookShelfLayer::onclick(Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 	Node* node = (Node*)pSender;
 	BookData* bdata = (BookData*)node->getUserData();
 	this->addChild(JhBookDetailsLayer::create(bdata));

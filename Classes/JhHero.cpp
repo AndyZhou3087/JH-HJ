@@ -325,9 +325,9 @@ bool JhHero::checkifHasGF_Equip(std::string gfeid)
 	for (int m = 0; m < sizeof(storagetype) / sizeof(storagetype[0]); m++)
 	{
 		StorageType stype = storagetype[m];
-		for (unsigned i = 0; i < StorageRoom::map_storageData[stype].size(); i++)
+		for (unsigned i = 0; i < JhStorageRoom::map_storageData[stype].size(); i++)
 		{
-			if (StorageRoom::map_storageData[stype][i].strid.compare(gfeid) == 0)
+			if (JhStorageRoom::map_storageData[stype][i].strid.compare(gfeid) == 0)
 				return true;
 		}
 	}
@@ -369,10 +369,10 @@ PackageData* JhHero::getGF_Equip(std::string gfeid)
 	for (int m = 0; m < sizeof(storagetype) / sizeof(storagetype[0]); m++)
 	{
 		StorageType stype = storagetype[m];
-		for (unsigned i = 0; i < StorageRoom::map_storageData[stype].size(); i++)
+		for (unsigned i = 0; i < JhStorageRoom::map_storageData[stype].size(); i++)
 		{
-			if (StorageRoom::map_storageData[stype][i].strid.compare(gfeid) == 0)
-				return &StorageRoom::map_storageData[stype][i];
+			if (JhStorageRoom::map_storageData[stype][i].strid.compare(gfeid) == 0)
+				return &JhStorageRoom::map_storageData[stype][i];
 		}
 	}
 
@@ -400,14 +400,14 @@ PackageData* JhHero::getMeHas(std::string strid)
 	//仓库中是否有
 
 	std::map<int, std::vector<PackageData>>::iterator it;
-	for (it = StorageRoom::map_storageData.begin(); it != StorageRoom::map_storageData.end(); ++it)
+	for (it = JhStorageRoom::map_storageData.begin(); it != JhStorageRoom::map_storageData.end(); ++it)
 	{
-		int size = StorageRoom::map_storageData[it->first].size();
+		int size = JhStorageRoom::map_storageData[it->first].size();
 		for (int j = 0; j < size; j++)
 		{
-			PackageData sdata = StorageRoom::map_storageData[it->first][j];
+			PackageData sdata = JhStorageRoom::map_storageData[it->first][j];
 			if (sdata.strid.compare(strid) == 0)
-				return &StorageRoom::map_storageData[it->first][j];
+				return &JhStorageRoom::map_storageData[it->first][j];
 		}
 	}
 	return NULL;
@@ -433,10 +433,10 @@ int JhHero::getGfCountByLv(int lv)
 	//仓库中是否有
 	for (int i = N_GONG; i <= W_GONG; i++)
 	{
-		int size = StorageRoom::map_storageData[i].size();
+		int size = JhStorageRoom::map_storageData[i].size();
 		for (int j = 0; j < size; j++)
 		{
-			PackageData sdata = StorageRoom::map_storageData[i][j];
+			PackageData sdata = JhStorageRoom::map_storageData[i][j];
 			if (sdata.lv >= lv - 1)
 				count++;
 		}

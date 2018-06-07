@@ -1,6 +1,6 @@
 ﻿#include "JhDivideLayer.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhConst.h"
 
 JhDivideLayer::JhDivideLayer()

@@ -1,7 +1,7 @@
 ﻿#include "JhFactionCreateLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhConst.h"
 #include "JhFactionMainLayer.h"
 #include "MD5.h"
@@ -238,10 +238,10 @@ void JhFactionCreateLayer::onCreateFaction(cocos2d::Ref *pSender, cocos2d::ui::W
 					this->addChild(hint);
 					return;
 				}
-				WaitingProgress* waitbox = WaitingProgress::create("处理中...");
+				JhWaitingProgress* waitbox = JhWaitingProgress::create("处理中...");
 				Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
 
-				ServerDataSwap::init(this)->createFaciton(utf8name, selectlv, selectsex, utf8desc);
+				JhServerDataSwap::init(this)->createFaciton(utf8name, selectlv, selectsex, utf8desc);
 			}
 			else
 			{
@@ -251,9 +251,9 @@ void JhFactionCreateLayer::onCreateFaction(cocos2d::Ref *pSender, cocos2d::ui::W
 		}
 		else
 		{
-			WaitingProgress* waitbox = WaitingProgress::create("处理中...");
+			JhWaitingProgress* waitbox = JhWaitingProgress::create("处理中...");
 			Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-			ServerDataSwap::init(this)->modifyFaciton(m_modifyfdata->id, utf8name, selectlv, selectsex, utf8desc);
+			JhServerDataSwap::init(this)->modifyFaciton(m_modifyfdata->id, utf8name, selectlv, selectsex, utf8desc);
 
 		}
 	}

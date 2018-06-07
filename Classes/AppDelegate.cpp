@@ -1,9 +1,9 @@
 ﻿#include "AppDelegate.h"
-#include "StartScene.h"
-#include "SoundManager.h"
+#include "JhStartScene.h"
+#include "JhSoundManager.h"
 #include "JhConst.h"
 #include "JhGameScene.h"
-#include "ServerDataSwap.h"
+#include "JhServerDataSwap.h"
 #include "JhBuildingUILayer.h"
 #include "JhMixSuggestLayer.h"
 #ifdef ANALYTICS
@@ -121,9 +121,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     initBuy();
 #endif	
 
-	SoundManager::getInstance()->loadSounds();
+	JhSoundManager::getInstance()->loadSounds();
     // create a scene. it's an autorelease object
-	auto scene = StartScene::createScene();
+	auto scene = JhStartScene::createScene();
     // run
     director->runWithScene(scene);
 
@@ -134,10 +134,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
 void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    SoundManager::getInstance()->saveVolume();
-    SoundManager::getInstance()->setVolume(0.0f);
+    JhSoundManager::getInstance()->saveVolume();
+    JhSoundManager::getInstance()->setVolume(0.0f);
 #else
-	SoundManager::getInstance()->pauseBackMusic();
+	JhSoundManager::getInstance()->pauseBackMusic();
 #endif
 	
 	if (g_gameLayer != NULL)
@@ -146,7 +146,7 @@ void AppDelegate::applicationDidEnterBackground() {
 	}
 
 	if (JhGlobalData::isOnline)
-		ServerDataSwap::init(NULL)->postOneData(JhGlobalData::getUId());
+		JhServerDataSwap::init(NULL)->postOneData(JhGlobalData::getUId());
     // if you use SimpleAudioEngine, it must be pause
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
@@ -155,9 +155,9 @@ void AppDelegate::applicationDidEnterBackground() {
 void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    SoundManager::getInstance()->setVolume(SoundManager::getInstance()->getSaveVolume());
+    JhSoundManager::getInstance()->setVolume(JhSoundManager::getInstance()->getSaveVolume());
 #else
-	SoundManager::getInstance()->resumeBackMusic();
+	JhSoundManager::getInstance()->resumeBackMusic();
 #endif
 	if (g_gameLayer != NULL)
 	{
@@ -172,12 +172,12 @@ void AppDelegate::applicationWillEnterForeground() {
 			}
 			else
 			{
-				if (g_hero != NULL && !ServerDataSwap::isGetingData())
+				if (g_hero != NULL && !JhServerDataSwap::isGetingData())
 				{
 					if (JhGlobalData::isOnline)
 					{
-						ServerDataSwap::init(g_gameLayer)->vipIsOn(g_hero->getHeadID());
-						ServerDataSwap::init(NULL)->getFactionList();
+						JhServerDataSwap::init(g_gameLayer)->vipIsOn(g_hero->getHeadID());
+						JhServerDataSwap::init(NULL)->getFactionList();
 					}
 				}
 			}

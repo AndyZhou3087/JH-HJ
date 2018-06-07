@@ -295,7 +295,7 @@ void AchiveItem::onGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTyp
 					pdata.extype = JhGlobalData::getResExType(resid);
 
 					if (!g_hero->checkifHasGF_Equip(resid) && JhGlobalData::tempHasGf_Equip(resid).length() <= 0)
-						StorageRoom::add(pdata);
+						JhStorageRoom::add(pdata);
 				}
 			}
 			paradata->finish = -1;

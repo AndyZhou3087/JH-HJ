@@ -1,5 +1,5 @@
 ﻿#include "JhBuildingDetailsLayer.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhCommonFuncs.h"
 
 JhBuildingDetailsLayer::JhBuildingDetailsLayer()

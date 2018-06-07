@@ -7,7 +7,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "JhHero.h"
-#include "ServerDataSwap.h"
+#include "JhServerDataSwap.h"
 USING_NS_CC;
 
 

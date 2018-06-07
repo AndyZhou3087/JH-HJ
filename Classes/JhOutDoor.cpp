@@ -2,10 +2,10 @@
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
 #include "JhMapLayer.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhGameScene.h"
 #include "JhGlobalData.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhActivitScene.h"
 #include "JhMyMenu.h"
 #include "JhResDetailsLayer.h"
@@ -71,7 +71,7 @@ void JhOutDoor::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTyp
 	{
 		for (int i = 0; i < JhMyPackage::getSize(); i++)
 		{
-			StorageRoom::add(JhMyPackage::vec_packages[i]);
+			JhStorageRoom::add(JhMyPackage::vec_packages[i]);
 		}
 		JhMyPackage::takeoff();
 		this->removeFromParentAndCleanup(true);
@@ -188,7 +188,7 @@ void JhOutDoor::updataStorageUI()
 	int typecount = 0;
 	for (int i = 0; i < RES_MAX; i++)
 	{
-		typecount += StorageRoom::map_storageData[i].size();
+		typecount += JhStorageRoom::map_storageData[i].size();
 	}
 
 	int row = typecount % 4 == 0 ? typecount / 4 : (typecount / 4 + 1);
@@ -208,9 +208,9 @@ void JhOutDoor::updataStorageUI()
 	allStorageData.clear();
 	for (int i = 0; i < RES_MAX; i++)
 	{
-		for (unsigned int m = 0; m < StorageRoom::map_storageData[i].size(); m++)
+		for (unsigned int m = 0; m < JhStorageRoom::map_storageData[i].size(); m++)
 		{
-			allStorageData.push_back(&StorageRoom::map_storageData[i][m]);
+			allStorageData.push_back(&JhStorageRoom::map_storageData[i][m]);
 		}
 	}
 
@@ -307,7 +307,7 @@ void JhOutDoor::onStorageItem(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 
 	else if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		unschedule(schedule_selector(JhOutDoor::longTouchUpdate));
 		if (!m_isLongPress)
 		{
@@ -331,7 +331,7 @@ void JhOutDoor::takeout(PackageData* pdata)
 	if (count <= 0)
 	{
 		std::vector<PackageData>::iterator it;
-		for (it = StorageRoom::map_storageData[data->type].begin(); it != StorageRoom::map_storageData[data->type].end(); ++it)
+		for (it = JhStorageRoom::map_storageData[data->type].begin(); it != JhStorageRoom::map_storageData[data->type].end(); ++it)
 		{
 			if (it->strid.compare(data->strid) == 0 && it->goodvalue == data->goodvalue)
 			{
@@ -339,7 +339,7 @@ void JhOutDoor::takeout(PackageData* pdata)
 				pdata.count = 1;
 				if (JhMyPackage::add(pdata) == 0)
 				{
-					StorageRoom::use(pdata);
+					JhStorageRoom::use(pdata);
 				}
 				break;
 			}
@@ -351,7 +351,7 @@ void JhOutDoor::takeout(PackageData* pdata)
 		pdata.count = 1;
 		if (JhMyPackage::add(pdata) == 0)
 		{
-			StorageRoom::use(data->strid);
+			JhStorageRoom::use(data->strid);
 		}
 	}
 	m_heroproper->refreshCarryData();
@@ -359,12 +359,12 @@ void JhOutDoor::takeout(PackageData* pdata)
 
 void JhOutDoor::onPackageItem(cocos2d::Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 	Node* node = (Node*)pSender;
 	int index = node->getTag();
 	PackageData data = JhMyPackage::vec_packages[index];
 	data.count = 1;
-	StorageRoom::add(data);
+	JhStorageRoom::add(data);
 	JhMyPackage::cutone(data);
 	m_heroproper->refreshCarryData();
 	updata();

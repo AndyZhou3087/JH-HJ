@@ -1,11 +1,11 @@
 ﻿#include "JhHelpMainLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGlobalData.h"
 #include "json.h"
 #include "JhHelpDescLayer.h"
-#include "ShopLayer.h"
+#include "JhShopLayer.h"
 
 JhHelpMainLayer::JhHelpMainLayer()
 {
@@ -115,7 +115,7 @@ void JhHelpMainLayer::onShop(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		this->addChild(ShopLayer::create());
+		this->addChild(JhShopLayer::create());
 	}
 }
 
@@ -123,7 +123,7 @@ void JhHelpMainLayer::onTextClick(cocos2d::Ref *pSender, cocos2d::ui::Widget::To
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		Node* node = (Node*)pSender;
 		int index = node->getTag();
 		this->addChild(JhHelpDescLayer::create(vec_helpdata[index].title, vec_helpdata[index].content));

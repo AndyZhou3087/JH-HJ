@@ -1,7 +1,7 @@
 ﻿#include "JhBuyDetailsLayer.h"
 #include "JhCommonFuncs.h"
-#include "ShopLayer.h"
-#include "SoundManager.h"
+#include "JhShopLayer.h"
+#include "JhSoundManager.h"
 #include "JhGlobalData.h"
 #include "JhConst.h"
 JhBuyDetailsLayer::JhBuyDetailsLayer()
@@ -120,6 +120,6 @@ void JhBuyDetailsLayer::onBuy(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		ShopLayer::beginPay(this->getTag());
+		JhShopLayer::beginPay(this->getTag());
 	}
 }

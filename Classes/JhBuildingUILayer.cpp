@@ -5,9 +5,9 @@
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
 #include "JhConst.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhHintBox.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhResDetailsLayer.h"
 #include "JhBuildingDetailsLayer.h"
 #include "JhHomeLayer.h"
@@ -18,7 +18,7 @@
 #include "JhBuyComfirmLayer.h"
 #include "JhBookShelfLayer.h"
 #include "JhDivideLayer.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 
 JhBuildingUILayer::JhBuildingUILayer()
 {
@@ -155,7 +155,7 @@ void JhBuildingUILayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touch
 	{
 		if (JhNewerGuideLayer::checkifNewerGuide(2))
 		{
-			TopBar* topbar = (TopBar*)g_gameLayer->getChildByName("topbar");
+			JhTopBar* topbar = (JhTopBar*)g_gameLayer->getChildByName("topbar");
 			if (topbar != NULL)
 				topbar->showNewerGuide(2);
 		}
@@ -306,7 +306,7 @@ void JhBuildingUILayer::onAction(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 			{
 				int restypecount = m_build->data.Res[m_build->data.level].at(i);
 				std::string strid = StringUtils::format("%d", restypecount / 1000);
-				if (StorageRoom::getCountById(strid) < restypecount%1000)
+				if (JhStorageRoom::getCountById(strid) < restypecount%1000)
 				{
 					JhHintBox* layer = JhHintBox::create(JhCommonFuncs::gbk2utf("没有足够的资源!"));
 					addChild(layer);
@@ -356,7 +356,7 @@ void JhBuildingUILayer::onAction(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 			{
 				int restypecount = vec_buildAcitonData.at(tag - ACTION).res.at(m);
 				std::string strid = StringUtils::format("%d", restypecount / 1000);
-				if (StorageRoom::getCountById(strid) < restypecount % 1000)
+				if (JhStorageRoom::getCountById(strid) < restypecount % 1000)
 				{
 					JhHintBox* layer = JhHintBox::create(JhCommonFuncs::gbk2utf("没有足够的资源!"));
 					this->addChild(layer);
@@ -390,9 +390,9 @@ void JhBuildingUILayer::onAction(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 				if (vec_actionbtn[tag - ACTION]->getTitleText().compare(JhCommonFuncs::gbk2utf("闭关")) == 0)
 				{
 					exersiceTag = tag;
-					WaitingProgress* waitbox = WaitingProgress::create("准备中...");
+					JhWaitingProgress* waitbox = JhWaitingProgress::create("准备中...");
 					Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-					ServerDataSwap::init(this)->getServerTime();
+					JhServerDataSwap::init(this)->getServerTime();
 				}
 				else if (vec_actionbtn[tag - ACTION]->getTitleText().compare(JhCommonFuncs::gbk2utf("取消")) == 0)
 				{
@@ -405,9 +405,9 @@ void JhBuildingUILayer::onAction(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 				else if (vec_actionbtn[tag - ACTION]->getTitleText().compare(JhCommonFuncs::gbk2utf("出关")) == 0)
 				{
 					exersiceTag = tag;
-					WaitingProgress* waitbox = WaitingProgress::create("准备中...");
+					JhWaitingProgress* waitbox = JhWaitingProgress::create("准备中...");
 					Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-					ServerDataSwap::init(this)->getServerTime();
+					JhServerDataSwap::init(this)->getServerTime();
 				}
 
 			}
@@ -439,7 +439,7 @@ void JhBuildingUILayer::ondivideSucc(Ref* pSender, BACTIONTYPE type, Node* divid
 		data.type = JhGlobalData::getResType(strid);
 		data.strid = strid;
 		data.count = restypecount%1000/2;
-		StorageRoom::add(data);
+		JhStorageRoom::add(data);
 	}
 	std::string strid = vec_buildAcitonData.at(type - ACTION).icon;
 	if (g_hero->getAtrByType(H_WEAPON)->count > 0 && g_hero->getAtrByType(H_WEAPON)->strid.compare(strid) == 0)
@@ -454,7 +454,7 @@ void JhBuildingUILayer::ondivideSucc(Ref* pSender, BACTIONTYPE type, Node* divid
 		data.count = 0;
 		g_hero->setAtrByType(H_ARMOR, data);
 	}
-	StorageRoom::use(strid);
+	JhStorageRoom::use(strid);
 
 	updataActionRes();
 	updataBuildRes();
@@ -470,7 +470,7 @@ void JhBuildingUILayer::onfinish(Ref* pSender, BACTIONTYPE type)
 		{
 			int restypecount = m_build->data.Res[m_build->data.level - 1].at(i);
 			std::string strid = StringUtils::format("%d", restypecount / 1000);
-			StorageRoom::use(strid, restypecount % 1000);
+			JhStorageRoom::use(strid, restypecount % 1000);
 		}
 		updataBuildRes();
 		if (strcmp(m_build->data.name, "exerciseroom") == 0 && m_build->data.level >= 1)
@@ -530,7 +530,7 @@ void JhBuildingUILayer::onfinish(Ref* pSender, BACTIONTYPE type)
 			data.strid = idstr;
 			data.count = 1;
 			data.extype = vec_buildAcitonData.at(type - ACTION).extype;
-			StorageRoom::add(data);
+			JhStorageRoom::add(data);
 			//JhHintBox* layer = JhHintBox::create(JhCommonFuncs::gbk2utf("制作成功"));
 			//this->addChild(layer);
 			showFinishHintText("images/buildtext2.png");
@@ -540,7 +540,7 @@ void JhBuildingUILayer::onfinish(Ref* pSender, BACTIONTYPE type)
 		{
 			int restypecount = vec_buildAcitonData.at(type - ACTION).res.at(m);
 			std::string strid = StringUtils::format("%d", restypecount / 1000);
-			StorageRoom::use(strid, restypecount % 1000);
+			JhStorageRoom::use(strid, restypecount % 1000);
 		}
 
 		updataActionRes();
@@ -604,7 +604,7 @@ void JhBuildingUILayer::updataBuildRes()
 					//res->setScale(0.38f);
 					resitem->addChild(res);
 					std::string strid = StringUtils::format("%d", restypecount / 1000);
-					int hascount = StorageRoom::getCountById(strid);
+					int hascount = JhStorageRoom::getCountById(strid);
 					int needcount = restypecount % 1000;
 					str = StringUtils::format("%d/%d", hascount, needcount);
 					rescount->setVisible(true);
@@ -663,7 +663,7 @@ void JhBuildingUILayer::updataActionRes()
 						rescount->setVisible(true);
 
 						std::string strid = StringUtils::format("%d", restypecount / 1000);
-						int hascount = StorageRoom::getCountById(strid);
+						int hascount = JhStorageRoom::getCountById(strid);
 						int needcount = restypecount % 1000;
 						str = StringUtils::format("%d/%d", hascount, needcount);//拥有的资源个数/需要资源个数
 						rescount->setString(str);
@@ -713,7 +713,7 @@ void JhBuildingUILayer::onResDetails(cocos2d::Ref *pSender, cocos2d::ui::Widget:
 	{
 		if (!isDraging)
 		{
-			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+			JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 
 			Node* node = (Node*)pSender;
 			int tag = node->getTag();
@@ -744,7 +744,7 @@ void JhBuildingUILayer::onBuidingDetails(cocos2d::Ref *pSender, cocos2d::ui::Wid
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		this->addChild(JhBuildingDetailsLayer::create(m_build));
 	}
 }
@@ -775,7 +775,7 @@ void JhBuildingUILayer::showNewerGuide(int step)
 	}
 	else if (step == 44)
 	{
-		if (StorageRoom::getCountById("4") >= 2 && StorageRoom::getCountById("7") >= 2 && StorageRoom::getCountById("1") >= 2)
+		if (JhStorageRoom::getCountById("4") >= 2 && JhStorageRoom::getCountById("7") >= 2 && JhStorageRoom::getCountById("1") >= 2)
 			nodes.push_back(buildnode->getChildByName("item")->getChildByName("actionbtn"));
 	}
 	if (nodes.size() > 0)
@@ -949,9 +949,9 @@ void JhBuildingUILayer::getServerTime()
 {
 	if (strcmp(m_build->data.name, "exerciseroom") == 0)
 	{
-		WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-		ServerDataSwap::init(this)->getServerTime();
+		JhServerDataSwap::init(this)->getServerTime();
 	}
 }
 

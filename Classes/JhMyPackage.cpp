@@ -2,7 +2,7 @@
 #include "JhGameDataSave.h"
 #include "JhCommonFuncs.h"
 #include "JhGlobalData.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 
 int JhMyPackage::max = 4;
 std::vector<PackageData> JhMyPackage::vec_packages;
@@ -223,7 +223,7 @@ void JhMyPackage::load()
 		if (data.type == WEAPON || data.type == PROTECT_EQU)
 		{
 			std::vector<PackageData>::iterator it;
-			for (it = StorageRoom::map_storageData[data.type].begin(); it != StorageRoom::map_storageData[data.type].end();it++)
+			for (it = JhStorageRoom::map_storageData[data.type].begin(); it != JhStorageRoom::map_storageData[data.type].end();it++)
 			{
 				if (it->strid.compare(data.strid) == 0)
 				{

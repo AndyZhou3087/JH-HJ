@@ -1,9 +1,9 @@
 ﻿#include "JhHSLJRankLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhHSLJMainLayer.h"
 #include "JhGameScene.h"
 
@@ -75,9 +75,9 @@ void JhHSLJRankLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 
 void JhHSLJRankLayer::getRankData()
 {
-	WaitingProgress* waitbox = WaitingProgress::create("排名中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("排名中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-	ServerDataSwap::init(this)->getHSLJRankData();
+	JhServerDataSwap::init(this)->getHSLJRankData();
 }
 
 void JhHSLJRankLayer::delayShowData(float dt)

@@ -5,16 +5,16 @@
 #include "JhForgingtable.h"
 #include "JhCookTable.h"
 #include "JhMedicineKit.h"
-#include "WineTable.h"
-#include "WineMaker.h"
-#include "StorageRoom.h"
+#include "JhWineTable.h"
+#include "JhWineMaker.h"
+#include "JhStorageRoom.h"
 #include "JhFence.h"
 #include "JhExerciseRoom.h"
 #include "JhBuildingUILayer.h"
-#include "StorageUILayer.h"
+#include "JhStorageUILayer.h"
 #include "JhOutDoor.h"
 #include "JhGameScene.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhNewerGuideLayer.h"
 #include "JhHintBox.h"
 #include "JhCommonFuncs.h"
@@ -85,7 +85,7 @@ bool JhHomeLayer::init()
 	forgingtableItem->setPosition(Vec2(553, 651));
 	menu->addChild(forgingtableItem);
 
-	JhBuilding* winemaker = WineMaker::create();
+	JhBuilding* winemaker = JhWineMaker::create();
 	Vec_Buildings.push_back(winemaker);
 	MenuItemSprite* winemakerItem = MenuItemSprite::create(
 		winemaker,
@@ -125,7 +125,7 @@ bool JhHomeLayer::init()
 	furnaceItem->setPosition(Vec2(444, 199));
 	menu->addChild(furnaceItem);
 
-	JhBuilding* winetable = WineTable::create();
+	JhBuilding* winetable = JhWineTable::create();
 	Vec_Buildings.push_back(winetable);
 	MenuItemSprite* winetableItem = MenuItemSprite::create(
 		winetable,
@@ -166,7 +166,7 @@ bool JhHomeLayer::init()
 
 	loadJsonData();
 
-	m_storageroom = StorageRoom::create();
+	m_storageroom = JhStorageRoom::create();
 	MenuItemSprite* storageroomItem = MenuItemSprite::create(
 		m_storageroom,
 		m_storageroom,
@@ -188,7 +188,7 @@ bool JhHomeLayer::init()
 
 	for (int i = 0; i < JhMyPackage::getSize(); i++)
 	{
-		StorageRoom::add(JhMyPackage::vec_packages[i]);
+		JhStorageRoom::add(JhMyPackage::vec_packages[i]);
 	}
 	JhMyPackage::takeoff();
 
@@ -206,13 +206,13 @@ bool JhHomeLayer::init()
 	listener->setSwallowTouches(true);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_HOME);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_HOME);
 
 	this->scheduleOnce(schedule_selector(JhHomeLayer::delayShowNewerGuide), 0.2f);
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 	if (JhGlobalData::isOnline)
-		ServerDataSwap::init(NULL)->postOneData(JhGlobalData::getUId());
+		JhServerDataSwap::init(NULL)->postOneData(JhGlobalData::getUId());
 #endif
 
 	return true;
@@ -220,7 +220,7 @@ bool JhHomeLayer::init()
 
 void JhHomeLayer::onclick(Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 	Node* node = (Node*)pSender;
 	std::string nodename = node->getName();
 	int nodetag = node->getTag();
@@ -252,14 +252,14 @@ void JhHomeLayer::loadJsonData()
 
 void JhHomeLayer::onStorageRoom(Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
-	Layer* layer = StorageUILayer::create();
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
+	Layer* layer = JhStorageUILayer::create();
 	g_gameLayer->addChild(layer, 10, "storageuilayer");
 }
 
 void JhHomeLayer::onFence(Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 
 	if (JhGlobalData::isExercising() && !JhGlobalData::isHasFSF())
 	{
@@ -344,11 +344,11 @@ void JhHomeLayer::delayShowNewerGuide(float dt)
 				std::string strResid = StringUtils::format("%d", buildresid);
 				for (int m = 0; m < RES_MAX; m++)
 				{
-					for (unsigned int k = 0; k < StorageRoom::map_storageData[m].size(); k++)
+					for (unsigned int k = 0; k < JhStorageRoom::map_storageData[m].size(); k++)
 					{
-						if (StorageRoom::map_storageData[m][k].strid.compare(strResid) == 0)
+						if (JhStorageRoom::map_storageData[m][k].strid.compare(strResid) == 0)
 						{
-							if (StorageRoom::map_storageData[m][k].count >= buildrescount)
+							if (JhStorageRoom::map_storageData[m][k].count >= buildrescount)
 							{
 								findcount++;
 							}

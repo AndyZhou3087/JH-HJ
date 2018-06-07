@@ -4,18 +4,18 @@
 #include "JhConst.h"
 #include "JhGameScene.h"
 #include "JhGlobalData.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhGameDataSave.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhActionGetLayer.h"
-#include "TempStorageLayer.h"
-#include "Winlayer.h"
+#include "JhTempStorageLayer.h"
+#include "JhWinlayer.h"
 #include "JhOutDoor.h"
 #include "JhHeroStateUILayer.h"
 #include "JhMyMenu.h"
 #include "JhBuyComfirmLayer.h"
 #include "JhNewerGuideLayer.h"
-#include "SpecialHintLayer.h"
+#include "JhSpecialHintLayer.h"
 #include "JhHintBox.h"
 #include "JhMixGFNode.h"
 
@@ -157,7 +157,7 @@ void JhHeroProperNode::onImageClick(cocos2d::Ref *pSender, cocos2d::ui::Widget::
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 
 		Node* node = (Node*)pSender;
 		int tag = node->getTag();
@@ -223,55 +223,55 @@ void JhHeroProperNode::addCarryData(HeroAtrType index)
 	{
 		if (index == H_WEAPON)//武器
 		{
-			for (unsigned int m = 0; m < StorageRoom::map_storageData[WEAPON].size(); m++)
+			for (unsigned int m = 0; m < JhStorageRoom::map_storageData[WEAPON].size(); m++)
 			{
-				PackageData data = StorageRoom::map_storageData[WEAPON][m];
+				PackageData data = JhStorageRoom::map_storageData[WEAPON][m];
 				map_carryData[index].push_back(data);
 			}
 		}
 		else if (index == H_WG)//外功
 		{
-			for (unsigned int m = 0; m < StorageRoom::map_storageData[W_GONG].size(); m++)
+			for (unsigned int m = 0; m < JhStorageRoom::map_storageData[W_GONG].size(); m++)
 			{
-				PackageData data = StorageRoom::map_storageData[W_GONG][m];
+				PackageData data = JhStorageRoom::map_storageData[W_GONG][m];
 				map_carryData[index].push_back(data);
 			}
 		}
 		else if (index == H_NG)//内功
 		{
-			for (unsigned int m = 0; m < StorageRoom::map_storageData[N_GONG].size(); m++)
+			for (unsigned int m = 0; m < JhStorageRoom::map_storageData[N_GONG].size(); m++)
 			{
-				PackageData data = StorageRoom::map_storageData[N_GONG][m];
+				PackageData data = JhStorageRoom::map_storageData[N_GONG][m];
 				map_carryData[index].push_back(data);
 			}
 		}
 		else if (index == H_ARMOR)//防具
 		{
-			for (unsigned int m = 0; m < StorageRoom::map_storageData[PROTECT_EQU].size(); m++)
+			for (unsigned int m = 0; m < JhStorageRoom::map_storageData[PROTECT_EQU].size(); m++)
 			{
-				PackageData data = StorageRoom::map_storageData[PROTECT_EQU][m];
+				PackageData data = JhStorageRoom::map_storageData[PROTECT_EQU][m];
 				map_carryData[index].push_back(data);
 			}
 		}
 		else if (index == H_MOUNT)
 		{
-			for (unsigned int m = 0; m < StorageRoom::map_storageData[RES_2].size(); m++)
+			for (unsigned int m = 0; m < JhStorageRoom::map_storageData[RES_2].size(); m++)
 			{
-				PackageData data = StorageRoom::map_storageData[RES_2][m];
+				PackageData data = JhStorageRoom::map_storageData[RES_2][m];
 				if (data.extype == 4)
 					map_carryData[index].push_back(data);
 			}
 		}
 		else//工具
 		{
-			int toolsize = StorageRoom::map_storageData[TOOLS].size();
+			int toolsize = JhStorageRoom::map_storageData[TOOLS].size();
 
 			if (toolsize > 0)
 			{
 
-				for (unsigned int m = 0; m < StorageRoom::map_storageData[TOOLS].size(); m++)
+				for (unsigned int m = 0; m < JhStorageRoom::map_storageData[TOOLS].size(); m++)
 				{
-					PackageData data = StorageRoom::map_storageData[TOOLS][m];
+					PackageData data = JhStorageRoom::map_storageData[TOOLS][m];
 					if (data.extype == 1 && index == H_GATHER)//采集
 						map_carryData[index].push_back(data);
 					else if (data.extype == 2 && index == H_FELL)//砍伐
@@ -452,7 +452,7 @@ void JhHeroProperNode::showSelectFrame(HeroAtrType index)
 
 void JhHeroProperNode::onItem(Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 
 	if (g_NewerGuideLayer != NULL)
 	{
@@ -486,7 +486,7 @@ void JhHeroProperNode::onItem(Ref* pSender)
 
 	if (g_hero->getSex() == S_MAN && (m_select_udata->strid.compare("w022") == 0 || m_select_udata->strid.compare("w040") == 0))
 	{
-		SpecialHintLayer* layer = SpecialHintLayer::create();
+		JhSpecialHintLayer* layer = JhSpecialHintLayer::create();
 		g_gameLayer->addChild(layer, 11);
 		return;
 	}
@@ -537,11 +537,11 @@ void JhHeroProperNode::selectCarryData()
 					{
 						if (m_lastSelectedData->type == N_GONG || m_lastSelectedData->type == W_GONG)
 						{
-							if (StorageRoom::getCountById(m_lastSelectedData->strid) <= 0)
-								StorageRoom::add(*m_lastSelectedData);
+							if (JhStorageRoom::getCountById(m_lastSelectedData->strid) <= 0)
+								JhStorageRoom::add(*m_lastSelectedData);
 						}
 						else
-							StorageRoom::add(*m_lastSelectedData);
+							JhStorageRoom::add(*m_lastSelectedData);
 	
 					}
 				}
@@ -588,7 +588,7 @@ void JhHeroProperNode::takeon(HeroAtrType atrype, PackageData pdata)
 	if (g_hero->getIsOut())
 		JhMyPackage::cutone(pdata);
 	else
-		StorageRoom::use(pdata);
+		JhStorageRoom::use(pdata);
 
 	g_hero->setAtrByType(atrype, pdata);
 
@@ -611,12 +611,12 @@ bool JhHeroProperNode::takeoff(HeroAtrType atrype)
 	{
 		if (mydata.type == N_GONG || mydata.type == W_GONG)
 		{
-			if (StorageRoom::getCountById(mydata.strid) <= 0)
-				StorageRoom::add(mydata);
+			if (JhStorageRoom::getCountById(mydata.strid) <= 0)
+				JhStorageRoom::add(mydata);
 		}
 		else
 		{
-			StorageRoom::add(mydata);
+			JhStorageRoom::add(mydata);
 		}
 	}
 
@@ -743,11 +743,11 @@ void JhHeroProperNode::updataMyPackageUI()
 		JhActionGetLayer * Alayer = (JhActionGetLayer*)g_gameLayer->getChildByName("JhActionGetLayer");
 		if (Alayer != NULL)
 			Alayer->updataMyPackageUI();
-		TempStorageLayer* Tlayer = (TempStorageLayer*)g_gameLayer->getChildByName("TempStorageLayer");
+		JhTempStorageLayer* Tlayer = (JhTempStorageLayer*)g_gameLayer->getChildByName("JhTempStorageLayer");
 		if (Tlayer != NULL)
 			Tlayer->updataMyPackageUI();
 
-		Winlayer* Wlayer = (Winlayer*)g_gameLayer->getChildByName("Winlayer");
+		JhWinlayer* Wlayer = (JhWinlayer*)g_gameLayer->getChildByName("JhWinlayer");
 		if (Wlayer != NULL)
 			Wlayer->updataMyPackageUI();
 
@@ -766,11 +766,11 @@ void JhHeroProperNode::refreshGF(HeroAtrType atrype)
 
 	if (mydata.type == N_GONG || mydata.type == W_GONG)
 	{
-		if (StorageRoom::getCountById(mydata.strid) <= 0)
-			StorageRoom::add(mydata);
+		if (JhStorageRoom::getCountById(mydata.strid) <= 0)
+			JhStorageRoom::add(mydata);
 	}
 	else
-		StorageRoom::add(mydata);
+		JhStorageRoom::add(mydata);
 
 	g_hero->getAtrByType(atrype)->count = 0;
 

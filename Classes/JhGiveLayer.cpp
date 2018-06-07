@@ -4,12 +4,12 @@
 #include "JhMyPackage.h"
 #include "JhConst.h"
 #include "JhGameScene.h"
-#include "StorageRoom.h"
-#include "SoundManager.h"
+#include "JhStorageRoom.h"
+#include "JhSoundManager.h"
 #include "JhNpcLayer.h"
 #include "JhMyMenu.h"
 #include "JhGameDataSave.h"
-#include "Winlayer.h"
+#include "JhWinlayer.h"
 
 JhGiveLayer::JhGiveLayer()
 {
@@ -102,7 +102,7 @@ void JhGiveLayer::onEnterTransitionDidFinish()
 
 void JhGiveLayer::onGiveGoodsItem(cocos2d::Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 
 	Node* node = (Node*)pSender;
 	PackageData* data = (PackageData*)node->getUserData();
@@ -168,7 +168,7 @@ void JhGiveLayer::updateGiveGoods(PackageData data)
 
 void JhGiveLayer::onMyGoodsItem(cocos2d::Ref* pSender)
 {
-	SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+	JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 
 	Node* node = (Node*)pSender;
 	PackageData* data = (PackageData*)node->getUserData();
@@ -456,7 +456,7 @@ void JhGiveLayer::doGiveMission()
 					}
 
 					JhGameDataSave::getInstance()->setBranchPlotMissionGiveGoods("");
-					Winlayer::showMissionAnim(this, "任务完成", vec_rwdres);
+					JhWinlayer::showMissionAnim(this, "任务完成", vec_rwdres);
 					isAnim = true;
 				}
 				else

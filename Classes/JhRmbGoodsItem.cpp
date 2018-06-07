@@ -1,7 +1,7 @@
 ﻿#include "JhRmbGoodsItem.h"
 #include "JhCommonFuncs.h"
-#include "ShopLayer.h"
-#include "SoundManager.h"
+#include "JhShopLayer.h"
+#include "JhSoundManager.h"
 JhRmbGoodsItem::JhRmbGoodsItem()
 {
 	isDraging = false;
@@ -85,9 +85,9 @@ void JhRmbGoodsItem::onItem(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEve
 	{
 		if (!isDraging)
 		{
-			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+			JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 			//购买
-			ShopLayer::beginPay(this->getTag());
+			JhShopLayer::beginPay(this->getTag());
 		}
 		isDraging = false;
 	}

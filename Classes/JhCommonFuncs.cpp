@@ -1,6 +1,6 @@
 ﻿#include "JhCommonFuncs.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
 #include "../cocos2d//external//win32-specific/icon/include/iconv.h"
 #endif
@@ -112,13 +112,13 @@ void JhCommonFuncs::BtnAction(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 	else if (type == cocos2d::ui::Widget::TouchEventType::ENDED)
 	{
 		((cocos2d::ui::Widget*)pSender)->runAction(Button_ACTION1);
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 	}
 }
 
 void JhCommonFuncs::changeGray(cocos2d::Node* node)
 {
-	auto p = GLProgram::createWithFilenames("gray.vsh", "gray.fsh");
+	auto p = GLProgram::createWithFilenames("jhgray.vsh", "jhgray.fsh");
 	p->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_POSITION, GLProgram::VERTEX_ATTRIB_POSITION);
 	p->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_COLOR, GLProgram::VERTEX_ATTRIB_COLOR);
 	p->bindAttribLocation(GLProgram::ATTRIBUTE_NAME_TEX_COORD, GLProgram::VERTEX_ATTRIB_TEX_COORDS);

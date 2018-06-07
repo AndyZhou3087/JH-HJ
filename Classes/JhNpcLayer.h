@@ -3,7 +3,7 @@
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-#include "UIScroll.h"
+#include "JhUIScroll.h"
 #include "JhGlobalData.h"
 USING_NS_CC;
 

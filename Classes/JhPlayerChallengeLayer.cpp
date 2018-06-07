@@ -5,11 +5,11 @@
 #include "JhCommonFuncs.h"
 #include "JhHintBox.h"
 #include "JhGameScene.h"
-#include "Winlayer.h"
-#include "SoundManager.h"
+#include "JhWinlayer.h"
+#include "JhSoundManager.h"
 #include "JhAnalyticUtil.h"
 #include "JhMapLayer.h"
-#include "Shake.h"
+#include "JhShake.h"
 #include "JhMyActionProgressTimer.h"
 #include "JhPlayerChallengeResultLayer.h"
 #include "JhGameDataSave.h"
@@ -24,7 +24,7 @@ JhPlayerChallengeLayer::JhPlayerChallengeLayer()
 
 JhPlayerChallengeLayer::~JhPlayerChallengeLayer()
 {
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_ENTER_MAPADDR);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_ENTER_MAPADDR);
 }
 
 JhPlayerChallengeLayer* JhPlayerChallengeLayer::create(std::string addrid, RankData* rankData)
@@ -115,7 +115,7 @@ bool JhPlayerChallengeLayer::init(std::string addrid, RankData* rankData)
 	playerhpbar2->setPercent(playerhppercent);
 
 	// 滚动文字
-	m_fihgtScorll = UIScroll::create(610.0f, 435.0f);
+	m_fihgtScorll = JhUIScroll::create(610.0f, 435.0f);
 	m_fihgtScorll->setPosition(Vec2(360, 350));
 	csbnode->addChild(m_fihgtScorll);
 
@@ -143,7 +143,7 @@ bool JhPlayerChallengeLayer::init(std::string addrid, RankData* rankData)
 	listener->setSwallowTouches(true);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 	int r = JhGlobalData::createRandomNum(4);
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_FIGHT_0 + r);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_FIGHT_0 + r);
 	return true;
 }
 
@@ -368,7 +368,7 @@ void JhPlayerChallengeLayer::delayHeroFight(float dt)
 		playeractimg->setOpacity(200);
 		playeractimg->setScale(3);
 		ActionInterval* ac1 = Spawn::create(FadeIn::create(0.1f), EaseSineIn::create(ScaleTo::create(0.1f, 1)), NULL);
-		playeractimg->runAction(Sequence::create(ac1, Shake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
+		playeractimg->runAction(Sequence::create(ac1, JhShake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
 
 	}
 
@@ -535,7 +535,7 @@ void JhPlayerChallengeLayer::delayPlayerFight(float dt)
 		heroactimg->setOpacity(200);
 		heroactimg->setScale(3);
 		ActionInterval* ac1 = Spawn::create(FadeIn::create(0.1f), EaseSineIn::create(ScaleTo::create(0.1f, 1)), NULL);
-		heroactimg->runAction(Sequence::create(ac1, Shake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
+		heroactimg->runAction(Sequence::create(ac1, JhShake::create(0.2f, 20, 1), DelayTime::create(0.8f), Hide::create(), NULL));
 
 	}
 
@@ -750,7 +750,7 @@ void JhPlayerChallengeLayer::showFightWord(int type, int value)
 		}
 		checkWordLblColor(herowordstr);
 
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_ATTACK);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_ATTACK);
 	}
 	else//
 	{
@@ -895,9 +895,9 @@ void JhPlayerChallengeLayer::showFightWord(int type, int value)
 		checkWordLblColor(bosswordstr);
 
 		if (g_hero->getHeadID() == 4)
-			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_HURT1);
+			JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_HURT1);
 		else
-			SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_HURT0);
+			JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_HURT0);
 	}
 }
 
@@ -1210,7 +1210,7 @@ void JhPlayerChallengeLayer::showHeroTextAmin(std::string filename)
 	heroactimg->setOpacity(200);
 	heroactimg->setScale(3);
 	ActionInterval* ac1 = Spawn::create(FadeIn::create(0.1f), EaseSineIn::create(ScaleTo::create(0.1f, 1)), NULL);
-	heroactimg->runAction(Sequence::create(ac1, Shake::create(0.2f, 20, 1), DelayTime::create(0.6f), Hide::create(), NULL));
+	heroactimg->runAction(Sequence::create(ac1, JhShake::create(0.2f, 20, 1), DelayTime::create(0.6f), Hide::create(), NULL));
 	herocritfnt->setVisible(false);
 }
 

@@ -7,7 +7,7 @@
 #include "JhGameScene.h"
 #include "JhCommonFuncs.h"
 #include "JhFightLayer.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhMapLayer.h"
 #include "JhNewerGuideLayer.h"
 JhHomeHill::JhHomeHill()
@@ -17,7 +17,7 @@ JhHomeHill::JhHomeHill()
 
 JhHomeHill::~JhHomeHill()
 {
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_MAP);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_MAP);
 }
 
 bool JhHomeHill::init()
@@ -122,7 +122,7 @@ bool JhHomeHill::init()
 	listener->setSwallowTouches(true);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_ENTER_MAPADDR);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_ENTER_MAPADDR);
 
 	return true;
 }

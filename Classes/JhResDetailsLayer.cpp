@@ -1,15 +1,15 @@
 ﻿#include "JhResDetailsLayer.h"
 #include "JhGlobalData.h"
 #include "JhCommonFuncs.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhGameScene.h"
 #include "JhHero.h"
-#include "StorageUILayer.h"
-#include "SoundManager.h"
+#include "JhStorageUILayer.h"
+#include "JhSoundManager.h"
 #include "JhBuyComfirmLayer.h"
 #include "JhConst.h"
 #include "JhGameDataSave.h"
-#include "ShopLayer.h"
+#include "JhShopLayer.h"
 #include "JhOutDoor.h"
 #include "JhExchangeLayer.h"
 
@@ -124,7 +124,7 @@ bool JhResDetailsLayer::init(PackageData* pdata)
 
 	cocos2d::ui::Text* skilltext = (cocos2d::ui::Text*)m_csbnode->getChildByName("skilltext");
 
-	int count = StorageRoom::getCountById(pdata->strid);
+	int count = JhStorageRoom::getCountById(pdata->strid);
 
 	if (whereClick == 1)
 	{
@@ -256,7 +256,7 @@ bool JhResDetailsLayer::init(PackageData* pdata)
 			usebtn->setVisible(true);
 
 			m_okbtn->setPositionX(460);
-			std::string uselblstr = StringUtils::format("经验药水 x%d", StorageRoom::getCountById("70"));
+			std::string uselblstr = StringUtils::format("经验药水 x%d", JhStorageRoom::getCountById("70"));
 			uselbl->setString(JhCommonFuncs::gbk2utf(uselblstr.c_str()));
 			m_expendtime = JhGameDataSave::getInstance()->getHeroExpEndTime();
 			updataLeftTime(0);
@@ -266,7 +266,7 @@ bool JhResDetailsLayer::init(PackageData* pdata)
 		{
 			usebtn->setVisible(true);
 			m_okbtn->setPositionX(460);
-			std::string uselblstr = StringUtils::format("大力丸 x%d", StorageRoom::getCountById("71"));
+			std::string uselblstr = StringUtils::format("大力丸 x%d", JhStorageRoom::getCountById("71"));
 			uselbl->setString(JhCommonFuncs::gbk2utf(uselblstr.c_str()));
 			m_expendtime = JhGameDataSave::getInstance()->getGfEndTime();
 			updataLeftTime(0);
@@ -367,7 +367,7 @@ void JhResDetailsLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		StorageUILayer* storageUI = (StorageUILayer*)this->getParent();
+		JhStorageUILayer* storageUI = (JhStorageUILayer*)this->getParent();
 
 		if (whereClick == 0)
 		{
@@ -411,7 +411,7 @@ void JhResDetailsLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 							g_hero->setInnerinjuryValue(g_hero->getInnerinjuryValue() - 10.0f);
 						}
 
-						StorageRoom::use(m_packageData->strid);
+						JhStorageRoom::use(m_packageData->strid);
 						break;
 					}
 				}
@@ -425,7 +425,7 @@ void JhResDetailsLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 							int addvalue = JhGlobalData::map_buidACData["cooktable"][i].ep[0];
 							recoveHungerValue(addvalue);
 
-							StorageRoom::use(m_packageData->strid);
+							JhStorageRoom::use(m_packageData->strid);
 							break;
 						}
 					}
@@ -443,7 +443,7 @@ void JhResDetailsLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 						int wvalue = JhGlobalData::vec_resData[i].ep[0];
 						int nvalue = JhGlobalData::vec_resData[i].ep[1];
 						recoveInjuryValue(wvalue, nvalue);
-						StorageRoom::use(m_packageData->strid);
+						JhStorageRoom::use(m_packageData->strid);
 						break;
 					}
 				}
@@ -456,7 +456,7 @@ void JhResDetailsLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 							int wvalue = JhGlobalData::map_buidACData["medicinekit"][i].ep[0];
 							int nvalue = JhGlobalData::map_buidACData["medicinekit"][i].ep[1];
 							recoveInjuryValue(wvalue, nvalue);
-							StorageRoom::use(m_packageData->strid);
+							JhStorageRoom::use(m_packageData->strid);
 							break;
 						}
 					}
@@ -465,9 +465,9 @@ void JhResDetailsLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 			}
 			else if (m_packageData->type == RES_1 && m_packageData->strid.compare(GRASSRID) == 0)
 			{
-				StorageRoom::use(m_packageData->strid);
+				JhStorageRoom::use(m_packageData->strid);
 
-				int count = StorageRoom::getCountById(GRASSRID);
+				int count = JhStorageRoom::getCountById(GRASSRID);
 				if (count <= 0)
 				{
 					m_okbtn->setEnabled(false);
@@ -532,10 +532,10 @@ void JhResDetailsLayer::onUse(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 		cocos2d::ui::Text* valuelbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("valuelbl");
 		if (m_packageData->strid.compare("71") == 0)
 		{
-			int count = StorageRoom::getCountById("71");
+			int count = JhStorageRoom::getCountById("71");
 			if (count > 0)
 			{
-				StorageRoom::use("71");
+				JhStorageRoom::use("71");
 				std::string uselblstr = StringUtils::format("大力丸 x%d", count - 1);
 				uselbl->setString(JhCommonFuncs::gbk2utf(uselblstr.c_str()));
 				std::string leftstr = StringUtils::format("库存%d", count - 1);
@@ -561,10 +561,10 @@ void JhResDetailsLayer::onUse(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 		}
 		else if (m_packageData->strid.compare("70") == 0)
 		{
-			int count = StorageRoom::getCountById("70");
+			int count = JhStorageRoom::getCountById("70");
 			if (count > 0)
 			{
-				StorageRoom::use("70");
+				JhStorageRoom::use("70");
 				std::string uselblstr = StringUtils::format("经验药水 x%d", count - 1);
 				uselbl->setString(JhCommonFuncs::gbk2utf(uselblstr.c_str()));
 
@@ -598,7 +598,7 @@ void JhResDetailsLayer::updateUI()
 	updataLeftTime(0);
 	this->schedule(schedule_selector(JhResDetailsLayer::updataLeftTime), 1);
 
-	StorageUILayer* storageUI = (StorageUILayer*)this->getParent();
+	JhStorageUILayer* storageUI = (JhStorageUILayer*)this->getParent();
 	storageUI->updateResContent();
 }
 
@@ -627,7 +627,7 @@ void JhResDetailsLayer::recoveHungerValue(int addvalue)
 
 void JhResDetailsLayer::removSelf()
 {
-	StorageUILayer* storagelayer = (StorageUILayer*)g_gameLayer->getChildByName("storageuilayer");
+	JhStorageUILayer* storagelayer = (JhStorageUILayer*)g_gameLayer->getChildByName("storageuilayer");
 	if (storagelayer != NULL)
 		storagelayer->showNewerGuide(47);
 	this->removeFromParentAndCleanup(true);
@@ -642,11 +642,11 @@ void JhResDetailsLayer::updateHorseData(int addvalue)
 	{
 		bool isfind = false;
 		std::map<int, std::vector<PackageData>>::iterator it;
-		for (it = StorageRoom::map_storageData.begin(); it != StorageRoom::map_storageData.end(); ++it)
+		for (it = JhStorageRoom::map_storageData.begin(); it != JhStorageRoom::map_storageData.end(); ++it)
 		{
-			for (unsigned int i = 0; i < StorageRoom::map_storageData[it->first].size(); i++)
+			for (unsigned int i = 0; i < JhStorageRoom::map_storageData[it->first].size(); i++)
 			{
-				PackageData *sdata = &StorageRoom::map_storageData[it->first][i];
+				PackageData *sdata = &JhStorageRoom::map_storageData[it->first][i];
 				if (sdata->strid.compare("74") == 0)
 				{
 					isfind = true;
@@ -730,7 +730,7 @@ void JhResDetailsLayer::onAddOne(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		int max = JhMyPackage::canTakeCount(m_packageData);
 		int tcount = m_packageData->count;
 		if (whereClick == 3 || whereClick == 4)
@@ -759,7 +759,7 @@ void JhResDetailsLayer::onMinusOne(cocos2d::Ref *pSender, cocos2d::ui::Widget::T
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		int curcount = atoi(selectCountlbl->getString().c_str());
 		int max = JhMyPackage::canTakeCount(m_packageData);
 		int tcount = m_packageData->count;

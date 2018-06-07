@@ -4,7 +4,7 @@
 #include "JhGameScene.h"
 #include "JhHero.h"
 #include "JhGlobalData.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGameDataSave.h"
 #include "JhMapLayer.h"
 #include "JhHomeLayer.h"
@@ -154,7 +154,7 @@ void JhHeroStateUILayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touc
 	{
 		this->removeFromParentAndCleanup(true);
 
-		TopBar* topbar = (TopBar*)g_gameLayer->getChildByName("topbar");
+		JhTopBar* topbar = (JhTopBar*)g_gameLayer->getChildByName("topbar");
 		if (topbar != NULL)
 			topbar->showNewerGuide(13);
 	}

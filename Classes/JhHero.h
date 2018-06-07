@@ -6,7 +6,7 @@
 #define _HERO_H_
 #include "cocos2d.h"
 #include "JhMyPackage.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhGlobalData.h"
 USING_NS_CC;
 /****************************

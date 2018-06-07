@@ -1,9 +1,9 @@
 ﻿#include "JhPaySelectLayer.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhConst.h"
 #include "JhAnalyticUtil.h"
-#include "ShopLayer.h"
+#include "JhShopLayer.h"
 
 static std::string goodsDesc[] = { "", "三少爷角色", "江小白角色", "阿青角色", "60元宝", "140元宝", "400元宝", "1080元宝", "荣耀月卡", "贵族月卡", "尊贵月卡", "限时礼包" };
 
@@ -75,7 +75,7 @@ void JhPaySelectLayer::onCancel(cocos2d::Ref *pSender, cocos2d::ui::Widget::Touc
 	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		ShopLayer::setMessage(PAY_FAIL);
+		JhShopLayer::setMessage(PAY_FAIL);
 		this->removeFromParentAndCleanup(true);
 	}
 }
@@ -86,11 +86,11 @@ void JhPaySelectLayer::onPay(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		Node* node = (Node*)pSender;
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		if (node->getTag() == 1)
 		{
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
-			ShopLayer::setMessage(PAY_SUCC);
+			JhShopLayer::setMessage(PAY_SUCC);
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 			JniMethodInfo methodInfo;
 			char p_str[32] = { 0 };

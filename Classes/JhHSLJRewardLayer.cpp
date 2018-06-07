@@ -1,9 +1,9 @@
 ﻿#include "JhHSLJRewardLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGameScene.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhHintBox.h"
 
 JhHSLJRewardLayer::JhHSLJRewardLayer()
@@ -63,9 +63,9 @@ void JhHSLJRewardLayer::onGet(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 	JhCommonFuncs::BtnAction(pSender, type);
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-		ServerDataSwap::init(this)->getHSLJRewardData();
+		JhServerDataSwap::init(this)->getHSLJRewardData();
 	}
 }
 

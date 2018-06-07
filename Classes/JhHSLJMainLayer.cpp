@@ -1,7 +1,7 @@
 ﻿#include "JhHSLJMainLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhFactionCreateLayer.h"
 #include "JhConst.h"
 #include "JhGameScene.h"
@@ -156,9 +156,9 @@ void JhHSLJMainLayer::onMacth(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchE
 		m_matchbtn->setEnabled(false);
 		m_backbtn->setEnabled(false);
 		m_hinttext->setString(JhCommonFuncs::gbk2utf("匹配中..."));
-		WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-		ServerDataSwap::init(this)->getMatchFight();
+		JhServerDataSwap::init(this)->getMatchFight();
 		changeHeroImg(0);
 		this->schedule(schedule_selector(JhHSLJMainLayer::changeHeroImg), 0.3f);
 	}
@@ -186,15 +186,15 @@ void JhHSLJMainLayer::onRank(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 
 void JhHSLJMainLayer::getMyMatchInfo()
 {
-	WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
 	if (datatype == 2)
 	{
-		ServerDataSwap::init(this)->getMatchFightResult(JhGameDataSave::getInstance()->getHsljMatchPlayer(), -13);
+		JhServerDataSwap::init(this)->getMatchFightResult(JhGameDataSave::getInstance()->getHsljMatchPlayer(), -13);
 	}
 	else if (datatype == 0)
 	{
-		ServerDataSwap::init(this)->getMyMatchInfo();
+		JhServerDataSwap::init(this)->getMyMatchInfo();
 	}
 }
 
@@ -389,7 +389,7 @@ std::string JhHSLJMainLayer::getDwStr(int exp)
 
 void JhHSLJMainLayer::showVSAnim()
 {
-	std::string vscsb = "VS.csb";
+	std::string vscsb = "jhVS.csb";
 	Node* csbnode = CSLoader::createNode(vscsb);
 	csbnode->setPosition(Vec2(360, 650));
 	this->addChild(csbnode);

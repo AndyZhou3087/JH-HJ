@@ -1,10 +1,10 @@
 ﻿#include "JhFactionKickComfirmLayer.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
 #include "MD5.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhGameScene.h"
 #include "JhFactionMemberLayer.h"
 
@@ -67,9 +67,9 @@ void JhFactionKickComfirmLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget:
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 
-		WaitingProgress* waitbox = WaitingProgress::create("处理中...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("处理中...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-		ServerDataSwap::init(this)->kickFaction(m_data->factionid, m_data->userid, m_data->herotype);
+		JhServerDataSwap::init(this)->kickFaction(m_data->factionid, m_data->userid, m_data->herotype);
 	}
 }
 

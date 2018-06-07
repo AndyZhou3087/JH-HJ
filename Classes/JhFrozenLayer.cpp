@@ -1,7 +1,7 @@
 ﻿#include "JhFrozenLayer.h"
 #include "JhGlobalData.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhConst.h"
 bool JhFrozenLayer::init()
 {
@@ -86,7 +86,7 @@ void JhFrozenLayer::onQQ(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventT
 {
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		cocos2d::ui::Text* qq = (cocos2d::ui::Text*)pSender;
 		JhGlobalData::copyToClipBoard(qq->getString());
 	}

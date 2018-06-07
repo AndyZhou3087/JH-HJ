@@ -1,10 +1,10 @@
 ﻿#include "JhFactionComfirmLayer.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
 #include "MD5.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhGameScene.h"
 #include "JhFactionMainLayer.h"
 #include "JhFactionMemberLayer.h"
@@ -90,9 +90,9 @@ void JhFactionComfirmLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 				}
 
 				f_action = F_RELEASE;
-				WaitingProgress* waitbox = WaitingProgress::create("处理中...");
+				JhWaitingProgress* waitbox = JhWaitingProgress::create("处理中...");
 				Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-				ServerDataSwap::init(this)->leaveFaction(1, m_fldata->id, g_hero->getHeadID());
+				JhServerDataSwap::init(this)->leaveFaction(1, m_fldata->id, g_hero->getHeadID());
 			}
 			else
 			{
@@ -105,9 +105,9 @@ void JhFactionComfirmLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 		{
 			f_action = F_LEAVE;
 
-			WaitingProgress* waitbox = WaitingProgress::create("加载中...");
+			JhWaitingProgress* waitbox = JhWaitingProgress::create("加载中...");
 			Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-			ServerDataSwap::init(this)->leaveFaction(0, m_fldata->id, g_hero->getHeadID());
+			JhServerDataSwap::init(this)->leaveFaction(0, m_fldata->id, g_hero->getHeadID());
 		}
 	}
 }

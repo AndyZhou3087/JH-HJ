@@ -2,8 +2,8 @@
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
 #include "JhDeathLayer.h"
-#include "SoundManager.h"
-#include "ShopLayer.h"
+#include "JhSoundManager.h"
+#include "JhShopLayer.h"
 #include "JhConst.h"
 #include "JhFightLayer.h"
 #include "MD5.h"
@@ -53,7 +53,7 @@ bool JhReviveLayer::init()
 	cocos2d::ui::Text* revivepricelbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("price");
 	cocos2d::ui::Widget* reviveicon = (cocos2d::ui::Widget*)m_csbnode->getChildByName("priceicon");
 
-	revivecount = StorageRoom::getCountById("73");
+	revivecount = JhStorageRoom::getCountById("73");
 
 	needgold = JhGlobalData::getReviveCount() * 20;
 
@@ -170,7 +170,7 @@ void JhReviveLayer::shareCallback(int platform, int stCode, string& errorMsg) {
 		reviveOk();
 		JhGlobalData::setShareDay(JhGlobalData::getDayOfYear());
 		JhGlobalData::setFreeReviveCount(JhGlobalData::getFreeReviveCount() - 1);
-		ServerDataSwap::init()->updateFreeReviveCount();
+		JhServerDataSwap::init()->updateFreeReviveCount();
 	}
 	else if (stCode == -1) {
 		result = "分享取消";
@@ -208,7 +208,7 @@ void JhReviveLayer::onFreeRevive(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 		JhGlobalData::setShareDay(JhGlobalData::getDayOfYear());
 
 		JhGlobalData::setFreeReviveCount(JhGlobalData::getFreeReviveCount() - 1);
-		ServerDataSwap::init()->updateFreeReviveCount();
+		JhServerDataSwap::init()->updateFreeReviveCount();
 #ifdef ANALYTICS
 		JhAnalyticUtil::onEvent("freerevive");
 #endif
@@ -252,7 +252,7 @@ void JhReviveLayer::onRevive(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEv
 #endif
 			}
 			else
-				Director::getInstance()->getRunningScene()->addChild(ShopLayer::create(), 1000);
+				Director::getInstance()->getRunningScene()->addChild(JhShopLayer::create(), 1000);
 		}
 	}
 }
@@ -288,13 +288,13 @@ void JhReviveLayer::doRevive()
 	}
 
 	std::map<int, std::vector<PackageData>>::iterator it;
-	for (it = StorageRoom::map_storageData.begin(); it != StorageRoom::map_storageData.end(); ++it)
+	for (it = JhStorageRoom::map_storageData.begin(); it != JhStorageRoom::map_storageData.end(); ++it)
 	{
-		for (unsigned int i = 0; i < StorageRoom::map_storageData[it->first].size(); i++)
+		for (unsigned int i = 0; i < JhStorageRoom::map_storageData[it->first].size(); i++)
 		{
-			if (StorageRoom::map_storageData[it->first][i].strid.compare("73") == 0)
+			if (JhStorageRoom::map_storageData[it->first][i].strid.compare("73") == 0)
 			{
-				StorageRoom::use("73");
+				JhStorageRoom::use("73");
 				return;
 			}
 		}

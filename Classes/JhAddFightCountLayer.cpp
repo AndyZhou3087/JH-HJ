@@ -1,9 +1,9 @@
 ﻿#include "JhAddFightCountLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "MD5.h"
 #include "JhHSLJMainLayer.h"
 #include "JhGameScene.h"
@@ -108,10 +108,10 @@ void JhAddFightCountLayer::onAddCount(cocos2d::Ref *pSender, cocos2d::ui::Widget
 			return;
 		}
 
-		WaitingProgress* waitbox = WaitingProgress::create("处理中...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("处理中...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
 
-		ServerDataSwap::init(this)->getFightCount(m_matchtype, buycount);
+		JhServerDataSwap::init(this)->getFightCount(m_matchtype, buycount);
 	}
 }
 

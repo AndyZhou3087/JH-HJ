@@ -2,7 +2,7 @@
 #include "JhCommonFuncs.h"
 #include "JhConst.h"
 #include "JhGlobalData.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGameScene.h"
 #include "JhFightLayer.h"
 

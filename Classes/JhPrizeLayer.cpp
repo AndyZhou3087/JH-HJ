@@ -1,12 +1,12 @@
 ﻿#include "JhPrizeLayer.h"
 #include "JhCommonFuncs.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGlobalData.h"
 #include "JhGameDataSave.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhMyPackage.h"
-#include "StorageRoom.h"
+#include "JhStorageRoom.h"
 #include "JhHuafeiAwardListLayer.h"
 
 const std::string prizerwd[] = {"g20", "80020", "82005"};
@@ -146,9 +146,9 @@ void JhPrizeLayer::onOk(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventTy
 #else
 		codestr = m_input->getString();
 #endif
-		WaitingProgress* waitbox = WaitingProgress::create("处理中...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("处理中...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-		ServerDataSwap::init(this)->getCoupons(codestr);
+		JhServerDataSwap::init(this)->getCoupons(codestr);
 	}
 }
 
@@ -221,7 +221,7 @@ void JhPrizeLayer::addRes()
 			pdata.count = intresid % 1000;
 			pdata.type = JhGlobalData::getResType(resid);
 			pdata.extype = JhGlobalData::getResExType(resid);
-			StorageRoom::add(pdata);
+			JhStorageRoom::add(pdata);
 		}
 	}
 }

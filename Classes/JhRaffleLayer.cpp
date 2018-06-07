@@ -1,10 +1,10 @@
 ﻿#include "JhRaffleLayer.h"
 #include "JhConst.h"
 #include "JhGameDataSave.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhAnalyticUtil.h"
 #include "JhCommonFuncs.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhHintBox.h"
 #include "MD5.h"
 #include "JhRaffleResultLayer.h"
@@ -90,9 +90,9 @@ void JhRaffleLayer::updatePool(float dt)
 {
 	actiontype = 0;
 
-	WaitingProgress* waitbox = WaitingProgress::create("刷新中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("刷新中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-	ServerDataSwap::init(this)->getCoinpoolData();
+	JhServerDataSwap::init(this)->getCoinpoolData();
 }
 
 void JhRaffleLayer::onBack(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEventType type)
@@ -134,9 +134,9 @@ void JhRaffleLayer::onJoin(cocos2d::Ref *pSender, cocos2d::ui::Widget::TouchEven
 			return;
 		}
 		actiontype = 1;
-		WaitingProgress* waitbox = WaitingProgress::create("投注中...");
+		JhWaitingProgress* waitbox = JhWaitingProgress::create("投注中...");
 		Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
-		ServerDataSwap::init(this)->playCoinpoolData();
+		JhServerDataSwap::init(this)->playCoinpoolData();
 	}
 }
 

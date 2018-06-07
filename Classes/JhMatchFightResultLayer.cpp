@@ -2,9 +2,9 @@
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
 #include "JhHintBox.h"
-#include "WaitingProgress.h"
+#include "JhWaitingProgress.h"
 #include "JhConst.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhGameDataSave.h"
 #include "JhRankLayer.h"
 #include "JhHSLJMainLayer.h"
@@ -110,10 +110,10 @@ bool JhMatchFightResultLayer::init(int myfinalhero, int win)
 	explbl->setString(str);
 	
 	
-	WaitingProgress* waitbox = WaitingProgress::create("数据处理中...");
+	JhWaitingProgress* waitbox = JhWaitingProgress::create("数据处理中...");
 	Director::getInstance()->getRunningScene()->addChild(waitbox, 1, "waitbox");
 
-	ServerDataSwap::init(this)->getMatchFightResult(JhGlobalData::matchPlayerInfo.playerid, curexp);
+	JhServerDataSwap::init(this)->getMatchFightResult(JhGlobalData::matchPlayerInfo.playerid, curexp);
 	auto listener = EventListenerTouchOneByOne::create();
 	listener->onTouchBegan = [=](Touch *touch, Event *event)
 	{

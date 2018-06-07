@@ -1,7 +1,7 @@
 ﻿#include "JhDeathLayer.h"
 #include "JhCommonFuncs.h"
-#include "StartScene.h"
-#include "SoundManager.h"
+#include "JhStartScene.h"
+#include "JhSoundManager.h"
 #include "JhConst.h"
 #include "JhAnalyticUtil.h"
 #include "JhGameScene.h"
@@ -35,13 +35,13 @@ bool JhDeathLayer::init()
 
 	listener->onTouchEnded = [=](Touch *touch, Event *event)
 	{
-		Director::getInstance()->replaceScene(StartScene::createScene());
+		Director::getInstance()->replaceScene(JhStartScene::createScene());
 	};
 
 	listener->setSwallowTouches(true);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
-	SoundManager::getInstance()->playBackMusic(SoundManager::MUSIC_ID_DEATH);
+	JhSoundManager::getInstance()->playBackMusic(JhSoundManager::MUSIC_ID_DEATH);
 
 #ifdef ANALYTICS
 	std::string pastdaystr = StringUtils::format("pastday%d", g_nature->getPastDays());

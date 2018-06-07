@@ -4,8 +4,8 @@
 #include "JhMyPackage.h"
 #include "JhConst.h"
 #include "JhGameScene.h"
-#include "StorageRoom.h"
-#include "SoundManager.h"
+#include "JhStorageRoom.h"
+#include "JhSoundManager.h"
 #include "JhNpcLayer.h"
 #include "JhHintBox.h"
 #include "JhMyMenu.h"
@@ -255,7 +255,7 @@ void JhExchangeLayer::onNpcGoodsItem(cocos2d::Ref *pSender, cocos2d::ui::Widget:
 
 	else if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		unschedule(schedule_selector(JhExchangeLayer::longTouchUpdate));
 		if (!m_isLongPress)
 		{
@@ -385,7 +385,7 @@ void JhExchangeLayer::onMyGoodsItem(cocos2d::Ref *pSender, cocos2d::ui::Widget::
 
 	else if (type == ui::Widget::TouchEventType::ENDED)
 	{
-		SoundManager::getInstance()->playSound(SoundManager::SOUND_ID_BUTTON);
+		JhSoundManager::getInstance()->playSound(JhSoundManager::SOUND_ID_BUTTON);
 		unschedule(schedule_selector(JhExchangeLayer::longTouchUpdate));
 		if (!m_isLongPress)
 		{

@@ -4,7 +4,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "JhGlobalData.h"
-#include "ServerDataSwap.h"
+#include "JhServerDataSwap.h"
 USING_NS_CC;
 class JhHSLJRewardLayer :public Layer, public ServerDataDelegateProtocol
 {

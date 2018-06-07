@@ -6,7 +6,7 @@
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
-#include "UIScroll.h"
+#include "JhUIScroll.h"
 #include "JhHero.h"
 USING_NS_CC;
 class JhPlayerChallengeLayer :public Layer
@@ -140,7 +140,7 @@ private:
 	void showResultLayer(int result);
 
 private:
-	UIScroll* m_fihgtScorll;//文字滚动控件
+	JhUIScroll* m_fihgtScorll;//文字滚动控件
 	cocos2d::ui::Text* herohpvaluetext;//角色血量控件
 	cocos2d::ui::Text* playerhpvaluetext;//player血量控件
 	cocos2d::ui::LoadingBar* herohpbar;//角色血量进度条控件

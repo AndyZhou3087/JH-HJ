@@ -1,5 +1,5 @@
 ﻿#include "JhExerciseCancelLayer.h"
-#include "SoundManager.h"
+#include "JhSoundManager.h"
 #include "JhBuildingUILayer.h"
 #include "JhCommonFuncs.h"
 bool JhExerciseCancelLayer::init()
