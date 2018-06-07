@@ -9167,6 +9167,17 @@
 				<key>sourceSize</key>
 				<string>{271,311}</string>
 			</dict>
+			<key>ui/common_pub.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{2040,275},{10,10}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{10,10}</string>
+			</dict>
 		</dict>
 		<key>metadata</key>
 		<dict>

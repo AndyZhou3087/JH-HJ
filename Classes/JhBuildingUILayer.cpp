@@ -551,6 +551,7 @@ void JhBuildingUILayer::onfinish(Ref* pSender, BACTIONTYPE type)
 void JhBuildingUILayer::updataBuildRes()
 {
 	cocos2d::ui::Widget* mainitem = (cocos2d::ui::Widget*)buildnode->getChildByName("item");
+	cocos2d::ui::ImageView* commonbg = (cocos2d::ui::ImageView*)mainitem->getChildByName("commonbg");
 
 	int level = m_build->data.level;
 
@@ -591,8 +592,7 @@ void JhBuildingUILayer::updataBuildRes()
 			str = StringUtils::format("count%d", i);
 			cocos2d::ui::Text* rescount = (cocos2d::ui::Text*)mainitem->getChildByName(str);
 
-			if (m_build->data.level < m_build->data.maxlevel)
-			{
+			
 				int restypecount = m_build->data.Res[level].at(i);
 				if (restypecount > 0)
 				{
@@ -612,14 +612,19 @@ void JhBuildingUILayer::updataBuildRes()
 					if (hascount < needcount)
 						rescount->setTextColor(Color4B::RED);
 					else
-						rescount->setTextColor(Color4B::BLACK);
+						rescount->setTextColor(Color4B::WHITE);
 				}
+			if (m_build->data.level < m_build->data.maxlevel)
+			{
 				buildbtn->setEnabled(true);
+				commonbg->setVisible(false);
 			}
 			else
 			{
-				resitem->setVisible(false);
-				rescount->setVisible(false);
+				/*resitem->setVisible(false);
+				rescount->setVisible(false);*/
+				rescount->setTextColor(Color4B::WHITE);
+				commonbg->setVisible(true);
 			}
 		}
 	}
@@ -670,7 +675,7 @@ void JhBuildingUILayer::updataActionRes()
 						if (hascount < needcount)
 							rescount->setTextColor(Color4B::RED);
 						else
-							rescount->setTextColor(Color4B::BLACK);
+							rescount->setTextColor(Color4B::WHITE);
 					}
 				}
 				actbtn->setEnabled(true);

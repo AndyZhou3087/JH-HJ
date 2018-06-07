@@ -276,6 +276,7 @@
           <Image Name="bwine.png" />
           <Image Name="closebtn.png" />
           <Image Name="common_2.png" />
+          <Image Name="common_pub.png" />
           <Image Name="cooktable.png" />
           <Image Name="createfactionicon.png" />
           <Image Name="crit.png" />

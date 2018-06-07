@@ -69,7 +69,8 @@ bool JhHomeLayer::init()
 	cooktableItem->setName("cooktable");
 	cooktableItem->setTag(1);
 	cooktableItem->setOpacity(0);
-	cooktableItem->setPosition(Vec2(395, 679));
+	cooktableItem->setAnchorPoint(Vec2(0.53, 0.16));
+	cooktableItem->setPosition(Vec2(400, 603));
 	menu->addChild(cooktableItem);
 
 	JhBuilding* forgingtable = JhForgingtable::create();
@@ -82,7 +83,8 @@ bool JhHomeLayer::init()
 	forgingtableItem->setName("forgingtable");
 	forgingtableItem->setOpacity(0);
 	forgingtableItem->setTag(2);
-	forgingtableItem->setPosition(Vec2(553, 651));
+	forgingtableItem->setAnchorPoint(Vec2(0.61, 0.25));
+	forgingtableItem->setPosition(Vec2(579, 534));
 	menu->addChild(forgingtableItem);
 
 	JhBuilding* winemaker = JhWineMaker::create();
@@ -95,7 +97,8 @@ bool JhHomeLayer::init()
 	winemakerItem->setName("winemaker");
 	winemakerItem->setOpacity(0);
 	winemakerItem->setTag(3);
-	winemakerItem->setPosition(Vec2(57, 583));
+	winemakerItem->setAnchorPoint(Vec2(0.27, 0.42));
+	winemakerItem->setPosition(Vec2(31, 557));
 	menu->addChild(winemakerItem);
 
 	JhBuilding* medicinekit = JhMedicineKit::create();
@@ -108,7 +111,8 @@ bool JhHomeLayer::init()
 	medicinekitItem->setName("medicinekit");
 	medicinekitItem->setOpacity(0);
 	medicinekitItem->setTag(4);
-	medicinekitItem->setPosition(Vec2(628, 142));
+	medicinekitItem->setAnchorPoint(Vec2(0.42, 0.24));
+	medicinekitItem->setPosition(Vec2(612, 85));
 	menu->addChild(medicinekitItem);
 
 
@@ -135,7 +139,8 @@ bool JhHomeLayer::init()
 	winetableItem->setName("winetable");
 	winetableItem->setOpacity(0);
 	winetableItem->setTag(6);
-	winetableItem->setPosition(Vec2(276, 417));
+	winetableItem->setAnchorPoint(Vec2(0.51, 0.70));
+	winetableItem->setPosition(Vec2(268, 437));
 	menu->addChild(winetableItem);
 
 	JhBuilding* exersiceroom = JhExerciseRoom::create();
@@ -148,7 +153,8 @@ bool JhHomeLayer::init()
 	exersiceroomItem->setName("exersiceroom");
 	exersiceroomItem->setOpacity(0);
 	exersiceroomItem->setTag(7);
-	exersiceroomItem->setPosition(Vec2(577, 368));
+	exersiceroomItem->setAnchorPoint(Vec2(0.79, 0.45));
+	exersiceroomItem->setPosition(Vec2(661, 359));
 	menu->addChild(exersiceroomItem);
 
 	JhBuilding* bookshelf = JhBookShelf::create();

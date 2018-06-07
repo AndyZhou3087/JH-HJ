@@ -16,6 +16,16 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/buildingbanner1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Image_2" ActionTag="1098646516" Tag="156" IconVisible="False" LeftMargin="108.4189" RightMargin="-288.4189" TopMargin="-72.3995" BottomMargin="-74.6005" LeftEage="50" RightEage="50" TopEage="36" BottomEage="36" Scale9OriginX="50" Scale9OriginY="36" Scale9Width="15" Scale9Height="9" ctype="ImageViewObjectData">
+            <Size X="180.0000" Y="147.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="198.4189" Y="-1.1005" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/jhxkbg.png" Plist="jhuiplist.plist" />
+          </AbstractNodeData>
           <AbstractNodeData Name="buildsmall" ActionTag="-1097515799" Tag="25" IconVisible="False" LeftMargin="-283.0995" RightMargin="170.0995" TopMargin="-54.8533" BottomMargin="-57.1467" ctype="SpriteObjectData">
             <Size X="113.0000" Y="112.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

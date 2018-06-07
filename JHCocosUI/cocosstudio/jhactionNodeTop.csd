@@ -19,6 +19,16 @@
                 <PreSize X="0.5893" Y="0.4696" />
                 <FileData Type="MarkedSubImage" Path="ui/buildingbanner2.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
+              <AbstractNodeData Name="backbg" ActionTag="189328666" Tag="129" IconVisible="False" LeftMargin="138.1818" RightMargin="31.8182" TopMargin="9.0247" BottomMargin="73.9753" Scale9Enable="True" LeftEage="6" RightEage="6" TopEage="6" BottomEage="6" Scale9OriginX="6" Scale9OriginY="6" Scale9Width="8" Scale9Height="8" ctype="ImageViewObjectData">
+                <Size X="390.0000" Y="98.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="333.1818" Y="122.9753" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5950" Y="0.6794" />
+                <PreSize X="0.6964" Y="0.5414" />
+                <FileData Type="MarkedSubImage" Path="ui/buildingbanner2.png" Plist="jhuiplist.plist" />
+              </AbstractNodeData>
               <AbstractNodeData Name="box" ActionTag="998287900" Tag="63" IconVisible="False" LeftMargin="2.6474" RightMargin="450.3526" TopMargin="40.1935" BottomMargin="50.8065" ctype="SpriteObjectData">
                 <Size X="107.0000" Y="90.0000" />
                 <Children>
@@ -198,13 +208,13 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="actionbtn" ActionTag="294009507" Tag="73" IconVisible="False" LeftMargin="411.1956" RightMargin="5.8044" TopMargin="84.3521" BottomMargin="47.6479" TouchEnable="True" FontSize="35" ButtonText="建造" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="actionbtn" ActionTag="294009507" Tag="73" IconVisible="False" LeftMargin="411.1965" RightMargin="5.8035" TopMargin="114.3811" BottomMargin="17.6189" TouchEnable="True" FontSize="35" ButtonText="建造" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="143.0000" Y="49.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="482.6956" Y="72.1479" />
+                <Position X="482.6965" Y="42.1189" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8620" Y="0.3986" />
+                <PrePosition X="0.8620" Y="0.2327" />
                 <PreSize X="0.2554" Y="0.2707" />
                 <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
                 <TextColor A="255" R="255" G="255" B="255" />
@@ -237,6 +247,16 @@
                 <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="commonbg" ActionTag="1324006062" Alpha="128" Tag="130" IconVisible="False" LeftMargin="5.1320" RightMargin="4.8680" TopMargin="3.6234" BottomMargin="7.3766" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="4" Scale9Height="4" ctype="ImageViewObjectData">
+                <Size X="550.0000" Y="170.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="280.1320" Y="92.3766" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5002" Y="0.5104" />
+                <PreSize X="0.9821" Y="0.9392" />
+                <FileData Type="MarkedSubImage" Path="ui/common_pub.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
