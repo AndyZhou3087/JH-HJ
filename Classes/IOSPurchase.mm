@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "IOSPurchase.h"
-#import "GlobalData.h"
-#import "ShopLayer.h"
-#include "HintBox.h"
-#include "Const.h"
+#import "JhGlobalData.h"
+#import "JhShopLayer.h"
+#include "JhHintBox.h"
+#include "JhConst.h"
 
 @interface IOSPurchase ()
 
@@ -27,7 +27,7 @@
 - (void) buy:(NSString *) productId {
     _productId = productId;
     //[self requestProductData];
-    //GlobalData::setHasBuy(true);
+    //JhGlobalData::setHasBuy(true);
     //[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     SKPayment * payment = [SKPayment paymentWithProductIdentifier:productId];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
@@ -82,12 +82,12 @@
                 
                 for (int i=1; i<4; i++) {
                     if ([_productId isEqualToString:[NSString stringWithUTF8String:payCode[i].c_str()]])
-                        GlobalData::setUnlockHero(i, true);
+                        JhGlobalData::setUnlockHero(i, true);
                 }
-                ShopLayer::setMessage(PAY_SUCC);
-                /*if (GlobalData::getHasBuy() && [transaction.payment.productIdentifier isEqualToString:_productId]) {
+                JhShopLayer::setMessage(PAY_SUCC);
+                /*if (JhGlobalData::getHasBuy() && [transaction.payment.productIdentifier isEqualToString:_productId]) {
                     [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
-                    GlobalData::setHasBuy(false);
+                    JhGlobalData::setHasBuy(false);
                 }*/
                 break;
             case SKPaymentTransactionStateFailed:
@@ -95,11 +95,11 @@
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"购买失败" delegate:nil cancelButtonTitle:NSLocalizedString(@"close", nil) otherButtonTitles:nil, nil];
                 [alertView show];
-                /*if (GlobalData::getHasBuy() && [transaction.payment.productIdentifier isEqualToString:_productId]) {
+                /*if (JhGlobalData::getHasBuy() && [transaction.payment.productIdentifier isEqualToString:_productId]) {
                     [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
-                    GlobalData::setHasBuy(false);
+                    JhGlobalData::setHasBuy(false);
                 }*/
-                ShopLayer::setMessage(PAY_FAIL);
+                JhShopLayer::setMessage(PAY_FAIL);
                 break;
             case SKPaymentTransactionStateRestored:
                 NSLog(@"aaa transaction restored");
@@ -108,11 +108,11 @@
                 [alertView show];
                 for (int i=1; i<4; i++) {
                     if ([transaction.payment.productIdentifier isEqualToString:[NSString stringWithUTF8String:payCode[i].c_str()]])
-                        GlobalData::setUnlockHero(i, true);
+                        JhGlobalData::setUnlockHero(i, true);
                 }
-                /*if (GlobalData::getHasBuy() && [transaction.payment.productIdentifier isEqualToString:_productId]) {
+                /*if (JhGlobalData::getHasBuy() && [transaction.payment.productIdentifier isEqualToString:_productId]) {
                     [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
-                    GlobalData::setHasBuy(false);
+                    JhGlobalData::setHasBuy(false);
                 }*/
                 break;
         }

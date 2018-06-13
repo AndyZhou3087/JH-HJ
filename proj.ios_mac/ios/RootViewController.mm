@@ -27,8 +27,7 @@
 #import "RootViewController.h"
 #import "cocos2d.h"
 #import "platform/ios/CCEAGLView-ios.h"
-
-
+#import <sys/utsname.h>
 @implementation RootViewController
 
 /*
@@ -43,14 +42,25 @@
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
+    UIWindow *window;
+    BOOL isX = [self isIphoneX];
+    if(isX)
+    {
+        CGFloat w = [[UIScreen mainScreen] bounds].size.width;
+        CGFloat h = [[UIScreen mainScreen] bounds].size.height - 78;
+        window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 43, w, h)];
+    }
+    else
+        window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
+
     // Initialize the CCEAGLView
-    CCEAGLView *eaglView = [CCEAGLView viewWithFrame: [UIScreen mainScreen].bounds
+    CCEAGLView *eaglView = [CCEAGLView viewWithFrame: [window bounds]
                                          pixelFormat: (__bridge NSString *)cocos2d::GLViewImpl::_pixelFormat
                                          depthFormat: cocos2d::GLViewImpl::_depthFormat
                                   preserveBackbuffer: NO
                                           sharegroup: nil
-                                       multiSampling: cocos2d::GLViewImpl::_multisamplingCount > 0 ? YES : NO
-                                     numberOfSamples: cocos2d::GLViewImpl::_multisamplingCount ];
+                                       multiSampling: NO
+                                     numberOfSamples: 0 ];
     
     // Enable or disable multiple touches
     [eaglView setMultipleTouchEnabled:NO];
@@ -81,7 +91,7 @@
 #endif
 
 - (BOOL) shouldAutorotate {
-    return YES;
+    return NO;
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
@@ -106,11 +116,6 @@
     return YES;
 }
 
-// Controls the application's preferred home indicator auto-hiding when this view controller is shown.
-- (BOOL)prefersHomeIndicatorAutoHidden {
-    return YES;
-}
-
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -118,5 +123,34 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-
+- (BOOL)isIphoneX
+{
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    //iPhone
+//    if ([deviceString isEqualToString:@"iPhone1,1"])    return @"iPhone 1G";
+//    if ([deviceString isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
+//    if ([deviceString isEqualToString:@"iPhone2,1"])    return @"iPhone 3GS";
+//    if ([deviceString isEqualToString:@"iPhone3,1"])    return @"iPhone 4";
+//    if ([deviceString isEqualToString:@"iPhone3,2"])    return @"Verizon iPhone 4";
+//    if ([deviceString isEqualToString:@"iPhone4,1"])    return @"iPhone 4S";
+//    if ([deviceString isEqualToString:@"iPhone5,1"])    return @"iPhone 5";
+//    if ([deviceString isEqualToString:@"iPhone5,2"])    return @"iPhone 5";
+//    if ([deviceString isEqualToString:@"iPhone5,3"])    return @"iPhone 5C";
+//    if ([deviceString isEqualToString:@"iPhone5,4"])    return @"iPhone 5C";
+//    if ([deviceString isEqualToString:@"iPhone6,1"])    return @"iPhone 5S";
+//    if ([deviceString isEqualToString:@"iPhone6,2"])    return @"iPhone 5S";
+//    if ([deviceString isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
+//    if ([deviceString isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
+//    if ([deviceString isEqualToString:@"iPhone8,1"])    return @"iPhone 6s";
+//    if ([deviceString isEqualToString:@"iPhone8,2"])    return @"iPhone 6s Plus";
+//    if ([deviceString isEqualToString:@"iPhone9,1"] || [deviceString isEqualToString:@"iPhone9,3"])    return @"iPhone 7";
+//    if ([deviceString isEqualToString:@"iPhone9,2"] || [deviceString isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";
+//    if ([deviceString isEqualToString:@"iPhone10,1"] || [deviceString isEqualToString:@"iPhone10,4"])    return @"iPhone 8";
+//    if ([deviceString isEqualToString:@"iPhone10,2"] || [deviceString isEqualToString:@"iPhone10,5"])    return @"iPhone 8 Plus";
+//    if ([deviceString isEqualToString:@"iPhone10,3"] || [deviceString isEqualToString:@"iPhone10,6"])    return @"iPhone X";
+    if ([deviceString isEqualToString:@"iPhone10,3"] || [deviceString isEqualToString:@"iPhone10,6"])    return TRUE;
+    return FALSE;
+}
 @end

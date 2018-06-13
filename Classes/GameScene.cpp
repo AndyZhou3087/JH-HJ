@@ -54,7 +54,7 @@
 #include "Pay.h"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-#include "PluginHelper.h"
+//#include "PluginHelper.h"
 #endif
 
 USING_NS_CC;
@@ -903,7 +903,7 @@ void GameScene::onEnter() {
 	CCLayer::onEnter();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-	plugin_authenticateLocalPlayer();
+//	plugin_authenticateLocalPlayer();
 #endif
 
 	regGameEvent();

@@ -9,7 +9,7 @@
 #include "LoadGameScene.h"
 #include "SettingManager.h"
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-#include "PluginHelper.h"
+//#include "PluginHelper.h"
 #endif
 
 HomeMenuController::HomeMenuController():

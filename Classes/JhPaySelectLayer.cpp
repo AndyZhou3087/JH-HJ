@@ -1,4 +1,4 @@
-﻿#include "JhPaySelectLayer.h"
+#include "JhPaySelectLayer.h"
 #include "JhCommonFuncs.h"
 #include "JhSoundManager.h"
 #include "JhConst.h"

@@ -52,25 +52,25 @@ void Analytics::onFailed(int level) {
 
 void UMengAnalytics::onBegin(int level) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-	startLevel(level);
+//	startLevel(level);
 #endif
 }
 
 void UMengAnalytics::onComplete(int level, int sec, int targetSec) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-	finishLevel(level, sec, targetSec);
+//	finishLevel(level, sec, targetSec);
 #endif
 }
 
 void UMengAnalytics::onFailed(int level, int score, int targetScore) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-	failLevel(level, score, targetScore);
+//	failLevel(level, score, targetScore);
 #endif
 }
 
 void UMengAnalytics::onFailedBeforeSuccess(int level, int score, int targetScore) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-	failBeforeSuccess(level, score, targetScore);
+//	failBeforeSuccess(level, score, targetScore);
 #endif
 }
 

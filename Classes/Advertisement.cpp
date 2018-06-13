@@ -9,7 +9,7 @@ USING_NS_CC;
 #endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-#include "PluginHelper.h"
+//#include "PluginHelper.h"
 #endif
 
 void DomobAdvertisement::showInlineAd()
@@ -26,7 +26,7 @@ void DomobAdvertisement::showInlineAd()
 	}
 #endif
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    plugin_showInlineAd();
+//    plugin_showInlineAd();
 #endif
 
 }
@@ -45,7 +45,7 @@ void DomobAdvertisement::hideInlineAd()
     }
 #endif
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    plugin_hideInlineAd();
+//    plugin_hideInlineAd();
 #endif
     
 }
@@ -81,7 +81,7 @@ bool DomobAdvertisement::showIntersAd()
 #endif
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    return plugin_showIntersAd();
+//    return plugin_showIntersAd();
 #endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)

@@ -1,4 +1,4 @@
-﻿#include "AppDelegate.h"
+#include "AppDelegate.h"
 #include "JhStartScene.h"
 #include "JhSoundManager.h"
 #include "JhConst.h"
@@ -10,7 +10,7 @@
 #include "MobClickCpp.h"
 #endif
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-#include "UnityAdsMana.h"
+//#include "UnityAdsMana.h"
 #include "IOSPurchaseWrap.h"
 #include "iosfunc.h"
 #endif

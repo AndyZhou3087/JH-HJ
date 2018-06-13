@@ -1,4 +1,4 @@
-﻿//
+//
 //  iosfunc.m
 //
 //  Created by  admin on 16-11-25.
@@ -8,8 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "iosfunc.h"
 #include "MBProgressHUD.h"
-#import <UShareUI/UShareUI.h>
-#include "GlobalData.h"
+//#import <UShareUI/UShareUI.h>
+#include "JhGlobalData.h"
 #import "LZKeychain.h"
 
 const char * getuuid()
@@ -89,7 +89,7 @@ void alterView() {
     UIAlertAction * ac = [UIAlertAction actionWithTitle:@"好说好说" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/id1215576714?mt=8&action=write-review"]];
 
-        GlobalData::setNoComments(true);
+        JhGlobalData::setNoComments(true);
     }];
     //[ac setValue:[UIColor greenColor] forKey:@"_titleTextColor"];
     [alert addAction:ac];
@@ -97,7 +97,7 @@ void alterView() {
         
     }]];
     UIAlertAction * ac3 = [UIAlertAction actionWithTitle:@"懒得理你" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        GlobalData::setNoComments(true);
+        JhGlobalData::setNoComments(true);
     }];
     [alert addAction:ac3];
     if ( [[UIDevice currentDevice].systemVersion floatValue] >= 8.3)
@@ -140,9 +140,9 @@ void makeNotification()
 
 void UMShare()
 {
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        // 根据获取的platformType确定所选平台进行下一步操作
-    }];
+//    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+//        // 根据获取的platformType确定所选平台进行下一步操作
+//    }];
 }
 
 const char * getDeviceIDInKeychain()
