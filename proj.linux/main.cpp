@@ -22,16 +22,18 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#ifndef __MAIN_H__
-#define __MAIN_H__
+#include "../Classes/AppDelegate.h"
 
-#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string>
 
-// Windows Header Files:
-#include <windows.h>
-#include <tchar.h>
+USING_NS_CC;
 
-// C RunTime Header Files
-#include "platform/CCStdC.h"
-
-#endif    // __MAIN_H__
+int main(int argc, char **argv)
+{
+    // create the application instance
+    AppDelegate app;
+    return Application::getInstance()->run();
+}

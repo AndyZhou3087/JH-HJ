@@ -1,4 +1,6 @@
 /****************************************************************************
+ Copyright (c) 2010-2013 cocos2d-x.org
+ Copyright (c) 2013-2016 Chukong Technologies Inc.
  Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
  
  http://www.cocos2d-x.org
@@ -22,16 +24,15 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#ifndef __MAIN_H__
-#define __MAIN_H__
+#import <UIKit/UIKit.h>
 
-#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
+@class RootViewController;
 
-// Windows Header Files:
-#include <windows.h>
-#include <tchar.h>
+@interface AppController : NSObject <UIApplicationDelegate> {
 
-// C RunTime Header Files
-#include "platform/CCStdC.h"
+}
 
-#endif    // __MAIN_H__
+@property(nonatomic, readonly) RootViewController* viewController;
+
+@end
+

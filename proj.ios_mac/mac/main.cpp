@@ -1,4 +1,5 @@
 /****************************************************************************
+ Copyright (c) 2010 cocos2d-x.org
  Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
  
  http://www.cocos2d-x.org
@@ -22,16 +23,13 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#ifndef __MAIN_H__
-#define __MAIN_H__
+#include "AppDelegate.h"
+#include "cocos2d.h"
 
-#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
+USING_NS_CC;
 
-// Windows Header Files:
-#include <windows.h>
-#include <tchar.h>
-
-// C RunTime Header Files
-#include "platform/CCStdC.h"
-
-#endif    // __MAIN_H__
+int main(int argc, char *argv[])
+{
+    AppDelegate app;
+    return Application::getInstance()->run();
+}

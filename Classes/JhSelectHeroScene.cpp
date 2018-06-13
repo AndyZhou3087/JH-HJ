@@ -64,7 +64,7 @@ bool JhSelectHeroScene::init()
 	backbtn->addTouchEventListener(CC_CALLBACK_2(JhSelectHeroScene::onBack, this));
 
 	cocos2d::ui::PageView* m_pageview = (cocos2d::ui::PageView*)csbnode->getChildByName("PageView");
-	m_pageview->addEventListener_pageView(CC_CALLBACK_2(JhSelectHeroScene::JumpSceneCallback, this));
+	m_pageview->addEventListener((ui::PageView::ccPageViewCallback)CC_CALLBACK_2(JhSelectHeroScene::JumpSceneCallback, this));
 
 	sheros = (cocos2d::ui::ImageView*)csbnode->getChildByName("sheros");
 	sheros_0 = (cocos2d::ui::ImageView*)csbnode->getChildByName("sheros_0");
