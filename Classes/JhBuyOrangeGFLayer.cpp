@@ -33,7 +33,7 @@ JhBuyOrangeGFLayer* JhBuyOrangeGFLayer::create()
 
 bool JhBuyOrangeGFLayer::init()
 {
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	Node* csbnode = CSLoader::createNode("jhbuyOrangeGFLayer.csb");

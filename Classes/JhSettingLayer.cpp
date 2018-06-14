@@ -9,6 +9,7 @@
 #endif
 #include "JhHintBox.h"
 #include "JhWaitingProgress.h"
+#include "JhConst.h"
 
 JhSettingLayer::JhSettingLayer()
 {
@@ -23,7 +24,7 @@ JhSettingLayer::~JhSettingLayer()
 bool JhSettingLayer::init()
 {
 	//蒙版
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	//加载csb文件

@@ -39,13 +39,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="escapebtn" ActionTag="439873083" Tag="121" IconVisible="False" LeftMargin="288.5001" RightMargin="288.4999" TopMargin="1135.8235" BottomMargin="95.1765" TouchEnable="True" FontSize="35" ButtonText="逃跑" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="escapebtn" ActionTag="439873083" Tag="121" IconVisible="False" LeftMargin="288.5001" RightMargin="288.4999" TopMargin="1160.8234" BottomMargin="70.1766" TouchEnable="True" FontSize="35" ButtonText="逃跑" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="143.0000" Y="49.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="360.0001" Y="119.6765" />
+            <Position X="360.0001" Y="94.6766" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.0935" />
+            <PrePosition X="0.5000" Y="0.0740" />
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />

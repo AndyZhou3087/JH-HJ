@@ -37,7 +37,10 @@ JhHelpMainLayer* JhHelpMainLayer::create()
 
 bool JhHelpMainLayer::init()
 {
-	Node* csbnode = CSLoader::createNode("helpLayer.csb");
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
+	Node* csbnode = CSLoader::createNode("jhhelpLayer.csb");
 	this->addChild(csbnode);
 
 	cocos2d::ui::Widget *backbtn = (cocos2d::ui::Widget*)csbnode->getChildByName("backbtn");
@@ -47,10 +50,10 @@ bool JhHelpMainLayer::init()
 	shopbtn->addTouchEventListener(CC_CALLBACK_2(JhHelpMainLayer::onShop, this));
 
 	m_srollView = (cocos2d::ui::ScrollView*)csbnode->getChildByName("scrollview");
-	m_srollView->setScrollBarEnabled(false);
-	m_srollView->setBounceEnabled(true);
+	//m_srollView->setScrollBarEnabled(false);
+	//m_srollView->setBounceEnabled(true);
 	//m_srollView->setEnabled(false);
-	m_srollView->setTouchEnabled(false);
+	//m_srollView->setTouchEnabled(false);
 	loadHelpText();
 
 	int itemh = 70;

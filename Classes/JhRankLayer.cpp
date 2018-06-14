@@ -38,6 +38,9 @@ JhRankLayer* JhRankLayer::create()
 
 bool JhRankLayer::init()
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	m_csbnode = CSLoader::createNode("jhrankLayer.csb");
 	this->addChild(m_csbnode);
 
@@ -193,13 +196,13 @@ void JhRankLayer::delayShowData(float dt)
 	int rankitemtype = 0;
 
 	int contentheight = 700;
-	int scrolly = 182;
+	int scrolly = 141;
 
 	if (selectrank == 2)
 	{
 		rankitemtype = 1;
 		contentheight = 650;
-		scrolly = 238;
+		scrolly = 197;
 	}
 
 	this->unschedule(schedule_selector(JhRankLayer::updateFightCount));
@@ -239,7 +242,7 @@ void JhRankLayer::delayShowData(float dt)
 	if (rankitemtype == 0)
 	{
 		Node* mynode = RankItem::create(&myrankdata);
-		mynode->setPosition(Vec2(360, 130));
+		mynode->setPosition(Vec2(360, 89));
 		this->addChild(mynode, 0, "mynode");
 		myFihgtNode->setVisible(false);
 	}

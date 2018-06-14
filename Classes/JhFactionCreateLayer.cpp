@@ -41,6 +41,8 @@ bool JhFactionCreateLayer::init(int action, FactionListData* modifyfdata)
 {
 	m_action = action;
 	m_modifyfdata = modifyfdata;
+
+
 	Node* csbnode = CSLoader::createNode("jhfactionCreateLayer.csb");
 	this->addChild(csbnode);
 

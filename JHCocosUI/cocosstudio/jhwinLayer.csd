@@ -41,14 +41,14 @@
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
           <AbstractNodeData Name="storagesepline_1" ActionTag="201231656" Tag="212" IconVisible="False" LeftMargin="103.2502" RightMargin="91.7498" TopMargin="952.2632" BottomMargin="322.7368" ctype="SpriteObjectData">
-            <Size X="525.0000" Y="5.0000" />
+            <Size X="526.0000" Y="5.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="365.7502" Y="325.2368" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5080" Y="0.2541" />
             <PreSize X="0.7292" Y="0.0039" />
-            <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="jhuiplist.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/xline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="actiontext_0_0" ActionTag="-1771447929" Tag="211" IconVisible="False" LeftMargin="95.4008" RightMargin="498.5992" TopMargin="962.5577" BottomMargin="276.4423" FontSize="35" LabelText="【背包】" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -64,14 +64,14 @@
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
           <AbstractNodeData Name="storagesepline_2" ActionTag="-2141349184" Tag="210" IconVisible="False" LeftMargin="103.2502" RightMargin="91.7498" TopMargin="1154.4352" BottomMargin="120.5648" ctype="SpriteObjectData">
-            <Size X="525.0000" Y="5.0000" />
+            <Size X="526.0000" Y="5.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="365.7502" Y="123.0648" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5080" Y="0.0961" />
             <PreSize X="0.7292" Y="0.0039" />
-            <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="jhuiplist.plist" />
+            <FileData Type="MarkedSubImage" Path="ui/xline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="backbtn" ActionTag="57519552" Tag="217" IconVisible="False" LeftMargin="624.3868" RightMargin="20.6132" TopMargin="50.7000" BottomMargin="1153.3000" TouchEnable="True" FontSize="40" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="45" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

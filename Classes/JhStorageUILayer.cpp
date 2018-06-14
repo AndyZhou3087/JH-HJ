@@ -25,9 +25,11 @@ JhStorageUILayer::~JhStorageUILayer()
 
 bool JhStorageUILayer::init()
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
 
 	m_csbnode = CSLoader::createNode("jhbuidingUiLayer.csb");
-	m_csbnode->setPosition(Vec2(0, -90));
+	//m_csbnode->setPosition(Vec2(0, -90));
 	this->addChild(m_csbnode);
 
 	cocos2d::ui::Text* title = (cocos2d::ui::Text*)m_csbnode->getChildByName("title");
@@ -48,8 +50,8 @@ bool JhStorageUILayer::init()
 	scrollview->setScrollBarEnabled(false);
 	scrollview->setBounceEnabled(true);
 
-	scrollview->setContentSize(Size(650, 750));
-	scrollview->setPositionY(265);
+	scrollview->setContentSize(Size(600, 750));
+	scrollview->setPositionY(155);
 	
 	updateResContent();
 
@@ -120,13 +122,29 @@ void JhStorageUILayer::updateResContent()
 				}
 
 			}
+
+			int mcountindex = -1;
+			for (unsigned int m = 0; m < JhStorageRoom::map_storageData[i].size(); m++)
+			{
+				PackageData tmpdata = JhStorageRoom::map_storageData[i][m];
+				std::map<std::string, AllResource>::iterator resit;
+				for (resit = JhGlobalData::map_allResource.begin(); resit != JhGlobalData::map_allResource.end(); resit++)
+				{
+					if (tmpdata.strid.compare(JhGlobalData::map_allResource[resit->first].strid) == 0)
+					{
+						mcountindex++;
+						break;
+					}
+				}
+			}
+
 			Sprite * sepline = Sprite::createWithSpriteFrameName("ui/storagesepline.png");
-			sepline->setPosition(Vec2(sepline->getContentSize().width / 2 + 40, innerheight - 168 - preheight));
+			sepline->setPosition(Vec2(sepline->getContentSize().width / 2 + 40, innerheight - 168 - preheight - mcountindex / 4 * 130));
 			scrollview->addChild(sepline);
 			Label* namelbl = Label::createWithTTF(JhCommonFuncs::gbk2utf( name[i].c_str()), "fonts/STXINGKA.TTF", 25);
 			namelbl->setColor(Color3B(80, 86, 68));
-			namelbl->setPosition(Vec2(34, 155));
-			sepline->addChild(namelbl);
+			namelbl->setPosition(Vec2(80, innerheight - 10 - preheight));
+			scrollview->addChild(namelbl);
 
 			int countindex = -1;
 			for (unsigned int m = 0; m < JhStorageRoom::map_storageData[i].size(); m++)
@@ -171,7 +189,7 @@ void JhStorageUILayer::updateResContent()
 					CC_CALLBACK_1(JhStorageUILayer::onclick, this));
 				boxItem->setTag(0);
 				boxItem->setUserData(&JhStorageRoom::map_storageData[i].at(m));
-				boxItem->setPosition(Vec2(box->getContentSize().width / 2 + 20 + countindex % 5 * 120, sepline->getPositionY() + 70 + countindex / 5 * 130));
+				boxItem->setPosition(Vec2(box->getContentSize().width / 2 + 20 + countindex % 4 * 140, sepline->getPositionY() + 70 + countindex / 4 * 130));
 				JhMyMenu* menu = JhMyMenu::create();
 				menu->addChild(boxItem);
 				menu->setTouchlimit(scrollview);
@@ -185,7 +203,7 @@ void JhStorageUILayer::updateResContent()
 				box->addChild(res);
 
 
-				Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/STXINGKA.TTF", 22);//Label::createWithSystemFont(str, "", 18);
+				Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/SIMHEI.TTF", 22);//Label::createWithSystemFont(str, "", 18);
 				reslbl->setAnchorPoint(Vec2(1, 0.5));
 				reslbl->enableOutline(Color4B(184, 144, 88, 255), 2);
 				reslbl->setPosition(Vec2(box->getContentSize().width - 10, 20));

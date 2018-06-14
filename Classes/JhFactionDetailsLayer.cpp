@@ -2,6 +2,7 @@
 #include "JhSoundManager.h"
 #include "JhGlobalData.h"
 #include "JhCommonFuncs.h"
+#include "JhConst.h"
 
 std::string desc = "1.帮派解散规则：\
 \n帮主只可以解散帮派。\
@@ -54,7 +55,7 @@ JhFactionDetailsLayer* JhFactionDetailsLayer::create()
 bool JhFactionDetailsLayer::init()
 {
 	//蒙版
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	//加载csb文件

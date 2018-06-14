@@ -30,7 +30,7 @@ JhReviveLayer::~JhReviveLayer()
 
 bool JhReviveLayer::init()
 {
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	m_csbnode = CSLoader::createNode("jhreviveLayer.csb");

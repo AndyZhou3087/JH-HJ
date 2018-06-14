@@ -26,6 +26,9 @@ bool JhBookDetailsLayer::init(BookData* bookdata)
 		return false;
     }
 
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	m_csbnode = CSLoader::createNode("jhbookDetailsLayer.csb");
 	this->addChild(m_csbnode);
 

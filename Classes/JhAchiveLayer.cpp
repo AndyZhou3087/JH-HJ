@@ -3,6 +3,7 @@
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
 #include "JhHintBox.h"
+#include "JhConst.h"
 
 JhAchiveLayer::JhAchiveLayer()
 {
@@ -33,6 +34,9 @@ JhAchiveLayer* JhAchiveLayer::create()
 
 bool JhAchiveLayer::init()
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	Node* csbnode = CSLoader::createNode("jhachiveLayer.csb");
 	this->addChild(csbnode);
 

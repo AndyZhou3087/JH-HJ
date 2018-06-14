@@ -2,6 +2,7 @@
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
 #include "JhHero.h"
+#include "JhConst.h"
 
 JhSysSmallBox::JhSysSmallBox()
 {
@@ -17,7 +18,7 @@ JhSysSmallBox::~JhSysSmallBox()
 bool JhSysSmallBox::init(BoxType type, std::string imagepath, std::string title, std::string title1, std::string text)
 {
 	mType = type;
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	Node* csbnode;

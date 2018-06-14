@@ -1,6 +1,8 @@
 ﻿#include "JhHSLJRewardDescLayer.h"
 #include "JhSoundManager.h"
 #include "JhCommonFuncs.h"
+#include "JhConst.h"
+
 JhHSLJRewardDescLayer::JhHSLJRewardDescLayer()
 {
 }
@@ -29,7 +31,7 @@ JhHSLJRewardDescLayer* JhHSLJRewardDescLayer::create()
 bool JhHSLJRewardDescLayer::init()
 {
 	//蒙版
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	//加载csb文件

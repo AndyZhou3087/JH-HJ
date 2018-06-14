@@ -41,6 +41,7 @@ JhGiveLayer* JhGiveLayer::create(std::string npcid, std::string addrid)
 
 bool JhGiveLayer::init(std::string npcid, std::string addrid)
 {
+
 	Node* csbnode = CSLoader::createNode("jhgiveLayer.csb");
 	this->addChild(csbnode);
 

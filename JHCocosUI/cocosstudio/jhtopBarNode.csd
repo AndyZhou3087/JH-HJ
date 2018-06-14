@@ -341,10 +341,10 @@
             <PreSize X="0.0000" Y="0.0000" />
             <ImageFileData Type="MarkedSubImage" Path="ui/topexpbar.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvtext" ActionTag="-905153322" Tag="278" IconVisible="False" LeftMargin="-264.5464" RightMargin="232.5464" TopMargin="74.1042" BottomMargin="-108.1042" FontSize="30" LabelText="10" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="32.0000" Y="34.0000" />
+          <AbstractNodeData Name="lvtext" ActionTag="-905153322" Tag="278" IconVisible="False" LeftMargin="-261.5464" RightMargin="233.5464" TopMargin="72.6042" BottomMargin="-101.6042" FontSize="25" LabelText="10" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="28.0000" Y="29.0000" />
             <AnchorPoint ScaleY="0.5000" />
-            <Position X="-264.5464" Y="-91.1042" />
+            <Position X="-261.5464" Y="-87.1042" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />
@@ -353,10 +353,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lvtext_0" ActionTag="1585933415" Tag="228" IconVisible="False" LeftMargin="-314.0467" RightMargin="271.0467" TopMargin="74.1042" BottomMargin="-108.1042" FontSize="30" LabelText="LV：" HorizontalAlignmentType="HT_Right" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="43.0000" Y="34.0000" />
+          <AbstractNodeData Name="lvtext_0" ActionTag="1585933415" Tag="228" IconVisible="False" LeftMargin="-308.0467" RightMargin="271.0467" TopMargin="72.6042" BottomMargin="-101.6042" FontSize="25" LabelText="LV：" HorizontalAlignmentType="HT_Right" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="37.0000" Y="29.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-292.5467" Y="-91.1042" />
+            <Position X="-289.5467" Y="-87.1042" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />
@@ -444,6 +444,17 @@
             <NormalFileData Type="MarkedSubImage" Path="ui/pausebtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="zjyy_47_0" ActionTag="-288916635" Tag="575" IconVisible="False" LeftMargin="-360.0000" RightMargin="-360.0000" TopMargin="101.4997" BottomMargin="-188.4997" ctype="SpriteObjectData">
+            <Size X="720.0000" Y="87.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position Y="-144.9997" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="MarkedSubImage" Path="ui/zjyy.png" Plist="jhuiplist.plist" />
+            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

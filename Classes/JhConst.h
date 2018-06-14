@@ -1,4 +1,4 @@
-
+﻿
 #ifndef _H_CONST_H_
 #define _H_CONST_H_
 #include "cocos2d.h"
@@ -17,6 +17,9 @@
 #endif
 
 #define MAXCHAPTER (13)
+
+//背景透明度
+#define OPACITY (160)
 
 static std::string acname[] = { "打猎", "采集", "砍伐", "挖掘" };
 static std::string acdesc[] = {"","你徒手采集", "你徒手劈树", "你徒手采矿"};

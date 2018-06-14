@@ -27,11 +27,14 @@ JhOutDoor::~JhOutDoor()
 
 bool JhOutDoor::init()
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	m_csbnode = CSLoader::createNode("jhoutDoorLayer.csb");
 	this->addChild(m_csbnode, 0, "csbnode");
 
 	m_heroproper = JhHeroProperNode::create(2);
-	m_heroproper->setPosition(Vec2(360, 790));
+	m_heroproper->setPosition(Vec2(360, 770));
 	m_csbnode->addChild(m_heroproper, 1, "JhHeroProperNode");
 
 	scrollview = (cocos2d::ui::ScrollView*)m_csbnode->getChildByName("ScrollView");
@@ -145,7 +148,7 @@ void JhOutDoor::updataMyPackageUI()
 			box,
 			CC_CALLBACK_1(JhOutDoor::onPackageItem, this));
 		boxItem->setTag(i);
-		boxItem->setPosition(Vec2(150 + countindex * 140, 520));
+		boxItem->setPosition(Vec2(150 + countindex * 140, 500));
 		Menu* menu = Menu::create();
 		menu->addChild(boxItem);
 		menu->setPosition(Vec2(0, 0));

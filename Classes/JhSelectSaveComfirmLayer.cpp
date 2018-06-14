@@ -13,6 +13,9 @@ bool JhSelectSaveComfirmLayer::init(int index)
 		return false;
     }
 
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	Node* csbnode = CSLoader::createNode("jhselectSaveComfirmLayer.csb");
 	this->addChild(csbnode);
 

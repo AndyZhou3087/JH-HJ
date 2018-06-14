@@ -23,12 +23,14 @@ JhHeroStateUILayer::~JhHeroStateUILayer()
 
 bool JhHeroStateUILayer::init()
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
 
 	m_csbnode = CSLoader::createNode("jhheroStateLayer.csb");
 	this->addChild(m_csbnode, 0, "csbnode");
 
 	heroAttribNode = JhHeroProperNode::create(1);
-	heroAttribNode->setPosition(Vec2(360, 707));
+	heroAttribNode->setPosition(Vec2(360, 680));
 	m_csbnode->addChild(heroAttribNode, 0, "JhHeroProperNode");
 
 	propertybg = (cocos2d::ui::Widget*)m_csbnode->getChildByName("propertybg");
@@ -84,7 +86,7 @@ bool JhHeroStateUILayer::init()
 	updateStatus(0);
 
 	mixnode = JhMixGFNode::create();
-	mixnode->setPosition(Vec2(366, 664));
+	mixnode->setPosition(Vec2(366, 637));
 	m_csbnode->addChild(mixnode, 0, "mixnode");
 
 

@@ -4,6 +4,7 @@
 #include "JhWaitingProgress.h"
 #include "JhHintBox.h"
 #include "JhFactionMemberLayer.h"
+#include "JhConst.h"
 
 JhPromotionLayer::JhPromotionLayer()
 {
@@ -34,7 +35,7 @@ JhPromotionLayer* JhPromotionLayer::create(FactionMemberData *data, Node* target
 bool JhPromotionLayer::init(FactionMemberData *data, Node* target)
 {
 	//蒙版
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	//加载csb文件

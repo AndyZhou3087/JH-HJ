@@ -43,6 +43,9 @@ JhGoWhereLayer* JhGoWhereLayer::create(std::string addrname, WHERELAYER_TYPE typ
 
 bool JhGoWhereLayer::init(std::string addrid, WHERELAYER_TYPE type, float distance)
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	Node* csbnode = CSLoader::createNode("jhgoWhereLayer.csb");
 	this->addChild(csbnode);
 

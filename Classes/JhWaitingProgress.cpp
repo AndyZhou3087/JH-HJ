@@ -1,11 +1,12 @@
 ﻿#include "JhWaitingProgress.h"
 
 #include "JhCommonFuncs.h"
+#include "JhConst.h"
 bool JhWaitingProgress::init(std::string text)
 {
     if (Layer::init()) 
 	{
-		LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 128));
+		LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 		this->addChild(color);
 
 		boxbg = Sprite::createWithSpriteFrameName("ui/waitingbg.png");

@@ -25,9 +25,11 @@ JhBookShelfLayer::~JhBookShelfLayer()
 
 bool JhBookShelfLayer::init()
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
 
 	m_csbnode = CSLoader::createNode("jhbookshelfLayer.csb");
-	m_csbnode->setPosition(Vec2(0, -90));
+	//m_csbnode->setPosition(Vec2(0, -90));
 	this->addChild(m_csbnode);
 
 

@@ -345,7 +345,7 @@ void JhTempStorageLayer::updataMyPackageUI()
 			box,
 			CC_CALLBACK_1(JhTempStorageLayer::onPackageItem, this));
 		boxItem->setTag(i);
-		boxItem->setPosition(Vec2(150 + i * 130, 400));
+		boxItem->setPosition(Vec2(150 + i * 130, 335));
 		Menu* menu = Menu::create();
 		menu->addChild(boxItem);
 		menu->setPosition(Vec2(0, 0));

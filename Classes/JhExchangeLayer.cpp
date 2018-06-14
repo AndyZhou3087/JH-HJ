@@ -47,6 +47,7 @@ JhExchangeLayer* JhExchangeLayer::create(std::string npcid)
 
 bool JhExchangeLayer::init(std::string npcid)
 {
+
 	Node* csbnode = CSLoader::createNode("jhexgLayer.csb");
 	this->addChild(csbnode);
 

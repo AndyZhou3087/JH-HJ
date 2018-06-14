@@ -57,7 +57,7 @@ JhShopLayer* JhShopLayer::create()
 
 bool JhShopLayer::init()
 {
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	m_csbnode = CSLoader::createNode("jhshopLayer.csb");

@@ -97,8 +97,8 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_0" ActionTag="386479909" Tag="94" IconVisible="False" LeftMargin="-235.6538" RightMargin="180.6538" TopMargin="-93.3741" BottomMargin="37.3741" LeftEage="18" RightEage="18" TopEage="18" BottomEage="18" Scale9OriginX="18" Scale9OriginY="18" Scale9Width="19" Scale9Height="20" ctype="ImageViewObjectData">
-            <Size X="55.0000" Y="56.0000" />
+          <AbstractNodeData Name="Image_0" ActionTag="386479909" Tag="94" IconVisible="False" LeftMargin="-242.1538" RightMargin="174.1538" TopMargin="-99.3741" BottomMargin="31.3741" LeftEage="18" RightEage="18" TopEage="18" BottomEage="18" Scale9OriginX="18" Scale9OriginY="18" Scale9Width="19" Scale9Height="20" ctype="ImageViewObjectData">
+            <Size X="68.0000" Y="68.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-208.1538" Y="65.3741" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -273,68 +273,6 @@
             <OutlineColor A="255" R="133" G="90" B="39" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="heroselectbg" ActionTag="997868806" VisibleForFrame="False" Tag="69" IconVisible="False" LeftMargin="-279.5123" RightMargin="-277.4877" TopMargin="248.0893" BottomMargin="-620.0893" ctype="SpriteObjectData">
-            <Size X="557.0000" Y="372.0000" />
-            <Children>
-              <AbstractNodeData Name="zbht_69" ActionTag="-1918624104" Tag="1832" IconVisible="False" LeftMargin="167.9014" RightMargin="154.0986" TopMargin="-61.7220" BottomMargin="391.7220" ctype="SpriteObjectData">
-                <Size X="235.0000" Y="42.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="285.4014" Y="412.7220" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5124" Y="1.1095" />
-                <PreSize X="0.4219" Y="0.1129" />
-                <FileData Type="MarkedSubImage" Path="ui/zbht.png" Plist="jhuiplist.plist" />
-                <BlendFunc Src="1" Dst="771" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="title" ActionTag="-2042744108" Tag="72" IconVisible="False" LeftMargin="235.0443" RightMargin="242.9557" TopMargin="-67.4148" BottomMargin="393.4148" FontSize="40" LabelText="外功" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="79.0000" Y="46.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="274.5443" Y="416.4148" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="239" G="223" B="207" />
-                <PrePosition X="0.4929" Y="1.1194" />
-                <PreSize X="0.1418" Y="0.1237" />
-                <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="ScrollView" ActionTag="-723096159" Tag="74" IconVisible="False" LeftMargin="7.7787" RightMargin="9.2213" TopMargin="9.1338" BottomMargin="12.8662" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
-                <Size X="540.0000" Y="350.0000" />
-                <AnchorPoint />
-                <Position X="7.7787" Y="12.8662" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0140" Y="0.0346" />
-                <PreSize X="0.9695" Y="0.9409" />
-                <SingleColor A="255" R="255" G="150" B="100" />
-                <FirstColor A="255" R="255" G="150" B="100" />
-                <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
-                <InnerNodeSize Width="600" Height="400" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="amountdesc" ActionTag="-1996743308" Tag="203" IconVisible="False" LeftMargin="30.4627" RightMargin="26.5373" TopMargin="302.5526" BottomMargin="15.4474" IsCustomSize="True" FontSize="26" LabelText="白马可在仓库通过喂草来恢复生命值，商城购买的名驹不需要喂养，并且可加快移动速度！" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="500.0000" Y="54.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="280.4627" Y="42.4474" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="204" G="4" B="4" />
-                <PrePosition X="0.5035" Y="0.1141" />
-                <PreSize X="0.8977" Y="0.1452" />
-                <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-            </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-            <Position X="-1.0123" Y="-248.0893" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="images/heroselectbg.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
           <AbstractNodeData Name="zbzbz_0" ActionTag="-1996046178" VisibleForFrame="False" Tag="77" IconVisible="False" LeftMargin="-167.3996" RightMargin="141.3996" TopMargin="-96.0964" BottomMargin="24.0964" ctype="SpriteObjectData">
             <Size X="26.0000" Y="72.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -421,6 +359,68 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/zbzbz.png" Plist="jhuiplist.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="heroselectbg" ActionTag="997868806" VisibleForFrame="False" Tag="69" IconVisible="False" LeftMargin="-279.5123" RightMargin="-277.4877" TopMargin="248.0893" BottomMargin="-620.0893" ctype="SpriteObjectData">
+            <Size X="557.0000" Y="372.0000" />
+            <Children>
+              <AbstractNodeData Name="zbht_69" ActionTag="-1918624104" Tag="1832" IconVisible="False" LeftMargin="167.9014" RightMargin="154.0986" TopMargin="-61.7220" BottomMargin="391.7220" ctype="SpriteObjectData">
+                <Size X="235.0000" Y="42.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="285.4014" Y="412.7220" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5124" Y="1.1095" />
+                <PreSize X="0.4219" Y="0.1129" />
+                <FileData Type="MarkedSubImage" Path="ui/zbht.png" Plist="jhuiplist.plist" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="title" ActionTag="-2042744108" Tag="72" IconVisible="False" LeftMargin="235.0443" RightMargin="242.9557" TopMargin="-67.4148" BottomMargin="393.4148" FontSize="40" LabelText="外功" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="79.0000" Y="46.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="274.5443" Y="416.4148" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="239" G="223" B="207" />
+                <PrePosition X="0.4929" Y="1.1194" />
+                <PreSize X="0.1418" Y="0.1237" />
+                <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="ScrollView" ActionTag="-723096159" Tag="74" IconVisible="False" LeftMargin="7.7787" RightMargin="9.2213" TopMargin="9.1338" BottomMargin="12.8662" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+                <Size X="540.0000" Y="350.0000" />
+                <AnchorPoint />
+                <Position X="7.7787" Y="12.8662" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0140" Y="0.0346" />
+                <PreSize X="0.9695" Y="0.9409" />
+                <SingleColor A="255" R="255" G="150" B="100" />
+                <FirstColor A="255" R="255" G="150" B="100" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+                <InnerNodeSize Width="600" Height="400" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="amountdesc" ActionTag="-1996743308" Tag="203" IconVisible="False" LeftMargin="30.4627" RightMargin="26.5373" TopMargin="302.5526" BottomMargin="15.4474" IsCustomSize="True" FontSize="26" LabelText="白马可在仓库通过喂草来恢复生命值，商城购买的名驹不需要喂养，并且可加快移动速度！" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="500.0000" Y="54.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="280.4627" Y="42.4474" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="204" G="4" B="4" />
+                <PrePosition X="0.5035" Y="0.1141" />
+                <PreSize X="0.8977" Y="0.1452" />
+                <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+            <Position X="-1.0123" Y="-248.0893" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="images/heroselectbg.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

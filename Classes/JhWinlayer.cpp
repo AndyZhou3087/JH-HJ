@@ -1085,7 +1085,7 @@ void JhWinlayer::showMissionAnim(Node* _target, std::string text, std::vector<st
 {
 	if (_target != NULL)
 	{
-		LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+		LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 		_target->addChild(color, 10, "missionanimlayer");
 
 		auto listener = EventListenerTouchOneByOne::create();

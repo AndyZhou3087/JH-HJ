@@ -38,7 +38,7 @@ JhMatchFightResultLayer* JhMatchFightResultLayer::create(int myfinalhero, int wi
 
 bool JhMatchFightResultLayer::init(int myfinalhero, int win)
 {
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	m_csbnode = CSLoader::createNode("jhplayerChallengeResultLayer.csb");

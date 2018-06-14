@@ -42,6 +42,7 @@ JhFactionMemberLayer* JhFactionMemberLayer::create(FactionListData *fldata)
 
 bool JhFactionMemberLayer::init(FactionListData *fldata)
 {
+
 	Node* csbnode = CSLoader::createNode("jhfactionMemberLayer.csb");
 	this->addChild(csbnode);
 

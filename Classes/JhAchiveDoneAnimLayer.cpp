@@ -2,6 +2,8 @@
 #include "JhGlobalData.h"
 #include "JhCommonFuncs.h"
 #include "JhGameScene.h"
+#include "JhConst.h"
+
 bool JhAchiveDoneAnimLayer::init()
 {
 	
@@ -11,7 +13,7 @@ bool JhAchiveDoneAnimLayer::init()
     }
 
 	//蒙版
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	showAchiveDoneAnim(0);

@@ -38,7 +38,7 @@ JhAddFightCountLayer* JhAddFightCountLayer::create(int matchtype)
 
 bool JhAddFightCountLayer::init(int matchtype)
 {
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	m_csbnode = CSLoader::createNode("jhaddChallengeCountLayer.csb");

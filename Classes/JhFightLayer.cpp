@@ -52,6 +52,9 @@ JhFightLayer* JhFightLayer::create(std::string addrid, std::string npcid)
 
 bool JhFightLayer::init(std::string addrid, std::string npcid)
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	Node* csbnode = CSLoader::createNode("jhfightLayer.csb");
 	this->addChild(csbnode);
 
@@ -137,8 +140,8 @@ bool JhFightLayer::init(std::string addrid, std::string npcid)
 	if (JhNewerGuideLayer::checkifNewerGuide(39))
 		m_escapebtn->setVisible(false);
 	// 滚动文字
-	m_fihgtScorll = JhUIScroll::create(610.0f, 435.0f);
-	m_fihgtScorll->setPosition(Vec2(360, 350));
+	m_fihgtScorll = JhUIScroll::create(610.0f, 485.0f);
+	m_fihgtScorll->setPosition(Vec2(360, 370));
 	csbnode->addChild(m_fihgtScorll);
 
 	heroactimg = (cocos2d::ui::ImageView*)csbnode->getChildByName("heroactimg");
@@ -935,7 +938,7 @@ void JhFightLayer::showFightWord(int type, int value)
 
 void JhFightLayer::checkWordLblColor(std::string wordstr)
 {
-	Label* wordlbl = Label::createWithTTF(wordstr, "fonts/STXINGKA.TTF", 28);
+	Label* wordlbl = Label::createWithTTF(wordstr, "fonts/SIMHEI.TTF", 28);
 	wordlbl->setLineBreakWithoutSpace(true);
 	wordlbl->setMaxLineWidth(610);
 	int index = 0;

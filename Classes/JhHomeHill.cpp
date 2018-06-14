@@ -22,6 +22,9 @@ JhHomeHill::~JhHomeHill()
 
 bool JhHomeHill::init()
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	Node* csbnode = CSLoader::createNode("jhhomeHillLayer.csb");
 	this->addChild(csbnode);
 

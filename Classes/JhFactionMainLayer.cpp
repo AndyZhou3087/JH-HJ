@@ -36,6 +36,9 @@ JhFactionMainLayer* JhFactionMainLayer::create()
 
 bool JhFactionMainLayer::init()
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	Node* csbnode = CSLoader::createNode("jhfactionMainLayer.csb");
 	this->addChild(csbnode);
 

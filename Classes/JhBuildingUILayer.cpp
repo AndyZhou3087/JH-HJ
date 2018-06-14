@@ -54,9 +54,12 @@ bool JhBuildingUILayer::init(JhBuilding* build)
 {
 	m_build = build;
 
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	// ui
 	m_csbnode = CSLoader::createNode("jhbuidingUiLayer.csb");
-	m_csbnode->setPosition(Vec2(0, -90));
+	//m_csbnode->setPosition(Vec2(0, -90));
 	this->addChild(m_csbnode);
 
 	//建筑物名称
@@ -75,7 +78,7 @@ bool JhBuildingUILayer::init(JhBuilding* build)
 
 	//建筑物每个操作 node
 	buildnode = CSLoader::createNode("jhactionNodeTop.csb");
-	buildnode->setPosition(Vec2(360, 950));
+	buildnode->setPosition(Vec2(360, 820));
 	m_csbnode->addChild(buildnode);
 
 	//建造按钮
@@ -181,6 +184,9 @@ void JhBuildingUILayer::setActionScrollViewUI()
 	{
 		Node* categoryBtnNode = m_csbnode->getChildByName("tagnode");
 		vec_categoryBtn[0]->setBright(false);
+		cocos2d::ui::Text* text = (cocos2d::ui::Text*)vec_categoryBtn[0]->getChildByName("text");
+		text->setFontSize(32);
+		text->setTextColor(Color4B(239, 223, 207, 255));
 		categoryBtnNode->setVisible(true);
 		scrollview->setContentSize(Size(scrollview->getContentSize().width, 600));
 	}
@@ -263,13 +269,13 @@ void JhBuildingUILayer::delayLoadActionUi(float dt)
 
 	int size = JhGlobalData::map_buidACData[name].size();
 
-	loadActionUIByCategory(1);
-	/*for (int i = 0; i < size; i++)
+	//loadActionUIByCategory(1);
+	for (int i = 0; i < size; i++)
 		vec_buildAcitonData.push_back(JhGlobalData::map_buidACData[name][i]);
 
-	loadActionUi();*/
+	loadActionUi();
 
-	//m_loadlbl->removeFromParentAndCleanup(true);
+	m_loadlbl->removeFromParentAndCleanup(true);
 	getServerTime();
 }
 
@@ -864,10 +870,16 @@ void JhBuildingUILayer::onCategory(cocos2d::Ref *pSender, cocos2d::ui::Widget::T
 			if (node->getTag() != i)
 			{
 				vec_categoryBtn[i]->setBright(true);
+				cocos2d::ui::Text* text = (cocos2d::ui::Text*)vec_categoryBtn[i]->getChildByName("text");
+				text->setFontSize(25);
+				text->setTextColor(Color4B(220, 173, 135, 255));
 			}
 			else
 			{
 				vec_categoryBtn[i]->setBright(false);
+				cocos2d::ui::Text* text = (cocos2d::ui::Text*)vec_categoryBtn[i]->getChildByName("text");
+				text->setFontSize(32);
+				text->setTextColor(Color4B(239, 223, 207, 255));
 			}
 		}
 
@@ -936,10 +948,16 @@ void JhBuildingUILayer::loadActionUIByCategory(int category)
 		if (lastCategoryindex != i)
 		{
 			vec_categoryBtn[i]->setBright(true);
+			cocos2d::ui::Text* text = (cocos2d::ui::Text*)vec_categoryBtn[i]->getChildByName("text");
+			text->setFontSize(25);
+			text->setTextColor(Color4B(220, 173, 135, 255));
 		}
 		else
 		{
 			vec_categoryBtn[i]->setBright(false);
+			cocos2d::ui::Text* text = (cocos2d::ui::Text*)vec_categoryBtn[i]->getChildByName("text");
+			text->setFontSize(32);
+			text->setTextColor(Color4B(239, 223, 207, 255));
 		}
 	}
 

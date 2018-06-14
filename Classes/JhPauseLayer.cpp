@@ -5,6 +5,8 @@
 #include "JhCommonFuncs.h"
 #include "JhMapLayer.h"
 #include "JhGameScene.h"
+#include "JhConst.h"
+
 bool JhPauseLayer::init()
 {
 	
@@ -13,7 +15,7 @@ bool JhPauseLayer::init()
 		return false;
     }
 
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	Node* csbnode = CSLoader::createNode("jhpauseLayer.csb");

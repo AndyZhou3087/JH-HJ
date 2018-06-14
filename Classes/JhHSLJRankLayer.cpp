@@ -35,6 +35,9 @@ JhHSLJRankLayer* JhHSLJRankLayer::create()
 
 bool JhHSLJRankLayer::init()
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	m_csbnode = CSLoader::createNode("jhHSLJRankLayer.csb");
 	this->addChild(m_csbnode);
 
@@ -112,7 +115,7 @@ void JhHSLJRankLayer::delayShowData(float dt)
 
 
 	Node* mynode = HSLJRankItem::create(&myrankdata);
-	mynode->setPosition(Vec2(360, 130));
+	mynode->setPosition(Vec2(360, 210));
 	this->addChild(mynode, 0, "mynode");
 
 	Director::getInstance()->getRunningScene()->removeChildByName("waitbox");

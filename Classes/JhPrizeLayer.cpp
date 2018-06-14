@@ -8,6 +8,7 @@
 #include "JhMyPackage.h"
 #include "JhStorageRoom.h"
 #include "JhHuafeiAwardListLayer.h"
+#include "JhConst.h"
 
 const std::string prizerwd[] = {"g20", "80020", "82005"};
 
@@ -24,7 +25,7 @@ JhPrizeLayer::~JhPrizeLayer()
 bool JhPrizeLayer::init()
 {
 	//蒙版
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	//加载csb文件

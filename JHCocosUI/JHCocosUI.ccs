@@ -48,6 +48,7 @@
           <Image Name="herodesc2.png" />
           <Image Name="herodesc3.png" />
           <Image Name="herodesc4.png" />
+          <Image Name="heronodebg.png" />
           <Image Name="heroselectbg.png" />
           <Image Name="heroselectframe.png" />
           <Image Name="homehill.png" />

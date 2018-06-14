@@ -1,6 +1,7 @@
 ﻿#include "JhRelationLayer.h"
 #include "JhGlobalData.h"
 #include "JhCommonFuncs.h"
+#include "JhConst.h"
 
 const std::string relationdesc[] = { "一般", "好友", "师徒", "一般"};
 JhRelationLayer::JhRelationLayer()
@@ -32,6 +33,9 @@ JhRelationLayer* JhRelationLayer::create()
 
 bool JhRelationLayer::init()
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	Node* csbnode = CSLoader::createNode("jhrelationLayer.csb");
 	this->addChild(csbnode);
 

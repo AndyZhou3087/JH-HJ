@@ -16,7 +16,7 @@ JhBuyDetailsLayer::~JhBuyDetailsLayer()
 
 bool JhBuyDetailsLayer::init(int heroid)
 {
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	Node* csbnode = CSLoader::createNode("jhbuyDetailsLayer.csb");

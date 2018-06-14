@@ -22,6 +22,7 @@ JhActionGetLayer::~JhActionGetLayer()
 
 bool JhActionGetLayer::init(int rid, std::vector<int> res_ids, int type, int actype)
 {
+
 	Node* csbnode = CSLoader::createNode("jhactionGetLayer.csb");
 	this->addChild(csbnode);
 
@@ -503,7 +504,7 @@ void JhActionGetLayer::updataMyPackageUI()
 			box,
 			CC_CALLBACK_1(JhActionGetLayer::onPackageItem, this));
 		boxItem->setTag(i);
-		boxItem->setPosition(Vec2(150 + i * 130, 425));
+		boxItem->setPosition(Vec2(150 + i * 130, 365));
 		Menu* menu = Menu::create();
 		menu->addChild(boxItem);
 		menu->setPosition(Vec2(0, 0));
@@ -547,7 +548,7 @@ void JhActionGetLayer::updataRewardUI()
 			CC_CALLBACK_1(JhActionGetLayer::onRewardItem, this));
 		boxItem->setTag(i);
 		boxItem->setUserData(&getResData[i]);
-		boxItem->setPosition(Vec2(150 + i * 135, 625));
+		boxItem->setPosition(Vec2(150 + i * 135, 565));
 		Menu* menu = Menu::create();
 		menu->addChild(boxItem);
 		menu->setPosition(Vec2(0, 0));

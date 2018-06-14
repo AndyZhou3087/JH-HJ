@@ -18,7 +18,7 @@ JhDivideLayer::~JhDivideLayer()
 bool JhDivideLayer::init(BuildActionData* bdata)
 {
 
-	m_colorlayer = LayerColor::create(Color4B(11, 32, 22, 200));
+	m_colorlayer = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	m_colorlayer->setVisible(false);
 	this->addChild(m_colorlayer);
 

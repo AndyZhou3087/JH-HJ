@@ -443,7 +443,7 @@ void JhHeroProperNode::showSelectFrame(HeroAtrType index)
 		{
 			if (i == 0)
 			{
-				m_select->setPosition(Vec2(boxItem->getPositionX() - boxItem->getContentSize().width / 2, boxItem->getPositionY() + boxItem->getContentSize().height / 2));
+				m_select->setPosition(Vec2(boxItem->getPositionX() - boxItem->getContentSize().width / 2 + 20, boxItem->getPositionY() + boxItem->getContentSize().height / 2 - 20));
 				m_select->setVisible(true);
 			}
 		}
@@ -551,7 +551,7 @@ void JhHeroProperNode::selectCarryData()
 
 	}
 
-	m_select->setPosition(Vec2(m_select_itemnode->getPositionX() - m_select_itemnode->getContentSize().width / 2, m_select_itemnode->getPositionY() + m_select_itemnode->getContentSize().height / 2));
+	m_select->setPosition(Vec2(m_select_itemnode->getPositionX() - m_select_itemnode->getContentSize().width / 2 + 20, m_select_itemnode->getPositionY() + m_select_itemnode->getContentSize().height / 2 - 20));
 
 	PackageData curCarrydata = *m_select_udata;
 	//之前是选中m_select可见，现在点了就是没选中
@@ -639,6 +639,7 @@ bool JhHeroProperNode::takeoff(HeroAtrType atrype)
 
 	str = StringUtils::format("ui/%s.png", strid.c_str());
 	propeImages[lastclickindex]->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
+	propeImages[lastclickindex]->setContentSize(Sprite::createWithSpriteFrameName(str)->getContentSize());
 
 	return true;
 }
@@ -694,6 +695,7 @@ void JhHeroProperNode::updataProperpanel(int atrypeindex, PackageData pdata)
 
 	std::string strid = StringUtils::format("ui/%s.png", pdata.strid.c_str());
 	propeImages[atrypeindex]->loadTexture(strid, cocos2d::ui::TextureResType::PLIST);
+	propeImages[atrypeindex]->setContentSize(Sprite::createWithSpriteFrameName(strid)->getContentSize());
 
 	imgbtn[atrypeindex]->removeAllChildrenWithCleanup(true);
 

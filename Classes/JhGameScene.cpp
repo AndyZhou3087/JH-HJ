@@ -134,12 +134,12 @@ bool JhGameScene::init()
 
 	//滚动文字的背景
 	scrollbg = Sprite::create("images/topeventwordbox.png");
-	scrollbg->setPosition(Vec2(visibleSize.width / 2, 910));
+	scrollbg->setPosition(Vec2(visibleSize.width / 2, 920));
 	this->addChild(scrollbg, 3);
 
 	//滚动文字
 	g_uiScroll = JhUIScroll::create(580.0F, 100.0f);
-	g_uiScroll->setPosition(Vec2(visibleSize.width / 2 + 5, 910));
+	g_uiScroll->setPosition(Vec2(visibleSize.width / 2 + 5, 920));
 	addChild(g_uiScroll, 3);
 
 	//角色目前在哪个地点，第一次进入家

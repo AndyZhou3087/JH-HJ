@@ -5,6 +5,7 @@
 #include "JhHintBox.h"
 #include "JhFightLayer.h"
 #include "JhHeroStateUILayer.h"
+#include "JhConst.h"
 
 int usecount[] = { 1, 1, 3, 3, 5, 5, 7, 7, 8, 8, 10, 10, 13, 13, 15, 15, 18, 18, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20 };
 JhChallengeCountLayer::JhChallengeCountLayer()
@@ -22,7 +23,7 @@ bool JhChallengeCountLayer::init(int* wincount, int winnpccount, bool isRevive)
 	m_wincount = wincount;
 	m_winnpcount = winnpccount;
 	m_isRevive = isRevive;
-	LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 200));
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 	this->addChild(color);
 
 	Node* csbnode = CSLoader::createNode("jhchallengeCountLayer.csb");

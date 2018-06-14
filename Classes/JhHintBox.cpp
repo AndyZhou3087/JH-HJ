@@ -2,6 +2,8 @@
 #include "JhGlobalData.h"
 #include "JhCommonFuncs.h"
 #include "JhSoundManager.h"
+#include "JhConst.h"
+
 bool JhHintBox::init(std::string text)
 {
 	
@@ -13,7 +15,7 @@ bool JhHintBox::init(std::string text)
 	Node* csbnode;
 	if (text == JhCommonFuncs::gbk2utf("逃跑成功！") || text.find(JhCommonFuncs::gbk2utf("已满员")) != std::string::npos || text.find(JhCommonFuncs::gbk2utf("需要申请者达到")) != std::string::npos || text.find(JhCommonFuncs::gbk2utf("匹配失败")) != std::string::npos)
 	{
-		LayerColor* color = LayerColor::create(Color4B(11, 32, 22, 150));
+		LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
 		this->addChild(color);
 		csbnode = CSLoader::createNode("jhhintLayer2.csb");
 	}

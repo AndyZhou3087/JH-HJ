@@ -50,6 +50,9 @@ JhNpcLayer* JhNpcLayer::create(std::string addrname)
 
 bool JhNpcLayer::init(std::string addrid)
 {
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	m_csbnode = CSLoader::createNode("jhnpcLayer.csb");
 	this->addChild(m_csbnode);
 
@@ -100,7 +103,7 @@ void JhNpcLayer::refreshNpcNode()
 	MapData mdata = JhGlobalData::map_maps[m_addrstr];
 	int ncpsize = mdata.npcs.size();
 
-	int itemheight = 200;
+	int itemheight = 155;
 	int innerheight = itemheight * ncpsize;
 	int contentheight = m_scrollview->getContentSize().height;
 	if (innerheight < contentheight)
