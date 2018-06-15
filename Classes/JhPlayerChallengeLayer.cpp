@@ -55,6 +55,8 @@ bool JhPlayerChallengeLayer::init(std::string addrid, RankData* rankData)
 	//地点名称
 	cocos2d::ui::Text* addrnametxt = (cocos2d::ui::Text*)csbnode->getChildByName("title");
 	addrnametxt->setString(JhGlobalData::map_maps[addrid].cname);
+	addrnametxt->setFontSize(16);
+	addrnametxt->setTextAreaSize(Size(20, 100));
 
 	cocos2d::ui::ImageView* heroicon = (cocos2d::ui::ImageView*)csbnode->getChildByName("heroicon");
 	std::string heroiconstr = StringUtils::format("ui/fhero%d.png", g_hero->getHeadID());
@@ -903,7 +905,7 @@ void JhPlayerChallengeLayer::showFightWord(int type, int value)
 
 void JhPlayerChallengeLayer::checkWordLblColor(std::string wordstr)
 {
-	Label* wordlbl = Label::createWithTTF(wordstr, "fonts/STXINGKA.TTF", 28);
+	Label* wordlbl = Label::createWithTTF(wordstr, "fonts/SIMHEI.TTF", 28);
 	wordlbl->setLineBreakWithoutSpace(true);
 	wordlbl->setMaxLineWidth(610);
 	int index = 0;

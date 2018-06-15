@@ -27,10 +27,7 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="jhheroStateLayer.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="jhheroStateLayer.csd" />
+        <ActiveDocument />
       </Value>
     </Item>
   </Properties>

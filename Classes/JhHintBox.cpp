@@ -12,16 +12,17 @@ bool JhHintBox::init(std::string text)
 		return false;
     }
 
+	LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
+	this->addChild(color);
+
 	Node* csbnode;
 	if (text == JhCommonFuncs::gbk2utf("逃跑成功！") || text.find(JhCommonFuncs::gbk2utf("已满员")) != std::string::npos || text.find(JhCommonFuncs::gbk2utf("需要申请者达到")) != std::string::npos || text.find(JhCommonFuncs::gbk2utf("匹配失败")) != std::string::npos)
 	{
-		LayerColor* color = LayerColor::create(Color4B(0, 0, 0, OPACITY));
-		this->addChild(color);
 		csbnode = CSLoader::createNode("jhhintLayer2.csb");
 	}
 	else
 	{
-		csbnode = CSLoader::createNode("jhhintLayer.csb");
+		csbnode = CSLoader::createNode("jhhintLayer2.csb");
 	}
 	this->addChild(csbnode);
 

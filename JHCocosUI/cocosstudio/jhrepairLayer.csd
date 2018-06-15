@@ -277,7 +277,7 @@
             <FileData Type="Normal" Path="images/strengthfail.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="desc" ActionTag="2003148900" Tag="88" IconVisible="False" LeftMargin="346.9355" RightMargin="73.0645" TopMargin="569.4268" BottomMargin="648.5732" IsCustomSize="True" FontSize="16" LabelText="    小贴士：十级以上强化失败时武器会消失，请慎重考虑！" VerticalAlignmentType="VT_Bottom" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="desc" ActionTag="2003148900" Tag="88" IconVisible="False" LeftMargin="346.9355" RightMargin="73.0645" TopMargin="569.4268" BottomMargin="648.5732" IsCustomSize="True" FontSize="22" LabelText="    小贴士：十级以上强化失败时武器会消失，请慎重考虑！" VerticalAlignmentType="VT_Bottom" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="300.0000" Y="62.0000" />
             <AnchorPoint />
             <Position X="346.9355" Y="648.5732" />

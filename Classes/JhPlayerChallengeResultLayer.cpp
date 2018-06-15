@@ -48,7 +48,7 @@ bool JhPlayerChallengeResultLayer::init(RankData* fightPlayerData, int win)
 	cocos2d::ui::Widget *backbtn = (cocos2d::ui::Widget*)m_csbnode->getChildByName("backbtn");
 	backbtn->addTouchEventListener(CC_CALLBACK_2(JhPlayerChallengeResultLayer::onBack, this));
 
-	std::string str = StringUtils::format("ui/tophero%d.png", g_hero->getHeadID());
+	std::string str = StringUtils::format("ui/fhero%d.png", g_hero->getHeadID());
 	cocos2d::ui::ImageView* headimg = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("heroimg");
 	headimg->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
 
@@ -74,7 +74,7 @@ bool JhPlayerChallengeResultLayer::init(RankData* fightPlayerData, int win)
 	}
 	else{
 		winbox->setPosition(Vec2(359, 307));
-		wintext->setContentSize(Size(228, 56));
+		//wintext->setContentSize(Size(228, 56));
 	}
 
 	cocos2d::ui::Text* explbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("explbl");

@@ -204,38 +204,39 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="desc" ActionTag="-2104322458" VisibleForFrame="False" Tag="80" IconVisible="False" LeftMargin="133.6991" RightMargin="156.3009" TopMargin="42.5935" BottomMargin="39.4065" IsCustomSize="True" FontSize="20" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="desc" ActionTag="-2104322458" VisibleForFrame="False" Tag="80" IconVisible="False" LeftMargin="127.5469" RightMargin="162.4531" TopMargin="24.9115" BottomMargin="57.0885" IsCustomSize="True" FontSize="20" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="290.0000" Y="65.0000" />
                 <AnchorPoint ScaleY="1.0000" />
-                <Position X="133.6991" Y="104.4065" />
+                <Position X="127.5469" Y="122.0885" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="204" G="4" B="4" />
-                <PrePosition X="0.2305" Y="0.7102" />
+                <CColor A="255" R="69" G="43" B="6" />
+                <PrePosition X="0.2199" Y="0.8305" />
                 <PreSize X="0.5000" Y="0.4422" />
                 <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="needtime" ActionTag="1785667529" Tag="35" IconVisible="False" LeftMargin="460.6968" RightMargin="47.3032" TopMargin="90.8768" BottomMargin="30.1232" FontSize="23" LabelText="10分钟" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="needtime" ActionTag="1785667529" Tag="35" IconVisible="False" LeftMargin="460.6966" RightMargin="47.3034" TopMargin="92.8769" BottomMargin="28.1231" FontSize="23" LabelText="10分钟" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="72.0000" Y="26.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="496.6968" Y="43.1232" />
+                <Position X="496.6966" Y="41.1231" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="0" G="0" B="0" />
-                <PrePosition X="0.8564" Y="0.2934" />
+                <CColor A="255" R="255" G="0" B="0" />
+                <PrePosition X="0.8564" Y="0.2797" />
                 <PreSize X="0.1241" Y="0.1769" />
                 <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="progresstext" ActionTag="151482905" VisibleForFrame="False" Tag="64" IconVisible="False" LeftMargin="320.6954" RightMargin="259.3046" TopMargin="108.2931" BottomMargin="38.7069" FontSize="20" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="progresstext" ActionTag="151482905" VisibleForFrame="False" Tag="64" IconVisible="False" LeftMargin="295.3214" RightMargin="284.6786" TopMargin="127.5150" BottomMargin="19.4850" FontSize="20" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="320.6954" Y="38.7069" />
+                <Position X="295.3214" Y="19.4850" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="127" G="127" B="127" />
-                <PrePosition X="0.5529" Y="0.2633" />
+                <CColor A="255" R="255" G="0" B="0" />
+                <PrePosition X="0.5092" Y="0.1326" />
                 <PreSize X="0.0000" Y="0.0000" />
+                <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

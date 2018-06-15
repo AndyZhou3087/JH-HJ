@@ -32,7 +32,7 @@
               <AbstractNodeData Name="box" ActionTag="998287900" Tag="63" IconVisible="False" LeftMargin="2.6474" RightMargin="450.3526" TopMargin="40.1935" BottomMargin="50.8065" ctype="SpriteObjectData">
                 <Size X="107.0000" Y="90.0000" />
                 <Children>
-                  <AbstractNodeData Name="icon" ActionTag="-1569718917" Tag="81" IconVisible="False" LeftMargin="20.9999" RightMargin="18.0001" TopMargin="9.0002" BottomMargin="12.9998" TouchEnable="True" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="1" Scale9Height="1" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="icon" ActionTag="-1569718917" Tag="81" IconVisible="False" LeftMargin="20.9999" RightMargin="18.0001" TopMargin="9.0002" BottomMargin="12.9998" TouchEnable="True" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="4" Scale9Height="4" ctype="ImageViewObjectData">
                     <Size X="68.0000" Y="68.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="54.9999" Y="46.9998" />
@@ -60,7 +60,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3221" Y="0.7826" />
                 <PreSize X="0.2018" Y="0.6188" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/iconbg.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="res1" ActionTag="1276739139" VisibleForFrame="False" Tag="69" IconVisible="False" LeftMargin="186.1121" RightMargin="260.8879" TopMargin="-16.6447" BottomMargin="85.6447" TouchEnable="True" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="85" Scale9Height="84" ctype="ImageViewObjectData">
                 <Size X="113.0000" Y="112.0000" />
@@ -70,7 +70,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4332" Y="0.7826" />
                 <PreSize X="0.2018" Y="0.6188" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/iconbg.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="res2" ActionTag="1421407716" VisibleForFrame="False" Tag="70" IconVisible="False" LeftMargin="248.3635" RightMargin="198.6365" TopMargin="-16.6447" BottomMargin="85.6447" TouchEnable="True" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="85" Scale9Height="84" ctype="ImageViewObjectData">
                 <Size X="113.0000" Y="112.0000" />
@@ -80,7 +80,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5444" Y="0.7826" />
                 <PreSize X="0.2018" Y="0.6188" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/iconbg.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="res3" ActionTag="1346561269" VisibleForFrame="False" Tag="74" IconVisible="False" LeftMargin="310.6134" RightMargin="136.3866" TopMargin="-16.6447" BottomMargin="85.6447" TouchEnable="True" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="85" Scale9Height="84" ctype="ImageViewObjectData">
                 <Size X="113.0000" Y="112.0000" />
@@ -90,7 +90,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.6556" Y="0.7826" />
                 <PreSize X="0.2018" Y="0.6188" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/iconbg.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="res4" ActionTag="854660445" VisibleForFrame="False" Tag="75" IconVisible="False" LeftMargin="372.8651" RightMargin="74.1349" TopMargin="-16.6447" BottomMargin="85.6447" TouchEnable="True" LeftEage="14" RightEage="14" TopEage="14" BottomEage="14" Scale9OriginX="14" Scale9OriginY="14" Scale9Width="85" Scale9Height="84" ctype="ImageViewObjectData">
                 <Size X="113.0000" Y="112.0000" />
@@ -100,7 +100,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7667" Y="0.7826" />
                 <PreSize X="0.2018" Y="0.6188" />
-                <FileData Type="MarkedSubImage" Path="ui/buildsmall.png" Plist="jhuiplist.plist" />
+                <FileData Type="MarkedSubImage" Path="ui/iconbg.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
               <AbstractNodeData Name="count0" ActionTag="864830858" VisibleForFrame="False" Tag="66" IconVisible="False" LeftMargin="157.9487" RightMargin="357.0513" TopMargin="69.5468" BottomMargin="94.4532" FontSize="13" LabelText="1000/3" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="45.0000" Y="17.0000" />
@@ -224,14 +224,14 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="desc" ActionTag="-2104322458" VisibleForFrame="False" Tag="80" IconVisible="False" LeftMargin="120.8426" RightMargin="149.1574" TopMargin="52.5652" BottomMargin="63.4348" IsCustomSize="True" FontSize="20" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="290.0000" Y="65.0000" />
+              <AbstractNodeData Name="desc" ActionTag="-2104322458" VisibleForFrame="False" Tag="80" IconVisible="False" LeftMargin="146.7351" RightMargin="43.2649" TopMargin="16.0800" BottomMargin="79.9200" IsCustomSize="True" FontSize="20" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="370.0000" Y="85.0000" />
                 <AnchorPoint ScaleY="1.0000" />
-                <Position X="120.8426" Y="128.4348" />
+                <Position X="146.7351" Y="164.9200" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="204" G="4" B="4" />
-                <PrePosition X="0.2158" Y="0.7096" />
-                <PreSize X="0.5179" Y="0.3591" />
+                <PrePosition X="0.2620" Y="0.9112" />
+                <PreSize X="0.6607" Y="0.4696" />
                 <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

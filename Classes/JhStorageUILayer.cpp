@@ -205,7 +205,7 @@ void JhStorageUILayer::updateResContent()
 
 				Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/SIMHEI.TTF", 22);//Label::createWithSystemFont(str, "", 18);
 				reslbl->setAnchorPoint(Vec2(1, 0.5));
-				reslbl->enableOutline(Color4B(184, 144, 88, 255), 2);
+				reslbl->enableOutline(Color4B(133, 90, 39, 255), 2);
 				reslbl->setPosition(Vec2(box->getContentSize().width - 10, 20));
 				box->addChild(reslbl);
 

@@ -26,10 +26,10 @@
             <PreSize X="0.0000" Y="0.0000" />
             <LabelBMFontFile_CNB Type="Normal" Path="fonts/rankfnt.fnt" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="name" ActionTag="961971783" Tag="135" IconVisible="False" LeftMargin="-124.2522" RightMargin="85.2522" TopMargin="-31.3264" BottomMargin="10.3264" FontSize="18" LabelText="帮派" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="39.0000" Y="21.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-104.7522" Y="20.8264" />
+          <AbstractNodeData Name="name" ActionTag="961971783" Tag="135" IconVisible="False" LeftMargin="-169.2519" RightMargin="117.2519" TopMargin="-32.3263" BottomMargin="3.3263" FontSize="25" LabelText="帮派" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="52.0000" Y="29.0000" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="-169.2519" Y="17.8263" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="107" G="68" B="19" />
             <PrePosition />
@@ -38,10 +38,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="count" ActionTag="1326331531" Tag="134" IconVisible="False" LeftMargin="-121.1693" RightMargin="79.1693" TopMargin="8.5168" BottomMargin="-25.5168" FontSize="15" LabelText="50/50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="42.0000" Y="17.0000" />
+          <AbstractNodeData Name="count" ActionTag="1326331531" Tag="134" IconVisible="False" LeftMargin="-118.1691" RightMargin="65.1691" TopMargin="8.5166" BottomMargin="-31.5166" FontSize="20" LabelText="50/50" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="53.0000" Y="23.0000" />
             <AnchorPoint ScaleY="0.5000" />
-            <Position X="-121.1693" Y="-17.0168" />
+            <Position X="-118.1691" Y="-20.0166" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="76" G="45" B="5" />
             <PrePosition />
@@ -50,10 +50,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="lv" ActionTag="-332517855" Tag="133" IconVisible="False" LeftMargin="-68.0331" RightMargin="18.0331" TopMargin="8.6489" BottomMargin="-25.6489" FontSize="15" LabelText="LV:100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="50.0000" Y="17.0000" />
+          <AbstractNodeData Name="lv" ActionTag="-332517855" Tag="133" IconVisible="False" LeftMargin="-60.0333" RightMargin="-2.9667" TopMargin="8.6487" BottomMargin="-31.6487" FontSize="20" LabelText="LV:100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="63.0000" Y="23.0000" />
             <AnchorPoint ScaleY="0.5000" />
-            <Position X="-68.0331" Y="-17.1489" />
+            <Position X="-60.0333" Y="-20.1487" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="128" B="0" />
             <PrePosition />
@@ -90,10 +90,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="name_0" ActionTag="-562328045" Tag="101" IconVisible="False" LeftMargin="-166.8149" RightMargin="127.8149" TopMargin="6.4431" BottomMargin="-27.4431" IsCustomSize="True" FontSize="15" LabelText="人数：" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="39.0000" Y="21.0000" />
+          <AbstractNodeData Name="name_0" ActionTag="-562328045" Tag="101" IconVisible="False" LeftMargin="-171.3145" RightMargin="121.3145" TopMargin="8.4430" BottomMargin="-31.4430" IsCustomSize="True" FontSize="20" LabelText="人数：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="50.0000" Y="23.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-147.3149" Y="-16.9431" />
+            <Position X="-146.3145" Y="-19.9430" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="107" G="68" B="19" />
             <PrePosition />

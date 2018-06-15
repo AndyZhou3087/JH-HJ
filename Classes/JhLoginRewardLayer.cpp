@@ -60,7 +60,7 @@ bool JhLoginRewardLayer::init()
 		{
 			count = atoi(resid.substr(1).c_str());
 			namsstr = StringUtils::format("%sx%d", JhCommonFuncs::gbk2utf("金元宝").c_str(), count);
-			resid = "gd0";
+			resid = "gold";
 		}
 
 		else

@@ -152,7 +152,7 @@ void JhNpcLayer::refreshNpcNode()
 			cocos2d::ui::ImageView* npchead = (cocos2d::ui::ImageView*)npcitem->getChildByName("npcicon");
 			std::string npcheadstr = StringUtils::format("ui/%s.png", mdata.npcs[i].c_str());
 			npchead->loadTexture(npcheadstr, cocos2d::ui::TextureResType::PLIST);
-			npchead->setScale(0.6f);
+			npchead->setScale(0.7f);
 
 			cocos2d::ui::Text* npcname = (cocos2d::ui::Text*)npcitem->getChildByName("npcname");
 			npcname->setString(JhGlobalData::map_npcs[mdata.npcs[i]].name);
@@ -1036,9 +1036,10 @@ void JhNpcLayer::updatePlotUI(int type)
 					}
 					else
 					{
-						std::string miconstr = StringUtils::format("ui/mapmission%d_0.png", type);
+						//std::string miconstr = StringUtils::format("ui/mapmission%d_0.png", type);
+						std::string miconstr = "ui/redpoint.png";
 						Sprite* micon = Sprite::createWithSpriteFrameName(miconstr);
-						micon->setScale(0.6f);
+						//micon->setScale(0.6f);
 						micon->setPosition(Vec2(talkbtn->getContentSize().width - 10, talkbtn->getContentSize().height - 10));
 						talkbtn->addChild(micon, 0, smissionname);
 					}

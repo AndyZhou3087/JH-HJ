@@ -584,6 +584,7 @@
           <Image Name="npcbanner.png" />
           <Image Name="npcbtn1.png" />
           <Image Name="npcheadbox.png" />
+          <Image Name="npcnodebtn.png" />
           <Image Name="npcnodefr.png" />
           <Image Name="npcprope0.png" />
           <Image Name="npcprope1.png" />

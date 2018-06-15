@@ -105,7 +105,14 @@ bool JhHeroProperNode::init(int index)
 	m_listener = EventListenerTouchOneByOne::create();
 	m_listener->onTouchBegan = [=](Touch *touch, Event *event)
 	{
-		return false;
+		if (index == 1)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	};
 	m_listener->setSwallowTouches(false);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(m_listener, this);
@@ -125,6 +132,7 @@ void JhHeroProperNode::onOkClick(cocos2d::Ref *pSender, cocos2d::ui::Widget::Tou
 	if (type == ui::Widget::TouchEventType::ENDED)
 	{
 		heroselectbg->setVisible(false);
+		m_listener->setSwallowTouches(false);
 	}
 }
 
@@ -310,14 +318,14 @@ void JhHeroProperNode::showSelectFrame(HeroAtrType index)
 {
 	refreshCarryData();
 	int tempsize = map_carryData[index].size();
-	int itemheight = 165;
-	int stX = 80;
-	int jtX = 145;
+	int itemheight = 150;
+	int stX = 60;
+	int jtX = 135;
 	if (m_index != 1)
 	{
 		stX = 50;
-		jtX = 120;
-		itemheight = 80;
+		jtX = 100;
+		itemheight = 120;
 	}
 	int row = tempsize % 4 == 0 ? tempsize / 4 : (tempsize / 4 + 1);
 	int innerheight = itemheight * row;
@@ -332,7 +340,7 @@ void JhHeroProperNode::showSelectFrame(HeroAtrType index)
 	else
 		amountdesc->setVisible(false);
 
-	Color4B colorarr[6] = { Color4B(195, 159, 97, 255), Color4B(195, 159, 97, 255), Color4B(90, 180, 135, 255), Color4B(90, 161, 181, 255), Color4B(159, 81, 171, 255), Color4B(193, 128, 71, 255) };
+	Color4B colorarr[6] = { Color4B(133, 90, 39, 255), Color4B(133, 90, 39, 255), Color4B(72, 105, 89, 255), Color4B(72, 97, 105, 255), Color4B(101, 72, 105, 255), Color4B(105, 88, 72, 255) };
 	for (int i = 0; i < tempsize; i++)
 	{
 		std::string boxstr = "ui/buildsmall.png";
@@ -368,7 +376,7 @@ void JhHeroProperNode::showSelectFrame(HeroAtrType index)
 			boxItem->setScale(0.7f);
 		}
 
-		boxItem->setPosition(Vec2(stX + i % 4 * jtX, innerheight - i / 4 * itemheight - itemheight / 2));
+		boxItem->setPosition(Vec2(stX + i % 4 * jtX, innerheight - i / 4 * itemheight - itemheight / 2 + 15));
 		JhMyMenu* menu = JhMyMenu::create();
 		menu->setTouchlimit(m_scrollView);
 		menu->addChild(boxItem);
@@ -389,10 +397,10 @@ void JhHeroProperNode::showSelectFrame(HeroAtrType index)
 		namelbl->setPosition(Vec2(box->getContentSize().width / 2, - 15));
 		box->addChild(namelbl);
 
-		Label * lvlbl = Label::createWithTTF("", "fonts/STXINGKA.TTF", 15);//Label::createWithSystemFont("", "", 15);
+		Label * lvlbl = Label::createWithTTF("", "fonts/SIMHEI.TTF", 17);//Label::createWithSystemFont("", "", 15);
 		lvlbl->setColor(Color3B(255, 255, 255));
-		lvlbl->setAnchorPoint(Vec2(1, 0));
-		lvlbl->setPosition(Vec2(box->getContentSize().width - 10, 8));
+		lvlbl->setAnchorPoint(Vec2(0.5, 0.5));
+		lvlbl->setPosition(Vec2(box->getPositionX()+box->getContentSize().width/2, box->getPositionY() - 40));
 		box->addChild(lvlbl);
 
 		std::string mymixgf = JhGlobalData::getMixGF();
@@ -432,10 +440,13 @@ void JhHeroProperNode::showSelectFrame(HeroAtrType index)
 		{
 			str = "";
 		}
-		if (map_carryData[index][i].goodvalue < 20)
-			lvlbl->setColor(Color3B(204, 4, 4));
-		else
+		if (map_carryData[index][i].goodvalue < 20) {
 			lvlbl->setColor(Color3B(255, 255, 255));
+			lvlbl->enableOutline(Color4B(152, 23, 23, 255), 2);
+		}
+		else {
+			lvlbl->setColor(Color3B(0, 0, 0));
+		}
 
 		lvlbl->setString(JhCommonFuncs::gbk2utf(str.c_str()));
 
@@ -685,8 +696,10 @@ void JhHeroProperNode::updataProperpanel(int atrypeindex, PackageData pdata)
 		str = "";
 	}
 
-	if (pdata.goodvalue < 20)
-		lvtext[atrypeindex]->setColor(Color3B(204, 4, 4));
+	if (pdata.goodvalue < 20) {
+		lvtext[atrypeindex]->setColor(Color3B(255, 255, 255));
+		lvtext[atrypeindex]->enableOutline(Color4B(152, 23, 23, 255), 2);
+	}
 	else
 		lvtext[atrypeindex]->setColor(Color3B(255, 255, 255));
 

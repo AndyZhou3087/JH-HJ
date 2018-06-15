@@ -836,6 +836,7 @@
       <FilePathData Path="ui/zjzdl.png" />
       <FilePathData Path="ui/zst.png" />
       <FilePathData Path="ui/common_pub.png" />
+      <FilePathData Path="ui/npcnodebtn.png" />
     </ImageFiles>
     <MaxSize Width="4096" Height="4096" />
   </Content>

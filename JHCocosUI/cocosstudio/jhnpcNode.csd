@@ -49,31 +49,31 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="npcheadbox" ActionTag="773179597" Tag="24" IconVisible="False" LeftMargin="-269.4984" RightMargin="104.4984" TopMargin="-103.0289" BottomMargin="-74.9711" ctype="SpriteObjectData">
+          <AbstractNodeData Name="npcheadbox" ActionTag="773179597" Tag="24" IconVisible="False" LeftMargin="-258.5391" RightMargin="93.5391" TopMargin="-98.4072" BottomMargin="-79.5928" ctype="SpriteObjectData">
             <Size X="165.0000" Y="178.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-186.9984" Y="14.0289" />
-            <Scale ScaleX="0.6000" ScaleY="0.6000" />
+            <Position X="-176.0391" Y="9.4072" />
+            <Scale ScaleX="0.7000" ScaleY="0.7000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/npcheadbox.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="npcicon" ActionTag="-2022883638" Tag="23" IconVisible="False" LeftMargin="-269.8885" RightMargin="104.8885" TopMargin="-108.3804" BottomMargin="-69.6196" LeftEage="39" RightEage="39" TopEage="39" BottomEage="39" Scale9OriginX="39" Scale9OriginY="39" Scale9Width="87" Scale9Height="100" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="npcicon" ActionTag="-2022883638" Tag="23" IconVisible="False" LeftMargin="-258.9292" RightMargin="93.9292" TopMargin="-101.7585" BottomMargin="-76.2415" LeftEage="39" RightEage="39" TopEage="39" BottomEage="39" Scale9OriginX="39" Scale9OriginY="39" Scale9Width="87" Scale9Height="100" ctype="ImageViewObjectData">
             <Size X="165.0000" Y="178.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-187.3885" Y="19.3804" />
-            <Scale ScaleX="0.6000" ScaleY="0.6000" />
+            <Position X="-176.4292" Y="12.7585" />
+            <Scale ScaleX="0.7000" ScaleY="0.7000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/n004.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fheartbg_0" ActionTag="1449956277" Tag="25" IconVisible="False" LeftMargin="-228.1205" RightMargin="212.1205" TopMargin="41.8735" BottomMargin="-58.8735" ctype="SpriteObjectData">
+          <AbstractNodeData Name="fheartbg_0" ActionTag="1449956277" Tag="25" IconVisible="False" LeftMargin="-219.1203" RightMargin="203.1203" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
             <Size X="16.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-220.1205" Y="-50.3735" />
+            <Position X="-211.1203" Y="-59.3737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -81,10 +81,10 @@
             <FileData Type="MarkedSubImage" Path="ui/fheartbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fheartbg_1" ActionTag="590422382" Tag="30" IconVisible="False" LeftMargin="-211.1209" RightMargin="195.1209" TopMargin="41.8735" BottomMargin="-58.8735" ctype="SpriteObjectData">
+          <AbstractNodeData Name="fheartbg_1" ActionTag="590422382" Tag="30" IconVisible="False" LeftMargin="-202.1207" RightMargin="186.1207" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
             <Size X="16.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-203.1209" Y="-50.3735" />
+            <Position X="-194.1207" Y="-59.3737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -92,10 +92,10 @@
             <FileData Type="MarkedSubImage" Path="ui/fheartbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fheartbg_2" ActionTag="-1049483601" Tag="31" IconVisible="False" LeftMargin="-193.1204" RightMargin="177.1204" TopMargin="41.8735" BottomMargin="-58.8735" ctype="SpriteObjectData">
+          <AbstractNodeData Name="fheartbg_2" ActionTag="-1049483601" Tag="31" IconVisible="False" LeftMargin="-184.1203" RightMargin="168.1203" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
             <Size X="16.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-185.1204" Y="-50.3735" />
+            <Position X="-176.1203" Y="-59.3737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -103,10 +103,10 @@
             <FileData Type="MarkedSubImage" Path="ui/fheartbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fheartbg_3" ActionTag="892077535" Tag="32" IconVisible="False" LeftMargin="-175.1198" RightMargin="159.1198" TopMargin="41.8735" BottomMargin="-58.8735" ctype="SpriteObjectData">
+          <AbstractNodeData Name="fheartbg_3" ActionTag="892077535" Tag="32" IconVisible="False" LeftMargin="-166.1197" RightMargin="150.1197" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
             <Size X="16.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-167.1198" Y="-50.3735" />
+            <Position X="-158.1197" Y="-59.3737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -114,10 +114,10 @@
             <FileData Type="MarkedSubImage" Path="ui/fheartbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fheartbg_4" ActionTag="1651567298" Tag="33" IconVisible="False" LeftMargin="-157.1191" RightMargin="141.1191" TopMargin="41.8735" BottomMargin="-58.8735" ctype="SpriteObjectData">
+          <AbstractNodeData Name="fheartbg_4" ActionTag="1651567298" Tag="33" IconVisible="False" LeftMargin="-148.1188" RightMargin="132.1188" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
             <Size X="16.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-149.1191" Y="-50.3735" />
+            <Position X="-140.1188" Y="-59.3737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -125,50 +125,50 @@
             <FileData Type="MarkedSubImage" Path="ui/fheartbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fbar_0" ActionTag="-2098401458" Tag="42" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-228.6148" RightMargin="211.6148" TopMargin="42.3739" BottomMargin="-58.3739" ProgressInfo="0" ctype="LoadingBarObjectData">
+          <AbstractNodeData Name="fbar_0" ActionTag="-2098401458" Tag="42" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-219.6147" RightMargin="202.6147" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
             <Size X="17.0000" Y="16.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-220.1148" Y="-50.3739" />
+            <Position X="-211.1147" Y="-59.3742" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <ImageFileData Type="MarkedSubImage" Path="ui/fheart1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fbar_1" ActionTag="-409507343" Tag="46" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-211.6165" RightMargin="194.6165" TopMargin="42.3739" BottomMargin="-58.3739" ProgressInfo="0" ctype="LoadingBarObjectData">
+          <AbstractNodeData Name="fbar_1" ActionTag="-409507343" Tag="46" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-202.6164" RightMargin="185.6164" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
             <Size X="17.0000" Y="16.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-203.1165" Y="-50.3739" />
+            <Position X="-194.1164" Y="-59.3742" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <ImageFileData Type="MarkedSubImage" Path="ui/fheart1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fbar_2" ActionTag="-1619097935" Tag="45" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-193.6173" RightMargin="176.6173" TopMargin="42.3739" BottomMargin="-58.3739" ProgressInfo="0" ctype="LoadingBarObjectData">
+          <AbstractNodeData Name="fbar_2" ActionTag="-1619097935" Tag="45" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-184.6173" RightMargin="167.6173" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
             <Size X="17.0000" Y="16.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-185.1173" Y="-50.3739" />
+            <Position X="-176.1173" Y="-59.3742" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <ImageFileData Type="MarkedSubImage" Path="ui/fheart1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fbar_3" ActionTag="1124691657" Tag="44" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-175.6176" RightMargin="158.6176" TopMargin="42.3739" BottomMargin="-58.3739" ProgressInfo="0" ctype="LoadingBarObjectData">
+          <AbstractNodeData Name="fbar_3" ActionTag="1124691657" Tag="44" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-166.6175" RightMargin="149.6175" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
             <Size X="17.0000" Y="16.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-167.1176" Y="-50.3739" />
+            <Position X="-158.1175" Y="-59.3742" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <ImageFileData Type="MarkedSubImage" Path="ui/fheart1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fbar_4" ActionTag="1922246869" Tag="43" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-157.6191" RightMargin="140.6191" TopMargin="42.3739" BottomMargin="-58.3739" ProgressInfo="0" ctype="LoadingBarObjectData">
+          <AbstractNodeData Name="fbar_4" ActionTag="1922246869" Tag="43" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-148.6191" RightMargin="131.6191" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
             <Size X="17.0000" Y="16.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-149.1191" Y="-50.3739" />
+            <Position X="-140.1191" Y="-59.3742" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -223,8 +223,8 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="givebtn" ActionTag="1792737753" Tag="37" IconVisible="False" LeftMargin="19.8884" RightMargin="-136.8884" TopMargin="6.8260" BottomMargin="-47.8260" TouchEnable="True" FontSize="30" ButtonText="赠送" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="87" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="117.0000" Y="41.0000" />
+          <AbstractNodeData Name="givebtn" ActionTag="1792737753" Tag="37" IconVisible="False" LeftMargin="22.8884" RightMargin="-133.8884" TopMargin="8.8260" BottomMargin="-45.8260" TouchEnable="True" FontSize="30" ButtonText="赠送" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="81" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="111.0000" Y="37.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="78.3884" Y="-27.3260" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -233,14 +233,14 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/npcnodebtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/npcnodebtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/npcnodebtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="friendbtn" ActionTag="-1365209398" Tag="36" IconVisible="False" LeftMargin="-103.9270" RightMargin="-13.0730" TopMargin="6.8260" BottomMargin="-47.8260" TouchEnable="True" FontSize="30" ButtonText="结交" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="87" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="117.0000" Y="41.0000" />
+          <AbstractNodeData Name="friendbtn" ActionTag="-1365209398" Tag="36" IconVisible="False" LeftMargin="-100.9270" RightMargin="-10.0730" TopMargin="8.8260" BottomMargin="-45.8260" TouchEnable="True" FontSize="30" ButtonText="结交" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="81" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="111.0000" Y="37.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-45.4270" Y="-27.3260" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -249,14 +249,14 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/npcnodebtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/npcnodebtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/npcnodebtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="exchgbtn" ActionTag="-981428867" Tag="38" IconVisible="False" LeftMargin="143.7038" RightMargin="-260.7038" TopMargin="6.8260" BottomMargin="-47.8260" TouchEnable="True" FontSize="30" ButtonText="交易" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="87" Scale9Height="19" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="117.0000" Y="41.0000" />
+          <AbstractNodeData Name="exchgbtn" ActionTag="-981428867" Tag="38" IconVisible="False" LeftMargin="146.7038" RightMargin="-257.7038" TopMargin="8.8260" BottomMargin="-45.8260" TouchEnable="True" FontSize="30" ButtonText="交易" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="81" Scale9Height="15" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="111.0000" Y="37.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="202.2038" Y="-27.3260" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -265,9 +265,9 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
-            <PressedFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
-            <NormalFileData Type="MarkedSubImage" Path="ui/shopbtn2.png" Plist="jhuiplist.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/npcnodebtn.png" Plist="jhuiplist.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="ui/npcnodebtn.png" Plist="jhuiplist.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="ui/npcnodebtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

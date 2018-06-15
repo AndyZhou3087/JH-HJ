@@ -160,6 +160,8 @@ void JhBookShelfLayer::updateContent(int category)
 			}
 		}
 	}*/
+
+	Color4B colorarr[6] = { Color4B(133, 90, 39, 255), Color4B(133, 90, 39, 255), Color4B(72, 105, 89, 255), Color4B(72, 97, 105, 255), Color4B(101, 72, 105, 255), Color4B(105, 88, 72, 255) };
 	for (unsigned int i = 0; i < vec_type.size(); i++)
 	{
 		for (unsigned int m = 0; m < map_bookData[vec_type[i]].size(); m++)
@@ -167,13 +169,16 @@ void JhBookShelfLayer::updateContent(int category)
 
 			std::string boxstr = "";
 			std::string datastrid = map_bookData[vec_type[i]][m].strid;
+			int colordex = 0;
 			if (vec_type[i] == WEAPON || vec_type[i] == PROTECT_EQU)
 			{
 				boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_equips[datastrid].qu);
+				colordex = JhGlobalData::map_equips[datastrid].qu;
 			}
 			else if (vec_type[i] == N_GONG || vec_type[i] == W_GONG)
 			{
 				boxstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_wgngs[datastrid].qu);
+				colordex = JhGlobalData::map_wgngs[datastrid].qu;
 			}
 
 			if (boxstr.length() > 0)
@@ -207,7 +212,7 @@ void JhBookShelfLayer::updateContent(int category)
 				box->addChild(res);
 
 				Label *namelbl = Label::createWithTTF(JhGlobalData::map_allResource[datastrid].cname, "fonts/SIMHEI.TTF", 20);
-				namelbl->enableOutline(Color4B(86, 86, 86, 255), 2);
+				namelbl->enableOutline(colorarr[colordex], 3);
 				namelbl->setColor(Color3B(255, 255, 255));
 				namelbl->setPosition(Vec2(box->getContentSize().width / 2, -17));
 				box->addChild(namelbl);
@@ -233,6 +238,7 @@ void JhBookShelfLayer::updateContent(int category)
 					{
 						JhCommonFuncs::changeGray(box);
 						JhCommonFuncs::changeGray(res);
+						namelbl->enableOutline(Color4B(106, 106, 106, 255), 3);
 						namelbl->setOpacity(180);
 					}
 				}

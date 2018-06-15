@@ -200,7 +200,7 @@ void JhTempStorageLayer::updataTempUI()
 		str = StringUtils::format("%d", tempResData[i].count);
 		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 20);//Label::createWithSystemFont(str, "", 18);
 		reslbl->setPosition(Vec2(box->getContentSize().width - 20, 5));
-		reslbl->enableOutline(Color4B(143, 85, 60, 255), 2);
+		reslbl->enableOutline(Color4B(133, 90, 39, 255), 2);
 		box->addChild(reslbl);
 	}
 }
@@ -359,7 +359,7 @@ void JhTempStorageLayer::updataMyPackageUI()
 		str = StringUtils::format("%d", JhMyPackage::vec_packages[i].count);
 		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 20);//Label::createWithSystemFont(str, "", 18);
 		reslbl->setPosition(Vec2(box->getContentSize().width - 20, 5));
-		reslbl->enableOutline(Color4B(143, 85, 60, 255), 2);
+		reslbl->enableOutline(Color4B(133, 90, 39, 255), 2);
 		box->addChild(reslbl);
 	}
 }

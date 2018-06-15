@@ -42,14 +42,14 @@
           <AbstractNodeData Name="mixbox_0" ActionTag="1051265720" Tag="266" IconVisible="False" LeftMargin="-288.6824" RightMargin="175.6824" TopMargin="7.8519" BottomMargin="-119.8519" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
             <Children>
-              <AbstractNodeData Name="img" ActionTag="-543485130" Tag="271" IconVisible="False" LeftMargin="5.6352" RightMargin="1.3648" TopMargin="-4.3647" BottomMargin="10.3647" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="106.0000" Y="106.0000" />
+              <AbstractNodeData Name="img" ActionTag="-543485130" Tag="271" IconVisible="False" LeftMargin="36.6354" RightMargin="36.3646" TopMargin="33.6358" BottomMargin="34.3642" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="6" Scale9OriginY="10" Scale9Width="28" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="58.6352" Y="63.3647" />
+                <Position X="56.6354" Y="56.3642" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5189" Y="0.5658" />
-                <PreSize X="0.9381" Y="0.9464" />
+                <PrePosition X="0.5012" Y="0.5033" />
+                <PreSize X="0.3540" Y="0.3929" />
                 <FileData Type="MarkedSubImage" Path="ui/mixmtext.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>
@@ -64,14 +64,14 @@
           <AbstractNodeData Name="mixbox_1" ActionTag="-54284073" Tag="267" IconVisible="False" LeftMargin="-137.0160" RightMargin="24.0160" TopMargin="7.8521" BottomMargin="-119.8521" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
             <Children>
-              <AbstractNodeData Name="img" ActionTag="364130105" Tag="272" IconVisible="False" LeftMargin="2.0864" RightMargin="4.9136" TopMargin="2.7295" BottomMargin="3.2705" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="106.0000" Y="106.0000" />
+              <AbstractNodeData Name="img" ActionTag="364130105" Tag="272" IconVisible="False" LeftMargin="35.0864" RightMargin="37.9136" TopMargin="33.7295" BottomMargin="34.2705" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="6" Scale9OriginY="10" Scale9Width="28" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="55.0864" Y="56.2705" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4875" Y="0.5024" />
-                <PreSize X="0.9381" Y="0.9464" />
+                <PreSize X="0.3540" Y="0.3929" />
                 <FileData Type="MarkedSubImage" Path="ui/mixsectext.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>
@@ -86,14 +86,14 @@
           <AbstractNodeData Name="mixbox_2" ActionTag="-631589414" Tag="268" IconVisible="False" LeftMargin="15.6505" RightMargin="-128.6505" TopMargin="7.8521" BottomMargin="-119.8521" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
             <Children>
-              <AbstractNodeData Name="img" ActionTag="1489806061" Tag="273" IconVisible="False" LeftMargin="3.2703" RightMargin="3.7297" TopMargin="2.7295" BottomMargin="3.2705" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="106.0000" Y="106.0000" />
+              <AbstractNodeData Name="img" ActionTag="1489806061" Tag="273" IconVisible="False" LeftMargin="36.2703" RightMargin="36.7297" TopMargin="33.7295" BottomMargin="34.2705" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="6" Scale9OriginY="10" Scale9Width="28" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="56.2703" Y="56.2705" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4980" Y="0.5024" />
-                <PreSize X="0.9381" Y="0.9464" />
+                <PreSize X="0.3540" Y="0.3929" />
                 <FileData Type="MarkedSubImage" Path="ui/mixsectext.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>
@@ -108,14 +108,14 @@
           <AbstractNodeData Name="mixbox_3" ActionTag="-1688192105" Tag="270" IconVisible="False" LeftMargin="168.3174" RightMargin="-281.3174" TopMargin="7.8520" BottomMargin="-119.8520" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
             <Children>
-              <AbstractNodeData Name="img" ActionTag="298497688" Tag="274" IconVisible="False" LeftMargin="3.2693" RightMargin="3.7307" TopMargin="3.9118" BottomMargin="2.0882" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="106.0000" Y="106.0000" />
+              <AbstractNodeData Name="img" ActionTag="298497688" Tag="274" IconVisible="False" LeftMargin="36.2693" RightMargin="36.7307" TopMargin="34.9118" BottomMargin="33.0882" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="6" Scale9OriginY="10" Scale9Width="28" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="56.2693" Y="55.0882" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4980" Y="0.4919" />
-                <PreSize X="0.9381" Y="0.9464" />
+                <PreSize X="0.3540" Y="0.3929" />
                 <FileData Type="MarkedSubImage" Path="ui/mixsectext.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>

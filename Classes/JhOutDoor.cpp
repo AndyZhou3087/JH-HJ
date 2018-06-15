@@ -161,7 +161,7 @@ void JhOutDoor::updataMyPackageUI()
 		box->addChild(res);
 
 		Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/SIMHEI.TTF", 18);//Label::createWithSystemFont(str, "", 18);
-		reslbl->enableOutline(Color4B(142, 101, 54, 255), 2);
+		reslbl->enableOutline(Color4B(133, 90, 39, 255), 2);
 		reslbl->setAnchorPoint(Vec2(1, 0.5));
 		reslbl->setPosition(Vec2(box->getContentSize().width - 20, 5));
 		box->addChild(reslbl);
@@ -264,7 +264,7 @@ void JhOutDoor::updataStorageUI()
 		res->setPosition(Vec2(boxItem->getContentSize().width / 2, boxItem->getContentSize().height / 2));
 
 		Label * reslbl = Label::createWithTTF(countorlvstr, "fonts/SIMHEI.TTF", 18);
-		reslbl->enableOutline(Color4B(142, 101, 54, 255), 2);
+		reslbl->enableOutline(Color4B(133, 90, 39, 255), 2);
 		boxItem->addChild(reslbl, 0, "lbl");
 		reslbl->setAnchorPoint(Vec2(1, 0.5f));
 

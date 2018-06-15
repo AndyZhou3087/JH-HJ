@@ -56,6 +56,8 @@ bool JhMatchFightLayer::init(std::string addrid)
 	//地点名称
 	cocos2d::ui::Text* addrnametxt = (cocos2d::ui::Text*)csbnode->getChildByName("title");
 	addrnametxt->setString(JhGlobalData::map_maps[addrid].cname);
+	addrnametxt->setFontSize(20);
+	addrnametxt->setTextAreaSize(Size(20, 100));
 
 	myheroicon = (cocos2d::ui::ImageView*)csbnode->getChildByName("heroicon");
 
@@ -1399,7 +1401,7 @@ void JhMatchFightLayer::showFightWord(int type, int value)
 
 void JhMatchFightLayer::checkWordLblColor(std::string wordstr)
 {
-	Label* wordlbl = Label::createWithTTF(wordstr, "fonts/STXINGKA.TTF", 28);
+	Label* wordlbl = Label::createWithTTF(wordstr, "fonts/SIMHEI.TTF", 28);
 	wordlbl->setLineBreakWithoutSpace(true);
 	wordlbl->setMaxLineWidth(610);
 	int index = 0;

@@ -51,7 +51,7 @@ bool JhMatchFightResultLayer::init(int myfinalhero, int win)
 	cocos2d::ui::Text *title = (cocos2d::ui::Text*)m_csbnode->getChildByName("title");
 	title->setString(JhCommonFuncs::gbk2utf("华山论剑"));
 
-	std::string str = StringUtils::format("ui/tophero%d.png", myfinalhero);
+	std::string str = StringUtils::format("ui/fhero%d.png", myfinalhero);
 	cocos2d::ui::ImageView* headimg = (cocos2d::ui::ImageView*)m_csbnode->getChildByName("heroimg");
 	headimg->loadTexture(str, cocos2d::ui::TextureResType::PLIST);
 
@@ -74,7 +74,7 @@ bool JhMatchFightResultLayer::init(int myfinalhero, int win)
 	}
 	else{
 		winbox->setPosition(Vec2(359, 307));
-		wintext->setContentSize(Size(228, 56));
+		//wintext->setContentSize(Size(228, 56));
 	}
 
 	cocos2d::ui::Text* explbl = (cocos2d::ui::Text*)m_csbnode->getChildByName("explbl");

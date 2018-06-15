@@ -27,7 +27,7 @@
             <FileData Type="MarkedSubImage" Path="ui/roleprotitle.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="title" ActionTag="249261346" Tag="528" IconVisible="False" LeftMargin="69.3540" RightMargin="620.6461" TopMargin="638.2850" BottomMargin="541.7150" IsCustomSize="True" FontSize="17" LabelText="武林风云榜" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="title" ActionTag="249261346" Tag="528" IconVisible="False" LeftMargin="69.3540" RightMargin="620.6460" TopMargin="638.2850" BottomMargin="541.7150" IsCustomSize="True" FontSize="17" LabelText="武林风云榜" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="30.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5185" ScaleY="0.4850" />
             <Position X="84.9090" Y="590.2150" />
@@ -85,14 +85,14 @@
             <PreSize X="0.2778" Y="0.1563" />
             <FileData Type="MarkedSubImage" Path="ui/fhero1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="wintext" ActionTag="-73574432" Tag="577" IconVisible="False" LeftMargin="292.6313" RightMargin="193.3687" TopMargin="861.0508" BottomMargin="336.9492" LeftEage="37" RightEage="37" TopEage="28" BottomEage="28" Scale9OriginX="37" Scale9OriginY="28" Scale9Width="160" Scale9Height="26" ctype="ImageViewObjectData">
-            <Size X="234.0000" Y="82.0000" />
+          <AbstractNodeData Name="wintext" ActionTag="-73574432" Tag="577" IconVisible="False" LeftMargin="301.6313" RightMargin="202.3687" TopMargin="882.5508" BottomMargin="358.4492" LeftEage="37" RightEage="37" TopEage="28" BottomEage="28" Scale9OriginX="37" Scale9OriginY="11" Scale9Width="142" Scale9Height="17" ctype="ImageViewObjectData">
+            <Size X="216.0000" Y="39.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="409.6313" Y="377.9492" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5689" Y="0.2953" />
-            <PreSize X="0.3250" Y="0.0641" />
+            <PreSize X="0.3000" Y="0.0305" />
             <FileData Type="MarkedSubImage" Path="ui/wintext1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
           <AbstractNodeData Name="explbl" ActionTag="-412074385" Tag="524" IconVisible="False" LeftMargin="430.5813" RightMargin="231.4187" TopMargin="969.9736" BottomMargin="278.0264" FontSize="28" LabelText="+100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

@@ -558,6 +558,7 @@ void JhBuildingUILayer::updataBuildRes()
 {
 	cocos2d::ui::Widget* mainitem = (cocos2d::ui::Widget*)buildnode->getChildByName("item");
 	cocos2d::ui::ImageView* commonbg = (cocos2d::ui::ImageView*)mainitem->getChildByName("commonbg");
+	cocos2d::ui::Text* desc = (cocos2d::ui::Text*)mainitem->getChildByName("desc");
 
 	int level = m_build->data.level;
 
@@ -627,8 +628,10 @@ void JhBuildingUILayer::updataBuildRes()
 			}
 			else
 			{
-				/*resitem->setVisible(false);
-				rescount->setVisible(false);*/
+				if (strcmp(m_build->data.name, "exerciseroom") == 0) {
+					resitem->setVisible(false);
+					rescount->setVisible(false);
+				}
 				rescount->setTextColor(Color4B::WHITE);
 				commonbg->setVisible(true);
 			}
@@ -689,8 +692,8 @@ void JhBuildingUILayer::updataActionRes()
 			}
 			else
 			{
-				desc->setString(vec_buildAcitonData.at(i).desc);
-				desc->setColor(Color3B(0, 0, 0));
+				desc->setString(JhCommonFuncs::gbk2utf("● ") + vec_buildAcitonData.at(i).desc);
+				//desc->setColor(Color3B(69, 43, 6));
 				desc->setVisible(true);
 				actbtn->setEnabled(true);
 			}

@@ -84,7 +84,7 @@
             <FileData Type="Normal" Path="images/sxbj.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btn_1" ActionTag="-34235979" Tag="1093" IconVisible="False" LeftMargin="44.7594" RightMargin="467.2406" TopMargin="362.8762" BottomMargin="841.1238" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="178" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btn_1" ActionTag="-34235979" Tag="1093" IconVisible="False" LeftMargin="44.7594" RightMargin="467.2406" TopMargin="364.8800" BottomMargin="839.1200" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="178" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="208.0000" Y="76.0000" />
             <Children>
               <AbstractNodeData Name="btnname" ActionTag="1618838244" VisibleForFrame="False" Tag="1096" IconVisible="False" LeftMargin="72.7098" RightMargin="68.2902" TopMargin="10.4955" BottomMargin="30.5045" ctype="SpriteObjectData">
@@ -100,10 +100,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="148.7594" Y="879.1238" />
+            <Position X="148.7594" Y="877.1200" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2066" Y="0.6868" />
+            <PrePosition X="0.2066" Y="0.6852" />
             <PreSize X="0.2889" Y="0.0594" />
             <FontResource Type="Normal" Path="fonts/FZXKJW_0.TTF" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
@@ -113,7 +113,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btn_2" ActionTag="184682884" Tag="1094" IconVisible="False" LeftMargin="255.2260" RightMargin="256.7740" TopMargin="362.8762" BottomMargin="841.1238" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="178" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btn_2" ActionTag="184682884" Tag="1094" IconVisible="False" LeftMargin="255.2260" RightMargin="256.7740" TopMargin="364.8800" BottomMargin="839.1200" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="178" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="208.0000" Y="76.0000" />
             <Children>
               <AbstractNodeData Name="btnname1" ActionTag="-616110340" VisibleForFrame="False" Tag="1097" IconVisible="False" LeftMargin="73.9174" RightMargin="67.0826" TopMargin="11.1116" BottomMargin="26.8884" ctype="SpriteObjectData">
@@ -129,10 +129,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="359.2260" Y="879.1238" />
+            <Position X="359.2260" Y="877.1200" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4989" Y="0.6868" />
+            <PrePosition X="0.4989" Y="0.6852" />
             <PreSize X="0.2889" Y="0.0594" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="MarkedSubImage" Path="ui/sxhk.png" Plist="jhuiplist.plist" />
@@ -141,7 +141,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btn_3" ActionTag="-1070040393" Tag="1095" IconVisible="False" LeftMargin="465.2573" RightMargin="46.7427" TopMargin="362.8762" BottomMargin="841.1238" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="178" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btn_3" ActionTag="-1070040393" Tag="1095" IconVisible="False" LeftMargin="465.2571" RightMargin="46.7429" TopMargin="364.8765" BottomMargin="839.1235" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="178" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="208.0000" Y="76.0000" />
             <Children>
               <AbstractNodeData Name="btnname" ActionTag="1811470869" VisibleForFrame="False" Tag="1098" IconVisible="False" LeftMargin="33.2775" RightMargin="34.7225" TopMargin="12.0417" BottomMargin="25.9583" ctype="SpriteObjectData">
@@ -157,10 +157,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="569.2573" Y="879.1238" />
+            <Position X="569.2571" Y="877.1235" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7906" Y="0.6868" />
+            <PrePosition X="0.7906" Y="0.6853" />
             <PreSize X="0.2889" Y="0.0594" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="MarkedSubImage" Path="ui/sxhk.png" Plist="jhuiplist.plist" />

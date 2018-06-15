@@ -518,7 +518,7 @@ void JhActionGetLayer::updataMyPackageUI()
 		str = StringUtils::format("%d", JhMyPackage::vec_packages[i].count);
 		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 20);
 		reslbl->setPosition(Vec2(box->getContentSize().width - 20, 5));
-		reslbl->enableOutline(Color4B(143, 85, 60, 255), 2);
+		reslbl->enableOutline(Color4B(133, 90, 39, 255), 2);
 		box->addChild(reslbl);
 	}
 }
@@ -563,7 +563,7 @@ void JhActionGetLayer::updataRewardUI()
 		str = StringUtils::format("%d", getResData[i].count);
 		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 20);
 		reslbl->setPosition(Vec2(box->getContentSize().width - 20, 5));
-		reslbl->enableOutline(Color4B(143, 85, 60, 255), 2);
+		reslbl->enableOutline(Color4B(133, 90, 39, 255), 2);
 		box->addChild(reslbl);
 	}
 }

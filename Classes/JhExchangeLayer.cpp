@@ -815,7 +815,7 @@ void JhExchangeLayer::updataMyGoodsUI()
 		boxItem->setTag(i);
 		m_myGoodsSrollView->addChild(boxItem, 0, name);
 		boxItem->setUserData(allMydata[i]);
-		boxItem->setPosition(Vec2(boxItem->getContentSize().width / 2 + 10 + i % 5 * 125, innerheight - boxItem->getContentSize().height / 2 - i / 5 * 140));
+		boxItem->setPosition(Vec2(boxItem->getContentSize().width / 2 + 30 + i % 4 * 130, innerheight - boxItem->getContentSize().height / 2 - i / 4 * 140));
 
 		std::string str = StringUtils::format("ui/%s.png", tmpdata->strid.c_str());
 
@@ -825,9 +825,10 @@ void JhExchangeLayer::updataMyGoodsUI()
 
 		str = StringUtils::format("%d", tmpdata->count);
 
-		Label * reslbl = Label::createWithTTF(str, "fonts/STXINGKA.TTF", 18);
+		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 18);
 		boxItem->addChild(reslbl, 0, "lbl");
-		reslbl->setPosition(Vec2(boxItem->getContentSize().width - 25, 25));
+		reslbl->enableOutline(Color4B(133, 90, 39, 255), 2);
+		reslbl->setPosition(Vec2(boxItem->getContentSize().width - 25, 10));
 
 		if (i >= size0)
 		{
@@ -890,7 +891,7 @@ void JhExchangeLayer::updataNpcGoodsUI()
 		boxItem->setTag(i);
 		m_npcGoodsSrollView->addChild(boxItem, 0, name);
 		boxItem->setUserData(allNpcdata[i]);
-		boxItem->setPosition(Vec2(boxItem->getContentSize().width / 2 + 10 + i % 5 * 125, innerheight - boxItem->getContentSize().height / 2 - i / 5 * 140));
+		boxItem->setPosition(Vec2(boxItem->getContentSize().width / 2 + 30 + i % 4 * 130, innerheight - boxItem->getContentSize().height / 2 - i / 4 * 140));
 
 		std::string str = StringUtils::format("ui/%s.png", tmpdata->strid.c_str());
 
@@ -900,9 +901,10 @@ void JhExchangeLayer::updataNpcGoodsUI()
 
 		str = StringUtils::format("%d", tmpdata->count);
 
-		Label * reslbl = Label::createWithTTF(str, "fonts/STXINGKA.TTF", 18);
+		Label * reslbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 18);
 		boxItem->addChild(reslbl, 0, "lbl");
-		reslbl->setPosition(Vec2(boxItem->getContentSize().width - 25, 25));
+		reslbl->enableOutline(Color4B(133, 90, 39, 255), 2);
+		reslbl->setPosition(Vec2(boxItem->getContentSize().width - 25, 10));
 
 
 		if (i >= size0)

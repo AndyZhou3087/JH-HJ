@@ -480,7 +480,7 @@ void JhRepairLayer::updataUI()
 		res->setPosition(Vec2(box->getContentSize().width / 2, box->getContentSize().height / 2));
 		box->addChild(res);
 
-		Label * goodlbl = Label::createWithTTF("", "fonts/STXINGKA.TTF", 15);//Label::createWithSystemFont("", "", 15);
+		Label * goodlbl = Label::createWithTTF("", "fonts/SIMHEI.TTF", 15);//Label::createWithSystemFont("", "", 15);
 		if (m_type == 2)
 		{
 			if (tmpdata->strid.compare("82") == 0)
@@ -497,13 +497,15 @@ void JhRepairLayer::updataUI()
 			str = StringUtils::format("耐久度%d", tmpdata->goodvalue);
 		goodlbl->setString(JhCommonFuncs::gbk2utf(str.c_str()));
 		goodlbl->setAnchorPoint(Vec2(1, 0));
+		goodlbl->enableOutline(Color4B(133, 90, 39, 255), 2);
 		goodlbl->setPosition(Vec2(box->getContentSize().width - 10, 8));
 		box->addChild(goodlbl);
 
 		str = StringUtils::format("%s", JhGlobalData::map_allResource[tmpdata->strid].cname.c_str());
-		Label * namelbl = Label::createWithTTF(str, "fonts/STXINGKA.TTF", 24);
-		namelbl->setColor(Color3B(0, 0, 0));
-		namelbl->setPosition(Vec2(box->getContentSize().width / 2, -10));
+		Label * namelbl = Label::createWithTTF(str, "fonts/SIMHEI.TTF", 24);
+		namelbl->setColor(Color3B(255, 255, 255));
+		namelbl->enableOutline(Color4B(133, 90, 39, 255), 2);
+		namelbl->setPosition(Vec2(box->getContentSize().width / 2, -15));
 		box->addChild(namelbl);
 	}
 }
