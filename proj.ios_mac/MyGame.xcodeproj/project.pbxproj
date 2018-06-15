@@ -11,8 +11,6 @@
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AF87B481F6F77D6007BE51C /* AppController.mm */; };
-		1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AF87B591F6F77D6007BE51C /* LaunchScreen.storyboard */; };
-		1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AF87B5A1F6F77D6007BE51C /* LaunchScreenBackground.png */; };
 		1AF87B8A1F6F7822007BE51C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF87B5B1F6F77D6007BE51C /* main.m */; };
 		1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AF87B5E1F6F77D6007BE51C /* RootViewController.mm */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -33,6 +31,7 @@
 		5087E78917EB974C00C73F5D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5087E78817EB974C00C73F5D /* AppKit.framework */; };
 		5087E78B17EB975400C73F5D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5087E78A17EB975400C73F5D /* OpenGL.framework */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
+		725919D220D35BB500139427 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 725919D120D35BB500139427 /* Images.xcassets */; };
 		72D43BAE20D11D4B006B6DE0 /* jhachiveNode.csb in Resources */ = {isa = PBXBuildFile; fileRef = 72D43B1720D11D37006B6DE0 /* jhachiveNode.csb */; };
 		72D43BAF20D11D4B006B6DE0 /* jhhomeLayer.csb in Resources */ = {isa = PBXBuildFile; fileRef = 72D43B1820D11D37006B6DE0 /* jhhomeLayer.csb */; };
 		72D43BB020D11D4B006B6DE0 /* jhresNode.csb in Resources */ = {isa = PBXBuildFile; fileRef = 72D43B1920D11D37006B6DE0 /* jhresNode.csb */; };
@@ -475,8 +474,6 @@
 		1AF87B471F6F77D6007BE51C /* AppController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		1AF87B481F6F77D6007BE51C /* AppController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = "<group>"; };
 		1AF87B581F6F77D6007BE51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AF87B591F6F77D6007BE51C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1AF87B5A1F6F77D6007BE51C /* LaunchScreenBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreenBackground.png; sourceTree = "<group>"; };
 		1AF87B5B1F6F77D6007BE51C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1AF87B5C1F6F77D6007BE51C /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		1AF87B5D1F6F77D6007BE51C /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -498,6 +495,7 @@
 		5087E78817EB974C00C73F5D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		5087E78A17EB975400C73F5D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		725919D120D35BB500139427 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "MyGame-mobile/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		72D43B1720D11D37006B6DE0 /* jhachiveNode.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = jhachiveNode.csb; sourceTree = "<group>"; };
 		72D43B1820D11D37006B6DE0 /* jhhomeLayer.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = jhhomeLayer.csb; sourceTree = "<group>"; };
 		72D43B1920D11D37006B6DE0 /* jhresNode.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = jhresNode.csb; sourceTree = "<group>"; };
@@ -1201,8 +1199,6 @@
 				1AF87B471F6F77D6007BE51C /* AppController.h */,
 				1AF87B481F6F77D6007BE51C /* AppController.mm */,
 				1AF87B581F6F77D6007BE51C /* Info.plist */,
-				1AF87B591F6F77D6007BE51C /* LaunchScreen.storyboard */,
-				1AF87B5A1F6F77D6007BE51C /* LaunchScreenBackground.png */,
 				1AF87B5B1F6F77D6007BE51C /* main.m */,
 				1AF87B5C1F6F77D6007BE51C /* Prefix.pch */,
 				1AF87B5D1F6F77D6007BE51C /* RootViewController.h */,
@@ -1261,6 +1257,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				725919D120D35BB500139427 /* Images.xcassets */,
 				72D43B4C20D11D3C006B6DE0 /* achiveanim */,
 				72D43B8520D11D45006B6DE0 /* data */,
 				72D43B2F20D11D39006B6DE0 /* Default */,
@@ -2051,6 +2048,7 @@
 				72D43C3820D11D4B006B6DE0 /* particle in Resources */,
 				72D43BB320D11D4B006B6DE0 /* jhraffleLayer.csb in Resources */,
 				72D43C3120D11D4B006B6DE0 /* jhfactionMainLayer.csb in Resources */,
+				725919D220D35BB500139427 /* Images.xcassets in Resources */,
 				72D43C0D20D11D4B006B6DE0 /* jhhintLayer.csb in Resources */,
 				72D43BC820D11D4B006B6DE0 /* jhrepairOKLayer.csb in Resources */,
 				72D43BEE20D11D4B006B6DE0 /* jhdeathLayer.csb in Resources */,
@@ -2081,7 +2079,6 @@
 				72D43BB620D11D4B006B6DE0 /* jhfriendExgLayer.csb in Resources */,
 				72D43C3420D11D4B006B6DE0 /* sounds in Resources */,
 				72D43BB220D11D4B006B6DE0 /* jhchallengeCountLayer.csb in Resources */,
-				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
 				72D43BC420D11D4B006B6DE0 /* jhdivedeLayer.csb in Resources */,
 				72D43C0B20D11D4B006B6DE0 /* jhrelationNode.csb in Resources */,
 				72D43C1920D11D4B006B6DE0 /* jhnoticeLayer.csb in Resources */,
@@ -2167,7 +2164,6 @@
 				72D43BEA20D11D4B006B6DE0 /* jhend1_1.csb in Resources */,
 				72D43BCF20D11D4B006B6DE0 /* jhcomfirmSaveLayer.csb in Resources */,
 				72D43BBA20D11D4B006B6DE0 /* jhend2_2.csb in Resources */,
-				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
 				72D43C2420D11D4B006B6DE0 /* jhexgLayer.csb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2453,6 +2449,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = 4XUL6A3335;
@@ -2492,6 +2489,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = 4XUL6A3335;
