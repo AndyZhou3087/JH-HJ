@@ -48,7 +48,7 @@ bool JhPlayerChallengeLayer::init(std::string addrid, RankData* rankData)
 	this->addChild(color);
 
 	Node* csbnode = CSLoader::createNode("jhfightLayer.csb");
-	csbnode->setPositionY(100);
+	csbnode->setPositionY(80);
 	this->addChild(csbnode);
 
 	m_playerData = rankData;

@@ -50,7 +50,7 @@ bool JhMatchFightLayer::init(std::string addrid)
 	this->addChild(color);
 
 	Node* csbnode = CSLoader::createNode("jhfightLayer.csb");
-	csbnode->setPositionY(100);
+	csbnode->setPositionY(80);
 	this->addChild(csbnode);
 
 	//地点名称
