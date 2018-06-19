@@ -593,8 +593,11 @@ void JhBuildingUILayer::updataBuildRes()
 			std::string str = StringUtils::format("res%d", i);
 			cocos2d::ui::Widget* resitem = (cocos2d::ui::Widget*)mainitem->getChildByName(str);
 
-			resitem->addTouchEventListener(CC_CALLBACK_2(JhBuildingUILayer::onResDetails, this));
-			resitem->setTag(i); 
+			if (m_build->data.level < m_build->data.maxlevel)
+			{
+				resitem->addTouchEventListener(CC_CALLBACK_2(JhBuildingUILayer::onResDetails, this));
+				resitem->setTag(i);
+			}
 
 			str = StringUtils::format("count%d", i);
 			cocos2d::ui::Text* rescount = (cocos2d::ui::Text*)mainitem->getChildByName(str);
@@ -616,8 +619,10 @@ void JhBuildingUILayer::updataBuildRes()
 					str = StringUtils::format("%d/%d", hascount, needcount);
 					rescount->setVisible(true);
 					rescount->setString(str);
-					if (hascount < needcount)
-						rescount->setTextColor(Color4B::RED);
+					if (hascount < needcount) {
+						rescount->setTextColor(Color4B::WHITE);
+						rescount->enableOutline(Color4B(152, 23, 23, 255), 2);
+					}
 					else
 						rescount->setTextColor(Color4B::WHITE);
 				}
@@ -681,8 +686,11 @@ void JhBuildingUILayer::updataActionRes()
 						int needcount = restypecount % 1000;
 						str = StringUtils::format("%d/%d", hascount, needcount);//拥有的资源个数/需要资源个数
 						rescount->setString(str);
-						if (hascount < needcount)
-							rescount->setTextColor(Color4B::RED);
+						if (hascount < needcount) {
+							//rescount->setTextColor(Color4B::RED);
+							rescount->setTextColor(Color4B::WHITE);
+							rescount->enableOutline(Color4B(152, 23, 23, 255), 2);
+						}
 						else
 							rescount->setTextColor(Color4B::WHITE);
 					}

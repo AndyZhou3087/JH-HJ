@@ -284,7 +284,7 @@
             <AnchorPoint ScaleY="0.5000" />
             <Position X="92.1425" Y="154.3490" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="203" G="178" B="153" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <LabelBMFontFile_CNB Type="Normal" Path="fonts/topfont.fnt" Plist="" />
@@ -294,7 +294,7 @@
             <AnchorPoint ScaleY="0.5000" />
             <Position X="-24.2902" Y="154.3490" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="203" G="178" B="153" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <LabelBMFontFile_CNB Type="Normal" Path="fonts/topfont.fnt" Plist="" />
@@ -304,7 +304,7 @@
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="211.9464" Y="154.3490" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="203" G="178" B="153" />
+            <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <LabelBMFontFile_CNB Type="Normal" Path="fonts/topfont.fnt" Plist="" />

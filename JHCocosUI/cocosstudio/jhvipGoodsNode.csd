@@ -31,7 +31,7 @@
                 <PreSize X="0.5993" Y="0.0989" />
                 <FileData Type="MarkedSubImage" Path="ui/vip2.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
-              <AbstractNodeData Name="desc" ActionTag="437115070" Tag="134" IconVisible="False" LeftMargin="44.7773" RightMargin="37.2227" TopMargin="109.0785" BottomMargin="326.9215" IsCustomSize="True" FontSize="26" LabelText="30天内有效，购买即可获得以下福利。" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="desc" ActionTag="437115070" Tag="134" IconVisible="False" LeftMargin="44.7773" RightMargin="37.2227" TopMargin="109.0785" BottomMargin="326.9215" IsCustomSize="True" FontSize="26" LabelText="30天内有效，购买即可获得以下福利" OutlineSize="2" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="220.0000" Y="100.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="44.7773" Y="376.9215" />

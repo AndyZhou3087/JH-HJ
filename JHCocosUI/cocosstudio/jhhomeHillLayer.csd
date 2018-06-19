@@ -16,7 +16,7 @@
             <PreSize X="0.9625" Y="0.6523" />
             <FileData Type="Normal" Path="images/homehill.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ScrollView" ActionTag="161008347" Tag="72" IconVisible="False" LeftMargin="58.8214" RightMargin="61.1786" TopMargin="523.2469" BottomMargin="96.7530" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+          <AbstractNodeData Name="ScrollView" ActionTag="161008347" Tag="72" IconVisible="False" LeftMargin="58.8214" RightMargin="61.1786" TopMargin="523.2470" BottomMargin="96.7530" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
             <Size X="600.0000" Y="660.0000" />
             <AnchorPoint />
             <Position X="58.8214" Y="96.7530" />
@@ -53,13 +53,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="backbtn" ActionTag="-1932802189" Tag="74" IconVisible="False" LeftMargin="636.6095" RightMargin="8.3905" TopMargin="486.8146" BottomMargin="717.1854" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="45" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="backbtn" ActionTag="-1932802189" Tag="74" IconVisible="False" LeftMargin="637.6098" RightMargin="7.3902" TopMargin="502.8136" BottomMargin="701.1864" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="45" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="75.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="674.1095" Y="755.1854" />
+            <Position X="675.1098" Y="739.1864" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9363" Y="0.5900" />
+            <PrePosition X="0.9377" Y="0.5775" />
             <PreSize X="0.1042" Y="0.0594" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="jhuiplist.plist" />
@@ -67,6 +67,17 @@
             <NormalFileData Type="MarkedSubImage" Path="ui/backbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="backline_1" ActionTag="683491497" Tag="209" IconVisible="False" LeftMargin="666.8135" RightMargin="36.1865" TopMargin="436.2539" BottomMargin="772.7461" ctype="SpriteObjectData">
+            <Size X="17.0000" Y="71.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="675.3135" Y="808.2461" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9379" Y="0.6314" />
+            <PreSize X="0.0236" Y="0.0555" />
+            <FileData Type="MarkedSubImage" Path="ui/backline.png" Plist="jhuiplist.plist" />
+            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

@@ -391,6 +391,7 @@ void JhMixSuggestLayer::loadMixGfUi(MixGfData mixdata)
 	mixname->setString(JhGlobalData::map_MixGfData[suggestgfstr].name);
 	std::string str = StringUtils::format("ui/%s.png", mixdata.mastergf.c_str());
 	img[0]->loadTexture(str, cocos2d::ui::Widget::TextureResType::PLIST);
+	img[0]->setContentSize(Sprite::createWithSpriteFrameName(str)->getContentSize());
 	name[0]->setString(JhGlobalData::map_allResource[mixdata.mastergf].cname);
 
 	std::string sstr = StringUtils::format("ui/qubox%d.png", JhGlobalData::map_wgngs[mixdata.mastergf].qu);
@@ -412,6 +413,7 @@ void JhMixSuggestLayer::loadMixGfUi(MixGfData mixdata)
 			name[i + 1]->setString("");
 		}
 		img[i + 1]->loadTexture(str, cocos2d::ui::Widget::TextureResType::PLIST);
+		img[i + 1]->setContentSize(Sprite::createWithSpriteFrameName(str)->getContentSize());
 		imgbox[i+1]->loadTexture(sstr, cocos2d::ui::TextureResType::PLIST);
 	}
 	updateDesc();

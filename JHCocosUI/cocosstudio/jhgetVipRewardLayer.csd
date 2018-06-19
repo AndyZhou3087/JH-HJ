@@ -6,47 +6,36 @@
       <ObjectData Name="Layer" Tag="86" ctype="GameLayerObjectData">
         <Size X="720.0000" Y="1280.0000" />
         <Children>
-          <AbstractNodeData Name="vipbg" ActionTag="1811147925" Tag="87" IconVisible="False" TopMargin="214.0000" BottomMargin="214.0000" ctype="SpriteObjectData">
-            <Size X="720.0000" Y="852.0000" />
+          <AbstractNodeData Name="vipbg" ActionTag="1811147925" Tag="87" IconVisible="False" LeftMargin="68.5000" RightMargin="68.5000" TopMargin="342.0000" BottomMargin="342.0000" ctype="SpriteObjectData">
+            <Size X="583.0000" Y="596.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="360.0000" Y="640.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.0000" Y="0.6656" />
-            <FileData Type="Normal" Path="images/vipbg.png" Plist="" />
+            <PreSize X="0.8097" Y="0.4656" />
+            <FileData Type="Normal" Path="images/jdtk.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="viptitle" ActionTag="738307879" Tag="88" IconVisible="False" LeftMargin="248.9998" RightMargin="249.0002" TopMargin="243.6172" BottomMargin="975.3829" ctype="SpriteObjectData">
-            <Size X="222.0000" Y="61.0000" />
+          <AbstractNodeData Name="desc" ActionTag="608829751" Tag="105" IconVisible="False" LeftMargin="135.0002" RightMargin="134.9998" TopMargin="450.9986" BottomMargin="729.0014" IsCustomSize="True" FontSize="30" LabelText="获取新手月卡高手月卡至尊月卡福利：" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="450.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="359.9998" Y="1005.8829" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.7858" />
-            <PreSize X="0.3083" Y="0.0477" />
-            <FileData Type="MarkedSubImage" Path="ui/viptitle.png" Plist="jhuiplist.plist" />
-            <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="desc" ActionTag="608829751" Tag="105" IconVisible="False" LeftMargin="69.0002" RightMargin="50.9998" TopMargin="436.9989" BottomMargin="733.0011" IsCustomSize="True" FontSize="45" LabelText="获取新手月卡高手月卡至尊月卡福利：" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="600.0000" Y="110.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="369.0002" Y="788.0011" />
+            <Position X="360.0002" Y="779.0014" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
-            <PrePosition X="0.5125" Y="0.6156" />
-            <PreSize X="0.8333" Y="0.0859" />
+            <PrePosition X="0.5000" Y="0.6086" />
+            <PreSize X="0.6250" Y="0.0781" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="closebtn" ActionTag="-264882791" Tag="106" IconVisible="False" LeftMargin="288.5000" RightMargin="288.5000" TopMargin="905.5000" BottomMargin="325.5000" TouchEnable="True" FontSize="42" ButtonText="领取" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="closebtn" ActionTag="-264882791" Tag="106" IconVisible="False" LeftMargin="282.5001" RightMargin="294.4999" TopMargin="867.4995" BottomMargin="363.5005" TouchEnable="True" FontSize="42" ButtonText="领取" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="143.0000" Y="49.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="360.0000" Y="350.0000" />
+            <Position X="354.0001" Y="388.0005" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.2734" />
+            <PrePosition X="0.4917" Y="0.3031" />
             <PreSize X="0.1986" Y="0.0383" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />

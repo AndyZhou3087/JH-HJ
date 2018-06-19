@@ -172,27 +172,27 @@
             <PreSize X="0.3472" Y="0.0109" />
             <ImageFileData Type="MarkedSubImage" Path="ui/fighthpbar.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="herohpvaluetext" ActionTag="613342465" Tag="135" IconVisible="False" LeftMargin="161.9970" RightMargin="512.0030" TopMargin="624.5012" BottomMargin="638.4988" FontSize="15" LabelText="95/100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="46.0000" Y="17.0000" />
+          <AbstractNodeData Name="herohpvaluetext" ActionTag="613342465" Tag="135" IconVisible="False" LeftMargin="159.9970" RightMargin="510.0030" TopMargin="626.5012" BottomMargin="636.4988" FontSize="15" LabelText="95/100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="50.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="184.9970" Y="646.9988" />
+            <Position X="184.9970" Y="644.9988" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2569" Y="0.5055" />
-            <PreSize X="0.0639" Y="0.0133" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <PrePosition X="0.2569" Y="0.5039" />
+            <PreSize X="0.0694" Y="0.0133" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="npchpvaluetext" ActionTag="-1085362581" Tag="136" IconVisible="False" LeftMargin="514.9996" RightMargin="159.0004" TopMargin="624.4998" BottomMargin="638.5002" FontSize="15" LabelText="80/100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="46.0000" Y="17.0000" />
+          <AbstractNodeData Name="npchpvaluetext" ActionTag="-1085362581" Tag="136" IconVisible="False" LeftMargin="512.9996" RightMargin="157.0004" TopMargin="626.4998" BottomMargin="636.5002" FontSize="15" LabelText="80/100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="50.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="537.9996" Y="647.0002" />
+            <Position X="537.9996" Y="645.0002" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7472" Y="0.5055" />
-            <PreSize X="0.0639" Y="0.0133" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <PrePosition X="0.7472" Y="0.5039" />
+            <PreSize X="0.0694" Y="0.0133" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

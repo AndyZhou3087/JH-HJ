@@ -1087,7 +1087,8 @@ void JhNpcLayer::updatePlotUI(int type)
 
 				if (plotData->status == M_DOING)
 				{
-					std::string diconstr = StringUtils::format("ui/mapmission%d_1.png", type);
+					//std::string diconstr = StringUtils::format("ui/mapmission%d_1.png", type);
+					std::string diconstr = "ui/redpoint.png";
 					Sprite* dicon = Sprite::createWithSpriteFrameName(diconstr);
 					dicon->setScale(0.6f);
 					if (plotData->type == 1)

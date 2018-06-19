@@ -58,14 +58,14 @@
           <AbstractNodeData Name="mixbox_0" ActionTag="-1336245613" Tag="709" IconVisible="False" LeftMargin="136.2754" RightMargin="470.7246" TopMargin="485.2256" BottomMargin="682.7744" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
             <Children>
-              <AbstractNodeData Name="img" ActionTag="647730355" Tag="710" IconVisible="False" LeftMargin="5.9999" RightMargin="1.0001" TopMargin="-2.0000" BottomMargin="8.0000" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="106.0000" Y="106.0000" />
+              <AbstractNodeData Name="img" ActionTag="647730355" Tag="710" IconVisible="False" LeftMargin="38.9999" RightMargin="34.0001" TopMargin="29.0000" BottomMargin="39.0000" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="6" Scale9OriginY="10" Scale9Width="28" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="58.9999" Y="61.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5221" Y="0.5446" />
-                <PreSize X="0.9381" Y="0.9464" />
+                <PreSize X="0.3540" Y="0.3929" />
                 <FileData Type="MarkedSubImage" Path="ui/mixmtext.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>
@@ -80,14 +80,14 @@
           <AbstractNodeData Name="mixbox_1" ActionTag="-290731266" Tag="707" IconVisible="False" LeftMargin="246.1435" RightMargin="360.8565" TopMargin="485.2256" BottomMargin="682.7744" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
             <Children>
-              <AbstractNodeData Name="img" ActionTag="-1943380353" Tag="708" IconVisible="False" LeftMargin="6.0001" RightMargin="0.9999" TopMargin="1.0000" BottomMargin="5.0000" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="106.0000" Y="106.0000" />
+              <AbstractNodeData Name="img" ActionTag="-1943380353" Tag="708" IconVisible="False" LeftMargin="39.0001" RightMargin="33.9999" TopMargin="32.0000" BottomMargin="36.0000" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="6" Scale9OriginY="10" Scale9Width="28" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="59.0001" Y="58.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5221" Y="0.5179" />
-                <PreSize X="0.9381" Y="0.9464" />
+                <PreSize X="0.3540" Y="0.3929" />
                 <FileData Type="MarkedSubImage" Path="ui/mixsectext.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>
@@ -102,14 +102,14 @@
           <AbstractNodeData Name="mixbox_2" ActionTag="-1106884867" Tag="705" IconVisible="False" LeftMargin="356.0115" RightMargin="250.9885" TopMargin="485.2256" BottomMargin="682.7744" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
             <Children>
-              <AbstractNodeData Name="img" ActionTag="1696153181" Tag="706" IconVisible="False" LeftMargin="4.9996" RightMargin="2.0004" TopMargin="2.0000" BottomMargin="4.0000" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="106.0000" Y="106.0000" />
+              <AbstractNodeData Name="img" ActionTag="1696153181" Tag="706" IconVisible="False" LeftMargin="37.9996" RightMargin="35.0004" TopMargin="33.0000" BottomMargin="35.0000" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="6" Scale9OriginY="10" Scale9Width="28" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="57.9996" Y="57.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5133" Y="0.5089" />
-                <PreSize X="0.9381" Y="0.9464" />
+                <PreSize X="0.3540" Y="0.3929" />
                 <FileData Type="MarkedSubImage" Path="ui/mixsectext.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>
@@ -124,14 +124,14 @@
           <AbstractNodeData Name="mixbox_3" ActionTag="1450333973" Tag="703" IconVisible="False" LeftMargin="464.2773" RightMargin="142.7227" TopMargin="485.2256" BottomMargin="682.7744" TouchEnable="True" LeftEage="40" RightEage="40" TopEage="40" BottomEage="40" Scale9OriginX="40" Scale9OriginY="40" Scale9Width="33" Scale9Height="32" ctype="ImageViewObjectData">
             <Size X="113.0000" Y="112.0000" />
             <Children>
-              <AbstractNodeData Name="img" ActionTag="29269898" Tag="704" IconVisible="False" LeftMargin="5.9999" RightMargin="1.0001" TopMargin="1.0000" BottomMargin="5.0000" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="34" Scale9OriginY="34" Scale9Width="38" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="106.0000" Y="106.0000" />
+              <AbstractNodeData Name="img" ActionTag="29269898" Tag="704" IconVisible="False" LeftMargin="38.9999" RightMargin="34.0001" TopMargin="32.0000" BottomMargin="36.0000" LeftEage="34" RightEage="34" TopEage="34" BottomEage="34" Scale9OriginX="6" Scale9OriginY="10" Scale9Width="28" Scale9Height="24" ctype="ImageViewObjectData">
+                <Size X="40.0000" Y="44.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="58.9999" Y="58.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5221" Y="0.5179" />
-                <PreSize X="0.9381" Y="0.9464" />
+                <PreSize X="0.3540" Y="0.3929" />
                 <FileData Type="MarkedSubImage" Path="ui/mixsectext.png" Plist="jhuiplist.plist" />
               </AbstractNodeData>
             </Children>
@@ -181,7 +181,7 @@
             <AnchorPoint ScaleX="0.5229" ScaleY="0.5955" />
             <Position X="193.2289" Y="677.9283" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="88" G="79" B="72" />
             <PrePosition X="0.2684" Y="0.5296" />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
@@ -193,7 +193,7 @@
             <AnchorPoint ScaleX="0.5229" ScaleY="0.5955" />
             <Position X="305.8994" Y="677.9283" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="88" G="79" B="72" />
             <PrePosition X="0.4249" Y="0.5296" />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
@@ -205,7 +205,7 @@
             <AnchorPoint ScaleX="0.5229" ScaleY="0.5955" />
             <Position X="415.7263" Y="677.9283" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="88" G="79" B="72" />
             <PrePosition X="0.5774" Y="0.5296" />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
@@ -217,7 +217,7 @@
             <AnchorPoint ScaleX="0.5229" ScaleY="0.5955" />
             <Position X="522.5994" Y="678.7419" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="0" G="0" B="0" />
+            <CColor A="255" R="88" G="79" B="72" />
             <PrePosition X="0.7258" Y="0.5303" />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
@@ -243,14 +243,14 @@
           <AbstractNodeData Name="silverbtn" ActionTag="-87985554" Tag="744" IconVisible="False" LeftMargin="278.5505" RightMargin="298.4495" TopMargin="768.7729" BottomMargin="462.2271" TouchEnable="True" FontSize="40" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="113" Scale9Height="27" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="143.0000" Y="49.0000" />
             <Children>
-              <AbstractNodeData Name="silver" ActionTag="-1992555859" VisibleForFrame="False" Tag="747" IconVisible="False" LeftMargin="19.8319" RightMargin="58.1681" TopMargin="22.2039" BottomMargin="-8.2039" ctype="SpriteObjectData">
-                <Size X="65.0000" Y="35.0000" />
+              <AbstractNodeData Name="silver" ActionTag="-1992555859" VisibleForFrame="False" Tag="747" IconVisible="False" LeftMargin="16.3319" RightMargin="54.6681" TopMargin="3.7039" BottomMargin="-26.7039" ctype="SpriteObjectData">
+                <Size X="72.0000" Y="72.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="52.3319" Y="9.2961" />
                 <Scale ScaleX="0.4000" ScaleY="0.4000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3660" Y="0.1897" />
-                <PreSize X="0.4545" Y="0.7143" />
+                <PreSize X="0.5035" Y="1.4694" />
                 <FileData Type="MarkedSubImage" Path="ui/80.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
@@ -366,7 +366,7 @@
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.2064" Y="0.4564" />
             <PreSize X="0.5556" Y="0.0625" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -378,7 +378,7 @@
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.5028" Y="0.4820" />
             <PreSize X="0.5556" Y="0.0391" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -390,7 +390,7 @@
             <CColor A="255" R="204" G="4" B="4" />
             <PrePosition X="0.5028" Y="0.4391" />
             <PreSize X="0.5556" Y="0.0391" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

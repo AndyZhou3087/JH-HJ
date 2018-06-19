@@ -66,15 +66,15 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="valuelbl" ActionTag="-1849114880" Tag="124" IconVisible="False" LeftMargin="303.5002" RightMargin="309.4998" TopMargin="557.5486" BottomMargin="695.4514" FontSize="23" LabelText="库存：100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="107.0000" Y="27.0000" />
+          <AbstractNodeData Name="valuelbl" ActionTag="-1849114880" Tag="124" IconVisible="False" LeftMargin="303.5002" RightMargin="309.4998" TopMargin="558.0486" BottomMargin="695.9514" FontSize="23" LabelText="库存：100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="107.0000" Y="26.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="357.0002" Y="708.9514" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.4958" Y="0.5539" />
-            <PreSize X="0.1486" Y="0.0211" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <PreSize X="0.1486" Y="0.0203" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -86,7 +86,7 @@
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.4903" Y="0.3859" />
             <PreSize X="0.5833" Y="0.0703" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -98,7 +98,7 @@
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.4958" Y="0.5313" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -164,7 +164,7 @@
             <CColor A="255" R="204" G="4" B="4" />
             <PrePosition X="0.4944" Y="0.3602" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -188,7 +188,7 @@
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.4958" Y="0.5234" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -200,7 +200,7 @@
             <CColor A="255" R="216" G="151" B="82" />
             <PrePosition X="0.5653" Y="0.5234" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -212,7 +212,7 @@
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition X="0.4937" Y="0.4539" />
             <PreSize X="0.5833" Y="0.0391" />
-            <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
+            <FontResource Type="Normal" Path="fonts/SIMHEI.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

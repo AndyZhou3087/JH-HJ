@@ -39,13 +39,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="backbtn" ActionTag="1098841514" Tag="45" IconVisible="False" LeftMargin="635.2507" RightMargin="9.7493" TopMargin="493.8911" BottomMargin="710.1089" TouchEnable="True" FontSize="40" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="45" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="backbtn" ActionTag="1098841514" Tag="45" IconVisible="False" LeftMargin="636.2505" RightMargin="8.7495" TopMargin="503.8902" BottomMargin="700.1098" TouchEnable="True" FontSize="40" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="45" Scale9Height="54" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="75.0000" Y="76.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="672.7507" Y="748.1089" />
+            <Position X="673.7505" Y="738.1098" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9344" Y="0.5845" />
+            <PrePosition X="0.9358" Y="0.5766" />
             <PreSize X="0.1042" Y="0.0594" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
@@ -143,6 +143,17 @@
             <PrePosition X="0.5028" Y="0.2223" />
             <PreSize X="0.7292" Y="0.0039" />
             <FileData Type="MarkedSubImage" Path="ui/storagesepline.png" Plist="jhuiplist.plist" />
+            <BlendFunc Src="1" Dst="771" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="backline_9" ActionTag="2018777706" Tag="202" IconVisible="False" LeftMargin="666.9536" RightMargin="36.0464" TopMargin="437.2537" BottomMargin="771.7463" ctype="SpriteObjectData">
+            <Size X="17.0000" Y="71.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="675.4536" Y="807.2463" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9381" Y="0.6307" />
+            <PreSize X="0.0236" Y="0.0555" />
+            <FileData Type="MarkedSubImage" Path="ui/backline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

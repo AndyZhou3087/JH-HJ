@@ -246,6 +246,7 @@
           <Image Name="arrowup.png" />
           <Image Name="atrselected.png" />
           <Image Name="backbtn.png" />
+          <Image Name="backline.png" />
           <Image Name="backstartbtn.png" />
           <Image Name="badbookshelf.png" />
           <Image Name="badfurnace.png" />
@@ -1065,6 +1066,7 @@
         <Project Name="jhrankLayer.csd" Type="Layer" />
         <Project Name="jhrankNode.csd" Type="Node" />
         <Project Name="jhrechargeLayer.csd" Type="Scene" />
+        <Project Name="jhrechargeNode.csd" Type="Node" />
         <Project Name="jhrelationLayer.csd" Type="Layer" />
         <Project Name="jhrelationNode.csd" Type="Node" />
         <Project Name="jhrepairLayer.csd" Type="Layer" />

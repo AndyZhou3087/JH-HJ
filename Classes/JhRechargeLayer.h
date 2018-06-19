@@ -22,6 +22,7 @@ private:
 	cocos2d::ui::Text* datelbl;
 	cocos2d::ui::Text* progresstext;
 	cocos2d::ui::LoadingBar* progressbar;
+	cocos2d::ui::ScrollView* scrollView;
 	std::map<int, std::vector<std::string>> map_recharge;
 	int maxamount;
 	Node* m_csbnode;
@@ -40,7 +41,7 @@ private:
 
 	void splitRechargeAward();
 
-	void showDescAward(int amount);
+	void showDescAward(int amount,Node* node);
 	
 };
 #endif

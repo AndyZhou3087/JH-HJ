@@ -40,14 +40,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="storagesepline_1" ActionTag="201231656" Tag="212" IconVisible="False" LeftMargin="103.2502" RightMargin="91.7498" TopMargin="952.2632" BottomMargin="322.7368" ctype="SpriteObjectData">
+          <AbstractNodeData Name="storagesepline_1" ActionTag="201231656" Tag="212" IconVisible="False" LeftMargin="102.7502" RightMargin="91.2498" TopMargin="952.2632" BottomMargin="322.7368" ctype="SpriteObjectData">
             <Size X="526.0000" Y="5.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="365.7502" Y="325.2368" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5080" Y="0.2541" />
-            <PreSize X="0.7292" Y="0.0039" />
+            <PreSize X="0.7306" Y="0.0039" />
             <FileData Type="MarkedSubImage" Path="ui/xline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
@@ -63,14 +63,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="storagesepline_2" ActionTag="-2141349184" Tag="210" IconVisible="False" LeftMargin="103.2502" RightMargin="91.7498" TopMargin="1154.4352" BottomMargin="120.5648" ctype="SpriteObjectData">
+          <AbstractNodeData Name="storagesepline_2" ActionTag="-2141349184" Tag="210" IconVisible="False" LeftMargin="102.7502" RightMargin="91.2498" TopMargin="1154.4352" BottomMargin="120.5648" ctype="SpriteObjectData">
             <Size X="526.0000" Y="5.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="365.7502" Y="123.0648" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5080" Y="0.0961" />
-            <PreSize X="0.7292" Y="0.0039" />
+            <PreSize X="0.7306" Y="0.0039" />
             <FileData Type="MarkedSubImage" Path="ui/xline.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
@@ -100,7 +100,7 @@
             <PreSize X="0.1958" Y="0.0320" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/winbtn.png" Plist="jhuiplist.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
             <PressedFileData Type="MarkedSubImage" Path="ui/winbtn.png" Plist="jhuiplist.plist" />
             <NormalFileData Type="MarkedSubImage" Path="ui/winbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />
@@ -174,7 +174,7 @@
             <PreSize X="0.1958" Y="0.0320" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="MarkedSubImage" Path="ui/winbtn.png" Plist="jhuiplist.plist" />
+            <DisabledFileData Type="MarkedSubImage" Path="ui/disbtn.png" Plist="jhuiplist.plist" />
             <PressedFileData Type="MarkedSubImage" Path="ui/winbtn.png" Plist="jhuiplist.plist" />
             <NormalFileData Type="MarkedSubImage" Path="ui/winbtn.png" Plist="jhuiplist.plist" />
             <OutlineColor A="255" R="255" G="0" B="0" />

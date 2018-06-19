@@ -16,10 +16,10 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/buildingbanner1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="npcnodefr_2" ActionTag="1525157620" Tag="207" IconVisible="False" LeftMargin="-276.1714" RightMargin="243.1714" TopMargin="-78.8943" BottomMargin="-57.1057" ctype="SpriteObjectData">
+          <AbstractNodeData Name="npcnodefr_2" ActionTag="1525157620" Tag="207" IconVisible="False" LeftMargin="-276.1716" RightMargin="243.1716" TopMargin="-75.8941" BottomMargin="-60.1059" ctype="SpriteObjectData">
             <Size X="33.0000" Y="136.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-259.6714" Y="10.8943" />
+            <Position X="-259.6716" Y="7.8941" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -27,20 +27,20 @@
             <FileData Type="MarkedSubImage" Path="ui/npcnodefr.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="npcrsi" ActionTag="1707640718" Tag="17" IconVisible="False" LeftMargin="-269.9958" RightMargin="248.9958" TopMargin="0.0907" BottomMargin="-34.0907" LeftEage="18" RightEage="18" TopEage="9" BottomEage="9" Scale9OriginX="3" Scale9OriginY="9" Scale9Width="15" Scale9Height="16" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="npcrsi" ActionTag="1707640718" Tag="17" IconVisible="False" LeftMargin="-269.9962" RightMargin="248.9962" TopMargin="3.0908" BottomMargin="-37.0908" LeftEage="18" RightEage="18" TopEage="9" BottomEage="9" Scale9OriginX="3" Scale9OriginY="9" Scale9Width="15" Scale9Height="16" ctype="ImageViewObjectData">
             <Size X="21.0000" Y="34.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-259.4958" Y="-17.0907" />
+            <Position X="-259.4962" Y="-20.0908" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/npcrsi2.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="npcname" ActionTag="2031208432" Tag="107" IconVisible="False" LeftMargin="-271.1299" RightMargin="251.1299" TopMargin="-88.6502" BottomMargin="-11.3498" IsCustomSize="True" FontSize="20" LabelText="周伯通" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="npcname" ActionTag="2031208432" Tag="107" IconVisible="False" LeftMargin="-271.1301" RightMargin="251.1301" TopMargin="-85.6501" BottomMargin="-14.3499" IsCustomSize="True" FontSize="20" LabelText="周伯通" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="20.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-261.1299" Y="38.6502" />
+            <Position X="-261.1301" Y="35.6501" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="0" G="0" B="0" />
             <PrePosition />
