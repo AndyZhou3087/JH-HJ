@@ -1,4 +1,4 @@
-﻿#include "JhShopLayer.h"
+#include "JhShopLayer.h"
 #include "JhConst.h"
 #include "JhBuildingUILayer.h"
 #include "JhStorageRoom.h"
