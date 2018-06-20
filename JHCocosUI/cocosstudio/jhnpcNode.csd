@@ -70,10 +70,10 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="MarkedSubImage" Path="ui/n004.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fheartbg_0" ActionTag="1449956277" Tag="25" IconVisible="False" LeftMargin="-219.1203" RightMargin="203.1203" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
+          <AbstractNodeData Name="fheartbg_0" ActionTag="1449956277" Tag="25" IconVisible="False" LeftMargin="-223.9825" RightMargin="207.9825" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
             <Size X="16.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-211.1203" Y="-59.3737" />
+            <Position X="-215.9825" Y="-59.3737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -81,10 +81,10 @@
             <FileData Type="MarkedSubImage" Path="ui/fheartbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fheartbg_1" ActionTag="590422382" Tag="30" IconVisible="False" LeftMargin="-202.1207" RightMargin="186.1207" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
+          <AbstractNodeData Name="fheartbg_1" ActionTag="590422382" Tag="30" IconVisible="False" LeftMargin="-205.1208" RightMargin="189.1208" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
             <Size X="16.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-194.1207" Y="-59.3737" />
+            <Position X="-197.1208" Y="-59.3737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -92,10 +92,10 @@
             <FileData Type="MarkedSubImage" Path="ui/fheartbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fheartbg_2" ActionTag="-1049483601" Tag="31" IconVisible="False" LeftMargin="-184.1203" RightMargin="168.1203" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
+          <AbstractNodeData Name="fheartbg_2" ActionTag="-1049483601" Tag="31" IconVisible="False" LeftMargin="-186.1204" RightMargin="170.1204" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
             <Size X="16.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-176.1203" Y="-59.3737" />
+            <Position X="-178.1204" Y="-59.3737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -103,10 +103,10 @@
             <FileData Type="MarkedSubImage" Path="ui/fheartbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fheartbg_3" ActionTag="892077535" Tag="32" IconVisible="False" LeftMargin="-166.1197" RightMargin="150.1197" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
+          <AbstractNodeData Name="fheartbg_3" ActionTag="892077535" Tag="32" IconVisible="False" LeftMargin="-167.1198" RightMargin="151.1198" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
             <Size X="16.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-158.1197" Y="-59.3737" />
+            <Position X="-159.1198" Y="-59.3737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -114,10 +114,10 @@
             <FileData Type="MarkedSubImage" Path="ui/fheartbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fheartbg_4" ActionTag="1651567298" Tag="33" IconVisible="False" LeftMargin="-148.1188" RightMargin="132.1188" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
+          <AbstractNodeData Name="fheartbg_4" ActionTag="1651567298" Tag="33" IconVisible="False" LeftMargin="-148.1189" RightMargin="132.1189" TopMargin="50.8737" BottomMargin="-67.8737" ctype="SpriteObjectData">
             <Size X="16.0000" Y="17.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-140.1188" Y="-59.3737" />
+            <Position X="-140.1189" Y="-59.3737" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -125,50 +125,50 @@
             <FileData Type="MarkedSubImage" Path="ui/fheartbg.png" Plist="jhuiplist.plist" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fbar_0" ActionTag="-2098401458" Tag="42" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-219.6147" RightMargin="202.6147" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
+          <AbstractNodeData Name="fbar_0" ActionTag="-2098401458" Tag="42" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-224.4767" RightMargin="207.4767" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
             <Size X="17.0000" Y="16.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-211.1147" Y="-59.3742" />
+            <Position X="-215.9767" Y="-59.3742" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <ImageFileData Type="MarkedSubImage" Path="ui/fheart1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fbar_1" ActionTag="-409507343" Tag="46" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-202.6164" RightMargin="185.6164" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
+          <AbstractNodeData Name="fbar_1" ActionTag="-409507343" Tag="46" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-205.6165" RightMargin="188.6165" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
             <Size X="17.0000" Y="16.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-194.1164" Y="-59.3742" />
+            <Position X="-197.1165" Y="-59.3742" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <ImageFileData Type="MarkedSubImage" Path="ui/fheart1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fbar_2" ActionTag="-1619097935" Tag="45" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-184.6173" RightMargin="167.6173" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
+          <AbstractNodeData Name="fbar_2" ActionTag="-1619097935" Tag="45" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-186.6174" RightMargin="169.6174" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
             <Size X="17.0000" Y="16.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-176.1173" Y="-59.3742" />
+            <Position X="-178.1174" Y="-59.3742" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <ImageFileData Type="MarkedSubImage" Path="ui/fheart1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fbar_3" ActionTag="1124691657" Tag="44" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-166.6175" RightMargin="149.6175" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
+          <AbstractNodeData Name="fbar_3" ActionTag="1124691657" Tag="44" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-167.6176" RightMargin="150.6176" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
             <Size X="17.0000" Y="16.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-158.1175" Y="-59.3742" />
+            <Position X="-159.1176" Y="-59.3742" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <ImageFileData Type="MarkedSubImage" Path="ui/fheart1.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="fbar_4" ActionTag="1922246869" Tag="43" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-148.6191" RightMargin="131.6191" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
+          <AbstractNodeData Name="fbar_4" ActionTag="1922246869" Tag="43" RotationSkewX="-90.0000" RotationSkewY="-90.0000" IconVisible="False" LeftMargin="-148.6192" RightMargin="131.6192" TopMargin="51.3742" BottomMargin="-67.3742" ProgressInfo="0" ctype="LoadingBarObjectData">
             <Size X="17.0000" Y="16.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-140.1191" Y="-59.3742" />
+            <Position X="-140.1192" Y="-59.3742" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

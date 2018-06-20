@@ -1040,7 +1040,7 @@ void JhNpcLayer::updatePlotUI(int type)
 						std::string miconstr = "ui/redpoint.png";
 						Sprite* micon = Sprite::createWithSpriteFrameName(miconstr);
 						//micon->setScale(0.6f);
-						micon->setPosition(Vec2(talkbtn->getContentSize().width - 10, talkbtn->getContentSize().height - 10));
+						micon->setPosition(Vec2(talkbtn->getContentSize().width - 15, talkbtn->getContentSize().height - 15));
 						talkbtn->addChild(micon, 0, smissionname);
 					}
 					//支线任务不现实提示标签
@@ -1090,15 +1090,15 @@ void JhNpcLayer::updatePlotUI(int type)
 					//std::string diconstr = StringUtils::format("ui/mapmission%d_1.png", type);
 					std::string diconstr = "ui/redpoint.png";
 					Sprite* dicon = Sprite::createWithSpriteFrameName(diconstr);
-					dicon->setScale(0.6f);
+					//dicon->setScale(0.6f);
 					if (plotData->type == 1)
 					{
-						dicon->setPosition(Vec2(onFight->getContentSize().width - 10, onFight->getContentSize().height - 10));
+						dicon->setPosition(Vec2(onFight->getContentSize().width - 15, onFight->getContentSize().height - 15));
 						onFight->addChild(dicon, 0, dmissionname);
 					}
 					else
 					{
-						dicon->setPosition(Vec2(talkbtn->getContentSize().width - 10, talkbtn->getContentSize().height - 10));
+						dicon->setPosition(Vec2(talkbtn->getContentSize().width - 15, talkbtn->getContentSize().height - 15));
 						talkbtn->addChild(dicon, 0, dmissionname);
 					}
 				}
