@@ -64,7 +64,7 @@ static std::string heroname[] = { "小虾米", "三少爷", "江小白", "阿青
 static std::string herodesc[] = { "名门之后，因家族武功被邪教窥觑，惨遭灭门，只剩孤身一人", "从未来穿越而来的特种兵，为了回到属于自己的时代而被迫行走江湖", "恶人谷出身，习得各大恶人的看家本领，但本性善良，被送出谷历练", "情郎被邪教蛊惑，为寻回情郎，孤身一人闯荡江湖！" };
 static int heroprice[] = { 0, 6, 12, 30 };
 
-static std::string payCode[] = { "", "wx010", "wx011", "wx013", "wx018", "wx019", "wx020", "wx021", "wx026", "wx022", "wx023","wx024","wx025"};
+static std::string payCode[] = { "", "ve001", "ve002", "ve003", "ve004", "ve005", "ve006", "ve007", "ve012", "", "ve009","ve010","ve011"};
 static int goldcount[] = {60, 140, 400, 1080, 2388};
 static int vipgoldcount[] = { 10,20, 50 };
 

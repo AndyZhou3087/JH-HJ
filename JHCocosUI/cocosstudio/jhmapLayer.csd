@@ -173,7 +173,7 @@
                     <PreSize X="0.0540" Y="0.0616" />
                     <FileData Type="MarkedSubImage" Path="ui/m1-11.png" Plist="jhuiplist.plist" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="m10-1" ActionTag="-1299461788" Tag="15" IconVisible="False" LeftMargin="234.8279" RightMargin="1595.1721" TopMargin="1176.8157" BottomMargin="118.1844" TouchEnable="True" LeftEage="56" RightEage="56" TopEage="33" BottomEage="33" Scale9OriginX="56" Scale9OriginY="33" Scale9Width="58" Scale9Height="35" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="m10-1" ActionTag="-1299461788" Tag="15" IconVisible="False" LeftMargin="234.8279" RightMargin="1595.1721" TopMargin="1176.8156" BottomMargin="118.1844" TouchEnable="True" LeftEage="56" RightEage="56" TopEage="33" BottomEage="33" Scale9OriginX="56" Scale9OriginY="33" Scale9Width="58" Scale9Height="35" ctype="ImageViewObjectData">
                     <Size X="170.0000" Y="101.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="319.8279" Y="168.6844" />
@@ -633,7 +633,7 @@
                     <PreSize X="0.0650" Y="0.0645" />
                     <FileData Type="MarkedSubImage" Path="ui/m7-3.png" Plist="jhuiplist.plist" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="m7-4" ActionTag="-1456156634" Tag="60" IconVisible="False" LeftMargin="491.0699" RightMargin="1379.9301" TopMargin="193.1958" BottomMargin="1103.8042" TouchEnable="True" LeftEage="26" RightEage="26" TopEage="12" BottomEage="12" Scale9OriginX="26" Scale9OriginY="12" Scale9Width="77" Scale9Height="75" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="m7-4" ActionTag="-1456156634" Tag="60" IconVisible="False" LeftMargin="491.0699" RightMargin="1379.9302" TopMargin="193.1958" BottomMargin="1103.8042" TouchEnable="True" LeftEage="26" RightEage="26" TopEage="12" BottomEage="12" Scale9OriginX="26" Scale9OriginY="12" Scale9Width="77" Scale9Height="75" ctype="ImageViewObjectData">
                     <Size X="129.0000" Y="99.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="555.5699" Y="1153.3042" />
@@ -806,14 +806,14 @@
             <ColorVector ScaleY="1.0000" />
             <InnerNodeSize Width="2000" Height="1396" />
           </AbstractNodeData>
-          <AbstractNodeData Name="shopbtn" ActionTag="3558553" Tag="161" IconVisible="False" LeftMargin="-0.0880" RightMargin="602.0880" TopMargin="1152.6934" BottomMargin="1.3066" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="96" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="118.0000" Y="126.0000" />
+          <AbstractNodeData Name="shopbtn" ActionTag="3558553" Tag="161" IconVisible="False" LeftMargin="2.4120" RightMargin="604.5880" TopMargin="1156.6934" BottomMargin="5.3066" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="96" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="113.0000" Y="118.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="58.9120" Y="64.3066" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0818" Y="0.0502" />
-            <PreSize X="0.1639" Y="0.0984" />
+            <PreSize X="0.1569" Y="0.0922" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
             <DisabledFileData Type="MarkedSubImage" Path="ui/shopbtn.png" Plist="jhuiplist.plist" />
@@ -822,14 +822,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="vipbtn" ActionTag="-877144570" Tag="154" IconVisible="False" LeftMargin="0.9999" RightMargin="597.0001" TopMargin="464.2151" BottomMargin="693.7849" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="96" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="122.0000" Y="122.0000" />
+          <AbstractNodeData Name="vipbtn" ActionTag="-877144570" Tag="154" IconVisible="False" LeftMargin="3.4999" RightMargin="603.5001" TopMargin="466.2152" BottomMargin="695.7848" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="96" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="113.0000" Y="118.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="61.9999" Y="754.7849" />
+            <Position X="59.9999" Y="754.7848" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0861" Y="0.5897" />
-            <PreSize X="0.1694" Y="0.0953" />
+            <PrePosition X="0.0833" Y="0.5897" />
+            <PreSize X="0.1569" Y="0.0922" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
             <DisabledFileData Type="MarkedSubImage" Path="ui/vipbtn.png" Plist="jhuiplist.plist" />
@@ -838,28 +838,28 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="timegiftbtn" ActionTag="-993240752" Tag="78" IconVisible="False" LeftMargin="2.0015" RightMargin="603.9985" TopMargin="602.8040" BottomMargin="563.1960" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="96" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="114.0000" Y="114.0000" />
+          <AbstractNodeData Name="timegiftbtn" ActionTag="-993240752" Tag="78" IconVisible="False" LeftMargin="2.5015" RightMargin="604.4985" TopMargin="600.8040" BottomMargin="561.1960" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="96" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="113.0000" Y="118.0000" />
             <Children>
-              <AbstractNodeData Name="tgiftlefttimebox" ActionTag="-797934312" Tag="79" IconVisible="False" LeftMargin="2.0003" RightMargin="15.9997" TopMargin="108.7493" BottomMargin="-26.7493" ctype="SpriteObjectData">
+              <AbstractNodeData Name="tgiftlefttimebox" ActionTag="-797934312" Tag="79" IconVisible="False" LeftMargin="2.0003" RightMargin="14.9997" TopMargin="112.7493" BottomMargin="-26.7493" ctype="SpriteObjectData">
                 <Size X="96.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="50.0003" Y="-10.7493" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4386" Y="-0.0943" />
-                <PreSize X="0.8421" Y="0.2807" />
+                <PrePosition X="0.4425" Y="-0.0911" />
+                <PreSize X="0.8496" Y="0.2712" />
                 <FileData Type="MarkedSubImage" Path="ui/tgiftlefttimebox.png" Plist="jhuiplist.plist" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="lefttimelbl" ActionTag="-2053231312" Tag="81" IconVisible="False" LeftMargin="8.5004" RightMargin="24.4996" TopMargin="116.0972" BottomMargin="-19.0972" FontSize="17" LabelText="992:50:60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="lefttimelbl" ActionTag="-2053231312" Tag="81" IconVisible="False" LeftMargin="8.5004" RightMargin="23.4996" TopMargin="120.0972" BottomMargin="-19.0972" FontSize="17" LabelText="992:50:60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="81.0000" Y="17.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="49.0004" Y="-10.5972" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4298" Y="-0.0930" />
-                <PreSize X="0.7105" Y="0.1491" />
+                <PrePosition X="0.4336" Y="-0.0898" />
+                <PreSize X="0.7168" Y="0.1441" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -869,7 +869,7 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0819" Y="0.4845" />
-            <PreSize X="0.1583" Y="0.0891" />
+            <PreSize X="0.1569" Y="0.0922" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
             <DisabledFileData Type="MarkedSubImage" Path="ui/timegiftbtn.png" Plist="jhuiplist.plist" />
@@ -957,14 +957,14 @@
             <PreSize X="0.2500" Y="0.0797" />
             <FileData Type="MarkedSubImage" Path="ui/branchmissionbox.png" Plist="jhuiplist.plist" />
           </AbstractNodeData>
-          <AbstractNodeData Name="helpbtn" ActionTag="514687018" Tag="113" IconVisible="False" LeftMargin="628.3998" RightMargin="-7.5998" TopMargin="1179.2001" BottomMargin="-0.8001" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="93" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="99.2000" Y="101.6000" />
+          <AbstractNodeData Name="helpbtn" ActionTag="514687018" Tag="113" IconVisible="False" LeftMargin="604.5001" RightMargin="2.4999" TopMargin="1162.5001" BottomMargin="2.4999" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="93" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="113.0000" Y="115.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="677.9998" Y="49.9999" />
+            <Position X="661.0001" Y="59.9999" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9417" Y="0.0391" />
-            <PreSize X="0.1378" Y="0.0794" />
+            <PrePosition X="0.9181" Y="0.0469" />
+            <PreSize X="0.1569" Y="0.0898" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
             <DisabledFileData Type="MarkedSubImage" Path="ui/helpbtn.png" Plist="jhuiplist.plist" />
@@ -973,14 +973,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="rechargebtn" ActionTag="-791560280" Tag="123" IconVisible="False" LeftMargin="-1.0116" RightMargin="593.0116" TopMargin="913.2161" BottomMargin="242.7839" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="94" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="128.0000" Y="124.0000" />
+          <AbstractNodeData Name="rechargebtn" ActionTag="-791560280" Tag="123" IconVisible="False" LeftMargin="3.4883" RightMargin="603.5117" TopMargin="917.2161" BottomMargin="246.7839" TouchEnable="True" FontSize="50" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="83" Scale9Height="94" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="113.0000" Y="116.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="62.9884" Y="304.7839" />
+            <Position X="59.9883" Y="304.7839" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0875" Y="0.2381" />
-            <PreSize X="0.1778" Y="0.0969" />
+            <PrePosition X="0.0833" Y="0.2381" />
+            <PreSize X="0.1569" Y="0.0906" />
             <FontResource Type="Normal" Path="fonts/STXINGKA.TTF" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
             <DisabledFileData Type="Normal" Path="images/rechargebtn.png" Plist="" />
