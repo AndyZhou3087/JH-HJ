@@ -27,10 +27,7 @@
     </Item>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="jhnpcNode.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="jhnpcNode.csd" />
+        <ActiveDocument />
       </Value>
     </Item>
   </Properties>
