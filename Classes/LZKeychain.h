@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <Security/Security.h>
 
-NSString * const KEY_UDID_INSTEAD = @"com.kuxx.jh2";
+NSString * const KEY_UDID_INSTEAD = @"com.brjlf.gme";
 
 @interface LZKeychain : NSObject
 

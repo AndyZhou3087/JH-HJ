@@ -114,7 +114,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	JhGlobalData::loadMixGfJsonData();
 
 #if defined(CC_PLATFORM_IOS) && defined(ANALYTICS)
-    MOBCLICKCPP_START_WITH_APPKEY_AND_CHANNEL("59264ff476661347e2000897", "jh1");
+    MOBCLICKCPP_START_WITH_APPKEY_AND_CHANNEL("5b2b5c31f29d98631b000024", "xkx");
 #endif
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     //initAds();
